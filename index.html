@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Khyati — Home</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="assets/img/me.jpg" alt="Khyati" class="avatar"/>
+      <h1>Khyati</h1>
+    </div>
+    <nav class="main-nav">
+      <a href="fun-games.html">Fun &amp; Games</a>
+      <a href="trading.html">Trading</a>
+      <a href="stories.html">Stories</a>
+      <a href="videos.html">Videos</a>
+      <a href="others.html">Others</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <h2>Welcome to Khyati17.com</h2>
+    <p>Purple-themed place for games, stories, videos and more.</p>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Khyati — All rights reserved</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
