@@ -25,8 +25,11 @@
   <main class="hero">
     <h2>Create an account</h2>
     <form id="signup-form" style="max-width:420px;margin:16px auto;text-align:left;">
+      <label>Name<br/><input id="name" required/></label><br/>
+      <label>Username<br/><input id="username" required/></label><br/>
       <label>Email<br/><input id="email" type="email" required/></label><br/>
       <label>Password<br/><input id="password" type="password" required/></label><br/>
+      <label>Confirm password<br/><input id="confirm" type="password" required/></label><br/>
       <button type="submit" class="btn">Sign up</button>
       <p class="video-note">Already have an account? <a href="login.html">Sign in</a></p>
       <p id="msg" style="color:#7a2a9b"></p>
@@ -45,12 +48,16 @@
     const form = document.getElementById('signup-form');
     form.addEventListener('submit', async e =>{
       e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const username = document.getElementById('username').value.trim();
       const email = document.getElementById('email').value.trim();
       const p = document.getElementById('password').value;
-      const res = await Auth.signup(email,p);
+      const c = document.getElementById('confirm').value;
       const msg = document.getElementById('msg');
+      if(p !== c){ msg.textContent = 'Passwords do not match'; return; }
+      const res = await Auth.signup(email,p,{name,username});
       if(res.ok){ msg.textContent = 'Account created — redirecting...'; setTimeout(()=>location.href='index.html',900); }
-      else msg.textContent = res.msg;
+      else msg.textContent = res.msg || 'Signup failed';
     });
   </script>
 </body>

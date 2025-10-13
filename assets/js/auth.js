@@ -26,10 +26,12 @@ const DemoAuth = (() => {
   function saveUsers(users){ localStorage.setItem(LS_KEY, JSON.stringify(users)) }
 
   function signup(email, password){
+    // signature: signup(email, password, metadata)
+    const metadata = arguments[2] || {};
     if(!email || !password) return {ok:false,msg:'Email and password required'};
     const users = loadUsers();
     if(users[email]) return {ok:false,msg:'User already exists'};
-    users[email] = {password};
+    users[email] = {password, metadata};
     saveUsers(users);
     localStorage.setItem(SESSION_KEY, email);
     return {ok:true};
@@ -43,7 +45,13 @@ const DemoAuth = (() => {
   }
 
   function signout(){ localStorage.removeItem(SESSION_KEY) }
-  function currentUser(){ return localStorage.getItem(SESSION_KEY) }
+  function currentUser(){
+    const email = localStorage.getItem(SESSION_KEY);
+    if(!email) return null;
+    const users = loadUsers();
+    const user = users[email];
+    return { email, metadata: user?.metadata || {} };
+  }
 
   function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c=> ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]) }
 
@@ -52,7 +60,8 @@ const DemoAuth = (() => {
     if(!el) return;
     const user = currentUser();
     if(user){
-      el.innerHTML = `<span class="auth-user">Hello, ${escapeHtml(user)}</span> <button id="logout-btn" class="btn">Logout</button>`;
+      const display = user.metadata?.name || user.metadata?.username || user.email.split('@')[0];
+      el.innerHTML = `<span class="auth-user">Hello, ${escapeHtml(display)}</span> <button id="logout-btn" class="btn">Logout</button>`;
       const btn = document.getElementById('logout-btn');
       btn && btn.addEventListener('click', ()=>{ signout(); renderAuthArea(); location.reload(); });
     } else {
@@ -64,8 +73,9 @@ const DemoAuth = (() => {
 })();
 
 const SupabaseAuth = supabase ? {
-  async signup(email,password){
-    const res = await supabase.auth.signUp({email,password});
+  async signup(email,password, metadata){
+    // Supabase v2: pass user_metadata via options
+    const res = await supabase.auth.signUp({email,password}, { data: metadata });
     if(res.error) return {ok:false,msg:res.error.message};
     return {ok:true};
   },
@@ -75,14 +85,14 @@ const SupabaseAuth = supabase ? {
     return {ok:true};
   },
   async signout(){ await supabase.auth.signOut(); },
-  async currentUser(){ const s = supabase.auth.getUser(); const r = await s; return r?.data?.user?.email || null },
+  async currentUser(){ const r = await supabase.auth.getUser(); const user = r?.data?.user; return user ? { email: user.email, metadata: user.user_metadata || {} } : null },
   async renderAuthArea(){
     const el = document.getElementById('auth-area');
     if(!el) return;
-    const { data: session } = await supabase.auth.getSession();
-    const userEmail = session?.session?.user?.email;
-    if(userEmail){
-      el.innerHTML = `<span class="auth-user">Hello, ${userEmail}</span> <button id="logout-btn" class="btn">Logout</button>`;
+    const current = await SupabaseAuth.currentUser();
+    if(current){
+      const display = current.metadata?.name || current.metadata?.username || current.email.split('@')[0];
+      el.innerHTML = `<span class="auth-user">Hello, ${display}</span> <button id="logout-btn" class="btn">Logout</button>`;
       const btn = document.getElementById('logout-btn');
       btn && btn.addEventListener('click', async ()=>{ await supabase.auth.signOut(); SupabaseAuth.renderAuthArea(); location.reload(); });
     } else {
