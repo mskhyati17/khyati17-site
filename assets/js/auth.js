@@ -60,12 +60,18 @@ const DemoAuth = (() => {
     if(!el) return;
     const user = currentUser();
     if(user){
-      const display = user.metadata?.name || user.metadata?.username || user.email.split('@')[0];
-      el.innerHTML = `<span class="auth-user">Hello, ${escapeHtml(display)}</span> <button id="logout-btn" class="btn">Logout</button>`;
+      const raw = user.metadata?.name || user.metadata?.username || user.email.split('@')[0];
+      const first = String(raw).trim().split(' ')[0] || raw;
+      const display = first;
+      el.innerHTML = `<span class="auth-user">Welcome ${escapeHtml(display)}</span> <button id="logout-btn" class="btn">Logout</button>`;
+      // also update brand title (top-left) to show user's first name if present
+      try{ const brand = document.querySelector('.brand h1'); if(brand) brand.textContent = escapeHtml(display); }catch(e){}
       const btn = document.getElementById('logout-btn');
       btn && btn.addEventListener('click', ()=>{ signout(); renderAuthArea(); location.reload(); });
     } else {
       el.innerHTML = `<a href="login.html" class="btn">Sign in</a> <a href="signup.html" class="btn btn-ghost">Sign up</a>`;
+      // restore site title when signed out
+      try{ const brand = document.querySelector('.brand h1'); if(brand) brand.textContent = 'Khyati'; }catch(e){}
     }
   }
 
@@ -93,18 +99,25 @@ const SupabaseAuth = supabase ? {
     if(!el) return;
     const current = await SupabaseAuth.currentUser();
     if(current){
-      const display = current.metadata?.name || current.metadata?.username || current.email.split('@')[0];
-      el.innerHTML = `<span class="auth-user">Hello, ${display}</span> <button id="logout-btn" class="btn">Logout</button>`;
+      const raw = current.metadata?.name || current.metadata?.username || current.email.split('@')[0];
+      const first = String(raw).trim().split(' ')[0] || raw;
+      el.innerHTML = `<span class="auth-user">Welcome ${escapeHtml(first)}</span> <button id="logout-btn" class="btn">Logout</button>`;
+      try{ const brand = document.querySelector('.brand h1'); if(brand) brand.textContent = escapeHtml(first); }catch(e){}
       const btn = document.getElementById('logout-btn');
       btn && btn.addEventListener('click', async ()=>{ await supabase.auth.signOut(); SupabaseAuth.renderAuthArea(); location.reload(); });
     } else {
       el.innerHTML = `<a href="login.html" class="btn">Sign in</a> <a href="signup.html" class="btn btn-ghost">Sign up</a>`;
+      try{ const brand = document.querySelector('.brand h1'); if(brand) brand.textContent = 'Khyati'; }catch(e){}
     }
   }
 } : null;
 
 const Auth = {
-  async signup(email,password){ if(supabase) return await SupabaseAuth.signup(email,password); return DemoAuth.signup(email,password); },
+  // Accept metadata and forward to underlying implementation
+  async signup(email,password, metadata){
+    if(supabase) return await SupabaseAuth.signup(email,password, metadata);
+    return DemoAuth.signup(email,password, metadata);
+  },
   async signin(email,password){ if(supabase) return await SupabaseAuth.signin(email,password); return DemoAuth.signin(email,password); },
   async signout(){ if(supabase) return await SupabaseAuth.signout(); return DemoAuth.signout(); },
   async currentUser(){ if(supabase) return await SupabaseAuth.currentUser(); return DemoAuth.currentUser(); },
