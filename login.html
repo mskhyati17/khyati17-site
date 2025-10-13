@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sign in</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="assets/img/me.jpg" alt="Khyati" class="avatar"/>
+      <h1>Khyati</h1>
+    </div>
+    <nav class="main-nav">
+      <a href="fun-games.html">Fun &amp; Games</a>
+      <a href="trading.html">Trading</a>
+      <a href="stories.html">Stories</a>
+      <a href="videos.html">Videos</a>
+      <a href="others.html">Others</a>
+      <span id="auth-area"></span>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <h2>Sign in</h2>
+    <form id="login-form" style="max-width:420px;margin:16px auto;text-align:left;">
+      <label>Email<br/><input id="email" type="email" required/></label><br/>
+      <label>Password<br/><input id="password" type="password" required/></label><br/>
+      <button type="submit" class="btn">Sign in</button>
+      <p class="video-note">New here? <a href="signup.html">Create an account</a></p>
+      <p id="msg" style="color:#7a2a9b"></p>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Khyati — All rights reserved</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script type="module" src="assets/js/auth.js"></script>
+  <script>
+    const form = document.getElementById('login-form');
+    form.addEventListener('submit', async e =>{
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const p = document.getElementById('password').value;
+      const res = await Auth.signin(email,p);
+      const msg = document.getElementById('msg');
+      if(res.ok){ msg.textContent = 'Signed in — redirecting...'; setTimeout(()=>location.href='index.html',700); }
+      else msg.textContent = res.msg;
+    });
+  </script>
+</body>
+</html>

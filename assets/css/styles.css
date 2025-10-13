@@ -102,3 +102,22 @@ body{
   border:0;
 }
 .video-note{font-size:13px;color:#5b3a78;margin-top:8px}
+
+/* small button utilities used by auth UI */
+.btn{
+  display:inline-block;
+  background:var(--purple-700);
+  color:white;
+  padding:6px 10px;
+  border-radius:8px;
+  text-decoration:none;
+  border:0;
+  font-weight:600;
+}
+.btn:hover{opacity:0.95}
+.btn-ghost{
+  background:transparent;
+  color:var(--purple-700);
+  border:2px solid rgba(106,27,154,0.12);
+}
+.auth-user{font-weight:600;color:#3a1850;margin-right:8px}
