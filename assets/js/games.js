@@ -60,10 +60,19 @@ document.addEventListener('DOMContentLoaded', ()=>{
   img.alt = '';
 
   const meta = document.createElement('div');
+  // show title if provided, otherwise show the project id
+  if(game.title){
+    const label = document.createElement('div');
+    label.style.fontSize = '14px';
+    label.style.fontWeight = '600';
+    label.style.color = '#332244';
+    label.textContent = game.title;
+    meta.appendChild(label);
+  }
   const idline = document.createElement('div');
   idline.style.fontSize = '12px';
   idline.style.color = '#6a4b8f';
-  idline.textContent = game.id ? ('Project ' + game.id) : '';
+  idline.textContent = game.title ? ('') : (game.id ? ('Project ' + game.id) : '');
   meta.appendChild(idline);
 
     div.appendChild(img);
