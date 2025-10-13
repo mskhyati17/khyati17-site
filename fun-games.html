@@ -27,15 +27,24 @@
     <p>Purple-themed place for games, stories, videos and more.</p>
     <section class="games-list" style="margin-top:18px;text-align:center;">
       <h3>Play a Scratch game</h3>
-      <p>Play the Scratch project right here on the site:</p>
-      <div class="video-wrapper" style="max-width:720px;margin:12px auto;">
-        <!-- Scratch embed: uses /projects/<id>/embed -->
-        <iframe src="https://scratch.mit.edu/projects/1203372098/embed" allowfullscreen allow="autoplay; microphone; camera; clipboard-write"></iframe>
+      <p>Click a game cube to open it in the player above. Close the player to return to the grid.</p>
+      <div class="games-player">
+        <div id="player-area" class="player-area" style="position:relative;">
+          <div id="player-close" class="game-close">Close</div>
+          <iframe id="games-player-iframe" src="" frameborder="0" allowfullscreen allow="autoplay; microphone; camera; clipboard-write"></iframe>
+        </div>
       </div>
-      <div class="video-wrapper" style="max-width:520px;margin:12px auto;">
-        <iframe src="https://scratch.mit.edu/projects/1203678096/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+
+      <div class="games-grid">
+        <div class="game-card" data-src="https://scratch.mit.edu/projects/1203372098/embed">
+          <div class="thumb">Game 1</div>
+          <small>Project 1203372098</small>
+        </div>
+        <div class="game-card" data-src="https://scratch.mit.edu/projects/1203678096/embed">
+          <div class="thumb">Game 2</div>
+          <small>Project 1203678096</small>
+        </div>
       </div>
-      <p>If the embed doesn't load you can open it in a new tab: <a href="https://scratch.mit.edu/projects/1203372098/fullscreen/" target="_blank" rel="noopener">Open fullscreen</a></p>
     </section>
   </main>
 
@@ -47,5 +56,6 @@
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
   <script type="module" src="assets/js/auth.js"></script>
+  <script src="assets/js/games.js"></script>
 </body>
 </html>
