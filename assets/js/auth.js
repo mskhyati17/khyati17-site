@@ -77,7 +77,9 @@ const SupabaseAuth = supabase ? {
     // Supabase v2: pass user_metadata via options
     const res = await supabase.auth.signUp({email,password}, { data: metadata });
     if(res.error) return {ok:false,msg:res.error.message};
-    return {ok:true};
+    // If session exists the user is confirmed and signed in; otherwise confirmation required
+    const confirmed = !!(res.data?.session);
+    return {ok:true, confirmed, data: res.data};
   },
   async signin(email,password){
     const res = await supabase.auth.signInWithPassword({email,password});
@@ -116,4 +118,11 @@ console.log('Auth.isSupabase =', window.Auth.isSupabase);
 
 document.addEventListener('DOMContentLoaded', ()=>{
   Auth.renderAuthArea();
+  // render debug banner
+  const banner = document.createElement('div');
+  banner.id = 'auth-debug-banner';
+  banner.style.cssText = 'position:fixed;left:10px;bottom:10px;padding:8px 12px;background:rgba(0,0,0,0.6);color:white;border-radius:8px;font-size:13px;z-index:9999';
+  banner.textContent = 'Auth: ' + (window.Auth.isSupabase ? 'Supabase' : 'Demo');
+  document.body.appendChild(banner);
+  Auth.currentUser().then(u=>{ if(u) banner.textContent += ' | user: ' + (u.metadata?.name || u.metadata?.username || u.email); });
 });

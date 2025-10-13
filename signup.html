@@ -56,8 +56,13 @@
       const msg = document.getElementById('msg');
       if(p !== c){ msg.textContent = 'Passwords do not match'; return; }
       const res = await Auth.signup(email,p,{name,username});
-      if(res.ok){ msg.textContent = 'Account created — redirecting...'; setTimeout(()=>location.href='index.html',900); }
-      else msg.textContent = res.msg || 'Signup failed';
+      if(res.ok){
+        if(res.confirmed === false){
+          msg.textContent = 'Account created — please check your email and confirm before signing in.';
+        } else {
+          msg.textContent = 'Account created — redirecting...'; setTimeout(()=>location.href='index.html',900);
+        }
+      } else msg.textContent = res.msg || 'Signup failed';
     });
   </script>
 </body>
