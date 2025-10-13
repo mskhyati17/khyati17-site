@@ -7,10 +7,15 @@ if(SUPABASE_URL && SUPABASE_ANON_KEY){
   try{
     const { createClient } = await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm');
     supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    console.log('Supabase client created for', SUPABASE_URL);
   }catch(e){
     console.warn('Failed to load Supabase JS, falling back to local demo auth.', e);
     supabase = null;
   }
+}
+
+if(!SUPABASE_URL || !SUPABASE_ANON_KEY){
+  console.log('Supabase config not set; using demo localStorage auth');
 }
 
 const DemoAuth = (() => {
@@ -96,6 +101,8 @@ const Auth = {
 
 // expose Auth globally for non-module inline scripts on pages
 window.Auth = Auth;
+window.Auth.isSupabase = !!supabase;
+console.log('Auth.isSupabase =', window.Auth.isSupabase);
 
 document.addEventListener('DOMContentLoaded', ()=>{
   Auth.renderAuthArea();
