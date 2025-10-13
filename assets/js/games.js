@@ -58,20 +58,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
     img.src = game.thumbnail || '';
     img.alt = game.title || 'Game thumbnail';
 
-    const meta = document.createElement('div');
-    const title = document.createElement('strong');
-    title.textContent = game.title || 'Untitled';
-    const idline = document.createElement('div');
-    idline.style.fontSize = '12px';
-    idline.style.color = '#6a4b8f';
-    idline.textContent = game.id ? ('Project ' + game.id) : '';
-    const desc = document.createElement('div');
-    desc.className = 'game-desc';
-    desc.textContent = game.desc || '';
-
-    meta.appendChild(title);
-    meta.appendChild(idline);
-    meta.appendChild(desc);
+  const meta = document.createElement('div');
+  const idline = document.createElement('div');
+  idline.style.fontSize = '12px';
+  idline.style.color = '#6a4b8f';
+  idline.textContent = game.id ? ('Project ' + game.id) : '';
+  meta.appendChild(idline);
 
     div.appendChild(img);
     div.appendChild(meta);
