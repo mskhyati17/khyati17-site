@@ -149,3 +149,44 @@ body{
 .game-card .thumb{width:100%;height:100%;display:block;border-radius:8px;background:#eee;display:flex;align-items:center;justify-content:center;font-weight:700;color:#6a1b9a}
 .game-card small{display:block;margin-top:6px;color:#5b3a78;font-size:12px;text-align:center}
 .game-close{position:absolute;right:12px;top:12px;background:rgba(0,0,0,0.6);color:white;padding:6px 8px;border-radius:6px;cursor:pointer}
+
+/* Two-column games layout: left list, right big player */
+.games-layout{
+  display:flex;
+  gap:18px;
+  max-width:1200px;
+  margin:18px auto;
+  width:100%;
+}
+.games-list-left{
+  width:25%;
+  min-width:180px;
+  background:rgba(154,68,204,0.02);
+  border-radius:8px;
+  padding:12px;
+  height:calc(100vh - 200px);
+  overflow:auto;
+}
+.games-list-left .game-item{display:flex;align-items:center;gap:8px;padding:8px;border-radius:8px;cursor:pointer}
+.games-list-left .game-item:hover{background:rgba(154,68,204,0.03)}
+.games-list-left .game-item.selected{background:linear-gradient(90deg, rgba(154,68,204,0.08), rgba(154,68,204,0.04));border-left:4px solid var(--purple-700)}
+.games-list-left .game-item .mini{width:72px;height:54px;border-radius:6px;background:#eee;display:flex;align-items:center;justify-content:center;font-weight:700;color:#6a1b9a;overflow:hidden}
+.games-list-left .game-item .mini img{width:100%;height:100%;object-fit:cover;display:block}
+.game-desc{font-size:13px;color:#5b3a78;margin-top:6px}
+.games-player-right{width:75%;min-height:520px;display:flex;flex-direction:column}
+.games-player-right .player-area{flex:1;border-radius:8px;overflow:hidden;position:relative}
+.games-player-right .player-area iframe{width:100%;height:100%;border:0}
+
+/* flash animation when game changed */
+.player-flash{animation:playerFlash 700ms ease}
+@keyframes playerFlash{
+  0%{box-shadow:0 0 0 6px rgba(154,68,204,0.0)}
+  30%{box-shadow:0 0 0 12px rgba(154,68,204,0.18)}
+  100%{box-shadow:0 6px 18px rgba(117,80,168,0.06)}
+}
+
+@media(max-width:900px){
+  .games-layout{flex-direction:column}
+  .games-list-left{width:100%;height:auto}
+  .games-player-right{width:100%}
+}

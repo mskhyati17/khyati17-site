@@ -25,24 +25,17 @@
   <main class="hero">
     <h2>Welcome to Khyati's page</h2>
     <p>Purple-themed place for games, stories, videos and more.</p>
-    <section class="games-list" style="margin-top:18px;text-align:center;">
-      <h3>Play a Scratch game</h3>
-      <p>Click a game cube to open it in the player above. Close the player to return to the grid.</p>
-      <div class="games-player">
-        <div id="player-area" class="player-area" style="position:relative;">
-          <div id="player-close" class="game-close">Close</div>
-          <iframe id="games-player-iframe" src="" frameborder="0" allowfullscreen allow="autoplay; microphone; camera; clipboard-write"></iframe>
-        </div>
-      </div>
+    <section class="games-list" style="margin-top:18px;">
+      <div class="games-layout">
+        <aside class="games-list-left" aria-label="Games list">
+          <h3 style="margin-top:0">Games</h3>
+          <div id="games-list-container"></div>
+        </aside>
 
-      <div class="games-grid">
-        <div class="game-card" data-src="https://scratch.mit.edu/projects/1203372098/embed">
-          <div class="thumb">Game 1</div>
-          <small>Project 1203372098</small>
-        </div>
-        <div class="game-card" data-src="https://scratch.mit.edu/projects/1203678096/embed">
-          <div class="thumb">Game 2</div>
-          <small>Project 1203678096</small>
+        <div class="games-player-right">
+          <div id="player-area" class="player-area player-flash" style="position:relative;">
+            <iframe id="games-player-iframe" src="" frameborder="0" allowfullscreen allow="autoplay; microphone; camera; clipboard-write"></iframe>
+          </div>
         </div>
       </div>
     </section>
