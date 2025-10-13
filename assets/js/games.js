@@ -56,7 +56,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
     img.className = 'mini';
     img.loading = 'lazy';
     img.src = game.thumbnail || '';
-    img.alt = game.title || 'Game thumbnail';
+  // keep alt empty since we don't show titles
+  img.alt = '';
 
   const meta = document.createElement('div');
   const idline = document.createElement('div');
