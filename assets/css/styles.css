@@ -157,15 +157,17 @@ body{
   max-width:1200px;
   margin:18px auto;
   width:100%;
+  align-items:flex-start; /* keep columns aligned at top */
 }
 .games-list-left{
   width:25%;
-  min-width:180px;
+  min-width:220px;
   background:rgba(154,68,204,0.02);
   border-radius:8px;
   padding:12px;
-  height:calc(100vh - 200px);
+  max-height:calc(100vh - 160px); /* allow the list to scroll within viewport */
   overflow:auto;
+  position:relative;
 }
 .games-list-left .game-item{display:flex;align-items:center;gap:8px;padding:8px;border-radius:8px;cursor:pointer}
 .games-list-left .game-item:hover{background:rgba(154,68,204,0.03)}
@@ -175,7 +177,10 @@ body{
 .game-desc{font-size:13px;color:#5b3a78;margin-top:6px}
 .games-player-right{width:75%;min-height:520px;display:flex;flex-direction:column}
 .games-player-right .player-area{flex:1;border-radius:8px;overflow:hidden;position:relative}
-.games-player-right .player-area iframe{width:100%;height:100%;border:0}
+.games-player-right .player-area iframe{width:100%;height:520px;border:0}
+
+/* Make the player area sticky so it remains visible while the left list scrolls */
+.games-player-right .player-area.sticky{position:sticky;top:20px}
 
 /* flash animation when game changed */
 .player-flash{animation:playerFlash 700ms ease}
