@@ -1,7 +1,4 @@
--- Sample inserts for games (edit to match your real data)
-INSERT INTO public.games (title, embed, src, thumbnail, metadata) VALUES
-('Tetris Clone', 'https://scratch.mit.edu/projects/embed/123456/', 'https://scratch.mit.edu/projects/123456/', '/assets/img/tetris.png', '{"type":"puzzle"}'::jsonb),
-('Retro Racer', 'https://scratch.mit.edu/projects/embed/234567/', 'https://scratch.mit.edu/projects/234567/', '/assets/img/racer.png', '{"type":"racing"}'::jsonb);
+-- (Removed sample game inserts)
 
 -- Sample inserts for videos
 INSERT INTO public.videos (title, video_id, embed, thumbnail, metadata) VALUES
