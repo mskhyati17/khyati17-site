@@ -33,9 +33,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
         if(error) throw error;
         return data;
       }
-      const res = await fetch('/assets/data/games.json', {cache: 'no-store'});
-      if(!res.ok) throw new Error('Failed to fetch games.json: ' + res.status);
-      return await res.json();
+      // Try multiple candidate paths for local JSON (absolute and relative)
+      const candidates = ['/assets/data/games.json','assets/data/games.json','./assets/data/games.json'];
+      for(const p of candidates){
+        try{
+          const res = await fetch(p, {cache: 'no-store'});
+          if(!res.ok) { continue; }
+          const j = await res.json();
+          return j;
+        }catch(e){ /* try next */ }
+      }
+      throw new Error('Failed to fetch games.json from candidate paths');
     }catch(err){
       console.error(err);
       return [];
