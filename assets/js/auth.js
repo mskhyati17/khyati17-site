@@ -84,8 +84,18 @@ const SupabaseAuth = supabase ? {
     const res = await supabase.auth.signUp({email,password}, { data: metadata });
     if(res.error) return {ok:false,msg:res.error.message};
     // If session exists the user is confirmed and signed in; otherwise confirmation required
-    const confirmed = !!(res.data?.session);
-    return {ok:true, confirmed, data: res.data};
+    if(res.data?.session){
+      return {ok:true, confirmed:true, data: res.data};
+    }
+    // Some Supabase projects allow immediate sign-in; try signing in right away to get a session.
+    try{
+      const signInRes = await supabase.auth.signInWithPassword({email,password});
+      if(!signInRes.error && signInRes.data?.session){
+        return {ok:true, confirmed:true, data: signInRes.data};
+      }
+    }catch(e){ /* ignore */ }
+    // No session yet — user likely needs email confirmation
+    return {ok:true, confirmed:false, data: res.data};
   },
   async signin(email,password){
     const res = await supabase.auth.signInWithPassword({email,password});
