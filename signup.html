@@ -26,8 +26,9 @@
   <main class="hero">
     <h2>Create an account</h2>
     <form id="signup-form" style="max-width:420px;margin:16px auto;text-align:left;">
-      <label>Name<br/><input id="name" required/></label><br/>
-      <label>Username<br/><input id="username" required/></label><br/>
+  <label>First name<br/><input id="first_name" required/></label><br/>
+  <label>Last name<br/><input id="last_name" required/></label><br/>
+  <label>Username<br/><input id="username" required/></label><br/>
       <label>Email<br/><input id="email" type="email" required/></label><br/>
       <label>Password<br/><input id="password" type="password" required/></label><br/>
       <label>Confirm password<br/><input id="confirm" type="password" required/></label><br/>
@@ -49,17 +50,32 @@
     const form = document.getElementById('signup-form');
     form.addEventListener('submit', async e =>{
       e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const username = document.getElementById('username').value.trim();
+  const first_name = document.getElementById('first_name').value.trim();
+  const last_name = document.getElementById('last_name').value.trim();
+  const username = document.getElementById('username').value.trim();
       const email = document.getElementById('email').value.trim();
       const p = document.getElementById('password').value;
       const c = document.getElementById('confirm').value;
       const msg = document.getElementById('msg');
       if(p !== c){ msg.textContent = 'Passwords do not match'; return; }
-      const res = await Auth.signup(email,p,{name,username});
+  const res = await Auth.signup(email,p,{first_name,last_name,username});
       if(res.ok){
+        // Refresh auth UI; this will set the signed-in state if available
+        await Auth.renderAuthArea();
+        // If the user is actually signed in now, create the profile; otherwise store pending
+        const current = await Auth.currentUser();
+        if(current && current.id){
+          const profile = { id: current.id, first_name, last_name, username, email, metadata: { first_name, last_name, username } };
+          const created = await Auth.createProfile(profile);
+          console.debug('createProfile result', created);
+          if(!created.ok){ msg.textContent = 'Profile creation failed: ' + (created.msg || JSON.stringify(created.raw)); return; }
+        } else {
+          // Not signed-in yet; save pending profile for post-confirmation insertion
+          try{ localStorage.setItem('pending_profile', JSON.stringify({ first_name,last_name,username,email })); }catch(e){}
+        }
+
         if(res.confirmed === false){
-          msg.textContent = 'Account created — please check your email and confirm before signing in.';
+          msg.textContent = 'Account created — please check your email and confirm before signing in. Your profile will be saved after confirmation.';
         } else {
           msg.textContent = 'Account created — redirecting...'; setTimeout(()=>location.href='index.html',900);
         }

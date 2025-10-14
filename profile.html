@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Profile</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="assets/img/me.jpg" alt="Khyati" class="avatar"/>
+      <h1>Khyati</h1>
+    </div>
+    <nav class="main-nav">
+      <a href="fun-games.html" class="btn">Fun &amp; Games</a>
+      <a href="trading.html" class="btn">Trading</a>
+      <a href="stories.html" class="btn">Stories</a>
+      <a href="videos.html" class="btn">Videos</a>
+      <a href="others.html" class="btn">Others</a>
+      <a href="https://khyati17.com" class="btn btn-home" target="_self">Home</a>
+      <span id="auth-area"></span>
+    </nav>
+  </header>
+
+  <main style="max-width:720px;margin:18px auto;padding:12px">
+    <h2>Your Profile</h2>
+    <form id="profile-form" style="max-width:480px;margin-top:8px">
+      <label>First name<br/><input id="first_name"/></label><br/>
+      <label>Last name<br/><input id="last_name"/></label><br/>
+      <label>Username<br/><input id="username"/></label><br/>
+      <label>Email<br/><input id="email" disabled/></label><br/>
+      <label>Avatar URL<br/><input id="avatar_url"/></label><br/>
+      <button class="btn" type="submit">Save profile</button>
+      <p id="msg" style="color:#7a2a9b"></p>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Khyati — All rights reserved</p>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script type="module">
+    import { Auth, AuthReady } from './assets/js/auth.js';
+
+    async function loadProfile(){
+      const u = await Auth.currentUser();
+      if(!u){ location.href='login.html'; return; }
+      document.getElementById('email').value = u.email || '';
+      // fetch profile row if available
+      const p = await Auth.getProfile(u.id || u.email);
+      if(p.ok && p.profile){
+        document.getElementById('first_name').value = p.profile.first_name || '';
+        document.getElementById('last_name').value = p.profile.last_name || '';
+        document.getElementById('username').value = p.profile.username || '';
+        document.getElementById('avatar_url').value = p.profile.avatar_url || '';
+      }
+    }
+
+    document.getElementById('profile-form').addEventListener('submit', async e=>{
+      e.preventDefault();
+      const u = await Auth.currentUser();
+      if(!u){ location.href='login.html'; return; }
+      const profile = {
+        id: u.id,
+        first_name: document.getElementById('first_name').value.trim(),
+        last_name: document.getElementById('last_name').value.trim(),
+        username: document.getElementById('username').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        avatar_url: document.getElementById('avatar_url').value.trim(),
+        metadata: {}
+      };
+      const res = await Auth.createProfile(profile);
+      const msg = document.getElementById('msg');
+      if(res.ok){ msg.textContent = 'Profile saved.'; setTimeout(()=>location.reload(),600); } else msg.textContent = res.msg || 'Failed to save profile';
+    });
+
+    // Wait (with timeout) for the auth module to finish initializing
+    async function withTimeout(p, ms=5000){
+      let t;
+      const timeout = new Promise((_, rej)=> t = setTimeout(()=> rej(new Error('timeout')), ms));
+      try{ const r = await Promise.race([p, timeout]); clearTimeout(t); return r; }catch(e){ clearTimeout(t); throw e }
+    }
+
+    try{
+      await withTimeout(Auth.ready || AuthReady, 5000);
+    }catch(e){ console.warn('Auth.ready not resolved in time, but Auth may still be available', e); }
+
+    // If ready, load the profile. If not, try a short poll for Auth.currentUser
+    if(typeof Auth.currentUser === 'function'){
+      await loadProfile();
+    }else{
+      // fallback polling
+      const start = Date.now();
+      const maxMs = 10000;
+      let failed = false;
+      while(typeof Auth.currentUser !== 'function'){
+        if(Date.now() - start > maxMs){
+          document.getElementById('msg').textContent = 'Auth initialization failed — try reloading.';
+          failed = true;
+          break;
+        }
+        await new Promise(r=>setTimeout(r, 100));
+      }
+      if(!failed) await loadProfile();
+    }
+  </script>
+</body>
+</html>

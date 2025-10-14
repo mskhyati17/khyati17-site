@@ -50,8 +50,36 @@
       const p = document.getElementById('password').value;
       const res = await Auth.signin(email,p);
       const msg = document.getElementById('msg');
-  if(res.ok){ msg.textContent = 'Signed in — redirecting...'; await Auth.renderAuthArea(); setTimeout(()=>location.href='index.html',700); }
-      else msg.textContent = res.msg;
+      console.debug('Auth.signin returned', res);
+      // Show the raw response for debugging so you can paste it here if something fails
+      try{ msg.textContent = JSON.stringify(res); }catch(e){ msg.textContent = String(res); }
+
+      // If using Supabase, only redirect when a session is present
+      const isSupabase = window.Auth && window.Auth.isSupabase;
+      const hasSession = res?.data?.session || res?.data?.access_token || res?.raw?.data?.session || res?.raw?.data?.access_token;
+
+      if(res.ok && (!isSupabase || hasSession || res.confirmed === true)){
+        // Signed in (or demo auth). Update UI and redirect to home.
+        await Auth.renderAuthArea();
+        msg.textContent = 'Signed in — redirecting...';
+        setTimeout(()=>location.href='index.html',700);
+        return;
+      }
+
+      // At this point either sign-in failed or Supabase requires email confirmation
+      if(res.ok && isSupabase && res.confirmed === false){
+        msg.textContent = 'Sign-up succeeded but confirmation required. Check your email (and spam) for a confirmation link.';
+        return;
+      }
+
+      // Provide a clearer error message when available
+      if(res && res.msg) {
+        msg.textContent = res.msg;
+        return;
+      }
+
+      // Fallback error
+      msg.textContent = 'Sign-in failed. Open the console and network tab for details.';
     });
   </script>
 </body>

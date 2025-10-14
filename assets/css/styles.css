@@ -21,8 +21,8 @@ body{
   width:100%;
   background: linear-gradient(90deg,var(--purple-700),var(--purple-500));
   color:white;
-  /* reduced vertical padding to make the purple strip thinner */
-  padding:8px 16px;
+  /* slightly narrower vertical padding for a thinner purple strip */
+  padding:6px 12px;
   box-shadow:0 3px 10px rgba(0,0,0,0.08);
 }
 .brand{
@@ -34,12 +34,14 @@ body{
 }
 .brand .avatar{
   /* larger avatar across pages */
-  height:80px;
-  width:80px;
+  height:96px;
+  width:96px;
   object-fit:cover;
   border-radius:50%;
   border:3px solid rgba(255,255,255,0.15);
 }
+/* make avatar indicate clickability when JS enables it */
+.brand .avatar.clickable{cursor:pointer}
 .brand h1{margin:0;font-size:20px}
 /* hide static site name in header; auth area will display "Welcome <name>" */
 .brand h1{display:none}
@@ -49,6 +51,14 @@ body{
   gap:12px;
   justify-content:center;
   align-items:center;
+}
+.site-header #header-greeting{max-width:var(--max-width);margin:0 auto;padding:4px 12px;text-align:center;font-weight:700}
+.site-header #header-greeting{font-size:14px;line-height:1}
+/* animated reveal for the greeting so it doesn't reflow nav */
+.site-header #header-greeting{opacity:0;transform:translateY(-6px);transition:opacity .28s ease,transform .28s ease}
+.site-header #header-greeting.visible{opacity:1;transform:translateY(0)}
+@media(min-width:900px){
+  .site-header #header-greeting{font-size:16px}
 }
 .main-nav a{
   color:white;
