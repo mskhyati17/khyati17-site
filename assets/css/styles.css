@@ -210,3 +210,15 @@ body{
   .games-list-left{width:100%;height:auto}
   .games-player-right{width:100%}
 }
+
+/* Comments should appear below the player (like YouTube) and not shrink the player.
+   The player keeps a fixed height; the comments area is full-width below with its own scrolling. */
+.games-player-right{flex-direction:column}
+.games-player-right .player-area{flex:0 0 auto;position:relative;z-index:1}
+.games-player-right .player-area iframe{width:100%;height:520px;border:0;display:block}
+.comments-area{width:100%;max-width:900px;margin:12px auto;padding:12px;background:#fff;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.06);z-index:5}
+.comments-area .comments-list{max-height:360px;overflow:auto;padding-right:6px}
+
+@media(max-width:900px){
+  .comments-area{margin-top:12px}
+}

@@ -26,6 +26,13 @@
   <main class="hero">
     <h2>Welcome</h2>
     <p>Purple-themed place for games, stories, videos and more.</p>
+    <section style="margin-top:18px;">
+      <div id="comments-area" class="comments-area" style="max-width:900px;margin:12px auto;padding:12px;">
+        <h4 style="margin:6px 0 12px">Comments</h4>
+        <div id="comments-list" style="margin-bottom:12px"></div>
+        <div id="comment-form-wrapper"></div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -36,5 +43,16 @@
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
   <script type="module" src="assets/js/auth.js"></script>
+  <script type="module">
+    import { fetchComments, renderCommentsInto } from './assets/js/comments.js';
+    document.addEventListener('DOMContentLoaded', async ()=>{
+      if(window.AuthReady) try{ await window.AuthReady }catch(e){}
+      const commentsList = document.getElementById('comments-list');
+      const cid = document.querySelector('[data-content-id]')?.getAttribute('data-content-id') || null;
+      if(!cid) return;
+      const comments = await fetchComments('story', cid);
+      renderCommentsInto(commentsList, comments);
+    });
+  </script>
 </body>
 </html>

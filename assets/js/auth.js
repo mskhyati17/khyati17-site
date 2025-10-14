@@ -57,6 +57,9 @@ if(!SUPABASE_URL || !SUPABASE_ANON_KEY){
   supabaseInitError = supabaseInitError || 'missing SUPABASE_URL or SUPABASE_ANON_KEY';
 }
 
+// Expose supabase client on window for other scripts to use (may be null)
+try{ window.supabase = supabase; }catch(e){ /* ignore in non-browser env */ }
+
 // Small HTML escaper used by both DemoAuth and SupabaseAuth renderers
 function escapeHtml(s){
   return String(s).replace(/[&<>"']/g, c=> ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
@@ -305,5 +308,5 @@ document.addEventListener('DOMContentLoaded', async ()=>{
   try{ __authReadyResolve && __authReadyResolve(); }catch(e){/* ignore */}
 });
 
-  // Export Auth and readiness promise so other pages can import them directly
-  export { Auth, AuthReady };
+  // Export Auth, readiness promise and supabase client so other pages can import them directly
+  export { Auth, AuthReady, supabase };

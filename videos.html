@@ -36,6 +36,11 @@
       <iframe width="640" height="360" src="https://www.youtube.com/embed/LixDSK0BRFs" title="TERE ISHK MEIN TEASER (Hindi) | Dhanush, Kriti Sanon | A. R. Rahman | Aanand L Rai | Bhushan Kumar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
     <p class="video-note">Tip: to use your own video, replace the <code>VIDEO_ID</code> in the iframe src with the ID from a YouTube share link.</p>
+    <div id="comments-area" class="comments-area" style="max-width:900px;margin:12px auto;padding:12px;">
+      <h4 style="margin:6px 0 12px">Comments</h4>
+      <div id="comments-list" style="margin-bottom:12px"></div>
+      <div id="comment-form-wrapper"></div>
+    </div>
   </section>
 
   <footer class="site-footer">
@@ -46,5 +51,17 @@
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
   <script type="module" src="assets/js/auth.js"></script>
+  <script type="module">
+    import { fetchComments, renderCommentsInto } from './assets/js/comments.js';
+    document.addEventListener('DOMContentLoaded', async ()=>{
+      if(window.AuthReady) try{ await window.AuthReady }catch(e){}
+      const commentsList = document.getElementById('comments-list');
+      // try to read data-content-id from a meta tag or element you set when rendering the page
+      const cid = document.querySelector('[data-content-id]')?.getAttribute('data-content-id') || null;
+      if(!cid) return;
+      const comments = await fetchComments('video', cid);
+      renderCommentsInto(commentsList, comments);
+    });
+  </script>
 </body>
 </html>
