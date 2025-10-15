@@ -3,8 +3,9 @@
 
 BEGIN;
 
--- Create s table linked to auth.users
-CREATE TABLE IF NOT EXISTS public.s (
+
+-- Create profiles table linked to auth.users (named `profiles` so client code matches)
+CREATE TABLE IF NOT EXISTS public.profiles (
   id uuid PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
   first_name text,
   last_name text,
@@ -16,7 +17,7 @@ CREATE TABLE IF NOT EXISTS public.s (
   updated_at timestamptz DEFAULT now() NOT NULL
 );
 
-CREATE INDEX IF NOT EXISTS s_username_idx ON public.s (username);
+CREATE INDEX IF NOT EXISTS profiles_username_idx ON public.profiles (username);
 
 -- Trigger to update updated_at
 CREATE OR REPLACE FUNCTION public.set_timestamp() RETURNS trigger AS $$
@@ -26,26 +27,26 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-DROP TRIGGER IF EXISTS set_timestamp ON public.s;
-CREATE TRIGGER set_timestamp BEFORE UPDATE ON public.s
+DROP TRIGGER IF EXISTS set_timestamp ON public.profiles;
+CREATE TRIGGER set_timestamp BEFORE UPDATE ON public.profiles
 FOR EACH ROW EXECUTE FUNCTION public.set_timestamp();
 
 -- Enable Row Level Security and add sample policies that allow
 -- authenticated users to manage their own  row.
-ALTER TABLE public.s ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.profiles ENABLE ROW LEVEL SECURITY;
 
--- Allow authenticated users to insert their own  (auth.uid() must equal id)
-DROP POLICY IF EXISTS "s_insert" ON public.s;
-CREATE POLICY "s_insert" ON public.s
+-- Allow authenticated users to insert their own profile (auth.uid() must equal id)
+DROP POLICY IF EXISTS "profiles_insert" ON public.profiles;
+CREATE POLICY "profiles_insert" ON public.profiles
   FOR INSERT
   WITH CHECK ( auth.uid() = id );
 
-DROP POLICY IF EXISTS "s_select" ON public.s;
-CREATE POLICY "s_select" ON public.s
+DROP POLICY IF EXISTS "profiles_select" ON public.profiles;
+CREATE POLICY "profiles_select" ON public.profiles
   FOR SELECT USING ( auth.uid() = id );
 
-DROP POLICY IF EXISTS "s_update" ON public.s;
-CREATE POLICY "s_update" ON public.s
+DROP POLICY IF EXISTS "profiles_update" ON public.profiles;
+CREATE POLICY "profiles_update" ON public.profiles
   FOR UPDATE USING ( auth.uid() = id ) WITH CHECK ( auth.uid() = id );
 
 COMMIT;

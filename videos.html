@@ -12,16 +12,8 @@
       <img src="assets/img/me.jpg" alt="Khyati" class="avatar"/>
       <h1>Khyati</h1>
     </div>
-    <nav class="main-nav">
-  <a href="https://ai.khyati17.com" class="btn">AI Tools</a>
-  <a href="fun-games.html" class="btn">Fun &amp; Games</a>
-  <a href="https://TradeWith.khyati17.com" class="btn">Trading</a>
-  <a href="stories.html" class="btn">Stories</a>
-  <a href="videos.html" class="btn">Videos</a>
-  <a href="others.html" class="btn">Others</a>
-  <a href="https://khyati17.com" class="btn btn-home" target="_self">Home</a>
-  <span id="auth-area"></span>
-    </nav>
+    <!-- header is injected here by assets/js/loadHeader.js -->
+    <div id="site-header-root"></div>
   </header>
 
   <main class="hero">
@@ -37,7 +29,11 @@
       <iframe width="640" height="360" src="https://www.youtube.com/embed/LixDSK0BRFs" title="TERE ISHK MEIN TEASER (Hindi) | Dhanush, Kriti Sanon | A. R. Rahman | Aanand L Rai | Bhushan Kumar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
     <p class="video-note">Tip: to use your own video, replace the <code>VIDEO_ID</code> in the iframe src with the ID from a YouTube share link.</p>
+    <div id="admin-area" style="max-width:900px;margin:12px auto;padding:12px;"></div>
     <div id="comments-area" class="comments-area" style="max-width:900px;margin:12px auto;padding:12px;">
+      <!-- data-content-id ties comments to this video; used by assets/js/comments.js -->
+      <!-- For the featured video we use the YouTube id as content id -->
+      <div data-content-id="LixDSK0BRFs"></div>
       <h4 style="margin:6px 0 12px">Comments</h4>
       <div id="comments-list" style="margin-bottom:12px"></div>
       <div id="comment-form-wrapper"></div>
@@ -52,6 +48,14 @@
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
   <script type="module" src="assets/js/auth.js"></script>
+  <script type="module">import('./assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
+  <script type="module">
+    import { mountAdminUI } from './assets/js/admin.js';
+    document.addEventListener('DOMContentLoaded', async ()=>{
+      if(window.AuthReady) try{ await window.AuthReady }catch(e){}
+      mountAdminUI('videos');
+    });
+  </script>
   <script type="module">
     import { fetchComments, renderCommentsInto } from './assets/js/comments.js';
     document.addEventListener('DOMContentLoaded', async ()=>{

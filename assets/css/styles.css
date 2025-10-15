@@ -52,13 +52,13 @@ body{
   justify-content:center;
   align-items:center;
 }
-.site-header #header-greeting{max-width:var(--max-width);margin:0 auto;padding:4px 12px;text-align:center;font-weight:700}
-.site-header #header-greeting{font-size:14px;line-height:1}
+.site-header #header-greeting{max-width:var(--max-width);margin:0 auto;padding:6px 12px;text-align:center;font-weight:800}
+.site-header #header-greeting{font-size:18px;line-height:1.05}
 /* animated reveal for the greeting so it doesn't reflow nav */
 .site-header #header-greeting{opacity:0;transform:translateY(-6px);transition:opacity .28s ease,transform .28s ease}
 .site-header #header-greeting.visible{opacity:1;transform:translateY(0)}
 @media(min-width:900px){
-  .site-header #header-greeting{font-size:16px}
+  .site-header #header-greeting{font-size:22px}
 }
 .main-nav a{
   color:white;
@@ -104,16 +104,16 @@ body{
 .video-wrapper{
   position:relative;
   width:100%;
-  padding-bottom:56.25%; /* 16:9 ratio */
-  height:0;
+  /* prefer aspect-ratio when supported for simpler responsiveness */
+  aspect-ratio: 16 / 9;
+  height: auto;
   overflow:hidden;
   border-radius:8px;
   box-shadow:0 6px 18px rgba(117,80,168,0.04);
 }
 .video-wrapper iframe{
-  position:absolute;
-  top:0;left:0;
-  width:100%;height:100%;
+  width:100%;
+  height:100%;
   border:0;
 }
 .video-note{font-size:13px;color:#5b3a78;margin-top:8px}
@@ -148,7 +148,9 @@ body{
 }
 .games-player .player-area{
   width:100%;
-  height:420px;
+  /* use aspect-ratio where helpful; keep a reasonable min-height on large screens */
+  aspect-ratio: 16 / 9;
+  min-height:260px;
   background:#fff;
   border-radius:8px;
   box-shadow:0 6px 18px rgba(117,80,168,0.06);
@@ -190,9 +192,9 @@ body{
 .games-list-left .game-item .mini{width:72px;height:54px;border-radius:6px;background:#eee;display:flex;align-items:center;justify-content:center;font-weight:700;color:#6a1b9a;overflow:hidden}
 .games-list-left .game-item .mini img{width:100%;height:100%;object-fit:cover;display:block}
 .game-desc{font-size:13px;color:#5b3a78;margin-top:6px}
-.games-player-right{width:75%;min-height:520px;display:flex;flex-direction:column}
+.games-player-right{width:75%;display:flex;flex-direction:column}
 .games-player-right .player-area{flex:1;border-radius:8px;overflow:hidden;position:relative}
-.games-player-right .player-area iframe{width:100%;height:520px;border:0}
+.games-player-right .player-area iframe{width:100%;height:100%;border:0}
 
 /* Make the player area sticky so it remains visible while the left list scrolls */
 .games-player-right .player-area.sticky{position:sticky;top:20px}
@@ -206,9 +208,26 @@ body{
 }
 
 @media(max-width:900px){
-  .games-layout{flex-direction:column}
-  .games-list-left{width:100%;height:auto}
+  .games-layout{flex-direction:column;padding:8px}
+  .games-list-left{width:100%;height:auto;max-height:none}
   .games-player-right{width:100%}
+  .brand .avatar{height:64px;width:64px}
+  .hero{padding:16px;margin:18px auto}
+  .site-header{padding:8px}
+  .site-header #header-greeting{font-size:16px}
+  .main-nav a{padding:6px 8px;font-size:14px}
+  .video-wrapper{aspect-ratio:16/9}
+  .games-player .player-area{min-height:180px}
+  .games-player-right .player-area iframe{height:100%}
+}
+
+/* Extra small screens — tighten spacing */
+@media(max-width:420px){
+  .brand .avatar{height:56px;width:56px}
+  .hero{padding:12px}
+  .main-nav{gap:8px}
+  .main-nav a{padding:6px 6px;font-size:13px}
+  .games-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px}
 }
 
 /* Comments should appear below the player (like YouTube) and not shrink the player.

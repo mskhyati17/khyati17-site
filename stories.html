@@ -12,26 +12,27 @@
       <img src="assets/img/me.jpg" alt="Khyati" class="avatar"/>
       <h1>Khyati</h1>
     </div>
-    <nav class="main-nav">
-  <a href="https://ai.khyati17.com" class="btn">AI Tools</a>
-  <a href="fun-games.html" class="btn">Fun &amp; Games</a>
-  <a href="https://TradeWith.khyati17.com" class="btn">Trading</a>
-  <a href="stories.html" class="btn">Stories</a>
-  <a href="videos.html" class="btn">Videos</a>
-  <a href="others.html" class="btn">Others</a>
-  <a href="https://khyati17.com" class="btn btn-home" target="_self">Home</a>
-  <span id="auth-area"></span>
-    </nav>
+    <div id="site-header-root"></div>
   </header>
 
   <main class="hero">
-    <h2>Welcome</h2>
-    <p>Purple-themed place for games, stories, videos and more.</p>
-    <section style="margin-top:18px;">
-      <div id="comments-area" class="comments-area" style="max-width:900px;margin:12px auto;padding:12px;">
-        <h4 style="margin:6px 0 12px">Comments</h4>
-        <div id="comments-list" style="margin-bottom:12px"></div>
-        <div id="comment-form-wrapper"></div>
+    <h2>Stories</h2>
+    <p>Purple-themed place for stories and more.</p>
+
+    <section class="stories-layout" style="margin-top:18px;display:flex;gap:18px;max-width:1200px;margin-left:auto;margin-right:auto">
+      <aside id="stories-list" style="width:25%;min-width:220px;max-height:70vh;overflow:auto;background:rgba(154,68,204,0.02);padding:12px;border-radius:8px">
+        <h3 style="margin-top:0">Stories</h3>
+        <div id="stories-list-container"></div>
+      </aside>
+
+      <div style="width:75%;min-height:400px;display:flex;flex-direction:column">
+        <div id="admin-area" style="margin-bottom:12px"></div>
+        <article id="story-content" style="background:#fff;padding:16px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.06);overflow:auto;max-height:70vh"></article>
+        <div id="comments-area" class="comments-area" style="margin-top:12px">
+          <h4 style="margin:6px 0 12px">Comments</h4>
+          <div id="comments-list" style="margin-bottom:12px"></div>
+          <div id="comment-form-wrapper"></div>
+        </div>
       </div>
     </section>
   </main>
@@ -44,16 +45,58 @@
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
   <script type="module" src="assets/js/auth.js"></script>
+  <script type="module">import('./assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
   <script type="module">
     import { fetchComments, renderCommentsInto } from './assets/js/comments.js';
+    import adminModule from './assets/js/admin.js';
+
+    async function loadStories(){
+      let stories = [];
+      if(window.supabase){
+        try{ const { data, error } = await window.supabase.from('stories').select('*').order('created_at', {ascending:false}); if(!error) stories = data; }
+        catch(e){ console.warn('supabase fetch stories failed', e); }
+      } else {
+        stories = JSON.parse(localStorage.getItem('khyati_stories_admin')||'[]');
+      }
+      const container = document.getElementById('stories-list-container'); container.innerHTML = '';
+      stories.forEach(s=>{
+        const a = document.createElement('div'); a.style.padding='8px'; a.style.cursor='pointer'; a.style.borderBottom='1px solid rgba(106,27,154,0.04)';
+        a.textContent = s.title || s.slug || '(untitled)';
+        a.addEventListener('click', ()=> showStory(s));
+        container.appendChild(a);
+      });
+      if(stories[0]) showStory(stories[0]);
+    }
+
+    function showStory(s){
+      const el = document.getElementById('story-content');
+      if(!el) return;
+      el.innerHTML = `<h2>${escapeHtml(s.title||'')}</h2><p style="color:#6a4b8f">${escapeHtml(s.excerpt||'')}</p><div>${escapeHtml(s.body||'')}</div>`;
+      // set a data-content-id for comments to pick up
+      el.setAttribute('data-content-id', s.slug || s.id || (s.title||'').replace(/\s+/g,'-').toLowerCase());
+      // load comments for this story
+      (async ()=>{
+        const cid = el.getAttribute('data-content-id');
+        const comments = await fetchComments('story', cid);
+        const commentsList = document.getElementById('comments-list');
+        renderCommentsInto(commentsList, comments);
+        // render comment form via games.js helper style
+        // comments loader will call AuthReady if needed
+        // reuse existing renderCommentForm via a small hack: call fetch/render functions
+        // The comment form renderer in games.js is internal; we will just call renderCommentForm-like UI here inline
+      })();
+    }
+
+    // simple HTML escaper
+    function escapeHtml(s){ return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
     document.addEventListener('DOMContentLoaded', async ()=>{
       if(window.AuthReady) try{ await window.AuthReady }catch(e){}
-      const commentsList = document.getElementById('comments-list');
-      const cid = document.querySelector('[data-content-id]')?.getAttribute('data-content-id') || null;
-      if(!cid) return;
-      const comments = await fetchComments('story', cid);
-      renderCommentsInto(commentsList, comments);
+      await loadStories();
+      // mount admin UI if current user is admin
+      try{ await adminModule.mountAdminUI('stories'); }catch(e){/* ignore */}
     });
+    
   </script>
 </body>
 </html>

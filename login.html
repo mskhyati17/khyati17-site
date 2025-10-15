@@ -7,22 +7,7 @@
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand">
-      <img src="assets/img/me.jpg" alt="Khyati" class="avatar"/>
-      <h1>Khyati</h1>
-    </div>
-    <nav class="main-nav">
-  <a href="https://ai.khyati17.com" class="btn">AI Tools</a>
-  <a href="fun-games.html" class="btn">Fun &amp; Games</a>
-  <a href="https://TradeWith.khyati17.com" class="btn">Trading</a>
-  <a href="stories.html" class="btn">Stories</a>
-  <a href="videos.html" class="btn">Videos</a>
-  <a href="others.html" class="btn">Others</a>
-  <a href="https://khyati17.com" class="btn btn-home" target="_self">Home</a>
-  <span id="auth-area"></span>
-    </nav>
-  </header>
+  <div id="site-header-root"></div>
 
   <main class="hero">
     <h2>Sign in</h2>
@@ -43,6 +28,7 @@
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
   <script type="module" src="assets/js/auth.js"></script>
+  <script type="module">import('./assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
   <script>
     const form = document.getElementById('login-form');
     form.addEventListener('submit', async e =>{
@@ -52,8 +38,6 @@
       const res = await Auth.signin(email,p);
       const msg = document.getElementById('msg');
       console.debug('Auth.signin returned', res);
-      // Show the raw response for debugging so you can paste it here if something fails
-      try{ msg.textContent = JSON.stringify(res); }catch(e){ msg.textContent = String(res); }
 
       // If using Supabase, only redirect when a session is present
       const isSupabase = window.Auth && window.Auth.isSupabase;
