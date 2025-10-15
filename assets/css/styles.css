@@ -25,6 +25,7 @@ body{
   padding:6px 12px;
   box-shadow:0 3px 10px rgba(0,0,0,0.08);
 }
+.site-header .header-inner{max-width:var(--max-width);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .brand{
   display:flex;
   align-items:center;
@@ -46,12 +47,18 @@ body{
 /* hide static site name in header; auth area will display "Welcome <name>" */
 .brand h1{display:none}
 .main-nav{
-  margin-top:6px;
+  margin-top:0;
   display:flex;
   gap:12px;
-  justify-content:center;
+  justify-content:flex-end;
   align-items:center;
+  flex-wrap:wrap;
 }
+.main-nav .btn{white-space:nowrap}
+
+/* Focus styles for accessibility */
+.main-nav .btn:focus{outline:3px solid rgba(255,255,255,0.18);outline-offset:2px}
+.main-nav .btn{display:inline-flex;align-items:center;gap:6px}
 .site-header #header-greeting{max-width:var(--max-width);margin:0 auto;padding:6px 12px;text-align:center;font-weight:800}
 .site-header #header-greeting{font-size:18px;line-height:1.05}
 /* animated reveal for the greeting so it doesn't reflow nav */
@@ -77,6 +84,56 @@ body{
   border-radius:12px;
   box-shadow:0 6px 18px rgba(117,80,168,0.06);
   text-align:center;
+}
+.hero-rich{position:relative;padding:36px 22px;overflow:hidden;background:linear-gradient(135deg, rgba(156,77,204,0.12), rgba(106,27,154,0.06));color:#1b0133}
+.hero-inner{display:flex;gap:24px;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto}
+.hero-copy{flex:1;min-width:260px}
+.hero-copy h1{font-size:28px;margin:6px 0 8px;color:#2b0b3a}
+.hero-copy .lead{font-size:16px;margin-bottom:12px;color:#3a1850}
+.hero-ctas{margin-top:12px}
+.role-cta{margin-top:10px;color:#5b3a78;font-weight:600}
+.hero-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;width:420px}
+.hero-cards .card{background:white;padding:12px;border-radius:12px;box-shadow:0 8px 22px rgba(117,80,168,0.08);text-align:left;transform:translateY(12px);opacity:0;transition:transform .48s cubic-bezier(.22,.9,.27,1),opacity .48s ease}
+.hero-cards .card .card-emoji{font-size:28px;margin-bottom:8px}
+.hero-cards .card h4{margin:0 0 6px;font-size:15px;color:#6a1b9a}
+.hero-cards .card p{margin:0;color:#5b3a78;font-size:13px}
+
+/* Staggered entrance */
+.hero-cards .card:nth-child(1){transition-delay:120ms}
+.hero-cards .card:nth-child(2){transition-delay:220ms}
+.hero-cards .card:nth-child(3){transition-delay:320ms}
+.hero-cards .card:nth-child(4){transition-delay:420ms}
+.hero-rich .card.visible{transform:none;opacity:1}
+
+/* hover lift */
+.hero-cards .card:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 18px 32px rgba(117,80,168,0.12)}
+
+/* Animated floating decorative shapes */
+.hero-shapes .shape{position:absolute;border-radius:14px;filter:blur(10px);opacity:0.9}
+.hero-shapes .s1{width:220px;height:220px;background:linear-gradient(90deg,#ffd6e8,#c89cff);right:-60px;top:-40px;animation:floatY 8s ease-in-out infinite}
+.hero-shapes .s2{width:140px;height:140px;background:linear-gradient(90deg,#ffd8a8,#bfa1ff);left:-40px;bottom:-20px;animation:floatX 7s ease-in-out infinite}
+.hero-shapes .s3{width:90px;height:90px;background:linear-gradient(90deg,#b8f6ff,#d9b3ff);right:20%;top:60%;animation:floatY 9s ease-in-out infinite}
+
+@keyframes floatY{0%{transform:translateY(0)}50%{transform:translateY(-18px)}100%{transform:translateY(0)}}
+@keyframes floatX{0%{transform:translateX(0)}50%{transform:translateX(14px)}100%{transform:translateX(0)}}
+
+/* role-specific subtle color touches */
+.video-card{border-left:4px solid #6a1b9a}
+.web-card{border-left:4px solid #2b7cff}
+.story-card{border-left:4px solid #ff7ab6}
+.trader-card{border-left:4px solid #27ae60}
+
+/* Responsive: stack hero on small screens */
+@media(max-width:900px){
+  .hero-inner{flex-direction:column;align-items:flex-start}
+  .hero-cards{width:100%;grid-template-columns:repeat(2,1fr)}
+  .hero-copy{width:100%}
+  .hero-copy h1{font-size:22px}
+  .hero-shapes .s1{display:none}
+}
+
+@media(max-width:420px){
+  .hero-cards{grid-template-columns:1fr}
 }
 .site-footer{
   width:100%;
@@ -220,6 +277,33 @@ body{
   .games-player .player-area{min-height:180px}
   .games-player-right .player-area iframe{height:100%}
 }
+
+/* Hamburger toggle: hide the toggle on desktop, show on mobile */
+.nav-toggle{display:none;background:transparent;border:0;color:white;padding:8px;border-radius:8px}
+.nav-toggle svg{display:block}
+
+@media(max-width:900px){
+  .nav-toggle{display:inline-flex}
+  /* collapsed nav: hide and allow toggle */
+  .main-nav{display:block;width:100%;flex-direction:column;gap:8px;padding:0;margin-top:8px;overflow:hidden;max-height:0;transition:max-height .32s ease;background:linear-gradient(90deg,var(--purple-700),var(--purple-500));border-radius:8px}
+  .main-nav.open{max-height:420px;padding:12px}
+  .header-inner{flex-direction:row;align-items:center}
+}
+
+/* backdrop overlay when nav open: use opacity + pointer-events so we can animate and trap focus */
+.nav-backdrop{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.35);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .24s ease;
+  z-index:40;
+}
+.nav-backdrop.visible{opacity:1;pointer-events:auto}
+
+/* visually hidden helper */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
 /* Extra small screens — tighten spacing */
 @media(max-width:420px){

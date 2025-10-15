@@ -9,13 +9,52 @@
 <body>
   <div id="site-header-root"></div>
 
-  <main class="hero">
-    <h2>Welcome to Khyati17.com</h2>
-    <p>Purple-themed place for games, stories, videos and more.</p>
-    <p style="margin-top:18px">
-      <a class="btn" href="signup.html">Create an account</a>
-      <a class="btn btn-ghost" href="login.html" style="margin-left:8px">Sign in</a>
-    </p>
+  <main class="hero hero-rich" role="main" aria-labelledby="hero-title">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1 id="hero-title">A small girl. Big dreams.</h1>
+        <p class="lead">Learn, create and share — become a video creator, web builder, storyteller and a confident stock trader.</p>
+        <p class="hero-ctas">
+          <a class="btn" href="signup.html">Get started</a>
+          <a class="btn btn-ghost" href="about.html" style="margin-left:10px">Learn more</a>
+        </p>
+        <div class="role-cta">From playful videos to smart trading — find the tools and tutorials here.</div>
+      </div>
+
+      <div class="hero-cards" aria-hidden="false">
+        <div class="card video-card">
+          <div class="card-emoji">🎥</div>
+          <h4>Video Creator</h4>
+          <p>Create fun videos, learn editing, and grow your channel.</p>
+        </div>
+        <div class="card web-card">
+          <div class="card-emoji">💻</div>
+          <h4>Website Creator</h4>
+          <p>Design beautiful sites with simple building blocks.</p>
+        </div>
+        <div class="card story-card">
+          <div class="card-emoji">📖</div>
+          <h4>Storyteller</h4>
+          <p>Write, publish and share imaginative stories.</p>
+        </div>
+        <div class="card trader-card">
+          <div class="card-emoji">📈</div>
+          <h4>Stock Trader</h4>
+          <p>Learn smart trading basics and practice with tools.</p>
+          <div class="sparkline-wrap">
+            <canvas class="mini-sparkline" width="240" height="64" aria-label="Mini stock sparkline"></canvas>
+          </div>
+          <div style="margin-top:8px"><button class="btn btn-ghost spark-toggle">Pause</button></div>
+        </div>
+      </div>
+
+      <!-- decorative animated shapes -->
+      <div class="hero-shapes" aria-hidden="true">
+        <span class="shape s1"></span>
+        <span class="shape s2"></span>
+        <span class="shape s3"></span>
+      </div>
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -27,5 +66,6 @@
   </script>
   <script type="module" src="assets/js/auth.js"></script>
   <script type="module">import('./assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
+  <script type="module" src="assets/js/hero.js"></script>
 </body>
 </html>
