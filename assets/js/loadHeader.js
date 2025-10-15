@@ -1,10 +1,20 @@
 export async function loadSharedHeader(){
   try{
-    const res = await fetch('/assets/includes/header.html');
-    if(!res.ok) throw new Error('Failed to fetch header include');
-    const html = await res.text();
-    const root = document.getElementById('site-header-root');
-    if(!root) return;
+    // ensure there is a mount point; some pages may not include it
+    let root = document.getElementById('site-header-root');
+    if(!root){ root = document.createElement('div'); root.id = 'site-header-root'; document.body.insertBefore(root, document.body.firstChild); }
+
+    // try a few likely paths for the include (relative and absolute) so the header
+    // works whether the site is served from root or a subpath, or opened via file://.
+    const tryPaths = ['assets/includes/header.html','./assets/includes/header.html','/assets/includes/header.html'];
+    let html = null;
+    for(const p of tryPaths){
+      try{
+        const res = await fetch(p);
+        if(res && res.ok){ html = await res.text(); break; }
+      }catch(e){ /* try next */ }
+    }
+    if(!html) throw new Error('Failed to fetch header include from any known path');
     root.innerHTML = html;
     // after injecting, call Auth.renderAuthArea if available
     try{ if(window.Auth && window.Auth.renderAuthArea) await window.Auth.renderAuthArea(); }catch(e){/* ignore */}
