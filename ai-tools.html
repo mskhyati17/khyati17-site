@@ -3,24 +3,59 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AI Tools</title>
+  <title>AI Tools — Khyati</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
   <div id="site-header-root"></div>
 
-  <main class="hero">
-    <h2>AI Tools</h2>
-    <p>Explore AI-powered tools and demos.</p>
+  <main class="hero ai-tools-main">
+    <div class="ai-tools-header">
+      <h2>🤖 AI Tools</h2>
+      <p>AI-powered tools built by Khyati — more coming soon!</p>
+    </div>
+
+    <div class="tools-grid">
+
+      <!-- News Aggregator -->
+      <a class="tool-card" href="https://anuragbhumca07-news-app.hf.space" target="_blank" rel="noopener noreferrer">
+        <div class="tool-icon">📰</div>
+        <div class="tool-body">
+          <h3>News Aggregator</h3>
+          <p>Latest headlines from BBC, CNN, Reuters, NBC and NYT — all in one place, updated live.</p>
+        </div>
+        <span class="tool-tag tool-tag-live">● Live</span>
+      </a>
+
+      <!-- Placeholder 2 -->
+      <div class="tool-card tool-card-soon">
+        <div class="tool-icon">🧠</div>
+        <div class="tool-body">
+          <h3>Coming Soon</h3>
+          <p>Another AI tool is on the way. Stay tuned!</p>
+        </div>
+        <span class="tool-tag tool-tag-soon">Coming Soon</span>
+      </div>
+
+      <!-- Placeholder 3 -->
+      <div class="tool-card tool-card-soon">
+        <div class="tool-icon">✨</div>
+        <div class="tool-body">
+          <h3>Coming Soon</h3>
+          <p>More tools being built. Check back soon!</p>
+        </div>
+        <span class="tool-tag tool-tag-soon">Coming Soon</span>
+      </div>
+
+    </div>
   </main>
 
   <footer class="site-footer">
     <p>© <span id="year"></span> Khyati — All rights reserved</p>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   <script type="module" src="assets/js/auth.js"></script>
+  <script type="module">import('./assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
 </body>
 </html>

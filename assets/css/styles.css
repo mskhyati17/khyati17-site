@@ -316,6 +316,54 @@ body{
   .games-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px}
 }
 
+/* AI Tools page */
+.ai-tools-main{text-align:center}
+.ai-tools-header h2{margin:0 0 8px;font-size:28px;color:#2b0b3a}
+.ai-tools-header p{color:#5b3a78;margin:0 0 28px;font-size:16px}
+.tools-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:20px;
+  text-align:left;
+  margin-top:8px;
+}
+.tool-card{
+  background:white;
+  border-radius:14px;
+  padding:22px;
+  box-shadow:0 6px 20px rgba(117,80,168,0.09);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  text-decoration:none;
+  color:inherit;
+  border:2px solid transparent;
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+  position:relative;
+}
+.tool-card:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(117,80,168,0.15);border-color:rgba(106,27,154,0.18)}
+.tool-card-soon{cursor:default;opacity:0.6}
+.tool-card-soon:hover{transform:none;box-shadow:0 6px 20px rgba(117,80,168,0.09);border-color:transparent}
+.tool-icon{font-size:36px;line-height:1}
+.tool-body h3{margin:0 0 6px;font-size:17px;color:#2b0b3a}
+.tool-body p{margin:0;font-size:14px;color:#5b3a78;line-height:1.5}
+.tool-tag{
+  display:inline-block;
+  font-size:12px;
+  font-weight:700;
+  padding:3px 10px;
+  border-radius:20px;
+  align-self:flex-start;
+  margin-top:auto;
+}
+.tool-tag-live{background:#e8f9ee;color:#1a7a3a}
+.tool-tag-soon{background:#f0eaff;color:#6a1b9a}
+
+@media(max-width:600px){
+  .tools-grid{grid-template-columns:1fr}
+  .ai-tools-header h2{font-size:22px}
+}
+
 /* Comments should appear below the player (like YouTube) and not shrink the player.
    The player keeps a fixed height; the comments area is full-width below with its own scrolling. */
 .games-player-right{flex-direction:column}
