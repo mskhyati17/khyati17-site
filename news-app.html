@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>News Aggregator — Khyati</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    .tool-frame-wrap {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 18px auto 36px;
+      padding: 0 12px;
+    }
+    .tool-frame-wrap iframe {
+      width: 100%;
+      height: 82vh;
+      min-height: 520px;
+      border: none;
+      border-radius: 14px;
+      box-shadow: 0 8px 28px rgba(117,80,168,0.12);
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="site-header-root"></div>
+
+  <div class="tool-frame-wrap">
+    <iframe
+      src="https://anuragbhumca07-news-app.hf.space"
+      title="News Aggregator"
+      allow="autoplay"
+      loading="lazy"
+    ></iframe>
+  </div>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Khyati — All rights reserved</p>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script type="module" src="assets/js/auth.js"></script>
+  <script type="module">import('./assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
+</body>
+</html>
