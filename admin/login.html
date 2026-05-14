@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sign in</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
 </head>
 <body>
   <div id="site-header-root"></div>
@@ -27,8 +27,8 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-  <script type="module" src="assets/js/auth.js"></script>
-  <script type="module">import('./assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
+  <script type="module" src="../assets/js/auth.js"></script>
+  <script type="module">import('../assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
   <script>
     const form = document.getElementById('login-form');
     form.addEventListener('submit', async e =>{
@@ -47,7 +47,7 @@
         // Signed in (or demo auth). Update UI and redirect to home.
         await Auth.renderAuthArea();
         msg.textContent = 'Signed in — redirecting...';
-        setTimeout(()=>location.href='index.html',700);
+        setTimeout(()=>location.href='../home/index.html',700);
         return;
       }
 

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Khyati — Home</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+  <div id="site-header-root"></div>
+
+  <main class="hero hero-rich" role="main" aria-labelledby="hero-title">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1 id="hero-title">A small girl. Big dreams.</h1>
+        <p class="lead">Learn, create and share — become a video creator, web builder, storyteller and a confident stock trader.</p>
+        <p class="hero-ctas">
+          <a class="btn" href="admin/signup.html">Get started</a>
+          <a class="btn btn-ghost" href="about/about.html" style="margin-left:10px">Learn more</a>
+        </p>
+        <div class="role-cta">From playful videos to smart trading — find the tools and tutorials here.</div>
+      </div>
+
+      <div class="hero-cards" aria-hidden="false">
+        <div class="card video-card">
+          <div class="card-emoji">🎥</div>
+          <h4>Video Creator</h4>
+          <p>Create fun videos, learn editing, and grow your channel.</p>
+        </div>
+        <div class="card web-card">
+          <div class="card-emoji">💻</div>
+          <h4>Website Creator</h4>
+          <p>Design beautiful sites with simple building blocks.</p>
+        </div>
+        <div class="card story-card">
+          <div class="card-emoji">📖</div>
+          <h4>Storyteller</h4>
+          <p>Write, publish and share imaginative stories.</p>
+        </div>
+        <div class="card trader-card">
+          <div class="card-emoji">📈</div>
+          <h4>Stock Trader</h4>
+          <p>Learn smart trading basics and practice with tools.</p>
+          <div class="sparkline-wrap">
+            <canvas class="mini-sparkline" width="240" height="64" aria-label="Mini stock sparkline"></canvas>
+          </div>
+          <div style="margin-top:8px"><button class="btn btn-ghost spark-toggle">Pause</button></div>
+        </div>
+      </div>
+
+      <!-- decorative animated shapes -->
+      <div class="hero-shapes" aria-hidden="true">
+        <span class="shape s1"></span>
+        <span class="shape s2"></span>
+        <span class="shape s3"></span>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Khyati — All rights reserved</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script type="module" src="../assets/js/auth.js"></script>
+  <script type="module">import('../assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
+  <script type="module" src="../assets/js/hero.js"></script>
+</body>
+</html>

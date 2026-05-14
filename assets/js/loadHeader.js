@@ -6,7 +6,7 @@ export async function loadSharedHeader(){
 
     // try a few likely paths for the include (relative and absolute) so the header
     // works whether the site is served from root or a subpath, or opened via file://.
-    const tryPaths = ['assets/includes/header.html','./assets/includes/header.html','/assets/includes/header.html'];
+    const tryPaths = ['../assets/includes/header.html','./assets/includes/header.html','/assets/includes/header.html','assets/includes/header.html'];
     let html = null;
     for(const p of tryPaths){
       try{
@@ -27,7 +27,7 @@ export async function loadSharedHeader(){
     // keyboard: make avatar enter key navigate to profile if signed in
     try{
       const avatar = root.querySelector('.brand .avatar');
-      if(avatar){ avatar.setAttribute('tabindex','0'); avatar.addEventListener('keydown', (ev)=>{ if(ev.key === 'Enter'){ try{ const u = window.Auth && window.Auth.currentUser && window.Auth.currentUser(); if(u) window.location.href='profile.html'; else window.location.href='login.html'; }catch(e){ window.location.href='login.html' } } }); }
+      if(avatar){ avatar.setAttribute('tabindex','0'); avatar.addEventListener('keydown', (ev)=>{ if(ev.key === 'Enter'){ try{ const u = window.Auth && window.Auth.currentUser && window.Auth.currentUser(); if(u) window.location.href='/admin/profile.html'; else window.location.href='/admin/login.html'; }catch(e){ window.location.href='/admin/login.html' } } }); }
     }catch(e){/* ignore */}
     // hamburger toggle for small screens
     try{

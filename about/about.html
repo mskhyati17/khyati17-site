@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Others</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <title>about</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="brand">
-      <img src="assets/img/me.jpg" alt="Khyati" class="avatar"/>
+      <img src="../assets/img/me.jpg" alt="Khyati" class="avatar"/>
       <h1>Khyati</h1>
     </div>
     <div id="site-header-root"></div>
@@ -27,7 +27,7 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-  <script type="module" src="assets/js/auth.js"></script>
-  <script type="module">import('./assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
+  <script type="module" src="../assets/js/auth.js"></script>
+  <script type="module">import('../assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
 </body>
 </html>

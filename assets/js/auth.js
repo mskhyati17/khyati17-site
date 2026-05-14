@@ -131,18 +131,18 @@ const DemoAuth = (() => {
         requestAnimationFrame(()=> g.classList.add('visible'));
       }catch(e){/* ignore */}
       // auth area should only show actions (Profile / Logout)
-      el.innerHTML = `<a href="profile.html" class="btn">Profile</a> <button id="logout-btn" class="btn">Logout</button>`;
+      el.innerHTML = `<a href="/admin/profile.html" class="btn">Profile</a> <button id="logout-btn" class="btn">Logout</button>`;
       // also update brand title (top-left) to show user's first name if present
       try{ const brand = document.querySelector('.brand h1'); if(brand) brand.textContent = escapeHtml(first); }catch(e){}
       const btn = document.getElementById('logout-btn');
       btn && btn.addEventListener('click', ()=>{ signout(); renderAuthArea(); location.reload(); });
   // make avatar clickable to profile
-  try{ const avatar = document.querySelector('.brand .avatar'); if(avatar){ avatar.classList.add('clickable'); avatar.onclick = ()=>{ const u = currentUser(); if(u) window.location.href='profile.html'; else window.location.href='login.html'; } } }catch(e){}
+  try{ const avatar = document.querySelector('.brand .avatar'); if(avatar){ avatar.classList.add('clickable'); avatar.onclick = ()=>{ const u = currentUser(); if(u) window.location.href='/admin/profile.html'; else window.location.href='/admin/login.html'; } } }catch(e){}
     } else {
       // remove greeting if present
       try{ const g = document.getElementById('header-greeting'); if(g) g.remove(); }catch(e){/* ignore */}
       // Optionally show links; by default keep header clean and open to everyone
-      if(SHOW_AUTH_LINKS){ el.innerHTML = `<a href="login.html" class="btn">Sign in</a> <a href="signup.html" class="btn btn-ghost">Sign up</a>`; }
+      if(SHOW_AUTH_LINKS){ el.innerHTML = `<a href="/admin/login.html" class="btn">Sign in</a> <a href="/admin/signup.html" class="btn btn-ghost">Sign up</a>`; }
       else { el.innerHTML = ''; }
       // restore site title when signed out
       try{ const brand = document.querySelector('.brand h1'); if(brand) brand.textContent = 'Khyati'; }catch(e){}
@@ -205,14 +205,14 @@ const SupabaseAuth = supabase ? {
           // reveal with animation (match DemoAuth behavior)
           try{ requestAnimationFrame(()=> g.classList.add('visible')); }catch(e){ /* ignore */ }
         }catch(e){/* ignore */}
-        el.innerHTML = `<a href="profile.html" class="btn">Profile</a> <button id="logout-btn" class="btn">Logout</button>`;
+        el.innerHTML = `<a href="/admin/profile.html" class="btn">Profile</a> <button id="logout-btn" class="btn">Logout</button>`;
         try{ const brand = document.querySelector('.brand h1'); if(brand) brand.textContent = escapeHtml(first); }catch(e){}
       const btn = document.getElementById('logout-btn');
       btn && btn.addEventListener('click', async ()=>{ await supabase.auth.signOut(); SupabaseAuth.renderAuthArea(); location.reload(); });
     // make avatar clickable to profile
-    try{ const avatar = document.querySelector('.brand .avatar'); if(avatar){ avatar.classList.add('clickable'); avatar.onclick = ()=>{ const u = current; if(u) window.location.href='profile.html'; else window.location.href='login.html'; } } }catch(e){}
+    try{ const avatar = document.querySelector('.brand .avatar'); if(avatar){ avatar.classList.add('clickable'); avatar.onclick = ()=>{ const u = current; if(u) window.location.href='/admin/profile.html'; else window.location.href='/admin/login.html'; } } }catch(e){}
     } else {
-      el.innerHTML = `<a href="login.html" class="btn">Sign in</a> <a href="signup.html" class="btn btn-ghost">Sign up</a>`;
+      el.innerHTML = `<a href="/admin/login.html" class="btn">Sign in</a> <a href="/admin/signup.html" class="btn btn-ghost">Sign up</a>`;
       try{ const brand = document.querySelector('.brand h1'); if(brand) brand.textContent = 'Khyati'; }catch(e){}
     }
   }

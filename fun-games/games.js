@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         return data;
       }
       // Try multiple candidate paths for local JSON (absolute and relative)
-      const candidates = ['/assets/data/games.json','assets/data/games.json','./assets/data/games.json'];
+      const candidates = ['/fun-games/games.json','fun-games/games.json','./fun-games/games.json','/assets/data/games.json','assets/data/games.json','./assets/data/games.json'];
       for(const p of candidates){
         try{
           const res = await fetch(p, {cache: 'no-store'});

@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sign up</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="brand">
-      <img src="assets/img/me.jpg" alt="Khyati" class="avatar"/>
+      <img src="../assets/img/me.jpg" alt="Khyati" class="avatar"/>
       <h1>Khyati</h1>
     </div>
     <div id="site-header-root"></div>
@@ -37,7 +37,7 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-  <script type="module" src="assets/js/auth.js"></script>
+  <script type="module" src="../assets/js/auth.js"></script>
   <script>
     const form = document.getElementById('signup-form');
     form.addEventListener('submit', async e =>{
@@ -69,7 +69,7 @@
         if(res.confirmed === false){
           msg.textContent = 'Account created — please check your email and confirm before signing in. Your profile will be saved after confirmation.';
         } else {
-          msg.textContent = 'Account created — redirecting...'; setTimeout(()=>location.href='index.html',900);
+          msg.textContent = 'Account created — redirecting...'; setTimeout(()=>location.href='../home/index.html',900);
         }
       } else msg.textContent = res.msg || 'Signup failed';
     });

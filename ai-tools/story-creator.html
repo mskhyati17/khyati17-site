@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Story Creator — Khyati</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <style>
+    /* Story Creator specific styles */
+    .story-creator-main {
+      max-width: var(--max-width);
+      width: 100%;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
+
+    .story-creator-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .story-creator-header h2 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      color: #2b0b3a;
+    }
+    .story-creator-header p {
+      color: #5b3a78;
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .story-layout {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    /* Left panel - inputs */
+    .story-input-panel {
+      flex: 0 0 340px;
+      background: white;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 6px 20px rgba(117,80,168,0.09);
+      border: 2px solid rgba(106,27,154,0.06);
+    }
+
+    .story-input-panel label {
+      display: block;
+      font-weight: 600;
+      font-size: 13px;
+      color: #2b0b3a;
+      margin-bottom: 4px;
+      margin-top: 14px;
+    }
+    .story-input-panel label:first-child {
+      margin-top: 0;
+    }
+
+    .story-input-panel input,
+    .story-input-panel select,
+    .story-input-panel textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 2px solid rgba(106,27,154,0.12);
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+      background: #faf8ff;
+      color: #2b0b3a;
+      transition: border-color 0.2s ease;
+      box-sizing: border-box;
+    }
+    .story-input-panel input:focus,
+    .story-input-panel select:focus,
+    .story-input-panel textarea:focus {
+      outline: none;
+      border-color: #9c4dcc;
+      background: #fff;
+    }
+    .story-input-panel textarea {
+      resize: vertical;
+      min-height: 60px;
+    }
+    .story-input-panel select {
+      cursor: pointer;
+      appearance: auto;
+    }
+
+    .genre-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .genre-tag {
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 2px solid rgba(106,27,154,0.12);
+      background: white;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      color: #5b3a78;
+      transition: all 0.2s ease;
+    }
+    .genre-tag:hover {
+      border-color: #9c4dcc;
+      background: #f8f2ff;
+    }
+    .genre-tag.selected {
+      border-color: #6a1b9a;
+      background: linear-gradient(135deg, #6a1b9a, #9c4dcc);
+      color: white;
+    }
+
+    .length-selector {
+      display: flex;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .length-opt {
+      flex: 1;
+      padding: 8px 6px;
+      border-radius: 8px;
+      border: 2px solid rgba(106,27,154,0.12);
+      background: white;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      color: #5b3a78;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+    .length-opt:hover {
+      border-color: #9c4dcc;
+    }
+    .length-opt.selected {
+      border-color: #6a1b9a;
+      background: #6a1b9a;
+      color: white;
+    }
+
+    .generate-btn {
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      background: linear-gradient(135deg, #6a1b9a, #9c4dcc);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .generate-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(106,27,154,0.25);
+    }
+    .generate-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .generate-btn.loading {
+      pointer-events: none;
+    }
+    .generate-btn .spinner {
+      display: none;
+      width: 18px;
+      height: 18px;
+      border: 3px solid rgba(255,255,255,0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+    .generate-btn.loading .spinner {
+      display: inline-block;
+    }
+    .generate-btn.loading .btn-text {
+      display: none;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Right panel - story output */
+    .story-output-panel {
+      flex: 1;
+      background: white;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 6px 20px rgba(117,80,168,0.09);
+      border: 2px solid rgba(106,27,154,0.06);
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .story-output-panel .placeholder {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #b8a0d0;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .story-output-panel .placeholder .big-icon {
+      font-size: 64px;
+      margin-bottom: 16px;
+      opacity: 0.5;
+    }
+    .story-output-panel .placeholder h3 {
+      margin: 0 0 8px;
+      color: #6a4b8f;
+    }
+    .story-output-panel .placeholder p {
+      margin: 0;
+      font-size: 14px;
+      max-width: 300px;
+      line-height: 1.6;
+    }
+
+    .story-content {
+      display: none;
+      flex-direction: column;
+      flex: 1;
+    }
+    .story-content.visible {
+      display: flex;
+    }
+
+    .story-content .story-title-display {
+      font-size: 22px;
+      font-weight: 800;
+      color: #2b0b3a;
+      margin: 0 0 4px;
+      line-height: 1.3;
+    }
+    .story-content .story-meta {
+      font-size: 13px;
+      color: #8a6fae;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid rgba(106,27,154,0.06);
+    }
+    .story-content .story-text {
+      flex: 1;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #1b0133;
+      white-space: pre-wrap;
+      overflow-y: auto;
+      max-height: 520px;
+      padding-right: 8px;
+    }
+    .story-content .story-text p {
+      margin: 0 0 12px;
+    }
+
+    .story-toolbar {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 2px solid rgba(106,27,154,0.06);
+      justify-content: flex-end;
+    }
+    .story-toolbar button {
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 2px solid rgba(106,27,154,0.12);
+      background: white;
+      color: #6a1b9a;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .story-toolbar button:hover {
+      background: #f8f2ff;
+      border-color: #9c4dcc;
+    }
+    .story-toolbar button:active {
+      transform: scale(0.97);
+    }
+    .story-toolbar .copy-btn.copied {
+      background: #e8f9ee;
+      border-color: #1a7a3a;
+      color: #1a7a3a;
+    }
+
+    /* Progress dots animation */
+    .generating-dots::after {
+      content: '';
+      animation: dots 1.5s steps(3, end) infinite;
+    }
+    @keyframes dots {
+      0%   { content: ''; }
+      33%  { content: '.'; }
+      66%  { content: '..'; }
+      100% { content: '...'; }
+    }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .story-layout {
+        flex-direction: column;
+      }
+      .story-input-panel {
+        flex: none;
+        width: 100%;
+      }
+      .story-output-panel {
+        min-height: 300px;
+      }
+      .story-content .story-text {
+        max-height: 400px;
+      }
+    }
+    @media (max-width: 420px) {
+      .story-creator-header h2 { font-size: 22px; }
+      .genre-tags { gap: 6px; }
+      .genre-tag { font-size: 12px; padding: 5px 10px; }
+      .length-selector { gap: 6px; }
+      .length-opt { font-size: 11px; padding: 6px 4px; }
+    }
+
+    /* Scrollbar styling for story text */
+    .story-content .story-text::-webkit-scrollbar {
+      width: 6px;
+    }
+    .story-content .story-text::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .story-content .story-text::-webkit-scrollbar-thumb {
+      background: #d0c0e0;
+      border-radius: 3px;
+    }
+    .story-content .story-text::-webkit-scrollbar-thumb:hover {
+      background: #b8a0d0;
+    }
+  </style>
+</head>
+<body>
+  <div id="site-header-root"></div>
+
+  <main class="story-creator-main">
+    <div class="story-creator-header">
+      <h2>📖 AI Story Creator</h2>
+      <p>Create unique, imaginative stories powered by AI — just set your parameters and generate!</p>
+    </div>
+
+    <div class="story-layout">
+      <!-- Left: Input Panel -->
+      <div class="story-input-panel">
+        <label for="charName">Main Character</label>
+        <input type="text" id="charName" placeholder="e.g. Luna, Captain Rex, Maya..." value="Luna" />
+
+        <label>Genre</label>
+        <div class="genre-tags" id="genreTags">
+          <div class="genre-tag selected" data-genre="fantasy">🧙 Fantasy</div>
+          <div class="genre-tag" data-genre="sci-fi">🚀 Sci-Fi</div>
+          <div class="genre-tag" data-genre="mystery">🔍 Mystery</div>
+          <div class="genre-tag" data-genre="adventure">🗺️ Adventure</div>
+          <div class="genre-tag" data-genre="romance">💖 Romance</div>
+          <div class="genre-tag" data-genre="fairytale">✨ Fairytale</div>
+        </div>
+
+        <label for="setting">Setting / World</label>
+        <input type="text" id="setting" placeholder="e.g. enchanted forest, spaceship, small town..." value="enchanted forest" />
+
+        <label for="theme">Theme / Mood</label>
+        <select id="theme">
+          <option value="bravery">Bravery & Courage</option>
+          <option value="friendship">Friendship & Bond</option>
+          <option value="discovery">Discovery & Wonder</option>
+          <option value="overcoming">Overcoming Odds</option>
+          <option value="kindness">Kindness & Compassion</option>
+          <option value="mystery">Suspense & Mystery</option>
+        </select>
+
+        <label>Story Length</label>
+        <div class="length-selector" id="lengthSelector">
+          <div class="length-opt" data-length="short">Short<br /><small>(~150 words)</small></div>
+          <div class="length-opt selected" data-length="medium">Medium<br /><small>(~350 words)</small></div>
+          <div class="length-opt" data-length="long">Long<br /><small>(~600 words)</small></div>
+        </div>
+
+        <label for="extraPrompt">Extra Ideas (optional)</label>
+        <textarea id="extraPrompt" placeholder="Any specific elements you want in the story..."></textarea>
+
+        <button class="generate-btn" id="generateBtn">
+          <span class="spinner"></span>
+          <span class="btn-text">✨ Generate Story</span>
+        </button>
+      </div>
+
+      <!-- Right: Output Panel -->
+      <div class="story-output-panel" id="outputPanel">
+        <div class="placeholder" id="placeholder">
+          <div class="big-icon">📝</div>
+          <h3>Your Story Will Appear Here</h3>
+          <p>Fill in the character, genre, and setting on the left, then click <strong>Generate Story</strong> to see the AI create something magical.</p>
+        </div>
+
+        <div class="story-content" id="storyContent">
+          <h3 class="story-title-display" id="storyTitle"></h3>
+          <div class="story-meta" id="storyMeta"></div>
+          <div class="story-text" id="storyText"></div>
+          <div class="story-toolbar">
+            <button id="copyBtn" class="copy-btn">📋 Copy Story</button>
+            <button id="downloadBtn">⬇️ Download</button>
+            <button id="regenerateBtn">🔄 Regenerate</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Khyati — All rights reserved</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script type="module" src="../assets/js/auth.js"></script>
+  <script type="module">
+    import('../assets/js/loadHeader.js').then(m => m.loadSharedHeader());
+  </script>
+
+  <script>
+    // ---- Story Data ----
+    const storyTemplates = {
+      fantasy: {
+        openings: [
+          "In a realm where magic flowed like rivers and ancient trees whispered secrets, there lived a remarkable soul named {char}.",
+          "The kingdom of Eldoria had not seen magic for a thousand years — until {char} discovered a shimmering crystal hidden beneath the old oak.",
+          "When the twin moons aligned over the enchanted forest, {char} knew it was time to fulfill the prophecy that had been written in the stars.",
+        ],
+        middles: [
+          "The path before {char} was lit by glowing fireflies that danced like living stars. Every step revealed wonders — talking animals, floating lanterns, and a castle woven from moonlight itself. But with wonder came danger, for the Shadow Lord had awakened and his darkness crept across the land like a suffocating fog.",
+          "Deep within the forest, {char} encountered a ancient guardian — a wise dragon whose scales shimmered like emeralds. 'You are the chosen one,' the dragon spoke, its voice like rolling thunder. 'The realm needs your courage. Take this enchanted blade, and may the light guide your way through the trials ahead.'",
+          "The enchanted forest seemed to pulse with its own heartbeat. Vines moved aside to reveal hidden paths, and streams whispered warnings of what lay ahead. {char} pressed forward, knowing that every great adventure began with a single brave step into the unknown.",
+        ],
+        endings: [
+          "And so, with courage as {char}'s compass and kindness as {char}'s shield, the darkness was banished once more. The realm celebrated its hero, and {char} stood beneath the twin moons — not as an ordinary soul, but as a legend woven into the very fabric of magic itself. The stars themselves seemed to glow a little brighter that night, as if the universe was smiling.",
+          "The Shadow Lord's fortress crumbled into dust as dawn broke over Eldoria. {char} emerged victorious, not because of magical power alone, but because of a heart that refused to surrender to despair. From that day forward, the enchanted forest bloomed with silver flowers, and the name of {char} was sung by bards for generations to come.",
+          "As the magic settled around {char} like a warm embrace, it became clear that the greatest treasure was not gold or power — it was the friends made along the way, the courage discovered within, and the knowledge that even the smallest person could change the course of destiny. And they all lived magically ever after.",
+        ],
+      },
+      'sci-fi': {
+        openings: [
+          "In the year 2874, aboard the starship Nova Horizon, {char} stood at the observation deck watching the Andromeda Galaxy swirl in brilliant colors.",
+          "The year was 3022, and humanity had colonized the entire solar system. {char}, a quantum engineer, was about to make the discovery that would change everything.",
+          "When the distress signal arrived from Proxima Centauri B, {char} knew this was no ordinary mission — it was a call that would push the boundaries of science and survival to their limits.",
+        ],
+        middles: [
+          "The ship's AI alerted {char} to an anomaly — a spatial distortion that defied every known law of physics. As the crew prepared for an emergency jump, {char} noticed something impossible: the distortion was forming patterns, as if something on the other side was trying to communicate. The readings made no sense, yet they were undeniably intelligent.",
+          "On the surface of the unknown planet, {char} discovered the ruins of an ancient civilization — one that had achieved technology far beyond human understanding. Holographic records showed beings of light who had mastered time itself. But a warning was encoded in the data: 'Some doors should never be opened.'",
+          "The quantum reactor hummed with impossible energy as {char} calibrated the dimensional bridge. If this worked, humanity would gain access to infinite worlds. But each calibration sent ripples through reality, and {char} could feel something watching from the spaces between dimensions — something ancient and curious.",
+        ],
+        endings: [
+          "With a final calculation, {char} stabilized the dimensional rift — not by closing it, but by teaching humanity to coexist with what lay beyond. The starship Nova Horizon became an ambassador between worlds, and {char}'s name was etched into the history of the cosmos as the one who united the universe.",
+          "The alien artifact hummed to life, projecting a star map that showed pathways to a thousand civilizations. {char} realized that humanity was not alone — and never had been. As the warp drive engaged for the first interstellar diplomatic mission, {char} smiled. The final frontier was just the beginning.",
+          "In the end, {char} chose not to use the technology for power, but for understanding. The quantum bridge became a library of infinite knowledge, and all of humanity was invited to learn. The future was not about conquest — it was about connection. And {char} had just written the first chapter.",
+        ],
+      },
+      mystery: {
+        openings: [
+          "The old lighthouse on Raven's Point had been abandoned for decades — until the night a single light flickered from its tower. {char}, a curious journalist, packed a flashlight and headed straight into the storm.",
+          "Detective {char} stared at the evidence board, strings connecting photographs in a web of clues. The case had gone cold three months ago — but tonight, a new piece of evidence would change everything.",
+          "It started with a letter slipped under the door, written in elegant handwriting: 'I know what you did. Meet me at the clock tower at midnight.' {char} had no idea what the letter referred to, but curiosity was a dangerous thing.",
+        ],
+        middles: [
+          "The investigation led {char} through a maze of clues — a cryptic note hidden in an antique book, a secret passage behind a bookshelf, and a witness who spoke in riddles. Each answer only revealed deeper questions. The old mansion seemed to hold its breath as {char} pieced together a puzzle that spanned three generations.",
+          "As midnight approached, {char} followed the trail to an abandoned theater. The stage was set for a play that had never been performed — and in the shadows, a figure waited. 'You're closer than you think,' the stranger whispered, 'but the truth has a price.' The clock tower bells began to chime.",
+          "Every clue pointed to someone who didn't exist — a ghost in the system, a person made of paper trails that led nowhere. {char} realized they were dealing with a master manipulator, someone who had planned this years in advance. The question was no longer 'who done it' but 'why was I chosen to solve it?'",
+        ],
+        endings: [
+          "When {char} finally uncovered the truth, it was simpler and more heartbreaking than expected — a story of love, loss, and a secret that had been protected for fifty years. The old lighthouse keeper had been keeping a promise, and the flickering light was a signal to someone who would never return. Some mysteries, {char} realized, were never meant to be solved — only understood.",
+          "The final piece clicked into place at dawn. {char} gathered all the suspects in the mansion's grand library and revealed the truth with the flair of a master storyteller. The culprit confessed, but in doing so, revealed a motive so profound that even {char} felt a pang of sympathy. Justice was served, but at a cost no one had anticipated.",
+          "In a surprising twist, {char} discovered that the mystery had been a test — designed by an eccentric billionaire to find the greatest detective in the world. The reward was not money, but a legacy. {char} tore up the letter of acceptance, choosing instead to remain a seeker of truth, chasing mysteries not for reward, but for the joy of discovery itself.",
+        ],
+      },
+      adventure: {
+        openings: [
+          "The map was yellowed and torn, but the X marked in faded ink was unmistakable. {char} rolled it up, packed a bag, and set off before anyone could ask where — adventure was calling.",
+          "It began as a simple treasure hunt — an old compass, a cryptic riddle, and a promise of discovery. But {char} soon realized that the real treasure was the journey itself, across oceans, over mountains, and through jungles teeming with wonder.",
+          "When the ancient artifact was unearthed at the dig site, {char} felt a strange energy pulse through the air. The expedition leader declared it a once-in-a-lifetime discovery — and they were right, but not in the way anyone expected.",
+        ],
+        middles: [
+          "The jungle path disappeared into a wall of green, and {char} had to rely on instinct and the old map's cryptic markings. Exotic birds called overhead, and strange tracks in the mud suggested they were not alone. Somewhere ahead lay the Lost Temple of Zandor, rumored to hold a treasure that could change the world — or destroy it.",
+          "Crossing the raging river was only the first challenge. On the other side, {char} discovered an ancient bridge made of vines and stone, suspended over a canyon that seemed to have no bottom. The bridge swayed with each step, and far below, the roar of hidden waterfalls echoed like the breathing of the earth itself.",
+          "Deep in the cave system, {char}'s torch revealed paintings on the walls — stories of a civilization that had mastered secrets lost to time. Each chamber held a new wonder: crystals that glowed with inner fire, a subterranean lake as clear as glass, and a door carved from solid obsidian that hummed with ancient power.",
+        ],
+        endings: [
+          "After countless trials, {char} stood before the treasure — not gold or jewels, but a library of knowledge preserved for millennia. The true wealth was wisdom, and {char} vowed to share it with the world. As the sun set over the jungle, {char} smiled, knowing this was just the first of many adventures.",
+          "The artifact was safely delivered to the museum, but {char} kept a small memento — a coin from the Lost Temple that seemed to glow under moonlight. Somewhere in the distance, a new adventure was waiting. The world was vast, and {char} intended to explore every corner of it.",
+          "In the heart of the temple, {char} found not treasure, but a message: 'The greatest adventure is the one you share.' Looking around at the friends made along the way — the skeptical guide, the chatterbot drone, the local who had become family — {char} realized the message was true. And the next adventure was already being planned.",
+        ],
+      },
+      romance: {
+        openings: [
+          "It was raining when {char} first walked into the little bookstore on Cherry Lane. The bell above the door chimed, and behind the counter, someone looked up with a smile that seemed to brighten the entire room.",
+          "They said opposites attract, and {char} had never believed it — until a chance encounter at a train station changed everything. Two strangers, one platform, and a delayed train that would alter the course of two lives forever.",
+          "The annual Summer Festival was in full swing, and {char} wandered through the stalls of handmade crafts and homemade pies. A fortune teller's tent caught {char}'s eye, and the words spoken inside would set in motion a story of unexpected love.",
+        ],
+        middles: [
+          "Weeks turned into months of shared coffees, long walks in the park, and conversations that stretched until dawn. {char} discovered that love was not a grand gesture but a thousand small moments — a hand gently brushing against another, a laugh shared over something silly, a comfortable silence that said more than words ever could.",
+          "But the course of true love never did run smooth. A misunderstanding, a missed opportunity, and suddenly the distance between them felt like miles instead of inches. {char} stood in the rain outside the little bookstore, heart pounding, wondering if some stories were meant to have sad endings after all.",
+          "The letter arrived on a Tuesday morning, written in familiar handwriting: 'Meet me where we first met. I'll wait all day if I have to.' {char}'s heart raced. Second chances were rare, but perhaps — just perhaps — some love stories were worth fighting for.",
+        ],
+        endings: [
+          "Under the same stars where they had first gazed at the night sky together, {char} finally spoke the words that had been waiting: 'I think I've loved you since the moment we met.' The answer came not in words, but in a kiss that tasted like forever. Some stories, it turned out, were only just beginning.",
+          "The bookstore on Cherry Lane became their place — their story, their beginning. {char} looked across the table at the one who had turned a rainy day into a lifetime of sunshine and smiled. 'Thank you for being late to that train,' {char} whispered. 'Thank you for being there at all.'",
+          "In the end, love wasn't about perfection — it was about finding someone whose chaos matched yours, whose dreams danced with yours, and whose heart beat in rhythm with your own. {char} had found that person, and together, they wrote a love story that would be told for generations.",
+        ],
+      },
+      fairytale: {
+        openings: [
+          "Once upon a time, in a land of rolling green hills and cottages with smoking chimneys, there lived a kind-hearted soul named {char} who believed in magic when no one else did.",
+          "In a kingdom where wishes were said to come true under the light of the wishing moon, {char} made a single wish — not for riches or fame, but for an adventure worthy of the stories told by the village elders.",
+          "Far beyond the Misty Mountains, in a valley where time moved differently, {char} discovered a hidden glade where the flowers sang and the stars danced close enough to touch. It was here that destiny had been waiting all along.",
+        ],
+        middles: [
+          "The journey took {char} through the Whispering Woods, where trees shared secrets of the old world, and across the Bridge of Sighs, where one had to answer a riddle or be turned away. A friendly fox with eyes like amber became {char}'s guide, leading the way to the castle of the Moon Queen.",
+          "Three trials awaited {char}: the Trial of Courage, facing a gentle giant who guarded a bridge; the Trial of Kindness, helping a grumpy troll find its lost laugh; and the Trial of Heart, choosing between a wish for oneself and a wish for another. Each trial revealed a truth about {char}'s character.",
+          "The wicked sorcerer's curse had frozen the kingdom in eternal twilight, but {char} discovered that the key to breaking it was not a magical sword or a secret spell — it was an act of pure, selfless love. But to perform it, {char} would have to give up the one thing most precious.",
+        ],
+        endings: [
+          "And so, with a heart full of courage and a spirit untouched by darkness, {char} broke the curse not with magic, but with a simple act of kindness. The kingdom bloomed into eternal spring, the flowers sang more sweetly than before, and {char} was crowned not as a ruler, but as a friend to all. The friendly fox revealed itself to be a guardian spirit, and together, they watched over the land for a thousand years.",
+          "The wishing moon shone brighter than ever as {char}'s wish came true — not in the way expected, but in a way far more wonderful. For {char} had discovered that the real magic was not in getting what you wished for, but in becoming the kind of person who could make others' wishes come true. And they all lived magically ever after.",
+          "As dawn broke over the enchanted kingdom, {char} stood transformed — not by magic, but by the journey itself. The villagers who had once doubted magic now believed, because they had witnessed the greatest magic of all: the power of a good heart. The story of {char} was told for generations, a reminder that heroes come in all sizes, and that every kind heart holds a spark of the divine.",
+        ],
+      },
+    };
+
+    // ---- DOM refs ----
+    const charNameInput = document.getElementById('charName');
+    const genreTags = document.querySelectorAll('.genre-tag');
+    const settingInput = document.getElementById('setting');
+    const themeSelect = document.getElementById('theme');
+    const lengthOpts = document.querySelectorAll('.length-opt');
+    const extraPrompt = document.getElementById('extraPrompt');
+    const generateBtn = document.getElementById('generateBtn');
+    const outputPanel = document.getElementById('outputPanel');
+    const placeholder = document.getElementById('placeholder');
+    const storyContent = document.getElementById('storyContent');
+    const storyTitle = document.getElementById('storyTitle');
+    const storyMeta = document.getElementById('storyMeta');
+    const storyText = document.getElementById('storyText');
+    const copyBtn = document.getElementById('copyBtn');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const regenerateBtn = document.getElementById('regenerateBtn');
+
+    let selectedGenre = 'fantasy';
+    let selectedLength = 'medium';
+    let lastGeneratedStory = '';
+
+    // ---- Event Listeners ----
+    genreTags.forEach(tag => {
+      tag.addEventListener('click', () => {
+        genreTags.forEach(t => t.classList.remove('selected'));
+        tag.classList.add('selected');
+        selectedGenre = tag.dataset.genre;
+      });
+    });
+
+    lengthOpts.forEach(opt => {
+      opt.addEventListener('click', () => {
+        lengthOpts.forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        selectedLength = opt.dataset.length;
+      });
+    });
+
+    generateBtn.addEventListener('click', generateStory);
+    regenerateBtn.addEventListener('click', generateStory);
+
+    // ---- Story Generation ----
+    function generateStory() {
+      const charName = charNameInput.value.trim() || 'Hero';
+      const setting = settingInput.value.trim() || 'a magical land';
+      const theme = themeSelect.options[themeSelect.selectedIndex].text;
+      const extra = extraPrompt.value.trim();
+
+      const template = storyTemplates[selectedGenre] || storyTemplates.fantasy;
+      const lengthMultiplier = selectedLength === 'short' ? 0.6 : selectedLength === 'long' ? 1.5 : 1;
+
+      // Pick random elements
+      const opening = pickRandom(template.openings).replace(/\{char\}/g, charName);
+      const middle = pickRandom(template.middles).replace(/\{char\}/g, charName);
+      const ending = pickRandom(template.endings).replace(/\{char\}/g, charName);
+
+      // Build story title
+      const titles = [
+        `The Adventure of ${charName}`,
+        `${charName} and the ${setting.charAt(0).toUpperCase() + setting.slice(1)}`,
+        `The Secret of the ${setting.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}`,
+        `${charName}: A Tale of ${theme}`,
+        `Beyond the ${setting.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}`,
+        `The Legend of ${charName}`,
+        `${charName}'s Journey`,
+      ];
+      const title = pickRandom(titles);
+
+      // Build the full story with setting and theme integration
+      let fullStory = opening + '\n\n';
+      fullStory += middle.replace(/\{char\}/g, charName) + '\n\n';
+      
+      // Add setting element
+      if (setting && setting.toLowerCase() !== 'enchanted forest') {
+        fullStory += `The ${setting} held its own secrets, and ${charName} was determined to uncover them all. `;
+      } else if (!setting || setting === 'enchanted forest') {
+        fullStory += `The enchanted forest seemed to sense ${charName}'s presence, its ancient magic responding to the courage within. `;
+      }
+      
+      // Add theme integration
+      fullStory += `This was a story of ${theme.toLowerCase()}, and ${charName} would prove that even the most ordinary person could achieve extraordinary things when guided by an open heart.\n\n`;
+
+      // Add extra prompt if provided
+      if (extra) {
+        fullStory += `As ${charName} ventured deeper, ${extra.toLowerCase()}. This added an unexpected twist to the journey, but ${charName} faced it with determination and grace.\n\n`;
+      }
+
+      fullStory += ending.replace(/\{char\}/g, charName);
+
+      // Adjust length
+      if (selectedLength === 'short') {
+        // Keep shorter by selecting fewer elements
+        fullStory = opening + '\n\n' + ending.replace(/\{char\}/g, charName);
+      } else if (selectedLength === 'long') {
+        // Add extra detail paragraphs
+        fullStory += `\n\nAnd so, the name of ${charName} echoed through the ${setting}, a reminder that heroes are not born — they are made by the choices they make and the hearts they touch. The stars above seemed to shine a little brighter, as if celebrating the story that had just unfolded. For in every tale, there is a spark of truth, and in every hero, a reflection of ourselves.`;
+      }
+
+      lastGeneratedStory = fullStory;
+
+      // Display
+      storyTitle.textContent = title;
+      storyMeta.textContent = `${charName} · ${selectedGenre.charAt(0).toUpperCase() + selectedGenre.slice(1)} · ${theme} · ${selectedLength.charAt(0).toUpperCase() + selectedLength.slice(1)} story · Set in ${setting}`;
+      storyText.textContent = fullStory;
+
+      placeholder.style.display = 'none';
+      storyContent.classList.add('visible');
+
+      // Scroll to output on mobile
+      if (window.innerWidth <= 860) {
+        outputPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function pickRandom(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    // ---- Copy ----
+    copyBtn.addEventListener('click', () => {
+      if (!lastGeneratedStory) return;
+      navigator.clipboard.writeText(storyTitle.textContent + '\n\n' + lastGeneratedStory).then(() => {
+        copyBtn.textContent = '✅ Copied!';
+        copyBtn.classList.add('copied');
+        setTimeout(() => {
+          copyBtn.textContent = '📋 Copy Story';
+          copyBtn.classList.remove('copied');
+        }, 2000);
+      }).catch(() => {
+        // Fallback
+        const ta = document.createElement('textarea');
+        ta.value = storyTitle.textContent + '\n\n' + lastGeneratedStory;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        copyBtn.textContent = '✅ Copied!';
+        copyBtn.classList.add('copied');
+        setTimeout(() => {
+          copyBtn.textContent = '📋 Copy Story';
+          copyBtn.classList.remove('copied');
+        }, 2000);
+      });
+    });
+
+    // ---- Download ----
+    downloadBtn.addEventListener('click', () => {
+      if (!lastGeneratedStory) return;
+      const content = `# ${storyTitle.textContent}\n\n${lastGeneratedStory}\n\n---\nGenerated by Khyati AI Story Creator`;
+      const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${storyTitle.textContent.replace(/[^a-z0-9]/gi, '_').toLowerCase()}.txt`;
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+  </script>
+</body>
+</html>
