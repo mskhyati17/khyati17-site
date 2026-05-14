@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 { color: #333; margin-bottom: 10px; font-size: 2.2em; }
+        .status {
+            font-size: 1.2em; color: #666; margin-bottom: 20px;
+            min-height: 30px; font-weight: 500;
+        }
+        .status.winner { color: #27ae60; font-weight: bold; }
+        .status.draw { color: #e67e22; font-weight: bold; }
+        .board {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 8px; margin: 20px auto; max-width: 350px;
+        }
+        .cell {
+            aspect-ratio: 1; background: #f0f0f0; border: none;
+            border-radius: 12px; font-size: 3em; font-weight: bold;
+            cursor: pointer; transition: all 0.2s ease;
+            display: flex; align-items: center; justify-content: center;
+            color: #333;
+        }
+        .cell:hover:not(.disabled) { background: #e0e0e0; transform: scale(1.02); }
+        .cell.x { color: #3498db; }
+        .cell.o { color: #e74c3c; }
+        .cell.win-cell { background: #d4edda; animation: pulse 0.5s ease-in-out; }
+        .cell.disabled { cursor: not-allowed; opacity: 0.9; }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .controls {
+            display: flex; gap: 12px; justify-content: center;
+            margin-top: 20px; flex-wrap: wrap;
+        }
+        .btn {
+            padding: 12px 28px; border: none; border-radius: 10px;
+            font-size: 1em; font-weight: 600; cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .btn-primary { background: #667eea; color: white; }
+        .btn-primary:hover { background: #5a6fd6; transform: translateY(-2px); }
+        .btn-secondary { background: #95a5a6; color: white; }
+        .btn-secondary:hover { background: #7f8c8d; transform: translateY(-2px); }
+        .btn-success { background: #27ae60; color: white; }
+        .btn-success:hover { background: #219a52; transform: translateY(-2px); }
+        .message {
+            margin-top: 15px; padding: 10px; border-radius: 8px;
+            font-size: 0.9em; min-height: 40px;
+        }
+        .message.error { background: #f8d7da; color: #721c24; }
+        .message.success { background: #d4edda; color: #155724; }
+        .mode-toggle { margin-bottom: 15px; }
+        .mode-toggle label { font-size: 0.95em; color: #555; cursor: pointer; }
+        .mode-toggle input[type="checkbox"] { margin-right: 6px; cursor: pointer; }
+        .back-link {
+            display: inline-block; margin-top: 20px;
+            color: #667eea; text-decoration: none; font-size: 0.9em;
+        }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 Tic-Tac-Toe</h1>
+        <div class="mode-toggle">
+            <label>
+                <input type="checkbox" id="aiMode" /> Play against AI
+            </label>
+        </div>
+        <div class="status" id="status">Player X's turn</div>
+        <div class="board" id="board">
+            <button class="cell" data-row="0" data-col="0"></button>
+            <button class="cell" data-row="0" data-col="1"></button>
+            <button class="cell" data-row="0" data-col="2"></button>
+            <button class="cell" data-row="1" data-col="0"></button>
+            <button class="cell" data-row="1" data-col="1"></button>
+            <button class="cell" data-row="1" data-col="2"></button>
+            <button class="cell" data-row="2" data-col="0"></button>
+            <button class="cell" data-row="2" data-col="1"></button>
+            <button class="cell" data-row="2" data-col="2"></button>
+        </div>
+        <div class="controls">
+            <button class="btn btn-primary" id="resetBtn">🔄 New Game</button>
+            <button class="btn btn-success" id="aiMoveBtn">🤖 AI Move</button>
+        </div>
+        <div class="message" id="message"></div>
+        <a class="back-link" href="fun-games.html">← Back to Fun & Games</a>
+    </div>
+
+    <script>
+        // ─── Tic-Tac-Toe Engine (client-side JS, no backend needed) ───
+        class TicTacToe {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.board = [
+                    [null, null, null],
+                    [null, null, null],
+                    [null, null, null]
+                ];
+                this.currentPlayer = 'X';
+                this.winner = null;
+                this.isDraw = false;
+                this.moveCount = 0;
+                this.gameOver = false;
+            }
+
+            makeMove(row, col) {
+                if (this.gameOver) return false;
+                if (row < 0 || row > 2 || col < 0 || col > 2) return false;
+                if (this.board[row][col] !== null) return false;
+
+                this.board[row][col] = this.currentPlayer;
+                this.moveCount++;
+
+                if (this._checkWinner(row, col)) {
+                    this.winner = this.currentPlayer;
+                    this.gameOver = true;
+                    return true;
+                }
+
+                if (this.moveCount === 9) {
+                    this.isDraw = true;
+                    this.gameOver = true;
+                    return true;
+                }
+
+                this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
+                return true;
+            }
+
+            _checkWinner(row, col) {
+                const player = this.board[row][col];
+
+                // Check row
+                if (this.board[row].every(c => c === player)) return true;
+
+                // Check column
+                if (this.board.every(r => r[col] === player)) return true;
+
+                // Check diagonal (top-left to bottom-right)
+                if (row === col && this.board.every((r, i) => r[i] === player)) return true;
+
+                // Check anti-diagonal (top-right to bottom-left)
+                if (row + col === 2 && this.board.every((r, i) => r[2 - i] === player)) return true;
+
+                return false;
+            }
+
+            getAvailableMoves() {
+                const moves = [];
+                for (let r = 0; r < 3; r++) {
+                    for (let c = 0; c < 3; c++) {
+                        if (this.board[r][c] === null) moves.push([r, c]);
+                    }
+                }
+                return moves;
+            }
+
+            // Minimax AI - plays as 'O'
+            getAIMove() {
+                if (this.gameOver) return null;
+                const available = this.getAvailableMoves();
+                if (available.length === 0) return null;
+
+                let bestScore = -Infinity;
+                let bestMove = available[0];
+
+                for (const [row, col] of available) {
+                    this.board[row][col] = 'O';
+                    const score = this._minimax(false);
+                    this.board[row][col] = null;
+
+                    if (score > bestScore) {
+                        bestScore = score;
+                        bestMove = [row, col];
+                    }
+                }
+                return bestMove;
+            }
+
+            _minimax(isMaximizing) {
+                const winner = this._checkBoardWinner();
+                if (winner === 'O') return 10;
+                if (winner === 'X') return -10;
+                if (this.getAvailableMoves().length === 0) return 0;
+
+                if (isMaximizing) {
+                    let best = -Infinity;
+                    for (const [r, c] of this.getAvailableMoves()) {
+                        this.board[r][c] = 'O';
+                        best = Math.max(best, this._minimax(false));
+                        this.board[r][c] = null;
+                    }
+                    return best;
+                } else {
+                    let best = Infinity;
+                    for (const [r, c] of this.getAvailableMoves()) {
+                        this.board[r][c] = 'X';
+                        best = Math.min(best, this._minimax(true));
+                        this.board[r][c] = null;
+                    }
+                    return best;
+                }
+            }
+
+            _checkBoardWinner() {
+                for (const player of ['X', 'O']) {
+                    // Rows
+                    for (let r = 0; r < 3; r++) {
+                        if (this.board[r].every(c => c === player)) return player;
+                    }
+                    // Columns
+                    for (let c = 0; c < 3; c++) {
+                        if (this.board.every(r => r[c] === player)) return player;
+                    }
+                    // Diagonals
+                    if (this.board.every((r, i) => r[i] === player)) return player;
+                    if (this.board.every((r, i) => r[2 - i] === player)) return player;
+                }
+                return null;
+            }
+
+            getWinningCells() {
+                if (!this.winner) return [];
+                const p = this.winner;
+
+                // Rows
+                for (let r = 0; r < 3; r++) {
+                    if (this.board[r].every(c => c === p)) return [[r,0],[r,1],[r,2]];
+                }
+                // Columns
+                for (let c = 0; c < 3; c++) {
+                    if (this.board.every(r => r[c] === p)) return [[0,c],[1,c],[2,c]];
+                }
+                // Diagonal
+                if (this.board.every((r,i) => r[i] === p)) return [[0,0],[1,1],[2,2]];
+                // Anti-diagonal
+                if (this.board.every((r,i) => r[2-i] === p)) return [[0,2],[1,1],[2,0]];
+
+                return [];
+            }
+        }
+
+        // ─── UI Controller ───
+        const game = new TicTacToe();
+        const boardEl = document.getElementById('board');
+        const statusEl = document.getElementById('status');
+        const messageEl = document.getElementById('message');
+        const resetBtn = document.getElementById('resetBtn');
+        const aiMoveBtn = document.getElementById('aiMoveBtn');
+        const aiModeCheckbox = document.getElementById('aiMode');
+
+        function updateUI() {
+            const cells = boardEl.querySelectorAll('.cell');
+            const winningCells = game.getWinningCells();
+            const winSet = new Set(winningCells.map(([r,c]) => `${r},${c}`));
+
+            cells.forEach(cell => {
+                const row = parseInt(cell.dataset.row);
+                const col = parseInt(cell.dataset.col);
+                const value = game.board[row][col];
+                cell.textContent = value || '';
+                cell.className = 'cell';
+                if (value === 'X') cell.classList.add('x');
+                if (value === 'O') cell.classList.add('o');
+                if (game.gameOver) cell.classList.add('disabled');
+                if (winSet.has(`${row},${col}`)) cell.classList.add('win-cell');
+            });
+
+            statusEl.className = 'status';
+            if (game.winner) {
+                statusEl.textContent = `🎉 Player ${game.winner} wins!`;
+                statusEl.classList.add('winner');
+            } else if (game.isDraw) {
+                statusEl.textContent = "🤝 It's a draw!";
+                statusEl.classList.add('draw');
+            } else {
+                statusEl.textContent = `Player ${game.currentPlayer}'s turn`;
+            }
+
+            aiMoveBtn.disabled = game.gameOver || game.currentPlayer !== 'O';
+        }
+
+        function showMessage(msg, type) {
+            messageEl.textContent = msg;
+            messageEl.className = `message ${type}`;
+            setTimeout(() => {
+                messageEl.textContent = '';
+                messageEl.className = 'message';
+            }, 3000);
+        }
+
+        function handleMove(row, col) {
+            if (game.gameOver) return;
+            if (game.makeMove(row, col)) {
+                updateUI();
+                // If AI mode is on and it's O's turn
+                if (aiModeCheckbox.checked && !game.gameOver && game.currentPlayer === 'O') {
+                    setTimeout(() => doAIMove(), 300);
+                }
+            }
+        }
+
+        function doAIMove() {
+            if (game.gameOver) return;
+            const move = game.getAIMove();
+            if (move) {
+                const [row, col] = move;
+                game.makeMove(row, col);
+                updateUI();
+            }
+        }
+
+        function resetGame() {
+            game.reset();
+            updateUI();
+            showMessage('Game reset!', 'success');
+        }
+
+        // Board click handler
+        boardEl.addEventListener('click', (e) => {
+            const cell = e.target.closest('.cell');
+            if (!cell || cell.classList.contains('disabled')) return;
+            const row = parseInt(cell.dataset.row);
+            const col = parseInt(cell.dataset.col);
+            handleMove(row, col);
+        });
+
+        resetBtn.addEventListener('click', resetGame);
+        aiMoveBtn.addEventListener('click', doAIMove);
+
+        // Initial render
+        updateUI();
+    </script>
+</body>
+</html>
