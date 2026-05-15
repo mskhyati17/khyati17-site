@@ -80,6 +80,21 @@ const DemoAuth = (() => {
   function loadUsers(){ try{ return JSON.parse(localStorage.getItem(LS_KEY) || '{}') }catch(e){return {}} }
   function saveUsers(users){ localStorage.setItem(LS_KEY, JSON.stringify(users)) }
 
+  // Pre-seed the admin account so it always exists on first use
+  (function seedAdmin(){
+    try{
+      const users = loadUsers();
+      if(!users['mskhyati.17@gmail.com']){
+        users['mskhyati.17@gmail.com'] = {
+          password: 'SriMadhav12#',
+          metadata: { first_name: 'Khyati', last_name: 'Admin', username: 'admin_khyati' }
+        };
+        saveUsers(users);
+        console.debug('Admin account pre-seeded');
+      }
+    }catch(e){ console.debug('Seed admin skip:', e); }
+  })();
+
   function signup(email, password){
     // signature: signup(email, password, metadata)
     const metadata = arguments[2] || {};

@@ -71,7 +71,7 @@
     function showStory(s){
       const el = document.getElementById('story-content');
       if(!el) return;
-      el.innerHTML = `<h2>${escapeHtml(s.title||'')}</h2><p style="color:#6a4b8f">${escapeHtml(s.excerpt||'')}</p><div>${escapeHtml(s.body||'')}</div>`;
+      el.innerHTML = `<h2>${escapeHtml(s.title||'')}</h2><p style="color:#6a4b8f">${escapeHtml(s.excerpt||'')}</p><div>${s.body||''}</div>`;
       // set a data-content-id for comments to pick up
       el.setAttribute('data-content-id', s.slug || s.id || (s.title||'').replace(/\s+/g,'-').toLowerCase());
       // load comments for this story
