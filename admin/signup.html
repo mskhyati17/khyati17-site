@@ -52,6 +52,10 @@
       if(p !== c){ msg.textContent = 'Passwords do not match'; return; }
   const res = await Auth.signup(email,p,{first_name,last_name,username});
       if(res.ok){
+        if(res.alreadyExisted){
+          msg.textContent = 'Welcome back — signing you in...'; setTimeout(()=>location.href='../home/index.html',600);
+          return;
+        }
         // Refresh auth UI; this will set the signed-in state if available
         await Auth.renderAuthArea();
         // If the user is actually signed in now, create the profile; otherwise store pending

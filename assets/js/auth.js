@@ -100,7 +100,13 @@ const DemoAuth = (() => {
     const metadata = arguments[2] || {};
     if(!email || !password) return {ok:false,msg:'Email and password required'};
     const users = loadUsers();
-    if(users[email]) return {ok:false,msg:'User already exists'};
+    if(users[email]){
+      // User already exists — just sign them in instead of erroring
+      users[email].metadata = {...users[email].metadata, ...metadata};
+      saveUsers(users);
+      localStorage.setItem(SESSION_KEY, email);
+      return {ok:true, alreadyExisted:true};
+    }
     users[email] = {password, metadata};
     saveUsers(users);
     localStorage.setItem(SESSION_KEY, email);
