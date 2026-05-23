@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D LEGO Builder</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #1a1a2e;
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      user-select: none;
+    }
+    #game-container {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+    #game-container canvas {
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    /* HUD overlay */
+    #hud {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 20px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    #hud-title {
+      font-size: 22px;
+      font-weight: 700;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+    #hud-title small {
+      font-size: 13px;
+      font-weight: 400;
+      opacity: 0.7;
+      display: block;
+    }
+    #hud-stats {
+      text-align: right;
+      font-size: 14px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+    #hud-stats span {
+      display: block;
+    }
+    #hud-stats .count {
+      font-size: 28px;
+      font-weight: 700;
+      color: #ffd700;
+    }
+
+    /* Color picker */
+    #color-picker {
+      position: absolute;
+      bottom: 90px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      gap: 8px;
+      background: rgba(0,0,0,0.6);
+      padding: 10px 16px;
+      border-radius: 30px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .color-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .color-btn:hover {
+      transform: scale(1.15);
+    }
+    .color-btn.active {
+      border-color: #fff;
+      transform: scale(1.15);
+      box-shadow: 0 0 16px rgba(255,255,255,0.3);
+    }
+
+    /* Bottom toolbar */
+    #toolbar {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      gap: 10px;
+      background: rgba(0,0,0,0.6);
+      padding: 10px 18px;
+      border-radius: 30px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.1);
+      align-items: center;
+    }
+    #toolbar button {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    #toolbar button:hover {
+      background: rgba(255,255,255,0.2);
+      transform: scale(1.05);
+    }
+    #toolbar button.danger {
+      color: #ff6b6b;
+      border-color: rgba(255,107,107,0.3);
+    }
+    #toolbar button.danger:hover {
+      background: rgba(255,107,107,0.2);
+    }
+    #toolbar button.primary {
+      background: #6c5ce7;
+      border-color: #6c5ce7;
+    }
+    #toolbar button.primary:hover {
+      background: #5a4bd1;
+    }
+    #toolbar .sep {
+      width: 1px;
+      height: 28px;
+      background: rgba(255,255,255,0.15);
+    }
+
+    /* Instructions tooltip */
+    #instructions {
+      position: absolute;
+      bottom: 160px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      background: rgba(0,0,0,0.7);
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.05);
+      white-space: nowrap;
+      transition: opacity 1s;
+    }
+    #instructions.hidden {
+      opacity: 0;
+    }
+
+    /* Remove mode indicator */
+    #mode-indicator {
+      position: absolute;
+      bottom: 150px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      background: rgba(255,107,107,0.2);
+      border: 1px solid rgba(255,107,107,0.3);
+      padding: 4px 16px;
+      border-radius: 16px;
+      font-size: 13px;
+      color: #ff6b6b;
+      backdrop-filter: blur(4px);
+      display: none;
+    }
+    #mode-indicator.show {
+      display: block;
+    }
+
+    /* responsive */
+    @media (max-width: 600px) {
+      #hud { padding: 8px 12px; }
+      #hud-title { font-size: 16px; }
+      #hud-title small { font-size: 11px; }
+      #hud-stats .count { font-size: 20px; }
+      #color-picker { gap: 5px; padding: 6px 12px; bottom: 80px; }
+      .color-btn { width: 28px; height: 28px; }
+      #toolbar { padding: 6px 12px; gap: 6px; }
+      #toolbar button { font-size: 12px; padding: 6px 12px; }
+      #instructions { font-size: 11px; padding: 6px 14px; bottom: 140px; white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+  <div id="game-container">
+    <!-- HUD -->
+    <div id="hud">
+      <div id="hud-title">
+        🧱 LEGO Builder
+        <small>Click to build • Scroll to zoom • Drag to rotate</small>
+      </div>
+      <div id="hud-stats">
+        <span class="count" id="brick-count">0</span>
+        <span>bricks placed</span>
+      </div>
+    </div>
+
+    <!-- Instructions -->
+    <div id="instructions">💡 Click on the green grid to place a brick</div>
+
+    <!-- Remove mode indicator -->
+    <div id="mode-indicator">🗑️ Remove Mode — click a brick to delete it</div>
+
+    <!-- Color picker -->
+    <div id="color-picker">
+      <button class="color-btn active" data-color="#e74c3c" style="background:#e74c3c" title="Red"></button>
+      <button class="color-btn" data-color="#3498db" style="background:#3498db" title="Blue"></button>
+      <button class="color-btn" data-color="#2ecc71" style="background:#2ecc71" title="Green"></button>
+      <button class="color-btn" data-color="#f1c40f" style="background:#f1c40f" title="Yellow"></button>
+      <button class="color-btn" data-color="#9b59b6" style="background:#9b59b6" title="Purple"></button>
+      <button class="color-btn" data-color="#e67e22" style="background:#e67e22" title="Orange"></button>
+      <button class="color-btn" data-color="#1abc9c" style="background:#1abc9c" title="Teal"></button>
+      <button class="color-btn" data-color="#34495e" style="background:#34495e" title="Dark"></button>
+      <button class="color-btn" data-color="#ecf0f1" style="background:#ecf0f1" title="White"></button>
+      <button class="color-btn" data-color="#ff9ff3" style="background:#ff9ff3" title="Pink"></button>
+    </div>
+
+    <!-- Toolbar -->
+    <div id="toolbar">
+      <button class="primary" id="btn-undo" title="Undo last brick">↩ Undo</button>
+      <div class="sep"></div>
+      <button id="btn-remove-mode" title="Toggle remove mode">🗑️ Remove</button>
+      <div class="sep"></div>
+      <button id="btn-reset" class="danger" title="Clear all bricks">🗙 Clear All</button>
+    </div>
+  </div>
+
+  <!-- Three.js from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- OrbitControls from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+  <script>
+    (function(){
+      'use strict';
+
+      // ─── Configuration ──────────────────────────────────────────
+      const GRID_SIZE = 10;           // 10x10 grid
+      const BRICK_W = 1;             // brick width
+      const BRICK_H = 0.5;           // brick height (stud-less, just block)
+      const BRICK_D = 1;             // brick depth
+      const GAP = 0.02;              // small gap between bricks
+      const GROUND_Y = 0;
+
+      // ─── State ──────────────────────────────────────────────────
+      const bricks = [];             // array of placed brick objects: { mesh, x, y, z, colorHex }
+      const undoStack = [];
+      let currentColor = '#e74c3c';
+      let isRemoveMode = false;
+      let brickCount = 0;
+      let isMouseDown = false;
+      let mouseMoved = false;
+
+      // ─── DOM refs ───────────────────────────────────────────────
+      const container = document.getElementById('game-container');
+      const brickCountEl = document.getElementById('brick-count');
+      const instructionsEl = document.getElementById('instructions');
+      const modeIndicator = document.getElementById('mode-indicator');
+      const colorBtns = document.querySelectorAll('.color-btn');
+      const btnUndo = document.getElementById('btn-undo');
+      const btnRemoveMode = document.getElementById('btn-remove-mode');
+      const btnReset = document.getElementById('btn-reset');
+
+      // ─── Scene setup ────────────────────────────────────────────
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x1a1a2e);
+
+      const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 100);
+      camera.position.set(12, 10, 12);
+      camera.lookAt(0, 0, 0);
+
+      const renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.2;
+      container.appendChild(renderer.domElement);
+
+      const controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.target.set(0, 1, 0);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.08;
+      controls.maxPolarAngle = Math.PI / 2.1;
+      controls.minDistance = 5;
+      controls.maxDistance = 30;
+      controls.update();
+
+      // ─── Lights ─────────────────────────────────────────────────
+      const ambientLight = new THREE.AmbientLight(0x404060, 0.5);
+      scene.add(ambientLight);
+
+      const hemiLight = new THREE.HemisphereLight(0x87ceeb, 0x362d59, 0.8);
+      scene.add(hemiLight);
+
+      const dirLight = new THREE.DirectionalLight(0xffeedd, 1.0);
+      dirLight.position.set(8, 15, 5);
+      dirLight.castShadow = true;
+      dirLight.shadow.mapSize.width = 1024;
+      dirLight.shadow.mapSize.height = 1024;
+      dirLight.shadow.camera.near = 0.5;
+      dirLight.shadow.camera.far = 30;
+      dirLight.shadow.camera.left = -15;
+      dirLight.shadow.camera.right = 15;
+      dirLight.shadow.camera.top = 15;
+      dirLight.shadow.camera.bottom = -15;
+      scene.add(dirLight);
+
+      const fillLight = new THREE.DirectionalLight(0x8888ff, 0.3);
+      fillLight.position.set(-5, 3, -8);
+      scene.add(fillLight);
+
+      const rimLight = new THREE.DirectionalLight(0xffffff, 0.2);
+      rimLight.position.set(0, -3, 10);
+      scene.add(rimLight);
+
+      // ─── Ground ─────────────────────────────────────────────────
+      function createGround() {
+        const geo = new THREE.PlaneGeometry(GRID_SIZE + 4, GRID_SIZE + 4);
+        const mat = new THREE.MeshStandardMaterial({
+          color: 0x2d2d44,
+          roughness: 0.9,
+          metalness: 0.0,
+        });
+        const ground = new THREE.Mesh(geo, mat);
+        ground.rotation.x = -Math.PI / 2;
+        ground.position.y = GROUND_Y - 0.01;
+        ground.receiveShadow = true;
+        scene.add(ground);
+
+        // grid helper lines
+        const gridHelper = new THREE.GridHelper(GRID_SIZE + 2, GRID_SIZE + 2, 0x444466, 0x333355);
+        gridHelper.position.y = GROUND_Y + 0.001;
+        scene.add(gridHelper);
+
+        // subtle circle
+        const ringGeo = new THREE.RingGeometry(0.5, 0.7, 64);
+        const ringMat = new THREE.MeshBasicMaterial({ color: 0x6c5ce7, side: THREE.DoubleSide, transparent: true, opacity: 0.15 });
+        const ring = new THREE.Mesh(ringGeo, ringMat);
+        ring.rotation.x = -Math.PI / 2;
+        ring.position.set(0, GROUND_Y + 0.002, 0);
+        scene.add(ring);
+      }
+      createGround();
+
+      // ─── Brick creation ─────────────────────────────────────────
+      function hexToThreeColor(hex) {
+        return new THREE.Color(hex);
+      }
+
+      function createBrickMesh(colorHex) {
+        const color = hexToThreeColor(colorHex);
+        // The brick with slightly rounded edges (chamfer) using a box geometry
+        const w = BRICK_W - GAP;
+        const h = BRICK_H - GAP;
+        const d = BRICK_D - GAP;
+
+        const geo = new THREE.BoxGeometry(w, h, d);
+        const mat = new THREE.MeshStandardMaterial({
+          color: color,
+          roughness: 0.3,
+          metalness: 0.05,
+        });
+        const mesh = new THREE.Mesh(geo, mat);
+        mesh.castShadow = true;
+        mesh.receiveShadow = true;
+
+        // Add studs on top (the little bumps on LEGO bricks)
+        const studGeo = new THREE.CylinderGeometry(0.15, 0.15, 0.06, 12);
+        const studMat = new THREE.MeshStandardMaterial({
+          color: color.clone().multiplyScalar(1.1),
+          roughness: 0.2,
+          metalness: 0.1,
+        });
+        // Place 2 studs per 1x1 brick
+        for (let sx = -0.2; sx <= 0.2; sx += 0.4) {
+          for (let sz = -0.2; sz <= 0.2; sz += 0.4) {
+            const stud = new THREE.Mesh(studGeo, studMat);
+            stud.position.set(sx, h / 2 + 0.03, sz);
+            stud.castShadow = true;
+            mesh.add(stud);
+          }
+        }
+
+        return mesh;
+      }
+
+      function snapToGrid(value, gridUnit) {
+        return Math.round(value / gridUnit) * gridUnit;
+      }
+
+      function getGridPosition(worldPos) {
+        const x = snapToGrid(worldPos.x, BRICK_W);
+        const z = snapToGrid(worldPos.z, BRICK_D);
+        return { x, z };
+      }
+
+      function posKey(x, y, z) {
+        return `${x},${y},${z}`;
+      }
+
+      // Track occupied positions
+      const occupied = new Set();
+
+      function isOccupied(x, y, z) {
+        return occupied.has(posKey(x, y, z));
+      }
+
+      function addOccupied(x, y, z) {
+        occupied.add(posKey(x, y, z));
+      }
+
+      function removeOccupied(x, y, z) {
+        occupied.delete(posKey(x, y, z));
+      }
+
+      function placeBrick(x, y, z, colorHex, pushUndo = true) {
+        if (isOccupied(x, y, z)) return false;
+
+        const mesh = createBrickMesh(colorHex);
+        mesh.position.set(x, y, z);
+        scene.add(mesh);
+
+        const brick = { mesh, x, y, z, colorHex };
+        bricks.push(brick);
+        if (pushUndo) {
+          undoStack.push(brick);
+        }
+        addOccupied(x, y, z);
+
+        brickCount = bricks.length;
+        brickCountEl.textContent = brickCount;
+
+        // Hide instructions after first brick
+        if (brickCount > 0) {
+          instructionsEl.classList.add('hidden');
+        }
+
+        return true;
+      }
+
+      function removeBrick(brick) {
+        scene.remove(brick.mesh);
+        // dispose geometries and materials
+        brick.mesh.traverse(child => {
+          if (child.isMesh) {
+            child.geometry.dispose();
+            if (Array.isArray(child.material)) {
+              child.material.forEach(m => m.dispose());
+            } else {
+              child.material.dispose();
+            }
+          }
+        });
+        removeOccupied(brick.x, brick.y, brick.z);
+        const idx = bricks.indexOf(brick);
+        if (idx !== -1) bricks.splice(idx, 1);
+        brickCount = bricks.length;
+        brickCountEl.textContent = brickCount;
+      }
+
+      function undoLastBrick() {
+        if (undoStack.length === 0) return;
+        const brick = undoStack.pop();
+        // Also remove from bricks array if still there
+        const idx = bricks.indexOf(brick);
+        if (idx !== -1) {
+          scene.remove(brick.mesh);
+          removeOccupied(brick.x, brick.y, brick.z);
+          bricks.splice(idx, 1);
+          brickCount = bricks.length;
+          brickCountEl.textContent = brickCount;
+        }
+      }
+
+      function clearAllBricks() {
+        // Remove all bricks in reverse order
+        for (let i = bricks.length - 1; i >= 0; i--) {
+          const brick = bricks[i];
+          scene.remove(brick.mesh);
+          brick.mesh.traverse(child => {
+            if (child.isMesh) {
+              child.geometry.dispose();
+              if (Array.isArray(child.material)) {
+                child.material.forEach(m => m.dispose());
+              } else {
+                child.material.dispose();
+              }
+            }
+          });
+        }
+        occupied.clear();
+        bricks.length = 0;
+        undoStack.length = 0;
+        brickCount = 0;
+        brickCountEl.textContent = '0';
+        instructionsEl.classList.remove('hidden');
+      }
+
+      // ─── Raycasting for brick placement ─────────────────────
+      const raycaster = new THREE.Raycaster();
+      const pointer = new THREE.Vector2();
+
+      // An invisible ground plane for intersection
+      const groundPlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
+
+      function getPointerPos(event) {
+        const rect = renderer.domElement.getBoundingClientRect();
+        pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+        pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+      }
+
+      function getIntersectionPoint(event) {
+        getPointerPos(event);
+        raycaster.setFromCamera(pointer, camera);
+
+        // Intersect with the ground plane at y=0
+        const planeY = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
+        const target = new THREE.Vector3();
+        const ray = raycaster.ray;
+        const denom = ray.direction.dot(planeY.normal);
+        if (Math.abs(denom) < 0.0001) return null;
+        const t = -(ray.origin.dot(planeY.normal) + planeY.constant) / denom;
+        if (t < 0) return null;
+        target.copy(ray.origin).add(ray.direction.clone().multiplyScalar(t));
+        return target;
+      }
+
+      function getBrickUnderPointer(event) {
+        getPointerPos(event);
+        raycaster.setFromCamera(pointer, camera);
+        // Collect all brick meshes
+        const meshes = bricks.map(b => b.mesh);
+        const intersects = raycaster.intersectObjects(meshes, true);
+        if (intersects.length > 0) {
+          const hit = intersects[0];
+          // Find the parent brick (the mesh that's directly in our bricks array)
+          let obj = hit.object;
+          while (obj.parent && !bricks.some(b => b.mesh === obj)) {
+            obj = obj.parent;
+          }
+          const brick = bricks.find(b => b.mesh === obj);
+          return brick || null;
+        }
+        return null;
+      }
+
+      function findTopBrick(x, z) {
+        // Find all bricks at this (x, z) and return the highest one
+        const atPos = bricks.filter(b => b.x === x && b.z === z);
+        if (atPos.length === 0) return null;
+        atPos.sort((a, b) => b.y - a.y);
+        return atPos[0];
+      }
+
+      function handlePlace(event) {
+        if (isRemoveMode) {
+          // Try to remove a brick under pointer
+          const brick = getBrickUnderPointer(event);
+          if (brick) {
+            removeBrick(brick);
+            // Also remove from undo stack
+            const uIdx = undoStack.indexOf(brick);
+            if (uIdx !== -1) undoStack.splice(uIdx, 1);
+          }
+          return;
+        }
+
+        const point = getIntersectionPoint(event);
+        if (!point) return;
+
+        const { x, z } = getGridPosition(point);
+        // Clamp to grid bounds
+        const halfGrid = GRID_SIZE / 2;
+        if (x < -halfGrid || x >= halfGrid || z < -halfGrid || z >= halfGrid) return;
+
+        // Find the top brick at this position
+        const top = findTopBrick(x, z);
+        let y = GROUND_Y + BRICK_H / 2; // first layer center y
+        if (top) {
+          y = top.y + BRICK_H;
+        }
+
+        // Check if that exact position is occupied
+        if (isOccupied(x, y, z)) return;
+
+        placeBrick(x, y, z, currentColor);
+      }
+
+      // ─── Mouse / touch events ────────────────────────────────
+      function onPointerDown(event) {
+        isMouseDown = true;
+        mouseMoved = false;
+      }
+
+      function onPointerMove(event) {
+        if (isMouseDown) {
+          mouseMoved = true;
+        }
+      }
+
+      function onPointerUp(event) {
+        if (!mouseMoved && isMouseDown) {
+          handlePlace(event);
+        }
+        isMouseDown = false;
+        mouseMoved = false;
+      }
+
+      // Mouse
+      renderer.domElement.addEventListener('mousedown', onPointerDown);
+      renderer.domElement.addEventListener('mousemove', onPointerMove);
+      renderer.domElement.addEventListener('mouseup', onPointerUp);
+
+      // Touch
+      renderer.domElement.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 1) {
+          const touch = e.touches[0];
+          onPointerDown({ clientX: touch.clientX, clientY: touch.clientY, preventDefault: () => e.preventDefault() });
+        }
+      }, { passive: false });
+      renderer.domElement.addEventListener('touchmove', (e) => {
+        if (e.touches.length === 1) {
+          onPointerMove({ clientX: e.touches[0].clientX, clientY: e.touches[0].clientY });
+        }
+      }, { passive: false });
+      renderer.domElement.addEventListener('touchend', (e) => {
+        // Use the last known touch position from the changed touches
+        if (e.changedTouches.length === 1) {
+          const touch = e.changedTouches[0];
+          onPointerUp({ clientX: touch.clientX, clientY: touch.clientY, preventDefault: () => e.preventDefault() });
+        }
+      }, { passive: false });
+
+      // ─── Color picker ────────────────────────────────────────
+      colorBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          colorBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentColor = btn.dataset.color;
+          // If in remove mode, exit it
+          if (isRemoveMode) {
+            isRemoveMode = false;
+            btnRemoveMode.textContent = '🗑️ Remove';
+            modeIndicator.classList.remove('show');
+          }
+        });
+      });
+
+      // ─── Toolbar buttons ─────────────────────────────────────
+      btnUndo.addEventListener('click', undoLastBrick);
+
+      btnRemoveMode.addEventListener('click', () => {
+        isRemoveMode = !isRemoveMode;
+        btnRemoveMode.textContent = isRemoveMode ? '🧱 Build' : '🗑️ Remove';
+        modeIndicator.classList.toggle('show', isRemoveMode);
+        if (isRemoveMode) {
+          instructionsEl.textContent = '💡 Click on a brick to remove it';
+          instructionsEl.classList.remove('hidden');
+        } else {
+          instructionsEl.textContent = '💡 Click on the green grid to place a brick';
+          if (brickCount > 0) {
+            instructionsEl.classList.add('hidden');
+          }
+        }
+      });
+
+      btnReset.addEventListener('click', () => {
+        if (bricks.length === 0) return;
+        if (confirm('Clear all bricks? This cannot be undone.')) {
+          clearAllBricks();
+        }
+      });
+
+      // ─── Window resize ───────────────────────────────────────
+      window.addEventListener('resize', () => {
+        const w = container.clientWidth;
+        const h = container.clientHeight;
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+        renderer.setSize(w, h);
+      });
+
+      // ─── Animate ─────────────────────────────────────────────
+      function animate() {
+        requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+      }
+      animate();
+
+      // ─── Keyboard shortcuts ──────────────────────────────────
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'z' && (e.ctrlKey || e.metaKey)) {
+          e.preventDefault();
+          undoLastBrick();
+        }
+        if (e.key === 'r' || e.key === 'R') {
+          btnRemoveMode.click();
+        }
+        if (e.key === 'c' || e.key === 'C') {
+          // Cycle through colors
+          const active = document.querySelector('.color-btn.active');
+          const next = active.nextElementSibling || colorBtns[0];
+          if (next && next.classList.contains('color-btn')) {
+            next.click();
+          }
+        }
+        if (e.key === 'Delete' || e.key === 'Backspace') {
+          // In remove mode, delete the topmost brick
+          // We can't do this easily without pointer, so just toggle remove mode
+        }
+      });
+
+      // ─── Place some example bricks to start ──────────────────
+      function placeDemoStructure() {
+        // A little starter house
+        const demoBricks = [
+          // Base 3x3
+          { x: -1, y: 0.25, z: -1, c: '#e74c3c' },
+          { x: 0, y: 0.25, z: -1, c: '#e74c3c' },
+          { x: 1, y: 0.25, z: -1, c: '#e74c3c' },
+          { x: -1, y: 0.25, z: 0, c: '#e74c3c' },
+          { x: 0, y: 0.25, z: 0, c: '#f1c40f' },
+          { x: 1, y: 0.25, z: 0, c: '#e74c3c' },
+          { x: -1, y: 0.25, z: 1, c: '#e74c3c' },
+          { x: 0, y: 0.25, z: 1, c: '#e74c3c' },
+          { x: 1, y: 0.25, z: 1, c: '#e74c3c' },
+          // Walls
+          { x: 0, y: 0.75, z: -1, c: '#3498db' },
+          { x: 0, y: 0.75, z: 0, c: '#2ecc71' },
+          { x: 0, y: 0.75, z: 1, c: '#3498db' },
+          { x: -1, y: 0.75, z: 0, c: '#3498db' },
+          { x: 1, y: 0.75, z: 0, c: '#3498db' },
+          // Roof
+          { x: 0, y: 1.25, z: 0, c: '#e67e22' },
+        ];
+        demoBricks.forEach(b => {
+          placeBrick(b.x, b.y, b.z, b.c, false);
+        });
+        undoStack.length = 0; // don't allow undoing the demo
+        brickCountEl.textContent = bricks.length;
+        if (bricks.length > 0) {
+          instructionsEl.classList.add('hidden');
+        }
+      }
+      placeDemoStructure();
+
+      console.log('🧱 LEGO Builder ready! Click the grid to place bricks.');
+    })();
+  </script>
+</body>
+</html>
