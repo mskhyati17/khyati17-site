@@ -840,10 +840,19 @@ function startGame() {
 }
 
 function resizeCanvas() {
-    const rect = canvas.parentElement.getBoundingClientRect();
-    const maxW = Math.min(1000, rect.width - 4);
+    const container = canvas.parentElement;
+    const rect = container.getBoundingClientRect();
+    let maxW = Math.min(1000, rect.width - 4);
+    if (maxW < 200) {
+        // Game screen may still be hidden; use a fallback
+        const bodyRect = document.querySelector('.container').getBoundingClientRect();
+        maxW = Math.min(1000, bodyRect.width - 60);
+    }
+    if (maxW < 200) maxW = 800; // absolute fallback
     canvas.style.width = maxW + 'px';
     canvas.style.height = (maxW * 0.6) + 'px';
+    canvas.width = Math.floor(maxW);
+    canvas.height = Math.floor(maxW * 0.6);
 }
 
 // ─── Pause / Resume ───
@@ -883,8 +892,8 @@ document.addEventListener('keyup', (e) => {
 // Canvas resize on window resize
 window.addEventListener('resize', resizeCanvas);
 
-// Initial canvas sizing
-resizeCanvas();
+// Initial canvas sizing — skip when game screen is hidden (leaves default)
+// We'll size it properly in startGame() after showing the screen
 
 // ─── Mobile touch controls ───
 // Add simple d-pads for player 1 & 2 on mobile
