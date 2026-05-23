@@ -830,8 +830,10 @@ function startGame() {
     gameScreen.style.display = 'block';
     winScreen.classList.remove('show');
 
-    // Resize canvas
-    resizeCanvas();
+    // Resize canvas AFTER showing game screen so getBoundingClientRect works
+    requestAnimationFrame(() => {
+        resizeCanvas();
+    });
     lastTime = performance.now();
     if (gameState.animFrame) cancelAnimationFrame(gameState.animFrame);
     gameState.animFrame = requestAnimationFrame(gameLoop);
