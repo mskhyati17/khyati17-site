@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>👶 Parenting Simulator</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #ff9a9e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 24px;
+            padding: 30px 35px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            max-width: 750px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            backdrop-filter: blur(4px);
+        }
+        h1 {
+            font-size: 2em;
+            color: #5a2d3e;
+            margin-bottom: 4px;
+        }
+        .subtitle {
+            color: #8a5a6a;
+            font-size: 0.95em;
+            margin-bottom: 18px;
+        }
+
+        /* ── Stats bar ── */
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+        .stat {
+            background: #fce4ec;
+            border-radius: 30px;
+            padding: 6px 16px 6px 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #4a1a2a;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+        }
+        .stat .icon { font-size: 1.2em; }
+        .stat-bar {
+            width: 70px;
+            height: 10px;
+            background: #f0d0d8;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .stat-bar-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+        .fill-happy   { background: #f9a825; }
+        .fill-health  { background: #43a047; }
+        .fill-smarts  { background: #5c6bc0; }
+        .fill-disc    { background: #8d6e63; }
+
+        .stat .val { font-size: 0.8em; color: #6a3a4a; min-width: 22px; }
+
+        /* ── Day / Age display ── */
+        .age-display {
+            background: #f8e8ee;
+            border-radius: 40px;
+            display: inline-block;
+            padding: 6px 22px;
+            font-size: 0.95em;
+            font-weight: 600;
+            color: #5a2d3e;
+            margin-bottom: 14px;
+        }
+
+        /* ── Character area ── */
+        .character-area {
+            background: #fff5f7;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 18px;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #f0c8d4;
+        }
+        .character-emoji {
+            font-size: 5em;
+            line-height: 1.2;
+            transition: transform 0.3s ease;
+        }
+        .character-emoji.bounce {
+            animation: bounce 0.5s ease;
+        }
+        @keyframes bounce {
+            0%,100%{ transform: scale(1); }
+            50%{ transform: scale(1.2); }
+        }
+        .kid-name {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #5a2d3e;
+            margin-top: 4px;
+        }
+        .kid-mood {
+            font-size: 0.95em;
+            color: #7a4a5a;
+            margin-top: 2px;
+        }
+
+        /* ── Scenario / text ── */
+        .scenario-box {
+            background: #fff0f4;
+            border-radius: 16px;
+            padding: 16px 20px;
+            margin-bottom: 18px;
+            border-left: 5px solid #e8859e;
+            text-align: left;
+        }
+        .scenario-box .label {
+            font-size: 0.8em;
+            color: #b06a7e;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        .scenario-box p {
+            font-size: 1.05em;
+            color: #3a1a2a;
+            line-height: 1.5;
+        }
+
+        /* ── Game over message ── */
+        .result-box {
+            background: #fff0f4;
+            border-radius: 16px;
+            padding: 18px 20px;
+            margin-bottom: 18px;
+            border-left: 5px solid #e8859e;
+        }
+        .result-box h3 {
+            color: #5a2d3e;
+            margin-bottom: 6px;
+        }
+        .result-box p {
+            color: #3a1a2a;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        /* ── Choices ── */
+        .choices {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+        .choice-btn {
+            display: block;
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #eeb4c4;
+            border-radius: 14px;
+            background: white;
+            font-size: 1em;
+            font-weight: 600;
+            color: #4a1a2a;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+        }
+        .choice-btn:hover:not(:disabled) {
+            background: #fce4ec;
+            border-color: #d87093;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(216,112,147,0.2);
+        }
+        .choice-btn:disabled {
+            opacity: 0.5;
+            cursor: default;
+        }
+        .choice-btn.result-good {
+            border-color: #66bb6a;
+            background: #e8f5e9;
+        }
+        .choice-btn.result-bad {
+            border-color: #ef5350;
+            background: #ffebee;
+        }
+        .choice-btn.result-neutral {
+            border-color: #90a4ae;
+            background: #eceff1;
+        }
+        .choice-btn .effect {
+            font-size: 0.8em;
+            color: #7a5a6a;
+            margin-top: 3px;
+            font-weight: 400;
+        }
+
+        /* ── Buttons ── */
+        .btn-row {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 40px;
+            font-size: 1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #f68cb0, #e8729a);
+            color: white;
+            box-shadow: 0 4px 14px rgba(232,114,154,0.3);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(232,114,154,0.4); }
+        .btn-secondary {
+            background: #f0d8e0;
+            color: #5a2d3e;
+        }
+        .btn-secondary:hover { background: #e8c8d2; transform: translateY(-2px); }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 16px;
+            color: #b06a7e;
+            text-decoration: none;
+            font-size: 0.85em;
+        }
+        .back-link:hover { text-decoration: underline; }
+
+        .hidden { display: none; }
+
+        .fade-in {
+            animation: fadeIn 0.4s ease forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 500px) {
+            .container { padding: 20px 16px; }
+            .character-emoji { font-size: 3.8em; }
+            .stat-bar { width: 50px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container" id="app">
+    <!-- Header -->
+    <h1>👶 Parenting Simulator</h1>
+    <p class="subtitle">Raise your child with love, wisdom & care!</p>
+
+    <!-- Stats -->
+    <div class="stats-row" id="statsRow">
+        <div class="stat"><span class="icon">😊</span><span class="val" id="statHappinessVal">100</span><div class="stat-bar"><div class="stat-bar-fill fill-happy" id="statHappinessBar" style="width:100%"></div></div></div>
+        <div class="stat"><span class="icon">💪</span><span class="val" id="statHealthVal">100</span><div class="stat-bar"><div class="stat-bar-fill fill-health" id="statHealthBar" style="width:100%"></div></div></div>
+        <div class="stat"><span class="icon">🧠</span><span class="val" id="statSmartsVal">100</span><div class="stat-bar"><div class="stat-bar-fill fill-smarts" id="statSmartsBar" style="width:100%"></div></div></div>
+        <div class="stat"><span class="icon">🎯</span><span class="val" id="statDisciplineVal">100</span><div class="stat-bar"><div class="stat-bar-fill fill-disc" id="statDisciplineBar" style="width:100%"></div></div></div>
+    </div>
+
+    <!-- Age display -->
+    <div class="age-display" id="ageDisplay">👶 Baby – Day 1</div>
+
+    <!-- Character area -->
+    <div class="character-area" id="characterArea">
+        <div class="character-emoji" id="characterEmoji">👶</div>
+        <div class="kid-name" id="kidName">Baby</div>
+        <div class="kid-mood" id="kidMood">🥰 Happy & healthy</div>
+    </div>
+
+    <!-- Scenario / result text -->
+    <div class="scenario-box" id="scenarioBox">
+        <div class="label" id="situationLabel">🌟 Situation</div>
+        <p id="scenarioText">You just welcomed your beautiful baby into the world! What kind of parent will you be?</p>
+    </div>
+
+    <!-- Choices -->
+    <div class="choices" id="choicesContainer"></div>
+
+    <!-- Result message (shown after choice) -->
+    <div class="result-box hidden" id="resultBox">
+        <h3 id="resultTitle">✨ Result</h3>
+        <p id="resultText">Your choice had an effect!</p>
+    </div>
+
+    <!-- Action buttons -->
+    <div class="btn-row" id="btnRow">
+        <button class="btn btn-primary" id="startBtn">▶ Start Your Journey</button>
+        <button class="btn btn-secondary hidden" id="nextBtn">➡ Next Day</button>
+        <button class="btn btn-primary hidden" id="restartBtn">🔄 Play Again</button>
+    </div>
+
+    <a class="back-link" href="fun-games.html">← Back to Fun & Games</a>
+</div>
+
+<script>
+(function() {
+    'use strict';
+
+    // ─── DOM References ───
+    const $ = id => document.getElementById(id);
+    const statHappinessVal  = $('statHappinessVal');
+    const statHealthVal     = $('statHealthVal');
+    const statSmartsVal     = $('statSmartsVal');
+    const statDisciplineVal = $('statDisciplineVal');
+    const statHappinessBar  = $('statHappinessBar');
+    const statHealthBar     = $('statHealthBar');
+    const statSmartsBar     = $('statSmartsBar');
+    const statDisciplineBar = $('statDisciplineBar');
+    const ageDisplay        = $('ageDisplay');
+    const characterEmoji    = $('characterEmoji');
+    const kidName           = $('kidName');
+    const kidMood           = $('kidMood');
+    const scenarioBox       = $('scenarioBox');
+    const situationLabel    = $('situationLabel');
+    const scenarioText      = $('scenarioText');
+    const choicesContainer  = $('choicesContainer');
+    const resultBox         = $('resultBox');
+    const resultTitle       = $('resultTitle');
+    const resultText        = $('resultText');
+    const startBtn          = $('startBtn');
+    const nextBtn           = $('nextBtn');
+    const restartBtn        = $('restartBtn');
+
+    // ─── Game State ───
+    let state = {
+        phase: 'welcome',  // welcome | choose-parent | playing | day-result | game-over
+        parent: '',        // 'mom' or 'dad'
+        kidNameStr: '',
+        day: 1,
+        stats: { happiness: 100, health: 100, smarts: 100, discipline: 100 },
+        currentScenario: null,
+        choiceMade: false,
+        round: 0,
+    };
+
+    const MAX_DAY = 12;
+    const MAX_STAT = 100;
+    const MIN_STAT = 0;
+
+    // ─── Scenarios ───
+    // Each scenario: { day, description, choices: [{ text, effects: {happiness,health,smarts,discipline}, result }] }
+    const SCENARIOS = [
+        // Day 1 – already handled by welcome
+        {
+            day: 1,
+            desc: 'Your baby is crying in the middle of the night. What do you do?',
+            choices: [
+                { text: '🤱 Pick them up and gently rock them to sleep', effects: { happiness: +8, health: +5, smarts: +2, discipline: +3 }, result: 'The baby coos and falls asleep in your arms. Sweet dreams!' },
+                { text: '😤 Let them cry — they need to learn self-soothing', effects: { happiness: -10, health: -3, smarts: 0, discipline: +8 }, result: 'The baby cries for 30 minutes but finally settles. Tough love...' },
+                { text: '🎶 Sing a lullaby and offer a pacifier', effects: { happiness: +5, health: +2, smarts: +3, discipline: +5 }, result: 'Your gentle voice calms them down. Music soothes the soul!' },
+                { text: '📱 Scroll on your phone while vaguely patting their back', effects: { happiness: -5, health: -2, smarts: -3, discipline: -5 }, result: 'The baby senses your distraction and cries even louder. Oops.' },
+            ]
+        },
+        {
+            day: 2,
+            desc: 'Time to feed your little one! What\'s on the menu?',
+            choices: [
+                { text: '🥦 A healthy homemade puree with veggies', effects: { happiness: -2, health: +12, smarts: +3, discipline: +5 }, result: 'They make a funny face at the broccoli, but eat it all up! Growing strong!' },
+                { text: '🍦 Sugary treats because it\'s easier', effects: { happiness: +10, health: -8, smarts: -2, discipline: -3 }, result: 'They love the sweets but now they\'re bouncing off the walls...' },
+                { text: '📚 Read them a story while they eat', effects: { happiness: +4, health: +5, smarts: +10, discipline: +3 }, result: 'They listen intently while munching — a future bookworm!' },
+                { text: '🤷 Let them feed themselves — messy but fun', effects: { happiness: +6, health: +3, smarts: +4, discipline: -2 }, result: 'Food everywhere! But they\'re learning independence.' },
+            ]
+        },
+        {
+            day: 3,
+            desc: 'Your toddler wants to play outside but there\'s a big muddy puddle.',
+            choices: [
+                { text: '⛔ Say no — they\'ll get messy and catch a cold', effects: { happiness: -8, health: +3, smarts: 0, discipline: +6 }, result: 'They pout but stay clean. Safety first!' },
+                { text: '💦 Let them splash and have a blast!', effects: { happiness: +12, health: -4, smarts: +2, discipline: -5 }, result: 'They jump in with joy. Muddy but unstoppable!' },
+                { text: '👢 Put on rain boots and make it a learning moment', effects: { happiness: +5, health: +2, smarts: +8, discipline: +5 }, result: 'You teach them about water, worms, and puddles. Genius parent!' },
+                { text: '🎨 Distract them with indoor coloring instead', effects: { happiness: +3, health: +5, smarts: +5, discipline: +4 }, result: 'They create a beautiful (abstract) masterpiece!' },
+            ]
+        },
+        {
+            day: 4,
+            desc: 'Your child threw a tantrum in the grocery store because you wouldn\'t buy candy.',
+            choices: [
+                { text: '🧘 Stay calm and kneel to their level — talk it through', effects: { happiness: -3, health: 0, smarts: +6, discipline: +10 }, result: 'They eventually calm down and you have a heart-to-heart. Teaching moments!' },
+                { text: '😠 Yell at them to stop — embarrassing!', effects: { happiness: -10, health: 0, smarts: -3, discipline: +4 }, result: 'They stop crying but look scared. Not your finest parenting moment.' },
+                { text: '🍭 Give in and buy the candy to avoid a scene', effects: { happiness: +8, health: -6, smarts: -2, discipline: -8 }, result: 'They stop immediately. But they\'ve learned that tantrums work...' },
+                { text: '🎭 Make a silly face to distract and redirect', effects: { happiness: +5, health: 0, smarts: +3, discipline: +3 }, result: 'They giggle through their tears. Well played!' },
+            ]
+        },
+        {
+            day: 5,
+            desc: 'Your child is scared of the dark and can\'t sleep.',
+            choices: [
+                { text: '🌟 Stay with them and tell a brave story', effects: { happiness: +6, health: +3, smarts: +5, discipline: +4 }, result: 'They drift off dreaming of brave knights and friendly dragons.' },
+                { text: '💡 Turn on every light in the room', effects: { happiness: +3, health: -3, smarts: -2, discipline: -2 }, result: 'They feel safe but now they can\'t fall asleep with all that light!' },
+                { text: '🧸 Give them a "brave buddy" stuffed animal', effects: { happiness: +5, health: +2, smarts: +3, discipline: +5 }, result: 'They hug the teddy bear tight and finally close their eyes.' },
+                { text: '📱 Show them a video on your phone to calm down', effects: { happiness: +2, health: -2, smarts: -4, discipline: -3 }, result: 'Screen time before bed? Not the best habit...' },
+            ]
+        },
+        {
+            day: 6,
+            desc: 'Your child brought home a stray puppy. What do you do?',
+            choices: [
+                { text: '🐾 Keep it! Teach responsibility and compassion', effects: { happiness: +10, health: +3, smarts: +5, discipline: +8 }, result: 'The puppy stays! Your child is overjoyed and promises to help care for it.' },
+                { text: '🚫 Return it — you already have enough to handle', effects: { happiness: -8, health: 0, smarts: 0, discipline: +5 }, result: 'Your child is heartbroken but learns about responsibility.' },
+                { text: '🏥 Take it to a shelter together — a lesson in kindness', effects: { happiness: +3, health: +2, smarts: +8, discipline: +6 }, result: 'You explain how shelters help animals. A compassionate lesson!' },
+                { text: '😅 Pretend you didn\'t see it and change the subject', effects: { happiness: -3, health: 0, smarts: -3, discipline: -4 }, result: 'The puppy runs off. Avoiding problems doesn\'t make them go away.' },
+            ]
+        },
+        {
+            day: 7,
+            desc: 'Your child got a bad grade on a test. How do you respond?',
+            choices: [
+                { text: '📚 Sit down and help them study', effects: { happiness: +4, health: 0, smarts: +12, discipline: +8 }, result: 'Together you go over every question. They\'re determined to do better!' },
+                { text: '😤 Ground them until grades improve', effects: { happiness: -8, health: 0, smarts: -2, discipline: +6 }, result: 'They sulk in their room. Fear isn\'t the best teacher.' },
+                { text: '🎉 Celebrate their effort anyway!', effects: { happiness: +8, health: 0, smarts: +3, discipline: +2 }, result: 'They hug you tight. Knowing you\'re proud means everything.' },
+                { text: '🧘 Teach them a relaxation technique for test anxiety', effects: { happiness: +5, health: +4, smarts: +6, discipline: +5 }, result: 'Deep breathing and positive thinking — skills for life!' },
+            ]
+        },
+        {
+            day: 8,
+            desc: 'Your child wants to quit their sports team mid-season.',
+            choices: [
+                { text: '🗣️ Talk about commitment — finish what you start', effects: { happiness: -3, health: +2, smarts: +4, discipline: +10 }, result: 'They agree to finish the season. A lesson in perseverance.' },
+                { text: '🆗 Let them quit — they know what they want', effects: { happiness: +6, health: -3, smarts: +2, discipline: -5 }, result: 'They\'re relieved but you wonder if you should have pushed more.' },
+                { text: '🏅 Find a different activity they\'re excited about', effects: { happiness: +5, health: +3, smarts: +4, discipline: +3 }, result: 'They try art classes and love it! Different strokes for different folks.' },
+                { text: '👨‍👩‍👧 Join them in practice to make it fun together', effects: { happiness: +8, health: +5, smarts: +2, discipline: +4 }, result: 'Practicing together brings you closer. So much fun!' },
+            ]
+        },
+        {
+            day: 9,
+            desc: 'Your child asks about where babies come from.',
+            choices: [
+                { text: '📖 Give them an honest, age-appropriate answer', effects: { happiness: +2, health: 0, smarts: +10, discipline: +5 }, result: 'They nod thoughtfully. You handled it like a champ.' },
+                { text: '🤥 Make up a story about storks or cabbage patches', effects: { happiness: +3, health: 0, smarts: -5, discipline: -3 }, result: 'They buy it for now, but they\'ll learn the truth eventually...' },
+                { text: '📚 Get a children\'s book about the human body', effects: { happiness: +3, health: +3, smarts: +12, discipline: +4 }, result: 'You learn together! Knowledge is power.' },
+                { text: '😳 Change the subject awkwardly', effects: { happiness: -3, health: 0, smarts: -4, discipline: -3 }, result: 'They\'re curious and confused. That talk is coming sooner or later!' },
+            ]
+        },
+        {
+            day: 10,
+            desc: 'Your child is being bullied at school.',
+            choices: [
+                { text: '💬 Talk to the teacher and the bully\'s parents', effects: { happiness: +5, health: +3, smarts: +4, discipline: +6 }, result: 'The school gets involved and resolves the issue. Teamwork!' },
+                { text: '🥋 Sign them up for self-defense classes', effects: { happiness: +3, health: +8, smarts: +2, discipline: +7 }, result: 'They gain confidence and make new friends in class.' },
+                { text: '👂 Tell them to ignore it — bullies want attention', effects: { happiness: -5, health: -3, smarts: 0, discipline: +3 }, result: 'They try to ignore it but feel alone. Maybe there\'s a better way.' },
+                { text: '💪 Stand up together and practice assertiveness', effects: { happiness: +6, health: +2, smarts: +6, discipline: +5 }, result: 'You role-play scenarios. They feel empowered to speak up!' },
+            ]
+        },
+        {
+            day: 11,
+            desc: 'Your child wants to stay up late to watch a movie.',
+            choices: [
+                { text: '🎬 Say yes — special bonding night!', effects: { happiness: +10, health: -5, smarts: +2, discipline: -4 }, result: 'You snuggle under a blanket and watch together. Core memory unlocked!' },
+                { text: '⏰ Stick to the bedtime routine', effects: { happiness: -4, health: +5, smarts: 0, discipline: +8 }, result: 'They go to bed grumpy but well-rested. Consistency matters.' },
+                { text: '⏱️ Compromise — watch 30 minutes then bed', effects: { happiness: +5, health: +2, smarts: +2, discipline: +5 }, result: 'Everyone wins! They get a little treat and you keep the routine.' },
+                { text: '🎧 Let them listen to an audio story in bed', effects: { happiness: +3, health: +3, smarts: +5, discipline: +4 }, result: 'Their imagination runs wild as they drift off. Sweet dreams!' },
+            ]
+        },
+        {
+            day: 12,
+            desc: 'Your child is graduating from elementary school! What advice do you give?',
+            choices: [
+                { text: '🌈 "Be kind, work hard, and follow your dreams!"', effects: { happiness: +8, health: +3, smarts: +8, discipline: +8 }, result: 'They beam with pride. You\'ve raised a wonderful human being.' },
+                { text: '💰 "Get good grades so you can make lots of money."', effects: { happiness: -3, health: 0, smarts: +5, discipline: +5 }, result: 'They nod but something feels hollow. Is that all that matters?' },
+                { text: '🌍 "Explore the world and never stop learning."', effects: { happiness: +6, health: +4, smarts: +10, discipline: +6 }, result: 'Their eyes sparkle with curiosity. The world is their oyster.' },
+                { text: '🤗 "I love you no matter what. I\'m so proud of you."', effects: { happiness: +12, health: +5, smarts: +5, discipline: +5 }, result: 'They hug you tight. Unconditional love — the greatest gift of all.' },
+            ]
+        }
+    ];
+
+    // ─── Helper functions ───
+    function clamp(v) { return Math.max(MIN_STAT, Math.min(MAX_STAT, v)); }
+
+    function updateStatsUI() {
+        const s = state.stats;
+        statHappinessVal.textContent  = s.happiness;
+        statHealthVal.textContent     = s.health;
+        statSmartsVal.textContent     = s.smarts;
+        statDisciplineVal.textContent = s.discipline;
+        statHappinessBar.style.width  = s.happiness + '%';
+        statHealthBar.style.width     = s.health + '%';
+        statSmartsBar.style.width     = s.smarts + '%';
+        statDisciplineBar.style.width = s.discipline + '%';
+    }
+
+    function getMoodEmoji() {
+        const s = state.stats;
+        const avg = (s.happiness + s.health + s.smarts + s.discipline) / 4;
+        if (avg >= 85) return '🌟';
+        if (avg >= 65) return '😊';
+        if (avg >= 45) return '😐';
+        if (avg >= 25) return '😢';
+        return '😭';
+    }
+
+    function getMoodText() {
+        const s = state.stats;
+        const avg = (s.happiness + s.health + s.smarts + s.discipline) / 4;
+        if (avg >= 85) return 'Thriving! 🌟';
+        if (avg >= 65) return 'Doing well 😊';
+        if (avg >= 45) return 'Could be better 😐';
+        if (avg >= 25) return 'Needs help 😢';
+        return 'In trouble 😭';
+    }
+
+    function getChildEmoji(day) {
+        if (day <= 2) return '👶';
+        if (day <= 4) return '🧒';
+        if (day <= 7) return '👦';
+        if (day <= 10) return '🧑';
+        return '🧑‍🎓';
+    }
+
+    function updateCharacter() {
+        const ageEmoji = getChildEmoji(state.day);
+        const moodEmoji = getMoodEmoji();
+        characterEmoji.textContent = ageEmoji;
+        kidName.textContent = state.kidNameStr || 'Baby';
+        kidMood.textContent = `${moodEmoji} ${getMoodText()}`;
+        // Bounce animation
+        characterEmoji.classList.remove('bounce');
+        void characterEmoji.offsetWidth;
+        characterEmoji.classList.add('bounce');
+    }
+
+    function updateAgeDisplay() {
+        const labels = ['', 'Baby', 'Toddler', 'Kid', 'Pre-teen', 'Graduate'];
+        let stage = 'Baby';
+        if (state.day <= 2) stage = '👶 Baby';
+        else if (state.day <= 4) stage = '🧒 Toddler';
+        else if (state.day <= 7) stage = '👦 Kid';
+        else if (state.day <= 10) stage = '🧑 Pre-teen';
+        else stage = '🧑‍🎓 Graduate';
+        ageDisplay.textContent = `${stage} – Day ${state.day}`;
+    }
+
+    function checkGameOver() {
+        const s = state.stats;
+        if (s.happiness <= 0) return { over: true, reason: 'Your child became too unhappy. 😢 Sometimes parenting means making the hard choices.' };
+        if (s.health <= 0) return { over: true, reason: 'Your child\'s health declined too much. Remember — a healthy body helps a healthy mind!' };
+        if (s.smarts <= 0) return { over: true, reason: 'Your child lost their curiosity for learning. Nurture that spark!' };
+        if (s.discipline <= 0) return { over: true, reason: 'There were no boundaries left. Kids need structure to feel safe.' };
+        return { over: false };
+    }
+
+    function checkWin() {
+        if (state.day > MAX_DAY) {
+            const s = state.stats;
+            const avg = (s.happiness + s.health + s.smarts + s.discipline) / 4;
+            return { won: true, avg };
+        }
+        return { won: false };
+    }
+
+    // ─── Rendering ───
+    function renderWelcome() {
+        state.phase = 'welcome';
+        situationLabel.textContent = '🌟 Welcome!';
+        scenarioText.textContent = 'Welcome to Parenting Simulator! You\'ll guide your child through 12 days of adventures, challenges, and milestones. Every choice shapes who they become. Ready to be the best parent?';
+        choicesContainer.innerHTML = '';
+        resultBox.classList.add('hidden');
+        startBtn.classList.remove('hidden');
+        nextBtn.classList.add('hidden');
+        restartBtn.classList.add('hidden');
+        startBtn.textContent = '▶ Start Your Journey';
+        // initial stats
+        state.stats = { happiness: 100, health: 100, smarts: 100, discipline: 100 };
+        state.day = 1;
+        state.round = 0;
+        state.choiceMade = false;
+        updateStatsUI();
+        updateAgeDisplay();
+        characterEmoji.textContent = '👶';
+        kidName.textContent = 'Baby';
+        kidMood.textContent = '🥰 A new beginning!';
+    }
+
+    function renderParentChoice() {
+        state.phase = 'choose-parent';
+        situationLabel.textContent = '👩‍👧‍👦 Choose Your Role';
+        scenarioText.textContent = 'First things first — who will you be on this parenting journey?';
+        choicesContainer.innerHTML = '';
+        resultBox.classList.add('hidden');
+        startBtn.classList.add('hidden');
+        nextBtn.classList.add('hidden');
+        restartBtn.classList.add('hidden');
+
+        const momBtn = document.createElement('button');
+        momBtn.className = 'choice-btn';
+        momBtn.innerHTML = '👩 I\'ll be the Mom! <div class="effect">Nurturing, caring, and wise</div>';
+        momBtn.addEventListener('click', () => chooseParent('mom'));
+
+        const dadBtn = document.createElement('button');
+        dadBtn.className = 'choice-btn';
+        dadBtn.innerHTML = '👨 I\'ll be the Dad! <div class="effect">Strong, playful, and kind</div>';
+        dadBtn.addEventListener('click', () => chooseParent('dad'));
+
+        choicesContainer.appendChild(momBtn);
+        choicesContainer.appendChild(dadBtn);
+    }
+
+    function chooseParent(role) {
+        state.parent = role;
+        const parentEmoji = role === 'mom' ? '👩' : '👨';
+        state.kidNameStr = role === 'mom' ? 'Mom\'s Little Star' : 'Dad\'s Champ';
+        const nameInput = prompt('Give your child a name! (or press Enter for default):', '');
+        if (nameInput && nameInput.trim()) {
+            state.kidNameStr = nameInput.trim();
+        }
+        // Move to day 1 scenario
+        renderScenario(1);
+    }
+
+    function renderScenario(day) {
+        state.phase = 'playing';
+        state.day = day;
+        state.choiceMade = false;
+        updateAgeDisplay();
+        updateCharacter();
+
+        const scenario = SCENARIOS.find(s => s.day === day);
+        if (!scenario) {
+            // No more scenarios — check win
+            const winCheck = checkWin();
+            if (winCheck.won) {
+                renderWin();
+            }
+            return;
+        }
+
+        state.currentScenario = scenario;
+        situationLabel.textContent = `📅 Day ${day} — Challenge`;
+        scenarioText.textContent = scenario.desc;
+
+        choicesContainer.innerHTML = '';
+        resultBox.classList.add('hidden');
+        startBtn.classList.add('hidden');
+        nextBtn.classList.add('hidden');
+        restartBtn.classList.add('hidden');
+
+        scenario.choices.forEach((choice, idx) => {
+            const btn = document.createElement('button');
+            btn.className = 'choice-btn';
+            btn.textContent = choice.text;
+            btn.addEventListener('click', () => handleChoice(idx));
+            choicesContainer.appendChild(btn);
+        });
+    }
+
+    function handleChoice(idx) {
+        if (state.choiceMade) return;
+        const scenario = state.currentScenario;
+        if (!scenario) return;
+        const choice = scenario.choices[idx];
+        if (!choice) return;
+
+        state.choiceMade = true;
+        state.round++;
+
+        // Apply effects
+        const eff = choice.effects;
+        state.stats.happiness  = clamp(state.stats.happiness  + (eff.happiness  || 0));
+        state.stats.health     = clamp(state.stats.health     + (eff.health     || 0));
+        state.stats.smarts    = clamp(state.stats.smarts    + (eff.smarts    || 0));
+        state.stats.discipline = clamp(state.stats.discipline + (eff.discipline || 0));
+        updateStatsUI();
+        updateCharacter();
+
+        // Show result
+        resultBox.classList.remove('hidden');
+        resultTitle.textContent = '✨ Result';
+        resultText.textContent = choice.result;
+
+        // Disable all choice buttons and color them
+        const btns = choicesContainer.querySelectorAll('.choice-btn');
+        btns.forEach((btn, i) => {
+            btn.disabled = true;
+            if (i === idx) {
+                const net = (eff.happiness||0) + (eff.health||0) + (eff.smarts||0) + (eff.discipline||0);
+                if (net > 5) btn.classList.add('result-good');
+                else if (net < -3) btn.classList.add('result-bad');
+                else btn.classList.add('result-neutral');
+            } else {
+                btn.style.opacity = '0.4';
+            }
+        });
+
+        // Check game over
+        const gameOverCheck = checkGameOver();
+        if (gameOverCheck.over) {
+            renderGameOver(gameOverCheck.reason);
+            return;
+        }
+
+        // Check win (after last day)
+        if (state.day >= MAX_DAY) {
+            const winCheck = checkWin();
+            if (winCheck.won) {
+                nextBtn.classList.add('hidden');
+                restartBtn.classList.remove('hidden');
+                return;
+            }
+        }
+
+        // Show next button
+        nextBtn.classList.remove('hidden');
+        nextBtn.textContent = state.day >= MAX_DAY ? '🎉 See Final Results' : '➡ Next Day';
+    }
+
+    function goToNextDay() {
+        if (state.day >= MAX_DAY) {
+            renderWin();
+            return;
+        }
+        renderScenario(state.day + 1);
+    }
+
+    function renderGameOver(reason) {
+        state.phase = 'game-over';
+        situationLabel.textContent = '💔 Game Over';
+        scenarioText.textContent = reason;
+        choicesContainer.innerHTML = '';
+        resultBox.classList.add('hidden');
+        startBtn.classList.add('hidden');
+        nextBtn.classList.add('hidden');
+        restartBtn.classList.remove('hidden');
+        characterEmoji.textContent = '😢';
+        kidMood.textContent = '💔 Needs more love...';
+    }
+
+    function renderWin() {
+        state.phase = 'game-over';
+        const s = state.stats;
+        const avg = ((s.happiness + s.health + s.smarts + s.discipline) / 4).toFixed(0);
+        situationLabel.textContent = '🎉 Graduation Day!';
+        let grade = 'C';
+        let msg = 'You did okay, but there\'s room to grow.';
+        if (avg >= 90) { grade = 'A+'; msg = 'Absolutely incredible! You\'re a legendary parent! 🌟'; }
+        else if (avg >= 80) { grade = 'A'; msg = 'Amazing job! Your child is thriving! ⭐'; }
+        else if (avg >= 70) { grade = 'B'; msg = 'Great work! Your child is happy and healthy! 👍'; }
+        else if (avg >= 60) { grade = 'C'; msg = 'Good effort! Every parent learns as they go. 💪'; }
+        else if (avg >= 45) { grade = 'D'; msg = 'It was a tough journey, but you tried! 🌱'; }
+        else { grade = 'F'; msg = 'Parenting is hard — don\'t give up! 💖'; }
+
+        scenarioText.innerHTML = `
+            <strong>${state.kidNameStr} graduated with an average score of ${avg}%!</strong><br>
+            Grade: <span style="font-size:1.3em;font-weight:bold;color:#d87093">${grade}</span><br>
+            ${msg}<br><br>
+            😊 Happiness: ${s.happiness} &nbsp;|&nbsp; 💪 Health: ${s.health} &nbsp;|&nbsp; 🧠 Smarts: ${s.smarts} &nbsp;|&nbsp; 🎯 Discipline: ${s.discipline}
+        `;
+        choicesContainer.innerHTML = '';
+        resultBox.classList.add('hidden');
+        startBtn.classList.add('hidden');
+        nextBtn.classList.add('hidden');
+        restartBtn.classList.remove('hidden');
+        characterEmoji.textContent = '🧑‍🎓';
+        kidMood.textContent = `🎓 Graduated with ${grade}!`;
+    }
+
+    function resetGame() {
+        state = {
+            phase: 'welcome',
+            parent: '',
+            kidNameStr: '',
+            day: 1,
+            stats: { happiness: 100, health: 100, smarts: 100, discipline: 100 },
+            currentScenario: null,
+            choiceMade: false,
+            round: 0,
+        };
+        renderWelcome();
+    }
+
+    // ─── Event bindings ───
+    startBtn.addEventListener('click', renderParentChoice);
+    nextBtn.addEventListener('click', goToNextDay);
+    restartBtn.addEventListener('click', resetGame);
+
+    // ─── Start with welcome ───
+    renderWelcome();
+})();
+</script>
+</body>
+</html>
