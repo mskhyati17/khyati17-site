@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Tag 🏃</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow: hidden;
+        }
+        .container {
+            background: rgba(255,255,255,0.07);
+            backdrop-filter: blur(12px);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            max-width: 1100px;
+            width: 100%;
+            position: relative;
+        }
+        h1 {
+            color: #fff;
+            font-size: 2.2em;
+            margin-bottom: 8px;
+            text-shadow: 0 0 30px rgba(102,126,234,0.4);
+        }
+        h1 span { color: #ffd700; }
+        .subtitle { color: rgba(255,255,255,0.5); font-size: 0.9em; margin-bottom: 16px; }
+
+        /* ===== START SCREEN ===== */
+        #startScreen {
+            padding: 30px 20px;
+        }
+        #startScreen h2 { color: #fff; font-size: 1.4em; margin-bottom: 20px; }
+        .city-preview {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 28px;
+        }
+        .city-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 14px;
+            padding: 14px 18px;
+            min-width: 110px;
+            transition: all 0.3s ease;
+        }
+        .city-card .flag { font-size: 2em; }
+        .city-card .name { color: #fff; font-weight: 600; font-size: 0.85em; margin-top: 4px; }
+        .city-card .country { color: rgba(255,255,255,0.4); font-size: 0.7em; }
+
+        .player-select {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+        .player-select label {
+            color: #fff;
+            font-size: 1.1em;
+            cursor: pointer;
+            padding: 12px 28px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 12px;
+            border: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+        .player-select label:hover { background: rgba(255,255,255,0.12); }
+        .player-select input[type="radio"] { display: none; }
+        .player-select input[type="radio"]:checked + label {
+            border-color: #667eea;
+            background: rgba(102,126,234,0.2);
+            box-shadow: 0 0 30px rgba(102,126,234,0.2);
+        }
+
+        .controls-info {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85em;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+        .controls-info kbd {
+            background: rgba(255,255,255,0.1);
+            padding: 2px 10px;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 0.85em;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .btn {
+            padding: 14px 44px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            box-shadow: 0 8px 32px rgba(102,126,234,0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(102,126,234,0.5);
+        }
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .btn-secondary:hover { background: rgba(255,255,255,0.2); }
+        .btn-danger {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: #fff;
+        }
+        .btn-danger:hover { transform: translateY(-2px); }
+
+        /* ===== GAME SCREEN ===== */
+        #gameScreen { display: none; position: relative; }
+        #gameCanvas {
+            border-radius: 16px;
+            border: 2px solid rgba(255,255,255,0.1);
+            background: #1a1a2e;
+            width: 100%;
+            max-height: 70vh;
+            cursor: none;
+        }
+        .game-hud {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 10px 0;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .hud-left, .hud-right {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .hud-item {
+            color: #fff;
+            font-size: 0.85em;
+            background: rgba(255,255,255,0.08);
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .hud-item .tag-icon {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+        .hud-item .tag-icon.it { background: #ffd700; box-shadow: 0 0 12px #ffd700; }
+        .hud-timer {
+            color: #ffd700;
+            font-size: 1em;
+            font-weight: 700;
+        }
+        .hud-timer.warning { color: #e74c3c; animation: blink 0.5s ease-in-out infinite; }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .game-controls {
+            display: flex;
+            gap: 10px;
+            padding: 10px 0 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .mobile-controls {
+            display: none;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .mobile-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            font-size: 1.4em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+        .mobile-btn:active { background: rgba(255,255,255,0.25); }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 14px;
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            font-size: 0.85em;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: rgba(255,255,255,0.7); }
+
+        /* ===== WIN SCREEN ===== */
+        #winScreen {
+            display: none;
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.75);
+            backdrop-filter: blur(8px);
+            border-radius: 24px;
+            z-index: 10;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+        #winScreen.show { display: flex; }
+        #winScreen h2 { font-size: 2.5em; margin-bottom: 8px; }
+        #winScreen .winner-name { font-size: 1.5em; color: #ffd700; margin-bottom: 20px; }
+        #winScreen .stats {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+        #winScreen .stats span { color: #fff; font-weight: 600; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 700px) {
+            .container { padding: 16px; }
+            h1 { font-size: 1.5em; }
+            .city-card { min-width: 80px; padding: 10px 12px; }
+            .city-card .flag { font-size: 1.4em; }
+            .player-select label { padding: 10px 18px; font-size: 0.95em; }
+            .mobile-controls { display: flex; }
+            .game-hud { flex-direction: column; align-items: stretch; }
+            .hud-left, .hud-right { justify-content: center; }
+            #winScreen h2 { font-size: 1.8em; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🌍 Global <span>TAG</span> 🏃</h1>
+    <div class="subtitle">Chase your friends across the world!</div>
+
+    <!-- START SCREEN -->
+    <div id="startScreen">
+        <h2>📍 Bag Drops — Choose your city</h2>
+        <div class="city-preview" id="cityPreview"></div>
+
+        <h2 style="margin-bottom:16px;font-size:1.1em;">👥 Players</h2>
+        <div class="player-select" id="playerSelect">
+            <input type="radio" name="players" id="p2" value="2" checked />
+            <label for="p2">2 Players</label>
+            <input type="radio" name="players" id="p3" value="3" />
+            <label for="p3">3 Players</label>
+            <input type="radio" name="players" id="p4" value="4" />
+            <label for="p4">4 Players</label>
+        </div>
+
+        <div class="controls-info">
+            <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> Player 1 &nbsp;·&nbsp;
+            <kbd>↑</kbd><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd> Player 2 &nbsp;·&nbsp;
+            <kbd>I</kbd><kbd>J</kbd><kbd>K</kbd><kbd>L</kbd> Player 3 &nbsp;·&nbsp;
+            <kbd>T</kbd><kbd>F</kbd><kbd>G</kbd><kbd>H</kbd> Player 4
+        </div>
+
+        <button class="btn btn-primary" id="startBtn">🚀 Start Game</button>
+    </div>
+
+    <!-- GAME SCREEN -->
+    <div id="gameScreen">
+        <div class="game-hud">
+            <div class="hud-left" id="hudPlayers"></div>
+            <div class="hud-right">
+                <span class="hud-timer" id="hudTimer">⏱ 00:00</span>
+            </div>
+        </div>
+        <canvas id="gameCanvas" width="1000" height="600"></canvas>
+        <div class="game-controls">
+            <button class="btn btn-secondary" id="pauseBtn">⏸ Pause</button>
+            <button class="btn btn-danger" id="quitBtn">✖ Quit</button>
+        </div>
+        <a class="back-link" href="fun-games.html">← Back to Fun & Games</a>
+    </div>
+
+    <!-- WIN SCREEN -->
+    <div id="winScreen">
+        <h2 id="winEmoji">🏆</h2>
+        <div class="winner-name" id="winName">Player 1 Wins!</div>
+        <div class="stats" id="winStats"></div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+            <button class="btn btn-primary" id="replayBtn">🔄 Play Again</button>
+            <button class="btn btn-secondary" id="menuBtn">🏠 Menu</button>
+        </div>
+    </div>
+</div>
+
+<script>
+// ===================================================================
+//  GLOBAL TAG — Up to 4 players, same keyboard, world cities
+// ===================================================================
+
+// ─── CITIES (bag drops) ───
+const CITIES = [
+    { name: 'New York',   country: 'USA',       flag: '🗽', x: 0.20, y: 0.38 },
+    { name: 'London',     country: 'UK',         flag: '🇬🇧', x: 0.43, y: 0.24 },
+    { name: 'Paris',      country: 'France',     flag: '🇫🇷', x: 0.44, y: 0.30 },
+    { name: 'Tokyo',      country: 'Japan',      flag: '🗾', x: 0.85, y: 0.38 },
+    { name: 'Sydney',     country: 'Australia',  flag: '🇦🇺', x: 0.90, y: 0.72 },
+    { name: 'Rio',        country: 'Brazil',     flag: '🇧🇷', x: 0.32, y: 0.68 },
+    { name: 'Cairo',      country: 'Egypt',      flag: '🇪🇬', x: 0.48, y: 0.42 },
+    { name: 'Mumbai',     country: 'India',      flag: '🇮🇳', x: 0.63, y: 0.42 },
+    { name: 'Shanghai',   country: 'China',      flag: '🇨🇳', x: 0.76, y: 0.35 },
+    { name: 'Cape Town',  country: 'S.Africa',   flag: '🇿🇦', x: 0.50, y: 0.70 },
+    { name: 'Moscow',     country: 'Russia',     flag: '🇷🇺', x: 0.52, y: 0.14 },
+    { name: 'Dubai',      country: 'UAE',        flag: '🇦🇪', x: 0.56, y: 0.38 },
+    { name: 'Singapore',  country: 'Singapore',  flag: '🇸🇬', x: 0.78, y: 0.50 },
+    { name: 'Lagos',      country: 'Nigeria',    flag: '🇳🇬', x: 0.45, y: 0.55 },
+    { name: 'Bangkok',    country: 'Thailand',   flag: '🇹🇭', x: 0.72, y: 0.42 },
+    { name: 'Seoul',      country: 'S.Korea',    flag: '🇰🇷', x: 0.80, y: 0.32 },
+    { name: 'Toronto',    country: 'Canada',     flag: '🇨🇦', x: 0.22, y: 0.28 },
+    { name: 'Mexico City',country: 'Mexico',     flag: '🇲🇽', x: 0.13, y: 0.42 },
+    { name: 'Rome',       country: 'Italy',      flag: '🇮🇹', x: 0.44, y: 0.32 },
+    { name: 'Istanbul',   country: 'Turkey',     flag: '🇹🇷', x: 0.50, y: 0.32 },
+];
+
+const PLAYER_COLORS = ['#3498db', '#e74c3c', '#2ecc71', '#f39c12'];
+const PLAYER_NAMES = ['Player 1', 'Player 2', 'Player 3', 'Player 4'];
+const PLAYER_KEYS = [
+    { up: 'w', down: 's', left: 'a', right: 'd' },
+    { up: 'ArrowUp', down: 'ArrowDown', left: 'ArrowLeft', right: 'ArrowRight' },
+    { up: 'i', down: 'k', left: 'j', right: 'l' },
+    { up: 't', down: 'g', left: 'f', right: 'h' },
+];
+
+// ─── State ───
+let gameState = {
+    running: false,
+    paused: false,
+    players: [],
+    numPlayers: 2,
+    itIndex: 0,
+    startTime: 0,
+    elapsed: 0,
+    scores: [0, 0, 0, 0],
+    winScore: 5,
+    winner: null,
+    animFrame: null,
+    canvas: null,
+    ctx: null,
+    keys: {},
+    worldScale: 1,
+    worldOffsetX: 0,
+    worldOffsetY: 0,
+};
+
+// ─── DOM refs ───
+const startScreen = document.getElementById('startScreen');
+const gameScreen = document.getElementById('gameScreen');
+const winScreen = document.getElementById('winScreen');
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+const cityPreview = document.getElementById('cityPreview');
+const playerRadios = document.querySelectorAll('input[name="players"]');
+const startBtn = document.getElementById('startBtn');
+const pauseBtn = document.getElementById('pauseBtn');
+const quitBtn = document.getElementById('quitBtn');
+const replayBtn = document.getElementById('replayBtn');
+const menuBtn = document.getElementById('menuBtn');
+const hudPlayers = document.getElementById('hudPlayers');
+const hudTimer = document.getElementById('hudTimer');
+const winEmoji = document.getElementById('winEmoji');
+const winName = document.getElementById('winName');
+const winStats = document.getElementById('winStats');
+
+gameState.canvas = canvas;
+gameState.ctx = ctx;
+
+// ─── Shuffle & Pick random cities ───
+function pickCities(count) {
+    const shuffled = [...CITIES];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled.slice(0, count);
+}
+
+// ─── Render city preview ───
+function renderCityPreview() {
+    const n = parseInt(document.querySelector('input[name="players"]:checked').value);
+    const cities = pickCities(n);
+    cityPreview.innerHTML = cities.map(c =>
+        `<div class="city-card">
+            <div class="flag">${c.flag}</div>
+            <div class="name">${c.name}</div>
+            <div class="country">${c.country}</div>
+        </div>`
+    ).join('');
+    cityPreview.dataset.cities = JSON.stringify(cities);
+}
+
+playerRadios.forEach(r => r.addEventListener('change', renderCityPreview));
+renderCityPreview();
+
+// ─── Player class ───
+class Player {
+    constructor(index, city) {
+        this.index = index;
+        this.name = PLAYER_NAMES[index];
+        this.color = PLAYER_COLORS[index];
+        this.city = city;
+        // Position on map (0-1 normalized)
+        this.x = city.x + (Math.random() - 0.5) * 0.04;
+        this.y = city.y + (Math.random() - 0.5) * 0.04;
+        this.vx = 0;
+        this.vy = 0;
+        this.speed = 0.004;
+        this.radius = 10;
+        this.isIt = false;
+        this.tagCooldown = 0;
+        this.trail = [];
+    }
+
+    getKeys() { return PLAYER_KEYS[this.index]; }
+
+    update(dt, players, mapW, mapH) {
+        const keys = gameState.keys;
+        const k = this.getKeys();
+        let dx = 0, dy = 0;
+        if (keys[k.up])    dy = -1;
+        if (keys[k.down])  dy = 1;
+        if (keys[k.left])  dx = -1;
+        if (keys[k.right]) dx = 1;
+
+        if (dx !== 0 && dy !== 0) {
+            dx *= 0.7071;
+            dy *= 0.7071;
+        }
+
+        this.vx += (dx * this.speed * 60 * dt - this.vx) * 0.15;
+        this.vy += (dy * this.speed * 60 * dt - this.vy) * 0.15;
+
+        // Trail
+        if (dx !== 0 || dy !== 0) {
+            this.trail.push({ x: this.x, y: this.y, life: 1 });
+            if (this.trail.length > 12) this.trail.shift();
+        }
+        this.trail = this.trail.filter(t => {
+            t.life -= dt * 1.5;
+            return t.life > 0;
+        });
+
+        this.x += this.vx * dt * 60;
+        this.y += this.vy * dt * 60;
+
+        // World bounds
+        this.x = Math.max(0.02, Math.min(0.98, this.x));
+        this.y = Math.max(0.02, Math.min(0.98, this.y));
+
+        // Tag cooldown
+        if (this.tagCooldown > 0) this.tagCooldown -= dt;
+
+        // Check tags if we're IT
+        if (this.isIt && this.tagCooldown <= 0) {
+            for (const other of players) {
+                if (other === this || other.isIt) continue;
+                const dist = Math.hypot(this.x - other.x, this.y - other.y);
+                if (dist < 0.025) {
+                    this.isIt = false;
+                    other.isIt = true;
+                    other.tagCooldown = 0.3;
+                    gameState.scores[this.index]++;
+                    gameState.itIndex = other.index;
+                    // Check win
+                    if (gameState.scores[this.index] >= gameState.winScore) {
+                        gameState.winner = this.index;
+                    }
+                    // Spawn effects
+                    this.spawnParticles(PLAYER_COLORS[other.index], other.x, other.y);
+                    break;
+                }
+            }
+        }
+    }
+
+    spawnParticles(color, x, y) {
+        // Simple visual feedback — we'll draw a burst
+        gameState._tagEffect = { x, y, color, life: 1, radius: 0 };
+        setTimeout(() => { gameState._tagEffect = null; }, 500);
+    }
+
+    draw(ctx, w, h) {
+        const px = this.x * w;
+        const py = this.y * h;
+        const r = this.radius * (h / 600);
+
+        // Trail
+        for (const t of this.trail) {
+            const tr = r * 0.4 * t.life;
+            const alpha = t.life * 0.3;
+            ctx.beginPath();
+            ctx.arc(t.x * w, t.y * h, tr, 0, Math.PI * 2);
+            ctx.fillStyle = this.color + Math.floor(alpha * 255).toString(16).padStart(2, '0');
+            ctx.fill();
+        }
+
+        // Player body
+        ctx.beginPath();
+        ctx.arc(px, py, r, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+
+        // Border
+        ctx.strokeStyle = this.isIt ? '#ffd700' : 'rgba(255,255,255,0.4)';
+        ctx.lineWidth = this.isIt ? 3 : 1.5;
+        ctx.stroke();
+
+        // IT glow
+        if (this.isIt) {
+            const grad = ctx.createRadialGradient(px, py, r * 0.5, px, py, r * 2.5);
+            grad.addColorStop(0, 'rgba(255,215,0,0.25)');
+            grad.addColorStop(1, 'rgba(255,215,0,0)');
+            ctx.beginPath();
+            ctx.arc(px, py, r * 2.5, 0, Math.PI * 2);
+            ctx.fillStyle = grad;
+            ctx.fill();
+        }
+
+        // Player number
+        ctx.fillStyle = '#fff';
+        ctx.font = `bold ${14 * (h / 600)}px sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(this.index + 1, px, py);
+    }
+}
+
+// ─── Draw world map ───
+function drawWorldMap(ctx, w, h) {
+    // Ocean gradient
+    const grad = ctx.createLinearGradient(0, 0, w, h);
+    grad.addColorStop(0, '#1a1a3e');
+    grad.addColorStop(0.5, '#1e2a4a');
+    grad.addColorStop(1, '#1a1a3e');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, w, h);
+
+    // Stars twinkle
+    const starSeed = 42;
+    for (let i = 0; i < 80; i++) {
+        const sx = ((i * 137.5 + starSeed) % 100) / 100 * w;
+        const sy = ((i * 97.3 + starSeed * 2) % 100) / 100 * h;
+        const size = ((i * 31.7) % 3) + 1;
+        const twinkle = 0.5 + 0.5 * Math.sin(Date.now() / 1000 + i);
+        ctx.beginPath();
+        ctx.arc(sx, sy, size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255,255,255,${0.15 * twinkle})`;
+        ctx.fill();
+    }
+
+    // Simplified continents (polygons)
+    const continents = [
+        // North America
+        [[0.08,0.2],[0.12,0.15],[0.22,0.12],[0.28,0.14],[0.32,0.18],[0.30,0.24],[0.28,0.32],[0.24,0.38],[0.18,0.40],[0.12,0.38],[0.08,0.32],[0.06,0.26]],
+        // South America
+        [[0.22,0.44],[0.28,0.42],[0.34,0.44],[0.36,0.50],[0.34,0.58],[0.30,0.66],[0.26,0.70],[0.22,0.66],[0.20,0.58],[0.18,0.50]],
+        // Europe
+        [[0.40,0.12],[0.48,0.10],[0.54,0.14],[0.52,0.18],[0.48,0.22],[0.42,0.24],[0.38,0.20]],
+        // Africa
+        [[0.40,0.30],[0.48,0.28],[0.56,0.30],[0.58,0.38],[0.56,0.48],[0.52,0.56],[0.46,0.60],[0.40,0.56],[0.38,0.48],[0.36,0.38]],
+        // Asia
+        [[0.56,0.10],[0.66,0.08],[0.78,0.10],[0.86,0.14],[0.88,0.20],[0.86,0.28],[0.80,0.34],[0.72,0.38],[0.64,0.40],[0.58,0.36],[0.54,0.30],[0.52,0.20]],
+        // Australia
+        [[0.82,0.60],[0.88,0.58],[0.94,0.60],[0.96,0.66],[0.92,0.72],[0.86,0.74],[0.80,0.70]],
+    ];
+
+    ctx.save();
+    for (const points of continents) {
+        ctx.beginPath();
+        ctx.moveTo(points[0][0] * w, points[0][1] * h);
+        for (let i = 1; i < points.length; i++) {
+            ctx.lineTo(points[i][0] * w, points[i][1] * h);
+        }
+        ctx.closePath();
+        ctx.fillStyle = 'rgba(46, 76, 56, 0.35)';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(46, 125, 50, 0.15)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+    }
+    ctx.restore();
+
+    // Grid lines (lat/long)
+    ctx.strokeStyle = 'rgba(255,255,255,0.03)';
+    ctx.lineWidth = 1;
+    for (let i = 0; i < 12; i++) {
+        const x = (i / 12) * w;
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, h);
+        ctx.stroke();
+    }
+    for (let i = 0; i < 8; i++) {
+        const y = (i / 8) * h;
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(w, y);
+        ctx.stroke();
+    }
+}
+
+// ─── Draw cities ───
+function drawCities(ctx, w, h, cities) {
+    for (const city of cities) {
+        const cx = city.x * w;
+        const cy = city.y * h;
+
+        // City dot
+        ctx.beginPath();
+        ctx.arc(cx, cy, 4 * (h / 600), 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255,255,255,0.3)';
+        ctx.fill();
+
+        // Pulsing ring
+        const pulse = 0.4 + 0.6 * Math.abs(Math.sin(Date.now() / 1500 + city.x * 10));
+        ctx.beginPath();
+        ctx.arc(cx, cy, 8 * (h / 600) * pulse, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(255,255,255,${0.08 * pulse})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+        // City name
+        ctx.fillStyle = 'rgba(255,255,255,0.25)';
+        ctx.font = `10px sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'bottom';
+        ctx.fillText(city.flag + ' ' + city.name, cx, cy - 6 * (h / 600));
+    }
+}
+
+// ─── Update HUD ───
+function updateHUD() {
+    const players = gameState.players;
+    const html = players.map((p, i) => {
+        const isIt = p.isIt;
+        const score = gameState.scores[i] || 0;
+        return `<span class="hud-item">
+            <span class="tag-icon ${isIt ? 'it' : ''}" style="background:${PLAYER_COLORS[i]}"></span>
+            P${i+1} ${isIt ? '👑' : ''} ${score}
+        </span>`;
+    }).join('');
+    hudPlayers.innerHTML = html;
+
+    // Timer
+    const elapsed = gameState.elapsed;
+    const mins = Math.floor(elapsed / 60);
+    const secs = Math.floor(elapsed % 60);
+    hudTimer.textContent = `⏱ ${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+}
+
+// ─── Game loop ───
+let lastTime = 0;
+
+function gameLoop(time) {
+    if (!gameState.running) return;
+
+    const dt = Math.min((time - lastTime) / 1000, 0.05);
+    lastTime = time;
+
+    if (!gameState.paused) {
+        gameState.elapsed += dt;
+        update(dt);
+    }
+
+    render();
+    gameState.animFrame = requestAnimationFrame(gameLoop);
+}
+
+function update(dt) {
+    const players = gameState.players;
+    const w = canvas.width;
+    const h = canvas.height;
+
+    for (const p of players) {
+        p.update(dt, players, w, h);
+    }
+
+    // Auto-tag if IT catches someone (already handled in Player.update)
+    updateHUD();
+
+    // Check win
+    if (gameState.winner !== null) {
+        gameState.running = false;
+        showWinScreen();
+    }
+}
+
+function render() {
+    const w = canvas.width;
+    const h = canvas.height;
+
+    // Clear & draw map
+    drawWorldMap(ctx, w, h);
+
+    // Cities
+    const cities = gameState.players.map(p => p.city);
+    drawCities(ctx, w, h, cities);
+
+    // Tag effect
+    const effect = gameState._tagEffect;
+    if (effect) {
+        const ex = effect.x * w;
+        const ey = effect.y * h;
+        const er = 30 * (h / 600) * (1 - effect.life);
+        const alpha = 1 - effect.life;
+        ctx.beginPath();
+        ctx.arc(ex, ey, er, 0, Math.PI * 2);
+        ctx.strokeStyle = effect.color + Math.floor(alpha * 200).toString(16).padStart(2, '0');
+        ctx.lineWidth = 3;
+        ctx.stroke();
+    }
+
+    // Players (draw non-IT first, then IT on top)
+    const sorted = [...gameState.players].sort((a, b) => a.isIt ? 1 : -1);
+    for (const p of sorted) {
+        p.draw(ctx, w, h);
+    }
+
+    // Pause overlay
+    if (gameState.paused) {
+        ctx.fillStyle = 'rgba(0,0,0,0.4)';
+        ctx.fillRect(0, 0, w, h);
+        ctx.fillStyle = '#fff';
+        ctx.font = 'bold 36px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('⏸ PAUSED', w / 2, h / 2);
+        ctx.font = '16px sans-serif';
+        ctx.fillStyle = 'rgba(255,255,255,0.5)';
+        ctx.fillText('Press P or click Resume', w / 2, h / 2 + 40);
+    }
+
+    // Controls hint overlay (first 5 seconds)
+    if (gameState.elapsed < 5 && !gameState.paused) {
+        ctx.fillStyle = 'rgba(0,0,0,0.3)';
+        ctx.fillRect(0, 0, w, 50);
+        ctx.fillStyle = '#fff';
+        ctx.font = '12px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('👑 The gold player is IT — tag others to pass it!  |  Press P to pause', w / 2, 22);
+    }
+
+    updateHUD();
+}
+
+// ─── Show win screen ───
+function showWinScreen() {
+    const winner = gameState.winner;
+    const p = gameState.players[winner];
+    winEmoji.textContent = ['🥇','🥇','🥇','🥇'][winner] || '🏆';
+    winName.textContent = `${p.name} Wins!`;
+    winName.style.color = PLAYER_COLORS[winner];
+    winStats.innerHTML = gameState.players.map((pl, i) => {
+        const tag = gameState.scores[i] || 0;
+        const isWinner = i === winner;
+        return `<div>${isWinner ? '⭐ ' : ''}${pl.name}: <span>${tag}</span> tag${tag !== 1 ? 's' : ''}</div>`;
+    }).join('');
+    winScreen.classList.add('show');
+}
+
+// ─── Start game ───
+function startGame() {
+    const n = parseInt(document.querySelector('input[name="players"]:checked').value);
+    const cities = JSON.parse(cityPreview.dataset.cities || '[]');
+
+    gameState.numPlayers = n;
+    gameState.players = [];
+    gameState.scores = [0, 0, 0, 0];
+    gameState.itIndex = 0;
+    gameState.winner = null;
+    gameState.elapsed = 0;
+    gameState.paused = false;
+    gameState._tagEffect = null;
+
+    for (let i = 0; i < n; i++) {
+        const city = cities[i] || CITIES[i % CITIES.length];
+        const pl = new Player(i, city);
+        if (i === 0) pl.isIt = true;
+        gameState.players.push(pl);
+    }
+
+    gameState.running = true;
+    gameState.winScore = n <= 2 ? 3 : 5;
+
+    startScreen.style.display = 'none';
+    gameScreen.style.display = 'block';
+    winScreen.classList.remove('show');
+
+    // Resize canvas
+    resizeCanvas();
+    lastTime = performance.now();
+    if (gameState.animFrame) cancelAnimationFrame(gameState.animFrame);
+    gameState.animFrame = requestAnimationFrame(gameLoop);
+}
+
+function resizeCanvas() {
+    const rect = canvas.parentElement.getBoundingClientRect();
+    const maxW = Math.min(1000, rect.width - 4);
+    canvas.style.width = maxW + 'px';
+    canvas.style.height = (maxW * 0.6) + 'px';
+}
+
+// ─── Pause / Resume ───
+function togglePause() {
+    if (!gameState.running) return;
+    gameState.paused = !gameState.paused;
+    pauseBtn.textContent = gameState.paused ? '▶ Resume' : '⏸ Pause';
+}
+
+// ─── Quit ───
+function quitGame() {
+    gameState.running = false;
+    if (gameState.animFrame) cancelAnimationFrame(gameState.animFrame);
+    gameScreen.style.display = 'none';
+    startScreen.style.display = 'block';
+    winScreen.classList.remove('show');
+    renderCityPreview();
+}
+
+// ─── Event listeners ───
+startBtn.addEventListener('click', startGame);
+pauseBtn.addEventListener('click', togglePause);
+quitBtn.addEventListener('click', quitGame);
+replayBtn.addEventListener('click', startGame);
+menuBtn.addEventListener('click', quitGame);
+
+// Keyboard
+document.addEventListener('keydown', (e) => {
+    gameState.keys[e.key] = true;
+    if (e.key === 'p' || e.key === 'P') togglePause();
+    e.preventDefault();
+});
+document.addEventListener('keyup', (e) => {
+    gameState.keys[e.key] = false;
+});
+
+// Canvas resize on window resize
+window.addEventListener('resize', resizeCanvas);
+
+// Initial canvas sizing
+resizeCanvas();
+
+// ─── Mobile touch controls ───
+// Add simple d-pads for player 1 & 2 on mobile
+document.addEventListener('DOMContentLoaded', () => {
+    if ('ontouchstart' in window) {
+        document.querySelector('.mobile-controls')?.style.display = 'flex';
+    }
+});
+
+console.log('🌍 Global Tag loaded! Up to 4 players, same keyboard. Cities ready!');
+</script>
+</body>
+</html>
