@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Invaders 👾</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0e27, #1a1a3e, #0d0d2b);
+            min-height: 100vh; display: flex; justify-content: center;
+            align-items: center; padding: 20px; overflow: hidden;
+        }
+        .container {
+            background: rgba(255,255,255,0.07); backdrop-filter: blur(12px);
+            border-radius: 24px; padding: 30px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center; max-width: 550px; width: 100%; position: relative;
+        }
+        h1 { font-size: 2.2rem; color: #fff; margin-bottom: 8px; text-shadow: 0 0 30px rgba(0,255,100,0.3); }
+        .subtitle { color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 14px; }
+        .score-board {
+            display: flex; justify-content: space-between;
+            background: rgba(0,0,0,0.4); border-radius: 12px;
+            padding: 8px 16px; margin-bottom: 12px; color: #fff; font-size: 1rem;
+        }
+        .score-board span { color: #4ade80; font-weight: bold; }
+        canvas {
+            display: block; margin: 0 auto; border-radius: 12px;
+            background: #0a0a1a; box-shadow: 0 0 40px rgba(0,255,100,0.1);
+            width: 100%; max-width: 500px;
+        }
+        .controls { margin-top: 12px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+        .controls button {
+            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+            color: #fff; padding: 8px 20px; border-radius: 10px; cursor: pointer;
+            font-size: 0.9rem; transition: 0.2s;
+        }
+        .controls button:hover { background: #4ade80; color: #000; border-color: #4ade80; transform: scale(1.05); }
+        .game-over-msg {
+            display: none; position: absolute; inset: 0;
+            background: rgba(0,0,0,0.75); border-radius: 24px;
+            justify-content: center; align-items: center; flex-direction: column; color: #fff; z-index: 10;
+        }
+        .game-over-msg.show { display: flex; }
+        .game-over-msg h2 { font-size: 2rem; margin-bottom: 4px; }
+        .game-over-msg p { font-size: 1.1rem; opacity: 0.7; margin: 2px 0; }
+        .game-over-msg button {
+            margin-top: 14px; background: #4ade80; border: none;
+            color: #000; padding: 10px 32px; border-radius: 10px;
+            font-size: 1rem; font-weight: bold; cursor: pointer;
+        }
+        .game-over-msg button:hover { background: #6ee7a0; }
+        @media (max-width: 550px) {
+            .container { padding: 16px; border-radius: 16px; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="game-over-msg" id="gameOverMsg">
+            <h2 id="gameOverTitle">Game Over</h2>
+            <p>Score: <span id="finalScore">0</span></p>
+            <p>Level: <span id="finalLevel">1</span></p>
+            <button onclick="resetGame()">Play Again</button>
+        </div>
+        <h1>👾 Space Invaders</h1>
+        <p class="subtitle">← → to move, SPACE to shoot</p>
+        <div class="score-board">
+            <div>Score: <span id="score">0</span></div>
+            <div>Level: <span id="level">1</span></div>
+            <div>Lives: <span id="lives">❤️❤️❤️</span></div>
+        </div>
+        <canvas id="gameCanvas" width="500" height="400"></canvas>
+        <div class="controls">
+            <button onclick="shoot()">🔫 Shoot</button>
+            <button onclick="togglePause()" id="pauseBtn">⏸ Pause</button>
+            <button onclick="resetGame()">🔄 Restart</button>
+        </div>
+    </div>
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const W = 500, H = 400;
+        const scoreEl = document.getElementById('score');
+        const levelEl = document.getElementById('level');
+        const livesEl = document.getElementById('lives');
+        const finalScoreEl = document.getElementById('finalScore');
+        const finalLevelEl = document.getElementById('finalLevel');
+        const gameOverTitle = document.getElementById('gameOverTitle');
+        const gameOverMsg = document.getElementById('gameOverMsg');
+
+        let player, bullets, enemies, enemyDir, enemySpeed, score, level, lives, running, paused, gameLoop, enemyBullets, keys;
+
+        function init() {
+            player = { x: W/2 - 20, y: H - 40, w: 40, h: 20 };
+            bullets = [];
+            enemies = [];
+            enemyBullets = [];
+            enemyDir = 1;
+            enemySpeed = 1;
+            score = 0;
+            level = 1;
+            lives = 3;
+            running = true;
+            paused = false;
+            keys = {};
+            document.getElementById('pauseBtn').textContent = '⏸ Pause';
+            gameOverMsg.classList.remove('show');
+            scoreEl.textContent = '0';
+            levelEl.textContent = '1';
+            livesEl.textContent = '❤️❤️❤️';
+            spawnEnemies();
+        }
+
+        function spawnEnemies() {
+            enemies = [];
+            const cols = 7;
+            const rows = 3 + Math.min(level, 5);
+            for (let r = 0; r < rows; r++) {
+                for (let c = 0; c < cols; c++) {
+                    enemies.push({
+                        x: 50 + c * 55,
+                        y: 30 + r * 35,
+                        w: 35,
+                        h: 25,
+                        alive: true,
+                        type: r === 0 ? 'top' : r < 3 ? 'mid' : 'bot'
+                    });
+                }
+            }
+        }
+
+        function shoot() {
+            if (!running || paused) return;
+            bullets.push({ x: player.x + player.w/2 - 2, y: player.y - 10, w: 4, h: 12 });
+        }
+
+        function togglePause() {
+            if (!running) return;
+            paused = !paused;
+            document.getElementById('pauseBtn').textContent = paused ? '▶ Resume' : '⏸ Pause';
+        }
+
+        function resetGame() {
+            clearInterval(gameLoop);
+            init();
+            gameLoop = setInterval(update, 30);
+        }
+
+        function update() {
+            if (!running || paused) return;
+
+            if (keys['ArrowLeft']) player.x = Math.max(0, player.x - 5);
+            if (keys['ArrowRight']) player.x = Math.min(W - player.w, player.x + 5);
+
+            for (let i = bullets.length - 1; i >= 0; i--) {
+                bullets[i].y -= 6;
+                if (bullets[i].y < 0) { bullets.splice(i, 1); continue; }
+                let hit = false;
+                for (const e of enemies) {
+                    if (!e.alive) continue;
+                    if (bullets[i].x < e.x + e.w && bullets[i].x + bullets[i].w > e.x &&
+                        bullets[i].y < e.y + e.h && bullets[i].y + bullets[i].h > e.y) {
+                        e.alive = false;
+                        hit = true;
+                        score += 10 * level;
+                        scoreEl.textContent = score;
+                        break;
+                    }
+                }
+                if (hit) bullets.splice(i, 1);
+            }
+
+            let edge = false;
+            let aliveCount = 0;
+            for (const e of enemies) {
+                if (!e.alive) continue;
+                aliveCount++;
+                e.x += enemySpeed * enemyDir;
+                if (e.x < 0 || e.x + e.w > W) edge = true;
+            }
+
+            if (aliveCount === 0) {
+                level++;
+                levelEl.textContent = level;
+                enemySpeed = 1 + level * 0.3;
+                spawnEnemies();
+                return;
+            }
+
+            if (edge) {
+                enemyDir *= -1;
+                for (const e of enemies) {
+                    if (e.alive) e.y += 10;
+                }
+            }
+
+            if (Math.random() < 0.02 * level) {
+                const alive = enemies.filter(e => e.alive);
+                if (alive.length > 0) {
+                    const shooter = alive[Math.floor(Math.random() * alive.length)];
+                    enemyBullets.push({ x: shooter.x + shooter.w/2 - 2, y: shooter.y + shooter.h, w: 4, h: 10 });
+                }
+            }
+
+            for (let i = enemyBullets.length - 1; i >= 0; i--) {
+                enemyBullets[i].y += 4;
+                if (enemyBullets[i].y > H) { enemyBullets.splice(i, 1); continue; }
+                if (enemyBullets[i].x < player.x + player.w && enemyBullets[i].x + enemyBullets[i].w > player.x &&
+                    enemyBullets[i].y < player.y + player.h && enemyBullets[i].y + enemyBullets[i].h > player.y) {
+                    enemyBullets.splice(i, 1);
+                    lives--;
+                    livesEl.textContent = '❤️'.repeat(Math.max(0, lives));
+                    if (lives <= 0) { gameOver('Game Over'); return; }
+                }
+            }
+
+            for (const e of enemies) {
+                if (!e.alive) continue;
+                if (e.y + e.h > player.y) { gameOver('Game Over'); return; }
+                if (e.x < player.x + player.w && e.x + e.w > player.x &&
+                    e.y < player.y + player.h && e.y + e.h > player.y) {
+                    gameOver('Game Over'); return;
+                }
+            }
+
+            draw();
+        }
+
+        function gameOver(msg) {
+            running = false;
+            clearInterval(gameLoop);
+            gameOverTitle.textContent = msg;
+            finalScoreEl.textContent = score;
+            finalLevelEl.textContent = level;
+            gameOverMsg.classList.add('show');
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, W, H);
+            ctx.fillStyle = 'rgba(255,255,255,0.2)';
+            for (let i = 0; i < 40; i++) {
+                const sx = (i * 137 + 50) % W;
+                const sy = (i * 97 + 30) % H;
+                ctx.beginPath(); ctx.arc(sx, sy, 1, 0, Math.PI*2); ctx.fill();
+            }
+            ctx.shadowColor = '#4ade80';
+            ctx.shadowBlur = 15;
+            ctx.fillStyle = '#4ade80';
+            ctx.beginPath();
+            ctx.moveTo(player.x, player.y + player.h);
+            ctx.lineTo(player.x + player.w/2, player.y);
+            ctx.lineTo(player.x + player.w, player.y + player.h);
+            ctx.closePath();
+            ctx.fill();
+            ctx.shadowBlur = 0;
+            ctx.fillStyle = '#166534';
+            ctx.fillRect(player.x + 5, player.y + player.h - 4, player.w - 10, 4);
+            ctx.fillStyle = '#fbbf24';
+            ctx.shadowColor = '#fbbf24';
+            ctx.shadowBlur = 10;
+            bullets.forEach(b => ctx.fillRect(b.x, b.y, b.w, b.h));
+            ctx.fillStyle = '#ef4444';
+            ctx.shadowColor = '#ef4444';
+            enemyBullets.forEach(b => ctx.fillRect(b.x, b.y, b.w, b.h));
+            ctx.shadowBlur = 0;
+            enemies.forEach(e => {
+                if (!e.alive) return;
+                const g = e.type === 'top' ? '#ef4444' : e.type === 'mid' ? '#f59e0b' : '#22c55e';
+                ctx.fillStyle = g;
+                ctx.shadowColor = g;
+                ctx.shadowBlur = 8;
+                ctx.fillRect(e.x, e.y, e.w, e.h);
+                ctx.fillStyle = '#fff';
+                ctx.shadowBlur = 0;
+                ctx.fillRect(e.x + 8, e.y + 5, 6, 6);
+                ctx.fillRect(e.x + e.w - 14, e.y + 5, 6, 6);
+                ctx.fillStyle = '#000';
+                ctx.fillRect(e.x + 9, e.y + 6, 4, 4);
+                ctx.fillRect(e.x + e.w - 13, e.y + 6, 4, 4);
+            });
+            ctx.shadowBlur = 0;
+        }
+
+        document.addEventListener('keydown', e => {
+            keys[e.key] = true;
+            if (e.key === ' ' && !e.repeat) { e.preventDefault(); shoot(); }
+            if (e.key === 'p' || e.key === 'P') { e.preventDefault(); togglePause(); }
+        });
+        document.addEventListener('keyup', e => { keys[e.key] = false; });
+
+        window.addEventListener('keydown', e => {
+            if (['ArrowLeft', 'ArrowRight', ' '].includes(e.key)) e.preventDefault();
+        });
+
+        init();
+        gameLoop = setInterval(update, 30);
+    </script>
+</body>
+</html>

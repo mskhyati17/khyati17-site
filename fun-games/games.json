@@ -40,6 +40,31 @@
     "embed": "/fun-games/tictactoe.html"
   },
   {
+    "title": "🐦 Flappy Bird",
+    "thumbnail": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a0e27' rx='12'/%3E%3Ctext x='50' y='38' font-size='32' fill='%23fbbf24' text-anchor='middle'%3E%F0%9F%90%A6%3C/text%3E%3Ctext x='50' y='72' font-size='10' fill='%23888888' text-anchor='middle'%3EFLAPPY%3C/text%3E%3C/svg%3E",
+    "embed": "/fun-games/flappy-bird.html"
+  },
+  {
+    "title": "👾 Space Invaders",
+    "thumbnail": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a0a1a' rx='12'/%3E%3Ctext x='50' y='38' font-size='32' fill='%234ade80' text-anchor='middle'%3E%F0%9F%91%BE%3C/text%3E%3Ctext x='50' y='72' font-size='10' fill='%23888888' text-anchor='middle'%3EINVADERS%3C/text%3E%3C/svg%3E",
+    "embed": "/fun-games/space-invaders.html"
+  },
+  {
+    "title": "🏓 Pong",
+    "thumbnail": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a0e27' rx='12'/%3E%3Ctext x='50' y='38' font-size='32' fill='%2360a5fa' text-anchor='middle'%3E%F0%9F%8F%93%3C/text%3E%3Ctext x='50' y='72' font-size='10' fill='%23888888' text-anchor='middle'%3EPONG%3C/text%3E%3C/svg%3E",
+    "embed": "/fun-games/pong.html"
+  },
+  {
+    "title": "🧠 Memory Match",
+    "thumbnail": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a0e27' rx='12'/%3E%3Ctext x='50' y='38' font-size='32' fill='%23a78bfa' text-anchor='middle'%3E%F0%9F%A7%A0%3C/text%3E%3Ctext x='50' y='72' font-size='10' fill='%23888888' text-anchor='middle'%3EMEMORY%3C/text%3E%3C/svg%3E",
+    "embed": "/fun-games/memory-match.html"
+  },
+  {
+    "title": "🧱 Breakout",
+    "thumbnail": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a0e27' rx='12'/%3E%3Ctext x='50' y='38' font-size='32' fill='%23fbbf24' text-anchor='middle'%3E%F0%9F%A7%B1%3C/text%3E%3Ctext x='50' y='72' font-size='10' fill='%23888888' text-anchor='middle'%3EBREAKOUT%3C/text%3E%3C/svg%3E",
+    "embed": "/fun-games/breakout.html"
+  },
+  {
     "title": "PupTown",
     "thumbnail": "https://cdn2.scratch.mit.edu/get_image/project/1203372098_480x360.png",
     "embed": "https://scratch.mit.edu/projects/1203372098/embed"
