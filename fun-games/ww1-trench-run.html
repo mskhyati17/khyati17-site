@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WW1 Trench Run - A Survival RPG</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Cinzel:wght@400;700&display=swap');
+
+        body {
+            background: #1a0f0a;
+            font-family: 'Special Elite', 'Courier New', monospace;
+            color: #d4c5a9;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-image: 
+                radial-gradient(ellipse at 20% 50%, rgba(80, 40, 20, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 50%, rgba(40, 20, 60, 0.3) 0%, transparent 50%),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath d='M1 3h1v1H1V3zm2-2h1v1H3V1z' fill='%233d2818' fill-opacity='0.3'/%3E%3C/svg%3E");
+        }
+
+        .game-container {
+            max-width: 800px;
+            width: 100%;
+            background: linear-gradient(180deg, #1e1410 0%, #2a1a12 100%);
+            border: 2px solid #4a3520;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 0 40px rgba(0,0,0,0.8), inset 0 0 60px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-container::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(0,0,0,0.1) 2px,
+                rgba(0,0,0,0.1) 4px
+            );
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Header */
+        .game-header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #4a3520;
+            position: relative;
+            z-index: 2;
+        }
+
+        .game-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2em;
+            color: #b8860b;
+            text-shadow: 0 0 20px rgba(184, 134, 11, 0.3);
+            margin-bottom: 5px;
+            letter-spacing: 3px;
+        }
+
+        .game-subtitle {
+            font-size: 0.9em;
+            color: #8b7355;
+            letter-spacing: 2px;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat {
+            flex: 1;
+            min-width: 100px;
+            background: rgba(0,0,0,0.4);
+            border: 1px solid #3a2515;
+            border-radius: 6px;
+            padding: 8px 12px;
+            text-align: center;
+            font-size: 0.85em;
+        }
+
+        .stat-label {
+            color: #8b7355;
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 3px;
+        }
+
+        .stat-value {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        .stat-value.health { color: #dc3545; }
+        .stat-value.morale { color: #ffc107; }
+        .stat-value.ammo { color: #28a745; }
+        .stat-value.food { color: #fd7e14; }
+        .stat-value.day { color: #17a2b8; }
+
+        .stat-bar-bg {
+            width: 100%;
+            height: 4px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 2px;
+            margin-top: 4px;
+            overflow: hidden;
+        }
+
+        .stat-bar-fill {
+            height: 100%;
+            border-radius: 2px;
+            transition: width 0.5s ease;
+        }
+
+        .stat-bar-fill.health { background: linear-gradient(90deg, #dc3545, #ff6b6b); }
+        .stat-bar-fill.morale { background: linear-gradient(90deg, #ffc107, #ffd700); }
+        .stat-bar-fill.ammo { background: linear-gradient(90deg, #28a745, #5cb85c); }
+        .stat-bar-fill.food { background: linear-gradient(90deg, #fd7e14, #ff9f43); }
+
+        /* Story Area */
+        .story-area {
+            background: rgba(0,0,0,0.5);
+            border: 1px solid #3a2515;
+            border-radius: 8px;
+            padding: 25px;
+            min-height: 300px;
+            max-height: 450px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+            line-height: 1.7;
+            font-size: 1em;
+            scroll-behavior: smooth;
+        }
+
+        .story-area::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .story-area::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.3);
+            border-radius: 3px;
+        }
+
+        .story-area::-webkit-scrollbar-thumb {
+            background: #4a3520;
+            border-radius: 3px;
+        }
+
+        .story-text {
+            margin-bottom: 15px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .story-text .highlight {
+            color: #b8860b;
+            font-weight: bold;
+        }
+
+        .story-text .danger {
+            color: #dc3545;
+            font-weight: bold;
+        }
+
+        .story-text .success {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .story-text .info {
+            color: #17a2b8;
+        }
+
+        .story-text .sep {
+            text-align: center;
+            color: #4a3520;
+            margin: 15px 0;
+            font-size: 1.2em;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Choices */
+        .choices-area {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .choice-btn {
+            background: linear-gradient(135deg, #2a1a12 0%, #3a2515 100%);
+            border: 1px solid #5a4030;
+            color: #d4c5a9;
+            padding: 14px 20px;
+            border-radius: 8px;
+            font-family: 'Special Elite', monospace;
+            font-size: 0.95em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .choice-btn::before {
+            content: '▶';
+            margin-right: 10px;
+            color: #b8860b;
+            font-size: 0.8em;
+        }
+
+        .choice-btn:hover {
+            background: linear-gradient(135deg, #3a2515 0%, #5a4030 100%);
+            border-color: #b8860b;
+            transform: translateX(5px);
+            box-shadow: 0 0 20px rgba(184, 134, 11, 0.2);
+        }
+
+        .choice-btn:active {
+            transform: translateX(2px);
+        }
+
+        .choice-btn .hint {
+            display: block;
+            font-size: 0.75em;
+            color: #6b5a45;
+            margin-top: 4px;
+        }
+
+        .choice-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        /* Restart Button */
+        .restart-btn {
+            background: #4a3520;
+            border: 1px solid #b8860b;
+            color: #b8860b;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-family: 'Cinzel', serif;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            letter-spacing: 2px;
+            display: none;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .restart-btn:hover {
+            background: #5a4030;
+            box-shadow: 0 0 30px rgba(184, 134, 11, 0.3);
+        }
+
+        /* Typewriter cursor effect */
+        .cursor-blink {
+            display: inline-block;
+            width: 3px;
+            height: 1em;
+            background: #b8860b;
+            animation: blink 1s step-end infinite;
+            margin-left: 2px;
+            vertical-align: text-bottom;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        /* Intro overlay */
+        .intro-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.95);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            padding: 40px;
+            text-align: center;
+            transition: opacity 1s ease;
+        }
+
+        .intro-overlay.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .intro-overlay h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5em;
+            color: #b8860b;
+            text-shadow: 0 0 40px rgba(184, 134, 11, 0.5);
+            margin-bottom: 20px;
+            letter-spacing: 5px;
+        }
+
+        .intro-overlay p {
+            color: #8b7355;
+            max-width: 500px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-size: 1em;
+        }
+
+        .intro-overlay .year {
+            font-size: 1.2em;
+            color: #dc3545;
+            margin-bottom: 10px;
+        }
+
+        .intro-overlay .start-btn {
+            background: transparent;
+            border: 2px solid #b8860b;
+            color: #b8860b;
+            padding: 15px 50px;
+            border-radius: 8px;
+            font-family: 'Cinzel', serif;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 3px;
+        }
+
+        .intro-overlay .start-btn:hover {
+            background: #b8860b;
+            color: #1a0f0a;
+            box-shadow: 0 0 40px rgba(184, 134, 11, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .game-container { padding: 15px; }
+            .game-title { font-size: 1.5em; }
+            .stats-bar { gap: 5px; }
+            .stat { min-width: 70px; padding: 6px 8px; font-size: 0.75em; }
+            .story-area { padding: 15px; min-height: 200px; max-height: 350px; font-size: 0.9em; }
+            .choice-btn { padding: 12px 15px; font-size: 0.85em; }
+            .intro-overlay h1 { font-size: 1.8em; }
+            .intro-overlay { padding: 20px; }
+        }
+
+        .status-message {
+            text-align: center;
+            padding: 8px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-size: 0.85em;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .status-message.danger {
+            background: rgba(220, 53, 69, 0.15);
+            border: 1px solid rgba(220, 53, 69, 0.3);
+            color: #ff6b6b;
+        }
+
+        .status-message.success {
+            background: rgba(40, 167, 69, 0.15);
+            border: 1px solid rgba(40, 167, 69, 0.3);
+            color: #5cb85c;
+        }
+
+        .status-message.warning {
+            background: rgba(255, 193, 7, 0.15);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            color: #ffc107;
+        }
+
+        .status-message.info {
+            background: rgba(23, 162, 184, 0.15);
+            border: 1px solid rgba(23, 162, 184, 0.3);
+            color: #5bc0de;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container" id="gameContainer">
+        <!-- Intro Overlay -->
+        <div class="intro-overlay" id="introOverlay">
+            <div class="year">1914 - 1918</div>
+            <h1>THE GREAT WAR</h1>
+            <p>
+                "The war to end all wars."<br>
+                You are a young soldier on the Western Front.<br>
+                Surrounded by mud, blood, and the constant thunder of artillery.<br>
+                Every choice could be your last.
+            </p>
+            <p style="font-size:0.85em; color:#6b5a45; margin-bottom:20px;">
+                Will you survive the trenches? Your fate is in your hands.
+            </p>
+            <button class="start-btn" onclick="startGame()">ENLIST</button>
+        </div>
+
+        <!-- Game Header -->
+        <div class="game-header">
+            <div class="game-title">⚔ THE GREAT WAR</div>
+            <div class="game-subtitle">A World War I Survival RPG</div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-bar">
+            <div class="stat">
+                <div class="stat-label">❤ Health</div>
+                <div class="stat-value health" id="healthDisplay">100</div>
+                <div class="stat-bar-bg"><div class="stat-bar-fill health" id="healthBar" style="width:100%"></div></div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">✦ Morale</div>
+                <div class="stat-value morale" id="moraleDisplay">100</div>
+                <div class="stat-bar-bg"><div class="stat-bar-fill morale" id="moraleBar" style="width:100%"></div></div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">➳ Ammo</div>
+                <div class="stat-value ammo" id="ammoDisplay">30</div>
+                <div class="stat-bar-bg"><div class="stat-bar-fill ammo" id="ammoBar" style="width:100%"></div></div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">🍞 Food</div>
+                <div class="stat-value food" id="foodDisplay">50</div>
+                <div class="stat-bar-bg"><div class="stat-bar-fill food" id="foodBar" style="width:100%"></div></div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">📅 Day</div>
+                <div class="stat-value day" id="dayDisplay">1</div>
+            </div>
+        </div>
+
+        <!-- Story -->
+        <div class="story-area" id="storyArea">
+            <div class="story-text">
+                <span style="color:#6b5a45;">Click "ENLIST" to begin your journey in the trenches of the Western Front...</span>
+                <span class="cursor-blink"></span>
+            </div>
+        </div>
+
+        <!-- Status -->
+        <div id="statusArea"></div>
+
+        <!-- Choices -->
+        <div class="choices-area" id="choicesArea">
+            <button class="choice-btn" disabled>Waiting...</button>
+        </div>
+
+        <!-- Restart -->
+        <button class="restart-btn" id="restartBtn" onclick="restartGame()">⟳ FACE THE WAR AGAIN</button>
+    </div>
+
+    <script>
+        // ===== GAME STATE =====
+        const state = {
+            health: 100,
+            maxHealth: 100,
+            morale: 100,
+            maxMorale: 100,
+            ammo: 30,
+            maxAmmo: 50,
+            food: 50,
+            maxFood: 50,
+            day: 1,
+            flag: {},
+            story: [],
+            gameOver: false,
+            introComplete: false,
+            typingTimeout: null,
+            chapter: 'intro'
+        };
+
+        // ===== UTILITY =====
+        function rand(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+
+        function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
+
+        function updateUI() {
+            document.getElementById('healthDisplay').textContent = Math.max(0, state.health);
+            document.getElementById('healthBar').style.width = (state.health / state.maxHealth * 100) + '%';
+            document.getElementById('moraleDisplay').textContent = Math.max(0, state.morale);
+            document.getElementById('moraleBar').style.width = (state.morale / state.maxMorale * 100) + '%';
+            document.getElementById('ammoDisplay').textContent = Math.max(0, state.ammo);
+            document.getElementById('ammoBar').style.width = (state.ammo / state.maxAmmo * 100) + '%';
+            document.getElementById('foodDisplay').textContent = Math.max(0, state.food);
+            document.getElementById('foodBar').style.width = (state.food / state.maxFood * 100) + '%';
+            document.getElementById('dayDisplay').textContent = state.day;
+        }
+
+        function modifyStats(changes) {
+            if (state.gameOver) return;
+            if (changes.health !== undefined) state.health = clamp(state.health + changes.health, 0, state.maxHealth);
+            if (changes.morale !== undefined) state.morale = clamp(state.morale + changes.morale, 0, state.maxMorale);
+            if (changes.ammo !== undefined) state.ammo = clamp(state.ammo + changes.ammo, 0, state.maxAmmo);
+            if (changes.food !== undefined) state.food = clamp(state.food + changes.food, 0, state.maxFood);
+            if (changes.day !== undefined) state.day = changes.day;
+            updateUI();
+            checkDeath();
+        }
+
+        function setFlag(key, value) { state.flag[key] = value; }
+
+        function hasFlag(key) { return state.flag[key] === true; }
+
+        function checkDeath() {
+            if (state.health <= 0) {
+                addStory('Your vision fades as the darkness consumes you... <span class="danger">You have died from your wounds.</span>');
+                return gameOver('death_wounds');
+            }
+            if (state.morale <= 0) {
+                addStory('The weight of war has broken your spirit. You curl up in the mud, unable to continue... <span class="danger">You have lost the will to fight.</span>');
+                return gameOver('morale_break');
+            }
+            if (state.food <= 0) {
+                addStory('The hunger is unbearable. Days without food have left you too weak to move... <span class="danger">You have starved.</span>');
+                return gameOver('starvation');
+            }
+            if (state.ammo <= 0) {
+                addStory('You reach for your ammunition pouch and find it empty. Your rifle is useless now...');
+                showStatus('warning', '⚠ You are out of ammunition!');
+            }
+        }
+
+        // ===== STORY RENDERING =====
+        const storyArea = document.getElementById('storyArea');
+
+        function addStory(text) {
+            const div = document.createElement('div');
+            div.className = 'story-text';
+            div.innerHTML = text;
+            storyArea.appendChild(div);
+            storyArea.scrollTop = storyArea.scrollHeight;
+            state.story.push(text);
+        }
+
+        function showStatus(type, message) {
+            const area = document.getElementById('statusArea');
+            const div = document.createElement('div');
+            div.className = 'status-message ' + type;
+            div.textContent = message;
+            area.appendChild(div);
+            setTimeout(() => { if (div.parentNode) div.remove(); }, 3000);
+        }
+
+        function clearChoices() {
+            document.getElementById('choicesArea').innerHTML = '';
+        }
+
+        function showChoices(choices) {
+            const area = document.getElementById('choicesArea');
+            area.innerHTML = '';
+            choices.forEach((c, i) => {
+                const btn = document.createElement('button');
+                btn.className = 'choice-btn';
+                btn.innerHTML = c.text + (c.hint ? '<span class="hint">' + c.hint + '</span>' : '');
+                btn.onclick = () => {
+                    if (state.gameOver) return;
+                    clearChoices();
+                    if (c.action) c.action();
+                };
+                area.appendChild(btn);
+            });
+        }
+
+        function gameOver(reason) {
+            state.gameOver = true;
+            clearChoices();
+
+            const endings = {
+                death_wounds: {
+                    title: 'KILLED IN ACTION',
+                    desc: 'You gave your life for your country. Your name will be carved on a memorial far from home. Your family will receive a telegram, and a folded flag.'
+                },
+                morale_break: {
+                    title: 'SHELL SHOCKED',
+                    desc: 'The horrors of the trenches have shattered your mind. You are sent to a field hospital, then home - but the war will haunt you forever. Some wounds never heal.'
+                },
+                starvation: {
+                    title: 'DIED OF HUNGER',
+                    desc: 'The supply lines couldn\'t reach you. The mud swallowed everything - food, hope, life. You die with an empty stomach, dreaming of bread.'
+                },
+                deserter: {
+                    title: 'DESERTER',
+                    desc: 'You ran. The military police find you three days later. Court-martial awaits. In another life, you might have been called a coward. In this one, you are simply a man who wanted to live.'
+                },
+                survival_home: {
+                    title: 'ARMISTICE - YOU SURVIVED!',
+                    desc: 'The guns fall silent on November 11, 1918. You have survived the Great War. You walk away from the trenches a changed person, carrying memories that will never fade. But you are alive. You are going home.'
+                },
+                survival_injured: {
+                    title: 'WOUNDED BUT ALIVE',
+                    desc: 'A piece of shrapnel caught your leg, but it\'s your ticket home. You\'re evacuated to a hospital in England. The war ends while you\'re recovering. You survived - with a limp and a story to tell your grandchildren.'
+                },
+                survival_officer: {
+                    title: 'PROMOTION & SURVIVAL',
+                    desc: 'Your leadership did not go unnoticed. You are promoted and transferred to a staff position away from the front lines. When the armistice comes, you have a bright future ahead - and your life.'
+                },
+                gas_attack: {
+                    title: 'GASSED',
+                    desc: 'The chlorine gas filled your lungs before you could get your mask on. You spend the rest of the war, and the rest of your shortened life, struggling to breathe. A cruel end for a brave soldier.'
+                },
+                no_man_land: {
+                    title: 'LOST IN NO MAN\'S LAND',
+                    desc: 'Caught in the open between trenches, you fall to machine gun fire. Your body lies in the mud with thousands of others, a permanent sentinel in no man\'s land.'
+                }
+            };
+
+            const ending = endings[reason] || { title: 'UNKNOWN FATE', desc: 'Your fate remains a mystery, lost to the fog of war.' };
+
+            setTimeout(() => {
+                addStory('<div class="sep">— — —</div>');
+                addStory('<span style="font-size:1.3em; font-family:\'Cinzel\',serif; color:#b8860b;">' + ending.title + '</span>');
+                addStory(ending.desc);
+                addStory('<div class="sep">— — —</div>');
+
+                const mort = state.health <= 0 ? 0 : Math.round((state.health + state.morale) / 2);
+                addStory('Final score: <span class="info">' + mort + '</span> | Days survived: <span class="info">' + state.day + '</span>');
+
+                document.getElementById('restartBtn').style.display = 'block';
+                document.getElementById('restartBtn').scrollIntoView({ behavior: 'smooth' });
+            }, 500);
+        }
+
+        // ===== CHAPTER SCENES =====
+
+        // ---- CHAPTER 0: INTRODUCTION ----
+        function scene_intro() {
+            state.chapter = 'intro';
+            addStory('<div class="sep">— 1916, Western Front, Somme Sector —</div>');
+            addStory('The cold rain has been falling for three days. You and your battalion have been ordered to relieve the 7th at the front line trenches near the village of <span class="highlight">Beaumont-Hamel</span>.');
+            addStory('The mud pulls at your boots with every step. In the distance, the rumble of artillery never stops - a constant thunder that has become as familiar as your own heartbeat.');
+            addStory('A sergeant approaches you. <span style="color:#b8860b;">"You there! What\'s your name, soldier?"</span>');
+
+            showChoices([
+                {
+                    text: '"Private James Fletcher, sir!" (English)',
+                    hint: 'Standard issue British soldier. Steady and reliable.',
+                    action: () => { setFlag('nationality', 'british'); scene_assign(); }
+                },
+                {
+                    text: '"Thomas M\u00fcller, Feldwebel." (German)',
+                    hint: 'You fight for the Kaiser and the Fatherland.',
+                    action: () => { setFlag('nationality', 'german'); scene_assign(); }
+                },
+                {
+                    text: '"Henri Dubois, soldat de France." (French)',
+                    hint: 'For liberty, equality, and the Republic.',
+                    action: () => { setFlag('nationality', 'french'); scene_assign(); }
+                },
+                {
+                    text: '"John McCrae, Canadian Expeditionary Force." (Canadian)',
+                    hint: 'From across the Atlantic, you came to fight.',
+                    action: () => { setFlag('nationality', 'canadian'); scene_assign(); }
+                }
+            ]);
+        }
+
+        // ---- ASSIGNMENT ----
+        function scene_assign() {
+            state.chapter = 'assign';
+            const nat = state.flag.nationality || 'british';
+            const names = {
+                british: { sgt: 'Sergeant Miller', greeting: 'Welcome to the 7th Battalion, East Yorkshire Regiment.', location: 'the Somme' },
+                german: { sgt: 'Feldwebel Wagner', greeting: 'Willkommen in der 2. Bayerischen Infanterie-Division.', location: 'Verdun' },
+                french: { sgt: 'Sergent Moreau', greeting: 'Bienvenue au 127e R\u00e9giment d\'Infanterie.', location: 'Verdun' },
+                canadian: { sgt: 'Sergeant McLaughlin', greeting: 'Welcome to the 1st Canadian Division, son.', location: 'Vimy Ridge' }
+            };
+            const info = names[nat] || names.british;
+
+            addStory('<span style="color:#b8860b;">"' + info.greeting + '"</span>');
+            addStory('The sergeant leads you through a communication trench. The smell is overwhelming - cordite, mud, sweat, and something worse. The men call it <span class="danger">"the smell of death."</span>');
+            addStory('You reach your post. Duckboards line the bottom of the trench. Rats scurry along the parapet. A few tired faces look up as you arrive.');
+            addStory('<span style="color:#b8860b;">"Find your spot, stay low, and keep your head down. Fritz has been shelling us regular. And for God\'s sake, keep your rifle clean."</span>');
+            addStory('You settle into your new home. The trench walls are reinforced with sandbags and wooden beams. A dugout offers meager shelter. You notice a photograph pinned to one of the beams - a woman and two children.');
+            addStory('<div class="sep">— Day 1 —</div>');
+
+            scene_morning_routine();
+        }
+
+        // ---- MORNING ROUTINE ----
+        function scene_morning_routine() {
+            state.chapter = 'morning';
+            addStory('The grey dawn breaks over the trenches. A mist hangs low over no man\'s land. You can barely see the German lines a few hundred yards away.');
+            addStory('Your stomach growls. You have some hardtack biscuits and a tin of bully beef. Tea is being passed around - the universal cure for all ills in the army.');
+
+            showChoices([
+                {
+                    text: 'Eat your rations and have some tea',
+                    hint: 'Restores food +5, morale +3',
+                    action: () => {
+                        modifyStats({ food: 5, morale: 3 });
+                        addStory('The tea is lukewarm and tastes of mud, but it\'s the best thing you\'ve tasted in days. The hardtack nearly breaks your teeth, but at least it\'s food.');
+                        scene_shelling();
+                    }
+                },
+                {
+                    text: 'Clean your rifle and check your ammunition',
+                    hint: 'Ensures your weapon is ready. Ammo +5',
+                    action: () => {
+                        modifyStats({ ammo: 5 });
+                        addStory('You carefully clean the bolt action of your rifle. A clean weapon is a working weapon. You find a few extra clips of ammunition in a discarded pouch.');
+                        scene_shelling();
+                    }
+                },
+                {
+                    text: 'Try to get more sleep in the dugout',
+                    hint: 'Restores health +5, but you skip breakfast',
+                    action: () => {
+                        modifyStats({ health: 5, food: -3 });
+                        addStory('You curl up in the damp dugout and manage to doze off. The sleep is fitful, haunted by distant explosions, but it helps. You wake up hungry though.');
+                        scene_shelling();
+                    }
+                },
+                {
+                    text: 'Talk to the other soldiers in the trench',
+                    hint: 'Learn about your comrades. Morale +5',
+                    action: () => {
+                        modifyStats({ morale: 5 });
+                        addStory('You meet the men in your section. There\'s a cockney chimney sweep from London, a farmer from Yorkshire, and a young lad who lied about his age to enlist. They share their stories and their cigarettes. For a moment, the war feels almost bearable.');
+                        scene_shelling();
+                    }
+                }
+            ]);
+        }
+
+        // ---- SHELLING ----
+        function scene_shelling() {
+            state.chapter = 'shelling';
+            addStory('Suddenly, a whistling sound grows louder and louder...');
+            addStory('<span class="sep">— — —</span>');
+            addStory('<span class="danger">INCOMING!</span>');
+            addStory('The world explodes. Artillery shells rain down on the trench line. You throw yourself against the muddy wall, covering your head as dirt and debris shower over you.');
+            addStory('The bombardment lasts for what feels like an eternity. Then, silence. Your ears ring. You check yourself for wounds.');
+
+            const damage = rand(5, 15);
+            modifyStats({ health: -damage });
+
+            addStory('You are hit by flying debris. <span class="danger">Health -' + damage + '</span>');
+
+            if (state.health > 0) {
+                addStory('You survived the barrage. Men are shouting. The sergeant calls for a status report. The trench needs repairs.');
+
+                showChoices([
+                    {
+                        text: 'Help repair the trench with sandbags',
+                        hint: 'Restores some protection. Morale +3, but exhausting',
+                        action: () => {
+                            modifyStats({ morale: 3, health: -3 });
+                            addStory('You spend the next hour filling sandbags and reinforcing the parapet. Hard work, but it gives you something to do. The trench is more secure now.');
+                            scene_night_patrol();
+                        }
+                    },
+                    {
+                        text: 'Check on the wounded',
+                        hint: 'Help your comrades. Morale +5',
+                        action: () => {
+                            modifyStats({ morale: 5 });
+                            addStory('You find the young lad who lied about his age. He\'s clutching his arm, a piece of shrapnel embedded in his flesh. You help the medic bandage him up. He thanks you with tears in his eyes. "I just want to go home," he whispers.');
+                            scene_night_patrol();
+                        }
+                    },
+                    {
+                        text: 'Look for supplies in the damaged dugout',
+                        hint: 'Find extra rations or ammo',
+                        action: () => {
+                            const found = rand(1, 3);
+                            if (found === 1) {
+                                modifyStats({ food: 10 });
+                                addStory('You find a crate of tinned stew that survived the blast. Jackpot! You stuff a few cans into your pack.');
+                            } else if (found === 2) {
+                                modifyStats({ ammo: 10 });
+                                addStory('A munitions box has been partially uncovered. You grab several stripper clips of ammunition.');
+                            } else {
+                                modifyStats({ food: 5, ammo: 5 });
+                                addStory('You find some hardtack and a few clips of ammo. Not great, but every bit helps.');
+                            }
+                            scene_night_patrol();
+                        }
+                    }
+                ]);
+            } else {
+                // Death from shelling
+                addStory('A large piece of shrapnel strikes you square in the chest. You slump against the trench wall, sliding down into the mud. The sounds of war fade away...');
+            }
+        }
+
+        // ---- NIGHT PATROL DECISION ----
+        function scene_night_patrol() {
+            state.chapter = 'night_patrol';
+            modifyStats({ day: 1 });
+            addStory('<div class="sep">— Night falls —</div>');
+            addStory('As darkness blankets the battlefield, the sergeant musters a group for a <span class="highlight">night patrol</span> into no man\'s land. Intelligence wants to know what the enemy is up to. Three volunteers are needed.');
+            addStory('The sergeant looks at you. <span style="color:#b8860b;">"You\'ve got steady hands. I want you on this patrol."</span>');
+
+            showChoices([
+                {
+                    text: 'Volunteer for the patrol',
+                    hint: 'Dangerous but could earn respect. Potential rewards.',
+                    action: () => {
+                        setFlag('volunteered_patrol', true);
+                        modifyStats({ morale: 5 });
+                        addStory('You nod. "I\'ll go, Sergeant." He claps you on the shoulder. "Good man."');
+                        scene_patrol();
+                    }
+                },
+                {
+                    text: 'Claim you\'re too injured to go',
+                    hint: 'Safe, but you lose face. Morale -5',
+                    action: () => {
+                        modifyStats({ morale: -5 });
+                        addStory('You make an excuse about your injuries. The sergeant gives you a disappointed look. "Fine. Stay and guard the communications trench." You feel a pang of shame, but at least you\'ll live to see another day.');
+                        scene_trench_duty();
+                    }
+                },
+                {
+                    text: 'Suggest someone else - you have a bad feeling',
+                    hint: 'Trust your gut. Morale -3',
+                    action: () => {
+                        modifyStats({ morale: -3 });
+                        addStory('You tell the sergeant you have a bad feeling about tonight. He grunts. "Superstitious, are we? Fine. Stay." Another man takes your place. As they leave, you can\'t shake the feeling that you\'ve made the right choice.');
+                        scene_trench_duty();
+                    }
+                }
+            ]);
+        }
+
+        // ---- NIGHT PATROL ----
+        function scene_patrol() {
+            state.chapter = 'patrol';
+            addStory('You slip over the top of the trench and into the darkness of no man\'s land. The moon is hidden behind clouds. Perfect cover.');
+            addStory('You crawl through the mud, barbed wire tearing at your uniform. The ground is pockmarked with craters filled with murky water. The stench of death is stronger here - somewhere nearby, a body lies unburied.');
+            addStory('You reach a shell crater and signal for the others to stop. That\'s when you see them - a German patrol, moving along their own wire, about fifty yards ahead.');
+
+            if (state.ammo <= 5) {
+                addStory('You check your rifle. <span class="danger">You\'re almost out of ammunition!</span> This is a recon mission, but if you\'re discovered...');
+            }
+
+            showChoices([
+                {
+                    text: 'Observe silently and report back',
+                    hint: 'Stay hidden. Complete the mission safely.',
+                    action: () => {
+                        addStory('You watch the German patrol for ten minutes, noting their positions and routines. Then you carefully crawl back to your lines. The intelligence you bring back is valuable.');
+                        modifyStats({ morale: 8 });
+                        setFlag('recon_complete', true);
+                        addStory('The sergeant is pleased. "Good work. That information could save lives."');
+                        scene_next_day();
+                    }
+                },
+                {
+                    text: 'Set up an ambush!',
+                    hint: 'Bold attack. Ammo -5. Risky but rewarding.',
+                    action: () => {
+                        if (state.ammo < 3) {
+                            addStory('You don\'t have enough ammunition for an ambush. You watch them pass by silently instead.');
+                            modifyStats({ morale: 3 });
+                            scene_next_day();
+                            return;
+                        }
+                        modifyStats({ ammo: -5 });
+                        const ambushOutcome = rand(1, 10);
+                        if (ambushOutcome <= 6) {
+                            addStory('You signal the ambush. Rifles crack in the darkness. Two Germans fall. The rest scatter. You capture a map with troop positions!');
+                            modifyStats({ morale: 10 });
+                            setFlag('captured_map', true);
+                            addStory('The patrol returns in high spirits. The sergeant laughs. "You\'ve got guts, I\'ll give you that!"');
+                        } else {
+                            addStory('The ambush goes wrong. The Germans were expecting it and return fire. You\'re hit in the shoulder as you scramble back.');
+                            const wound = rand(10, 20);
+                            modifyStats({ health: -wound, morale: -5 });
+                            addStory('<span class="danger">You take a bullet. Health -' + wound + '</span>');
+                            if (state.health > 0) {
+                                addStory('You make it back to the trench, bleeding but alive. The medic patches you up.');
+                            }
+                        }
+                        scene_next_day();
+                    }
+                },
+                {
+                    text: 'Try to sneak closer and gather better intel',
+                    hint: 'High risk, high reward. Stealth check.',
+                    action: () => {
+                        const stealth = rand(1, 10);
+                        if (stealth <= 7) {
+                            addStory('You move like a ghost through the mud. You get close enough to hear the Germans talking. They\'re planning a raid tomorrow night! This is vital intelligence.');
+                            modifyStats({ morale: 10 });
+                            setFlag('raid_intel', true);
+                            addStory('Back at the trench, the intelligence officer personally thanks you. "This information is worth medals, soldier."');
+                        } else {
+                            addStory('A twig snaps under your hand. The German patrol spins around. Shots ring out! You sprint back through the mud, bullets whizzing past your ears.');
+                            const hit = rand(8, 18);
+                            modifyStats({ health: -hit, ammo: -2 });
+                            addStory('<span class="danger">You\'re hit in the leg! Health -' + hit + '</span>');
+                            if (state.health > 0) {
+                                addStory('You dive into a shell crater, then crawl the rest of the way back. The medic fishes the bullet out with his tweezers. "You\'re lucky," he says.');
+                            }
+                        }
+                        scene_next_day();
+                    }
+                }
+            ]);
+        }
+
+        // ---- TRENCH DUTY (alternative to patrol) ----
+        function scene_trench_duty() {
+            state.chapter = 'trench_duty';
+            addStory('While the patrol is out, you\'re assigned to repair the communications trench and stand watch.');
+            addStory('Hours pass in the dark. The distant rumble of artillery provides a constant backdrop. Your eyelids grow heavy.');
+
+            showChoices([
+                {
+                    text: 'Stay vigilant - keep watch properly',
+                    hint: 'Responsible. Morale +3',
+                    action: () => {
+                        modifyStats({ morale: 3 });
+                        addStory('You force yourself to stay awake, pacing the trench. Your vigilance pays off - you spot a German flare and alert the men. Minutes later, a sniper round whizzes past where you were standing.');
+                        addStory('<span class="success">Your alertness saved lives tonight.</span>');
+                        scene_next_day();
+                    }
+                },
+                {
+                    text: 'Drink some tea and rest your eyes',
+                    hint: 'Restore health +3, but risky',
+                    action: () => {
+                        modifyStats({ health: 3 });
+                        addStory('You find a quiet corner and rest. You\'re woken by a shout - the patrol has returned. They brought back valuable intelligence. You feel rested but also a bit guilty for not being more useful.');
+                        scene_next_day();
+                    }
+                },
+                {
+                    text: 'Write a letter home',
+                    hint: 'Boost morale +5. Connect with your past life.',
+                    action: () => {
+                        modifyStats({ morale: 5 });
+                        addStory('You pull out a crumpled piece of paper and a pencil stub. "Dear Mother," you write. The words don\'t come easily. How do you describe this place? You settle for simple things: the weather, the food, asking about home. You don\'t mention the shells or the rats or the bodies.');
+                        addStory('Folding the letter, you wonder if it will ever arrive. The mail service has been unreliable. But writing it made you feel human again.');
+                        scene_next_day();
+                    }
+                }
+            ]);
+        }
+
+        // ---- NEXT DAY ----
+        function scene_next_day() {
+            state.chapter = 'next_day';
+            modifyStats({ day: 1 });
+            addStory('<div class="sep">— Day ' + state.day + ' —</div>');
+            addStory('A new day dawns over the trenches. The sky is grey, heavy with rain that never seems to stop.');
+
+            // Random events
+            const event = rand(1, 10);
+            if (event <= 3 && !hasFlag('gas_event')) {
+                scene_gas_attack();
+            } else if (event <= 5 && !hasFlag('sniper_event')) {
+                scene_sniper();
+            } else if (event <= 7 && !hasFlag('raid_event')) {
+                scene_raid();
+            } else {
+                scene_routine_day();
+            }
+        }
+
+        // ---- GAS ATTACK ----
+        function scene_gas_attack() {
+            state.chapter = 'gas';
+            setFlag('gas_event', true);
+            addStory('<span class="danger">GAS! GAS! GAS!</span>');
+            addStory('A strange green-yellow cloud drifts toward the trench. The distinctive smell of chlorine fills the air. Men scramble for their gas masks!');
+
+            showChoices([
+                {
+                    text: 'Put on your gas mask immediately',
+                    hint: 'The safest choice. Quick thinking!',
+                    action: () => {
+                        addStory('You fumble with your gas mask, pulling it over your head. The rubber seal presses against your face. Through the fogged lenses, you watch the poison cloud roll over the trench.');
+                        modifyStats({ health: -3, morale: -3 });
+                        addStory('The gas passes after several agonizing minutes. You\'re safe, but your eyes sting and your lungs burn from the residual fumes. Two men weren\'t fast enough - you hear their coughing turn to silence.');
+                        setFlag('gas_survived', true);
+                        scene_routine_day();
+                    }
+                },
+                {
+                    text: 'Help a panicking soldier with his mask first',
+                    hint: 'Selfless act. Morale +8, but you risk exposure.',
+                    action: () => {
+                        const outcome = rand(1, 10);
+                        if (outcome <= 7) {
+                            addStory('You see a young soldier frozen with fear, his mask in his trembling hands. You grab it and force it onto his face, then put on your own. The gas burns your throat before you get the seal right.');
+                            modifyStats({ health: -10, morale: 8 });
+                            addStory('You both survive. The young soldier thanks you with tears streaming down his face. "I owe you my life," he says.');
+                            setFlag('saved_soldier', true);
+                        } else {
+                            addStory('You try to help, but the gas is too thick too fast. Both of you inhale a lungful of chlorine. You manage to get your masks on, but the damage is done.');
+                            const dmg = rand(15, 25);
+                            modifyStats({ health: -dmg, morale: -5 });
+                            addStory('<span class="danger">You\'ve been gassed! Health -' + dmg + '</span>');
+                            if (state.health > 0) {
+                                addStory('You spend the rest of the day coughing and vomiting. The medic says you\'ll recover, but your lungs will never be the same.');
+                            }
+                        }
+                        scene_routine_day();
+                    }
+                },
+                {
+                    text: 'Wet a cloth and cover your face - no mask!',
+                    hint: 'Desperate measure. Very risky.',
+                    action: () => {
+                        if (hasFlag('gas_survived')) {
+                            addStory('You already used this trick before. The gas is too thick this time. You scramble for a real mask.');
+                            modifyStats({ health: -15 });
+                        } else {
+                            addStory('You tear a piece of cloth, soak it in water, and press it over your mouth and nose. It helps a little, but chlorine finds its way through. You spend the next hour coughing up yellow phlegm.');
+                            const dmg = rand(12, 22);
+                            modifyStats({ health: -dmg, morale: -5 });
+                            if (state.health > 0) {
+                                addStory('Somehow, you survived without a mask. The other soldiers look at you with a mix of awe and pity.');
+                            }
+                        }
+                        scene_routine_day();
+                    }
+                }
+            ]);
+        }
+
+        // ---- SNIPER ----
+        function scene_sniper() {
+            state.chapter = 'sniper';
+            setFlag('sniper_event', true);
+            addStory('A sharp crack echoes across no man\'s land. A soldier near you crumples, a bullet hole in his forehead.');
+            addStory('<span style="color:#b8860b;">"SNIPER! Get down!"</span>');
+            addStory('Everyone hugs the trench walls. The sniper has the sector zeroed in. Any movement above the parapet means death.');
+
+            showChoices([
+                {
+                    text: 'Stay low and wait for darkness',
+                    hint: 'Safe but passive. Morale -3',
+                    action: () => {
+                        modifyStats({ morale: -3 });
+                        addStory('You spend the rest of the day pressed against the mud, afraid to move. The sniper claims two more victims before dusk. When night falls, the body is removed. You feel the weight of mortality heavy on your shoulders.');
+                        scene_routine_day();
+                    }
+                },
+                {
+                    text: 'Try to spot and engage the sniper',
+                    hint: 'Use your rifle skills. Ammo -3. Risky.',
+                    action: () => {
+                        if (state.ammo < 3) {
+                            addStory('You don\'t have enough ammunition to return fire effectively. You stay low instead.');
+                            modifyStats({ morale: -5 });
+                            scene_routine_day();
+                            return;
+                        }
+                        modifyStats({ ammo: -3 });
+                        const sniperResult = rand(1, 10);
+                        if (sniperResult <= 5) {
+                            addStory('You carefully raise your periscope rifle. You catch a glint of light from a ruined farmhouse. You fire. A body tumbles from the window.');
+                            addStory('<span class="success">You got him! The men cheer. "Good shot!"</span>');
+                            modifyStats({ morale: 10 });
+                            setFlag('killed_sniper', true);
+                        } else {
+                            addStory('You fire at where you think the sniper is, but a bullet ricochets off the sandbag next to your head. You duck down, heart pounding. That was too close.');
+                            modifyStats({ morale: -3, health: -2 });
+                        }
+                        scene_routine_day();
+                    }
+                },
+                {
+                    text: 'Use a periscope to observe without exposing yourself',
+                    hint: 'Safe recon. Gain tactical info.',
+                    action: () => {
+                        addStory('You grab a trench periscope and carefully scan no man\'s land. You spot the sniper\'s position - a shattered church steeple. You mark it on a map. This information could help the artillery.');
+                        modifyStats({ morale: 3 });
+                        setFlag('spotted_sniper', true);
+                        addStory('The intelligence officer notes the position. "The guns will deal with him tonight."');
+                        scene_routine_day();
+                    }
+                }
+            ]);
+        }
+
+        // ---- RAID ----
+        function scene_raid() {
+            state.chapter = 'raid';
+            setFlag('raid_event', true);
+            addStory('The quiet is shattered by the rattle of machine guns and shouting in a foreign tongue.');
+            addStory('<span class="danger">\\"ZUM ANGRIFF!\\"</span>');
+            addStory('<span class="danger">The enemy is raiding your trench!</span>');
+            addStory('German stormtroopers pour into the forward section, throwing grenades and firing from the hip. You grab your rifle and prepare to defend your position.');
+
+            showChoices([
+                {
+                    text: 'Stand and fight! Fix bayonets!',
+                    hint: 'Defend the trench. Ammo -5.',
+                    action: () => {
+                        if (state.ammo < 3) {
+                            addStory('You\'re almost out of ammo! You fix your bayonet and prepare for close quarters.');
+                            modifyStats({ morale: 3 });
+                            const fightOutcome = rand(1, 10);
+                            if (fightOutcome <= 4) {
+                                addStory('You stab and slash in the confined trench. It\'s brutal, ugly work. You take a hit but keep fighting. The raiders are repelled.');
+                                modifyStats({ health: -10, morale: 5 });
+                            } else {
+                                addStory('The fighting is fierce. You hold your ground and the raiders fall back, leaving three of their dead behind.');
+                                modifyStats({ morale: 8 });
+                            }
+                            scene_routine_day();
+                            return;
+                        }
+                        modifyStats({ ammo: -5 });
+                        const fightOutcome = rand(1, 10);
+                        if (fightOutcome <= 6) {
+                            addStory('You fire round after round into the attacking wave. A grenade lands near you - you kick it away just before it explodes. The raiders break and retreat.');
+                            addStory('<span class="success">You held the line! The trench is secure.</span>');
+                            modifyStats({ morale: 10 });
+                        } else {
+                            addStory('The attack is overwhelming. You\'re knocked down by the blast of a grenade. Your ears ring as you struggle to your feet, but you keep fighting.');
+                            const dmg = rand(8, 18);
+                            modifyStats({ health: -dmg, morale: -3 });
+                            if (state.health > 0) {
+                                addStory('The raiders are eventually driven back by reinforcements. The trench is a shambles, but you\'re still alive.');
+                            }
+                        }
+                        scene_routine_day();
+                    }
+                },
+                {
+                    text: 'Take cover and throw grenades',
+                    hint: 'Use explosives. Safe behind cover.',
+                    action: () => {
+                        const grenadeOutcome = rand(1, 10);
+                        if (grenadeOutcome <= 4) {
+                            addStory('You pull the pin on a Mills bomb and hurl it over the parapet. The explosion is followed by screams. You throw another. The attack falters.');
+                            modifyStats({ morale: 5 });
+                        } else {
+                            addStory('Your first grenade falls short. You\'re exposed. A bullet grazes your arm as you duck back.');
+                            modifyStats({ health: -5, morale: -3 });
+                        }
+                        scene_routine_day();
+                    }
+                },
+                {
+                    text: 'Help the wounded retreat to the rear trench',
+                    hint: 'Compassionate choice. Morale +5 but you retreat.',
+                    action: () => {
+                        addStory('You grab a wounded soldier and drag him toward the communications trench. Bullets kick up mud around you. You reach safety, but the forward trench has been taken.');
+                        modifyStats({ morale: 5, health: -3 });
+                        setFlag('helped_wounded', true);
+                        addStory('The counter-attack comes an hour later. You reclaim the trench, but it cost lives. Your quick action saved at least one man.');
+                        scene_routine_day();
+                    }
+                }
+            ]);
+        }
+
+        // ---- ROUTINE DAY ----
+        function scene_routine_day() {
+            state.chapter = 'routine';
+            if (state.gameOver) return;
+
+            addStory('<div class="sep">— Later that day —</div>');
+            addStory('The hours drag by in the trench. Life here is a strange mix of terror and boredom. You eat, you watch, you wait.');
+
+            // Random events during routine
+            const event = rand(1, 8);
+            if (event <= 2) {
+                // Find supplies
+                addStory('You come across an abandoned supply cache. <span class="success">Rations and ammunition!</span>');
+                modifyStats({ food: 8, ammo: 6 });
+            } else if (event <= 4) {
+                // Letter from home
+                addStory('The mail finally arrives! You receive a letter from home, wrapped in brown paper. Your mother\'s handwriting. She says the family is well and prays for your safety.');
+                modifyStats({ morale: 8 });
+            } else if (event <= 6) {
+                // Rain and misery
+                addStory('The rain returns with a vengeance. The trench fills with water. You spend hours bailing it out. Your feet are perpetually wet - trench foot is a constant threat.');
+                modifyStats({ health: -3, morale: -3 });
+            } else {
+                // Rats
+                addStory('The rats are getting bolder. One steals a piece of bread from your pack while you sleep. You wake to find its beady eyes watching you from the corner.');
+                modifyStats({ food: -2, morale: -2 });
+            }
+
+            // Branch to major events
+            if (state.day >= 10) {
+                scene_finale_approaching();
+            } else if (state.day >= 6 && rand(1, 3) === 1) {
+                scene_offensive();
+            } else if (state.day >= 4 && rand(1, 2) === 1) {
+                scene_major_event();
+            } else {
+                scene_free_time();
+            }
+        }
+
+        // ---- FREE TIME ----
+        function scene_free_time() {
+            state.chapter = 'free_time';
+            addStory('You have some free time before the next watch. What do you do?');
+
+            showChoices([
+                {
+                    text: 'Practice your marksmanship',
+                    hint: 'Improve your shooting. Ammo -2.',
+                    action: () => {
+                        modifyStats({ ammo: -2, morale: 2 });
+                        addStory('You set up some empty tins on the parapet and take careful aim. Your shooting is getting better. The Germans even seem to be keeping their heads down.');
+                        scene_next_day();
+                    }
+                },
+                {
+                    text: 'Try to barter for better supplies',
+                    hint: 'Trade with other soldiers.',
+                    action: () => {
+                        const barterOutcome = rand(1, 3);
+                        if (barterOutcome === 1) {
+                            modifyStats({ food: 5, morale: 3 });
+                            addStory('You trade a spare pair of dry socks for a tin of jam and some cigarettes. A good deal in the economy of the trenches.');
+                        } else if (barterOutcome === 2) {
+                            modifyStats({ ammo: 5, morale: 2 });
+                            addStory('You find a soldier who\'s willing to trade ammunition for your issue of rum. Your rifle thanks you.');
+                        } else {
+                            modifyStats({ food: -3 });
+                            addStory('Your attempt at bartering goes poorly. You end up losing your ration to a more experienced haggler.');
+                        }
+                        scene_next_day();
+                    }
+                },
+                {
+                    text: 'Explore the reserve trench',
+                    hint: 'See what\'s around. Unknown outcome.',
+                    action: () => {
+                        const exploreOutcome = rand(1, 10);
+                        if (exploreOutcome <= 4) {
+                            modifyStats({ food: 8, morale: 5 });
+                            addStory('You find a hidden dugout that was once an officer\'s quarters. There\'s a bottle of wine, some tinned salmon, and a book of poetry. A treasure trove!');
+                        } else if (exploreOutcome <= 7) {
+                            modifyStats({ morale: -5 });
+                            addStory('You come across a makeshift graveyard behind the lines. Dozens of wooden crosses, some with just helmets hanging from them. You say a silent prayer for the fallen.');
+                        } else {
+                            addStory('You find an abandoned communications post with a working field telephone. You overhear that a big offensive is being planned for next week.');
+                            setFlag('heard_offensive', true);
+                        }
+                        scene_next_day();
+                    }
+                },
+                {
+                    text: 'Rest and conserve your strength',
+                    hint: 'Recover health +5.',
+                    action: () => {
+                        modifyStats({ health: 5 });
+                        addStory('You find a relatively dry corner of the dugout and wrap yourself in a blanket. Sleep comes quickly despite the noise. When you wake, you feel somewhat restored.');
+                        scene_next_day();
+                    }
+                }
+            ]);
+        }
+
+        // ---- MAJOR EVENT ----
+        function scene_major_event() {
+            state.chapter = 'major_event';
+            const eventChoice = rand(1, 5);
+
+            if (eventChoice <= 2) {
+                // Officer visit & promotion chance
+                addStory('A staff officer visits the trench for inspection. He\'s clean-shaven with a crisp uniform - clearly he hasn\'t seen the front line in weeks.');
+                addStory('He looks at you. <span style="color:#b8860b;">"You there. What\'s your assessment of the enemy\'s position?"</span>');
+
+                showChoices([
+                    {
+                        text: 'Give a confident, detailed report',
+                        hint: 'Impressive. Potential promotion.',
+                        action: () => {
+                            modifyStats({ morale: 5 });
+                            addStory('You report what you\'ve observed - enemy patrol patterns, weak points in their wire, the timing of their artillery. The officer is impressed. "Good initiative, soldier. We need more men like you."');
+                            setFlag('officer_impressed', true);
+                            scene_routine_day();
+                        }
+                    },
+                    {
+                        text: 'Tell him the truth - it\'s a slaughterhouse',
+                        hint: 'Honest but could be seen as defeatism.',
+                        action: () => {
+                            modifyStats({ morale: -3 });
+                            addStory('"It\'s hell, sir. Pure hell. The men need rotation, better supplies, and the attack plans are suicide." The officer\'s face hardens. "Watch your tongue, soldier. That sounds like defeatist talk." He leaves in a huff.');
+                            setFlag('officer_offended', true);
+                            scene_routine_day();
+                        }
+                    }
+                ]);
+
+            } else if (eventChoice <= 4) {
+                // Comrade in distress
+                addStory('You hear sobbing from a corner of the trench. One of the younger soldiers has broken down, shaking uncontrollably. The other men look away, uncomfortable.');
+
+                showChoices([
+                    {
+                        text: 'Sit with him, offer comfort and a cigarette',
+                        hint: 'Show compassion. Morale +5.',
+                        action: () => {
+                            modifyStats({ morale: 5 });
+                            addStory('You sit beside the young man and put a hand on his shoulder. "It\'s alright," you say, even though it\'s not. You share a cigarette and listen to him talk about his farm back home. After a while, the shaking stops. He manages a weak smile.');
+                            setFlag('comforted_comrade', true);
+                            scene_routine_day();
+                        }
+                    },
+                    {
+                        text: 'Tell him to pull himself together',
+                        hint: 'Tough love. Maintains discipline.',
+                        action: () => {
+                            modifyStats({ morale: -3 });
+                            addStory('"Snap out of it, man! You\'ll get us all killed!" He wipes his eyes and nods, but you see the light go out in his eyes. He\'s still broken, just hiding it better now.');
+                            scene_routine_day();
+                        }
+                    }
+                ]);
+
+            } else {
+                // Supplies arrive
+                addStory('Supply wagons arrive with much-needed provisions. The men crowd around as crates are unloaded.');
+
+                const supplyRoll = rand(1, 3);
+                if (supplyRoll === 1) {
+                    modifyStats({ food: 10, ammo: 10, morale: 5 });
+                    addStory('The crates contain tinned food, ammunition, and even a package of cigarettes for each man. <span class="success">A good day!</span>');
+                } else if (supplyRoll === 2) {
+                    modifyStats({ food: 5, ammo: 5 });
+                    addStory('The supplies are meager but welcome. At least you won\'t go hungry tonight.');
+                } else {
+                    modifyStats({ morale: -3 });
+                    addStory('The supplies are mostly useless - boots that don\'t fit, ammunition for the wrong rifle, and tins of suspect meat. Morale drops as the men grumble.');
+                }
+                scene_routine_day();
+            }
+        }
+
+        // ---- OFFENSIVE ----
+        function scene_offensive() {
+            state.chapter = 'offensive';
+            addStory('<div class="sep">— THE OFFENSIVE BEGINS —</div>');
+            addStory('The artillery barrage has been building for days. Now it reaches a crescendo. Officers run through the trench shouting orders.');
+            addStory('<span style="color:#b8860b;">"Over the top in ten minutes! Fix bayonets!"</span>');
+            addStory('Your heart pounds. This is the moment every soldier dreads - going over the top into no man\'s land, into the machine guns.');
+            addStory('The whistles blow. Men climb the ladders. You grip your rifle and prepare to follow.');
+
+            showChoices([
+                {
+                    text: 'Charge forward with the first wave',
+                    hint: 'Courageous but very dangerous.',
+                    action: () => {
+                        const chargeOutcome = rand(1, 10);
+                        if (chargeOutcome <= 3) {
+                            addStory('You sprint across no man\'s land, bullets whipping past you. A machine gun opens up to your left. You dive into a shell crater as bullets chew up the ground where you were standing.');
+                            modifyStats({ health: -8, morale: 3 });
+                            addStory('From the crater, you see the first wave being cut down. You\'re pinned, but alive.');
+                            scene_offensive_aftermath();
+                        } else if (chargeOutcome <= 7) {
+                            addStory('Miraculously, you make it across. You reach the enemy trench and leap in, bayonet first. Close quarters combat is a blur of screams and steel.');
+                            modifyStats({ health: -10, ammo: -5, morale: 8 });
+                            setFlag('reached_enemy_trench', true);
+                            addStory('You take the trench! The survivors dig in. You\'ve captured a section of the German line.');
+                            scene_offensive_aftermath();
+                        } else {
+                            addStory('The world explodes around you. A shell lands nearby and everything goes dark for a moment. You wake in a shell crater, half-buried in mud.');
+                            const dmg = rand(18, 30);
+                            modifyStats({ health: -dmg, morale: -5 });
+                            if (state.health > 0) {
+                                addStory('You dig yourself out and crawl back to your lines. The offensive has stalled.');
+                            }
+                            scene_offensive_aftermath();
+                        }
+                    }
+                },
+                {
+                    text: 'Wait for the second wave',
+                    hint: 'Slightly safer, but shows less courage.',
+                    action: () => {
+                        modifyStats({ morale: -3 });
+                        addStory('You let the first wave go over, then follow in the second. The machine guns are already trained on your sector. You advance through bodies of the first wave.');
+                        const secondWaveOutcome = rand(1, 10);
+                        if (secondWaveOutcome <= 5) {
+                            addStory('You make it to the enemy trench, but the first wave has already taken it. You help consolidate the position.');
+                            modifyStats({ health: -5, morale: 5 });
+                            setFlag('reached_enemy_trench', true);
+                        } else {
+                            addStory('You\'re hit in the shoulder as you cross. You fall and play dead until nightfall, then crawl back.');
+                            modifyStats({ health: -12, morale: -5 });
+                        }
+                        scene_offensive_aftermath();
+                    }
+                },
+                {
+                    text: 'Stay in the trench - refuse to go over',
+                    hint: 'You\'ll be court-martialed. Desperate.',
+                    action: () => {
+                        modifyStats({ morale: -10 });
+                        addStory('You can\'t do it. Your legs won\'t move. The sergeant sees you frozen. "Get over, you coward!" He shoves you, but you don\'t move.');
+                        addStory('The military police take you away. You\'re charged with cowardice in the face of the enemy. The penalty for desertion is death by firing squad...');
+                        gameOver('deserter');
+                    }
+                }
+            ]);
+        }
+
+        // ---- OFFENSIVE AFTERMATH ----
+        function scene_offensive_aftermath() {
+            if (state.gameOver) return;
+            addStory('<div class="sep">— After the battle —</div>');
+            addStory('The offensive has taken its toll. The battalion has lost half its men. The survivors are haggard, shocked, and exhausted.');
+            addStory('You count your remaining ammunition and rations. The supply lines are stretched thin after the attack.');
+
+            if (hasFlag('reached_enemy_trench')) {
+                addStory('You\'re now holding a captured section of the German trench. It\'s in worse shape than your own. The bodies of the previous occupants are being removed.');
+                addStory('The sergeant walks by. <span style="color:#b8860b;">"You fought well today. Get some rest - you\'ve earned it."</span>');
+                modifyStats({ morale: 5, food: -5 });
+            } else {
+                addStory('You\'re back in your own trench, or what\'s left of it. The parapet is destroyed in several places. Repair work begins immediately.');
+                modifyStats({ morale: -5, food: -3 });
+            }
+
+            scene_next_day();
+        }
+
+        // ---- FINALE APPROACHING ----
+        function scene_finale_approaching() {
+            state.chapter = 'finale_approach';
+            addStory('<div class="sep">— Day ' + state.day + ' —</div>');
+            addStory('Word spreads through the trench. <span class="highlight">Rumors of an armistice.</span> The men talk in hushed voices. Could it really be ending?');
+            addStory('But the war isn\'t over yet. The generals want one more push to end it. You\'re ordered to prepare for a major assault - perhaps the largest of the war.');
+            addStory('The night before the attack, you have time to think. What matters most to you now?');
+
+            showChoices([
+                {
+                    text: 'Write final letters to your loved ones',
+                    hint: 'Make peace with your fate. Morale +5.',
+                    action: () => {
+                        modifyStats({ morale: 5 });
+                        addStory('You write letters to your mother, your father, and someone special back home. You seal them in envelopes and give them to the chaplain. "In case I don\'t make it," you say. He nods solemnly.');
+                        scene_finale();
+                    }
+                },
+                {
+                    text: 'Share your rations and drink with your comrades',
+                    hint: 'One last night together. Morale +8.',
+                    action: () => {
+                        modifyStats({ morale: 8, food: -5 });
+                        addStory('You open your last tins and share what you have. Someone produces a bottle of rum. You sing songs, tell stories, and for one night, the war doesn\'t exist. Just men, together, facing the unknown.');
+                        scene_finale();
+                    }
+                },
+                {
+                    text: 'Clean your equipment and prepare for battle',
+                    hint: 'Be ready. Health +3. Ammo +3.',
+                    action: () => {
+                        modifyStats({ health: 3, ammo: 3 });
+                        addStory('You methodically clean your rifle, sharpen your bayonet, and pack your gear. Every round is counted, every strap adjusted. Whatever comes tomorrow, you\'ll face it prepared.');
+                        scene_finale();
+                    }
+                },
+                {
+                    text: 'Try to desert - slip away in the night',
+                    hint: 'A desperate gamble to survive.',
+                    action: () => {
+                        addStory('You wait until the sentries change. Then you slip through the communications trench, heading away from the front. Your heart pounds.');
+                        const desertOutcome = rand(1, 10);
+                        if (desertOutcome <= 3) {
+                            addStory('You make it through the rear areas, past the supply dumps and field hospitals. You reach a road heading south. You\'re free - but you\'ll never be able to go home again. A deserter\'s life is a lonely one.');
+                            gameOver('deserter');
+                        } else {
+                            addStory('A military police patrol spots you. "Halt! Where are you going?" Your stammered excuse doesn\'t hold. They march you back to your battalion in handcuffs. You\'ll face court-martial at dawn.');
+                            gameOver('deserter');
+                        }
+                    }
+                }
+            ]);
+        }
+
+        // ---- FINALE ----
+        function scene_finale() {
+            state.chapter = 'finale';
+            if (state.gameOver) return;
+
+            modifyStats({ day: 1 });
+            addStory('<div class="sep">— THE FINAL BATTLE —</div>');
+            addStory('Dawn breaks with a fog so thick you can barely see your hand in front of your face. The usual pre-attack barrage doesn\'t come. Everything is eerily quiet.');
+            addStory('Then you hear it - the sound of thousands of men moving through the mist. The enemy is coming.');
+            addStory('Your section forms a defensive line. The fog swirls with shadows. A German voice shouts an order. Then another. They\'re closer than you thought.');
+            addStory('A shape emerges from the mist. Then another. Then a whole wave. <span class="danger">Contact!</span>');
+
+            showChoices([
+                {
+                    text: 'Hold your position and fire!',
+                    hint: 'Stand your ground. Ammo -8.',
+                    action: () => {
+                        if (state.ammo < 5) {
+                            addStory('You fire your last rounds and then fix bayonets. The enemy is upon you.');
+                            modifyStats({ ammo: -state.ammo });
+                        } else {
+                            modifyStats({ ammo: -8 });
+                        }
+                        const holdOutcome = rand(1, 10);
+                        if (holdOutcome <= 5) {
+                            addStory('You fire until your rifle is hot. The enemy wave breaks against your position. Survivors fall back into the mist. <span class="success">You held!</span>');
+                            modifyStats({ health: -5, morale: 10 });
+                            scene_final_armistice();
+                        } else {
+                            addStory('There are too many. They overrun your position. You fight hand-to-hand in the fog. A bayonet slash opens your arm, but you keep fighting until reinforcements arrive.');
+                            const dmg = rand(12, 22);
+                            modifyStats({ health: -dmg, morale: 3 });
+                            if (state.health > 0) {
+                                addStory('The counter-attack drives them back. You survived the final assault.');
+                                scene_final_armistice();
+                            }
+                        }
+                    }
+                },
+                {
+                    text: 'Flank them through the mist',
+                    hint: 'Tactical maneuver. Risky but effective.',
+                    action: () => {
+                        const flankOutcome = rand(1, 10);
+                        if (flankOutcome <= 6) {
+                            addStory('You lead a small group through the fog, circling around the enemy flank. You catch them by surprise, firing into their side. The attack collapses.');
+                            modifyStats({ ammo: -5, morale: 10 });
+                            setFlag('flank_attack', true);
+                            addStory('"Brilliant move!" the sergeant shouts. "You just saved the line!"');
+                            scene_final_armistice();
+                        } else {
+                            addStory('The fog disorients you. You stumble into a German machine gun position. You\'re hit multiple times before you can dive for cover.');
+                            const dmg = rand(15, 25);
+                            modifyStats({ health: -dmg, ammo: -3, morale: -5 });
+                            if (state.health > 0) {
+                                addStory('You crawl back to your lines, bleeding heavily. The medic patches you up. "You\'re lucky to be alive," he says.');
+                                scene_final_armistice();
+                            }
+                        }
+                    }
+                },
+                {
+                    text: 'Throw a smoke grenade and withdraw to secondary position',
+                    hint: 'Tactical retreat. Preserve the unit.',
+                    action: () => {
+                        addStory('You toss a smoke canister. Thick white smoke joins the fog, creating a wall of blindness. You fall back to a secondary trench line, re-organizing with survivors.');
+                        modifyStats({ morale: -3 });
+                        addStory('The enemy takes your forward position but doesn\'t press the attack. Both sides seem exhausted. You wait in the secondary line, rifles trained on the mist.');
+                        scene_final_armistice();
+                    }
+                }
+            ]);
+        }
+
+        // ---- ARMISTICE ----
+        function scene_final_armistice() {
+            if (state.gameOver) return;
+            addStory('<div class="sep">— November 11, 1918 —</div>');
+            addStory('The guns have been firing all morning, but something is different. At exactly <span class="highlight">11:00 AM</span>, the artillery stops.');
+            addStory('The silence is deafening.');
+            addStory('For the first time in four years, no guns are firing on the Western Front. Men look at each other in disbelief. A cheer starts somewhere down the line and spreads like wildfire.');
+            addStory('The war is over.');
+            addStory('You made it.');
+
+            // Determine ending based on state and flags
+            if (state.health < 20) {
+                gameOver('survival_injured');
+            } else if (hasFlag('officer_impressed') && state.morale > 60) {
+                gameOver('survival_officer');
+            } else {
+                gameOver('survival_home');
+            }
+        }
+
+        // ===== GAME CONTROL =====
+        function startGame() {
+            document.getElementById('introOverlay').classList.add('fade-out');
+            setTimeout(() => {
+                document.getElementById('introOverlay').style.display = 'none';
+                // Init stats
+                state.health = 100;
+                state.morale = 100;
+                state.ammo = 30;
+                state.food = 50;
+                state.day = 1;
+                state.flag = {};
+                state.story = [];
+                state.gameOver = false;
+                state.chapter = 'intro';
+                document.getElementById('restartBtn').style.display = 'none';
+                storyArea.innerHTML = '';
+                document.getElementById('statusArea').innerHTML = '';
+                updateUI();
+                scene_intro();
+            }, 1000);
+        }
+
+        function restartGame() {
+            document.getElementById('restartBtn').style.display = 'none';
+            // Reset everything
+            state.health = 100;
+            state.morale = 100;
+            state.ammo = 30;
+            state.food = 50;
+            state.day = 1;
+            state.flag = {};
+            state.story = [];
+            state.gameOver = false;
+            state.chapter = 'intro';
+            storyArea.innerHTML = '';
+            document.getElementById('statusArea').innerHTML = '';
+            document.getElementById('introOverlay').style.display = 'flex';
+            document.getElementById('introOverlay').classList.remove('fade-out');
+            updateUI();
+        }
+    </script>
+</body>
+</html>

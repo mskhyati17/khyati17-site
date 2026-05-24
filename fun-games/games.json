@@ -1,5 +1,10 @@
 [
   {
+    "title": "⚔ The Great War",
+    "thumbnail": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a0f0a' rx='12'/%3E%3Ctext x='50' y='32' font-size='28' fill='%23b8860b' text-anchor='middle'%3E%F0%9F%92%80%3C/text%3E%3Ctext x='50' y='65' font-size='10' fill='%238b7355' text-anchor='middle'%3EWW1 RPG%3C/text%3E%3C/svg%3E",
+    "embed": "/fun-games/ww1-trench-run.html"
+  },
+  {
     "title": "🌍 Global Tag",
     "thumbnail": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230f0c29' rx='12'/%3E%3Ctext x='50' y='30' font-size='28' fill='white' text-anchor='middle'%3E%F0%9F%8F%83%3C/text%3E%3Ctext x='50' y='65' font-size='10' fill='%23ffd700' text-anchor='middle'%3ETAG%3C/text%3E%3C/svg%3E",
     "embed": "/fun-games/global-tag.html"
@@ -98,45 +103,5 @@
     "title": "Parkour",
     "thumbnail": "https://cdn2.scratch.mit.edu/get_image/project/1180478891_480x360.png",
     "embed": "https://scratch.mit.edu/projects/1180478891/embed"
-  },
-  {
-    "title": "Dress to Impress",
-    "thumbnail": "https://cdn2.scratch.mit.edu/get_image/project/1022104216_480x360.png",
-    "embed": "https://scratch.mit.edu/projects/1022104216/embed"
-  },
-  {
-    "title": "Fashion Dress Up",
-    "thumbnail": "https://cdn2.scratch.mit.edu/get_image/project/1008012558_480x360.png",
-    "embed": "https://scratch.mit.edu/projects/1008012558/embed"
-  },
-  {
-    "title": "Model Dress Up",
-    "thumbnail": "https://cdn2.scratch.mit.edu/get_image/project/1017243260_480x360.png",
-    "embed": "https://scratch.mit.edu/projects/1017243260/embed"
-  },
-  {
-    "title": "Car Driving",
-    "thumbnail": "https://cdn2.scratch.mit.edu/get_image/project/1012846818_480x360.png",
-    "embed": "https://scratch.mit.edu/projects/1012846818/embed"
-  },
-  {
-    "title": "Driving Simulator",
-    "thumbnail": "https://cdn2.scratch.mit.edu/get_image/project/974742122_480x360.png",
-    "embed": "https://scratch.mit.edu/projects/974742122/embed"
-  },
-  {
-    "title": "City Car Drive",
-    "thumbnail": "https://cdn2.scratch.mit.edu/get_image/project/1014932768_480x360.png",
-    "embed": "https://scratch.mit.edu/projects/1014932768/embed"
-  },
-  {
-    "title": "Street Racing",
-    "thumbnail": "https://cdn2.scratch.mit.edu/get_image/project/1050873862_480x360.png",
-    "embed": "https://scratch.mit.edu/projects/1050873862/embed"
-  },
-  {
-    "title": "Beauty Salon",
-    "thumbnail": "https://cdn2.scratch.mit.edu/get_image/project/1015284754_480x360.png",
-    "embed": "https://scratch.mit.edu/projects/1015284754/embed"
-  }
+   }
 ]
