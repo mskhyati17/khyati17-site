@@ -65,6 +65,11 @@
     "embed": "/fun-games/breakout.html"
   },
   {
+    "title": "🏃 TAG",
+    "thumbnail": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2387ceeb' rx='12'/%3E%3Crect y='78' width='100' height='22' fill='%235fbb3f'/%3E%3Ccircle cx='35' cy='62' r='12' fill='%23e74c3c'/%3E%3Ccircle cx='65' cy='62' r='12' fill='%233498db'/%3E%3Ctext x='50' y='44' font-size='24' font-weight='bold' fill='%23e74c3c' text-anchor='middle'%3ETAG%3C/text%3E%3C/svg%3E",
+    "embed": "/fun-games/tag/index.html"
+  },
+  {
     "title": "PupTown",
     "thumbnail": "https://cdn2.scratch.mit.edu/get_image/project/1203372098_480x360.png",
     "embed": "https://scratch.mit.edu/projects/1203372098/embed"
