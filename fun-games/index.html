@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>🎮 GameZone — Fun & Games</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --mint:#83ffe7;
+    --mint-soft:#f0fdf9;
+    --navy:#1a1a2e;
+    --ink:#1a1a2e;
+    --muted:#6b7280;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Poppins',system-ui,sans-serif;
+    background:var(--mint-soft);
+    color:var(--ink);
+    min-height:100vh;
+  }
+  a{text-decoration:none;color:inherit}
+
+  /* ---------- Navbar ---------- */
+  .navbar{
+    background:var(--navy);
+    display:flex;align-items:center;gap:16px;
+    padding:14px 20px;
+    position:sticky;top:0;z-index:50;
+  }
+  .logo{
+    color:var(--mint);
+    font-weight:600;font-size:1.25rem;
+    white-space:nowrap;
+  }
+  .search-wrap{flex:1;display:flex;justify-content:center}
+  .search{
+    width:100%;max-width:520px;
+    background:#2a2a44;
+    border:2px solid transparent;
+    border-radius:999px;
+    padding:10px 18px;
+    color:#fff;font-family:inherit;font-size:.95rem;
+    outline:none;transition:border-color .2s,background .2s;
+  }
+  .search::placeholder{color:#9ca3af}
+  .search:focus{border-color:var(--mint);background:#31314f}
+
+  /* ---------- Category strip ---------- */
+  .cat-strip{
+    background:var(--navy);
+    padding:0 20px 14px;
+    display:flex;gap:10px;
+    overflow-x:auto;
+    scrollbar-width:none;
+  }
+  .cat-strip::-webkit-scrollbar{display:none}
+  .chip{
+    flex:0 0 auto;
+    background:#2a2a44;color:#cfd0e8;
+    border:none;cursor:pointer;
+    font-family:inherit;font-size:.85rem;font-weight:500;
+    padding:8px 16px;border-radius:999px;
+    transition:background .18s,color .18s,transform .1s;
+    white-space:nowrap;
+  }
+  .chip:hover{background:#37375a}
+  .chip.active{background:var(--mint);color:var(--navy);font-weight:600}
+  .chip:active{transform:scale(.96)}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:linear-gradient(135deg,#1a1a2e 0%,#2d1b4e 55%,#0f3d3a 100%);
+    color:#fff;text-align:center;
+    padding:46px 20px;
+  }
+  .hero h1{
+    font-size:clamp(1.6rem,4vw,2.6rem);
+    font-weight:600;
+    background:linear-gradient(90deg,#83ffe7,#c4b5fd);
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  .hero p{margin-top:10px;color:#c7c9e0;font-size:clamp(.9rem,2vw,1.05rem)}
+
+  /* ---------- Sections ---------- */
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  .section{margin:34px auto}
+  .section-title{
+    font-size:1.15rem;font-weight:600;
+    margin-bottom:14px;display:flex;align-items:center;gap:8px;
+  }
+  .section-title .count{
+    font-size:.75rem;font-weight:500;color:var(--muted);
+    background:#fff;border:1px solid #e2e8f0;border-radius:999px;padding:2px 9px;
+  }
+
+  /* ---------- Popular row (horizontal) ---------- */
+  .pop-row{
+    display:flex;gap:14px;overflow-x:auto;padding-bottom:8px;
+    scrollbar-width:none;
+  }
+  .pop-row::-webkit-scrollbar{display:none}
+  .pop-item{flex:0 0 auto;text-align:center;width:80px;cursor:pointer}
+  .pop-tile{
+    width:80px;height:80px;border-radius:16px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:2.1rem;
+    box-shadow:0 4px 12px rgba(26,26,46,.08);
+    transition:transform .15s,box-shadow .15s;
+    position:relative;
+  }
+  .pop-item:hover .pop-tile{transform:translateY(-4px);box-shadow:0 10px 20px rgba(26,26,46,.16)}
+  .pop-rank{
+    position:absolute;top:-6px;left:-6px;
+    background:var(--navy);color:var(--mint);
+    width:22px;height:22px;border-radius:50%;
+    font-size:.7rem;font-weight:600;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .pop-name{
+    font-size:.72rem;margin-top:6px;color:var(--ink);
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+
+  /* ---------- Featured grid ---------- */
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    grid-auto-flow:dense;
+  }
+  .card{
+    border-radius:14px;cursor:pointer;
+    position:relative;overflow:hidden;
+    aspect-ratio:1/1;
+    display:flex;flex-direction:column;
+    align-items:center;justify-content:center;
+    box-shadow:0 4px 12px rgba(26,26,46,.07);
+    transition:transform .15s,box-shadow .15s;
+  }
+  .card:hover{transform:translateY(-5px);box-shadow:0 14px 28px rgba(26,26,46,.18)}
+  .card .emoji{font-size:2.6rem;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,.12))}
+  .card .label{
+    margin-top:10px;font-size:.82rem;font-weight:600;color:#1a1a2e;
+    padding:0 8px;text-align:center;
+  }
+  .card.big{grid-column:span 2;grid-row:span 2}
+  .card.big .emoji{font-size:5rem}
+  .card.big .label{font-size:1.05rem;margin-top:14px}
+  .badge-hot{
+    position:absolute;top:8px;left:8px;
+    background:#ef4444;color:#fff;
+    font-size:.62rem;font-weight:600;
+    padding:3px 8px;border-radius:999px;
+    box-shadow:0 2px 6px rgba(239,68,68,.4);
+  }
+  .badge-cat{
+    position:absolute;bottom:8px;right:8px;
+    background:rgba(255,255,255,.65);
+    color:#1a1a2e;font-size:.6rem;font-weight:500;
+    padding:2px 8px;border-radius:999px;backdrop-filter:blur(3px);
+  }
+  .empty{
+    grid-column:1/-1;text-align:center;color:var(--muted);
+    padding:40px 0;font-size:.95rem;
+  }
+
+  /* ---------- Browse categories ---------- */
+  .cat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .cat-tile{
+    border-radius:14px;cursor:pointer;
+    padding:20px;display:flex;align-items:center;gap:14px;
+    box-shadow:0 4px 12px rgba(26,26,46,.06);
+    transition:transform .15s,box-shadow .15s;
+  }
+  .cat-tile:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(26,26,46,.14)}
+  .cat-tile .c-emoji{font-size:2.1rem}
+  .cat-tile .c-name{font-weight:600;font-size:1rem}
+
+  /* ---------- Footer ---------- */
+  .footer{
+    background:var(--navy);color:#cfd0e8;text-align:center;
+    padding:26px 20px;margin-top:40px;font-size:.9rem;
+  }
+  .footer span{color:var(--mint)}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:680px){
+    .navbar{flex-wrap:wrap}
+    .logo{flex:1}
+    .search-wrap{order:3;flex-basis:100%}
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .card.big{grid-column:span 2;grid-row:span 2}
+    .cat-grid{grid-template-columns:1fr}
+  }
+  @media (max-width:400px){
+    .card .emoji{font-size:2.1rem}
+    .card .label{font-size:.74rem}
+  }
+</style>
+</head>
+<body>
+
+  <!-- 1. Navbar -->
+  <nav class="navbar">
+    <a class="logo" href="/fun-games/index.html">🎮 GameZone</a>
+    <div class="search-wrap">
+      <input id="search" class="search" type="search" placeholder="Search games…" autocomplete="off" aria-label="Search games" />
+    </div>
+  </nav>
+
+  <!-- 2. Category strip -->
+  <div id="catStrip" class="cat-strip"></div>
+
+  <!-- 3. Hero -->
+  <header class="hero">
+    <h1>What are you playing today?</h1>
+    <p>Free games you can play right now — no downloads, just fun.</p>
+  </header>
+
+  <main class="wrap">
+    <!-- 4. Popular this week -->
+    <section class="section" id="popularSection">
+      <div class="section-title">🔥 Popular This Week</div>
+      <div id="popRow" class="pop-row"></div>
+    </section>
+
+    <!-- 5. Featured games -->
+    <section class="section">
+      <div class="section-title">⭐ Featured Games <span class="count" id="gridCount"></span></div>
+      <div id="grid" class="grid"></div>
+    </section>
+
+    <!-- 6. Browse categories -->
+    <section class="section" id="browseSection">
+      <div class="section-title">🗂️ Browse Categories</div>
+      <div id="catGrid" class="cat-grid"></div>
+    </section>
+  </main>
+
+  <!-- 7. Footer -->
+  <footer class="footer">
+    Let the world play · Built with <span>❤️</span>
+  </footer>
+
+<script>
+/* ============================================================
+   GAMES DATA — pulled from this site's fun-games collection
+   ============================================================ */
+const GAMES = [
+  { name:"Tunnel Rush",        category:"Skill",     emoji:"🌀", color:"#D6E4FF", plays:52000, featured:false, hot:true,  url:"/fun-games/tunnel-rush/index.html" },
+  { name:"Tetris",             category:"Puzzle",    emoji:"🧱", color:"#D6F5FF", plays:47000, featured:false, hot:true,  url:"/fun-games/tetris.html" },
+  { name:"Flappy Bird",        category:"Skill",     emoji:"🐦", color:"#FFF3C4", plays:43000, featured:false, hot:true,  url:"/fun-games/flappy-bird.html" },
+  { name:"Dress To Impress",   category:"Adventure", emoji:"👗", color:"#FFD6E0", plays:42000, featured:false, hot:false, url:"/fun-games/dress-to-impress/index.html" },
+  { name:"Snake",              category:"Skill",     emoji:"🐍", color:"#D7FFD9", plays:39000, featured:false, hot:false, url:"/fun-games/snake.html" },
+  { name:"Geometry Dash",      category:"Skill",     emoji:"🔷", color:"#E0D6FF", plays:37000, featured:false, hot:true,  url:"https://scratch.mit.edu/projects/1193912968/embed" },
+  { name:"Dinosaur Run",       category:"Skill",     emoji:"🦖", color:"#D6E4FF", plays:35000, featured:false, hot:false, url:"/fun-games/dianosure-run.html" },
+  { name:"Space Invaders",     category:"Action",    emoji:"👾", color:"#D7FFD9", plays:33000, featured:false, hot:false, url:"/fun-games/space-invaders.html" },
+  { name:"The Great War",      category:"Action",    emoji:"⚔️", color:"#FFE0C4", plays:31000, featured:false, hot:false, url:"/fun-games/ww1-trench-run.html" },
+  { name:"Breakout",           category:"Action",    emoji:"🧱", color:"#FFF3C4", plays:29000, featured:false, hot:false, url:"/fun-games/breakout.html" },
+  { name:"Global Tag",         category:"2 Player",  emoji:"🏃", color:"#FFD6E0", plays:28000, featured:false, hot:false, url:"/fun-games/global-tag.html" },
+  { name:"TAG",                category:"2 Player",  emoji:"🏃‍♂️", color:"#D6F5FF", plays:27000, featured:false, hot:false, url:"/fun-games/tag/index.html" },
+  { name:"Pong",               category:"Sports",    emoji:"🏓", color:"#D6E4FF", plays:26000, featured:false, hot:false, url:"/fun-games/pong.html" },
+  { name:"3D LEGO Builder",    category:"Adventure", emoji:"🧱", color:"#E0D6FF", plays:25000, featured:true,  hot:false, url:"/fun-games/lego-build.html" },
+  { name:"Memory Match",       category:"Puzzle",    emoji:"🧠", color:"#E0D6FF", plays:24000, featured:false, hot:false, url:"/fun-games/memory-match.html" },
+  { name:"NightTime Highway",  category:"Racing",    emoji:"🛣️", color:"#D6E4FF", plays:23000, featured:false, hot:false, url:"https://scratch.mit.edu/projects/1203606564/embed" },
+  { name:"Parenting Simulator",category:"Adventure", emoji:"👶", color:"#FFD6E0", plays:22000, featured:false, hot:false, url:"/fun-games/parenting-simulator.html" },
+  { name:"CubeField Dash",     category:"Racing",    emoji:"🟦", color:"#D6F5FF", plays:21000, featured:false, hot:false, url:"https://scratch.mit.edu/projects/1203607156/embed" },
+  { name:"Uno",                category:"2 Player",  emoji:"🃏", color:"#FFF3C4", plays:20500, featured:false, hot:false, url:"https://scratch.mit.edu/projects/1194283767/embed" },
+  { name:"Tic-Tac-Toe",        category:"2 Player",  emoji:"⭕", color:"#D6E4FF", plays:20000, featured:false, hot:false, url:"/fun-games/tictactoe.html" },
+  { name:"Parkour",            category:"Skill",     emoji:"🤸", color:"#D7FFD9", plays:19500, featured:false, hot:false, url:"https://scratch.mit.edu/projects/1180478891/embed" },
+  { name:"Jelly Jump",         category:"Skill",     emoji:"🟢", color:"#D7FFD9", plays:19000, featured:false, hot:false, url:"https://scratch.mit.edu/projects/1204228487/embed" },
+  { name:"Dress Up",           category:"Adventure", emoji:"💄", color:"#FFD6E0", plays:18500, featured:false, hot:false, url:"https://scratch.mit.edu/projects/1193900264/embed" },
+  { name:"PupTown",            category:"Adventure", emoji:"🐶", color:"#FFE0C4", plays:18000, featured:false, hot:false, url:"https://scratch.mit.edu/projects/1203372098/embed" },
+  { name:"Pusheen Cat",        category:"Adventure", emoji:"🐱", color:"#FFD6E0", plays:17500, featured:false, hot:false, url:"https://scratch.mit.edu/projects/1194285039/embed" },
+  { name:"Plane Game",         category:"Action",    emoji:"✈️", color:"#D6E4FF", plays:17000, featured:false, hot:false, url:"https://scratch.mit.edu/projects/1203678096/embed" },
+  { name:"Pet Duck",           category:"Adventure", emoji:"🦆", color:"#FFF3C4", plays:16000, featured:false, hot:false, url:"https://scratch.mit.edu/projects/1193516688/embed" },
+  { name:"Obstacle",           category:"Skill",     emoji:"🚧", color:"#FFE0C4", plays:15000, featured:false, hot:false, url:"https://scratch.mit.edu/projects/1196230313/embed" },
+  { name:"Flip Walk",          category:"Skill",     emoji:"🤾", color:"#D6F5FF", plays:14000, featured:false, hot:false, url:"https://scratch.mit.edu/projects/1202557967/embed" },
+  { name:"Virtual Doll",       category:"Adventure", emoji:"🪆", color:"#FFD6E0", plays:13000, featured:false, hot:false, url:"https://scratch.mit.edu/projects/1194281295/embed" },
+  { name:"iPhone Sim",         category:"Skill",     emoji:"📱", color:"#E0D6FF", plays:12000, featured:false, hot:false, url:"https://scratch.mit.edu/projects/1185456668/embed" },
+];
+
+/* ---------- Categories ---------- */
+const CATEGORIES = ["All","Action","Puzzle","Racing","Sports","2 Player","Adventure","Skill",".io Games"];
+const CAT_EMOJI = {
+  "Action":"💥","Puzzle":"🧩","Racing":"🏎️","Sports":"🏀",
+  "2 Player":"👥","Adventure":"🗺️","Skill":"🎯",".io Games":"🌐"
+};
+const CAT_COLOR = {
+  "Action":"#FFD6E0","Puzzle":"#D6F5FF","Racing":"#FFE0C4","Sports":"#D7FFD9",
+  "2 Player":"#E0D6FF","Adventure":"#FFF3C4","Skill":"#D6E4FF",".io Games":"#E5E5FF"
+};
+
+/* ---------- Auto-assign fallbacks ---------- */
+const PASTELS = ["#FFD6E0","#D6E4FF","#D7FFD9","#FFF3C4","#E0D6FF","#FFE0C4","#D6F5FF"];
+const EMOJI_BY_CAT = {
+  "Action":"💥","Puzzle":"🧩","Racing":"🏎️","Sports":"🏀",
+  "2 Player":"👥","Adventure":"🗺️","Skill":"🎯",".io Games":"🌐","All":"🎮"
+};
+GAMES.forEach((g,i)=>{
+  if(!g.color) g.color = PASTELS[i % PASTELS.length];
+  if(!g.emoji) g.emoji = EMOJI_BY_CAT[g.category] || "🎮";
+});
+
+/* ============================================================
+   STATE + RENDERING
+   ============================================================ */
+let activeCat = "All";
+let query = "";
+
+const el = (tag,cls)=>{ const n=document.createElement(tag); if(cls) n.className=cls; return n; };
+const open = url => { if(url && url!=="#") window.location.href = url; };
+
+/* --- Category chips --- */
+function renderChips(){
+  const strip = document.getElementById("catStrip");
+  strip.innerHTML = "";
+  CATEGORIES.forEach(cat=>{
+    const b = el("button","chip"+(cat===activeCat?" active":""));
+    b.textContent = cat;
+    b.onclick = ()=>{ activeCat = cat; query=""; document.getElementById("search").value=""; render(); window.scrollTo({top:0,behavior:"smooth"}); };
+    strip.appendChild(b);
+  });
+}
+
+/* --- Popular row (top 10 by plays) --- */
+function renderPopular(){
+  const row = document.getElementById("popRow");
+  row.innerHTML = "";
+  const top = [...GAMES].sort((a,b)=>b.plays-a.plays).slice(0,10);
+  top.forEach((g,i)=>{
+    const item = el("div","pop-item");
+    const tile = el("div","pop-tile");
+    tile.style.background = g.color;
+    tile.textContent = g.emoji;
+    const rank = el("div","pop-rank"); rank.textContent = i+1;
+    tile.appendChild(rank);
+    const name = el("div","pop-name"); name.textContent = g.name;
+    item.appendChild(tile); item.appendChild(name);
+    item.onclick = ()=>open(g.url);
+    row.appendChild(item);
+  });
+  return new Set(top.map(g=>g.name));
+}
+
+/* --- Featured / main grid --- */
+function renderGrid(popularNames){
+  const grid = document.getElementById("grid");
+  grid.innerHTML = "";
+
+  let list = GAMES.filter(g=>{
+    // On the "All" home view, hide games already shown in the Popular row —
+    // but when searching, span the full catalog so every match shows.
+    const matchCat = activeCat==="All"
+      ? (query ? true : !popularNames.has(g.name))
+      : g.category===activeCat;
+    const matchQ = g.name.toLowerCase().includes(query);
+    return matchCat && matchQ;
+  });
+
+  document.getElementById("gridCount").textContent = list.length + " games";
+
+  if(!list.length){
+    const e = el("div","empty");
+    e.textContent = "No games match your search 😕";
+    grid.appendChild(e);
+    return;
+  }
+
+  // pick the large featured tile (first featured & visible)
+  const featuredGame = list.find(g=>g.featured);
+
+  list.forEach(g=>{
+    const card = el("div","card"+(g===featuredGame?" big":""));
+    card.style.background = g.color;
+    if(g.hot){ const b=el("div","badge-hot"); b.textContent="🔥 HOT"; card.appendChild(b); }
+    const emoji = el("div","emoji"); emoji.textContent = g.emoji;
+    const label = el("div","label"); label.textContent = g.name;
+    const cat = el("div","badge-cat"); cat.textContent = g.category;
+    card.appendChild(emoji); card.appendChild(label); card.appendChild(cat);
+    card.onclick = ()=>open(g.url);
+    grid.appendChild(card);
+  });
+}
+
+/* --- Browse categories grid --- */
+function renderCatGrid(){
+  const cg = document.getElementById("catGrid");
+  cg.innerHTML = "";
+  CATEGORIES.filter(c=>c!=="All").forEach(cat=>{
+    const tile = el("div","cat-tile");
+    tile.style.background = CAT_COLOR[cat] || "#eee";
+    const em = el("div","c-emoji"); em.textContent = CAT_EMOJI[cat] || "🎮";
+    const nm = el("div","c-name"); nm.textContent = cat;
+    tile.appendChild(em); tile.appendChild(nm);
+    tile.onclick = ()=>{ activeCat=cat; query=""; document.getElementById("search").value=""; render(); window.scrollTo({top:0,behavior:"smooth"}); };
+    cg.appendChild(tile);
+  });
+}
+
+/* --- Master render --- */
+function render(){
+  renderChips();
+  // Popular + Browse only show on the "All" home view (Poki-style)
+  const showHomeRows = activeCat==="All" && !query;
+  document.getElementById("popularSection").style.display = showHomeRows ? "" : "none";
+  document.getElementById("browseSection").style.display  = showHomeRows ? "" : "none";
+  const popularNames = renderPopular();
+  renderGrid(popularNames);
+}
+
+/* --- Live search --- */
+document.getElementById("search").addEventListener("input", e=>{
+  query = e.target.value.trim().toLowerCase();
+  // searching always looks across ALL games regardless of active category
+  if(query) activeCat = "All";
+  render();
+});
+
+/* --- Init --- */
+renderCatGrid();
+render();
+</script>
+</body>
+</html>
