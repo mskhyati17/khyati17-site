@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🌀 Tunnel Rush</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    height: 100%;
+    background: #05030f;
+    overflow: hidden;
+    font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
+  }
+  #wrap {
+    position: relative;
+    width: 100vw; height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+  }
+  canvas { display: block; width: 100%; height: 100%; }
+
+  .overlay {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; color: #fff;
+    background: radial-gradient(circle at center, rgba(10,5,30,0.35), rgba(5,3,15,0.85));
+    z-index: 5;
+  }
+  .overlay.hidden { display: none; }
+  .title {
+    font-size: clamp(34px, 8vw, 72px);
+    font-weight: 900; letter-spacing: 3px;
+    background: linear-gradient(90deg,#00e5ff,#ff00d4,#ffea00);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(0,229,255,0.4);
+    margin-bottom: 8px;
+  }
+  .sub { font-size: clamp(13px, 2.6vw, 18px); color: #b8b0d8; margin-bottom: 26px; line-height: 1.6; }
+  .sub kbd {
+    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 6px; padding: 2px 8px; font-family: monospace; margin: 0 2px;
+  }
+  .btn {
+    cursor: pointer; border: none;
+    padding: 14px 38px; border-radius: 40px;
+    font-size: clamp(16px, 3.5vw, 22px); font-weight: 800; letter-spacing: 1px;
+    color: #05030f;
+    background: linear-gradient(90deg,#00e5ff,#7b5cff);
+    box-shadow: 0 0 30px rgba(0,229,255,0.6);
+    transition: transform .12s ease, box-shadow .12s ease;
+  }
+  .btn:hover { transform: scale(1.06); box-shadow: 0 0 44px rgba(123,92,255,0.8); }
+  .btn:active { transform: scale(0.97); }
+  .go-title { color:#ff3b6b; text-shadow:0 0 24px rgba(255,59,107,0.6); }
+  .score-big { font-size: clamp(40px,10vw,86px); font-weight:900; color:#ffea00; text-shadow:0 0 24px rgba(255,234,0,0.5); margin:6px 0; }
+  .best { font-size: clamp(14px,3vw,20px); color:#9be8ff; margin-bottom:24px; }
+
+  #hud {
+    position: absolute; top: 16px; left: 0; right: 0;
+    display: flex; justify-content: space-between;
+    padding: 0 22px; color: #fff; z-index: 4;
+    font-weight: 800; pointer-events: none;
+    text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  }
+  #hud .label { font-size: 12px; color:#9b94c4; letter-spacing:2px; }
+  #hud .val { font-size: clamp(20px,4vw,32px); }
+  #score-val { color:#ffea00; }
+  #best-val { color:#9be8ff; }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <canvas id="game"></canvas>
+
+  <div id="hud">
+    <div><div class="label">SCORE</div><div class="val" id="score-val">0</div></div>
+    <div style="text-align:right"><div class="label">BEST</div><div class="val" id="best-val">0</div></div>
+  </div>
+
+  <div class="overlay" id="start-screen">
+    <div class="title">TUNNEL&nbsp;RUSH</div>
+    <div class="sub">
+      Spin through the tunnel and dodge the walls.<br/>
+      <kbd>◀</kbd> <kbd>▶</kbd> arrows or <kbd>A</kbd> <kbd>D</kbd> &nbsp;•&nbsp; tap left / right on mobile
+    </div>
+    <button class="btn" id="start-btn">▶ PLAY</button>
+  </div>
+
+  <div class="overlay hidden" id="over-screen">
+    <div class="title go-title">CRASHED!</div>
+    <div class="score-big" id="final-score">0</div>
+    <div class="best" id="final-best">Best: 0</div>
+    <button class="btn" id="retry-btn">↻ RETRY</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  const canvas = document.getElementById('game');
+  const ctx = canvas.getContext('2d');
+  const scoreVal = document.getElementById('score-val');
+  const bestVal = document.getElementById('best-val');
+  const startScreen = document.getElementById('start-screen');
+  const overScreen = document.getElementById('over-screen');
+  const finalScore = document.getElementById('final-score');
+  const finalBest = document.getElementById('final-best');
+
+  let W = 0, H = 0, cx = 0, cy = 0, maxR = 0, DPR = 1;
+
+  function resize() {
+    DPR = Math.min(window.devicePixelRatio || 1, 2);
+    W = window.innerWidth; H = window.innerHeight;
+    canvas.width = W * DPR; canvas.height = H * DPR;
+    canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    cx = W / 2; cy = H / 2;
+    // size the tunnel so the player ring (radiusAt(P_PLAYER)) lands just inside
+    // the smaller screen dimension and stays visible all the way around.
+    const fit = Math.min(W, H) / 2 * 0.92;
+    maxR = fit / (0.86 * 0.86);   // 0.86 == P_PLAYER; literal to avoid TDZ here
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  // ---- perspective mapping: p in [0,1] -> screen radius (quadratic rush) ----
+  const P_PLAYER = 0.86;                 // depth band where the player sits
+  const radiusAt = (p) => maxR * p * p;
+  const RPLAYER = () => radiusAt(P_PLAYER);
+
+  // ---- game state ----
+  const STATE = { START: 0, PLAY: 1, OVER: 2 };
+  let state = STATE.START;
+
+  let best = 0;
+  try { best = parseInt(localStorage.getItem('tunnelRushBest') || '0', 10) || 0; } catch (e) {}
+  bestVal.textContent = best;
+
+  let pAngle, speed, obstacles, spawnTimer, score, elapsed, dir, shake, hue, bgRot;
+
+  function reset() {
+    pAngle = Math.PI / 2;     // start at bottom
+    speed = 0.42;             // p-units per second the walls travel toward us
+    obstacles = [];
+    spawnTimer = 0;
+    score = 0;
+    elapsed = 0;
+    dir = 0;                  // -1 left, +1 right
+    shake = 0;
+    hue = 200;
+    bgRot = 0;
+  }
+
+  // ---- input ----
+  const keys = {};
+  function onKeyDown(e) {
+    if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') { keys.left = true; }
+    if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') { keys.right = true; }
+    if ((e.key === ' ' || e.key === 'Enter')) {
+      if (state !== STATE.PLAY) startGame();
+    }
+  }
+  function onKeyUp(e) {
+    if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') keys.left = false;
+    if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') keys.right = false;
+  }
+  window.addEventListener('keydown', onKeyDown);
+  window.addEventListener('keyup', onKeyUp);
+
+  // touch / pointer: hold a screen half to steer
+  function pointAt(x) { if (x < W / 2) { keys.left = true; keys.right = false; } else { keys.right = true; keys.left = false; } }
+  function clearPoint() { keys.left = false; keys.right = false; }
+  canvas.addEventListener('pointerdown', (e) => { if (state === STATE.PLAY) pointAt(e.clientX); });
+  canvas.addEventListener('pointermove', (e) => { if (e.buttons && state === STATE.PLAY) pointAt(e.clientX); });
+  window.addEventListener('pointerup', clearPoint);
+  window.addEventListener('pointercancel', clearPoint);
+
+  document.getElementById('start-btn').addEventListener('click', startGame);
+  document.getElementById('retry-btn').addEventListener('click', startGame);
+
+  function startGame() {
+    reset();
+    state = STATE.PLAY;
+    startScreen.classList.add('hidden');
+    overScreen.classList.add('hidden');
+  }
+
+  function gameOver() {
+    state = STATE.OVER;
+    shake = 18;
+    if (score > best) {
+      best = score;
+      try { localStorage.setItem('tunnelRushBest', String(best)); } catch (e) {}
+    }
+    bestVal.textContent = best;
+    finalScore.textContent = score;
+    finalBest.textContent = 'Best: ' + best;
+    overScreen.classList.remove('hidden');
+  }
+
+  // angular distance normalized to [-PI, PI]
+  function angDiff(a, b) {
+    let d = (a - b) % (Math.PI * 2);
+    if (d > Math.PI) d -= Math.PI * 2;
+    if (d < -Math.PI) d += Math.PI * 2;
+    return d;
+  }
+
+  function spawnObstacle() {
+    // difficulty scales gap down & adds occasional double-gap walls
+    const t = elapsed;
+    let gapHalf = Math.max(0.55, 1.15 - t * 0.012);   // radians, shrinks over time
+    const gapCenter = Math.random() * Math.PI * 2;
+    const ob = { p: 0, checked: false, gaps: [{ c: gapCenter, h: gapHalf }] };
+    // after a while, sometimes spawn a second gap on the opposite-ish side
+    if (t > 18 && Math.random() < 0.35) {
+      ob.gaps.push({ c: gapCenter + Math.PI + (Math.random() - 0.5), h: Math.max(0.5, gapHalf - 0.1) });
+    }
+    obstacles.push(ob);
+  }
+
+  function inAnyGap(angle, gaps) {
+    for (const g of gaps) {
+      if (Math.abs(angDiff(angle, g.c)) <= g.h) return true;
+    }
+    return false;
+  }
+
+  function update(dt) {
+    if (state !== STATE.PLAY) return;
+    elapsed += dt;
+    score = Math.floor(elapsed * 100);
+    scoreVal.textContent = score;
+
+    // ramp speed
+    speed = Math.min(1.25, 0.42 + elapsed * 0.022);
+
+    // steering
+    let move = 0;
+    if (keys.left) move -= 1;
+    if (keys.right) move += 1;
+    dir = move;
+    pAngle += move * 3.6 * dt;
+
+    // spawn spacing ~0.26 in p
+    spawnTimer -= dt;
+    if (spawnTimer <= 0) {
+      spawnObstacle();
+      const spacing = 0.24 + Math.random() * 0.06;
+      spawnTimer = spacing / speed;
+    }
+
+    // advance obstacles, check collision when they cross the player band
+    for (const ob of obstacles) {
+      ob.p += speed * dt;
+      if (!ob.checked && ob.p >= P_PLAYER) {
+        ob.checked = true;
+        if (!inAnyGap(pAngle, ob.gaps)) { gameOver(); break; }
+      }
+    }
+    obstacles = obstacles.filter(o => o.p < 1.25);
+
+    if (shake > 0) shake = Math.max(0, shake - dt * 60);
+    hue = (hue + dt * 30) % 360;
+    bgRot += dt * 0.15;
+  }
+
+  // draw a wall as the complement of its gaps (the solid blocking arcs)
+  function drawWall(ob) {
+    const rIn = radiusAt(ob.p);
+    const rOut = radiusAt(Math.min(1.25, ob.p + 0.05));
+    const rMid = (rIn + rOut) / 2;
+    const lw = Math.max(2, rOut - rIn);
+    if (rMid < 4) return;
+
+    // sample the circle and collect contiguous BLOCKED runs (= not in any gap)
+    const N = 144, step = (2 * Math.PI) / N;
+    const segs = [];
+    let runStart = null;
+    for (let i = 0; i <= N; i++) {
+      const a = i * step;
+      const blocked = i < N ? !inAnyGap(a, ob.gaps) : false;
+      if (blocked && runStart === null) runStart = a;
+      else if (!blocked && runStart !== null) { segs.push([runStart, a]); runStart = null; }
+    }
+
+    const depth = Math.min(1, (ob.p) / P_PLAYER);
+    const wallHue = (hue + ob.p * 120) % 360;
+    ctx.strokeStyle = `hsl(${wallHue}, 90%, ${35 + depth * 25}%)`;
+    ctx.lineWidth = lw;
+    ctx.shadowColor = `hsl(${wallHue}, 90%, 60%)`;
+    ctx.shadowBlur = 16 * depth;
+    for (const seg of segs) {
+      if (seg[1] - seg[0] < 0.01) continue;
+      ctx.beginPath();
+      ctx.arc(cx, cy, rMid, seg[0], seg[1]);
+      ctx.stroke();
+    }
+    ctx.shadowBlur = 0;
+  }
+
+  function drawTunnelGuides() {
+    ctx.lineWidth = 1;
+    for (let i = 1; i <= 7; i++) {
+      const p = i / 7;
+      const r = radiusAt(p);
+      ctx.strokeStyle = `hsla(${(hue + 180) % 360}, 70%, 55%, ${0.05 + p * 0.08})`;
+      ctx.beginPath();
+      ctx.arc(cx, cy, r, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+    // radial lines for a spinning-tube feel
+    const spokes = 12;
+    ctx.strokeStyle = `hsla(${(hue + 180) % 360}, 70%, 60%, 0.06)`;
+    for (let i = 0; i < spokes; i++) {
+      const a = bgRot + (i / spokes) * Math.PI * 2;
+      ctx.beginPath();
+      ctx.moveTo(cx + Math.cos(a) * radiusAt(0.12), cy + Math.sin(a) * radiusAt(0.12));
+      ctx.lineTo(cx + Math.cos(a) * maxR, cy + Math.sin(a) * maxR);
+      ctx.stroke();
+    }
+  }
+
+  function drawPlayer() {
+    const r = RPLAYER();
+    const a = pAngle;
+    const px = cx + Math.cos(a) * r;
+    const py = cy + Math.sin(a) * r;
+    const size = Math.max(10, maxR * 0.03);
+    ctx.save();
+    ctx.translate(px, py);
+    ctx.rotate(a + Math.PI / 2); // point the nose toward the center
+    ctx.shadowColor = '#00e5ff';
+    ctx.shadowBlur = 18;
+    ctx.fillStyle = '#00e5ff';
+    ctx.beginPath();
+    ctx.moveTo(0, -size);          // nose toward center
+    ctx.lineTo(size * 0.8, size * 0.7);
+    ctx.lineTo(-size * 0.8, size * 0.7);
+    ctx.closePath();
+    ctx.fill();
+    ctx.fillStyle = '#ffffff';
+    ctx.beginPath();
+    ctx.arc(0, -size * 0.1, size * 0.22, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+    ctx.shadowBlur = 0;
+  }
+
+  function render() {
+    ctx.save();
+    if (shake > 0) {
+      ctx.translate((Math.random() - 0.5) * shake, (Math.random() - 0.5) * shake);
+    }
+    // background
+    const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, maxR);
+    grad.addColorStop(0, '#0a0620');
+    grad.addColorStop(0.6, '#0a0518');
+    grad.addColorStop(1, '#05030f');
+    ctx.fillStyle = grad;
+    ctx.fillRect(-50, -50, W + 100, H + 100);
+
+    drawTunnelGuides();
+
+    // far -> near so near walls overlap far ones
+    const sorted = obstacles.slice().sort((a, b) => a.p - b.p);
+    for (const ob of sorted) drawWall(ob);
+
+    if (state === STATE.PLAY || state === STATE.OVER) drawPlayer();
+
+    ctx.restore();
+  }
+
+  // ---- loop ----
+  reset();                 // initialise state so the render loop is safe on the start screen
+  let last = performance.now();
+  function frame(now) {
+    let dt = (now - last) / 1000;
+    last = now;
+    if (dt > 0.05) dt = 0.05; // clamp after tab switches
+    update(dt);
+    render();
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+
+  // expose a tiny hook so automated tests can drive the game deterministically
+  window.__tunnel = {
+    start: startGame,
+    state: () => state,
+    score: () => score,
+    setAngle: (a) => { pAngle = a; },
+    snapToGap: () => {
+      // align player to the IMMINENT wall (largest p not yet past the band), into
+      // whichever of its gaps is closest to the current angle (used in tests)
+      let target = null, bestP = -Infinity;
+      for (const o of obstacles) { if (!o.checked && o.p > bestP) { bestP = o.p; target = o; } }
+      if (target) {
+        let g = target.gaps[0];
+        for (const cand of target.gaps) {
+          if (Math.abs(angDiff(pAngle, cand.c)) < Math.abs(angDiff(pAngle, g.c))) g = cand;
+        }
+        pAngle = g.c;
+      }
+    }
+  };
+})();
+</script>
+</body>
+</html>
