@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>✨ Dress To Impress</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    font-family: 'Segoe UI', 'Trebuchet MS', sans-serif;
+    background: linear-gradient(135deg, #E8D5F5 0%, #FFB6C1 45%, #FFD4B8 100%);
+    min-height: 100vh;
+    color: #4a2a5a;
+  }
+  #root { min-height: 100vh; }
+
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 20px;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 18px rgba(180,120,200,0.25);
+  }
+  .title {
+    font-family: 'Georgia', serif;
+    font-size: 26px; font-weight: bold;
+    background: linear-gradient(90deg,#ff69b4,#9b59b6);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+  }
+  .topbtns { display: flex; gap: 10px; }
+  .pill {
+    border: none; cursor: pointer;
+    padding: 9px 16px; border-radius: 22px;
+    font-size: 15px; font-weight: 600; color: white;
+    background: linear-gradient(90deg,#ff8fc7,#a06bd6);
+    box-shadow: 0 4px 12px rgba(160,107,214,0.4);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .pill:hover { transform: translateY(-2px) scale(1.04); box-shadow: 0 6px 16px rgba(160,107,214,0.55); }
+  .pill:active { transform: scale(0.97); }
+
+  .layout {
+    display: flex; gap: 14px; padding: 14px;
+    align-items: flex-start;
+  }
+  .panel {
+    width: 210px; flex: 0 0 210px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 18px;
+    box-shadow: 0 8px 22px rgba(180,120,200,0.22);
+    padding: 12px; max-height: calc(100vh - 90px);
+    overflow-y: auto;
+  }
+  .panel::-webkit-scrollbar { width: 8px; }
+  .panel::-webkit-scrollbar-thumb { background: #d9b8ec; border-radius: 8px; }
+
+  .section { margin-bottom: 14px; }
+  .sechead {
+    display: flex; align-items: center; justify-content: space-between;
+    cursor: pointer; user-select: none;
+    font-weight: 700; font-size: 15px; color: #6a3a8f;
+    padding: 6px 4px; border-bottom: 2px solid rgba(155,89,182,0.18);
+  }
+  .grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+    margin-top: 10px;
+  }
+  .card {
+    background: white; border-radius: 12px; cursor: pointer;
+    padding: 4px; text-align: center;
+    border: 2px solid transparent;
+    transition: transform .15s ease, box-shadow .15s ease, border-color .15s;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .card:hover { transform: scale(1.05); }
+  .card.sel { border-color: #ff69b4; box-shadow: 0 0 12px #ff69b4; }
+  .card svg { width: 100%; height: 56px; }
+  .card .lbl { font-size: 10px; font-weight: 600; color: #7a5a8f; margin-top: 2px; line-height: 1.1; }
+  .check { position: absolute; top: 3px; right: 5px; font-size: 12px; }
+  .cardwrap { position: relative; }
+
+  .swatches { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; padding: 0 2px; }
+  .swatch {
+    width: 22px; height: 22px; border-radius: 50%;
+    cursor: pointer; border: 2px solid rgba(255,255,255,0.9);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    transition: transform .12s;
+  }
+  .swatch:hover { transform: scale(1.18); }
+  .swatch.sel { outline: 2px solid #ff69b4; outline-offset: 1px; }
+  .swlabel { font-size: 11px; color: #8a6a9f; margin-top: 8px; font-weight:600; }
+
+  .stage {
+    flex: 1 1 auto; min-width: 340px;
+    background: linear-gradient(180deg,#E8D5F5 0%, #FFD9E8 55%, #FFE6D4 100%);
+    border-radius: 22px;
+    box-shadow: inset 0 0 40px rgba(255,255,255,0.5), 0 8px 26px rgba(180,120,200,0.25);
+    position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    min-height: calc(100vh - 90px);
+  }
+  .stage .floor {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 26%;
+    background: linear-gradient(180deg, rgba(255,182,193,0) 0%, rgba(216,168,236,0.35) 100%);
+    border-top: 2px dashed rgba(155,89,182,0.3);
+  }
+  .charholder { position: relative; z-index: 2; transition: filter .2s; }
+  .charholder:hover { filter: drop-shadow(0 0 16px rgba(255,105,180,0.6)); }
+  .charholder svg { height: min(78vh, 620px); width: auto; }
+  .deco { position:absolute; font-size:26px; opacity:.5; z-index:1; }
+
+  .modalbg {
+    position: fixed; inset: 0; background: rgba(80,40,90,0.45);
+    display: flex; align-items: center; justify-content: center; z-index: 50;
+    backdrop-filter: blur(3px);
+  }
+  .modal {
+    background: white; border-radius: 22px; padding: 24px 28px;
+    width: 360px; max-width: 90vw; max-height: 86vh; overflow-y: auto;
+    box-shadow: 0 20px 50px rgba(120,60,140,0.4);
+  }
+  .modal h2 { font-family:'Georgia',serif; color:#9b59b6; margin-bottom: 14px; text-align:center; }
+  .lookrow { display:flex; align-items:center; justify-content:space-between; padding:7px 0; border-bottom:1px dashed rgba(155,89,182,0.2); font-size:14px; }
+  .lookrow b { color:#6a3a8f; }
+  .dot { width:16px; height:16px; border-radius:50%; display:inline-block; border:1px solid #ccc; margin-left:6px; vertical-align:middle; }
+
+  @media (max-width: 860px) {
+    .layout { flex-wrap: wrap; }
+    .panel { flex: 1 1 100%; width: 100%; max-height: none; order: 3; }
+    .stage { flex: 1 1 100%; order: 1; min-height: 60vh; }
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel">
+const { useState } = React;
+
+/* ============ COLOR PALETTES ============ */
+const CLOTHE_COLORS = [
+  {n:'Black', c:'#2C2C2C'}, {n:'White', c:'#FFFFFF'}, {n:'Red', c:'#E63946'},
+  {n:'Pink', c:'#FF69B4'}, {n:'Denim', c:'#4169E1'}, {n:'Purple', c:'#9B59B6'},
+  {n:'Beige', c:'#C9A66B'}, {n:'Olive', c:'#808000'},
+];
+const HAIR_COLORS = [
+  {n:'Black', c:'#1a1a1a'}, {n:'Dark Brown', c:'#3b2417'}, {n:'Light Brown', c:'#6b4423'},
+  {n:'Blonde', c:'#e6c27a'}, {n:'Platinum', c:'#efe6c9'}, {n:'Auburn', c:'#a83232'},
+  {n:'Pink', c:'#ff8fc7'}, {n:'Purple', c:'#9b59b6'}, {n:'Blue', c:'#4a90d9'}, {n:'Silver', c:'#d9d9d9'},
+];
+const SKIN_TONES = [
+  {n:'Light', c:'#FDBCB4'}, {n:'Medium', c:'#E8B08C'}, {n:'Tan', c:'#C68642'}, {n:'Dark', c:'#8D5524'},
+];
+
+const shade = (hex, amt) => {
+  let c = hex.replace('#','');
+  if (c.length===3) c = c.split('').map(x=>x+x).join('');
+  let r=parseInt(c.slice(0,2),16), g=parseInt(c.slice(2,4),16), b=parseInt(c.slice(4,6),16);
+  r=Math.max(0,Math.min(255,r+amt)); g=Math.max(0,Math.min(255,g+amt)); b=Math.max(0,Math.min(255,b+amt));
+  return '#'+[r,g,b].map(x=>x.toString(16).padStart(2,'0')).join('');
+};
+
+/* ============ BODY & FACE ============ */
+const Body = (skin) => (
+  <g>
+    {/* legs */}
+    <path d="M 75 230 L 70 352 L 90 352 L 96 230 Z" fill={skin} stroke={shade(skin,-25)} strokeWidth="1"/>
+    <path d="M 104 230 L 110 352 L 130 352 L 125 230 Z" fill={skin} stroke={shade(skin,-25)} strokeWidth="1"/>
+    {/* arms */}
+    <path d="M 65 135 Q 45 162 50 212 L 62 212 Q 62 166 75 142 Z" fill={skin} stroke={shade(skin,-25)} strokeWidth="1"/>
+    <path d="M 135 135 Q 155 162 150 212 L 138 212 Q 138 166 125 142 Z" fill={skin} stroke={shade(skin,-25)} strokeWidth="1"/>
+    {/* torso */}
+    <path d="M 65 128 Q 60 182 70 230 L 130 230 Q 140 182 135 128 Z" fill={skin} stroke={shade(skin,-25)} strokeWidth="1"/>
+    {/* neck */}
+    <rect x="88" y="104" width="24" height="26" rx="6" fill={skin} stroke={shade(skin,-25)} strokeWidth="1"/>
+    {/* head */}
+    <ellipse cx="100" cy="70" rx="38" ry="42" fill={skin} stroke={shade(skin,-25)} strokeWidth="1"/>
+    {/* ears */}
+    <ellipse cx="63" cy="74" rx="6" ry="9" fill={skin} stroke={shade(skin,-25)} strokeWidth="1"/>
+    <ellipse cx="137" cy="74" rx="6" ry="9" fill={skin} stroke={shade(skin,-25)} strokeWidth="1"/>
+  </g>
+);
+
+const UnderWear = (skin) => (
+  <g opacity="0.95">
+    {/* bra */}
+    <path d="M 74 150 Q 86 162 100 156 Q 114 162 126 150 L 124 140 Q 100 150 76 140 Z" fill="#f6d7e3" stroke="#e3b9cb" strokeWidth="1"/>
+    {/* briefs */}
+    <path d="M 76 232 Q 100 246 124 232 L 122 252 Q 100 262 78 252 Z" fill="#f6d7e3" stroke="#e3b9cb" strokeWidth="1"/>
+  </g>
+);
+
+const Face = () => (
+  <g>
+    {/* eyebrows */}
+    <path d="M 74 58 Q 84 53 94 57" stroke="#7a5230" strokeWidth="2.4" fill="none" strokeLinecap="round"/>
+    <path d="M 106 57 Q 116 53 126 58" stroke="#7a5230" strokeWidth="2.4" fill="none" strokeLinecap="round"/>
+    {/* eye whites */}
+    <ellipse cx="83" cy="72" rx="9" ry="11" fill="white" stroke="#c9a" strokeWidth="0.8"/>
+    <ellipse cx="117" cy="72" rx="9" ry="11" fill="white" stroke="#c9a" strokeWidth="0.8"/>
+    {/* iris */}
+    <circle cx="84" cy="74" r="6" fill="#7a4a2a"/>
+    <circle cx="116" cy="74" r="6" fill="#7a4a2a"/>
+    {/* pupil */}
+    <circle cx="84" cy="74" r="3" fill="#1a1a1a"/>
+    <circle cx="116" cy="74" r="3" fill="#1a1a1a"/>
+    {/* highlights */}
+    <circle cx="82" cy="71" r="1.6" fill="white"/>
+    <circle cx="114" cy="71" r="1.6" fill="white"/>
+    {/* lashes */}
+    <path d="M 74 70 Q 73 66 76 64" stroke="#3a2a1a" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
+    <path d="M 126 70 Q 127 66 124 64" stroke="#3a2a1a" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
+    {/* nose */}
+    <path d="M 100 78 Q 102 84 99 86" stroke="#d89a8a" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
+    {/* lips */}
+    <path d="M 92 94 Q 100 99 108 94 Q 100 92 92 94 Z" fill="#d9697f"/>
+    <path d="M 92 94 Q 100 90 108 94" stroke="#c2566c" strokeWidth="1" fill="none"/>
+    {/* blush */}
+    <ellipse cx="74" cy="84" rx="7" ry="4" fill="#ff9bb5" opacity="0.45"/>
+    <ellipse cx="126" cy="84" rx="7" ry="4" fill="#ff9bb5" opacity="0.45"/>
+  </g>
+);
+
+/* ============ TOPS ============ */
+const TOPS = [
+  {id:'cropTop', label:'Crop Top', svg:(c)=>(
+    <g>
+      <path d="M 68 132 L 66 180 L 134 180 L 132 132 Q 116 124 100 124 Q 84 124 68 132 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <rect x="83" y="116" width="9" height="18" rx="3" fill={c}/>
+      <rect x="108" y="116" width="9" height="18" rx="3" fill={c}/>
+    </g>)},
+  {id:'blouse', label:'Blouse', svg:(c)=>(
+    <g>
+      <path d="M 64 130 Q 58 175 66 222 L 134 222 Q 142 175 136 130 Q 118 122 100 122 Q 82 122 64 130 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 64 132 Q 50 160 54 200 L 66 200 Q 64 162 74 142 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 136 132 Q 150 160 146 200 L 134 200 Q 136 162 126 142 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 88 124 L 100 138 L 112 124" stroke={shade(c,-40)} strokeWidth="1.5" fill="none"/>
+      <line x1="100" y1="138" x2="100" y2="218" stroke={shade(c,-35)} strokeWidth="1"/>
+    </g>)},
+  {id:'tshirt', label:'T-Shirt', svg:(c)=>(
+    <g>
+      <path d="M 66 130 Q 62 180 68 210 L 132 210 Q 138 180 134 130 Q 116 122 100 122 Q 84 122 66 130 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 66 130 Q 48 142 50 172 L 64 172 Q 64 148 76 140 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 134 130 Q 152 142 150 172 L 136 172 Q 136 148 124 140 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 90 123 Q 100 132 110 123" stroke={shade(c,-40)} strokeWidth="1.5" fill="none"/>
+    </g>)},
+  {id:'tankTop', label:'Tank Top', svg:(c)=>(
+    <g>
+      <path d="M 70 134 Q 66 180 72 212 L 128 212 Q 134 180 130 134 Q 116 126 100 126 Q 84 126 70 134 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <rect x="80" y="114" width="6" height="24" rx="3" fill={c}/>
+      <rect x="114" y="114" width="6" height="24" rx="3" fill={c}/>
+    </g>)},
+  {id:'offShoulder', label:'Off-Shoulder', svg:(c)=>(
+    <g>
+      <path d="M 60 140 Q 100 132 140 140 L 138 150 Q 100 144 62 150 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 66 150 Q 62 184 70 212 L 130 212 Q 138 184 134 150 Q 100 158 66 150 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+    </g>)},
+  {id:'hoodie', label:'Hoodie', svg:(c)=>(
+    <g>
+      <path d="M 60 128 Q 54 184 64 226 L 136 226 Q 146 184 140 128 Q 118 120 100 120 Q 82 120 60 128 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 60 130 Q 42 150 46 196 L 62 196 Q 60 152 72 138 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 140 130 Q 158 150 154 196 L 138 196 Q 140 152 128 138 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 80 118 Q 100 134 120 118 Q 112 110 100 110 Q 88 110 80 118 Z" fill={shade(c,-20)} stroke={shade(c,-35)} strokeWidth="1"/>
+      <path d="M 78 188 Q 100 196 122 188 L 122 210 L 78 210 Z" fill={shade(c,-12)} stroke={shade(c,-30)} strokeWidth="1"/>
+      <line x1="96" y1="138" x2="96" y2="170" stroke={shade(c,-35)} strokeWidth="1.5"/>
+      <line x1="104" y1="138" x2="104" y2="170" stroke={shade(c,-35)} strokeWidth="1.5"/>
+    </g>)},
+  {id:'corset', label:'Corset', svg:(c)=>(
+    <g>
+      <path d="M 72 138 Q 66 182 80 210 L 120 210 Q 134 182 128 138 Q 100 146 72 138 Z" fill={c} stroke={shade(c,-35)} strokeWidth="1.2"/>
+      <line x1="100" y1="142" x2="100" y2="208" stroke={shade(c,-45)} strokeWidth="1"/>
+      <line x1="92" y1="145" x2="108" y2="145" stroke={shade(c,40)} strokeWidth="1"/>
+      <line x1="91" y1="160" x2="109" y2="160" stroke={shade(c,40)} strokeWidth="1"/>
+      <line x1="90" y1="176" x2="110" y2="176" stroke={shade(c,40)} strokeWidth="1"/>
+      <line x1="89" y1="192" x2="111" y2="192" stroke={shade(c,40)} strokeWidth="1"/>
+    </g>)},
+  {id:'turtleneck', label:'Turtleneck', svg:(c)=>(
+    <g>
+      <path d="M 86 96 Q 100 104 114 96 L 114 116 Q 100 124 86 116 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 66 128 Q 62 182 70 216 L 130 216 Q 138 182 134 128 Q 100 138 66 128 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 66 130 Q 48 158 52 206 L 64 206 Q 62 160 74 140 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 134 130 Q 152 158 148 206 L 136 206 Q 138 160 126 140 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+    </g>)},
+];
+
+/* ============ BOTTOMS ============ */
+const BOTTOMS = [
+  {id:'miniSkirt', label:'Mini Skirt', svg:(c)=>(
+    <g><path d="M 70 228 L 58 272 L 142 272 L 130 228 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 70 230 L 142 230" stroke={shade(c,-30)} strokeWidth="3"/></g>)},
+  {id:'maxiSkirt', label:'Maxi Skirt', svg:(c)=>(
+    <g><path d="M 70 228 Q 50 300 46 350 L 154 350 Q 150 300 130 228 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 86 240 Q 84 300 80 348" stroke={shade(c,-22)} strokeWidth="1.2" fill="none"/>
+      <path d="M 114 240 Q 116 300 120 348" stroke={shade(c,-22)} strokeWidth="1.2" fill="none"/></g>)},
+  {id:'jeans', label:'Jeans', svg:(c)=>(
+    <g><path d="M 72 228 L 67 348 L 92 348 L 100 250 L 108 348 L 133 348 L 128 228 Z" fill={c} stroke={shade(c,-35)} strokeWidth="1"/>
+      <rect x="72" y="228" width="56" height="12" fill={shade(c,-12)} stroke={shade(c,-35)} strokeWidth="1"/>
+      <path d="M 78 244 q 8 6 0 14" stroke={shade(c,35)} strokeWidth="1" fill="none"/>
+      <path d="M 122 244 q -8 6 0 14" stroke={shade(c,35)} strokeWidth="1" fill="none"/></g>)},
+  {id:'shorts', label:'Shorts', svg:(c)=>(
+    <g><path d="M 72 226 L 70 282 L 96 282 L 100 250 L 104 282 L 130 282 L 128 226 Z" fill={c} stroke={shade(c,-35)} strokeWidth="1"/>
+      <rect x="72" y="226" width="56" height="10" fill={shade(c,-12)}/></g>)},
+  {id:'pleatedSkirt', label:'Pleated', svg:(c)=>(
+    <g><path d="M 70 228 L 56 276 L 144 276 L 130 228 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <line x1="78" y1="232" x2="68" y2="274" stroke={shade(c,-28)} strokeWidth="1.2"/>
+      <line x1="92" y1="232" x2="88" y2="274" stroke={shade(c,-28)} strokeWidth="1.2"/>
+      <line x1="108" y1="232" x2="112" y2="274" stroke={shade(c,-28)} strokeWidth="1.2"/>
+      <line x1="122" y1="232" x2="132" y2="274" stroke={shade(c,-28)} strokeWidth="1.2"/></g>)},
+  {id:'trousers', label:'Trousers', svg:(c)=>(
+    <g><path d="M 72 228 L 60 350 L 96 350 L 100 252 L 104 350 L 140 350 L 128 228 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <rect x="72" y="228" width="56" height="9" fill={shade(c,-12)}/>
+      <line x1="84" y1="240" x2="78" y2="348" stroke={shade(c,-18)} strokeWidth="1"/>
+      <line x1="116" y1="240" x2="122" y2="348" stroke={shade(c,-18)} strokeWidth="1"/></g>)},
+  {id:'leggings', label:'Leggings', svg:(c)=>(
+    <g><path d="M 74 228 L 70 348 L 90 348 L 100 252 L 110 348 L 130 348 L 126 228 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 82 250 Q 80 300 78 346" stroke={shade(c,25)} strokeWidth="0.8" fill="none"/>
+      <path d="M 118 250 Q 120 300 122 346" stroke={shade(c,25)} strokeWidth="0.8" fill="none"/></g>)},
+];
+
+/* ============ SHOES ============ */
+const SHOES = [
+  {id:'heels', label:'Heels', svg:(c)=>(
+    <g><path d="M 68 350 L 96 350 L 96 358 L 70 360 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 92 358 L 96 372 L 99 372 L 96 358 Z" fill={c}/>
+      <path d="M 104 350 L 132 350 L 130 360 L 104 358 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 108 358 L 104 372 L 107 372 L 112 358 Z" fill={c}/></g>)},
+  {id:'sneakers', label:'Sneakers', svg:(c)=>(
+    <g><path d="M 66 348 Q 64 360 78 362 L 98 362 L 98 348 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <rect x="64" y="362" width="36" height="5" rx="2" fill="white" stroke="#ccc"/>
+      <path d="M 102 348 Q 100 360 114 362 L 134 362 L 134 348 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <rect x="100" y="362" width="36" height="5" rx="2" fill="white" stroke="#ccc"/>
+      <line x1="84" y1="352" x2="92" y2="356" stroke="white" strokeWidth="1.4"/>
+      <line x1="120" y1="352" x2="128" y2="356" stroke="white" strokeWidth="1.4"/></g>)},
+  {id:'boots', label:'Boots', svg:(c)=>(
+    <g><path d="M 70 290 L 68 360 L 96 362 L 98 290 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 64 360 L 98 362 L 98 368 L 64 366 Z" fill={shade(c,-25)}/>
+      <path d="M 104 290 L 102 362 L 130 360 L 132 290 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 102 362 L 136 360 L 136 366 L 102 368 Z" fill={shade(c,-25)}/></g>)},
+  {id:'balletFlats', label:'Ballet Flats', svg:(c)=>(
+    <g><path d="M 68 352 Q 66 362 82 362 L 98 362 L 98 352 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <ellipse cx="82" cy="354" rx="4" ry="2" fill={shade(c,40)}/>
+      <path d="M 102 352 Q 100 362 116 362 L 132 362 L 132 352 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <ellipse cx="118" cy="354" rx="4" ry="2" fill={shade(c,40)}/></g>)},
+  {id:'platform', label:'Platform', svg:(c)=>(
+    <g><rect x="66" y="348" width="34" height="9" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <rect x="64" y="357" width="38" height="9" rx="2" fill={shade(c,-25)}/>
+      <rect x="102" y="348" width="34" height="9" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <rect x="100" y="357" width="38" height="9" rx="2" fill={shade(c,-25)}/></g>)},
+  {id:'sandals', label:'Sandals', svg:(c)=>(
+    <g><path d="M 66 360 L 100 360 L 100 365 L 66 365 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 72 350 L 92 360 M 92 350 L 72 360" stroke={c} strokeWidth="2.5"/>
+      <path d="M 102 360 L 136 360 L 136 365 L 102 365 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 108 350 L 128 360 M 128 350 L 108 360" stroke={c} strokeWidth="2.5"/></g>)},
+];
+
+/* ============ OUTERWEAR ============ */
+const OUTER = [
+  {id:'leatherJacket', label:'Leather Jacket', svg:(c)=>(
+    <g><path d="M 64 128 Q 58 184 68 224 L 92 224 L 96 130 Q 80 124 64 128 Z" fill={c} stroke={shade(c,-40)} strokeWidth="1"/>
+      <path d="M 136 128 Q 142 184 132 224 L 108 224 L 104 130 Q 120 124 136 128 Z" fill={c} stroke={shade(c,-40)} strokeWidth="1"/>
+      <path d="M 64 130 Q 46 158 50 206 L 64 206 Q 62 160 74 140 Z" fill={c} stroke={shade(c,-40)} strokeWidth="1"/>
+      <path d="M 136 130 Q 154 158 150 206 L 136 206 Q 138 160 126 140 Z" fill={c} stroke={shade(c,-40)} strokeWidth="1"/>
+      <path d="M 96 130 L 84 146 M 104 130 L 116 146" stroke={shade(c,30)} strokeWidth="2" fill="none"/>
+      <line x1="100" y1="138" x2="100" y2="222" stroke={shade(c,-50)} strokeWidth="1.5"/></g>)},
+  {id:'trenchCoat', label:'Trench Coat', svg:(c)=>(
+    <g><path d="M 62 128 Q 54 230 60 320 L 96 320 L 96 130 Q 78 122 62 128 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 138 128 Q 146 230 140 320 L 104 320 L 104 130 Q 122 122 138 128 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 62 130 Q 44 170 48 240 L 62 240 Q 60 172 72 140 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 138 130 Q 156 170 152 240 L 138 240 Q 140 172 128 140 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <rect x="60" y="232" width="80" height="9" fill={shade(c,-25)}/>
+      <path d="M 96 130 L 86 150 M 104 130 L 114 150" stroke={shade(c,-20)} strokeWidth="2" fill="none"/></g>)},
+  {id:'blazer', label:'Blazer', svg:(c)=>(
+    <g><path d="M 64 128 Q 58 184 66 226 L 94 226 L 98 130 Q 80 124 64 128 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 136 128 Q 142 184 134 226 L 106 226 L 102 130 Q 120 124 136 128 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 64 130 Q 48 158 52 204 L 66 204 Q 64 160 74 140 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 136 130 Q 152 158 148 204 L 134 204 Q 136 160 126 140 Z" fill={c} stroke={shade(c,-30)} strokeWidth="1"/>
+      <path d="M 98 130 L 84 158 L 96 156 Z" fill={shade(c,-22)}/>
+      <path d="M 102 130 L 116 158 L 104 156 Z" fill={shade(c,-22)}/></g>)},
+  {id:'cardigan', label:'Cardigan', svg:(c)=>(
+    <g><path d="M 66 128 Q 60 190 68 236 L 92 236 L 96 130 Q 80 124 66 128 Z" fill={c} stroke={shade(c,-25)} strokeWidth="1"/>
+      <path d="M 134 128 Q 140 190 132 236 L 108 236 L 104 130 Q 120 124 134 128 Z" fill={c} stroke={shade(c,-25)} strokeWidth="1"/>
+      <path d="M 66 130 Q 50 162 54 210 L 68 210 Q 66 164 76 140 Z" fill={c} stroke={shade(c,-25)} strokeWidth="1"/>
+      <path d="M 134 130 Q 150 162 146 210 L 132 210 Q 134 164 124 140 Z" fill={c} stroke={shade(c,-25)} strokeWidth="1"/>
+      <line x1="78" y1="140" x2="80" y2="232" stroke={shade(c,-18)} strokeWidth="1"/>
+      <line x1="122" y1="140" x2="120" y2="232" stroke={shade(c,-18)} strokeWidth="1"/></g>)},
+  {id:'furCoat', label:'Fur Coat', svg:(c)=>(
+    <g><path d="M 58 130 Q 46 200 54 246 Q 58 256 70 250 Q 64 200 70 140 Q 92 124 100 126 Q 108 124 130 140 Q 136 200 130 250 Q 142 256 146 246 Q 154 200 142 130 Q 116 110 100 112 Q 84 110 58 130 Z"
+        fill={c} stroke={shade(c,-25)} strokeWidth="1"/>
+      {[64,76,88,100,112,124,136].map((x,i)=>(<circle key={i} cx={x} cy={130+ (i%2)*4} r="6" fill={shade(c,18)} opacity="0.7"/>))}
+      {[60,72,84,96,108,120,132,144].map((x,i)=>(<circle key={'b'+i} cx={x} cy="244" r="6" fill={shade(c,18)} opacity="0.7"/>))}</g>)},
+];
+
+/* ============ ACCESSORIES ============ */
+const ACCS = [
+  {id:'pearlNecklace', label:'Pearls', svg:()=>(
+    <g>{[78,86,94,100,106,114,122].map((x,i)=>{const y=120+Math.abs(i-3)*-2+ (3-Math.abs(i-3))*4; return <circle key={i} cx={x} cy={118+ (3-Math.abs(i-3))*3} r="3" fill="#fdfdfd" stroke="#e0d8e8"/>;})}</g>)},
+  {id:'chainNecklace', label:'Chain', svg:()=>(
+    <g><path d="M 80 116 Q 100 138 120 116" stroke="#e6c200" strokeWidth="2" fill="none"/>
+      <path d="M 100 132 l 0 10" stroke="#e6c200" strokeWidth="2"/>
+      <circle cx="100" cy="146" r="4" fill="#ffd700" stroke="#c9a600"/></g>)},
+  {id:'hoopEarrings', label:'Hoops', svg:()=>(
+    <g><circle cx="63" cy="86" r="6" fill="none" stroke="#ffd700" strokeWidth="2.4"/>
+      <circle cx="137" cy="86" r="6" fill="none" stroke="#ffd700" strokeWidth="2.4"/></g>)},
+  {id:'studEarrings', label:'Studs', svg:()=>(
+    <g><circle cx="63" cy="83" r="2.6" fill="#fff" stroke="#ddd"/>
+      <circle cx="137" cy="83" r="2.6" fill="#fff" stroke="#ddd"/></g>)},
+  {id:'sunglasses', label:'Sunglasses', svg:()=>(
+    <g><rect x="72" y="66" width="20" height="13" rx="6" fill="#2a2a2a" opacity="0.85"/>
+      <rect x="108" y="66" width="20" height="13" rx="6" fill="#2a2a2a" opacity="0.85"/>
+      <line x1="92" y1="70" x2="108" y2="70" stroke="#2a2a2a" strokeWidth="2"/></g>)},
+  {id:'beret', label:'Beret', svg:()=>(
+    <g><ellipse cx="100" cy="36" rx="34" ry="14" fill="#c0392b" stroke="#922b21" strokeWidth="1" transform="rotate(-8 100 36)"/>
+      <circle cx="118" cy="26" r="3" fill="#922b21"/></g>)},
+  {id:'baseballCap', label:'Cap', svg:()=>(
+    <g><path d="M 66 44 Q 100 18 134 44 L 132 50 Q 100 34 68 50 Z" fill="#2980b9" stroke="#1f6391"/>
+      <path d="M 128 48 Q 154 50 156 60 L 132 56 Z" fill="#1f6391"/></g>)},
+  {id:'handbag', label:'Handbag', svg:()=>(
+    <g><rect x="146" y="196" width="26" height="22" rx="3" fill="#b03a5b" stroke="#822a43"/>
+      <path d="M 150 196 Q 159 182 168 196" stroke="#822a43" strokeWidth="2" fill="none"/></g>)},
+  {id:'backpack', label:'Backpack', svg:()=>(
+    <g><path d="M 70 138 Q 76 132 82 138 L 80 200 L 72 200 Z" fill="#27ae60" opacity="0.9"/>
+      <path d="M 130 138 Q 124 132 118 138 L 120 200 L 128 200 Z" fill="#27ae60" opacity="0.9"/>
+      <rect x="40" y="150" width="24" height="40" rx="6" fill="#2ecc71" stroke="#1e8449"/></g>)},
+  {id:'bowClip', label:'Bow Clip', svg:()=>(
+    <g><path d="M 128 44 L 138 38 L 138 52 Z" fill="#ff5fa2" stroke="#d63384"/>
+      <path d="M 148 44 L 138 38 L 138 52 Z" fill="#ff5fa2" stroke="#d63384"/>
+      <circle cx="138" cy="45" r="3" fill="#d63384"/></g>)},
+];
+
+/* ============ HAIR (back + front) ============ */
+const HAIR = [
+  {id:'longStraight', label:'Long Straight',
+    back:(c)=>(<path d="M 56 60 Q 58 20 100 22 Q 142 20 144 60 Q 150 180 138 250 L 120 250 Q 132 140 122 80 L 78 80 Q 68 140 80 250 L 62 250 Q 50 180 56 60 Z" fill={c} stroke={shade(c,-25)} strokeWidth="1"/>),
+    front:(c)=>(<path d="M 60 60 Q 62 26 100 26 Q 138 26 140 60 Q 130 44 100 46 Q 76 46 70 66 Q 64 56 60 60 Z" fill={c} stroke={shade(c,-25)} strokeWidth="1"/>)},
+  {id:'curly', label:'Curly Volume',
+    back:(c)=>(<g><ellipse cx="60" cy="80" rx="20" ry="22" fill={c}/><ellipse cx="140" cy="80" rx="20" ry="22" fill={c}/><ellipse cx="58" cy="140" rx="20" ry="22" fill={c}/><ellipse cx="142" cy="140" rx="20" ry="22" fill={c}/><ellipse cx="66" cy="190" rx="16" ry="18" fill={c}/><ellipse cx="134" cy="190" rx="16" ry="18" fill={c}/><path d="M 60 50 Q 100 18 140 50 Q 150 100 140 150 L 60 150 Q 50 100 60 50 Z" fill={c}/></g>),
+    front:(c)=>(<g><circle cx="74" cy="44" r="13" fill={c}/><circle cx="92" cy="36" r="14" fill={c}/><circle cx="110" cy="36" r="14" fill={c}/><circle cx="128" cy="44" r="13" fill={c}/><circle cx="66" cy="60" r="11" fill={c}/></g>)},
+  {id:'bob', label:'Bob Cut',
+    back:(c)=>(<path d="M 58 56 Q 60 22 100 22 Q 140 22 142 56 Q 146 110 138 124 L 124 124 Q 130 90 122 74 L 78 74 Q 70 90 76 124 L 62 124 Q 54 110 58 56 Z" fill={c} stroke={shade(c,-25)} strokeWidth="1"/>),
+    front:(c)=>(<path d="M 60 58 Q 64 26 100 26 Q 136 26 140 58 Q 128 42 100 44 Q 74 44 68 64 Q 64 54 60 58 Z" fill={c} stroke={shade(c,-25)} strokeWidth="1"/>)},
+  {id:'ponytail', label:'High Ponytail',
+    back:(c)=>(<g><path d="M 128 30 Q 168 50 162 120 Q 158 170 140 200 L 126 196 Q 146 150 144 110 Q 142 70 120 48 Z" fill={c} stroke={shade(c,-25)} strokeWidth="1"/><circle cx="124" cy="34" r="8" fill={shade(c,-20)}/></g>),
+    front:(c)=>(<path d="M 58 60 Q 60 22 100 22 Q 140 22 140 50 Q 120 30 100 32 Q 72 34 66 66 Q 60 56 58 60 Z" fill={c} stroke={shade(c,-25)} strokeWidth="1"/>)},
+  {id:'twinBuns', label:'Twin Buns',
+    back:(c)=>(<path d="M 60 58 Q 62 26 100 26 Q 138 26 140 58 Q 142 96 134 112 L 66 112 Q 58 96 60 58 Z" fill={c} stroke={shade(c,-25)} strokeWidth="1"/>),
+    front:(c)=>(<g><circle cx="66" cy="34" r="15" fill={c} stroke={shade(c,-25)}/><circle cx="134" cy="34" r="15" fill={c} stroke={shade(c,-25)}/><path d="M 62 56 Q 66 28 100 28 Q 134 28 138 56 Q 120 38 100 40 Q 74 40 68 60 Z" fill={c} stroke={shade(c,-25)} strokeWidth="1"/></g>)},
+  {id:'braided', label:'Side Braid',
+    back:(c)=>(<g><path d="M 58 58 Q 60 24 100 24 Q 140 24 142 58 Q 146 100 138 120 L 62 120 Q 54 100 58 58 Z" fill={c} stroke={shade(c,-25)} strokeWidth="1"/>
+      {[0,1,2,3,4,5].map(i=>(<ellipse key={i} cx={70-i*1} cy={132+i*20} rx={11-i*0.8} ry="11" fill={c} stroke={shade(c,-22)} strokeWidth="1"/>))}</g>),
+    front:(c)=>(<path d="M 60 58 Q 64 26 100 26 Q 136 26 140 58 Q 124 40 100 42 Q 74 42 68 64 Z" fill={c} stroke={shade(c,-25)} strokeWidth="1"/>)},
+  {id:'wavy', label:'Wavy Medium',
+    back:(c)=>(<path d="M 56 58 Q 58 22 100 22 Q 142 22 144 58 Q 150 150 134 180 Q 138 192 128 188 Q 132 150 124 90 L 76 90 Q 68 150 72 188 Q 62 192 66 180 Q 50 150 56 58 Z" fill={c} stroke={shade(c,-25)} strokeWidth="1"/>),
+    front:(c)=>(<path d="M 58 60 Q 62 26 100 26 Q 138 26 142 60 Q 126 42 110 50 Q 100 40 90 50 Q 74 42 66 66 Q 62 56 58 60 Z" fill={c} stroke={shade(c,-25)} strokeWidth="1"/>)},
+  {id:'pixie', label:'Pixie Cut',
+    back:(c)=>(<path d="M 62 60 Q 64 30 100 30 Q 136 30 138 60 Q 140 80 134 90 L 66 90 Q 60 80 62 60 Z" fill={c} stroke={shade(c,-25)} strokeWidth="1"/>),
+    front:(c)=>(<path d="M 60 62 Q 62 26 100 26 Q 140 26 140 58 Q 138 40 120 44 Q 124 36 110 38 Q 100 32 90 40 Q 80 34 72 46 Q 64 44 60 62 Z" fill={c} stroke={shade(c,-25)} strokeWidth="1"/>)},
+];
+
+/* ============ SILHOUETTE (for card previews) ============ */
+const Silhouette = () => (<g>{Body('#e6d5ee')}</g>);
+
+const findItem = (arr, id) => arr.find(x=>x.id===id);
+
+/* ============ MINI PREVIEW for a card ============ */
+function MiniPreview({type, item, color, hairColor}) {
+  let inner;
+  if (type==='hair') inner = (<g>{item.back(hairColor||'#6b4423')}{item.front(hairColor||'#6b4423')}</g>);
+  else inner = item.svg(color);
+  return (
+    <svg viewBox="20 12 165 370" preserveAspectRatio="xMidYMid meet">
+      <Silhouette/>
+      {type==='hair' && <ellipse cx="100" cy="70" rx="38" ry="42" fill="#f0e2f7"/>}
+      {inner}
+    </svg>
+  );
+}
+
+/* ============ MAIN APP ============ */
+function App() {
+  const [selectedTop, setSelectedTop] = useState(null);
+  const [selectedBottom, setSelectedBottom] = useState(null);
+  const [selectedShoes, setSelectedShoes] = useState(null);
+  const [selectedOuter, setSelectedOuter] = useState(null);
+  const [selectedHair, setSelectedHair] = useState('longStraight');
+  const [selectedAccs, setSelectedAccs] = useState([]);
+
+  const [topColor, setTopColor] = useState('#FF69B4');
+  const [bottomColor, setBottomColor] = useState('#4169E1');
+  const [shoeColor, setShoeColor] = useState('#C9A66B');
+  const [outerColor, setOuterColor] = useState('#2C2C2C');
+  const [hairColor, setHairColor] = useState('#3b2417');
+  const [skinTone, setSkinTone] = useState('#FDBCB4');
+
+  const [showModal, setShowModal] = useState(false);
+  const [open, setOpen] = useState({tops:true, bottoms:true, shoes:false, outer:false});
+
+  const toggleAcc = (id) =>
+    setSelectedAccs(p => p.includes(id) ? p.filter(x=>x!==id) : [...p, id]);
+
+  const rand = (a) => a[Math.floor(Math.random()*a.length)];
+  const randColor = () => rand(CLOTHE_COLORS).c;
+
+  const randomize = () => {
+    setSelectedTop(rand(TOPS).id);
+    setSelectedBottom(rand(BOTTOMS).id);
+    setSelectedShoes(rand(SHOES).id);
+    setSelectedOuter(Math.random() > 0.5 ? rand(OUTER).id : null);
+    setSelectedHair(rand(HAIR).id);
+    const naccs = Math.floor(Math.random()*4);
+    const shuffled = [...ACCS].sort(()=>Math.random()-0.5).slice(0, naccs).map(a=>a.id);
+    setSelectedAccs(shuffled);
+    setTopColor(randColor()); setBottomColor(randColor());
+    setShoeColor(randColor()); setOuterColor(randColor());
+    setHairColor(rand(HAIR_COLORS).c);
+    setSkinTone(rand(SKIN_TONES).c);
+  };
+
+  const clearAll = () => {
+    setSelectedTop(null); setSelectedBottom(null); setSelectedShoes(null);
+    setSelectedOuter(null); setSelectedHair('longStraight'); setSelectedAccs([]);
+    setTopColor('#FF69B4'); setBottomColor('#4169E1'); setShoeColor('#C9A66B');
+    setOuterColor('#2C2C2C'); setHairColor('#3b2417'); setSkinTone('#FDBCB4');
+  };
+
+  const topItem = selectedTop && findItem(TOPS, selectedTop);
+  const botItem = selectedBottom && findItem(BOTTOMS, selectedBottom);
+  const shoeItem = selectedShoes && findItem(SHOES, selectedShoes);
+  const outItem = selectedOuter && findItem(OUTER, selectedOuter);
+  const hairItem = findItem(HAIR, selectedHair);
+
+  /* ---- reusable section renderer (left panel) ---- */
+  const Section = ({title, emoji, items, type, selected, setSel, color, setColor, key2}) => (
+    <div className="section">
+      <div className="sechead" onClick={()=>setOpen(o=>({...o,[key2]:!o[key2]}))}>
+        <span>{emoji} {title}</span><span>{open[key2]?'▾':'▸'}</span>
+      </div>
+      {open[key2] && (<>
+        <div className="grid">
+          {items.map(it=>(
+            <div key={it.id} className={'card'+(selected===it.id?' sel':'')}
+                 onClick={()=>setSel(selected===it.id?null:it.id)}>
+              <MiniPreview type={type} item={it} color={color}/>
+              <div className="lbl">{it.label}</div>
+            </div>
+          ))}
+        </div>
+        <div className="swlabel">Color</div>
+        <div className="swatches">
+          {CLOTHE_COLORS.map(s=>(
+            <div key={s.c} className={'swatch'+(color===s.c?' sel':'')}
+                 style={{background:s.c}} title={s.n} onClick={()=>setColor(s.c)}/>
+          ))}
+        </div>
+      </>)}
+    </div>
+  );
+
+  return (
+    <div>
+      <div className="topbar">
+        <div className="title">✨ Dress To Impress</div>
+        <div className="topbtns">
+          <button className="pill" onClick={randomize}>🎲 Randomize</button>
+          <button className="pill" onClick={clearAll}>🗑️ Clear</button>
+          <button className="pill" onClick={()=>setShowModal(true)}>💾 Save Look</button>
+        </div>
+      </div>
+
+      <div className="layout">
+        {/* LEFT PANEL */}
+        <div className="panel">
+          <Section title="Tops" emoji="👗" items={TOPS} type="top"
+                   selected={selectedTop} setSel={setSelectedTop}
+                   color={topColor} setColor={setTopColor} key2="tops"/>
+          <Section title="Bottoms" emoji="👖" items={BOTTOMS} type="bottom"
+                   selected={selectedBottom} setSel={setSelectedBottom}
+                   color={bottomColor} setColor={setBottomColor} key2="bottoms"/>
+          <Section title="Shoes" emoji="👠" items={SHOES} type="shoe"
+                   selected={selectedShoes} setSel={setSelectedShoes}
+                   color={shoeColor} setColor={setShoeColor} key2="shoes"/>
+          <Section title="Outerwear" emoji="🧥" items={OUTER} type="outer"
+                   selected={selectedOuter} setSel={setSelectedOuter}
+                   color={outerColor} setColor={setOuterColor} key2="outer"/>
+        </div>
+
+        {/* CENTER STAGE */}
+        <div className="stage">
+          <span className="deco" style={{top:'8%',left:'10%'}}>🌸</span>
+          <span className="deco" style={{top:'14%',right:'12%'}}>✨</span>
+          <span className="deco" style={{bottom:'30%',left:'8%'}}>💖</span>
+          <span className="deco" style={{top:'40%',right:'8%'}}>🌷</span>
+          <div className="floor"></div>
+          <div className="charholder">
+            <svg viewBox="0 0 200 400">
+              {Body(skinTone)}
+              {hairItem.back(hairColor)}
+              {Face()}
+              {UnderWear(skinTone)}
+              {botItem && botItem.svg(bottomColor)}
+              {topItem && topItem.svg(topColor)}
+              {shoeItem && shoeItem.svg(shoeColor)}
+              {outItem && outItem.svg(outerColor)}
+              {selectedAccs.map(id => {
+                const a = findItem(ACCS, id);
+                return <g key={id}>{a.svg()}</g>;
+              })}
+              {hairItem.front(hairColor)}
+            </svg>
+          </div>
+        </div>
+
+        {/* RIGHT PANEL */}
+        <div className="panel">
+          <div className="section">
+            <div className="sechead"><span>💎 Accessories</span></div>
+            <div className="grid">
+              {ACCS.map(a=>(
+                <div key={a.id} className={'cardwrap card'+(selectedAccs.includes(a.id)?' sel':'')}
+                     onClick={()=>toggleAcc(a.id)}>
+                  {selectedAccs.includes(a.id) && <span className="check">✅</span>}
+                  <MiniPreview type="acc" item={a} color="#999"/>
+                  <div className="lbl">{a.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="section">
+            <div className="sechead"><span>💇 Hairstyles</span></div>
+            <div className="grid">
+              {HAIR.map(h=>(
+                <div key={h.id} className={'card'+(selectedHair===h.id?' sel':'')}
+                     onClick={()=>setSelectedHair(h.id)}>
+                  <MiniPreview type="hair" item={h} hairColor={hairColor}/>
+                  <div className="lbl">{h.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="section">
+            <div className="sechead"><span>🎨 Skin Tone</span></div>
+            <div className="swatches" style={{justifyContent:'space-around', marginTop:'12px'}}>
+              {SKIN_TONES.map(s=>(
+                <div key={s.c} className={'swatch'+(skinTone===s.c?' sel':'')}
+                     style={{background:s.c, width:'34px', height:'34px'}}
+                     title={s.n} onClick={()=>setSkinTone(s.c)}/>
+              ))}
+            </div>
+          </div>
+
+          <div className="section">
+            <div className="sechead"><span>🌈 Hair Color</span></div>
+            <div className="swatches" style={{marginTop:'12px'}}>
+              {HAIR_COLORS.map(s=>(
+                <div key={s.c} className={'swatch'+(hairColor===s.c?' sel':'')}
+                     style={{background:s.c}} title={s.n} onClick={()=>setHairColor(s.c)}/>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* SAVE MODAL */}
+      {showModal && (
+        <div className="modalbg" onClick={()=>setShowModal(false)}>
+          <div className="modal" onClick={e=>e.stopPropagation()}>
+            <h2>💖 Your Look 💖</h2>
+            <LookRow label="Top" item={topItem} color={topColor}/>
+            <LookRow label="Bottom" item={botItem} color={bottomColor}/>
+            <LookRow label="Shoes" item={shoeItem} color={shoeColor}/>
+            <LookRow label="Outerwear" item={outItem} color={outerColor}/>
+            <LookRow label="Hairstyle" item={hairItem} color={hairColor}/>
+            <div className="lookrow">
+              <span><b>Skin Tone</b></span>
+              <span><span className="dot" style={{background:skinTone}}></span></span>
+            </div>
+            <div className="lookrow" style={{borderBottom:'none'}}>
+              <span><b>Accessories</b></span>
+              <span style={{maxWidth:'60%',textAlign:'right'}}>
+                {selectedAccs.length ? selectedAccs.map(id=>findItem(ACCS,id).label).join(', ') : '—'}
+              </span>
+            </div>
+            <button className="pill" style={{width:'100%',marginTop:'16px'}}
+                    onClick={()=>setShowModal(false)}>Close</button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function LookRow({label, item, color}) {
+  return (
+    <div className="lookrow">
+      <span><b>{label}</b></span>
+      <span>
+        {item ? item.label : '—'}
+        {item && <span className="dot" style={{background:color}}></span>}
+      </span>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>
