@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>Worldle — Daily Word Game</title>
+<style>
+  :root{
+    --bg:#ffffff;
+    --text:#1a1a1a;
+    --navbar:#1a1a1a;
+    --green:#6aaa64;
+    --yellow:#c9b458;
+    --gray:#787c7e;
+    --border-empty:#d3d6da;
+    --border-filled:#878a8c;
+    --key-bg:#d3d6da;
+    --key-text:#1a1a1a;
+    --modal-bg:#ffffff;
+    --divider:#e5e5e5;
+  }
+  /* Dark theme */
+  body.dark{
+    --bg:#121213;
+    --text:#ffffff;
+    --navbar:#121213;
+    --border-empty:#3a3a3c;
+    --border-filled:#565758;
+    --key-bg:#818384;
+    --key-text:#ffffff;
+    --modal-bg:#1a1a1b;
+    --divider:#3a3a3c;
+  }
+  /* Color-blind theme */
+  body.cb{
+    --green:#f5793a;
+    --yellow:#85c0f9;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:"Clear Sans","Helvetica Neue",Arial,sans-serif;
+    background:var(--bg);color:var(--text);
+    display:flex;flex-direction:column;min-height:100vh;
+    -webkit-tap-highlight-color:transparent;
+    transition:background .2s,color .2s;
+  }
+  button{font-family:inherit}
+
+  /* ---------- Header ---------- */
+  header{background:var(--navbar);color:#fff;border-bottom:1px solid #2a2a2a}
+  .nav-top{
+    display:flex;align-items:center;justify-content:space-between;
+    max-width:560px;margin:0 auto;padding:10px 16px;
+  }
+  .nav-icons{display:flex;gap:6px}
+  .icon-btn{
+    background:none;border:none;color:#fff;cursor:pointer;
+    font-size:1.15rem;padding:6px;line-height:1;border-radius:6px;
+  }
+  .icon-btn:hover{background:rgba(255,255,255,.12)}
+  .logo{font-size:1.55rem;font-weight:700;letter-spacing:.5px}
+  .nav-links{
+    display:flex;gap:22px;justify-content:center;
+    padding:8px 16px;font-size:.92rem;border-top:1px solid #2a2a2a;
+  }
+  .nav-links a{color:#cfcfcf;text-decoration:none;font-weight:600}
+  .nav-links a.active,.nav-links a:hover{color:#fff}
+
+  /* ---------- Game area ---------- */
+  main{flex:1;display:flex;flex-direction:column;align-items:center;width:100%}
+  .game{
+    width:100%;max-width:500px;
+    display:flex;flex-direction:column;align-items:center;
+    padding:14px 8px;flex:1;justify-content:space-between;
+  }
+  .mode-bar{display:flex;gap:8px;margin-bottom:10px}
+  .mode-bar button{
+    border:1px solid var(--border-filled);background:transparent;color:var(--text);
+    padding:5px 14px;border-radius:16px;font-size:.8rem;font-weight:600;cursor:pointer;
+  }
+  .mode-bar button.active{background:var(--green);color:#fff;border-color:var(--green)}
+
+  /* Grid */
+  .grid{
+    display:grid;grid-template-rows:repeat(6,1fr);gap:5px;
+    padding:10px 0;width:100%;max-width:330px;
+  }
+  .row{display:grid;grid-template-columns:repeat(5,1fr);gap:5px}
+  .tile{
+    width:100%;aspect-ratio:1/1;
+    border:2px solid var(--border-empty);
+    display:flex;align-items:center;justify-content:center;
+    font-size:2rem;font-weight:700;text-transform:uppercase;
+    color:var(--text);user-select:none;
+    transition:transform .1s;
+  }
+  .tile.filled{border-color:var(--border-filled);animation:pop .1s ease}
+  .tile.correct{background:var(--green);border-color:var(--green);color:#fff}
+  .tile.present{background:var(--yellow);border-color:var(--yellow);color:#fff}
+  .tile.absent{background:var(--gray);border-color:var(--gray);color:#fff}
+  .tile.reveal{animation:flip .5s ease forwards}
+  @keyframes pop{0%{transform:scale(.9)}100%{transform:scale(1)}}
+  @keyframes flip{0%{transform:rotateX(0)}50%{transform:rotateX(-90deg)}100%{transform:rotateX(0)}}
+  .row.shake{animation:shake .5s}
+  @keyframes shake{10%,90%{transform:translateX(-2px)}20%,80%{transform:translateX(4px)}30%,50%,70%{transform:translateX(-7px)}40%,60%{transform:translateX(7px)}}
+  .tile.win{animation:bounce .6s}
+  @keyframes bounce{0%,100%{transform:translateY(0)}40%{transform:translateY(-22px)}60%{transform:translateY(-10px)}}
+
+  /* Keyboard */
+  .keyboard{width:100%;max-width:500px;padding:0 6px 12px;display:flex;flex-direction:column;gap:7px}
+  .krow{display:flex;gap:5px;justify-content:center}
+  .key{
+    flex:1;min-width:0;height:54px;border:none;border-radius:5px;
+    background:var(--key-bg);color:var(--key-text);
+    font-size:.85rem;font-weight:700;text-transform:uppercase;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .key.wide{flex:1.5;font-size:.7rem}
+  .key.correct{background:var(--green);color:#fff}
+  .key.present{background:var(--yellow);color:#fff}
+  .key.absent{background:var(--gray);color:#fff}
+  .key:active{opacity:.7}
+
+  /* ---------- Toast ---------- */
+  #toaster{position:fixed;top:80px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:8px;z-index:60;pointer-events:none}
+  .toast{
+    background:#1a1a1a;color:#fff;padding:12px 16px;border-radius:4px;
+    font-weight:600;font-size:.9rem;box-shadow:0 4px 12px rgba(0,0,0,.3);
+    animation:fade 1.6s forwards;
+  }
+  @keyframes fade{0%{opacity:0;transform:translateY(-6px)}10%,80%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+
+  /* ---------- Modals ---------- */
+  .overlay{
+    position:fixed;inset:0;background:rgba(0,0,0,.55);
+    display:none;align-items:center;justify-content:center;z-index:70;padding:16px;
+  }
+  .overlay.open{display:flex}
+  .modal{
+    background:var(--modal-bg);color:var(--text);border-radius:10px;
+    max-width:420px;width:100%;max-height:88vh;overflow-y:auto;
+    padding:22px 22px 26px;position:relative;box-shadow:0 10px 40px rgba(0,0,0,.4);
+  }
+  .modal h2{text-align:center;font-size:1.1rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+  .close{position:absolute;top:12px;right:14px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text);line-height:1}
+
+  /* Stats */
+  .stats-row{display:flex;justify-content:space-around;margin:6px 0 18px}
+  .stat{text-align:center}
+  .stat .num{font-size:2rem;font-weight:600}
+  .stat .lbl{font-size:.7rem}
+  .dist .bar-row{display:flex;align-items:center;gap:6px;margin:4px 0;font-size:.85rem}
+  .dist .bar-row .n{width:12px;text-align:right}
+  .dist .bar{background:var(--gray);color:#fff;text-align:right;padding:2px 6px;border-radius:2px;min-width:24px;font-weight:600}
+  .dist .bar.hl{background:var(--green)}
+  .share-wrap{display:flex;align-items:center;justify-content:space-around;margin-top:20px;border-top:1px solid var(--divider);padding-top:16px}
+  .countdown{text-align:center}
+  .countdown .lbl{font-size:.7rem;text-transform:uppercase}
+  .countdown .clock{font-size:1.7rem;font-weight:600;font-variant-numeric:tabular-nums}
+  .share-btn{background:var(--green);color:#fff;border:none;border-radius:6px;padding:12px 18px;font-weight:700;font-size:1rem;cursor:pointer;display:flex;align-items:center;gap:8px}
+
+  /* How to play */
+  .htp p{font-size:.92rem;line-height:1.5;margin-bottom:10px}
+  .example{display:flex;gap:4px;margin:8px 0}
+  .example .tile{width:40px;height:40px;font-size:1.2rem;border-width:2px}
+  .htp .desc{font-size:.9rem;margin-bottom:14px}
+
+  /* Settings */
+  .setting{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--divider)}
+  .setting .s-title{font-size:.95rem;font-weight:500}
+  .setting .s-sub{font-size:.75rem;color:var(--gray)}
+  .switch{position:relative;width:48px;height:26px}
+  .switch input{opacity:0;width:0;height:0}
+  .slider{position:absolute;inset:0;background:var(--gray);border-radius:26px;cursor:pointer;transition:.2s}
+  .slider:before{content:"";position:absolute;height:20px;width:20px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.2s}
+  .switch input:checked + .slider{background:var(--green)}
+  .switch input:checked + .slider:before{transform:translateX(22px)}
+
+  /* ---------- Description + More games ---------- */
+  .content{max-width:680px;margin:0 auto;padding:30px 20px;width:100%}
+  .content h1{font-size:1.6rem;margin-bottom:12px}
+  .content h2{font-size:1.2rem;margin:22px 0 10px}
+  .content p{line-height:1.6;margin-bottom:12px;color:var(--text)}
+  .content ul{margin:0 0 12px 22px;line-height:1.7}
+  .more-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:14px;margin-top:14px}
+  .more-card{text-decoration:none;color:var(--text);text-align:center}
+  .more-icon{
+    width:100%;aspect-ratio:1/1;border-radius:14px;display:flex;align-items:center;justify-content:center;
+    font-size:2rem;box-shadow:0 3px 10px rgba(0,0,0,.12);transition:transform .15s;
+  }
+  .more-card:hover .more-icon{transform:translateY(-4px)}
+  .more-name{font-size:.74rem;margin-top:6px;display:block}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--navbar);color:#bbb;text-align:center;padding:22px 16px;font-size:.82rem}
+  footer a{color:#ddd;text-decoration:none;margin:0 6px}
+  footer .disclaimer{font-size:.72rem;color:#888;margin-top:8px}
+
+  @media (max-width:380px){
+    .key{height:48px}
+    .grid{max-width:300px}
+  }
+</style>
+</head>
+<body>
+
+  <!-- 1. Header -->
+  <header>
+    <div class="nav-top">
+      <button class="icon-btn" id="menuBtn" aria-label="Menu">☰</button>
+      <div class="logo">Worldle</div>
+      <div class="nav-icons">
+        <button class="icon-btn" id="helpBtn" aria-label="How to play">?</button>
+        <button class="icon-btn" id="statsBtn" aria-label="Statistics">📊</button>
+        <button class="icon-btn" id="settingsBtn" aria-label="Settings">⚙️</button>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="#" class="active">Worldle</a>
+      <a href="/fun-games/index.html">+Games</a>
+      <a href="/home/index.html">Home</a>
+    </nav>
+  </header>
+
+  <!-- 2. Game area -->
+  <main>
+    <div class="game">
+      <div>
+        <div class="mode-bar">
+          <button id="dailyBtn" class="active">Daily</button>
+          <button id="practiceBtn">Practice</button>
+        </div>
+        <div class="grid" id="grid"></div>
+      </div>
+      <div class="keyboard" id="keyboard"></div>
+    </div>
+
+    <!-- 4. Description -->
+    <section class="content">
+      <h1>Worldle — The Daily Word Puzzle</h1>
+      <p>Worldle is a free daily word game where you have six tries to guess a hidden five-letter word. A brand-new puzzle unlocks every day at midnight, and everyone plays the same word — so you can compare results with friends.</p>
+      <p>After each guess, the colour of the tiles tells you how close you are. Switch to <strong>Practice</strong> mode any time for unlimited random puzzles.</p>
+      <h2>Objective &amp; Gameplay</h2>
+      <p>Guess the WORD in six tries. Each guess must be a valid five-letter word. After you submit, the tiles change colour to show how good your guess was:</p>
+      <ul>
+        <li><strong>🟩 Green</strong> — the letter is correct and in the right spot.</li>
+        <li><strong>🟨 Yellow</strong> — the letter is in the word but in the wrong spot.</li>
+        <li><strong>⬜ Gray</strong> — the letter is not in the word at all.</li>
+      </ul>
+
+      <h2>More Games</h2>
+      <div class="more-grid" id="moreGrid"></div>
+    </section>
+  </main>
+
+  <!-- 7. Footer -->
+  <footer>
+    <div>© <span id="year"></span> Khyati17 · Worldle</div>
+    <div><a href="/home/index.html">Home</a>·<a href="/fun-games/index.html">All Games</a></div>
+    <div class="disclaimer">Free to play · For entertainment only · No download required.</div>
+  </footer>
+
+  <div id="toaster"></div>
+
+  <!-- Stats Modal -->
+  <div class="overlay" id="statsModal">
+    <div class="modal">
+      <button class="close" data-close>×</button>
+      <h2>Statistics</h2>
+      <div class="stats-row">
+        <div class="stat"><div class="num" id="stPlayed">0</div><div class="lbl">Played</div></div>
+        <div class="stat"><div class="num" id="stWin">0</div><div class="lbl">Win %</div></div>
+        <div class="stat"><div class="num" id="stCur">0</div><div class="lbl">Current Streak</div></div>
+        <div class="stat"><div class="num" id="stMax">0</div><div class="lbl">Max Streak</div></div>
+      </div>
+      <h2>Guess Distribution</h2>
+      <div class="dist" id="dist"></div>
+      <div class="share-wrap">
+        <div class="countdown">
+          <div class="lbl">Next Worldle</div>
+          <div class="clock" id="clock">00:00:00</div>
+        </div>
+        <button class="share-btn" id="shareBtn">Share ⬆️</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- How To Play Modal -->
+  <div class="overlay" id="helpModal">
+    <div class="modal htp">
+      <button class="close" data-close>×</button>
+      <h2>How To Play</h2>
+      <p>Guess the <strong>WORD</strong> in 6 tries.</p>
+      <p>Each guess must be a valid 5-letter word. The colour of the tiles changes to show how close your guess was.</p>
+      <div class="desc">
+        <div class="example"><div class="tile correct">W</div><div class="tile">E</div><div class="tile">A</div><div class="tile">R</div><div class="tile">Y</div></div>
+        <strong>W</strong> is in the word and in the correct spot.
+      </div>
+      <div class="desc">
+        <div class="example"><div class="tile">P</div><div class="tile present">I</div><div class="tile">L</div><div class="tile">L</div><div class="tile">S</div></div>
+        <strong>I</strong> is in the word but in the wrong spot.
+      </div>
+      <div class="desc">
+        <div class="example"><div class="tile">V</div><div class="tile">A</div><div class="tile">G</div><div class="tile absent">U</div><div class="tile">E</div></div>
+        <strong>U</strong> is not in the word in any spot.
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings Modal -->
+  <div class="overlay" id="settingsModal">
+    <div class="modal">
+      <button class="close" data-close>×</button>
+      <h2>Settings</h2>
+      <div class="setting">
+        <div><div class="s-title">Hard Mode</div><div class="s-sub">Revealed hints must be used in subsequent guesses</div></div>
+        <label class="switch"><input type="checkbox" id="setHard"><span class="slider"></span></label>
+      </div>
+      <div class="setting">
+        <div><div class="s-title">Dark Theme</div><div class="s-sub">Reduce luminance to ease your eyes</div></div>
+        <label class="switch"><input type="checkbox" id="setDark"><span class="slider"></span></label>
+      </div>
+      <div class="setting">
+        <div><div class="s-title">Color Blind Mode</div><div class="s-sub">High contrast colours</div></div>
+        <label class="switch"><input type="checkbox" id="setCb"><span class="slider"></span></label>
+      </div>
+    </div>
+  </div>
+
+<script>
+/* ============================================================
+   WORD LIST (answers + valid guesses)
+   ============================================================ */
+const WORDS = [
+  "apple","beach","brave","bread","brick","bring","brush","chair","charm","chess",
+  "chord","clean","clear","climb","cloud","crane","crisp","crown","dance","dream",
+  "drink","drive","eagle","early","earth","equal","extra","fairy","fancy","field",
+  "fight","flame","flash","float","flood","floor","focus","frame","fresh","frost",
+  "ghost","giant","glass","globe","grace","grain","grand","grape","grass","green",
+  "happy","heart","heavy","honey","horse","house","ideal","image","input","ivory",
+  "jelly","jolly","juice","known","label","lemon","light","lucky","lunch","magic",
+  "mango","maple","march","money","month","mouse","music","night","noble","north",
+  "ocean","olive","onion","orbit","other","panda","paint","peace","pearl","piano",
+  "pilot","pixel","plant","plate","point","pound","power","pride","prime","prize",
+  "proud","pulse","queen","quick","quiet","quill","raise","range","rapid","reach",
+  "ready","rebel","relax","ridge","river","roast","robot","round","royal","saint",
+  "salad","sauce","scale","scarf","scene","scout","shade","shape","share","shark",
+  "sharp","sheep","shine","shiny","shore","short","silly","sixty","skill","slate",
+  "sleep","slide","smart","smile","smoke","snake","solar","sound","south","space",
+  "spark","spell","spice","spine","spire","spoon","sport","stack","stage","stair",
+  "stamp","stand","stare","steam","steel","stick","stone","storm","story","stove",
+  "sugar","sunny","sweet","swing","sword","table","taste","teach","theme","thick",
+  "thumb","tiger","title","toast","today","tooth","torch","tower","track","trade",
+  "trail","train","treat","trend","tribe","trick","truck","trust","truth","tulip",
+  "twist","ultra","uncle","under","unite","unity","upper","urban","value","vapor",
+  "vault","video","vivid","vocal","voice","waste","watch","water","weary","wheat",
+  "wheel","where","which","white","whole","windy","witty","woman","world","worth",
+  "wound","wrist","write","young","zebra"
+];
+const WORDSET = new Set(WORDS);
+
+/* ============================================================
+   STATE
+   ============================================================ */
+const ROWS = 6, COLS = 5;
+let mode = "daily";
+let solution = "";
+let board = [];      // letters per cell
+let states = [];     // evaluated state per cell
+let row = 0, col = 0;
+let gameOver = false;
+let hardMode = false;
+
+const $ = id => document.getElementById(id);
+const daySeed = () => Math.floor(Date.now()/86400000);
+
+/* ---- Persistence ---- */
+const SKEY = "worldle_stats", GKEY = "worldle_daily", PREF = "worldle_prefs";
+function loadStats(){
+  try{ return JSON.parse(localStorage.getItem(SKEY)) || null; }catch{ return null; }
+}
+function defaultStats(){ return {played:0,wins:0,cur:0,max:0,dist:[0,0,0,0,0,0],lastDay:null,lastWin:false}; }
+function saveStats(s){ localStorage.setItem(SKEY, JSON.stringify(s)); }
+function loadPrefs(){ try{ return JSON.parse(localStorage.getItem(PREF)) || {}; }catch{ return {}; } }
+function savePrefs(p){ localStorage.setItem(PREF, JSON.stringify(p)); }
+
+/* ============================================================
+   BUILD UI
+   ============================================================ */
+function buildGrid(){
+  const g = $("grid"); g.innerHTML = "";
+  board = []; states = [];
+  for(let r=0;r<ROWS;r++){
+    board.push(["","","","",""]); states.push([null,null,null,null,null]);
+    const rowEl = document.createElement("div"); rowEl.className="row"; rowEl.dataset.r=r;
+    for(let c=0;c<COLS;c++){
+      const t = document.createElement("div"); t.className="tile"; t.dataset.r=r; t.dataset.c=c;
+      rowEl.appendChild(t);
+    }
+    g.appendChild(rowEl);
+  }
+}
+const KEYS = [["q","w","e","r","t","y","u","i","o","p"],
+              ["a","s","d","f","g","h","j","k","l"],
+              ["enter","z","x","c","v","b","n","m","back"]];
+function buildKeyboard(){
+  const kb = $("keyboard"); kb.innerHTML="";
+  KEYS.forEach(rowKeys=>{
+    const r = document.createElement("div"); r.className="krow";
+    rowKeys.forEach(k=>{
+      const b = document.createElement("button");
+      b.className = "key" + (k==="enter"||k==="back" ? " wide":"");
+      b.textContent = k==="back" ? "⌫" : k==="enter" ? "Enter" : k;
+      b.dataset.key = k;
+      b.addEventListener("click",()=>handleKey(k));
+      r.appendChild(b);
+    });
+    kb.appendChild(r);
+  });
+}
+
+/* ============================================================
+   GAME FLOW
+   ============================================================ */
+function newGame(which){
+  mode = which;
+  gameOver = false; row = 0; col = 0;
+  buildGrid();
+  // reset keyboard colours
+  document.querySelectorAll(".key").forEach(k=>k.classList.remove("correct","present","absent"));
+  $("dailyBtn").classList.toggle("active", which==="daily");
+  $("practiceBtn").classList.toggle("active", which==="practice");
+
+  if(which==="daily"){
+    solution = WORDS[daySeed() % WORDS.length];
+    restoreDaily();
+  }else{
+    // pseudo-random from a changing seed so it isn't the same every refresh
+    const idx = Math.floor((daySeed()*7 + performance.now()) ) % WORDS.length;
+    solution = WORDS[Math.abs(idx) % WORDS.length];
+  }
+}
+
+function restoreDaily(){
+  let saved;
+  try{ saved = JSON.parse(localStorage.getItem(GKEY)); }catch{ saved=null; }
+  if(!saved || saved.day !== daySeed()) return;
+  // replay saved guesses
+  saved.guesses.forEach(word=>{
+    for(let c=0;c<COLS;c++){ board[row][c]=word[c]; }
+    applyEvaluation(row, word, false);
+    row++;
+  });
+  if(saved.guesses.some(w=>w===solution)){ gameOver=true; }
+  else if(row>=ROWS){ gameOver=true; }
+}
+
+function persistDaily(){
+  if(mode!=="daily") return;
+  const guesses = [];
+  for(let r=0;r<row;r++) guesses.push(board[r].join(""));
+  localStorage.setItem(GKEY, JSON.stringify({day:daySeed(), guesses}));
+}
+
+function handleKey(k){
+  if(gameOver) return;
+  if(k==="enter") return submitGuess();
+  if(k==="back"){
+    if(col>0){ col--; board[row][col]=""; paint(row,col,""); tileEl(row,col).classList.remove("filled"); }
+    return;
+  }
+  if(/^[a-z]$/.test(k) && col<COLS){
+    board[row][col]=k; paint(row,col,k); tileEl(row,col).classList.add("filled"); col++;
+  }
+}
+const tileEl = (r,c)=>document.querySelector(`.tile[data-r="${r}"][data-c="${c}"]`);
+function paint(r,c,letter){ tileEl(r,c).textContent = letter; }
+
+function submitGuess(){
+  if(col<COLS){ return shake("Not enough letters"); }
+  const guess = board[row].join("");
+  if(!WORDSET.has(guess)){ return shake("Not in word list"); }
+
+  if(hardMode){
+    const hint = hardModeCheck(guess);
+    if(hint) return shake(hint);
+  }
+
+  applyEvaluation(row, guess, true);
+  persistDaily();
+
+  if(guess===solution){
+    gameOver=true;
+    setTimeout(()=>{ winMessages(row); recordResult(true, row+1); setTimeout(openStats,1400); }, 1600);
+    return;
+  }
+  row++; col=0;
+  if(row>=ROWS){
+    gameOver=true;
+    setTimeout(()=>{ showToast(solution.toUpperCase()); recordResult(false, 0); setTimeout(openStats,1400); }, 1600);
+  }
+}
+
+/* Evaluate a guess: greens then yellows by letter count */
+function evaluate(guess){
+  const res = Array(COLS).fill("absent");
+  const counts = {};
+  for(const ch of solution) counts[ch]=(counts[ch]||0)+1;
+  for(let c=0;c<COLS;c++){ if(guess[c]===solution[c]){ res[c]="correct"; counts[guess[c]]--; } }
+  for(let c=0;c<COLS;c++){
+    if(res[c]==="correct") continue;
+    const ch=guess[c];
+    if(counts[ch]>0){ res[c]="present"; counts[ch]--; }
+  }
+  return res;
+}
+
+function applyEvaluation(r, guess, animate){
+  const res = evaluate(guess);
+  states[r] = res;
+  for(let c=0;c<COLS;c++){
+    const t = tileEl(r,c);
+    t.textContent = guess[c];
+    const cls = res[c];
+    if(animate){
+      setTimeout(()=>{
+        t.classList.add("reveal");
+        setTimeout(()=>{ t.classList.add(cls); t.classList.remove("filled"); }, 250);
+      }, c*250);
+    }else{
+      t.classList.add(cls); t.classList.remove("filled");
+    }
+    // keyboard colour (don't downgrade green->yellow)
+    const keyBtn = document.querySelector(`.key[data-key="${guess[c]}"]`);
+    if(keyBtn){
+      const prio = {correct:3,present:2,absent:1};
+      const cur = keyBtn.classList.contains("correct")?3:keyBtn.classList.contains("present")?2:keyBtn.classList.contains("absent")?1:0;
+      const setKey = ()=>{ if(prio[cls]>cur){ keyBtn.classList.remove("correct","present","absent"); keyBtn.classList.add(cls);} };
+      animate ? setTimeout(setKey, c*250+250) : setKey();
+    }
+  }
+  if(animate && guess===solution){
+    setTimeout(()=>{ for(let c=0;c<COLS;c++){ setTimeout(()=>tileEl(r,c).classList.add("win"), c*100); } }, COLS*250+50);
+  }
+}
+
+function hardModeCheck(guess){
+  // must reuse all revealed greens/yellows from previous rows
+  for(let r=0;r<row;r++){
+    const prev = board[r].join("");
+    const ev = states[r];
+    for(let c=0;c<COLS;c++){
+      if(ev[c]==="correct" && guess[c]!==prev[c]) return `${ordinal(c+1)} letter must be ${prev[c].toUpperCase()}`;
+    }
+    for(let c=0;c<COLS;c++){
+      if(ev[c]==="present" && !guess.includes(prev[c])) return `Guess must contain ${prev[c].toUpperCase()}`;
+    }
+  }
+  return null;
+}
+const ordinal = n => n+["th","st","nd","rd"][(n%100>>3^1)&&n%10>3?0:n%10]||n+"th";
+
+/* ============================================================
+   FEEDBACK
+   ============================================================ */
+function shake(msg){
+  const rEl = document.querySelector(`.row[data-r="${row}"]`);
+  rEl.classList.add("shake"); setTimeout(()=>rEl.classList.remove("shake"),500);
+  showToast(msg);
+}
+function showToast(msg){
+  const t=document.createElement("div"); t.className="toast"; t.textContent=msg;
+  $("toaster").appendChild(t); setTimeout(()=>t.remove(),1600);
+}
+function winMessages(r){
+  const m=["Genius!","Magnificent!","Impressive!","Splendid!","Great!","Phew!"];
+  showToast(m[r] || "Phew!");
+}
+
+/* ============================================================
+   STATS
+   ============================================================ */
+function recordResult(won, guessNum){
+  if(mode!=="daily") return;               // only daily affects stats
+  let s = loadStats() || defaultStats();
+  if(s.lastDay===daySeed()) { renderStats(s); return; } // already counted today
+  s.played++;
+  if(won){
+    s.wins++; s.dist[guessNum-1]++;
+    s.cur = (s.lastDay===daySeed()-1 || s.lastWin) ? s.cur+1 : 1;
+    s.cur = s.cur < 1 ? 1 : s.cur;
+    s.max = Math.max(s.max, s.cur);
+  }else{
+    s.cur = 0;
+  }
+  s.lastDay = daySeed(); s.lastWin = won;
+  saveStats(s); renderStats(s);
+}
+function renderStats(s){
+  s = s || loadStats() || defaultStats();
+  $("stPlayed").textContent = s.played;
+  $("stWin").textContent = s.played ? Math.round(s.wins/s.played*100) : 0;
+  $("stCur").textContent = s.cur;
+  $("stMax").textContent = s.max;
+  const max = Math.max(1,...s.dist);
+  const winRow = (mode==="daily" && gameOver) ? lastWinRow() : -1;
+  $("dist").innerHTML = s.dist.map((v,i)=>{
+    const w = Math.max(7, v/max*100);
+    const hl = (i===winRow) ? " hl":"";
+    return `<div class="bar-row"><span class="n">${i+1}</span><div class="bar${hl}" style="width:${w}%">${v}</div></div>`;
+  }).join("");
+}
+function lastWinRow(){
+  for(let r=0;r<ROWS;r++){ if(board[r].join("")===solution) return r; }
+  return -1;
+}
+
+/* ---- Share ---- */
+function buildShare(){
+  const solvedRow = lastWinRow();
+  const tries = solvedRow>=0 ? solvedRow+1 : "X";
+  let txt = `Worldle ${mode==="daily"?("#"+ (daySeed()%10000)) : "Practice"} ${tries}/6\n\n`;
+  const filledRows = solvedRow>=0 ? solvedRow+1 : (gameOver?ROWS:row);
+  for(let r=0;r<filledRows;r++){
+    if(!states[r] || states[r][0]===null) break;
+    txt += states[r].map(s=> s==="correct"?"🟩":s==="present"?"🟨":"⬛").join("")+"\n";
+  }
+  return txt.trim();
+}
+function share(){
+  const txt = buildShare();
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(txt).then(()=>showToast("Copied to clipboard")).catch(()=>fallbackCopy(txt));
+  }else fallbackCopy(txt);
+}
+function fallbackCopy(txt){
+  const ta=document.createElement("textarea"); ta.value=txt; document.body.appendChild(ta);
+  ta.select(); try{document.execCommand("copy"); showToast("Copied to clipboard");}catch{showToast("Copy failed");}
+  ta.remove();
+}
+
+/* ---- Countdown ---- */
+function tickClock(){
+  const now = new Date();
+  const next = new Date(now); next.setHours(24,0,0,0);
+  let diff = Math.floor((next-now)/1000);
+  const h=String(Math.floor(diff/3600)).padStart(2,"0");
+  const m=String(Math.floor(diff%3600/60)).padStart(2,"0");
+  const s=String(diff%60).padStart(2,"0");
+  $("clock").textContent = `${h}:${m}:${s}`;
+}
+setInterval(tickClock,1000);
+
+/* ============================================================
+   MODALS
+   ============================================================ */
+function openModal(id){ $(id).classList.add("open"); }
+function closeModal(el){ el.classList.remove("open"); }
+function openStats(){ renderStats(); openModal("statsModal"); }
+
+$("helpBtn").onclick = ()=>openModal("helpModal");
+$("statsBtn").onclick = openStats;
+$("settingsBtn").onclick = ()=>openModal("settingsModal");
+$("menuBtn").onclick = ()=>openModal("helpModal");
+$("shareBtn").onclick = share;
+document.querySelectorAll("[data-close]").forEach(b=>b.onclick=()=>closeModal(b.closest(".overlay")));
+document.querySelectorAll(".overlay").forEach(o=>o.addEventListener("click",e=>{ if(e.target===o) closeModal(o); }));
+
+$("dailyBtn").onclick = ()=>newGame("daily");
+$("practiceBtn").onclick = ()=>newGame("practice");
+
+/* ---- Settings toggles ---- */
+function applyPrefs(p){
+  hardMode = !!p.hard;
+  document.body.classList.toggle("dark", !!p.dark);
+  document.body.classList.toggle("cb", !!p.cb);
+  $("setHard").checked = !!p.hard;
+  $("setDark").checked = !!p.dark;
+  $("setCb").checked = !!p.cb;
+}
+function onPrefChange(){
+  const p = { hard:$("setHard").checked, dark:$("setDark").checked, cb:$("setCb").checked };
+  savePrefs(p); applyPrefs(p);
+}
+["setHard","setDark","setCb"].forEach(id=>$(id).addEventListener("change",onPrefChange));
+
+/* ---- Physical keyboard ---- */
+document.addEventListener("keydown",e=>{
+  if(document.querySelector(".overlay.open")) return;
+  const k=e.key.toLowerCase();
+  if(k==="enter") handleKey("enter");
+  else if(k==="backspace") handleKey("back");
+  else if(/^[a-z]$/.test(k)) handleKey(k);
+});
+
+/* ============================================================
+   MORE GAMES (your own collection)
+   ============================================================ */
+const MORE = [
+  {name:"Tunnel Rush",emoji:"🌀",color:"#D6E4FF",url:"/fun-games/tunnel-rush/index.html"},
+  {name:"Tetris",emoji:"🧱",color:"#D6F5FF",url:"/fun-games/tetris.html"},
+  {name:"Snake",emoji:"🐍",color:"#D7FFD9",url:"/fun-games/snake.html"},
+  {name:"Flappy Bird",emoji:"🐦",color:"#FFF3C4",url:"/fun-games/flappy-bird.html"},
+  {name:"Space Invaders",emoji:"👾",color:"#D7FFD9",url:"/fun-games/space-invaders.html"},
+  {name:"Pong",emoji:"🏓",color:"#D6E4FF",url:"/fun-games/pong.html"},
+  {name:"Memory Match",emoji:"🧠",color:"#E0D6FF",url:"/fun-games/memory-match.html"},
+  {name:"Breakout",emoji:"🧱",color:"#FFF3C4",url:"/fun-games/breakout.html"},
+  {name:"Dino Run",emoji:"🦖",color:"#D6E4FF",url:"/fun-games/dianosure-run.html"},
+  {name:"Tic-Tac-Toe",emoji:"⭕",color:"#D6E4FF",url:"/fun-games/tictactoe.html"},
+  {name:"Dress Up",emoji:"👗",color:"#FFD6E0",url:"/fun-games/dress-to-impress/index.html"},
+  {name:"All Games",emoji:"🎮",color:"#83ffe7",url:"/fun-games/index.html"},
+];
+$("moreGrid").innerHTML = MORE.map(g=>
+  `<a class="more-card" href="${g.url}">
+     <div class="more-icon" style="background:${g.color}">${g.emoji}</div>
+     <span class="more-name">${g.name}</span>
+   </a>`).join("");
+
+/* ============================================================
+   INIT
+   ============================================================ */
+$("year").textContent = new Date().getFullYear();
+applyPrefs(loadPrefs());
+buildKeyboard();
+newGame("daily");
+renderStats();
+tickClock();
+</script>
+</body>
+</html>
