@@ -329,6 +329,7 @@
     </div>
   </div>
 
+<script src="valid-words.js"></script>
 <script>
 /* ============================================================
    WORD LIST (answers + valid guesses)
@@ -360,6 +361,10 @@ const WORDS = [
   "wound","wrist","write","young","zebra"
 ];
 const WORDSET = new Set(WORDS);
+/* Accepted guesses = the full standard 5-letter dictionary (valid-words.js),
+   plus every answer word as a fallback in case the dictionary is missing. */
+const VALIDSET = new Set(Array.isArray(window.VALID_WORDS) ? window.VALID_WORDS : []);
+for(const w of WORDS) VALIDSET.add(w);
 
 /* ============================================================
    STATE
@@ -481,7 +486,7 @@ function paint(r,c,letter){ tileEl(r,c).textContent = letter; }
 function submitGuess(){
   if(col<COLS){ return shake("Not enough letters"); }
   const guess = board[row].join("");
-  if(!WORDSET.has(guess)){ return shake("Not in word list"); }
+  if(!VALIDSET.has(guess)){ return shake("Not in word list"); }
 
   if(hardMode){
     const hint = hardModeCheck(guess);
