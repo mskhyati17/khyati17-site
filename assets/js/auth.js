@@ -87,7 +87,7 @@ const DemoAuth = (() => {
     try{
       const users = loadUsers();
       const adminMeta = { first_name: 'Khyati', last_name: 'Admin', username: 'admin_khyati' };
-      ['mskhyati.17@gmail.com','mskhyati17.com'].forEach(id=>{
+      ['mskhyati.17@gmail.com','mskhyati17@gmail.com'].forEach(id=>{
         if(!users[id]){ users[id] = { password: 'SriMadhav12#', metadata: adminMeta }; }
       });
       saveUsers(users);

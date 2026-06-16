@@ -2,7 +2,7 @@ import { Auth } from './auth.js';
 
 // Owner/admin login IDs. Any of these (signed in with the admin password)
 // can add stories to the story hub and games to the GameZone.
-const ADMIN_IDS = ['mskhyati.17@gmail.com','mskhyati17.com'];
+const ADMIN_IDS = ['mskhyati.17@gmail.com','mskhyati17@gmail.com'];
 
 async function isAdmin(){
   try{
