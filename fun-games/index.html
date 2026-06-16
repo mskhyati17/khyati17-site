@@ -197,6 +197,27 @@
   }
   .footer span{color:#fff}
 
+  /* ---------- Admin "Add Game" panel (owner only) ---------- */
+  #admin-area{
+    max-width:1100px;margin:24px auto 0;padding:18px 20px;
+    background:#fff;border:1px solid var(--accent);border-radius:14px;
+    box-shadow:0 4px 12px rgba(117,80,168,.08);
+  }
+  #admin-area:empty{display:none}
+  #admin-area h3{margin-bottom:6px;color:var(--purple-700);font-size:1.1rem}
+  #admin-area label{display:block;font-size:.82rem;font-weight:600;color:var(--ink);margin:10px 0 2px}
+  #admin-area input{
+    width:100%;max-width:520px;padding:9px 12px;margin-bottom:4px;
+    border:1px solid #d9c7ee;border-radius:8px;font-family:inherit;font-size:.9rem;
+  }
+  #admin-area input:focus{outline:none;border-color:var(--purple-500)}
+  #admin-area .btn{
+    background:linear-gradient(90deg,var(--purple-700),var(--purple-500));
+    color:#fff;border:none;border-radius:8px;padding:10px 18px;
+    font-weight:600;font-size:.9rem;cursor:pointer;margin-top:12px;
+  }
+  #admin-area .btn:hover{opacity:.92}
+
   /* ---------- Responsive ---------- */
   @media (max-width:680px){
     .navbar{flex-wrap:wrap}
@@ -232,6 +253,9 @@
   </header>
 
   <main class="wrap">
+    <!-- Owner-only "Add Game" panel (appears when signed in as admin) -->
+    <div id="admin-area"></div>
+
     <!-- 4. Popular this week -->
     <section class="section" id="popularSection">
       <div class="section-title">🔥 Popular This Week</div>
@@ -317,6 +341,30 @@ GAMES.forEach((g,i)=>{
   if(!g.emoji) g.emoji = EMOJI_BY_CAT[g.category] || "🎮";
 });
 
+/* ---------- Owner-added games ----------
+   Games added through the admin "Add Game" panel are saved in localStorage
+   (key: khyati_games_admin) and merged in here so they show in the grid. */
+(function mergeAdminGames(){
+  let extra = [];
+  try{ extra = JSON.parse(localStorage.getItem("khyati_games_admin") || "[]"); }
+  catch(e){ extra = []; }
+  extra.forEach((g,i)=>{
+    const url = g.embed || g.url;
+    if(!g || !url) return;
+    GAMES.unshift({
+      name:     g.title || g.name || "New Game",
+      category: g.category || "Skill",
+      emoji:    g.emoji || "🆕",
+      color:    g.color || PASTELS[i % PASTELS.length],
+      thumbnail:g.thumbnail || "",
+      plays:    g.plays || 1000,
+      featured: false,
+      hot:      true,
+      url
+    });
+  });
+})();
+
 /* ============================================================
    STATE + RENDERING
    ============================================================ */
@@ -389,10 +437,17 @@ function renderGrid(popularNames){
     const card = el("div","card"+(g===featuredGame?" big":""));
     card.style.background = g.color;
     if(g.hot){ const b=el("div","badge-hot"); b.textContent="🔥 HOT"; card.appendChild(b); }
-    const emoji = el("div","emoji"); emoji.textContent = g.emoji;
+    let visual;
+    if(g.thumbnail){
+      visual = el("img");
+      visual.src = g.thumbnail; visual.alt = g.name; visual.loading = "lazy";
+      visual.style.cssText = "width:60%;height:60%;object-fit:cover;border-radius:12px";
+    } else {
+      visual = el("div","emoji"); visual.textContent = g.emoji;
+    }
     const label = el("div","label"); label.textContent = g.name;
     const cat = el("div","badge-cat"); cat.textContent = g.category;
-    card.appendChild(emoji); card.appendChild(label); card.appendChild(cat);
+    card.appendChild(visual); card.appendChild(label); card.appendChild(cat);
     card.onclick = ()=>open(g.url);
     grid.appendChild(card);
   });
@@ -435,6 +490,15 @@ document.getElementById("search").addEventListener("input", e=>{
 /* --- Init --- */
 renderCatGrid();
 render();
+</script>
+
+<!-- Owner tools: loads auth + admin, shows the "Add Game" panel only for the admin login -->
+<script type="module">
+  import adminModule from '/assets/js/admin.js';
+  window.addEventListener('DOMContentLoaded', async ()=>{
+    try{ if(window.AuthReady) await window.AuthReady; }catch(e){}
+    try{ await adminModule.mountAdminUI('games'); }catch(e){ console.warn('admin mount failed', e); }
+  });
 </script>
 </body>
 </html>

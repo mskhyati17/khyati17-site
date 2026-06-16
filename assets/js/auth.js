@@ -80,18 +80,17 @@ const DemoAuth = (() => {
   function loadUsers(){ try{ return JSON.parse(localStorage.getItem(LS_KEY) || '{}') }catch(e){return {}} }
   function saveUsers(users){ localStorage.setItem(LS_KEY, JSON.stringify(users)) }
 
-  // Pre-seed the admin account so it always exists on first use
+  // Pre-seed the owner/admin accounts so they always exist on first use.
+  // Signing in with any of these IDs + the admin password unlocks the
+  // "Add Story" (story hub) and "Add Game" (GameZone) tools.
   (function seedAdmin(){
     try{
       const users = loadUsers();
-      if(!users['mskhyati.17@gmail.com']){
-        users['mskhyati.17@gmail.com'] = {
-          password: 'SriMadhav12#',
-          metadata: { first_name: 'Khyati', last_name: 'Admin', username: 'admin_khyati' }
-        };
-        saveUsers(users);
-        console.debug('Admin account pre-seeded');
-      }
+      const adminMeta = { first_name: 'Khyati', last_name: 'Admin', username: 'admin_khyati' };
+      ['mskhyati.17@gmail.com','mskhyati17.com'].forEach(id=>{
+        if(!users[id]){ users[id] = { password: 'SriMadhav12#', metadata: adminMeta }; }
+      });
+      saveUsers(users);
     }catch(e){ console.debug('Seed admin skip:', e); }
   })();
 

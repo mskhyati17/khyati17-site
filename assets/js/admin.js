@@ -1,11 +1,14 @@
 import { Auth } from './auth.js';
 
-const ADMIN_EMAIL = 'mskhyati.17@gmail.com';
+// Owner/admin login IDs. Any of these (signed in with the admin password)
+// can add stories to the story hub and games to the GameZone.
+const ADMIN_IDS = ['mskhyati.17@gmail.com','mskhyati17.com'];
 
 async function isAdmin(){
   try{
     const u = await Auth.currentUser();
-    return !!(u && (u.email === ADMIN_EMAIL || u.id === ADMIN_EMAIL));
+    if(!u) return false;
+    return ADMIN_IDS.includes(u.email) || ADMIN_IDS.includes(u.id);
   }catch(e){ return false }
 }
 
@@ -102,7 +105,7 @@ export async function mountAdminUI(page){
       <label>Excerpt / Short description<br/><input id="admin-story-excerpt"/></label><br/>
       <label>Google Doc Embed URL<br/><input id="admin-story-doc-url" placeholder="e.g. https://docs.google.com/document/d/e/.../pub"/></label><br/>
       <p style="font-size:0.9em;color:#666">
-        To publish a Google Doc: File → Share → Publish to web → Embed → copy the <iframe> src URL (the URL inside the src attribute).
+        To publish a Google Doc: File → Share → Publish to web → Embed → copy the &lt;iframe&gt; src URL (the URL inside the src attribute).
       </p>
       <button id="admin-add-story" class="btn">Add story</button>
       <div id="admin-story-msg" style="color:#7a2a9b;margin-top:8px"></div>
@@ -123,4 +126,5 @@ export async function mountAdminUI(page){
   }
 }
 
-export default { mountAdminUI };
+export { isAdmin, ADMIN_IDS };
+export default { mountAdminUI, isAdmin, ADMIN_IDS };
