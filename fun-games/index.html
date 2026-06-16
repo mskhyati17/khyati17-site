@@ -6,20 +6,26 @@
 <title>🎮 GameZone — Fun & Games</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --mint:#83ffe7;
-    --mint-soft:#f0fdf9;
-    --navy:#1a1a2e;
-    --ink:#1a1a2e;
+    /* Theme matched to the Khyati home page (purple / lavender) */
+    --purple-900:#2b0b3a;
+    --purple-700:#6a1b9a;
+    --purple-500:#9c4dcc;
+    --accent:#e9d8ff;
+    /* legacy var names repointed to the home palette so styles cascade */
+    --mint:#e9d8ff;        /* bright accent on the purple bars */
+    --mint-soft:#f8f2ff;   /* page background — same lavender as home */
+    --navy:#6a1b9a;        /* purple bars (navbar / strip / footer) */
+    --ink:#2b0b3a;
     --muted:#6b7280;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    font-family:'Poppins',system-ui,sans-serif;
-    background:var(--mint-soft);
+    font-family:'Inter',system-ui,sans-serif;
+    background:linear-gradient(180deg,#f8f2ff 0%,#fff 100%);
     color:var(--ink);
     min-height:100vh;
   }
@@ -27,32 +33,33 @@
 
   /* ---------- Navbar ---------- */
   .navbar{
-    background:var(--navy);
+    background:linear-gradient(90deg,var(--purple-700),var(--purple-500));
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
     display:flex;align-items:center;gap:16px;
     padding:14px 20px;
     position:sticky;top:0;z-index:50;
   }
   .logo{
-    color:var(--mint);
-    font-weight:600;font-size:1.25rem;
+    color:#fff;
+    font-weight:700;font-size:1.25rem;
     white-space:nowrap;
   }
   .search-wrap{flex:1;display:flex;justify-content:center}
   .search{
     width:100%;max-width:520px;
-    background:#2a2a44;
+    background:rgba(255,255,255,0.18);
     border:2px solid transparent;
     border-radius:999px;
     padding:10px 18px;
     color:#fff;font-family:inherit;font-size:.95rem;
     outline:none;transition:border-color .2s,background .2s;
   }
-  .search::placeholder{color:#9ca3af}
-  .search:focus{border-color:var(--mint);background:#31314f}
+  .search::placeholder{color:rgba(255,255,255,0.75)}
+  .search:focus{border-color:var(--accent);background:rgba(255,255,255,0.26)}
 
   /* ---------- Category strip ---------- */
   .cat-strip{
-    background:var(--navy);
+    background:var(--purple-700);
     padding:0 20px 14px;
     display:flex;gap:10px;
     overflow-x:auto;
@@ -61,31 +68,31 @@
   .cat-strip::-webkit-scrollbar{display:none}
   .chip{
     flex:0 0 auto;
-    background:#2a2a44;color:#cfd0e8;
+    background:rgba(255,255,255,0.16);color:#f1e6ff;
     border:none;cursor:pointer;
     font-family:inherit;font-size:.85rem;font-weight:500;
     padding:8px 16px;border-radius:999px;
     transition:background .18s,color .18s,transform .1s;
     white-space:nowrap;
   }
-  .chip:hover{background:#37375a}
-  .chip.active{background:var(--mint);color:var(--navy);font-weight:600}
+  .chip:hover{background:rgba(255,255,255,0.28)}
+  .chip.active{background:var(--accent);color:var(--purple-900);font-weight:600}
   .chip:active{transform:scale(.96)}
 
   /* ---------- Hero ---------- */
   .hero{
-    background:linear-gradient(135deg,#1a1a2e 0%,#2d1b4e 55%,#0f3d3a 100%);
+    background:linear-gradient(135deg,#6a1b9a 0%,#9c4dcc 55%,#2b0b3a 100%);
     color:#fff;text-align:center;
     padding:46px 20px;
   }
   .hero h1{
     font-size:clamp(1.6rem,4vw,2.6rem);
-    font-weight:600;
-    background:linear-gradient(90deg,#83ffe7,#c4b5fd);
+    font-weight:700;
+    background:linear-gradient(90deg,#ffffff,#e9d8ff);
     -webkit-background-clip:text;background-clip:text;
     -webkit-text-fill-color:transparent;
   }
-  .hero p{margin-top:10px;color:#c7c9e0;font-size:clamp(.9rem,2vw,1.05rem)}
+  .hero p{margin-top:10px;color:#ecdcff;font-size:clamp(.9rem,2vw,1.05rem)}
 
   /* ---------- Sections ---------- */
   .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
@@ -110,11 +117,11 @@
     width:80px;height:80px;border-radius:16px;
     display:flex;align-items:center;justify-content:center;
     font-size:2.1rem;
-    box-shadow:0 4px 12px rgba(26,26,46,.08);
+    box-shadow:0 4px 12px rgba(117,80,168,.08);
     transition:transform .15s,box-shadow .15s;
     position:relative;
   }
-  .pop-item:hover .pop-tile{transform:translateY(-4px);box-shadow:0 10px 20px rgba(26,26,46,.16)}
+  .pop-item:hover .pop-tile{transform:translateY(-4px);box-shadow:0 10px 20px rgba(117,80,168,.16)}
   .pop-rank{
     position:absolute;top:-6px;left:-6px;
     background:var(--navy);color:var(--mint);
@@ -140,10 +147,10 @@
     aspect-ratio:1/1;
     display:flex;flex-direction:column;
     align-items:center;justify-content:center;
-    box-shadow:0 4px 12px rgba(26,26,46,.07);
+    box-shadow:0 4px 12px rgba(117,80,168,.07);
     transition:transform .15s,box-shadow .15s;
   }
-  .card:hover{transform:translateY(-5px);box-shadow:0 14px 28px rgba(26,26,46,.18)}
+  .card:hover{transform:translateY(-5px);box-shadow:0 14px 28px rgba(117,80,168,.18)}
   .card .emoji{font-size:2.6rem;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,.12))}
   .card .label{
     margin-top:10px;font-size:.82rem;font-weight:600;color:#1a1a2e;
@@ -175,19 +182,20 @@
   .cat-tile{
     border-radius:14px;cursor:pointer;
     padding:20px;display:flex;align-items:center;gap:14px;
-    box-shadow:0 4px 12px rgba(26,26,46,.06);
+    box-shadow:0 4px 12px rgba(117,80,168,.06);
     transition:transform .15s,box-shadow .15s;
   }
-  .cat-tile:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(26,26,46,.14)}
+  .cat-tile:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(117,80,168,.14)}
   .cat-tile .c-emoji{font-size:2.1rem}
   .cat-tile .c-name{font-weight:600;font-size:1rem}
 
   /* ---------- Footer ---------- */
   .footer{
-    background:var(--navy);color:#cfd0e8;text-align:center;
+    background:linear-gradient(90deg,var(--purple-700),var(--purple-500));
+    color:#ecdcff;text-align:center;
     padding:26px 20px;margin-top:40px;font-size:.9rem;
   }
-  .footer span{color:var(--mint)}
+  .footer span{color:#fff}
 
   /* ---------- Responsive ---------- */
   @media (max-width:680px){
