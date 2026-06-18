@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>📖 Story Hub — Stories</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    /* Theme matched to the Khyati home page (purple / lavender) */
+    --purple-900:#2b0b3a;
+    --purple-700:#6a1b9a;
+    --purple-500:#9c4dcc;
+    --accent:#e9d8ff;
+    --mint:#e9d8ff;
+    --mint-soft:#f8f2ff;
+    --navy:#6a1b9a;
+    --ink:#2b0b3a;
+    --muted:#6b7280;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:linear-gradient(180deg,#f8f2ff 0%,#fff 100%);
+    color:var(--ink);
+    min-height:100vh;
+  }
+  a{text-decoration:none;color:inherit}
+
+  /* ---------- Navbar ---------- */
+  .navbar{
+    background:linear-gradient(90deg,var(--purple-700),var(--purple-500));
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+    display:flex;align-items:center;gap:16px;
+    padding:14px 20px;
+    position:sticky;top:0;z-index:50;
+  }
+  .logo{
+    color:#fff;
+    font-weight:700;font-size:1.25rem;
+    white-space:nowrap;
+  }
+  .search-wrap{flex:1;display:flex;justify-content:center}
+  .search{
+    width:100%;max-width:520px;
+    background:rgba(255,255,255,0.18);
+    border:2px solid transparent;
+    border-radius:999px;
+    padding:10px 18px;
+    color:#fff;font-family:inherit;font-size:.95rem;
+    outline:none;transition:border-color .2s,background .2s;
+  }
+  .search::placeholder{color:rgba(255,255,255,0.75)}
+  .search:focus{border-color:var(--accent);background:rgba(255,255,255,0.26)}
+
+  /* ---------- Category strip ---------- */
+  .cat-strip{
+    background:var(--purple-700);
+    padding:0 20px 14px;
+    display:flex;gap:10px;
+    overflow-x:auto;
+    scrollbar-width:none;
+  }
+  .cat-strip::-webkit-scrollbar{display:none}
+  .cat-strip:empty{display:none}
+  .chip{
+    flex:0 0 auto;
+    background:rgba(255,255,255,0.16);color:#f1e6ff;
+    border:none;cursor:pointer;
+    font-family:inherit;font-size:.85rem;font-weight:500;
+    padding:8px 16px;border-radius:999px;
+    transition:background .18s,color .18s,transform .1s;
+    white-space:nowrap;
+  }
+  .chip:hover{background:rgba(255,255,255,0.28)}
+  .chip.active{background:var(--accent);color:var(--purple-900);font-weight:600}
+  .chip:active{transform:scale(.96)}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:linear-gradient(135deg,#6a1b9a 0%,#9c4dcc 55%,#2b0b3a 100%);
+    color:#fff;text-align:center;
+    padding:46px 20px;
+  }
+  .hero h1{
+    font-size:clamp(1.6rem,4vw,2.6rem);
+    font-weight:700;
+    background:linear-gradient(90deg,#ffffff,#e9d8ff);
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  .hero p{margin-top:10px;color:#ecdcff;font-size:clamp(.9rem,2vw,1.05rem)}
+
+  /* ---------- Sections ---------- */
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  .section{margin:34px auto}
+  .section-title{
+    font-size:1.15rem;font-weight:600;
+    margin-bottom:14px;display:flex;align-items:center;gap:8px;
+  }
+  .section-title .count{
+    font-size:.75rem;font-weight:500;color:var(--muted);
+    background:#fff;border:1px solid #e2e8f0;border-radius:999px;padding:2px 9px;
+  }
+
+  /* ---------- Latest row (horizontal) ---------- */
+  .pop-row{
+    display:flex;gap:14px;overflow-x:auto;padding-bottom:8px;
+    scrollbar-width:none;
+  }
+  .pop-row::-webkit-scrollbar{display:none}
+  .pop-item{flex:0 0 auto;text-align:center;width:80px;cursor:pointer}
+  .pop-tile{
+    width:80px;height:80px;border-radius:16px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:2.1rem;
+    box-shadow:0 4px 12px rgba(117,80,168,.08);
+    transition:transform .15s,box-shadow .15s;
+    position:relative;overflow:hidden;
+  }
+  .pop-tile img{width:100%;height:100%;object-fit:cover}
+  .pop-item:hover .pop-tile{transform:translateY(-4px);box-shadow:0 10px 20px rgba(117,80,168,.16)}
+  .pop-rank{
+    position:absolute;top:-6px;left:-6px;
+    background:var(--navy);color:var(--mint);
+    width:22px;height:22px;border-radius:50%;
+    font-size:.7rem;font-weight:600;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .pop-name{
+    font-size:.72rem;margin-top:6px;color:var(--ink);
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+
+  /* ---------- Featured grid ---------- */
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    grid-auto-flow:dense;
+  }
+  .card{
+    border-radius:14px;cursor:pointer;
+    position:relative;overflow:hidden;
+    aspect-ratio:1/1;
+    display:flex;flex-direction:column;
+    align-items:center;justify-content:center;
+    box-shadow:0 4px 12px rgba(117,80,168,.07);
+    transition:transform .15s,box-shadow .15s;
+  }
+  .card:hover{transform:translateY(-5px);box-shadow:0 14px 28px rgba(117,80,168,.18)}
+  .card .emoji{font-size:2.6rem;line-height:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,.12))}
+  .card .label{
+    margin-top:10px;font-size:.82rem;font-weight:600;color:#1a1a2e;
+    padding:0 8px;text-align:center;
+  }
+  .card .excerpt{
+    margin-top:4px;font-size:.68rem;color:#5a4a6e;
+    padding:0 12px;text-align:center;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  }
+  .card.big{grid-column:span 2;grid-row:span 2}
+  .card.big .emoji{font-size:5rem}
+  .card.big .label{font-size:1.05rem;margin-top:14px}
+  .card.big .excerpt{font-size:.8rem;-webkit-line-clamp:3}
+  .badge-hot{
+    position:absolute;top:8px;left:8px;
+    background:#ef4444;color:#fff;
+    font-size:.62rem;font-weight:600;
+    padding:3px 8px;border-radius:999px;
+    box-shadow:0 2px 6px rgba(239,68,68,.4);
+  }
+  .badge-cat{
+    position:absolute;bottom:8px;right:8px;
+    background:rgba(255,255,255,.65);
+    color:#1a1a2e;font-size:.6rem;font-weight:500;
+    padding:2px 8px;border-radius:999px;backdrop-filter:blur(3px);
+  }
+  .empty{
+    grid-column:1/-1;text-align:center;color:var(--muted);
+    padding:40px 0;font-size:.95rem;
+  }
+
+  /* ---------- Browse genres ---------- */
+  .cat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .cat-tile{
+    border-radius:14px;cursor:pointer;
+    padding:20px;display:flex;align-items:center;gap:14px;
+    box-shadow:0 4px 12px rgba(117,80,168,.06);
+    transition:transform .15s,box-shadow .15s;
+  }
+  .cat-tile:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(117,80,168,.14)}
+  .cat-tile .c-emoji{font-size:2.1rem}
+  .cat-tile .c-name{font-weight:600;font-size:1rem}
+
+  /* ---------- Footer ---------- */
+  .footer{
+    background:linear-gradient(90deg,var(--purple-700),var(--purple-500));
+    color:#ecdcff;text-align:center;
+    padding:26px 20px;margin-top:40px;font-size:.9rem;
+  }
+  .footer span{color:#fff}
+
+  /* ---------- Admin "Add Story" panel (owner only) ---------- */
+  #admin-area{
+    max-width:1100px;margin:24px auto 0;padding:18px 20px;
+    background:#fff;border:1px solid var(--accent);border-radius:14px;
+    box-shadow:0 4px 12px rgba(117,80,168,.08);
+  }
+  #admin-area:empty{display:none}
+  #admin-area h3{margin-bottom:6px;color:var(--purple-700);font-size:1.1rem}
+  #admin-area label{display:block;font-size:.82rem;font-weight:600;color:var(--ink);margin:10px 0 2px}
+  #admin-area input{
+    width:100%;max-width:520px;padding:9px 12px;margin-bottom:4px;
+    border:1px solid #d9c7ee;border-radius:8px;font-family:inherit;font-size:.9rem;
+  }
+  #admin-area input:focus{outline:none;border-color:var(--purple-500)}
+  #admin-area .btn{
+    background:linear-gradient(90deg,var(--purple-700),var(--purple-500));
+    color:#fff;border:none;border-radius:8px;padding:10px 18px;
+    font-weight:600;font-size:.9rem;cursor:pointer;margin-top:12px;
+  }
+  #admin-area .btn:hover{opacity:.92}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:680px){
+    .navbar{flex-wrap:wrap}
+    .logo{flex:1}
+    .search-wrap{order:3;flex-basis:100%}
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .card.big{grid-column:span 2;grid-row:span 2}
+    .cat-grid{grid-template-columns:1fr}
+  }
+  @media (max-width:400px){
+    .card .emoji{font-size:2.1rem}
+    .card .label{font-size:.74rem}
+  }
+</style>
+</head>
+<body>
+
+  <!-- 1. Navbar -->
+  <nav class="navbar">
+    <a class="logo" href="/stories/index.html">📖 Story Hub</a>
+    <div class="search-wrap">
+      <input id="search" class="search" type="search" placeholder="Search stories…" autocomplete="off" aria-label="Search stories" />
+    </div>
+  </nav>
+
+  <!-- 2. Genre strip -->
+  <div id="catStrip" class="cat-strip"></div>
+
+  <!-- 3. Hero -->
+  <header class="hero">
+    <h1>What are you reading today?</h1>
+    <p>Dive into stories you can read right now — no sign-up, just words.</p>
+  </header>
+
+  <main class="wrap">
+    <!-- Owner-only "Add Story" panel (appears when signed in as admin) -->
+    <div id="admin-area"></div>
+
+    <!-- 4. Latest -->
+    <section class="section" id="popularSection">
+      <div class="section-title">🆕 Latest Stories</div>
+      <div id="popRow" class="pop-row"></div>
+    </section>
+
+    <!-- 5. All stories -->
+    <section class="section">
+      <div class="section-title">⭐ Featured Stories <span class="count" id="gridCount"></span></div>
+      <div id="grid" class="grid"></div>
+    </section>
+
+    <!-- 6. Browse genres -->
+    <section class="section" id="browseSection">
+      <div class="section-title">🗂️ Browse Genres</div>
+      <div id="catGrid" class="cat-grid"></div>
+    </section>
+  </main>
+
+  <!-- 7. Footer -->
+  <footer class="footer">
+    Stories worth sharing · Built with <span>❤️</span>
+  </footer>
+
+<!-- Load Supabase auth/client (same as the reader page) -->
+<script type="module" src="/assets/js/auth.js"></script>
+
+<script type="module">
+/* ============================================================
+   STORY HUB — Poki-style portal for the stories collection.
+   Loads from Supabase `stories`, falls back to localStorage
+   (key: khyati_stories_admin), then renders clickable cards
+   that open the reader at /stories/stories.html?story=<slug>.
+   ============================================================ */
+
+/* ---------- Genre styling (used when a story has a category) ---------- */
+const CAT_EMOJI = {
+  "Adventure":"🗺️","Fantasy":"🐉","Mystery":"🔍","Romance":"💜",
+  "Sci-Fi":"🚀","Horror":"👻","Comedy":"😄","Drama":"🎭",
+  "Poetry":"✍️","Kids":"🧸","General":"📖"
+};
+const CAT_COLOR = {
+  "Adventure":"#FFF3C4","Fantasy":"#E0D6FF","Mystery":"#D6E4FF","Romance":"#FFD6E0",
+  "Sci-Fi":"#D6F5FF","Horror":"#E5E5FF","Comedy":"#D7FFD9","Drama":"#FFE0C4",
+  "Poetry":"#F8E1FF","Kids":"#FFF3C4","General":"#E9D8FF"
+};
+const PASTELS = ["#FFD6E0","#D6E4FF","#D7FFD9","#FFF3C4","#E0D6FF","#FFE0C4","#D6F5FF"];
+
+/* ---------- Load stories ---------- */
+async function loadStories(){
+  let stories = [];
+  if(window.supabase){
+    try{
+      const { data, error } = await window.supabase.from('stories').select('*').order('created_at', {ascending:false});
+      if(!error && data) stories = data;
+    }catch(e){ console.warn('supabase fetch stories failed', e); }
+  }
+  if(!stories.length){
+    try{ stories = JSON.parse(localStorage.getItem('khyati_stories_admin') || '[]'); }
+    catch(e){ stories = []; }
+  }
+  // normalise each story so the renderer always has what it needs
+  stories.forEach((s,i)=>{
+    s.slug     = s.slug || s.id || (s.title||'').replace(/\s+/g,'-').toLowerCase() || ('story-'+i);
+    s.title    = s.title || s.slug || 'Untitled';
+    s.category = s.category || 'General';
+    s.emoji    = s.emoji || CAT_EMOJI[s.category] || '📖';
+    s.color    = s.color || CAT_COLOR[s.category] || PASTELS[i % PASTELS.length];
+    s.cover    = s.cover || s.thumbnail || '';
+  });
+  return stories;
+}
+
+/* ============================================================
+   STATE + RENDERING
+   ============================================================ */
+let STORIES = [];
+let activeCat = "All";
+let query = "";
+
+const el = (tag,cls)=>{ const n=document.createElement(tag); if(cls) n.className=cls; return n; };
+const readerUrl = s => '/stories/stories.html?story=' + encodeURIComponent(s.slug);
+const open = s => { window.location.href = readerUrl(s); };
+
+/* --- Genres present in the data --- */
+function genres(){
+  const set = new Set(STORIES.map(s=>s.category).filter(Boolean));
+  return ["All", ...[...set].sort()];
+}
+
+/* --- Genre chips --- */
+function renderChips(){
+  const strip = document.getElementById("catStrip");
+  strip.innerHTML = "";
+  const cats = genres();
+  if(cats.length <= 1) return;            // nothing to filter by → hide the strip
+  cats.forEach(cat=>{
+    const b = el("button","chip"+(cat===activeCat?" active":""));
+    b.textContent = cat;
+    b.onclick = ()=>{ activeCat = cat; query=""; document.getElementById("search").value=""; render(); window.scrollTo({top:0,behavior:"smooth"}); };
+    strip.appendChild(b);
+  });
+}
+
+/* --- Latest row (most recent 10) --- */
+function renderLatest(){
+  const row = document.getElementById("popRow");
+  row.innerHTML = "";
+  const top = STORIES.slice(0,10);        // already ordered newest-first
+  top.forEach((s,i)=>{
+    const item = el("div","pop-item");
+    const tile = el("div","pop-tile");
+    tile.style.background = s.color;
+    if(s.cover){ const img=el("img"); img.src=s.cover; img.alt=s.title; img.loading="lazy"; tile.appendChild(img); }
+    else { tile.appendChild(document.createTextNode(s.emoji)); }
+    const rank = el("div","pop-rank"); rank.textContent = i+1;
+    tile.appendChild(rank);
+    const name = el("div","pop-name"); name.textContent = s.title;
+    item.appendChild(tile); item.appendChild(name);
+    item.onclick = ()=>open(s);
+    row.appendChild(item);
+  });
+  return new Set(top.map(s=>s.slug));
+}
+
+/* --- Featured / main grid --- */
+function renderGrid(){
+  const grid = document.getElementById("grid");
+  grid.innerHTML = "";
+
+  // The grid shows the whole collection (filtered by genre + search). Unlike a
+  // huge game catalog, a stories list is usually small, so we don't hide the
+  // ones already in the Latest strip — that would leave the grid empty.
+  let list = STORIES.filter(s=>{
+    const matchCat = activeCat==="All" || s.category===activeCat;
+    const hay = (s.title + ' ' + (s.excerpt||'')).toLowerCase();
+    const matchQ = hay.includes(query);
+    return matchCat && matchQ;
+  });
+
+  document.getElementById("gridCount").textContent = list.length + (list.length===1?" story":" stories");
+
+  if(!list.length){
+    const e = el("div","empty");
+    e.textContent = STORIES.length ? "No stories match your search 😕" : "No stories yet — check back soon! 📖";
+    grid.appendChild(e);
+    return;
+  }
+
+  const featured = list[0];               // newest visible story gets the big tile
+  list.forEach(s=>{
+    const card = el("div","card"+(s===featured?" big":""));
+    card.style.background = s.color;
+    let visual;
+    if(s.cover){
+      visual = el("img");
+      visual.src = s.cover; visual.alt = s.title; visual.loading = "lazy";
+      visual.style.cssText = "width:60%;height:60%;object-fit:cover;border-radius:12px";
+    } else {
+      visual = el("div","emoji"); visual.textContent = s.emoji;
+    }
+    const label = el("div","label"); label.textContent = s.title;
+    card.appendChild(visual); card.appendChild(label);
+    if(s.excerpt){ const ex=el("div","excerpt"); ex.textContent=s.excerpt; card.appendChild(ex); }
+    const cat = el("div","badge-cat"); cat.textContent = s.category;
+    card.appendChild(cat);
+    card.onclick = ()=>open(s);
+    grid.appendChild(card);
+  });
+}
+
+/* --- Browse genres grid --- */
+function renderCatGrid(){
+  const cg = document.getElementById("catGrid");
+  cg.innerHTML = "";
+  const cats = genres().filter(c=>c!=="All");
+  if(!cats.length){ document.getElementById("browseSection").style.display = "none"; return; }
+  cats.forEach(cat=>{
+    const tile = el("div","cat-tile");
+    tile.style.background = CAT_COLOR[cat] || "#eee";
+    const em = el("div","c-emoji"); em.textContent = CAT_EMOJI[cat] || "📖";
+    const nm = el("div","c-name"); nm.textContent = cat;
+    tile.appendChild(em); tile.appendChild(nm);
+    tile.onclick = ()=>{ activeCat=cat; query=""; document.getElementById("search").value=""; render(); window.scrollTo({top:0,behavior:"smooth"}); };
+    cg.appendChild(tile);
+  });
+}
+
+/* --- Master render --- */
+function render(){
+  renderChips();
+  const showHomeRows = activeCat==="All" && !query;
+  document.getElementById("popularSection").style.display = showHomeRows ? "" : "none";
+  document.getElementById("browseSection").style.display  = showHomeRows ? "" : "none";
+  renderLatest();
+  renderGrid();
+  renderCatGrid();
+}
+
+/* --- Live search --- */
+document.getElementById("search").addEventListener("input", e=>{
+  query = e.target.value.trim().toLowerCase();
+  if(query) activeCat = "All";
+  render();
+});
+
+/* --- Init --- */
+(async ()=>{
+  try{ if(window.AuthReady) await window.AuthReady; }catch(e){}
+  STORIES = await loadStories();
+  render();
+  // Owner tools: show the "Add Story" panel only for the admin login.
+  try{
+    const adminModule = (await import('/assets/js/admin.js')).default;
+    await adminModule.mountAdminUI('stories');
+  }catch(e){ console.warn('admin mount failed', e); }
+})();
+</script>
+</body>
+</html>

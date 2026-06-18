@@ -65,7 +65,13 @@
         a.addEventListener('click', ()=> showStory(s));
         container.appendChild(a);
       });
-      if(stories[0]) showStory(stories[0]);
+      // If the Story Hub linked us to a specific story (?story=<slug>), open it;
+      // otherwise fall back to the first/most-recent story.
+      const wanted = new URLSearchParams(location.search).get('story');
+      const idOf = s => s.slug || s.id || (s.title||'').replace(/\s+/g,'-').toLowerCase();
+      const target = wanted ? stories.find(s=> idOf(s) === wanted) : null;
+      const toShow = target || stories[0];
+      if(toShow) showStory(toShow);
     }
 
     function showStory(s){
