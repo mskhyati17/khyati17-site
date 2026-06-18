@@ -64,11 +64,17 @@ async function run(){
     const logo = (await page.textContent('.logo'))?.trim();
     logo && logo.includes('Story Hub') ? pass(`logo: '${logo}'`) : fail(`logo not 'Story Hub' (got '${logo}')`);
 
+    // total = baked-in stories (stories-data.js) + the 2 seeded localStorage ones
+    const TOTAL = SEED.length + 1; // 1 baked story currently shipped
+
     const cards = await page.$$('#grid .card');
-    cards.length > 0 ? pass(`${cards.length} story card(s) rendered`) : fail('no story cards rendered');
+    cards.length === TOTAL ? pass(`${cards.length} story card(s) rendered`) : fail(`expected ${TOTAL} cards, got ${cards.length}`);
+
+    const labels = await page.$$eval('#grid .card .label', ns => ns.map(n => n.textContent.trim()));
+    labels.includes('The Lesson For The Witch') ? pass('baked story "The Lesson For The Witch" is on the hub') : fail(`baked story missing; got ${JSON.stringify(labels)}`);
 
     const latest = await page.$$('#popRow .pop-item');
-    latest.length === SEED.length ? pass(`${latest.length} latest items`) : fail(`expected ${SEED.length} latest items, got ${latest.length}`);
+    latest.length === TOTAL ? pass(`${latest.length} latest items`) : fail(`expected ${TOTAL} latest items, got ${latest.length}`);
 
     const chips = await page.$$('#catStrip .chip');
     chips.length >= 3 ? pass(`${chips.length} genre chips (All + genres)`) : fail(`expected genre chips, got ${chips.length}`);
@@ -102,6 +108,15 @@ async function run(){
     await page.waitForTimeout(400); // reader loadStories()
     const readerTitle = (await page.textContent('#story-content h2'))?.trim();
     readerTitle === 'Signal Lost' ? pass(`reader shows '${readerTitle}'`) : fail(`reader expected 'Signal Lost', got '${readerTitle}'`);
+
+    // ---- 3b. Baked story opens and renders its chapters ----
+    console.log('\n[3b] Baked story opens in reader with chapters');
+    await page.goto(`${base}/stories/stories.html?story=the-lesson-for-the-witch`, { waitUntil:'networkidle', timeout:15000 });
+    await page.waitForTimeout(400);
+    const bakedTitle = (await page.textContent('#story-content h2'))?.trim();
+    bakedTitle === 'The Lesson For The Witch' ? pass(`reader shows '${bakedTitle}'`) : fail(`expected 'The Lesson For The Witch', got '${bakedTitle}'`);
+    const chapters = await page.$$('#story-content h3');
+    chapters.length === 10 ? pass(`${chapters.length} chapters rendered`) : fail(`expected 10 chapters, got ${chapters.length}`);
 
     // ---- 4. Old reader URL (no ?story=) redirects to the hub ----
     console.log('\n[4] /stories/stories.html (no param) -> redirect to hub');

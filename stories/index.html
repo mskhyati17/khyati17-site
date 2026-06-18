@@ -293,10 +293,12 @@
 <script type="module">
 /* ============================================================
    STORY HUB — Poki-style portal for the stories collection.
-   Loads from Supabase `stories`, falls back to localStorage
-   (key: khyati_stories_admin), then renders clickable cards
-   that open the reader at /stories/stories.html?story=<slug>.
+   Loads stories baked into the site (stories-data.js) and merges
+   any Supabase / localStorage (key: khyati_stories_admin) additions,
+   then renders clickable cards that open the reader at
+   /stories/stories.html?story=<slug>.
    ============================================================ */
+import { STORIES as BAKED } from './stories-data.js';
 
 /* ---------- Genre styling (used when a story has a category) ---------- */
 const CAT_EMOJI = {
@@ -312,18 +314,26 @@ const CAT_COLOR = {
 const PASTELS = ["#FFD6E0","#D6E4FF","#D7FFD9","#FFF3C4","#E0D6FF","#FFE0C4","#D6F5FF"];
 
 /* ---------- Load stories ---------- */
+const slugOf = s => s.slug || s.id || (s.title||'').replace(/\s+/g,'-').toLowerCase();
+
 async function loadStories(){
-  let stories = [];
+  // Owner-added stories (Supabase if configured, else localStorage)
+  let extra = [];
   if(window.supabase){
     try{
       const { data, error } = await window.supabase.from('stories').select('*').order('created_at', {ascending:false});
-      if(!error && data) stories = data;
+      if(!error && data) extra = data;
     }catch(e){ console.warn('supabase fetch stories failed', e); }
   }
-  if(!stories.length){
-    try{ stories = JSON.parse(localStorage.getItem('khyati_stories_admin') || '[]'); }
-    catch(e){ stories = []; }
+  if(!extra.length){
+    try{ extra = JSON.parse(localStorage.getItem('khyati_stories_admin') || '[]'); }
+    catch(e){ extra = []; }
   }
+  // Baked-in stories first, then any extras that aren't already baked in.
+  const stories = [...BAKED];
+  const have = new Set(stories.map(slugOf));
+  extra.forEach(s=>{ if(!have.has(slugOf(s))) stories.push(s); });
+
   // normalise each story so the renderer always has what it needs
   stories.forEach((s,i)=>{
     s.slug     = s.slug || s.id || (s.title||'').replace(/\s+/g,'-').toLowerCase() || ('story-'+i);
@@ -333,6 +343,8 @@ async function loadStories(){
     s.color    = s.color || CAT_COLOR[s.category] || PASTELS[i % PASTELS.length];
     s.cover    = s.cover || s.thumbnail || '';
   });
+  // newest first (the Latest row and the big featured tile rely on this order)
+  stories.sort((a,b)=> String(b.created_at||'').localeCompare(String(a.created_at||'')));
   return stories;
 }
 

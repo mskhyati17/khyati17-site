@@ -61,15 +61,22 @@
   <script type="module">
     import { fetchComments, renderCommentsInto } from '../assets/js/comments.js';
     import adminModule from '../assets/js/admin.js';
+    import { STORIES as BAKED } from './stories-data.js';
+
+    const slugOf = s => s.slug || s.id || (s.title||'').replace(/\s+/g,'-').toLowerCase();
 
     async function loadStories(){
-      let stories = [];
+      let extra = [];
       if(window.supabase){
-        try{ const { data, error } = await window.supabase.from('stories').select('*').order('created_at', {ascending:false}); if(!error) stories = data; }
+        try{ const { data, error } = await window.supabase.from('stories').select('*').order('created_at', {ascending:false}); if(!error && data) extra = data; }
         catch(e){ console.warn('supabase fetch stories failed', e); }
       } else {
-        stories = JSON.parse(localStorage.getItem('khyati_stories_admin')||'[]');
+        extra = JSON.parse(localStorage.getItem('khyati_stories_admin')||'[]');
       }
+      // Baked-in stories first, then any extras that aren't already baked in.
+      const stories = [...BAKED];
+      const have = new Set(stories.map(slugOf));
+      (extra||[]).forEach(s=>{ if(!have.has(slugOf(s))) stories.push(s); });
       const container = document.getElementById('stories-list-container'); container.innerHTML = '';
       stories.forEach(s=>{
         const a = document.createElement('div'); a.style.padding='8px'; a.style.cursor='pointer'; a.style.borderBottom='1px solid rgba(106,27,154,0.04)';
