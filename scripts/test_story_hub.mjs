@@ -103,6 +103,13 @@ async function run(){
     const readerTitle = (await page.textContent('#story-content h2'))?.trim();
     readerTitle === 'Signal Lost' ? pass(`reader shows '${readerTitle}'`) : fail(`reader expected 'Signal Lost', got '${readerTitle}'`);
 
+    // ---- 4. Old reader URL (no ?story=) redirects to the hub ----
+    console.log('\n[4] /stories/stories.html (no param) -> redirect to hub');
+    await page.goto(`${base}/stories/stories.html`, { waitUntil:'networkidle', timeout:15000 });
+    await page.waitForTimeout(300);
+    const redirected = page.url();
+    redirected.endsWith('/stories/index.html') ? pass(`redirected to ${redirected.replace(base,'')}`) : fail(`expected redirect to hub, stayed at ${redirected.replace(base,'')}`);
+
     // ---- JS errors ----
     if(jsErrors.length){ jsErrors.forEach(e=>fail(`JS error: ${e}`)); }
     else pass('no uncaught JS errors');

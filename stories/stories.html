@@ -4,6 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Stories</title>
+  <!-- This page is the single-story reader. Opened on its own (e.g. via an old
+       cached menu link or bookmark), send visitors to the Story Hub instead;
+       the hub links here with ?story=<slug> to read a specific story. -->
+  <script>
+    (function(){
+      try{
+        if(!new URLSearchParams(location.search).get('story')){
+          location.replace('/stories/index.html');
+        }
+      }catch(e){ /* if anything goes wrong, just show the reader */ }
+    })();
+  </script>
   <link rel="stylesheet" href="../assets/css/styles.css" />
 </head>
 <body>
