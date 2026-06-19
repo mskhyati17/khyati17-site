@@ -231,6 +231,20 @@
     .card .emoji{font-size:2.1rem}
     .card .label{font-size:.74rem}
   }
+
+  /* ---------- Animated (gif-style) game icons ---------- */
+  @keyframes icon-float {0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  @keyframes icon-bounce{0%,100%{transform:translateY(0)}25%{transform:translateY(-9px)}40%{transform:translateY(0)}55%{transform:translateY(-4px)}70%{transform:translateY(0)}}
+  @keyframes icon-pulse {0%,100%{transform:scale(1)}50%{transform:scale(1.16)}}
+  @keyframes icon-wiggle{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+  @keyframes icon-spin  {from{transform:rotate(0)}to{transform:rotate(360deg)}}
+  .anim{display:inline-block;will-change:transform}
+  .anim-float {animation:icon-float 2.6s ease-in-out infinite}
+  .anim-bounce{animation:icon-bounce 2.2s ease-in-out infinite}
+  .anim-pulse {animation:icon-pulse 2.4s ease-in-out infinite}
+  .anim-wiggle{animation:icon-wiggle 1.9s ease-in-out infinite}
+  .anim-spin  {animation:icon-spin 4.5s linear infinite}
+  @media (prefers-reduced-motion: reduce){ .anim{animation:none} }
 </style>
 </head>
 <body>
@@ -374,6 +388,10 @@ let query = "";
 const el = (tag,cls)=>{ const n=document.createElement(tag); if(cls) n.className=cls; return n; };
 const open = url => { if(url && url!=="#") window.location.href = url; };
 
+/* Animated icon styles, cycled across games so the grid feels lively. 🌀 spins. */
+const ICON_ANIMS = ["anim-float","anim-bounce","anim-pulse","anim-wiggle"];
+const animFor = (g,i)=> g.emoji==="🌀" ? "anim-spin" : ICON_ANIMS[i % ICON_ANIMS.length];
+
 /* --- Category chips --- */
 function renderChips(){
   const strip = document.getElementById("catStrip");
@@ -395,7 +413,8 @@ function renderPopular(){
     const item = el("div","pop-item");
     const tile = el("div","pop-tile");
     tile.style.background = g.color;
-    tile.textContent = g.emoji;
+    const em = el("span","anim "+animFor(g,i)); em.textContent = g.emoji;
+    tile.appendChild(em);
     const rank = el("div","pop-rank"); rank.textContent = i+1;
     tile.appendChild(rank);
     const name = el("div","pop-name"); name.textContent = g.name;
@@ -433,17 +452,17 @@ function renderGrid(popularNames){
   // pick the large featured tile (first featured & visible)
   const featuredGame = list.find(g=>g.featured);
 
-  list.forEach(g=>{
+  list.forEach((g,idx)=>{
     const card = el("div","card"+(g===featuredGame?" big":""));
     card.style.background = g.color;
     if(g.hot){ const b=el("div","badge-hot"); b.textContent="🔥 HOT"; card.appendChild(b); }
     let visual;
     if(g.thumbnail){
-      visual = el("img");
+      visual = el("img","anim anim-float");
       visual.src = g.thumbnail; visual.alt = g.name; visual.loading = "lazy";
       visual.style.cssText = "width:60%;height:60%;object-fit:cover;border-radius:12px";
     } else {
-      visual = el("div","emoji"); visual.textContent = g.emoji;
+      visual = el("div","emoji "+("anim "+animFor(g,idx))); visual.textContent = g.emoji;
     }
     const label = el("div","label"); label.textContent = g.name;
     const cat = el("div","badge-cat"); cat.textContent = g.category;
