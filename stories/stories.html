@@ -61,7 +61,8 @@
   <script type="module">
     import { fetchComments, renderCommentsInto } from '../assets/js/comments.js';
     import adminModule from '../assets/js/admin.js';
-    import { STORIES as BAKED } from './stories-data.js';
+    // bump the ?v= version whenever stories-data.js changes (see index.html)
+    import { STORIES as BAKED } from './stories-data.js?v=20260622';
 
     const slugOf = s => s.slug || s.id || (s.title||'').replace(/\s+/g,'-').toLowerCase();
 

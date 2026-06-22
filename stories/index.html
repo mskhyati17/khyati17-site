@@ -298,7 +298,9 @@
    then renders clickable cards that open the reader at
    /stories/stories.html?story=<slug>.
    ============================================================ */
-import { STORIES as BAKED } from './stories-data.js';
+// NOTE: bump the ?v= version whenever stories-data.js changes so browsers
+// fetch the new file instead of a cached copy.
+import { STORIES as BAKED } from './stories-data.js?v=20260622';
 
 /* ---------- Genre styling (used when a story has a category) ---------- */
 const CAT_EMOJI = {
