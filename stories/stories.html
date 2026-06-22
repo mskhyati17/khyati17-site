@@ -59,7 +59,7 @@
   <script type="module" src="../assets/js/auth.js"></script>
   <script type="module">import('../assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
   <script type="module">
-    import { fetchComments, renderCommentsInto } from '../assets/js/comments.js';
+    import { fetchComments, renderCommentsInto, renderCommentForm } from '../assets/js/comments.js';
     import adminModule from '../assets/js/admin.js';
     // bump the ?v= version whenever stories-data.js changes (see index.html)
     import { STORIES as BAKED } from './stories-data.js?v=20260622b';
@@ -106,10 +106,8 @@
         const comments = await fetchComments('story', cid);
         const commentsList = document.getElementById('comments-list');
         renderCommentsInto(commentsList, comments);
-        // render comment form via games.js helper style
-        // comments loader will call AuthReady if needed
-        // reuse existing renderCommentForm via a small hack: call fetch/render functions
-        // The comment form renderer in games.js is internal; we will just call renderCommentForm-like UI here inline
+        // render the comment form (sign-in prompt or textarea + post)
+        renderCommentForm(document.getElementById('comment-form-wrapper'), 'story', cid, commentsList);
       })();
     }
 

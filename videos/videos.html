@@ -57,7 +57,7 @@
     });
   </script>
   <script type="module">
-    import { fetchComments, renderCommentsInto } from '../assets/js/comments.js';
+    import { fetchComments, renderCommentsInto, renderCommentForm } from '../assets/js/comments.js';
     document.addEventListener('DOMContentLoaded', async ()=>{
       if(window.AuthReady) try{ await window.AuthReady }catch(e){}
       const commentsList = document.getElementById('comments-list');
@@ -66,6 +66,8 @@
       if(!cid) return;
       const comments = await fetchComments('video', cid);
       renderCommentsInto(commentsList, comments);
+      // render the comment form (sign-in prompt or textarea + post)
+      renderCommentForm(document.getElementById('comment-form-wrapper'), 'video', cid, commentsList);
     });
   </script>
 </body>

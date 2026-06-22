@@ -28,6 +28,51 @@ export async function postComment(contentType, contentId, body){
   }catch(e){ console.error('postComment error', e); throw e }
 }
 
+function esc(s){ return String(s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+// Render a comment form into wrapperEl. Shows a textarea + Post button when the
+// visitor is signed in, otherwise a friendly "sign in to comment" prompt.
+// After a successful post it refreshes the list rendered in listEl.
+export async function renderCommentForm(wrapperEl, contentType, contentId, listEl){
+  if(!wrapperEl) return;
+  if(window.AuthReady){ try{ await window.AuthReady; }catch(e){} }
+  wrapperEl.innerHTML = '';
+  let user = null;
+  try{ user = await Auth.currentUser(); }catch(e){ user = null; }
+
+  if(!user){
+    wrapperEl.innerHTML = '<p style="color:#5b3a78">Please <a href="/admin/login.html" style="color:#6a1b9a;font-weight:700">sign in</a> to add a comment.</p>';
+    return;
+  }
+
+  const name = user.metadata?.first_name || user.metadata?.name || user.email || 'You';
+  const form = document.createElement('div');
+  form.innerHTML =
+    '<textarea id="cmt-body" rows="3" placeholder="Write a comment…" style="width:100%;padding:10px;border:1px solid #d9c7ee;border-radius:8px;font-family:inherit;font-size:.95rem;box-sizing:border-box"></textarea>' +
+    '<div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">' +
+      '<span style="font-size:12px;color:#6a4b8f">Signed in as ' + esc(name) + '</span>' +
+      '<button id="cmt-post" type="button" style="background:linear-gradient(90deg,#6a1b9a,#9c4dcc);color:#fff;border:none;border-radius:8px;padding:8px 16px;font-weight:600;cursor:pointer">Post comment</button>' +
+    '</div>' +
+    '<div id="cmt-msg" style="color:#b00020;font-size:.85rem;margin-top:6px"></div>';
+  wrapperEl.appendChild(form);
+
+  const btn = wrapperEl.querySelector('#cmt-post');
+  btn.addEventListener('click', async ()=>{
+    const ta = wrapperEl.querySelector('#cmt-body');
+    const msg = wrapperEl.querySelector('#cmt-msg');
+    const body = (ta.value || '').trim();
+    if(!body){ msg.textContent = 'Comment cannot be empty.'; return; }
+    btn.disabled = true; msg.textContent = '';
+    try{
+      await postComment(contentType, contentId, body);
+      ta.value = '';
+      const comments = await fetchComments(contentType, contentId);
+      if(listEl) renderCommentsInto(listEl, comments);
+    }catch(e){ msg.textContent = 'Failed to post: ' + (e.message || e); }
+    finally{ btn.disabled = false; }
+  });
+}
+
 export function renderCommentsInto(containerEl, comments){
   containerEl.innerHTML = '';
   if(!comments || comments.length === 0){ containerEl.innerHTML = '<p style="color:#5b3a78">No comments yet.</p>'; return; }
