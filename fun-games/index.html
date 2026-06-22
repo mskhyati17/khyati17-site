@@ -4,6 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>🎮 GameZone — Fun & Games</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -56,6 +57,11 @@
   }
   .search::placeholder{color:rgba(255,255,255,0.75)}
   .search:focus{border-color:var(--accent);background:rgba(255,255,255,0.26)}
+  /* cross-navigation to the rest of the site */
+  .zone-nav{display:flex;gap:6px;flex-wrap:wrap}
+  .zone-nav a{color:#f1e6ff;background:rgba(255,255,255,0.16);border-radius:999px;padding:7px 12px;font-size:.82rem;font-weight:500;white-space:nowrap;transition:background .15s}
+  .zone-nav a:hover{background:rgba(255,255,255,0.30)}
+  @media (max-width:680px){ .zone-nav{order:4;flex-basis:100%;justify-content:center} }
 
   /* ---------- Category strip ---------- */
   .cat-strip{
@@ -255,6 +261,12 @@
     <div class="search-wrap">
       <input id="search" class="search" type="search" placeholder="Search games…" autocomplete="off" aria-label="Search games" />
     </div>
+    <nav class="zone-nav" aria-label="Site sections">
+      <a href="/home/index.html">🏠 Home</a>
+      <a href="/stories/index.html">📖 Stories</a>
+      <a href="/ai-tools/index.html">🤖 AI</a>
+      <a href="/videos/videos.html">🎬 Videos</a>
+    </nav>
   </nav>
 
   <!-- 2. Category strip -->
