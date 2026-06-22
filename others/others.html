@@ -3,8 +3,38 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Others</title>
+  <title>Kid Advice — Others</title>
   <link rel="stylesheet" href="../assets/css/styles.css" />
+  <style>
+    :root{ --pp:#6a1b9a; --pp2:#9c4dcc; --acc:#e9d8ff; --ink:#2b0b3a; }
+    .ka-main{ max-width:1000px; margin:0 auto; padding:18px 16px 48px; }
+    .ka-head{ text-align:center; margin:8px 0 18px; }
+    .ka-head h2{ font-size:clamp(1.6rem,4vw,2.3rem); color:var(--pp); margin:0; }
+    .ka-head p{ color:#6b5b7e; margin:8px 0 0; }
+
+    /* Tip of the day */
+    .ka-tip{
+      background:linear-gradient(135deg,var(--pp),var(--pp2)); color:#fff;
+      border-radius:18px; padding:26px 22px; text-align:center; margin:0 auto 28px;
+      box-shadow:0 10px 28px rgba(117,80,168,.22);
+    }
+    .ka-tip .lbl{ font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; opacity:.85; }
+    .ka-tip .txt{ font-size:clamp(1.1rem,2.6vw,1.4rem); font-weight:600; margin:10px 0 16px; min-height:2.6em; display:flex; align-items:center; justify-content:center; }
+    .ka-tip button{ cursor:pointer; border:none; border-radius:999px; background:rgba(255,255,255,.92); color:var(--pp); font-weight:700; padding:10px 20px; font-size:.95rem; }
+    .ka-tip button:hover{ background:#fff; }
+
+    /* Advice cards */
+    .ka-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:18px; }
+    .ka-card{
+      background:#fff; border:1px solid var(--acc); border-radius:16px; padding:20px;
+      box-shadow:0 6px 20px rgba(117,80,168,.08); transition:transform .15s, box-shadow .15s;
+    }
+    .ka-card:hover{ transform:translateY(-4px); box-shadow:0 14px 30px rgba(117,80,168,.16); }
+    .ka-card .ico{ font-size:2.2rem; }
+    .ka-card h3{ margin:8px 0 10px; color:var(--pp); font-size:1.12rem; }
+    .ka-card ul{ margin:0; padding-left:18px; color:var(--ink); }
+    .ka-card li{ margin:7px 0; line-height:1.5; }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -15,17 +45,114 @@
     <div id="site-header-root"></div>
   </header>
 
-  <main class="hero">
-    <h2>Welcome to Khyati17.com</h2>
-    <p>Purple-themed place for games, stories, videos and more.</p>
+  <main class="ka-main">
+    <div class="ka-head">
+      <h2>🌟 Kid Advice</h2>
+      <p>Simple, friendly tips to help you learn, grow and be your best self.</p>
+    </div>
+
+    <div class="ka-tip">
+      <div class="lbl">💡 Tip of the Day</div>
+      <div class="txt" id="tipText">—</div>
+      <button id="tipBtn">🔄 Another tip</button>
+    </div>
+
+    <div class="ka-grid" id="adviceGrid"></div>
   </main>
 
   <footer class="site-footer">
     <p>© <span id="year"></span> Khyati — All rights reserved</p>
   </footer>
 
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+  (function(){
+    const ADVICE = [
+      { ico:"📚", title:"Study Smart", tips:[
+        "Break big tasks into small steps — one at a time feels easy.",
+        "Take a short break every 25–30 minutes to stay fresh.",
+        "Stuck? Asking a question is a sign of being smart, not silly."
+      ]},
+      { ico:"🤝", title:"Be a Good Friend", tips:[
+        "Listen when others talk — it shows you care.",
+        "Include the kid who's left out; it can make their whole day.",
+        "Saying \"sorry\" and meaning it makes friendships stronger."
+      ]},
+      { ico:"🛡️", title:"Stay Safe Online", tips:[
+        "Never share your address, school or passwords with strangers.",
+        "If something online feels scary or wrong, tell a trusted adult.",
+        "Be kind in messages — type only what you'd say in person."
+      ]},
+      { ico:"💪", title:"Healthy Habits", tips:[
+        "Sleep well — your brain grows and recharges while you rest.",
+        "Drink water and move your body every day.",
+        "Balance screen time with playing, reading and the outdoors."
+      ]},
+      { ico:"😌", title:"Handling Big Feelings", tips:[
+        "It's okay to feel sad or angry — all feelings are allowed.",
+        "Take three slow, deep breaths before you react.",
+        "Talk to someone you trust; sharing makes worries smaller."
+      ]},
+      { ico:"💰", title:"Smart With Money", tips:[
+        "Save a little before you spend — even small amounts add up.",
+        "Ask yourself: do I need this, or just want it right now?",
+        "Take care of your things so they last longer."
+      ]},
+      { ico:"🧹", title:"Be Responsible", tips:[
+        "Finish your chores and homework before play — then enjoy guilt-free.",
+        "Keep your promises; people trust those who do.",
+        "Made a mistake? Own it and fix it — that's true courage."
+      ]},
+      { ico:"🌟", title:"Believe in Yourself", tips:[
+        "Mistakes aren't failures — they're how your brain learns.",
+        "Try new things, even if you might not be great at first.",
+        "Be as kind to yourself as you are to your best friend."
+      ]},
+      { ico:"🙏", title:"Kindness & Manners", tips:[
+        "\"Please\" and \"thank you\" are tiny words with big power.",
+        "Help at home without being asked — it means a lot.",
+        "A smile and a hello can brighten someone's whole day."
+      ]},
+      { ico:"🎯", title:"Chase Your Dreams", tips:[
+        "Set one small goal this week and take a step toward it.",
+        "Practice beats talent — keep going, even when it's hard.",
+        "Dream big, start small, and never give up on yourself."
+      ]},
+    ];
+
+    const TIPS = [
+      "Be kind — you never know what someone else is going through.",
+      "Mistakes are proof that you're trying. Keep going!",
+      "A little bit every day beats a lot all at once.",
+      "Drink some water and stretch — your body will thank you.",
+      "Say something nice to someone today.",
+      "Reading just 10 minutes a day makes you smarter over time.",
+      "It's brave to ask for help when you need it.",
+      "Tidy space, tidy mind — clean up one small thing now.",
+      "Believe in yourself; you can do hard things.",
+      "Listen more than you talk — you'll learn twice as much.",
+      "Be patient with yourself. Growing takes time.",
+      "Always tell the truth — it keeps things simple and builds trust.",
+    ];
+
+    // render advice cards
+    const grid = document.getElementById('adviceGrid');
+    ADVICE.forEach(a=>{
+      const card = document.createElement('div'); card.className='ka-card';
+      card.innerHTML = `<div class="ico">${a.ico}</div><h3>${a.title}</h3><ul>${a.tips.map(t=>`<li>${t}</li>`).join('')}</ul>`;
+      grid.appendChild(card);
+    });
+
+    // tip of the day rotator
+    const tipText = document.getElementById('tipText');
+    let last = -1;
+    function newTip(){
+      let i; do { i = Math.floor(Math.random()*TIPS.length); } while(i===last && TIPS.length>1);
+      last = i; tipText.textContent = TIPS[i];
+    }
+    document.getElementById('tipBtn').addEventListener('click', newTip);
+    newTip();
+  })();
   </script>
   <script type="module" src="../assets/js/auth.js"></script>
   <script type="module">import('../assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
