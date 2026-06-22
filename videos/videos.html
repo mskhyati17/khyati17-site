@@ -3,8 +3,49 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Videos</title>
+  <title>Videos — Khyati</title>
   <link rel="stylesheet" href="../assets/css/styles.css" />
+  <style>
+    :root{ --pp:#6a1b9a; --pp2:#9c4dcc; --acc:#e9d8ff; --ink:#2b0b3a; }
+    .v-main{ max-width:1100px; margin:0 auto; padding:18px 16px 48px; }
+    .v-head{ text-align:center; margin:8px 0 18px; }
+    .v-head h2{ font-size:clamp(1.6rem,4vw,2.3rem); color:var(--pp); margin:0; }
+    .v-head p{ color:#6b5b7e; margin:8px 0 0; }
+    .v-controls{ display:flex; flex-direction:column; gap:12px; margin-bottom:18px; }
+    #v-search{ width:100%; max-width:520px; margin:0 auto; padding:11px 16px; border:1px solid #d9c7ee; border-radius:999px; font-family:inherit; font-size:.95rem; }
+    #v-search:focus{ outline:none; border-color:var(--pp2); }
+    .v-chips{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; }
+    .v-chip{ cursor:pointer; user-select:none; border:1px solid #ead9fb; background:#faf5ff; color:#5a3d77; border-radius:999px; padding:7px 14px; font-size:.85rem; font-weight:500; }
+    .v-chip.active{ background:linear-gradient(90deg,var(--pp),var(--pp2)); color:#fff; border-color:transparent; }
+
+    #admin-area:empty{ display:none; }
+    #admin-area{ max-width:560px; margin:0 auto 18px; }
+
+    .v-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:16px; }
+    .v-card{ cursor:pointer; background:#fff; border:1px solid #eee; border-radius:14px; overflow:hidden; box-shadow:0 4px 14px rgba(117,80,168,.08); transition:transform .15s, box-shadow .15s; }
+    .v-card:hover{ transform:translateY(-4px); box-shadow:0 14px 28px rgba(117,80,168,.18); }
+    .v-thumb{ position:relative; aspect-ratio:16/9; background:#222; overflow:hidden; }
+    .v-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .v-thumb .play{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:2.4rem; color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.5); opacity:.92; }
+    .v-thumb .badge{ position:absolute; top:8px; left:8px; background:rgba(106,27,154,.85); color:#fff; font-size:.62rem; font-weight:600; padding:3px 8px; border-radius:999px; }
+    .v-meta{ padding:10px 12px; }
+    .v-title{ font-size:.86rem; font-weight:600; color:var(--ink); display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+    .v-channel{ font-size:.72rem; color:#8a76a3; margin-top:4px; }
+    .v-empty{ grid-column:1/-1; text-align:center; color:#8a76a3; padding:40px 0; }
+
+    /* Lightbox */
+    .v-modal{ position:fixed; inset:0; background:rgba(20,6,30,.86); display:none; align-items:flex-start; justify-content:center; z-index:1000; overflow:auto; padding:24px 12px; }
+    .v-modal.open{ display:flex; }
+    .v-box{ width:100%; max-width:760px; background:#fff; border-radius:16px; overflow:hidden; }
+    .v-player{ position:relative; aspect-ratio:16/9; background:#000; }
+    .v-player iframe{ width:100%; height:100%; border:0; display:block; }
+    .v-close{ position:absolute; top:10px; right:12px; z-index:2; cursor:pointer; border:none; background:rgba(0,0,0,.6); color:#fff; width:36px; height:36px; border-radius:50%; font-size:1.1rem; }
+    .v-info{ padding:14px 16px; }
+    .v-info h3{ margin:0 0 4px; color:var(--pp); font-size:1.05rem; }
+    .v-info .ch{ color:#8a76a3; font-size:.85rem; }
+    .v-comments{ padding:0 16px 18px; }
+    .v-comments h4{ margin:14px 0 10px; color:var(--ink); }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -12,62 +53,143 @@
       <img src="../assets/img/me.jpg?v=2" alt="Khyati" class="avatar"/>
       <h1>Khyati</h1>
     </div>
-    <!-- header is injected here by assets/js/loadHeader.js -->
     <div id="site-header-root"></div>
   </header>
 
-  <main class="hero">
-    <h2>Welcome to Khyati17.com</h2>
-    <p>Purple-themed place for games, stories, videos and more.</p>
+  <main class="v-main">
+    <div class="v-head">
+      <h2>🎬 Videos</h2>
+      <p>A gallery of popular YouTube Shorts — tap any video to watch and comment.</p>
+    </div>
+
+    <div id="admin-area"></div>
+
+    <div class="v-controls">
+      <input id="v-search" type="search" placeholder="Search videos…" autocomplete="off" aria-label="Search videos" />
+      <div class="v-chips" id="v-chips"></div>
+    </div>
+
+    <div class="v-grid" id="v-grid"></div>
   </main>
 
-  <!-- Videos section: embedded YouTube video -->
-  <section class="videos-section">
-    <h3>Featured video</h3>
-    <div class="video-wrapper">
-      <!-- Replace VIDEO_ID with the actual YouTube video id, e.g. dQw4w9WgXcQ -->
-      <iframe width="640" height="360" src="https://www.youtube.com/embed/LixDSK0BRFs" title="TERE ISHK MEIN TEASER (Hindi) | Dhanush, Kriti Sanon | A. R. Rahman | Aanand L Rai | Bhushan Kumar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <!-- Lightbox -->
+  <div class="v-modal" id="v-modal" role="dialog" aria-modal="true">
+    <div class="v-box">
+      <div class="v-player">
+        <button class="v-close" id="v-close" aria-label="Close">✕</button>
+        <div id="v-player-mount"></div>
+      </div>
+      <div class="v-info"><h3 id="v-title"></h3><div class="ch" id="v-channel"></div></div>
+      <div class="v-comments">
+        <h4>Comments</h4>
+        <div id="comments-list" style="margin-bottom:12px"></div>
+        <div id="comment-form-wrapper"></div>
+      </div>
     </div>
-    <p class="video-note">Tip: to use your own video, replace the <code>VIDEO_ID</code> in the iframe src with the ID from a YouTube share link.</p>
-    <div id="admin-area" style="max-width:900px;margin:12px auto;padding:12px;"></div>
-    <div id="comments-area" class="comments-area" style="max-width:900px;margin:12px auto;padding:12px;">
-      <!-- data-content-id ties comments to this video; used by assets/js/comments.js -->
-      <!-- For the featured video we use the YouTube id as content id -->
-      <div data-content-id="LixDSK0BRFs"></div>
-      <h4 style="margin:6px 0 12px">Comments</h4>
-      <div id="comments-list" style="margin-bottom:12px"></div>
-      <div id="comment-form-wrapper"></div>
-    </div>
-  </section>
+  </div>
 
   <footer class="site-footer">
     <p>© <span id="year"></span> Khyati — All rights reserved</p>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   <script type="module" src="../assets/js/auth.js"></script>
   <script type="module">import('../assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
   <script type="module">
-    import { mountAdminUI } from '../assets/js/admin.js';
-    document.addEventListener('DOMContentLoaded', async ()=>{
-      if(window.AuthReady) try{ await window.AuthReady }catch(e){}
-      mountAdminUI('videos');
-    });
-  </script>
-  <script type="module">
+    import { VIDEOS as BAKED } from './videos-data.js?v=1';
     import { fetchComments, renderCommentsInto, renderCommentForm } from '../assets/js/comments.js?v=2';
+    import adminModule from '../assets/js/admin.js';
+
+    const CAT_EMOJI = { "Animals":"🐾","Satisfying":"🌀","Sports":"🏀","Magic":"🪄","Science":"🔬","Soccer":"⚽","Food":"🍳","Art":"🎨","Life Hacks":"💡","More":"🎬" };
+
+    function ytId(url){ if(!url) return null; const m = String(url).match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/); return m ? m[1] : null; }
+
+    function loadVideos(){
+      const list = BAKED.map(v => ({ ...v, embed:`https://www.youtube.com/embed/${v.id}?autoplay=1&rel=0`, thumb:`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg` }));
+      let admin = [];
+      try{ admin = JSON.parse(localStorage.getItem('khyati_videos_admin') || '[]'); }catch(e){ admin = []; }
+      admin.forEach(a=>{
+        const url = a.embed || a.link || '';
+        const id = ytId(url);
+        list.unshift({
+          id: id || ('added-'+(a.created_at||Math.random())),
+          title: a.title || 'New Video',
+          channel: 'Added by owner',
+          cat: 'More',
+          embed: id ? `https://www.youtube.com/embed/${id}?autoplay=1&rel=0` : url,
+          thumb: a.thumbnail || (id ? `https://i.ytimg.com/vi/${id}/hqdefault.jpg` : '')
+        });
+      });
+      return list;
+    }
+
+    let VIDS = loadVideos();
+    let activeCat = "All", query = "";
+
+    function categories(){ return ["All", ...[...new Set(VIDS.map(v=>v.cat))].sort()]; }
+
+    const grid = document.getElementById('v-grid');
+    const chipsEl = document.getElementById('v-chips');
+
+    function renderChips(){
+      chipsEl.innerHTML = "";
+      categories().forEach(cat=>{
+        const b = document.createElement('button'); b.className = 'v-chip'+(cat===activeCat?' active':'');
+        b.textContent = cat==='All' ? 'All' : (CAT_EMOJI[cat]||'') + ' ' + cat;
+        b.onclick = ()=>{ activeCat = cat; render(); };
+        chipsEl.appendChild(b);
+      });
+    }
+
+    function render(){
+      renderChips();
+      grid.innerHTML = "";
+      const list = VIDS.filter(v=>{
+        const okCat = activeCat==='All' || v.cat===activeCat;
+        const hay = (v.title + ' ' + v.channel + ' ' + v.cat).toLowerCase();
+        return okCat && hay.includes(query);
+      });
+      if(!list.length){ grid.innerHTML = '<div class="v-empty">No videos match your search 😕</div>'; return; }
+      list.forEach(v=>{
+        const card = document.createElement('div'); card.className = 'v-card';
+        const thumb = v.thumb ? `<img src="${v.thumb}" alt="" loading="lazy" onerror="this.style.display='none'"/>` : '';
+        card.innerHTML =
+          `<div class="v-thumb">${thumb}<div class="play">▶</div><div class="badge">${CAT_EMOJI[v.cat]||''} ${v.cat}</div></div>`+
+          `<div class="v-meta"><div class="v-title">${esc(v.title)}</div><div class="v-channel">${esc(v.channel)}</div></div>`;
+        card.onclick = ()=> openVideo(v);
+        grid.appendChild(card);
+      });
+    }
+
+    function esc(s){ return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+    const modal = document.getElementById('v-modal');
+    const mount = document.getElementById('v-player-mount');
+    function openVideo(v){
+      mount.innerHTML = `<iframe src="${v.embed}" title="${esc(v.title)}" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>`;
+      document.getElementById('v-title').textContent = v.title;
+      document.getElementById('v-channel').textContent = v.channel;
+      modal.classList.add('open'); document.body.style.overflow='hidden';
+      // comments for this video
+      (async ()=>{
+        const list = document.getElementById('comments-list');
+        const comments = await fetchComments('video', v.id);
+        renderCommentsInto(list, comments);
+        renderCommentForm(document.getElementById('comment-form-wrapper'), 'video', v.id, list);
+      })();
+    }
+    function closeVideo(){ modal.classList.remove('open'); mount.innerHTML=''; document.body.style.overflow=''; }
+    document.getElementById('v-close').addEventListener('click', closeVideo);
+    modal.addEventListener('click', e=>{ if(e.target===modal) closeVideo(); });
+    document.addEventListener('keydown', e=>{ if(e.key==='Escape' && modal.classList.contains('open')) closeVideo(); });
+
+    document.getElementById('v-search').addEventListener('input', e=>{ query = e.target.value.trim().toLowerCase(); render(); });
+
+    render();
+
     document.addEventListener('DOMContentLoaded', async ()=>{
       if(window.AuthReady) try{ await window.AuthReady }catch(e){}
-      const commentsList = document.getElementById('comments-list');
-      // try to read data-content-id from a meta tag or element you set when rendering the page
-      const cid = document.querySelector('[data-content-id]')?.getAttribute('data-content-id') || null;
-      if(!cid) return;
-      const comments = await fetchComments('video', cid);
-      renderCommentsInto(commentsList, comments);
-      // render the comment form (sign-in prompt or textarea + post)
-      renderCommentForm(document.getElementById('comment-form-wrapper'), 'video', cid, commentsList);
+      try{ await adminModule.mountAdminUI('videos'); VIDS = loadVideos(); render(); }catch(e){/* ignore */}
     });
   </script>
 </body>
