@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Decision Maker — Khyati</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <style>
+    :root{ --pp:#6a1b9a; --pp2:#9c4dcc; --acc:#e9d8ff; --ink:#2b0b3a; }
+    .t-main{ max-width:720px; margin:0 auto; padding:18px 16px 48px; }
+    .t-head{ text-align:center; margin:8px 0 22px; }
+    .t-head h2{ font-size:clamp(1.5rem,4vw,2.2rem); color:var(--pp); margin:0; }
+    .t-head p{ color:#6b5b7e; margin:8px 0 0; }
+    .t-panel{ background:#fff; border:1px solid var(--acc); border-radius:16px; box-shadow:0 8px 28px rgba(117,80,168,.10); padding:20px; margin-bottom:20px; }
+    .modes{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:8px; }
+    .mode{ cursor:pointer; user-select:none; border:2px solid #ead9fb; background:#faf5ff; color:#5a3d77; border-radius:999px; padding:8px 14px; font-weight:500; font-size:.9rem; transition:all .15s; }
+    .mode:hover{ border-color:var(--pp2); }
+    .mode.selected{ background:linear-gradient(90deg,var(--pp),var(--pp2)); color:#fff; border-color:transparent; }
+    label{ display:block; font-weight:600; color:var(--ink); margin:14px 0 8px; font-size:.92rem; }
+    textarea{ width:100%; min-height:110px; padding:12px 14px; border:1px solid #d9c7ee; border-radius:10px; font-family:inherit; font-size:1rem; color:var(--ink); resize:vertical; }
+    textarea:focus{ outline:none; border-color:var(--pp2); }
+    .t-generate{ margin-top:14px; width:100%; cursor:pointer; border:none; border-radius:12px; background:linear-gradient(90deg,var(--pp),var(--pp2)); color:#fff; font-weight:700; font-size:1.05rem; padding:14px; }
+    .t-generate:hover{ opacity:.93; }
+    .result{ text-align:center; padding:34px 18px; border-radius:14px; background:linear-gradient(135deg,#faf5ff,#f2e9fd); border:1px solid #ead9fb; }
+    .result .big{ font-size:clamp(2rem,8vw,3.4rem); font-weight:800; color:var(--pp); margin-top:6px; word-break:break-word; }
+    .result .lbl{ color:#8a76a3; font-size:.9rem; text-transform:uppercase; letter-spacing:.05em; }
+    .result.flip .big{ animation:pop .4s ease; }
+    @keyframes pop{ 0%{ transform:scale(.6); opacity:0 } 100%{ transform:scale(1); opacity:1 } }
+  </style>
+</head>
+<body>
+  <div id="site-header-root"></div>
+  <main class="t-main">
+    <div class="t-head">
+      <h2>🎲 Decision Maker</h2>
+      <p>Can't decide? Flip a coin, roll a die, get a yes/no, or let it pick from your list.</p>
+    </div>
+    <div class="t-panel">
+      <div class="modes" id="modes">
+        <div class="mode selected" data-m="coin">🪙 Coin flip</div>
+        <div class="mode" data-m="dice">🎲 Roll a die</div>
+        <div class="mode" data-m="yesno">❓ Yes / No</div>
+        <div class="mode" data-m="pick">📝 Pick from list</div>
+      </div>
+      <div id="listWrap" style="display:none">
+        <label for="opts">Your options (one per line)</label>
+        <textarea id="opts" placeholder="Pizza&#10;Sushi&#10;Tacos&#10;Burgers"></textarea>
+      </div>
+      <button class="t-generate" id="goBtn">✨ Decide!</button>
+    </div>
+    <div class="t-panel">
+      <div class="result" id="result">
+        <div class="lbl" id="rLbl">result</div>
+        <div class="big" id="rBig">—</div>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer"><p>© <span id="year"></span> Khyati — All rights reserved</p></footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+  (function(){
+    const pick=a=>a[Math.floor(Math.random()*a.length)];
+    let mode="coin";
+    const modes=document.getElementById('modes'), listWrap=document.getElementById('listWrap');
+    modes.addEventListener('click',e=>{ const m=e.target.closest('.mode'); if(!m) return;
+      [...modes.children].forEach(c=>c.classList.remove('selected')); m.classList.add('selected'); mode=m.dataset.m;
+      listWrap.style.display = mode==='pick' ? 'block':'none';
+    });
+    const rBig=document.getElementById('rBig'), rLbl=document.getElementById('rLbl'), result=document.getElementById('result');
+    function flash(label,value){
+      rLbl.textContent=label; rBig.textContent=value;
+      result.classList.remove('flip'); void result.offsetWidth; result.classList.add('flip');
+    }
+    function go(){
+      if(mode==='coin'){ flash('coin flip', pick(['Heads','Tails'])); }
+      else if(mode==='dice'){ flash('you rolled', String(1+Math.floor(Math.random()*6))); }
+      else if(mode==='yesno'){ flash('the answer is', pick(['Yes','No','Maybe'])); }
+      else {
+        const opts=(document.getElementById('opts').value||'').split('\n').map(s=>s.trim()).filter(Boolean);
+        if(!opts.length){ flash('add some options first','📝'); return; }
+        flash('the winner is', pick(opts));
+      }
+    }
+    document.getElementById('goBtn').addEventListener('click',go);
+  })();
+  </script>
+  <script type="module" src="../assets/js/auth.js"></script>
+  <script type="module">import('../assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
+</body>
+</html>

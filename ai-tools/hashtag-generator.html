@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hashtag Generator — Khyati</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <style>
+    :root{ --pp:#6a1b9a; --pp2:#9c4dcc; --acc:#e9d8ff; --ink:#2b0b3a; }
+    .t-main{ max-width:760px; margin:0 auto; padding:18px 16px 48px; }
+    .t-head{ text-align:center; margin:8px 0 22px; }
+    .t-head h2{ font-size:clamp(1.5rem,4vw,2.2rem); color:var(--pp); margin:0; }
+    .t-head p{ color:#6b5b7e; margin:8px 0 0; }
+    .t-panel{ background:#fff; border:1px solid var(--acc); border-radius:16px; box-shadow:0 8px 28px rgba(117,80,168,.10); padding:20px; margin-bottom:20px; }
+    label{ display:block; font-weight:600; color:var(--ink); margin-bottom:8px; font-size:.92rem; }
+    input[type=text]{ width:100%; padding:12px 14px; border:1px solid #d9c7ee; border-radius:10px; font-family:inherit; font-size:1rem; color:var(--ink); }
+    input:focus{ outline:none; border-color:var(--pp2); }
+    .t-generate{ margin-top:14px; width:100%; cursor:pointer; border:none; border-radius:12px; background:linear-gradient(90deg,var(--pp),var(--pp2)); color:#fff; font-weight:700; font-size:1.05rem; padding:14px; }
+    .t-generate:hover{ opacity:.93; }
+    .tags{ display:flex; flex-wrap:wrap; gap:8px; }
+    .tag{ cursor:pointer; background:linear-gradient(135deg,#faf5ff,#f2e9fd); border:1px solid #ead9fb; border-radius:999px; padding:7px 13px; color:var(--pp); font-weight:600; font-size:.9rem; }
+    .tag:hover{ background:#fff; border-color:var(--pp2); }
+    .results-head{ display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:8px; }
+    .results-head h3{ margin:0; color:var(--pp); font-size:1.1rem; }
+    .copyall{ cursor:pointer; border:1px solid var(--pp2); background:#fff; color:var(--pp); border-radius:10px; padding:8px 14px; font-weight:600; font-size:.85rem; }
+    .placeholder{ text-align:center; color:#8a76a3; padding:30px 10px; }
+    .t-toast{ position:fixed; left:50%; bottom:28px; transform:translateX(-50%) translateY(20px); background:var(--pp); color:#fff; padding:10px 18px; border-radius:999px; font-size:.9rem; box-shadow:0 8px 24px rgba(0,0,0,.2); opacity:0; pointer-events:none; transition:all .25s; z-index:100; }
+    .t-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  </style>
+</head>
+<body>
+  <div id="site-header-root"></div>
+  <main class="t-main">
+    <div class="t-head">
+      <h2>#️⃣ Hashtag Generator</h2>
+      <p>Type a topic and get a set of hashtags for your posts. Tap any tag to copy it.</p>
+    </div>
+    <div class="t-panel">
+      <label for="topic">Your topic or keywords</label>
+      <input type="text" id="topic" placeholder="e.g. travel, baking, fitness, art…" value="travel" />
+      <button class="t-generate" id="genBtn"># Generate Hashtags</button>
+    </div>
+    <div class="t-panel">
+      <div class="results-head"><h3 id="rTitle">Hashtags</h3><button class="copyall" id="copyAll" style="display:none">📋 Copy all</button></div>
+      <div class="tags" id="tags"><div class="placeholder">Enter a topic and click <strong>Generate</strong>.</div></div>
+    </div>
+  </main>
+  <div class="t-toast" id="toast">Copied!</div>
+  <footer class="site-footer"><p>© <span id="year"></span> Khyati — All rights reserved</p></footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+  (function(){
+    const SUFFIX=["love","life","gram","daily","lover","addict","ofinstagram","community","vibes","goals","inspo","tips","oftheday","world","style"];
+    const PREFIX=["best","my","the","insta","daily","love"];
+    const GENERIC=["#instagood","#photooftheday","#viral","#trending","#explore","#explorepage","#instadaily","#reels","#fyp","#followforfollow","#likeforlike","#aesthetic","#mood","#happy"];
+    const clean = w => w.toLowerCase().replace(/[^a-z0-9]/g,'');
+    const tagsEl=document.getElementById('tags'), copyAll=document.getElementById('copyAll');
+    const toast=document.getElementById('toast'); let tt;
+    function showToast(m){ toast.textContent=m; toast.classList.add('show'); clearTimeout(tt); tt=setTimeout(()=>toast.classList.remove('show'),1400); }
+    function copy(t){ try{ navigator.clipboard.writeText(t); showToast("Copied!"); }catch(e){ showToast("Press Ctrl+C"); } }
+    let current=[];
+    function gen(){
+      const raw=(document.getElementById('topic').value||'').split(/[\s,]+/).map(clean).filter(Boolean);
+      const words = raw.length?raw:["topic"];
+      const set=new Set();
+      words.forEach(w=>{
+        set.add('#'+w);
+        for(let i=0;i<4;i++) set.add('#'+w+SUFFIX[Math.floor(Math.random()*SUFFIX.length)]);
+        set.add('#'+PREFIX[Math.floor(Math.random()*PREFIX.length)]+w);
+        if(words.length>1) set.add('#'+words.join(''));
+      });
+      // top up with generic popular tags
+      const generics=[...GENERIC].sort(()=>Math.random()-0.5);
+      let gi=0; while(set.size<24 && gi<generics.length) set.add(generics[gi++]);
+      current=[...set].slice(0,24);
+      tagsEl.innerHTML="";
+      current.forEach(t=>{ const d=document.createElement('div'); d.className='tag'; d.textContent=t; d.addEventListener('click',()=>copy(t)); tagsEl.appendChild(d); });
+      copyAll.style.display="inline-block";
+      document.getElementById('rTitle').textContent=`${current.length} hashtags`;
+    }
+    document.getElementById('genBtn').addEventListener('click',gen);
+    document.getElementById('topic').addEventListener('keydown',e=>{ if(e.key==='Enter') gen(); });
+    copyAll.addEventListener('click',()=>copy(current.join(' ')));
+  })();
+  </script>
+  <script type="module" src="../assets/js/auth.js"></script>
+  <script type="module">import('../assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
+</body>
+</html>

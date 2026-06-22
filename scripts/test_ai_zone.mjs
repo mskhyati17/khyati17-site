@@ -46,25 +46,26 @@ async function run(){
     logo && logo.includes('AI Zone') ? pass(`logo: '${logo}'`) : fail(`logo not 'AI Zone' (got '${logo}')`);
 
     const cards = await page.$$('#grid .card');
-    cards.length === 6 ? pass(`${cards.length} cards (3 live + 2 offline + 1 soon)`) : fail(`expected 6 cards, got ${cards.length}`);
+    cards.length === 11 ? pass(`${cards.length} cards (8 live + 2 offline + 1 soon)`) : fail(`expected 11 cards, got ${cards.length}`);
 
     const labels = await page.$$eval('#grid .card .label', ns=>ns.map(n=>n.textContent.trim()));
-    ['News Aggregator','Voice Clone','Story Creator','Name Generator','Writing Prompt Generator'].every(t=>labels.includes(t)) ? pass('all 5 tools present') : fail(`tools missing; got ${JSON.stringify(labels)}`);
+    const EXPECT = ['News Aggregator','Voice Clone','Story Creator','Name Generator','Writing Prompt Generator','Password Generator','Color Palette Generator','Hashtag Generator','Emoji Translator','Decision Maker'];
+    EXPECT.every(t=>labels.includes(t)) ? pass('all 10 tools present') : fail(`tools missing; got ${JSON.stringify(labels)}`);
 
-    // status badges: 3 live (Story, Name, Prompt), 2 offline (News, Voice), 1 soon
+    // status badges: 8 live, 2 offline (News, Voice), 1 soon
     const liveBadges = await page.$$('#grid .card .badge-live');
     const offBadges  = await page.$$('#grid .card .badge-offline');
-    liveBadges.length === 3 ? pass('3 Live badges (Story + Name + Prompt)') : fail(`expected 3 live badges, got ${liveBadges.length}`);
+    liveBadges.length === 8 ? pass('8 Live badges') : fail(`expected 8 live badges, got ${liveBadges.length}`);
     offBadges.length === 2 ? pass('2 offline badges (News + Voice)') : fail(`expected 2 offline badges, got ${offBadges.length}`);
 
     const popular = await page.$$('#popRow .pop-item');
-    popular.length === 5 ? pass(`${popular.length} popular items (real tools)`) : fail(`expected 5 popular, got ${popular.length}`);
+    popular.length === 10 ? pass(`${popular.length} popular items (real tools, capped at 10)`) : fail(`expected 10 popular, got ${popular.length}`);
 
     const chips = await page.$$('#catStrip .chip');
-    chips.length === 5 ? pass(`${chips.length} chips (All + Names + News + Audio + Writing)`) : fail(`expected 5 chips, got ${chips.length}`);
+    chips.length === 9 ? pass(`${chips.length} chips (All + 8 categories)`) : fail(`expected 9 chips, got ${chips.length}`);
 
     const tiles = await page.$$('#catGrid .cat-tile');
-    tiles.length === 4 ? pass(`${tiles.length} browse-category tiles`) : fail(`expected 4 tiles, got ${tiles.length}`);
+    tiles.length === 8 ? pass(`${tiles.length} browse-category tiles`) : fail(`expected 8 tiles, got ${tiles.length}`);
 
     const soon = await page.$$('#grid .card.soon');
     soon.length === 1 ? pass('coming-soon card rendered & dimmed') : fail(`expected 1 soon card, got ${soon.length}`);
