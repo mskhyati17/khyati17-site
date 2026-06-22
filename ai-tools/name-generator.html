@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Name Generator — Khyati</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <style>
+    :root{ --pp:#6a1b9a; --pp2:#9c4dcc; --acc:#e9d8ff; --ink:#2b0b3a; }
+    .ng-main{ max-width:920px; margin:0 auto; padding:18px 16px 48px; }
+    .ng-head{ text-align:center; margin:8px 0 22px; }
+    .ng-head h2{ font-size:clamp(1.5rem,4vw,2.2rem); color:var(--pp); margin:0; }
+    .ng-head p{ color:#6b5b7e; margin:8px 0 0; }
+
+    .ng-panel{
+      background:#fff; border:1px solid var(--acc); border-radius:16px;
+      box-shadow:0 8px 28px rgba(117,80,168,.10); padding:20px; margin-bottom:20px;
+    }
+    .ng-panel label{ display:block; font-weight:600; color:var(--ink); margin:4px 0 8px; font-size:.92rem; }
+
+    .ng-tags{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:16px; }
+    .ng-tag{
+      cursor:pointer; user-select:none; border:2px solid #ead9fb; background:#faf5ff;
+      color:#5a3d77; border-radius:999px; padding:8px 14px; font-size:.9rem; font-weight:500;
+      transition:all .15s;
+    }
+    .ng-tag:hover{ border-color:var(--pp2); }
+    .ng-tag.selected{ background:linear-gradient(90deg,var(--pp),var(--pp2)); color:#fff; border-color:transparent; }
+
+    .ng-row{ display:flex; gap:16px; flex-wrap:wrap; align-items:flex-end; }
+    .ng-row > div{ flex:1; min-width:160px; }
+    .ng-panel select, .ng-panel input{
+      width:100%; padding:10px 12px; border:1px solid #d9c7ee; border-radius:10px;
+      font-family:inherit; font-size:.95rem; color:var(--ink); background:#fff;
+    }
+    .ng-panel select:focus, .ng-panel input:focus{ outline:none; border-color:var(--pp2); }
+
+    .ng-generate{
+      margin-top:18px; width:100%; cursor:pointer; border:none; border-radius:12px;
+      background:linear-gradient(90deg,var(--pp),var(--pp2)); color:#fff;
+      font-weight:700; font-size:1.05rem; padding:14px; transition:opacity .15s, transform .1s;
+    }
+    .ng-generate:hover{ opacity:.93; }
+    .ng-generate:active{ transform:scale(.99); }
+
+    .ng-results-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; gap:10px; flex-wrap:wrap; }
+    .ng-results-head h3{ margin:0; color:var(--pp); font-size:1.1rem; }
+    .ng-copyall{ cursor:pointer; border:1px solid var(--pp2); background:#fff; color:var(--pp); border-radius:10px; padding:8px 14px; font-weight:600; font-size:.85rem; }
+    .ng-copyall:hover{ background:#faf5ff; }
+
+    .ng-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:12px; }
+    .ng-name{
+      background:linear-gradient(135deg,#faf5ff,#f2e9fd); border:1px solid #ead9fb;
+      border-radius:12px; padding:14px 12px; text-align:center; cursor:pointer;
+      font-weight:600; color:var(--ink); font-size:1.02rem; transition:transform .12s, box-shadow .12s;
+      position:relative;
+    }
+    .ng-name:hover{ transform:translateY(-3px); box-shadow:0 8px 18px rgba(117,80,168,.16); }
+    .ng-name small{ display:block; font-weight:500; color:#8a76a3; font-size:.7rem; margin-top:4px; }
+    .ng-placeholder{ text-align:center; color:#8a76a3; padding:40px 10px; }
+    .ng-placeholder .big{ font-size:2.6rem; }
+
+    .ng-toast{
+      position:fixed; left:50%; bottom:28px; transform:translateX(-50%) translateY(20px);
+      background:var(--pp); color:#fff; padding:10px 18px; border-radius:999px; font-size:.9rem;
+      box-shadow:0 8px 24px rgba(0,0,0,.2); opacity:0; pointer-events:none; transition:all .25s; z-index:100;
+    }
+    .ng-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  </style>
+</head>
+<body>
+  <div id="site-header-root"></div>
+
+  <main class="ng-main">
+    <div class="ng-head">
+      <h2>🏷️ Name Generator</h2>
+      <p>Generate fantasy names, usernames, brand names and more — instantly, right in your browser.</p>
+    </div>
+
+    <div class="ng-panel">
+      <label>Category</label>
+      <div class="ng-tags" id="ngTags">
+        <div class="ng-tag selected" data-cat="fantasy">🧙 Fantasy</div>
+        <div class="ng-tag" data-cat="scifi">🚀 Sci-Fi</div>
+        <div class="ng-tag" data-cat="username">🎮 Username</div>
+        <div class="ng-tag" data-cat="brand">🏢 Brand</div>
+        <div class="ng-tag" data-cat="pet">🐾 Pet</div>
+        <div class="ng-tag" data-cat="baby">👶 Baby</div>
+      </div>
+
+      <div class="ng-row">
+        <div>
+          <label for="ngCount">How many</label>
+          <select id="ngCount">
+            <option value="6">6 names</option>
+            <option value="12" selected>12 names</option>
+            <option value="24">24 names</option>
+          </select>
+        </div>
+        <div>
+          <label for="ngStart">Starts with (optional)</label>
+          <input type="text" id="ngStart" maxlength="1" placeholder="any letter, e.g. A" />
+        </div>
+      </div>
+
+      <button class="ng-generate" id="ngGenerate">✨ Generate Names</button>
+    </div>
+
+    <div class="ng-panel">
+      <div class="ng-results-head">
+        <h3 id="ngResultsTitle">Your names</h3>
+        <button class="ng-copyall" id="ngCopyAll" style="display:none">📋 Copy all</button>
+      </div>
+      <div id="ngResults">
+        <div class="ng-placeholder" id="ngPlaceholder">
+          <div class="big">🏷️</div>
+          <p>Pick a category and click <strong>Generate Names</strong>.</p>
+        </div>
+        <div class="ng-grid" id="ngGrid" style="display:none"></div>
+      </div>
+    </div>
+  </main>
+
+  <div class="ng-toast" id="ngToast">Copied!</div>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Khyati — All rights reserved</p>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+  (function(){
+    const pick = a => a[Math.floor(Math.random()*a.length)];
+    const cap  = s => s.charAt(0).toUpperCase() + s.slice(1);
+
+    // ---- word banks ----
+    const FANTASY_A = ["aer","bran","cael","dra","el","fae","gor","lyr","mor","syl","thal","vael","rin","quen","is","ael","bel","cor","dre","fen"];
+    const FANTASY_B = ["wyn","dor","ion","eth","ara","ius","wen","oth","is","ael","mir","nor","wynn","dell","gar","las","win","ric","mond","eth"];
+    const FANTASY_T = ["the Brave","the Wise","Stormborn","of the Vale","Shadowend","the Kind","Nightwood","the Bold","Emberheart","Frostwind"];
+
+    const SCIFI_A = ["zyx","nova","orion","vex","krios","axion","cyra","neb","quil","zeph","astra","heli","dax","ion","ryn","vor","tau","cyg"];
+    const SCIFI_B = ["on","ar","ix","us","a","ex","is","or","yn","ia"];
+    const SCIFI_S = ["-7","Prime","X","-9","tron","IV","Zero","Nine","Max","Neo"];
+
+    const USER_ADJ = ["Swift","Shadow","Pixel","Cosmic","Neon","Turbo","Frost","Hyper","Mighty","Silent","Crimson","Lunar","Rapid","Mystic","Iron","Golden"];
+    const USER_NOUN= ["Wolf","Ninja","Falcon","Byte","Tiger","Ghost","Raven","Pilot","Phoenix","Viper","Dragon","Knight","Fox","Storm","Blade","Comet"];
+
+    const BRAND_A = ["lumi","nexa","vibe","zen","aura","flux","echo","nova","peak","bloom","sona","kova","mira","arc","nido","velo","orbi","plume"];
+    const BRAND_B = ["ly","io","ify","hub","lab","works","co","sphere","wave","flow","nest","loop","mint","verse"];
+
+    const PET = ["Biscuit","Mochi","Pepper","Luna","Waffles","Coco","Ziggy","Nugget","Olive","Pumpkin","Bandit","Maple","Pickle","Bear","Noodle","Cinnamon","Marble","Tofu","Peanut","Clover"];
+
+    const BABY = ["Aria","Liam","Mila","Noah","Ivy","Ezra","Luna","Kai","Maya","Leo","Nora","Finn","Zoe","Eli","Ada","Theo","Iris","Milo","Cora","Asa","Elena","Rowan","Sage","Jude"];
+
+    function gen(cat){
+      switch(cat){
+        case "fantasy":  return cap(pick(FANTASY_A)) + pick(FANTASY_B) + (Math.random()<0.25 ? " " + pick(FANTASY_T) : "");
+        case "scifi":    return cap(pick(SCIFI_A)) + pick(SCIFI_B) + (Math.random()<0.5 ? " " + pick(SCIFI_S) : "");
+        case "username": return pick(USER_ADJ) + pick(USER_NOUN) + (Math.random()<0.6 ? Math.floor(Math.random()*99) : "");
+        case "brand":    return cap(pick(BRAND_A)) + pick(BRAND_B);
+        case "pet":      return pick(PET);
+        case "baby":     return pick(BABY);
+        default:         return cap(pick(FANTASY_A)) + pick(FANTASY_B);
+      }
+    }
+
+    let cat = "fantasy";
+    const tags = document.getElementById("ngTags");
+    tags.addEventListener("click", e=>{
+      const t = e.target.closest(".ng-tag"); if(!t) return;
+      [...tags.children].forEach(c=>c.classList.remove("selected"));
+      t.classList.add("selected"); cat = t.dataset.cat;
+    });
+
+    const grid = document.getElementById("ngGrid");
+    const placeholder = document.getElementById("ngPlaceholder");
+    const copyAll = document.getElementById("ngCopyAll");
+    const toast = document.getElementById("ngToast");
+    let toastTimer;
+
+    function showToast(msg){
+      toast.textContent = msg; toast.classList.add("show");
+      clearTimeout(toastTimer); toastTimer = setTimeout(()=>toast.classList.remove("show"), 1400);
+    }
+    function copy(text){
+      try{
+        if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text); }
+        else { const ta=document.createElement("textarea"); ta.value=text; document.body.appendChild(ta); ta.select(); document.execCommand("copy"); ta.remove(); }
+        showToast("Copied!");
+      }catch(e){ showToast("Press Ctrl+C to copy"); }
+    }
+
+    function generate(){
+      const count = parseInt(document.getElementById("ngCount").value, 10) || 12;
+      const start = (document.getElementById("ngStart").value || "").trim().toLowerCase();
+      const seen = new Set();
+      const names = [];
+      let guard = 0;
+      while(names.length < count && guard < count * 60){
+        guard++;
+        const n = gen(cat);
+        if(start && !n.toLowerCase().startsWith(start)) continue;
+        if(seen.has(n)) continue;
+        seen.add(n); names.push(n);
+      }
+      // if the starts-with filter was too strict, fall back to unfiltered
+      if(!names.length){
+        while(names.length < count && guard < count * 120){ guard++; const n = gen(cat); if(!seen.has(n)){ seen.add(n); names.push(n); } }
+      }
+
+      grid.innerHTML = "";
+      names.forEach(n=>{
+        const d = document.createElement("div"); d.className = "ng-name";
+        d.innerHTML = `${n}<small>tap to copy</small>`;
+        d.addEventListener("click", ()=> copy(n));
+        grid.appendChild(d);
+      });
+      placeholder.style.display = "none";
+      grid.style.display = "grid";
+      copyAll.style.display = names.length ? "inline-block" : "none";
+      document.getElementById("ngResultsTitle").textContent = `${names.length} names`;
+      copyAll.onclick = ()=> copy(names.join("\n"));
+    }
+
+    document.getElementById("ngGenerate").addEventListener("click", generate);
+  })();
+  </script>
+  <script type="module" src="../assets/js/auth.js"></script>
+  <script type="module">import('../assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
+</body>
+</html>

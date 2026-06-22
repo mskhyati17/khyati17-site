@@ -46,25 +46,25 @@ async function run(){
     logo && logo.includes('AI Zone') ? pass(`logo: '${logo}'`) : fail(`logo not 'AI Zone' (got '${logo}')`);
 
     const cards = await page.$$('#grid .card');
-    cards.length === 4 ? pass(`${cards.length} cards (1 live + 2 offline + 1 soon)`) : fail(`expected 4 cards, got ${cards.length}`);
+    cards.length === 5 ? pass(`${cards.length} cards (2 live + 2 offline + 1 soon)`) : fail(`expected 5 cards, got ${cards.length}`);
 
     const labels = await page.$$eval('#grid .card .label', ns=>ns.map(n=>n.textContent.trim()));
-    ['News Aggregator','Voice Clone','Story Creator'].every(t=>labels.includes(t)) ? pass('all 3 tools present') : fail(`tools missing; got ${JSON.stringify(labels)}`);
+    ['News Aggregator','Voice Clone','Story Creator','Name Generator'].every(t=>labels.includes(t)) ? pass('all 4 tools present') : fail(`tools missing; got ${JSON.stringify(labels)}`);
 
-    // status badges: 1 live (Story), 2 offline (News, Voice), 1 soon
+    // status badges: 2 live (Story, Name), 2 offline (News, Voice), 1 soon
     const liveBadges = await page.$$('#grid .card .badge-live');
     const offBadges  = await page.$$('#grid .card .badge-offline');
-    liveBadges.length === 1 ? pass('1 Live badge (Story Creator)') : fail(`expected 1 live badge, got ${liveBadges.length}`);
+    liveBadges.length === 2 ? pass('2 Live badges (Story + Name)') : fail(`expected 2 live badges, got ${liveBadges.length}`);
     offBadges.length === 2 ? pass('2 offline badges (News + Voice)') : fail(`expected 2 offline badges, got ${offBadges.length}`);
 
     const popular = await page.$$('#popRow .pop-item');
-    popular.length === 3 ? pass(`${popular.length} popular items (real tools)`) : fail(`expected 3 popular, got ${popular.length}`);
+    popular.length === 4 ? pass(`${popular.length} popular items (real tools)`) : fail(`expected 4 popular, got ${popular.length}`);
 
     const chips = await page.$$('#catStrip .chip');
-    chips.length === 4 ? pass(`${chips.length} chips (All + News + Audio + Writing)`) : fail(`expected 4 chips, got ${chips.length}`);
+    chips.length === 5 ? pass(`${chips.length} chips (All + Names + News + Audio + Writing)`) : fail(`expected 5 chips, got ${chips.length}`);
 
     const tiles = await page.$$('#catGrid .cat-tile');
-    tiles.length === 3 ? pass(`${tiles.length} browse-category tiles`) : fail(`expected 3 tiles, got ${tiles.length}`);
+    tiles.length === 4 ? pass(`${tiles.length} browse-category tiles`) : fail(`expected 4 tiles, got ${tiles.length}`);
 
     const soon = await page.$$('#grid .card.soon');
     soon.length === 1 ? pass('coming-soon card rendered & dimmed') : fail(`expected 1 soon card, got ${soon.length}`);
