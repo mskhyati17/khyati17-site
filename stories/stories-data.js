@@ -8,6 +8,73 @@
 
 export const STORIES = [
   {
+    title: "Gloomy Crown",
+    author: "Khyati Srivastava",
+    slug: "gloomy-crown",
+    category: "Fantasy",
+    emoji: "👑",
+    excerpt: "When twelve-year-old Elara unearths a moss-covered crown beneath an old oak, she wakes a banished queen whose power feeds on sorrow — and only joy can stop her.",
+    created_at: "2026-06-22T00:00:00Z",
+    body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: The Whisper in the Wind</h3>
+<p>In the sleepy village of Windermere, where fog clung to the trees like forgotten memories, a twelve-year-old girl named Elara found a crown buried beneath the roots of an old oak tree. It was no ordinary crown—it was dull, cold, and covered in moss. When her fingers touched it, the wind around her whispered, "She is coming back."</p>
+<p>Elara blinked. "Who’s coming back?"</p>
+<p>No one answered. Not the wind. Not the trees. Not even the crown. But Elara knew something had changed.</p>
+
+<h3>Chapter 2: The Queen Who Vanished</h3>
+<p>That night, Elara couldn’t sleep. She opened every dusty book in her attic, searching for stories of crowns, queens, and dark legends. In a book called The Forgotten Royals, she found a name: Queen Morrith of the Gloomlight Isles. Banished. Feared. Missing.</p>
+<p>The drawing in the book looked just like the crown she had found.</p>
+
+<h3>Chapter 3: Shadows in the Mirror</h3>
+<p>The next morning, Elara looked into her bathroom mirror. For a moment, her reflection didn’t move.</p>
+<p>“Return it,” the reflection hissed.</p>
+<p>Elara stumbled back, but the mirror was just a mirror again. She ran to her best friend, Jace, who was never afraid of anything—not even ghosts. Jace listened carefully.</p>
+<p>“We need to find out why that crown is so gloomy,” he said.</p>
+
+<h3>Chapter 4: The Forbidden Library</h3>
+<p>Elara and Jace snuck into the old Windermere library. It had a hidden basement no one was allowed to enter. With a bent hairpin and a flashlight, they found the way in.</p>
+<p>Cobwebs hung like curtains. Shelves leaned like tired skeletons. In the center was a pedestal with a book chained to it.</p>
+<p>Jace opened it. The pages screamed.</p>
+
+<h3>Chapter 5: The Curse of the Crown</h3>
+<p>The book told of a time when Queen Morrith ruled with a crown that fed on sorrow. The more sadness around her, the more powerful she became. When the people rebelled, they sealed her crown deep in the woods.</p>
+<p>“Elara,” Jace whispered, “you woke it up.”</p>
+
+<h3>Chapter 6: The Black Fog</h3>
+<p>That night, Windermere was swallowed by a thick, black fog. People cried in their sleep. Sadness filled the air like perfume. Elara felt it pressing against her chest.</p>
+<p>She clutched the crown. “We have to stop this.”</p>
+<p>Jace nodded. “We have to destroy it.”</p>
+
+<h3>Chapter 7: The Echo Cavern</h3>
+<p>The map in the cursed book led them to a hidden cave behind the waterfall. The cave echoed with every emotion—fear, sorrow, hope. Deep inside, they saw a stone altar and a ghostly figure.</p>
+<p>Queen Morrith.</p>
+<p>She floated above the ground, her eyes hollow.</p>
+<p>“You have what is mine,” she whispered.</p>
+
+<h3>Chapter 8: A Heart of Light</h3>
+<p>Elara stepped forward. “You don’t belong here anymore.”</p>
+<p>Queen Morrith raised her hand, but Jace shouted, “Remember what the book said! Her power fades with joy!”</p>
+<p>Elara thought of her happiest memory—her mother’s laugh, her father’s hugs, Jace’s silly jokes. She focused hard.</p>
+<p>The crown glowed. Morrith shrieked.</p>
+
+<h3>Chapter 9: The Last Tear</h3>
+<p>The cavern shook. Rocks tumbled. Morrith’s form began to crack like glass. But a single tear slipped from Elara’s eye. The crown drank it hungrily.</p>
+<p>“Don’t cry,” Jace said.</p>
+<p>Too late.</p>
+<p>The crown flew into the air. Elara leapt forward and caught it. She whispered, “I’m not afraid of you.”</p>
+<p>And the crown... melted.</p>
+
+<h3>Chapter 10: Windermere’s Light</h3>
+<p>The fog lifted. The sun rose. Birds returned. Laughter returned.</p>
+<p>Windermere healed. Elara placed what remained of the crown into a glass box and buried it deep below the town’s statue.</p>
+<p>Some say they still hear whispers when the wind blows. But Elara knows: the gloomy crown is gone.</p>
+<p>For now.</p>
+<p style="text-align:center;color:#6a4b8f;font-style:italic;margin-top:18px">The End</p>
+`,
+  },
+  {
     title: "The Lesson For The Witch",
     author: "Khyati Srivastava",
     slug: "the-lesson-for-the-witch",
