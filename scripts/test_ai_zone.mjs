@@ -46,13 +46,19 @@ async function run(){
     logo && logo.includes('AI Zone') ? pass(`logo: '${logo}'`) : fail(`logo not 'AI Zone' (got '${logo}')`);
 
     const cards = await page.$$('#grid .card');
-    cards.length === 4 ? pass(`${cards.length} cards (3 live + 1 soon)`) : fail(`expected 4 cards, got ${cards.length}`);
+    cards.length === 4 ? pass(`${cards.length} cards (1 live + 2 offline + 1 soon)`) : fail(`expected 4 cards, got ${cards.length}`);
 
     const labels = await page.$$eval('#grid .card .label', ns=>ns.map(n=>n.textContent.trim()));
-    ['News Aggregator','Voice Clone','Story Creator'].every(t=>labels.includes(t)) ? pass('all 3 live tools present') : fail(`live tools missing; got ${JSON.stringify(labels)}`);
+    ['News Aggregator','Voice Clone','Story Creator'].every(t=>labels.includes(t)) ? pass('all 3 tools present') : fail(`tools missing; got ${JSON.stringify(labels)}`);
+
+    // status badges: 1 live (Story), 2 offline (News, Voice), 1 soon
+    const liveBadges = await page.$$('#grid .card .badge-live');
+    const offBadges  = await page.$$('#grid .card .badge-offline');
+    liveBadges.length === 1 ? pass('1 Live badge (Story Creator)') : fail(`expected 1 live badge, got ${liveBadges.length}`);
+    offBadges.length === 2 ? pass('2 offline badges (News + Voice)') : fail(`expected 2 offline badges, got ${offBadges.length}`);
 
     const popular = await page.$$('#popRow .pop-item');
-    popular.length === 3 ? pass(`${popular.length} popular items (live only)`) : fail(`expected 3 popular, got ${popular.length}`);
+    popular.length === 3 ? pass(`${popular.length} popular items (real tools)`) : fail(`expected 3 popular, got ${popular.length}`);
 
     const chips = await page.$$('#catStrip .chip');
     chips.length === 4 ? pass(`${chips.length} chips (All + News + Audio + Writing)`) : fail(`expected 4 chips, got ${chips.length}`);
@@ -82,8 +88,33 @@ async function run(){
       page.url().includes('/ai-tools/story-creator.html') ? pass(`navigated: ${page.url().replace(base,'')}`) : fail(`unexpected url: ${page.url()}`);
     } else fail('could not find Story Creator card to click');
 
-    // ---- 4. Old page redirects to the hub ----
-    console.log('\n[4] /ai-tools/ai-tools.html -> redirect to hub');
+    // ---- 4. Offline tool is still clickable -> opens its page ----
+    console.log('\n[4] Offline card -> tool page');
+    await page.goto(`${base}/ai-tools/index.html`, { waitUntil:'networkidle', timeout:15000 });
+    await page.waitForTimeout(200);
+    const cards2 = await page.$$('#grid .card');
+    let clickedNews=false;
+    for(const c of cards2){ const l=(await c.$eval('.label',n=>n.textContent)).trim(); if(l==='News Aggregator'){ await c.click(); clickedNews=true; break; } }
+    if(clickedNews){
+      await page.waitForURL(/ai-tools\/news-app\.html/, { timeout:10000 }).catch(()=>{});
+      page.url().includes('/ai-tools/news-app.html') ? pass(`offline tool navigates: ${page.url().replace(base,'')}`) : fail(`unexpected url: ${page.url()}`);
+    } else fail('could not find News Aggregator card to click');
+
+    // ---- 5. Tool pages resolve to exactly one state (frame OR offline), never broken ----
+    // (Real network: with backends down these should land on the offline panel.)
+    console.log('\n[5] Tool-page offline fallback');
+    for(const [name,file] of [['News','news-app.html'],['Voice','voice-clone.html']]){
+      await page.goto(`${base}/ai-tools/${file}`, { waitUntil:'networkidle', timeout:20000 });
+      await page.waitForTimeout(10000); // allow the backend probe (up to 9s) to settle
+      const loadingVis = await page.isVisible('#toolLoading').catch(()=>false);
+      const frameVis   = await page.isVisible('#toolFrame').catch(()=>false);
+      const offVis     = await page.isVisible('#toolOffline').catch(()=>false);
+      const oneShown = (frameVis ? 1:0) + (offVis ? 1:0) === 1;
+      (!loadingVis && oneShown) ? pass(`${name}: settled on ${frameVis?'live frame':'offline message'} (no stuck spinner)`) : fail(`${name}: loading=${loadingVis} frame=${frameVis} offline=${offVis}`);
+    }
+
+    // ---- 6. Old page redirects to the hub ----
+    console.log('\n[6] /ai-tools/ai-tools.html -> redirect to hub');
     await page.goto(`${base}/ai-tools/ai-tools.html`, { waitUntil:'networkidle', timeout:15000 });
     await page.waitForTimeout(300);
     page.url().endsWith('/ai-tools/index.html') ? pass(`redirected to ${page.url().replace(base,'')}`) : fail(`expected redirect, stayed at ${page.url().replace(base,'')}`);

@@ -181,6 +181,13 @@
     font-size:.62rem;font-weight:600;
     padding:3px 8px;border-radius:999px;
   }
+  .badge-offline{
+    position:absolute;top:8px;left:8px;
+    background:#f59e0b;color:#fff;
+    font-size:.62rem;font-weight:600;
+    padding:3px 8px;border-radius:999px;
+    box-shadow:0 2px 6px rgba(245,158,11,.35);
+  }
   .badge-cat{
     position:absolute;bottom:8px;right:8px;
     background:rgba(255,255,255,.65);
@@ -276,9 +283,9 @@
    AI TOOLS — the AI-powered tools built for this site.
    ============================================================ */
 const AI_TOOLS = [
-  { name:"News Aggregator", category:"News",    emoji:"📰", color:"#D6E4FF", uses:9800, featured:true,  status:"live", desc:"Latest headlines from BBC, CNN, Reuters, NBC and NYT — all in one place, updated live.", url:"/ai-tools/news-app.html" },
-  { name:"Voice Clone",     category:"Audio",   emoji:"🎙️", color:"#FFD6E0", uses:7400, featured:false, status:"live", desc:"Clone any voice using AI — record a sample and generate realistic speech instantly.", url:"/ai-tools/voice-clone.html" },
-  { name:"Story Creator",   category:"Writing", emoji:"📖", color:"#E0D6FF", uses:6900, featured:false, status:"live", desc:"AI-powered story generator — choose characters, genres, and settings to create unique tales instantly.", url:"/ai-tools/story-creator.html" },
+  { name:"Story Creator",   category:"Writing", emoji:"📖", color:"#E0D6FF", uses:6900, featured:true,  status:"live",    desc:"AI-powered story generator — choose characters, genres, and settings to create unique tales instantly.", url:"/ai-tools/story-creator.html" },
+  { name:"News Aggregator", category:"News",    emoji:"📰", color:"#D6E4FF", uses:9800, featured:false, status:"offline", desc:"Latest headlines from BBC, CNN, Reuters, NBC and NYT — all in one place, updated live.", url:"/ai-tools/news-app.html" },
+  { name:"Voice Clone",     category:"Audio",   emoji:"🎙️", color:"#FFD6E0", uses:7400, featured:false, status:"offline", desc:"Clone any voice using AI — record a sample and generate realistic speech instantly.", url:"/ai-tools/voice-clone.html" },
   { name:"Coming Soon",     category:"",        emoji:"✨", color:"#F3ECFB", uses:0,    featured:false, status:"soon", desc:"More AI tools are being built. Check back soon!", url:"" },
 ];
 
@@ -297,11 +304,13 @@ let activeCat = "All";
 let query = "";
 
 const el = (tag,cls)=>{ const n=document.createElement(tag); if(cls) n.className=cls; return n; };
-const open = t => { if(t.status==="live" && t.url && t.url!=="#") window.location.href = t.url; };
+// Real tools (live + temporarily offline) are clickable; "soon" tools are not.
+// Offline tools still open their page, which shows a friendly offline message.
+const open = t => { if(t.status!=="soon" && t.url && t.url!=="#") window.location.href = t.url; };
 
-/* --- Categories present (live tools only) --- */
+/* --- Categories present (real tools only) --- */
 function categories(){
-  const set = new Set(AI_TOOLS.filter(t=>t.status==="live" && t.category).map(t=>t.category));
+  const set = new Set(AI_TOOLS.filter(t=>t.status!=="soon" && t.category).map(t=>t.category));
   return ["All", ...[...set].sort()];
 }
 
@@ -323,7 +332,7 @@ function renderChips(){
 function renderPopular(){
   const row = document.getElementById("popRow");
   row.innerHTML = "";
-  const top = AI_TOOLS.filter(t=>t.status==="live").sort((a,b)=>b.uses-a.uses).slice(0,10);
+  const top = AI_TOOLS.filter(t=>t.status!=="soon").sort((a,b)=>b.uses-a.uses).slice(0,10);
   top.forEach((t,i)=>{
     const item = el("div","pop-item");
     const tile = el("div","pop-tile");
@@ -350,8 +359,8 @@ function renderGrid(){
     return matchCat && matchQ;
   });
 
-  const liveCount = list.filter(t=>t.status==="live").length;
-  document.getElementById("gridCount").textContent = liveCount + (liveCount===1?" tool":" tools");
+  const toolCount = list.filter(t=>t.status!=="soon").length;
+  document.getElementById("gridCount").textContent = toolCount + (toolCount===1?" tool":" tools");
 
   if(!list.length){
     const e = el("div","empty");
@@ -364,8 +373,13 @@ function renderGrid(){
   list.forEach(t=>{
     const card = el("div","card"+(t===featured?" big":"")+(t.status==="soon"?" soon":""));
     card.style.background = t.color;
-    const badge = el("div", t.status==="live" ? "badge-live" : "badge-soon");
-    badge.textContent = t.status==="live" ? "● Live" : "Coming Soon";
+    const BADGE = {
+      live:    ["badge-live","● Live"],
+      offline: ["badge-offline","● Back soon"],
+      soon:    ["badge-soon","Coming Soon"],
+    };
+    const [bcls,btxt] = BADGE[t.status] || BADGE.live;
+    const badge = el("div", bcls); badge.textContent = btxt;
     card.appendChild(badge);
     const visual = el("div","emoji"); visual.textContent = t.emoji;
     const label = el("div","label"); label.textContent = t.name;
