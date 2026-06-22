@@ -7,6 +7,7 @@ import { createServer } from 'http';
 import { readFileSync, existsSync } from 'fs';
 import { join, extname } from 'path';
 import { fileURLToPath } from 'url';
+import { STORIES as BAKED } from '../stories/stories-data.js';
 
 const __dirname = join(fileURLToPath(import.meta.url), '..');
 const projectDir = join(__dirname, '..');
@@ -64,23 +65,26 @@ async function run(){
     const logo = (await page.textContent('.logo'))?.trim();
     logo && logo.includes('Story Hub') ? pass(`logo: '${logo}'`) : fail(`logo not 'Story Hub' (got '${logo}')`);
 
-    // total = baked-in stories (stories-data.js) + the 2 seeded localStorage ones
-    const TOTAL = SEED.length + 2; // 2 baked stories currently shipped
+    // Counts derived from the baked data + seeded localStorage (robust to additions)
+    const TOTAL = BAKED.length + SEED.length;
+    const LATEST_EXPECT = Math.min(10, TOTAL);          // Latest row is capped at 10
+    const CATS = new Set([...BAKED, ...SEED].map(s => s.category || 'General'));
 
     const cards = await page.$$('#grid .card');
-    cards.length === TOTAL ? pass(`${cards.length} story card(s) rendered`) : fail(`expected ${TOTAL} cards, got ${cards.length}`);
+    cards.length === TOTAL ? pass(`${cards.length} story cards (${BAKED.length} baked + ${SEED.length} seeded)`) : fail(`expected ${TOTAL} cards, got ${cards.length}`);
 
     const labels = await page.$$eval('#grid .card .label', ns => ns.map(n => n.textContent.trim()));
-    ['The Lesson For The Witch','Gloomy Crown'].every(t=>labels.includes(t)) ? pass('both baked stories are on the hub') : fail(`baked story missing; got ${JSON.stringify(labels)}`);
+    const sampleBaked = ['The Lesson For The Witch','Gloomy Crown','Comet Mail','The Cloud Collector'];
+    sampleBaked.every(t=>labels.includes(t)) ? pass('baked stories show on the hub') : fail(`baked story missing; got ${JSON.stringify(labels)}`);
 
     const latest = await page.$$('#popRow .pop-item');
-    latest.length === TOTAL ? pass(`${latest.length} latest items`) : fail(`expected ${TOTAL} latest items, got ${latest.length}`);
+    latest.length === LATEST_EXPECT ? pass(`${latest.length} latest items (capped at 10)`) : fail(`expected ${LATEST_EXPECT} latest items, got ${latest.length}`);
 
     const chips = await page.$$('#catStrip .chip');
-    chips.length >= 3 ? pass(`${chips.length} genre chips (All + genres)`) : fail(`expected genre chips, got ${chips.length}`);
+    chips.length === CATS.size + 1 ? pass(`${chips.length} genre chips (All + ${CATS.size} genres)`) : fail(`expected ${CATS.size+1} chips, got ${chips.length}`);
 
     const genreTiles = await page.$$('#catGrid .cat-tile');
-    genreTiles.length === 2 ? pass(`${genreTiles.length} browse-genre tiles`) : fail(`expected 2 genre tiles, got ${genreTiles.length}`);
+    genreTiles.length === CATS.size ? pass(`${genreTiles.length} browse-genre tiles`) : fail(`expected ${CATS.size} genre tiles, got ${genreTiles.length}`);
 
     // ---- 2. Live search filters ----
     console.log('\n[2] Search');
