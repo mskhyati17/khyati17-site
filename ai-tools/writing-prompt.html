@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Writing Prompt Generator — Khyati</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <style>
+    :root{ --pp:#6a1b9a; --pp2:#9c4dcc; --acc:#e9d8ff; --ink:#2b0b3a; }
+    .wp-main{ max-width:820px; margin:0 auto; padding:18px 16px 48px; }
+    .wp-head{ text-align:center; margin:8px 0 22px; }
+    .wp-head h2{ font-size:clamp(1.5rem,4vw,2.2rem); color:var(--pp); margin:0; }
+    .wp-head p{ color:#6b5b7e; margin:8px 0 0; }
+
+    .wp-panel{
+      background:#fff; border:1px solid var(--acc); border-radius:16px;
+      box-shadow:0 8px 28px rgba(117,80,168,.10); padding:20px; margin-bottom:20px;
+    }
+    .wp-panel > label{ display:block; font-weight:600; color:var(--ink); margin:0 0 10px; font-size:.92rem; }
+    .wp-tags{ display:flex; flex-wrap:wrap; gap:10px; }
+    .wp-tag{
+      cursor:pointer; user-select:none; border:2px solid #ead9fb; background:#faf5ff;
+      color:#5a3d77; border-radius:999px; padding:8px 14px; font-size:.9rem; font-weight:500; transition:all .15s;
+    }
+    .wp-tag:hover{ border-color:var(--pp2); }
+    .wp-tag.selected{ background:linear-gradient(90deg,var(--pp),var(--pp2)); color:#fff; border-color:transparent; }
+
+    .wp-generate{
+      margin-top:18px; width:100%; cursor:pointer; border:none; border-radius:12px;
+      background:linear-gradient(90deg,var(--pp),var(--pp2)); color:#fff;
+      font-weight:700; font-size:1.05rem; padding:14px; transition:opacity .15s, transform .1s;
+    }
+    .wp-generate:hover{ opacity:.93; } .wp-generate:active{ transform:scale(.99); }
+
+    .wp-prompt{
+      background:linear-gradient(135deg,#faf5ff,#f2e9fd); border:1px solid #ead9fb;
+      border-radius:14px; padding:26px 22px; font-size:1.25rem; line-height:1.6; color:var(--ink);
+      min-height:120px; display:flex; align-items:center; justify-content:center; text-align:center;
+    }
+    .wp-prompt .genre-pill{ display:inline-block; background:var(--pp); color:#fff; font-size:.7rem; font-weight:700;
+      letter-spacing:.04em; text-transform:uppercase; padding:3px 10px; border-radius:999px; margin-bottom:12px; }
+    .wp-placeholder{ color:#8a76a3; font-size:1.05rem; }
+    .wp-placeholder .big{ font-size:2.6rem; display:block; margin-bottom:6px; }
+
+    .wp-toolbar{ display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:16px; }
+    .wp-toolbar button, .wp-toolbar a{
+      cursor:pointer; border:1px solid var(--pp2); background:#fff; color:var(--pp);
+      border-radius:10px; padding:9px 16px; font-weight:600; font-size:.9rem; text-decoration:none;
+    }
+    .wp-toolbar button:hover, .wp-toolbar a:hover{ background:#faf5ff; }
+    .wp-toolbar .primary{ background:linear-gradient(90deg,var(--pp),var(--pp2)); color:#fff; border-color:transparent; }
+
+    .wp-toast{
+      position:fixed; left:50%; bottom:28px; transform:translateX(-50%) translateY(20px);
+      background:var(--pp); color:#fff; padding:10px 18px; border-radius:999px; font-size:.9rem;
+      box-shadow:0 8px 24px rgba(0,0,0,.2); opacity:0; pointer-events:none; transition:all .25s; z-index:100;
+    }
+    .wp-toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  </style>
+</head>
+<body>
+  <div id="site-header-root"></div>
+
+  <main class="wp-main">
+    <div class="wp-head">
+      <h2>✍️ Writing Prompt Generator</h2>
+      <p>Stuck for an idea? Spin up a fresh story prompt — then write it in the Story Creator.</p>
+    </div>
+
+    <div class="wp-panel">
+      <label>Genre</label>
+      <div class="wp-tags" id="wpTags">
+        <div class="wp-tag selected" data-g="any">🎲 Surprise me</div>
+        <div class="wp-tag" data-g="fantasy">🧙 Fantasy</div>
+        <div class="wp-tag" data-g="scifi">🚀 Sci-Fi</div>
+        <div class="wp-tag" data-g="mystery">🔍 Mystery</div>
+        <div class="wp-tag" data-g="romance">💖 Romance</div>
+        <div class="wp-tag" data-g="horror">👻 Horror</div>
+        <div class="wp-tag" data-g="adventure">🗺️ Adventure</div>
+      </div>
+      <button class="wp-generate" id="wpGenerate">✨ Generate Prompt</button>
+    </div>
+
+    <div class="wp-panel">
+      <div class="wp-prompt" id="wpPrompt">
+        <div class="wp-placeholder" id="wpPlaceholder">
+          <span class="big">💡</span>
+          Pick a genre and click <strong>Generate Prompt</strong>.
+        </div>
+      </div>
+      <div class="wp-toolbar" id="wpToolbar" style="display:none">
+        <button class="primary" id="wpAnother">🔄 Another</button>
+        <button id="wpCopy">📋 Copy</button>
+        <a id="wpWrite" href="/ai-tools/story-creator.html">✍️ Write this in Story Creator</a>
+      </div>
+    </div>
+  </main>
+
+  <div class="wp-toast" id="wpToast">Copied!</div>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Khyati — All rights reserved</p>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+  (function(){
+    const pick = a => a[Math.floor(Math.random()*a.length)];
+
+    const DATA = {
+      fantasy: {
+        who:["a reluctant young mage","the last dragon rider","a cursed blacksmith's daughter","an exiled prince","a witch who lost her magic","a goblin who dreams of knighthood","a thief with a magic compass","twin oracles"],
+        what:["must break an ancient curse","discovers they can speak to the dead","is hunted for a power they don't understand","finds a door that shouldn't exist","accidentally frees a sealed god","must win a duel of riddles","inherits a haunted kingdom"],
+        where:["a floating city above the clouds","a forest where time runs backward","a kingdom locked in eternal winter","an academy for forbidden spells","the ruins of a fallen empire"],
+        twist:["But the only one who can help is the very villain they fear.","Nothing about the prophecy is what it seems.","Their greatest enemy shares their face.","Magic comes at a price they're not ready to pay."]
+      },
+      scifi: {
+        who:["a lonely station mechanic","the only human aboard an AI-run ship","a memory smuggler","a clone questioning their orders","a teenage hacker","a deep-space botanist"],
+        what:["intercepts a signal from a dead colony","wakes up 200 years too early","discovers the mission was a lie","must outrun a sentient virus","meets an identical version of themselves","is chosen to pilot an untested jump drive"],
+        where:["a derelict generation ship","a city built inside a comet","a terraformed moon on the brink of collapse","a research lab at the edge of a black hole"],
+        twist:["But the rescue beacon is coming from inside the ship.","The AI may be the only one telling the truth.","Earth no longer answers.","They were never supposed to remember."]
+      },
+      mystery: {
+        who:["a washed-up detective","a nosy librarian","a true-crime podcast host","a small-town pharmacist","a retired con artist","a forensic intern"],
+        what:["is handed a case everyone wants buried","receives letters from a victim who's still alive","notices the same stranger in century-old photos","finds a confession in their own handwriting","must solve a locked-room murder before midnight"],
+        where:["a fog-bound coastal town","a luxury train stuck in a storm","an old hotel with one permanent guest","a quiet suburb hiding a secret"],
+        twist:["Everyone is lying — including the client.","The only witness is the prime suspect.","The crime hasn't happened yet.","They're investigating their own past."]
+      },
+      romance: {
+        who:["a burned-out chef","a cynical wedding planner","a quiet bookshop owner","a touring musician","a rival florist","a long-distance pen pal"],
+        what:["is forced to share a tiny apartment with their rival","keeps running into the same stranger","agrees to a fake relationship","swaps lives for one summer","must plan the wedding of the one who got away"],
+        where:["a sleepy seaside village","a snowed-in mountain cabin","a bustling night market","a vineyard at harvest time"],
+        twist:["Neither of them is supposed to be falling for the other.","The letters were never meant to be sent.","One of them is keeping a big secret.","They've actually met before."]
+      },
+      horror: {
+        who:["a night-shift security guard","a family moving into a 'perfect' house","a group of friends on a last trip","a grief-stricken twin","a small documentary crew"],
+        what:["starts hearing their own voice on the radio","realizes the neighbors never sleep","finds a tape that shows tomorrow","can't escape the same hallway","wakes up one hour earlier each day"],
+        where:["an empty winter resort","a town that isn't on any map","a hospital that's supposed to be closed","a lighthouse with no keeper"],
+        twist:["The thing in the dark knows their name.","They were the monster all along.","No one else remembers the missing day.","The exit was never real."]
+      },
+      adventure: {
+        who:["a clumsy cartographer","a teenage stowaway","a retired explorer","a pair of bickering siblings","a treasure hunter with a bad map"],
+        what:["stumbles onto a centuries-old clue","must cross a desert before the rains come","races a rival to a lost city","is shipwrecked on an uncharted island","inherits half a map and a warning"],
+        where:["a jungle swallowing an ancient temple","a mountain range no one has returned from","a river of glowing caves","a market at the edge of the known world"],
+        twist:["The treasure was never gold.","Their guide has their own agenda.","X marks more than one spot.","Getting there was the easy part."]
+      }
+    };
+    const GENRES = Object.keys(DATA);
+    const LABEL = { fantasy:"Fantasy", scifi:"Sci-Fi", mystery:"Mystery", romance:"Romance", horror:"Horror", adventure:"Adventure" };
+
+    let genre = "any";
+    let lastText = "";
+    const tags = document.getElementById("wpTags");
+    tags.addEventListener("click", e=>{
+      const t = e.target.closest(".wp-tag"); if(!t) return;
+      [...tags.children].forEach(c=>c.classList.remove("selected"));
+      t.classList.add("selected"); genre = t.dataset.g;
+    });
+
+    const promptEl = document.getElementById("wpPrompt");
+    const toolbar = document.getElementById("wpToolbar");
+    const toast = document.getElementById("wpToast");
+    let toastTimer;
+    function showToast(m){ toast.textContent=m; toast.classList.add("show"); clearTimeout(toastTimer); toastTimer=setTimeout(()=>toast.classList.remove("show"),1400); }
+
+    function generate(){
+      const g = genre === "any" ? pick(GENRES) : genre;
+      const d = DATA[g];
+      lastText = `Write a story about ${pick(d.who)} who ${pick(d.what)} in ${pick(d.where)}. ${pick(d.twist)}`;
+      promptEl.innerHTML = `<div><span class="genre-pill">${LABEL[g]}</span><br/>${lastText}</div>`;
+      toolbar.style.display = "flex";
+      document.getElementById("wpWrite").href = "/ai-tools/story-creator.html";
+    }
+
+    document.getElementById("wpGenerate").addEventListener("click", generate);
+    document.getElementById("wpAnother").addEventListener("click", generate);
+    document.getElementById("wpCopy").addEventListener("click", ()=>{
+      try{
+        if(navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(lastText);
+        else { const ta=document.createElement("textarea"); ta.value=lastText; document.body.appendChild(ta); ta.select(); document.execCommand("copy"); ta.remove(); }
+        showToast("Copied!");
+      }catch(e){ showToast("Press Ctrl+C to copy"); }
+    });
+  })();
+  </script>
+  <script type="module" src="../assets/js/auth.js"></script>
+  <script type="module">import('../assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
+</body>
+</html>
