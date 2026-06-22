@@ -57,7 +57,7 @@
     });
   </script>
   <script type="module">
-    import { fetchComments, renderCommentsInto, renderCommentForm } from '../assets/js/comments.js';
+    import { fetchComments, renderCommentsInto, renderCommentForm } from '../assets/js/comments.js?v=2';
     document.addEventListener('DOMContentLoaded', async ()=>{
       if(window.AuthReady) try{ await window.AuthReady }catch(e){}
       const commentsList = document.getElementById('comments-list');

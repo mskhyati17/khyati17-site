@@ -59,7 +59,7 @@
   <script type="module" src="../assets/js/auth.js"></script>
   <script type="module">import('../assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
   <script type="module">
-    import { fetchComments, renderCommentsInto, renderCommentForm } from '../assets/js/comments.js';
+    import { fetchComments, renderCommentsInto, renderCommentForm } from '../assets/js/comments.js?v=2';
     import adminModule from '../assets/js/admin.js';
     // bump the ?v= version whenever stories-data.js changes (see index.html)
     import { STORIES as BAKED } from './stories-data.js?v=20260622b';
