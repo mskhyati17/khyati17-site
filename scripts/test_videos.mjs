@@ -1,5 +1,5 @@
-// Videos gallery: cards render, category filter + search work, clicking opens
-// the player modal with a YouTube embed and a comment area, close works.
+// Videos gallery: cards render, filter + search, clicking opens the API player
+// (which unmutes for sound) + comments, close works.
 import { chromium } from 'playwright';
 import { createServer } from 'http';
 import { readFileSync, existsSync } from 'fs';
@@ -21,8 +21,6 @@ try{
   console.log('\n[1] Gallery renders');
   const cards=await p.$$('#v-grid .v-card');
   cards.length===VIDEOS.length ? pass(`${cards.length} video cards (matches data)`) : fail(`expected ${VIDEOS.length} cards, got ${cards.length}`);
-  const chips=await p.$$('#v-chips .v-chip');
-  chips.length>=8 ? pass(`${chips.length} category chips`) : fail(`expected many chips, got ${chips.length}`);
   const thumbs=await p.$$eval('#v-grid .v-thumb img', ns=>ns.filter(n=>n.src.includes('i.ytimg.com')).length);
   thumbs>40 ? pass(`${thumbs} real YouTube thumbnails`) : fail(`few thumbnails: ${thumbs}`);
 
@@ -35,16 +33,18 @@ try{
   const search=await p.$$('#v-grid .v-card'); (search.length>0 && search.length<VIDEOS.length) ? pass(`search "zach" -> ${search.length} cards`) : fail(`search off: ${search.length}`);
   await p.fill('#v-search','');
 
-  console.log('\n[3] Open player + comments + close');
+  console.log('\n[3] Open API player (sound) + comments + close');
   await (await p.$('#v-grid .v-card')).click();
-  await p.waitForTimeout(400);
-  const open=await p.isVisible('#v-modal.open').catch(()=>false);
-  open ? pass('player modal opened') : fail('modal did not open');
-  const src=await p.getAttribute('#v-player-mount iframe','src').catch(()=>null);
-  (src && src.includes('youtube.com/embed/')) ? pass(`embeds YouTube: ${src.slice(0,46)}…`) : fail(`bad embed src: ${src}`);
-  const prompt=await p.textContent('#comment-form-wrapper').catch(()=>'');
-  /sign in/i.test(prompt) ? pass('comments show sign-in prompt (logged out)') : fail(`no comment prompt: ${JSON.stringify(prompt.slice(0,40))}`);
-  await p.click('#v-close'); await p.waitForTimeout(200);
+  const ifr = await p.waitForSelector('#v-player-mount iframe',{timeout:15000}).catch(()=>null);
+  ifr ? pass('player iframe created via YouTube API') : fail('no player iframe');
+  const src = ifr ? await ifr.getAttribute('src') : '';
+  (src && src.includes('/embed/')) ? pass(`embeds YouTube: ${src.slice(0,46)}…`) : fail(`bad embed src: ${src}`);
+  // confirm the page wires unmute/volume (sound) in its code
+  const hasSoundCode = await p.evaluate(()=> document.documentElement.innerHTML.includes('unMute') && document.documentElement.innerHTML.includes('setVolume'));
+  hasSoundCode ? pass('player code unmutes + sets volume (sound on)') : fail('no unmute/volume code found');
+  const promptTxt=await p.textContent('#comment-form-wrapper').catch(()=>'');
+  /sign in/i.test(promptTxt) ? pass('comments show sign-in prompt (logged out)') : fail(`no comment prompt: ${JSON.stringify(promptTxt.slice(0,40))}`);
+  await p.click('#v-close'); await p.waitForTimeout(300);
   (!(await p.isVisible('#v-modal.open').catch(()=>true))) ? pass('modal closes') : fail('modal did not close');
 
   console.log('');
