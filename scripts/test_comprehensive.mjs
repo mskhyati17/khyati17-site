@@ -60,7 +60,7 @@ const TABS = [
   { path: '/others/others.html', name: 'Others', title: 'Others' },
   { path: '/admin/login.html', name: 'Login', title: 'Sign in' },
   { path: '/admin/signup.html', name: 'Sign Up', title: 'Sign up' },
-  { path: '/admin/profile.html', name: 'Profile', title: 'Profile' },
+  { path: '/admin/profile.html', name: 'Profile', title: 'Sign in' }, // redirects to login when logged out (intended)
 ];
 
 async function runTests() {
@@ -156,8 +156,9 @@ async function runTests() {
     await page.goto(`http://localhost:${PORT}/fun-games/fun-games.html`, { waitUntil: 'networkidle', timeout: 15000 });
     await page.waitForTimeout(1000);
 
-    // Check games list loads - the container is #games-list-container
-    const gamesContainer = await page.$('#games-list-container, .games-list');
+    // fun-games.html redirects to the GameZone hub, whose grid container is #grid
+    await page.waitForTimeout(500);
+    const gamesContainer = await page.$('#grid, #games-list-container, .games-list');
     record('Games container exists', !!gamesContainer, 'No games container found');
 
     // Check games.json is accessible
