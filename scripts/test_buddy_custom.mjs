@@ -22,11 +22,8 @@ try{
 
   console.log('\n[2] Customize: name, animal (dog), accessory (bow), gender (she)');
   await p.fill('#cute-mascot .cm-name','Sparky');
-  // pick animal dog 🐶
   for(const btn of await p.$$('#cute-mascot .cm-animals button')){ if((await btn.getAttribute('title'))==='dog'){ await btn.click(); break; } }
-  // pick accessory bow 🎀
   for(const btn of await p.$$('#cute-mascot .cm-accs button')){ if((await btn.textContent())==='🎀'){ await btn.click(); break; } }
-  // gender she
   for(const btn of await p.$$('#cute-mascot .cm-gen button')){ if((await btn.textContent()).includes('She')){ await btn.click(); break; } }
   await p.click('#cute-mascot .cm-done'); await p.waitForTimeout(150);
   const animal=(await p.textContent('#cute-mascot .cm-animal')).trim();
@@ -36,10 +33,9 @@ try{
   (acc==='🎀') ? pass('accessory -> 🎀') : fail('acc='+acc);
   (title.includes('Sparky') && title.includes('dog')) ? pass('header: "'+title+'"') : fail('title='+title);
 
-  console.log('\n[3] Gender reflected in chat');
-  await p.fill('#cute-mascot .cm-input input','are you a boy or girl?'); await p.click('.cm-send'); await p.waitForTimeout(500);
-  const last=(await p.$$eval('#cute-mascot .cm-msg.bot', ns=>ns.map(n=>n.textContent))).pop();
-  /girl/i.test(last) ? pass('gender reply: "'+last+'"') : fail('gender reply: '+last);
+  console.log('\n[3] Gender saved & persisted (used in AI prompt)');
+  const g=await p.evaluate(()=>{ try{ return JSON.parse(localStorage.getItem('miloConfig')).gender; }catch(e){ return null; } });
+  (g==='she') ? pass('gender saved as "she"') : fail('gender not saved: '+g);
 
   console.log('\n[4] Persists across reload');
   await p.reload({waitUntil:'networkidle'}); await p.waitForTimeout(1200);

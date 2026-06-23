@@ -59,6 +59,37 @@
   var userName = '';
   try { userName = sessionStorage.getItem('miloUserName') || ''; } catch (e) {}
 
+  // ---- ChatGPT (bring-your-own-key) ----
+  function getKey(){ try { return (localStorage.getItem('openai_api_key') || '').trim(); } catch (e) { return ''; } }
+  var history = [];
+  function persuade(){
+    return pick([
+      'Add your API key first 🔑 and then I can really chat and have fun with you! 💜',
+      'Pop in your ChatGPT API key 🔑 so we can explore together! ✨',
+      'I’d love to chat for real! Just add your API key 🔑 first 🥰',
+      'Psst… give me your API key 🔑 and I’ll come to life and play with you! 🦊',
+      'Add your key in ⚙️ (or when you log in) 🔑 — then I can chat about anything! 🌟'
+    ]);
+  }
+  function callOpenAI(text){
+    var key = getKey();
+    history.push({ role:'user', content:text });
+    var sys = 'You are ' + cfg.name + ', a cute, cheerful, kid-friendly ' + cfg.species +
+      ' mascot (pronouns: ' + cfg.gender + ') for Khyati17 — a fun website with Games, Stories, AI Tools and Videos. ' +
+      'Reply briefly (1–3 short sentences), playful and warm, with a few emojis. Keep it wholesome and encouraging, ' +
+      'and suggest exploring a section of the site when it fits.';
+    return fetch('https://api.openai.com/v1/chat/completions', {
+      method:'POST',
+      headers:{ 'Content-Type':'application/json', 'Authorization':'Bearer ' + key },
+      body: JSON.stringify({ model:'gpt-4o-mini', messages:[{ role:'system', content:sys }].concat(history.slice(-10)), max_tokens:150, temperature:0.8 })
+    }).then(function(r){ return r.json(); }).then(function(d){
+      if (d.error) throw new Error(d.error.message || 'API error');
+      var msg = ((d.choices && d.choices[0] && d.choices[0].message && d.choices[0].message.content) || '').trim() || ('🦊 ' + cfg.name + ' is here!');
+      history.push({ role:'assistant', content:msg });
+      return msg;
+    });
+  }
+
   function reply(raw){
     var t = (raw||'').toLowerCase().trim(), m;
     if (/\b(boy or girl|boy or a girl|gender|are you a (boy|girl)|he or she)\b/.test(t)) { var g=genderInfo(); return 'I’m a ' + g.word + '! ' + g.heart; }
@@ -127,6 +158,9 @@
           '<label>Animal</label><div class="cm-grid cm-animals"></div>' +
           '<label>Accessory</label><div class="cm-grid cm-accs"></div>' +
           '<label>Gender</label><div class="cm-gen"></div>' +
+          '<label>ChatGPT API key (optional)</label>' +
+          '<div style="display:flex;gap:5px"><input class="cm-key" type="password" placeholder="sk-…" autocomplete="off" style="flex:1;min-width:0;border:1px solid #d9c7ee;border-radius:8px;padding:7px 10px;font:500 12px Inter;outline:none" /><button class="cm-key-save" style="background:linear-gradient(90deg,#6a1b9a,#9c4dcc);color:#fff;border:none;border-radius:8px;padding:0 12px;font-weight:700;cursor:pointer">Save</button></div>' +
+          '<div class="cm-key-note" style="font:500 10.5px Inter;color:#8a76a3;margin-top:4px">Stored only in your browser. Lets me chat with AI 🤖</div>' +
           '<button class="cm-done">Done ✓</button>' +
         '</div>' +
         '<div class="cm-input"><input type="text" maxlength="120" aria-label="Message buddy"/><button class="cm-send">Send</button></div>' +
@@ -188,6 +222,17 @@
     nameInput.value = cfg.name;
     nameInput.addEventListener('input', function(){ cfg.name = (nameInput.value.trim() || 'Buddy'); saveCfg(); applyCfg(); });
     nameInput.addEventListener('keydown', function(e){ e.stopPropagation(); });
+    // API key field
+    var keyInput = settings.querySelector('.cm-key');
+    try { keyInput.value = localStorage.getItem('openai_api_key') || ''; } catch (e) {}
+    keyInput.addEventListener('keydown', function(e){ e.stopPropagation(); });
+    settings.querySelector('.cm-key-save').addEventListener('click', function(){
+      var k = (keyInput.value || '').trim();
+      try { if (k) localStorage.setItem('openai_api_key', k); else localStorage.removeItem('openai_api_key'); } catch (e) {}
+      var note = settings.querySelector('.cm-key-note'); var prev = note.textContent;
+      note.textContent = k ? 'Saved ✓ — now ask me anything! 🤖' : 'Cleared — add a key to chat with AI.';
+      setTimeout(function(){ note.textContent = prev; }, 2600);
+    });
 
     applyCfg();
 
@@ -198,11 +243,18 @@
     function showSettings(on){ settings.style.display = on?'block':'none'; msgs.style.display = on?'none':'flex'; inputWrap.style.display = on?'none':'flex'; }
     function open(){
       panel.classList.add('open'); tip.classList.remove('show'); showSettings(false);
-      if (!greeted){ greeted = true; addMsg((userName ? ('Hi ' + userName + '! ') : 'Hi! ') + 'I’m ' + cfg.name + ' the ' + cfg.species + ' ' + cfg.animal + (cfg.acc||'') + ' Tap ⚙️ to customize me, or ask me anything!', 'bot'); }
+      if (!greeted){ greeted = true; addMsg((userName ? ('Hi ' + userName + '! ') : 'Hi! ') + 'I’m ' + cfg.name + ' the ' + cfg.species + ' ' + cfg.animal + (cfg.acc||'') + (getKey() ? ' Ask me anything! ✨ (Tap ⚙️ to customize me.)' : ' Add your API key 🔑 in ⚙️ (or at login) so we can really chat! 💜'), 'bot'); }
       setTimeout(function(){ try{ input.focus(); }catch(e){} }, 50);
     }
     function close(){ panel.classList.remove('open'); }
-    function send(){ var v = input.value.trim(); if (!v) return; addMsg(v,'me'); input.value=''; setTimeout(function(){ addMsg(reply(v),'bot'); }, 350); }
+    function addTyping(){ var d=document.createElement('div'); d.className='cm-msg bot'; d.textContent='💭 …'; msgs.appendChild(d); msgs.scrollTop=msgs.scrollHeight; return d; }
+    function send(){
+      var v = input.value.trim(); if (!v) return; addMsg(v,'me'); input.value='';
+      if (!getKey()){ setTimeout(function(){ addMsg(persuade(),'bot'); }, 300); return; }
+      var typ = addTyping();
+      callOpenAI(v).then(function(resp){ typ.remove(); addMsg(resp,'bot'); })
+        .catch(function(e){ typ.remove(); addMsg('Hmm, I couldn’t reach ChatGPT 😿 — check your API key in ⚙️. (' + (e.message||'error') + ')', 'bot'); });
+    }
 
     wrap.querySelector('.cm-buddy').addEventListener('click', function(){ panel.classList.contains('open') ? close() : open(); });
     wrap.querySelector('.cm-x').addEventListener('click', close);

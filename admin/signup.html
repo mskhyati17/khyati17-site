@@ -24,6 +24,8 @@
       <label>Email<br/><input id="email" type="email" required/></label><br/>
       <label>Password<br/><input id="password" type="password" required/></label><br/>
       <label>Confirm password<br/><input id="confirm" type="password" required/></label><br/>
+      <label>ChatGPT API key <span style="color:#888;font-weight:400">(optional)</span><br/><input id="apikey" type="password" placeholder="sk-… — to chat with the buddy" autocomplete="off"/></label><br/>
+      <p style="font-size:.8em;color:#666;max-width:420px">Optional: add your OpenAI key to chat with Milo using AI. It’s saved only in your browser and sent straight to OpenAI — never to this site.</p>
       <button type="submit" class="btn">Sign up</button>
       <p class="video-note">Already have an account? <a href="login.html">Sign in</a></p>
       <p id="msg" style="color:#7a2a9b"></p>
@@ -42,6 +44,7 @@
     const form = document.getElementById('signup-form');
     form.addEventListener('submit', async e =>{
       e.preventDefault();
+      try{ const k = document.getElementById('apikey').value.trim(); if(k) localStorage.setItem('openai_api_key', k); }catch(err){}
   const first_name = document.getElementById('first_name').value.trim();
   const last_name = document.getElementById('last_name').value.trim();
   const username = document.getElementById('username').value.trim();
@@ -78,6 +81,6 @@
       } else msg.textContent = res.msg || 'Signup failed';
     });
   </script>
-  <script src="/assets/js/cute.js?v=3"></script>
+  <script src="/assets/js/cute.js?v=4"></script>
 </body>
 </html>
