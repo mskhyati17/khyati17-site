@@ -14,8 +14,6 @@
     <form id="login-form" style="max-width:420px;margin:16px auto;text-align:left;">
       <label>Email<br/><input id="email" type="email" autocapitalize="none" autocomplete="username" required/></label><br/>
       <label>Password<br/><input id="password" type="password" required/></label><br/>
-      <label>ChatGPT API key <span style="color:#888;font-weight:400">(optional)</span><br/><input id="apikey" type="password" placeholder="sk-… — to chat with the buddy" autocomplete="off"/></label><br/>
-      <p style="font-size:.8em;color:#666;max-width:420px">Optional: add your OpenAI key to chat with Milo using AI. It’s saved only in your browser and sent straight to OpenAI — never to this site.</p>
       <button type="submit" class="btn">Sign in</button>
       <p class="video-note">New here? <a href="signup.html">Create an account</a></p>
       <p id="msg" style="color:#7a2a9b"></p>
@@ -35,8 +33,6 @@
     const form = document.getElementById('login-form');
     form.addEventListener('submit', async e =>{
       e.preventDefault();
-      // optional: save the visitor's OpenAI key (browser-only) so the buddy can chat
-      try{ const k = document.getElementById('apikey').value.trim(); if(k) localStorage.setItem('openai_api_key', k); }catch(err){}
       const email = document.getElementById('email').value.trim();
       const p = document.getElementById('password').value;
       const res = await Auth.signin(email,p);
