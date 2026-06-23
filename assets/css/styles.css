@@ -17,6 +17,43 @@ body{
   min-height:100vh;
   align-items:center;
 }
+
+/* ---------- Decorative animated background (behind all content) ---------- */
+/* position:fixed keeps these out of the flex flow; pointer-events:none so
+   they never block clicks; z-index:-1 sits above the page bg, below content. */
+body::before, body::after{
+  content:""; position:fixed; z-index:-1; pointer-events:none;
+  border-radius:50%; filter:blur(60px); opacity:.55;
+}
+body::before{
+  width:46vw; max-width:520px; aspect-ratio:1; left:-9vw; top:-7vw;
+  background:radial-gradient(circle at 30% 30%, #e9d8ff, rgba(233,216,255,0) 70%);
+  animation: bgBlobA 22s ease-in-out infinite;
+}
+body::after{
+  width:48vw; max-width:560px; aspect-ratio:1; right:-11vw; bottom:-9vw;
+  background:radial-gradient(circle at 70% 70%, #ffd6e0, rgba(255,214,224,0) 70%);
+  animation: bgBlobB 28s ease-in-out infinite;
+}
+@keyframes bgBlobA{ 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(7vw,5vw) scale(1.12)} }
+@keyframes bgBlobB{ 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-6vw,-5vw) scale(1.1)} }
+/* twinkling sparkles */
+html::before{
+  content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+  background-image:
+    radial-gradient(2px 2px at 18% 28%, rgba(154,77,204,.55), transparent),
+    radial-gradient(2px 2px at 78% 18%, rgba(154,77,204,.45), transparent),
+    radial-gradient(2px 2px at 62% 58%, rgba(106,27,154,.45), transparent),
+    radial-gradient(2px 2px at 33% 72%, rgba(154,77,204,.45), transparent),
+    radial-gradient(2px 2px at 88% 78%, rgba(106,27,154,.4), transparent),
+    radial-gradient(2px 2px at 12% 88%, rgba(154,77,204,.45), transparent),
+    radial-gradient(2px 2px at 50% 38%, rgba(156,77,204,.35), transparent);
+  animation: bgTwinkle 7s ease-in-out infinite;
+}
+@keyframes bgTwinkle{ 0%,100%{opacity:.45} 50%{opacity:1} }
+@media (prefers-reduced-motion: reduce){
+  body::before, body::after, html::before{ animation:none }
+}
 .site-header{
   width:100%;
   background: linear-gradient(90deg,var(--purple-700),var(--purple-500));

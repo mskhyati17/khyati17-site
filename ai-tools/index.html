@@ -249,6 +249,13 @@
     .card .emoji{font-size:2.1rem}
     .card .label{font-size:.74rem}
   }
+  /* ---------- Decorative animated background (behind content) ---------- */
+  body::before, body::after{ content:""; position:fixed; z-index:-1; pointer-events:none; border-radius:50%; filter:blur(60px); opacity:.5; }
+  body::before{ width:44vw; max-width:500px; aspect-ratio:1; left:-9vw; top:80px; background:radial-gradient(circle,#e9d8ff,rgba(233,216,255,0) 70%); animation:bgBlobA 22s ease-in-out infinite; }
+  body::after{ width:46vw; max-width:540px; aspect-ratio:1; right:-11vw; bottom:-9vw; background:radial-gradient(circle,#ffd6e0,rgba(255,214,224,0) 70%); animation:bgBlobB 28s ease-in-out infinite; }
+  @keyframes bgBlobA{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(7vw,5vw) scale(1.12)}}
+  @keyframes bgBlobB{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-6vw,-5vw) scale(1.1)}}
+  @media (prefers-reduced-motion: reduce){ body::before, body::after{ animation:none } }
 </style>
 </head>
 <body>

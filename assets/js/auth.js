@@ -301,13 +301,7 @@ Auth.ready = AuthReady;
 
 document.addEventListener('DOMContentLoaded', async ()=>{
   await Auth.renderAuthArea();
-  // render debug banner
-  const banner = document.createElement('div');
-  banner.id = 'auth-debug-banner';
-  banner.style.cssText = 'position:fixed;left:10px;bottom:10px;padding:8px 12px;background:rgba(0,0,0,0.6);color:white;border-radius:8px;font-size:13px;z-index:9999';
-  banner.textContent = 'Auth: ' + (window.Auth.isSupabase ? 'Supabase' : 'Demo') + (supabaseInitError ? (' — ' + supabaseInitError) : '');
-  document.body.appendChild(banner);
-  Auth.currentUser().then(u=>{ if(u) banner.textContent += ' | user: ' + (u.metadata?.first_name || u.metadata?.name || u.metadata?.username || u.email); });
+  // (debug auth banner removed — was showing on every page)
   // If a pending profile was saved (from sign-up flow requiring confirmation),
   // and the user is now authenticated, create the profile and clear the pending key.
   (async ()=>{
