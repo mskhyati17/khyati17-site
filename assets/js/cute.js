@@ -8,11 +8,15 @@
   window.__cuteLoaded = true;
   var reduce = false;
   try { reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+  // Pages can opt out of the click-burst (e.g. games) with ?nb=1 on the script src,
+  // while still getting Milo the chat buddy.
+  var noBurst = false;
+  try { var _cs = document.currentScript; if (_cs && /[?&]nb=1/.test(_cs.src || '')) noBurst = true; } catch (e) {}
   var pick = function(a){ return a[Math.floor(Math.random()*a.length)]; };
   var cap = function(s){ return s.charAt(0).toUpperCase()+s.slice(1); };
 
   // ---------- 1. Click sparkle / heart burst ----------
-  if (!reduce) {
+  if (!reduce && !noBurst) {
     var BURST = ['💜','✨','⭐','🌸','💫','🥰','🎉','💖'];
     document.addEventListener('click', function (e) {
       for (var i = 0; i < 5; i++) {
@@ -131,7 +135,7 @@
     wrap.querySelector('.cm-buddy').addEventListener('click', function(){ panel.classList.contains('open') ? close() : open(); });
     wrap.querySelector('.cm-x').addEventListener('click', close);
     wrap.querySelector('.cm-send').addEventListener('click', send);
-    input.addEventListener('keydown', function(e){ if (e.key === 'Enter') send(); });
+    input.addEventListener('keydown', function(e){ e.stopPropagation(); if (e.key === 'Enter') send(); });
     // keep the click-burst from firing inside the buddy/chat
     wrap.addEventListener('click', function(e){ e.stopPropagation(); });
 
