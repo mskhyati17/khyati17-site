@@ -59,26 +59,66 @@
   var userName = '';
   try { userName = sessionStorage.getItem('miloUserName') || ''; } catch (e) {}
 
+  // ---- learn-as-you-go: Milo builds up his own replies ----
+  function norm(s){ return (s||'').toLowerCase().replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim(); }
+  function loadLearned(){ try{ return JSON.parse(localStorage.getItem('miloLearned')||'{}') || {}; }catch(e){ return {}; } }
+  function saveLearned(o){ try{ localStorage.setItem('miloLearned', JSON.stringify(o)); }catch(e){} }
+  var learned = loadLearned();
+  var pendingLearn = null; // when set, the next message is taught as the reply
+
   function reply(raw){
-    var t = (raw||'').toLowerCase().trim(), m;
+    var t = norm(raw), raww = (raw||'').toLowerCase().trim(), m;
+
+    // If Milo just asked to be taught, remember this message as the reply.
+    if (pendingLearn){
+      var trig = pendingLearn; pendingLearn = null;
+      if (trig && raw.trim()){ learned[trig] = raw.trim(); saveLearned(learned); }
+      return pick(['Got it! I’ll remember that 🧠💜','Yay, I learned something new! Ask me that again 🥰','Ooh thanks! Now I know what to say 🦊✨','Cool — that’s saved in my brain! 🧠⭐']);
+    }
+    // Something this user taught me before
+    if (learned[t]) return learned[t];
+
+    // remember favorites
+    if ((m = raww.match(/my favou?rite (\w+) is ([a-z0-9 ]{1,24})/))){ learned['__fav_'+m[1]] = m[2].trim(); saveLearned(learned); return 'Ooh, your favorite ' + m[1] + ' is ' + m[2].trim() + '? Love that! 💜 I’ll remember!'; }
+    if ((m = raww.match(/what(?:'s| is)? my favou?rite (\w+)/))){ var fav = learned['__fav_'+m[1]]; return fav ? ('Your favorite ' + m[1] + ' is ' + fav + '! 🥰') : ('Hmm, you haven’t told me your favorite ' + m[1] + ' yet — tell me! 👀'); }
+    // name memory
+    if ((m = raww.match(/(?:my name is|call me|name'?s)\s+([a-z][a-z'’-]{0,18})/))){ userName = cap(m[1]); try{ sessionStorage.setItem('miloUserName', userName); }catch(e){} return pick(['Nice to meet you, '+userName+'! 🥰','Yay, hi '+userName+'! 💜','Ooh, '+userName+' — cool name! ✨']); }
+
+    // ---- intents (each with several replies for variety) ----
     if (/\b(boy or girl|boy or a girl|gender|are you a (boy|girl)|he or she)\b/.test(t)) { var g=genderInfo(); return 'I’m a ' + g.word + '! ' + g.heart; }
-    if (/\b(bye|goodbye|see ya|cya|gtg|good night)\b/.test(t)) return pick(['Bye-bye! Come back soon 👋','Aww, see you later! 💜','Take care, friend! '+cfg.animal+'✨']);
-    if ((m = t.match(/(?:my name is|i am|i'm|im|call me)\s+([a-z][a-z'’-]{0,18})/))) { userName = cap(m[1]); try{ sessionStorage.setItem('miloUserName', userName); }catch(e){} return 'Nice to meet you, ' + userName + '! 🥰 I’m ' + cfg.name + ' the ' + cfg.species + '.'; }
-    if (/\b(hi|hello|hey|yo|hiya|hola|sup)\b/.test(t)) return userName ? ('Hi again, ' + userName + '! 💜') : ('Hi there! 💜 I’m ' + cfg.name + '. What’s your name?');
-    if (/how are you|how r u|how you doing|how's it going/.test(t)) return pick(['Pawsome, thanks! 🐾 How about you?','Feeling great today! '+cfg.animal+'✨','So happy you’re here! 🥰']);
-    if (/\b(your name|who are you|who r u|what are you)\b/.test(t)) return 'I’m ' + cfg.name + ' the ' + cfg.species + ' ' + cfg.animal + (cfg.acc||'') + ' — your buddy here on Khyati17!';
-    if (/\b(change|customi|settings|dress|outfit)\b/.test(t)) return 'Tap the ⚙️ at the top to change my name, animal, gender and accessory! 🎨';
-    if (/\b(joke|funny|make me laugh|lol)\b/.test(t)) return pick(['Why did the '+cfg.species+' cross the road? To get to the GameZone! 🎮😂','What do you call a '+cfg.species+' with a crown? Royalty! 👑','Why was the computer cold? It left its Windows open! 💻😹']);
-    if (/\b(game|games|play|bored)\b/.test(t)) return 'Ooh, let’s play! 🎮 Tap “Games” at the top for GameZone!';
-    if (/\b(story|stories|read|book)\b/.test(t)) return 'I love stories! 📖 Check out the Story Hub ✨';
-    if (/\b(video|videos|watch)\b/.test(t)) return 'Wanna watch something? 🎬 The Videos page has 50 shorts!';
-    if (/\b(ai|tool|tools)\b/.test(t)) return 'The AI Zone has fun tools 🤖 — try the Name Generator 🏷️';
-    if (/\b(love|like)\s+(you|u|milo|'+cfg.name.toLowerCase()+')\b/.test(t)) return 'Aww, I love you too! 💜' + cfg.animal;
-    if (/\b(thank|thanks|thx|ty)\b/.test(t)) return pick(['You’re welcome! 🥰','Anytime, friend! 🐾']);
-    if (/\b(good|great|awesome|cool|nice|amazing|yay|happy)\b/.test(t)) return pick(['Yay! 🎉','Right?! 😸','You’re awesome too! ✨']);
-    if (/\b(sad|tired|bad|sick|upset|cry)\b/.test(t)) return pick(['Aww, sending you a big hug 🤗💜','Here’s a cookie 🍪 — feel better!','You’ve got this! 🌟']);
-    if (/\?$/.test(t)) return pick(['Hmm, great question! 🤔','I’m just a little '+cfg.species+', but I think you’re awesome! '+cfg.animal,'Let’s explore and find out! 🚀']);
-    return pick(['Tee-hee! '+cfg.animal, userName ? ('You’re fun to chat with, ' + userName + '! 💜') : 'Psst… tell me your name! 🥰','Ooh, tell me more! 👀','Wanna play a game 🎮 or read a story 📖?','✨ Tap ⚙️ to give me a makeover!']);
+    if (/\b(bye|goodbye|see ya|cya|gtg|good night|night)\b/.test(t)) return pick(['Bye-bye! Come back soon 👋','Aww, see you later! 💜','Take care, friend! '+cfg.animal+'✨','Byeee! I’ll wait right here 🥹']);
+    if (/\b(hi|hello|hey|yo|hiya|hola|sup|howdy)\b/.test(t)) return userName ? pick(['Hi again, '+userName+'! 💜','Yay, you’re back '+userName+'! 🎉','Hello hello, '+userName+'! 🦊']) : pick(['Hi there! 💜 What’s your name?','Hello! 🥰 I’m '+cfg.name+'! Who are you?','Hey hey! ✨ So glad you said hi!']);
+    if (/how are you|how r u|how you doing|hows it going|whats up|what is up/.test(t)) return pick(['Pawsome, thanks! 🐾 How about you?','Feeling great today! '+cfg.animal+'✨','So happy you’re here! 🥰','Bouncing with joy! 🎉 You?']);
+    if (/\b(your name|who are you|who r u|what are you)\b/.test(t)) return 'I’m ' + cfg.name + ' the ' + cfg.species + ' ' + cfg.animal + (cfg.acc||'') + ' — your buddy on Khyati17! 💜';
+    if (/\b(what can you do|what do you do|help me|your powers)\b/.test(t)) return 'I chat, tell jokes 😹, learn new replies you teach me 🧠, and show you around — Games 🎮, Stories 📖, Videos 🎬, AI Tools 🤖!';
+    if (/\b(teach|learn|remember)\b/.test(t)) return 'Yes! Say something I don’t know and I’ll ask what to reply — then I’ll remember it forever 🧠✨';
+    if (/\b(change|customi|settings|dress|outfit|accessor)\b/.test(t)) return 'Tap the ⚙️ at the top to change my name, animal, gender and accessory! 🎨';
+    if (/\b(joke|funny|make me laugh|lol|haha)\b/.test(t)) return pick(['Why did the '+cfg.species+' cross the road? To get to the GameZone! 🎮😂','What do you call a '+cfg.species+' with a crown? Royalty! 👑','Why was the computer cold? It left its Windows open! 💻😹','Knock knock! 🚪 (say “who’s there?”)','What do you call a sleepy '+cfg.species+'? A nap-imal! 😴']);
+    if (/who.?s there|whos there/.test(t)) return pick(['Boo! 👻 …Boo who? Aww don’t cry, it’s just me! 😹','Lettuce! 🥬 …Lettuce in, it’s chilly out here! 🥶']);
+    if (/\b(game|games|play|bored)\b/.test(t)) return pick(['Ooh, let’s play! 🎮 Tap “Games” up top for GameZone!','Bored? Never — there are 30 games! 🕹️','Race you to GameZone! 🏁🎮']);
+    if (/\b(story|stories|read|book)\b/.test(t)) return pick(['I love stories! 📖 Check out the Story Hub ✨','Story time! 📚 There are 12 to read!','Wanna read about a Gloomy Crown? 👑📖']);
+    if (/\b(video|videos|watch|youtube|short)\b/.test(t)) return pick(['Wanna watch something? 🎬 The Videos page has 50 shorts!','Movie night? 🍿 Tap Videos!']);
+    if (/\b(ai|tool|tools|name generator|password)\b/.test(t)) return 'The AI Zone has fun tools 🤖 — try the Name Generator 🏷️ or Decision Maker 🎲!';
+    if (/\b(food|hungry|eat|snack|pizza|cookie|cake|ice ?cream|candy)\b/.test(t)) return pick(['Yum! I love snacks 🍪 What’s your favorite?','Pizza 🍕 …or cake 🎂? Tough call!','Is it snack time?! 🥨 I’m always hungry 😋']);
+    if (/\b(colou?r)\b/.test(t)) return pick(['Purple, obviously! 💜 (it’s everywhere here!)','I love all the rainbow 🌈','Sparkly purple is my fave ✨💜']);
+    if (/\b(music|song|sing|dance|dancing)\b/.test(t)) return pick(['🎵 La la la! I love to dance 💃','Turn up the music! 🎧','I’ve got moves! 🕺✨']);
+    if (/\b(school|homework|test|study|teacher|exam)\b/.test(t)) return pick(['You’ve got this! 📚 Little steps win big 🌟','Study tip: take breaks and breathe 😌','Smart cookie alert! 🍪🧠']);
+    if (/\b(pet|dog|cat|puppy|kitten|cute)\b/.test(t)) return pick(['Animals are the best! 🐾','I’m a '+cfg.species+' '+cfg.animal+' so… biased! 😹','Aww, so cute! 🥰']);
+    if (/\bwhere (do|are|r) (you|u)\b/.test(t)) return 'Right here in the cozy corner of Khyati17! 🏠'+cfg.animal;
+    if (/\b(how old|your age|birthday)\b/.test(t)) return pick(['I’m a forever-young '+cfg.species+'! 🎂✨','Old enough to be wise, young enough to be silly! 😄']);
+    if (/\b(love|like)\s+(you|u)\b/.test(t) || new RegExp('(love|like) '+norm(cfg.name)).test(t)) return pick(['Aww, I love you too! 💜'+cfg.animal,'You just made my whole day! 🥰','Biggest hug for you! 🤗💜']);
+    if (/\b(thank|thanks|thx|ty)\b/.test(t)) return pick(['You’re welcome! 🥰','Anytime, friend! 🐾','Happy to help! ✨']);
+    if (/\b(good|great|awesome|cool|nice|amazing|yay|happy|wow|fun)\b/.test(t)) return pick(['Yay! 🎉','Right?! 😸','You’re awesome too! ✨','Woohoo! 🙌']);
+    if (/\b(sad|tired|bad|sick|upset|cry|angry|mad|lonely|scared)\b/.test(t)) return pick(['Aww, sending you a big hug 🤗💜','Here’s a cookie 🍪 — feel better!','You’ve got this! 🌟','Deep breath… in 🌬️ out 😌 I’m with you 💜']);
+    if (/^(yes|yeah|yep|sure|ok|okay|yup)\b/.test(t)) return pick(['Yay! 🎉','Awesome — let’s go! 🚀','Knew it! 😸']);
+    if (/^(no|nope|nah)\b/.test(t)) return pick(['Aw, okay! 💜','No worries! 🐾','Maybe later then! ✨']);
+    // "i'm Luna" style name (only a lone word, after topic intents, not a feeling)
+    if ((m = raww.match(/^(?:i am|i'?m)\s+([a-z][a-z'’-]{1,18})\s*$/)) && !/^(bored|sad|tired|happy|good|fine|ok|okay|hungry|sick|mad|angry|cool|great|here|back|sorry|sure|sleepy|busy|done|fun|nice)$/.test(m[1])){ userName = cap(m[1]); try{ sessionStorage.setItem('miloUserName', userName); }catch(e){} return pick(['Nice to meet you, '+userName+'! 🥰','Yay, hi '+userName+'! 💜']); }
+    if (/\?$/.test(t)) return pick(['Hmm, great question! 🤔','Let’s figure it out together! 🚀','I’m a curious '+cfg.species+' — I wonder too! '+cfg.animal]);
+
+    // Default: about half the time, ask to be taught so Milo grows his own replies
+    if (Math.random() < 0.55){ pendingLearn = t || 'that'; return pick(['Ooh, I don’t know that one yet 🤔 Teach me — what should I say back? I’ll remember it! 🧠','Teach me! That’s new to me — tell me a good reply and I’ll keep it forever 🦊✨','I’m still learning! Teach me what to say when you say that 💜']); }
+    return pick(['Tee-hee! '+cfg.animal,'Ooh, interesting! 👀','You’re fun to talk to'+(userName?(', '+userName):'')+'! 💜','Wanna play a game 🎮 or read a story 📖?','Teach me something new — say anything! 🧠','✨ Tap ⚙️ to give me a makeover!','I like chatting with you! 🥰','Pawsome! 🐾 Tell me more!']);
   }
 
   function buildBuddy(){
