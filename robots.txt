@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://khyati17.com/sitemap.xml
