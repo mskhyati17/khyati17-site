@@ -16,6 +16,8 @@ export async function loadSharedHeader(){
     }
     if(!html) throw new Error('Failed to fetch header include from any known path');
     root.innerHTML = html;
+    // floating-emoji background decoration (shared across pages)
+    try{ if(!document.getElementById('decor-loader')){ const ds=document.createElement('script'); ds.id='decor-loader'; ds.src='/assets/js/decor.js'; document.body.appendChild(ds); } }catch(e){/* ignore */}
     // after injecting, call Auth.renderAuthArea if available
     try{ if(window.Auth && window.Auth.renderAuthArea) await window.Auth.renderAuthArea(); }catch(e){/* ignore */}
     // mark active nav link based on current pathname
