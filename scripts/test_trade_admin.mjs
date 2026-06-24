@@ -23,7 +23,7 @@ try{
   { const c=await ctxWith(seedUser('member@e.com')); const p=await c.newPage(); await p.goto(`${base}/trading/trading.html`,{waitUntil:'networkidle',timeout:15000}); await p.waitForTimeout(500);
     (await p.isVisible('#t-wait')) ? pass('shows "waiting for approval"') : fail('wait state not shown');
     ((await p.textContent('#t-email'))||'').includes('member@e.com') ? pass('shows the user email') : fail('email missing');
-    const href=await p.getAttribute('#t-request','href'); (href&&href.startsWith('mailto:mskhyati17@gmail.com')) ? pass('request emails the owner') : fail('request href: '+href);
+    (await p.$('#t-request')) ? pass('has a Request access button') : fail('no request button');
     await c.close(); }
 
   console.log('\n[3] Trade tab — signed in + approved');

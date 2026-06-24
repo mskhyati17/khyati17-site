@@ -49,9 +49,10 @@
       <h2>Waiting for approval</h2>
       <p>You're signed in as <strong id="t-email"></strong>, but your access to Trading hasn't been approved yet by <strong>mskhyati17@gmail.com</strong>. You'll be let in once it's approved.</p>
       <div class="btn-row">
-        <a class="pill pill-solid" id="t-request" href="#">✉️ Request access</a>
+        <button class="pill pill-solid" id="t-request">✉️ Request access</button>
         <a class="pill pill-ghost" href="/home/index.html">← Back to site</a>
       </div>
+      <p id="t-reqmsg" style="margin-top:12px;font-weight:600;display:none"></p>
     </div>
 
     <!-- approved: show the platform -->
@@ -73,21 +74,38 @@
   <script type="module">import('../assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
   <script type="module">
     import { currentEmail, hasTradeAccess } from '../assets/js/usermgmt.js';
+    import { APPROVED } from '../assets/approved-users.js';
     const PLATFORM = 'https://trading-home-production.up.railway.app/';
+    const OWNER = 'mskhyati17@gmail.com';
     function show(id){ ['t-login','t-wait','t-app'].forEach(x=>{ const el=document.getElementById(x); if(el) el.style.display = (x===id?'':'none'); }); }
+    function onApprovedList(email){ return (APPROVED||[]).map(s=>String(s).toLowerCase()).indexOf((email||'').toLowerCase()) >= 0; }
     document.addEventListener('DOMContentLoaded', async ()=>{
       if(window.AuthReady){ try{ await window.AuthReady; }catch(e){} }
       const email = currentEmail();
       if(!email){ show('t-login'); return; }
-      if(!hasTradeAccess(email)){
-        document.getElementById('t-email').textContent = email;
-        const subj = encodeURIComponent('Trading access request');
-        const body = encodeURIComponent('Hi Khyati,\n\nPlease approve my access to the Trading area.\n\nMy account: ' + email + '\n\nThanks!');
-        document.getElementById('t-request').href = 'mailto:mskhyati17@gmail.com?subject=' + subj + '&body=' + body;
-        show('t-wait'); return;
-      }
-      document.getElementById('t-iframe').src = PLATFORM;
-      show('t-app');
+      if(hasTradeAccess(email) || onApprovedList(email)){ document.getElementById('t-iframe').src = PLATFORM; show('t-app'); return; }
+
+      // signed in but not approved — show waiting + request-by-email button
+      document.getElementById('t-email').textContent = email;
+      const btn = document.getElementById('t-request'); const msg = document.getElementById('t-reqmsg');
+      btn.addEventListener('click', async ()=>{
+        btn.disabled = true; msg.style.display='block'; msg.style.color='#6a4b8f'; msg.textContent='Sending your request…';
+        try{
+          const r = await fetch('https://formsubmit.co/ajax/' + OWNER, {
+            method:'POST', headers:{ 'Content-Type':'application/json', 'Accept':'application/json' },
+            body: JSON.stringify({ _subject:'Trading access request — ' + email, account:email, message:'Please approve Trading access for ' + email })
+          });
+          if(!r.ok) throw new Error('http ' + r.status);
+          await r.json().catch(()=>({}));
+          msg.style.color='#16a34a';
+          msg.textContent='✅ Request sent! You’ll be let in once Khyati approves you.';
+        }catch(e){
+          msg.style.color='#b00020';
+          msg.textContent='Couldn’t send automatically — please email ' + OWNER + ' to request access.';
+          btn.disabled = false;
+        }
+      });
+      show('t-wait');
     });
   </script>
   <script src="/assets/js/cute.js?v=5"></script>
