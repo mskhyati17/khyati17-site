@@ -94,16 +94,27 @@ const DemoAuth = (() => {
     }catch(e){ console.debug('Seed admin skip:', e); }
   })();
 
+  // Emails are case-insensitive: normalize so "Neha@x.com" and "neha@x.com" match.
+  const normEmail = e => String(e || '').trim().toLowerCase();
+  function findUserKey(users, email){
+    const n = normEmail(email);
+    if(users[n]) return n;
+    for(const k in users){ if(k.toLowerCase() === n) return k; }
+    return null;
+  }
+
   function signup(email, password){
     // signature: signup(email, password, metadata)
     const metadata = arguments[2] || {};
     if(!email || !password) return {ok:false,msg:'Email and password required'};
+    email = normEmail(email);
     const users = loadUsers();
-    if(users[email]){
+    const existingKey = findUserKey(users, email);
+    if(existingKey){
       // User already exists — just sign them in instead of erroring
-      users[email].metadata = {...users[email].metadata, ...metadata};
+      users[existingKey].metadata = {...users[existingKey].metadata, ...metadata};
       saveUsers(users);
-      localStorage.setItem(SESSION_KEY, email);
+      localStorage.setItem(SESSION_KEY, existingKey);
       return {ok:true, alreadyExisted:true};
     }
     users[email] = {password, metadata};
@@ -114,8 +125,9 @@ const DemoAuth = (() => {
 
   function signin(email, password){
     const users = loadUsers();
-    if(!users[email] || users[email].password !== password) return {ok:false,msg:'Invalid credentials'};
-    localStorage.setItem(SESSION_KEY, email);
+    const key = findUserKey(users, email);
+    if(!key || users[key].password !== password) return {ok:false,msg:'Invalid credentials'};
+    localStorage.setItem(SESSION_KEY, key);
     return {ok:true};
   }
 
