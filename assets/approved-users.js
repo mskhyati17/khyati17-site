@@ -3,5 +3,5 @@
 // To REVOKE: remove their email. This file is deployed with the site, so it
 // works on every device. (Owner: just tell me "approve <email>" and I'll add it.)
 export const APPROVED = [
-  // "friend@example.com",
+  "neha.usa12@gmail.com",
 ];
