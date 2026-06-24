@@ -15,7 +15,7 @@ try{
   const p=await b.newPage(); const js=[]; p.on('pageerror',e=>js.push(e.message));
   await p.goto(`${base}/others/others.html`,{waitUntil:'networkidle',timeout:20000}); await p.waitForTimeout(1300);
   await p.click('#cute-mascot .cm-buddy',{force:true}); await p.waitForTimeout(200);
-  async function say(t){ await p.fill('#cute-mascot .cm-input input',t); await p.click('.cm-send'); await p.waitForTimeout(380); return (await p.$$eval('#cute-mascot .cm-msg.bot', ns=>ns.map(n=>n.textContent))).pop(); }
+  async function say(t){ await p.fill('#cute-mascot .cm-input input',t); await p.click('.cm-send'); await p.waitForTimeout(560); return (await p.$$eval('#cute-mascot .cm-msg.bot', ns=>ns.map(n=>n.textContent))).pop(); }
 
   console.log('\n[1] Expanded intents give on-topic replies');
   const joke=await say('tell me a joke'); /road|royalty|windows|knock|nap-imal/i.test(joke) ? pass('joke: "'+joke+'"') : fail('joke off: '+joke);

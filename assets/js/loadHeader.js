@@ -21,6 +21,14 @@ export async function loadSharedHeader(){
     try{ if(!document.getElementById('cute-loader')){ const cs=document.createElement('script'); cs.id='cute-loader'; cs.src='/assets/js/cute.js?v=5'; document.body.appendChild(cs); } }catch(e){/* ignore */}
     // after injecting, call Auth.renderAuthArea if available
     try{ if(window.Auth && window.Auth.renderAuthArea) await window.Auth.renderAuthArea(); }catch(e){/* ignore */}
+    // reveal the Admin link only for admin accounts
+    try{
+      const ADMINS = ['mskhyati.17@gmail.com','mskhyati17@gmail.com'];
+      const em = localStorage.getItem('khyati_session') || '';
+      let isAdm = ADMINS.indexOf(em) >= 0;
+      if(!isAdm && em){ try{ const us = JSON.parse(localStorage.getItem('khyati_users')||'{}'); if(us[em] && us[em].level==='admin') isAdm = true; }catch(e){} }
+      const al = root.querySelector('#nav-admin'); if(al && isAdm) al.style.display = '';
+    }catch(e){/* ignore */}
     // mark active nav link based on current pathname
     try{
       const links = root.querySelectorAll('.main-nav a');

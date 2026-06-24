@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin Panel — Khyati</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <style>
+    :root{ --pp:#6a1b9a; --pp2:#9c4dcc; --acc:#e9d8ff; --ink:#2b0b3a; }
+    .ap-wrap{ max-width:980px; margin:18px auto 48px; padding:0 14px; }
+    .ap-head{ text-align:center; margin-bottom:16px; }
+    .ap-head h2{ color:var(--pp); margin:0; }
+    .ap-head p{ color:#6b5b7e; margin:6px 0 0; }
+    .ap-gate{ max-width:480px; margin:60px auto; text-align:center; background:#fff; border:1px solid var(--acc); border-radius:16px; padding:34px; box-shadow:0 10px 28px rgba(117,80,168,.12); }
+    .ap-gate .ico{ font-size:3rem; } .ap-gate h2{ color:var(--pp); }
+    .ap-card{ background:#fff; border:1px solid var(--acc); border-radius:14px; padding:16px; margin-bottom:14px; box-shadow:0 4px 14px rgba(117,80,168,.08); }
+    .ap-card h3{ margin:0 0 10px; color:var(--pp); font-size:1.05rem; }
+    .ap-user{ border-top:1px solid #f0e6fb; padding:12px 0; }
+    .ap-user:first-child{ border-top:none; }
+    .ap-urow{ display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+    .ap-uemail{ font-weight:700; color:var(--ink); }
+    .ap-badge{ font-size:.7rem; font-weight:700; padding:2px 8px; border-radius:999px; }
+    .ap-badge.on{ background:#16a34a; color:#fff; } .ap-badge.off{ background:#9ca3af; color:#fff; } .ap-badge.adm{ background:var(--pp); color:#fff; }
+    .ap-controls{ display:flex; gap:6px; flex-wrap:wrap; margin-top:8px; align-items:center; }
+    .ap-controls button, .ap-controls select{ font:600 12px Inter,system-ui,sans-serif; border:1px solid #d9c7ee; background:#fff; color:var(--pp); border-radius:8px; padding:6px 10px; cursor:pointer; }
+    .ap-controls button.grant{ background:#16a34a; color:#fff; border-color:transparent; }
+    .ap-controls button.revoke{ background:#ef4444; color:#fff; border-color:transparent; }
+    .ap-controls button.del{ background:#7a2a9b; color:#fff; border-color:transparent; }
+    .ap-controls input{ border:1px solid #d9c7ee; border-radius:8px; padding:6px 8px; font:500 12px Inter; }
+    .ap-meta{ font-size:.78rem; color:#8a76a3; margin-top:4px; }
+    .ap-cmt{ border-top:1px solid #f0e6fb; padding:8px 0; font-size:.9rem; }
+    .ap-cmt .who{ font-weight:700; color:#4a2370; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="../assets/img/me.jpg?v=2" alt="Khyati" class="avatar"/>
+      <h1>Khyati</h1>
+    </div>
+    <div id="site-header-root"></div>
+  </header>
+
+  <main class="hero" style="padding-top:8px">
+    <div class="ap-gate" id="ap-gate" style="display:none">
+      <div class="ico">🛠️</div>
+      <h2>Admin only</h2>
+      <p id="ap-gate-msg">Please sign in as the owner to manage users.</p>
+      <a class="btn" href="/admin/login.html">Sign in</a>
+    </div>
+
+    <div class="ap-wrap" id="ap-content" style="display:none">
+      <div class="ap-head">
+        <h2>🛠️ Admin Panel</h2>
+        <p>Manage members, Trading access, levels, passwords and comments.</p>
+      </div>
+      <div class="ap-card">
+        <h3>👥 Members <span id="ap-count" style="font-size:.8rem;color:#8a76a3"></span></h3>
+        <div id="ap-users"></div>
+      </div>
+      <div class="ap-card">
+        <h3>💬 Comments <span id="ap-ccount" style="font-size:.8rem;color:#8a76a3"></span></h3>
+        <div id="ap-comments"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer"><p>© <span id="year"></span> Khyati — All rights reserved</p></footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script type="module" src="../assets/js/auth.js"></script>
+  <script type="module">import('../assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
+  <script type="module">
+    import * as UM from '../assets/js/usermgmt.js';
+    const esc = s => String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+    function renderUsers(){
+      const box = document.getElementById('ap-users'); box.innerHTML = '';
+      const users = UM.listUsers();
+      document.getElementById('ap-count').textContent = '(' + users.length + ')';
+      users.forEach(u => {
+        const adm = UM.isAdmin(u.email);
+        const has = UM.hasTradeAccess(u.email);
+        const until = u.tradeUntil ? new Date(u.tradeUntil).toLocaleDateString() : '';
+        const name = (u.metadata && (u.metadata.first_name || u.metadata.name || u.metadata.username)) || '';
+        const d = document.createElement('div'); d.className = 'ap-user';
+        d.innerHTML =
+          '<div class="ap-urow"><span class="ap-uemail">' + esc(u.email) + (name?(' <span style="font-weight:400;color:#8a76a3">('+esc(name)+')</span>'):'') + '</span>' +
+            '<span>' + (adm?'<span class="ap-badge adm">ADMIN</span> ':'') + '<span class="ap-badge ' + (has?'on':'off') + '">Trading: ' + (has?'YES':'no') + '</span></span></div>' +
+          (until && has ? '<div class="ap-meta">Approved until ' + until + '</div>' : '') +
+          '<div class="ap-controls">' +
+            (has ? '<button class="revoke" data-act="revoke">Revoke trading</button>' : '<button class="grant" data-act="grant">Grant trading (1 yr)</button>') +
+            '<select data-act="level"><option value="user"' + (u.level!=='admin'?' selected':'') + '>Level: user</option><option value="admin"' + (u.level==='admin'?' selected':'') + '>Level: admin</option></select>' +
+            '<input type="text" placeholder="new password" data-pw />' +
+            '<button data-act="setpw">Set password</button>' +
+            '<button class="del" data-act="del">Delete</button>' +
+          '</div>';
+        d.querySelector('[data-act="grant"]') && d.querySelector('[data-act="grant"]').addEventListener('click', ()=>{ UM.grantTrade(u.email); renderUsers(); });
+        d.querySelector('[data-act="revoke"]') && d.querySelector('[data-act="revoke"]').addEventListener('click', ()=>{ UM.revokeTrade(u.email); renderUsers(); });
+        d.querySelector('[data-act="level"]').addEventListener('change', e=>{ UM.setLevel(u.email, e.target.value); renderUsers(); });
+        d.querySelector('[data-act="setpw"]').addEventListener('click', ()=>{ const v=d.querySelector('[data-pw]').value.trim(); if(v){ UM.setPassword(u.email, v); alert('Password updated for ' + u.email); d.querySelector('[data-pw]').value=''; } });
+        d.querySelector('[data-act="del"]').addEventListener('click', ()=>{ if(confirm('Delete user ' + u.email + '?')){ UM.deleteUser(u.email); renderUsers(); } });
+        box.appendChild(d);
+      });
+      if(!users.length) box.innerHTML = '<p style="color:#8a76a3">No members yet. (They appear here after they sign up in this browser.)</p>';
+    }
+
+    function renderComments(){
+      const box = document.getElementById('ap-comments'); box.innerHTML = '';
+      let comments = UM.listComments();
+      document.getElementById('ap-ccount').textContent = '(' + comments.length + ')';
+      comments.forEach((c, i) => {
+        const d = document.createElement('div'); d.className = 'ap-cmt';
+        d.innerHTML = '<span class="who">' + esc(c.display_name || c.user_email || 'Anon') + '</span> · <span style="color:#8a76a3;font-size:.75rem">' + esc(c.content_type) + '/' + esc(c.content_id) + '</span><br/>' +
+          '<span class="body">' + esc(c.body) + '</span> ' +
+          '<button data-edit style="margin-left:6px;font-size:11px;border:1px solid #d9c7ee;border-radius:6px;background:#fff;color:#6a1b9a;cursor:pointer">edit</button> ' +
+          '<button data-del style="font-size:11px;border:none;border-radius:6px;background:#ef4444;color:#fff;cursor:pointer">delete</button>';
+        d.querySelector('[data-edit]').addEventListener('click', ()=>{ const nv = prompt('Edit comment:', c.body); if(nv!=null){ comments[i].body = nv; UM.saveComments(comments); renderComments(); } });
+        d.querySelector('[data-del]').addEventListener('click', ()=>{ if(confirm('Delete this comment?')){ comments.splice(i,1); UM.saveComments(comments); renderComments(); } });
+        box.appendChild(d);
+      });
+      if(!comments.length) box.innerHTML = '<p style="color:#8a76a3">No comments yet.</p>';
+    }
+
+    document.addEventListener('DOMContentLoaded', async ()=>{
+      if(window.AuthReady){ try{ await window.AuthReady; }catch(e){} }
+      if(!UM.isAdmin()){
+        if(UM.currentEmail()) document.getElementById('ap-gate-msg').textContent = 'You are signed in as ' + UM.currentEmail() + ', but that account is not an admin.';
+        document.getElementById('ap-gate').style.display = '';
+        return;
+      }
+      document.getElementById('ap-content').style.display = '';
+      renderUsers(); renderComments();
+    });
+  </script>
+  <script src="/assets/js/cute.js?v=5"></script>
+</body>
+</html>
