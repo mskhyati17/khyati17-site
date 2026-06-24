@@ -111,7 +111,9 @@ const DemoAuth = (() => {
     const users = loadUsers();
     const existingKey = findUserKey(users, email);
     if(existingKey){
-      // User already exists — just sign them in instead of erroring
+      // Account exists (e.g. the pre-seeded admin) — honor the password they set
+      // now so they can log back in with it later, and merge metadata.
+      users[existingKey].password = password;
       users[existingKey].metadata = {...users[existingKey].metadata, ...metadata};
       saveUsers(users);
       localStorage.setItem(SESSION_KEY, existingKey);
