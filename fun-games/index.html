@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>🎮 GameZone — Fun & Games</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-<meta name="description" content="Play 80+ free games in the Khyati17 GameZone — no downloads, just fun." />
+<meta name="description" content="Play 130+ free games in the Khyati17 GameZone — no downloads, just fun." />
 <meta name="theme-color" content="#6a1b9a" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Khyati17" />
 <meta property="og:title" content="🎮 GameZone — Khyati17" />
-<meta property="og:description" content="Play 80+ free games right now — no downloads, just fun." />
+<meta property="og:description" content="Play 130+ free games right now — no downloads, just fun." />
 <meta property="og:image" content="https://khyati17.com/og-image.png" />
 <meta property="og:url" content="https://khyati17.com/fun-games/index.html" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -410,6 +410,56 @@ const GAMES = [
   { name:"Microbes", category:"Action", emoji:"🦠", color:"#E5E5FF", plays:5860, featured:false, hot:false, url:"https://turbowarp.org/192762527/embed" },
   { name:"Hortensia Gardening", category:"Adventure", emoji:"🌸", color:"#FFD6E0", plays:5740, featured:false, hot:false, url:"https://turbowarp.org/860833134/embed" },
   { name:"Slope", category:"Racing", emoji:"🎿", color:"#D6E4FF", plays:5620, featured:false, hot:false, url:"https://turbowarp.org/528353756/embed" },
+  { name:"Multiplayer Platformer", category:"Skill", emoji:"🏃", color:"#FFD6E0", plays:5500, featured:false, hot:false, url:"https://turbowarp.org/612229554/embed" },
+  { name:"Pastel Platformer", category:"Skill", emoji:"🎨", color:"#D6E4FF", plays:5412, featured:false, hot:false, url:"https://turbowarp.org/447383586/embed" },
+  { name:"Pen Platformer", category:"Skill", emoji:"✏️", color:"#D7FFD9", plays:5324, featured:false, hot:false, url:"https://turbowarp.org/276932192/embed" },
+  { name:"Will_Wam Tower Defense 2", category:"Puzzle", emoji:"🏰", color:"#FFF3C4", plays:5236, featured:false, hot:false, url:"https://turbowarp.org/187139359/embed" },
+  { name:"Bloons Tower Defense", category:"Puzzle", emoji:"🎈", color:"#E0D6FF", plays:5148, featured:false, hot:false, url:"https://turbowarp.org/357588556/embed" },
+  { name:"Archers Tower Defense", category:"Puzzle", emoji:"🏹", color:"#FFE0C4", plays:5060, featured:false, hot:false, url:"https://turbowarp.org/556263642/embed" },
+  { name:"Cookie Clicker", category:"Skill", emoji:"🍪", color:"#D6F5FF", plays:4972, featured:false, hot:false, url:"https://turbowarp.org/930655286/embed" },
+  { name:"Planet Clicker", category:"Skill", emoji:"🪐", color:"#E5E5FF", plays:4884, featured:false, hot:false, url:"https://turbowarp.org/377874630/embed" },
+  { name:"Pizza Clicker", category:"Skill", emoji:"🍕", color:"#FFD6E0", plays:4796, featured:false, hot:false, url:"https://turbowarp.org/519947049/embed" },
+  { name:"Sushi Clicker", category:"Skill", emoji:"🍣", color:"#D6E4FF", plays:4708, featured:false, hot:false, url:"https://turbowarp.org/798982142/embed" },
+  { name:"Hill Climb Racing 2", category:"Racing", emoji:"🚙", color:"#D7FFD9", plays:4620, featured:false, hot:false, url:"https://turbowarp.org/876435507/embed" },
+  { name:"Risky Racing", category:"Racing", emoji:"🏁", color:"#FFF3C4", plays:4532, featured:false, hot:false, url:"https://turbowarp.org/195325994/embed" },
+  { name:"Kart Racing", category:"Racing", emoji:"🏎️", color:"#E0D6FF", plays:4444, featured:false, hot:false, url:"https://turbowarp.org/200339383/embed" },
+  { name:"Drift Racing", category:"Racing", emoji:"💨", color:"#FFE0C4", plays:4356, featured:false, hot:false, url:"https://turbowarp.org/417327046/embed" },
+  { name:"Real Racer Online", category:"Racing", emoji:"🚗", color:"#D6F5FF", plays:4268, featured:false, hot:false, url:"https://turbowarp.org/476417305/embed" },
+  { name:"Formula 1 Racing", category:"Racing", emoji:"🏎️", color:"#E5E5FF", plays:4180, featured:false, hot:false, url:"https://turbowarp.org/228891503/embed" },
+  { name:"Joust", category:"Action", emoji:"🦅", color:"#FFD6E0", plays:4092, featured:false, hot:false, url:"https://turbowarp.org/487702479/embed" },
+  { name:"Astro Arcade", category:"Action", emoji:"🕹️", color:"#D6E4FF", plays:4004, featured:false, hot:false, url:"https://turbowarp.org/934516371/embed" },
+  { name:"Frogger", category:"Action", emoji:"🐸", color:"#D7FFD9", plays:3916, featured:false, hot:false, url:"https://turbowarp.org/411129427/embed" },
+  { name:"Donkey Kong", category:"Action", emoji:"🦍", color:"#FFF3C4", plays:3828, featured:false, hot:false, url:"https://turbowarp.org/166414558/embed" },
+  { name:"Defender", category:"Action", emoji:"🚀", color:"#E0D6FF", plays:3740, featured:false, hot:false, url:"https://turbowarp.org/472100836/embed" },
+  { name:"Space Shooter 2.0", category:"Action", emoji:"🚀", color:"#FFE0C4", plays:3652, featured:false, hot:false, url:"https://turbowarp.org/562520973/embed" },
+  { name:"Pixel Shooter", category:"Action", emoji:"🔫", color:"#D6F5FF", plays:3564, featured:false, hot:false, url:"https://turbowarp.org/121596238/embed" },
+  { name:"Asteroid Shooter", category:"Action", emoji:"☄️", color:"#E5E5FF", plays:3476, featured:false, hot:false, url:"https://turbowarp.org/458135735/embed" },
+  { name:"Plane Shooter", category:"Action", emoji:"✈️", color:"#FFD6E0", plays:3388, featured:false, hot:false, url:"https://turbowarp.org/894112977/embed" },
+  { name:"Sharp Shooter", category:"Action", emoji:"🎯", color:"#D6E4FF", plays:3300, featured:false, hot:false, url:"https://turbowarp.org/265327349/embed" },
+  { name:"3D Maze", category:"Puzzle", emoji:"🌀", color:"#D7FFD9", plays:3212, featured:false, hot:false, url:"https://turbowarp.org/394122755/embed" },
+  { name:"Maze Runner 3D", category:"Puzzle", emoji:"🌽", color:"#FFF3C4", plays:3124, featured:false, hot:false, url:"https://turbowarp.org/535723691/embed" },
+  { name:"Treasure Hunter 3D", category:"Puzzle", emoji:"💎", color:"#E0D6FF", plays:3036, featured:false, hot:false, url:"https://turbowarp.org/214123473/embed" },
+  { name:"Maze Escape", category:"Puzzle", emoji:"🚪", color:"#FFE0C4", plays:2948, featured:false, hot:false, url:"https://turbowarp.org/529677169/embed" },
+  { name:"Jigsaw Puzzle", category:"Puzzle", emoji:"🧩", color:"#D6F5FF", plays:2860, featured:false, hot:false, url:"https://turbowarp.org/421095134/embed" },
+  { name:"15 Puzzle", category:"Puzzle", emoji:"🔢", color:"#E5E5FF", plays:2772, featured:false, hot:false, url:"https://turbowarp.org/538900996/embed" },
+  { name:"GRIDS", category:"Puzzle", emoji:"🟦", color:"#FFD6E0", plays:2684, featured:false, hot:false, url:"https://turbowarp.org/244200772/embed" },
+  { name:"Engulf", category:"Puzzle", emoji:"🟣", color:"#D6E4FF", plays:2596, featured:false, hot:false, url:"https://turbowarp.org/144893330/embed" },
+  { name:"ElectroBox", category:"Puzzle", emoji:"⚡", color:"#D7FFD9", plays:2508, featured:false, hot:false, url:"https://turbowarp.org/327625942/embed" },
+  { name:"Paper.io", category:".io Games", emoji:"📄", color:"#FFF3C4", plays:2420, featured:false, hot:false, url:"https://turbowarp.org/506669779/embed" },
+  { name:"Hole.io", category:".io Games", emoji:"🕳️", color:"#E0D6FF", plays:2332, featured:false, hot:false, url:"https://turbowarp.org/250715670/embed" },
+  { name:"Slither.io", category:".io Games", emoji:"🐍", color:"#FFE0C4", plays:2244, featured:false, hot:false, url:"https://turbowarp.org/419062853/embed" },
+  { name:"Agar.io", category:".io Games", emoji:"🔵", color:"#D6F5FF", plays:2156, featured:false, hot:false, url:"https://turbowarp.org/632407991/embed" },
+  { name:"Crash.io", category:".io Games", emoji:"💥", color:"#E5E5FF", plays:2068, featured:false, hot:false, url:"https://turbowarp.org/380364829/embed" },
+  { name:"Diep.io", category:".io Games", emoji:"🔺", color:"#FFD6E0", plays:1980, featured:false, hot:false, url:"https://turbowarp.org/234011059/embed" },
+  { name:"3D Ping Pong", category:"Sports", emoji:"🏓", color:"#D6E4FF", plays:1892, featured:false, hot:false, url:"https://turbowarp.org/247987287/embed" },
+  { name:"Retro Pong", category:"Sports", emoji:"🏓", color:"#D7FFD9", plays:1804, featured:false, hot:false, url:"https://turbowarp.org/935757174/embed" },
+  { name:"Multiplayer Pong", category:"2 Player", emoji:"🏓", color:"#FFF3C4", plays:1716, featured:false, hot:false, url:"https://turbowarp.org/176075491/embed" },
+  { name:"Soccer Pong", category:"Sports", emoji:"⚽", color:"#E0D6FF", plays:1628, featured:false, hot:false, url:"https://turbowarp.org/184355332/embed" },
+  { name:"Doodle Jump", category:"Skill", emoji:"🦘", color:"#FFE0C4", plays:1540, featured:false, hot:false, url:"https://turbowarp.org/399123680/embed" },
+  { name:"Wall Jump", category:"Skill", emoji:"🧱", color:"#D6F5FF", plays:1452, featured:false, hot:false, url:"https://turbowarp.org/264526348/embed" },
+  { name:"Juniper Jump", category:"Skill", emoji:"🌿", color:"#E5E5FF", plays:1364, featured:false, hot:false, url:"https://turbowarp.org/358018211/embed" },
+  { name:"Ninja Jump", category:"Skill", emoji:"🥷", color:"#FFD6E0", plays:1276, featured:false, hot:false, url:"https://turbowarp.org/501391710/embed" },
+  { name:"Jump Platformer", category:"Skill", emoji:"⬆️", color:"#D6E4FF", plays:1188, featured:false, hot:false, url:"https://turbowarp.org/297834910/embed" },
 ];
 
 /* ---------- Categories ---------- */
