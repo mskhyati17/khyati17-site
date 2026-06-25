@@ -21,6 +21,9 @@ export async function loadSharedHeader(){
     try{ if(!document.getElementById('cute-loader')){ const cs=document.createElement('script'); cs.id='cute-loader'; cs.src='/assets/js/cute.js?v=5'; document.body.appendChild(cs); } }catch(e){/* ignore */}
     // after injecting, call Auth.renderAuthArea if available
     try{ if(window.Auth && window.Auth.renderAuthArea) await window.Auth.renderAuthArea(); }catch(e){/* ignore */}
+    // make the Trading link always load a fresh page (bypass the static cache),
+    // so a freshly-approved member is never blocked by a stale cached page
+    try{ const tl = root.querySelector('a[href^="/trading/trading.html"]'); if(tl) tl.setAttribute('href', '/trading/trading.html?t=' + Date.now()); }catch(e){/* ignore */}
     // reveal the Admin link only for admin accounts
     try{
       const ADMINS = ['mskhyati.17@gmail.com','mskhyati17@gmail.com'];
