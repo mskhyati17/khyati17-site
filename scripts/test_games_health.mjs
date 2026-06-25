@@ -30,6 +30,29 @@ async function scratchOk(id){
   }catch(e){ return {ok:false, why:'fetch failed'}; }
 }
 
+// Render-check a self-hosted TurboWarp embed: the project must mount a stage
+// canvas and run with no load error / no failed project-asset fetch.
+async function turbowarpOk(browser,id){
+  const p=await browser.newPage();
+  const errs=[]; p.on('pageerror',e=>errs.push(e.message.split('\n')[0]));
+  let assetFail=false;
+  p.on('response',r=>{ const u=r.url(); if(r.status()>=400 && (u.includes('projects.scratch')||u.includes('assets.scratch'))) assetFail=true; });
+  try{ await p.goto(`https://turbowarp.org/${id}/embed`,{waitUntil:'load',timeout:30000}); }
+  catch(e){ await p.close(); return {ok:false, why:'nav timeout'}; }
+  await p.waitForTimeout(7000);
+  const info=await p.evaluate(()=>{
+    const c=document.querySelector('canvas');
+    const body=(document.body.innerText||'').toLowerCase();
+    return {canvas:!!c, w:c?c.width:0, err:/could not|couldn't|not found|failed to load|error loading|does not exist|unavailable/.test(body)};
+  });
+  await p.close();
+  if(assetFail) return {ok:false, why:'project assets 4xx'};
+  if(info.err) return {ok:false, why:'error overlay'};
+  if(!info.canvas||info.w<10) return {ok:false, why:'no stage rendered'};
+  if(errs.length) return {ok:false, why:'js error: '+errs[0].slice(0,40)};
+  return {ok:true, why:'stage renders on turbowarp, no errors'};
+}
+
 async function canvasHash(page){
   return page.evaluate(()=>{ const c=document.querySelector('canvas'); if(!c) return null;
     try{ const ctx=c.getContext('2d'); if(!ctx) return 'webgl'; const w=Math.min(c.width||300,200),h=Math.min(c.height||150,200); const d=ctx.getImageData(0,0,w,h).data; let s=0; for(let i=0;i<d.length;i+=503) s=(s+d[i])%999983; return s; }catch(e){ return 'err'; }
@@ -37,9 +60,15 @@ async function canvasHash(page){
 }
 
 const results=[];
-const browser=await chromium.launch({headless:true});
+const browser=await chromium.launch({headless:true,args:['--use-gl=angle','--use-angle=swiftshader','--ignore-gpu-blocklist','--enable-webgl']});
 try{
   for(const g of GAMES){
+    if(/turbowarp\.org/.test(g.url)){
+      const id=(g.url.match(/turbowarp\.org\/(\d+)/)||[])[1];
+      const r=await turbowarpOk(browser,id);
+      results.push({name:g.name, kind:'TurboWarp', url:g.url, verdict: r.ok?'OK':'BROKEN', detail: r.why});
+      continue;
+    }
     if(/scratch\.mit\.edu/.test(g.url)){
       const id=(g.url.match(/projects\/(\d+)/)||[])[1];
       const r=await scratchOk(id);
