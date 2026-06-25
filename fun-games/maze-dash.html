@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🌀 Maze Dash</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(135deg,#2b0b3a,#6a1b9a,#9c4dcc);min-height:100vh;display:flex;justify-content:center;align-items:center;padding:20px}
+  .container{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border-radius:24px;padding:28px;box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.12);text-align:center;max-width:480px;width:100%;position:relative}
+  h1{font-size:2rem;color:#fff;margin-bottom:6px}
+  .subtitle{color:rgba(255,255,255,.65);font-size:.88rem;margin-bottom:16px}
+  .score-board{display:flex;justify-content:space-between;background:rgba(0,0,0,.3);border-radius:12px;padding:10px 20px;margin-bottom:16px;color:#fff;font-size:1.05rem}
+  .score-board span{color:#e9d8ff;font-weight:bold}
+  canvas{display:block;margin:0 auto;border-radius:12px;background:#0d041a;box-shadow:0 0 40px rgba(156,77,204,.25);width:100%;max-width:420px;aspect-ratio:1/1;touch-action:none}
+  .controls{margin-top:16px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .controls button{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:10px 22px;border-radius:10px;cursor:pointer;font-size:1rem;transition:.2s}
+  .controls button:hover{background:#e9d8ff;color:#2b0b3a}
+  .mobile-dpad{display:none;margin-top:16px;grid-template-areas:". up ." "left down right";grid-template-columns:repeat(3,60px);grid-template-rows:repeat(2,60px);gap:6px;justify-content:center}
+  .mobile-dpad button{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:12px;font-size:1.5rem;cursor:pointer}
+  .mobile-dpad button:active{background:#e9d8ff;color:#2b0b3a}
+  .du{grid-area:up}.dd{grid-area:down}.dl{grid-area:left}.dr{grid-area:right}
+  .win{display:none;position:absolute;inset:0;background:rgba(20,5,35,.82);border-radius:24px;justify-content:center;align-items:center;flex-direction:column;color:#fff;z-index:10}
+  .win.show{display:flex}.win h2{font-size:2rem;margin-bottom:6px}.win p{opacity:.8;margin-bottom:14px}
+  .win button{background:#e9d8ff;border:none;color:#2b0b3a;padding:10px 30px;border-radius:10px;font-weight:bold;cursor:pointer;font-size:1rem}
+  @media(max-width:600px){.mobile-dpad{display:grid}}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="win" id="win"><h2>🎉 Level <span id="winlvl">1</span>!</h2><p>Total moves: <span id="fin">0</span></p><button onclick="next()">Next Maze →</button></div>
+  <h1>🌀 Maze Dash</h1>
+  <p class="subtitle">Arrow keys / WASD / swipe. Reach the 🟢 exit. New random maze every level!</p>
+  <div class="score-board"><div>Level: <span id="level">1</span></div><div>Moves: <span id="moves">0</span></div><div>Best Lvl: <span id="best">1</span></div></div>
+  <canvas id="c" width="420" height="420"></canvas>
+  <div class="controls"><button onclick="newMaze(true)">🔄 New Maze</button></div>
+  <div class="mobile-dpad" id="dpad">
+    <button class="du" onclick="move(0,-1)">▲</button><button class="dl" onclick="move(-1,0)">◀</button>
+    <button class="dd" onclick="move(0,1)">▼</button><button class="dr" onclick="move(1,0)">▶</button>
+  </div>
+</div>
+<script>
+const c=document.getElementById('c'),x=c.getContext('2d');
+let N,cell,grid,player,exit,level,moves,best,t;
+try{best=parseInt(localStorage.getItem('mazeDashBest'))||1}catch(e){best=1}
+document.getElementById('best').textContent=best;
+level=1;moves=0;
+// cell walls: {n,e,s,w} true = wall
+function genMaze(n){
+  const g=[];for(let r=0;r<n;r++){g[r]=[];for(let col=0;col<n;col++)g[r][col]={n:true,e:true,s:true,w:true,v:false};}
+  const stack=[[0,0]];g[0][0].v=true;
+  while(stack.length){const [r,col]=stack[stack.length-1];
+    const nb=[];if(r>0&&!g[r-1][col].v)nb.push(['n',r-1,col]);if(r<n-1&&!g[r+1][col].v)nb.push(['s',r+1,col]);
+    if(col<n-1&&!g[r][col+1].v)nb.push(['e',r,col+1]);if(col>0&&!g[r][col-1].v)nb.push(['w',r,col-1]);
+    if(!nb.length){stack.pop();continue;}
+    const [dir,nr,nc]=nb[Math.floor(Math.random()*nb.length)];
+    if(dir==='n'){g[r][col].n=false;g[nr][nc].s=false;}if(dir==='s'){g[r][col].s=false;g[nr][nc].n=false;}
+    if(dir==='e'){g[r][col].e=false;g[nr][nc].w=false;}if(dir==='w'){g[r][col].w=false;g[nr][nc].e=false;}
+    g[nr][nc].v=true;stack.push([nr,nc]);}
+  return g;
+}
+function newMaze(resetLevel){if(resetLevel){level=1;}N=6+Math.min(8,Math.floor(level/2));cell=420/N;grid=genMaze(N);
+  player={r:0,col:0};exit={r:N-1,col:N-1};
+  document.getElementById('level').textContent=level;document.getElementById('win').classList.remove('show');}
+function next(){level++;if(level>best){best=level;try{localStorage.setItem('mazeDashBest',best)}catch(e){}document.getElementById('best').textContent=best;}newMaze(false);}
+function move(dx,dy){const cur=grid[player.r][player.col];
+  if(dx===1&&!cur.e)player.col++;else if(dx===-1&&!cur.w)player.col--;
+  else if(dy===1&&!cur.s)player.r++;else if(dy===-1&&!cur.n)player.r--;else return;
+  moves++;document.getElementById('moves').textContent=moves;
+  if(player.r===exit.r&&player.col===exit.col){document.getElementById('winlvl').textContent=level;document.getElementById('fin').textContent=moves;document.getElementById('win').classList.add('show');}}
+addEventListener('keydown',e=>{const m={ArrowUp:[0,-1],ArrowDown:[0,1],ArrowLeft:[-1,0],ArrowRight:[1,0],w:[0,-1],s:[0,1],a:[-1,0],d:[1,0]};
+  if(m[e.key]){e.preventDefault();move(m[e.key][0],m[e.key][1]);}});
+let tsx,tsy;c.addEventListener('touchstart',e=>{tsx=e.touches[0].clientX;tsy=e.touches[0].clientY;},{passive:true});
+c.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tsx,dy=e.changedTouches[0].clientY-tsy;
+  if(Math.abs(dx)>Math.abs(dy))move(dx>0?1:-1,0);else move(0,dy>0?1:-1);},{passive:true});
+function loop(){t=performance.now();
+  x.fillStyle='#0d041a';x.fillRect(0,0,420,420);
+  x.strokeStyle='#c98bff';x.lineWidth=Math.max(2,cell*0.08);x.lineCap='round';
+  for(let r=0;r<N;r++)for(let col=0;col<N;col++){const g=grid[r][col],px=col*cell,py=r*cell;
+    x.beginPath();
+    if(g.n){x.moveTo(px,py);x.lineTo(px+cell,py);}if(g.s){x.moveTo(px,py+cell);x.lineTo(px+cell,py+cell);}
+    if(g.w){x.moveTo(px,py);x.lineTo(px,py+cell);}if(g.e){x.moveTo(px+cell,py);x.lineTo(px+cell,py+cell);}
+    x.stroke();}
+  // exit (pulses -> keeps canvas animating)
+  const pulse=0.5+0.5*Math.sin(t/250);
+  x.fillStyle=`rgba(125,255,155,${0.5+0.5*pulse})`;x.shadowColor='#7dff9b';x.shadowBlur=12+8*pulse;
+  x.beginPath();x.arc(exit.col*cell+cell/2,exit.r*cell+cell/2,cell*0.3,0,7);x.fill();x.shadowBlur=0;
+  // player (pulses continuously so the maze always feels alive)
+  const pr=cell*0.26+Math.sin(t/180)*cell*0.05;
+  x.fillStyle='#ffd65e';x.shadowColor='#ffd65e';x.shadowBlur=10+6*pulse;
+  x.beginPath();x.arc(player.col*cell+cell/2,player.r*cell+cell/2,pr,0,7);x.fill();x.shadowBlur=0;
+  requestAnimationFrame(loop);
+}
+newMaze(true);loop();
+</script>
+<script src="/assets/js/cute.js?v=5&amp;nb=1"></script>
+</body>
+</html>

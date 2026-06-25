@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🔃 Gravity Flip</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(135deg,#2b0b3a,#6a1b9a,#9c4dcc);min-height:100vh;display:flex;justify-content:center;align-items:center;padding:20px}
+  .container{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border-radius:24px;padding:28px;box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.12);text-align:center;max-width:640px;width:100%;position:relative}
+  h1{font-size:2rem;color:#fff;margin-bottom:6px}
+  .subtitle{color:rgba(255,255,255,.65);font-size:.88rem;margin-bottom:16px}
+  .score-board{display:flex;justify-content:space-between;background:rgba(0,0,0,.3);border-radius:12px;padding:10px 20px;margin-bottom:16px;color:#fff;font-size:1.05rem}
+  .score-board span{color:#e9d8ff;font-weight:bold}
+  canvas{display:block;margin:0 auto;border-radius:12px;background:#150825;box-shadow:0 0 40px rgba(156,77,204,.25);width:100%;max-width:560px;aspect-ratio:7/4;touch-action:none}
+  .controls{margin-top:16px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .controls button{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:10px 22px;border-radius:10px;cursor:pointer;font-size:1rem;transition:.2s}
+  .controls button:hover{background:#e9d8ff;color:#2b0b3a}
+  .over{display:none;position:absolute;inset:0;background:rgba(20,5,35,.82);border-radius:24px;justify-content:center;align-items:center;flex-direction:column;color:#fff;z-index:10}
+  .over.show{display:flex}.over h2{font-size:2rem;margin-bottom:6px}.over p{opacity:.8;margin-bottom:14px}
+  .over button{background:#e9d8ff;border:none;color:#2b0b3a;padding:10px 30px;border-radius:10px;font-weight:bold;cursor:pointer;font-size:1rem}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="over" id="over"><h2>Crashed!</h2><p>Distance: <span id="fin">0</span>m</p><button onclick="reset()">Try Again</button></div>
+  <h1>🔃 Gravity Flip</h1>
+  <p class="subtitle">SPACE / click / tap to flip gravity. Dodge the purple spikes!</p>
+  <div class="score-board"><div>Distance: <span id="score">0</span>m</div><div>Best: <span id="best">0</span>m</div></div>
+  <canvas id="c" width="560" height="320"></canvas>
+  <div class="controls"><button onclick="flip()">🔃 Flip</button><button onclick="reset()">🔄 Restart</button></div>
+</div>
+<script>
+const c=document.getElementById('c'),x=c.getContext('2d');
+let p,grav,obs,dist,best,running,t,speed;
+try{best=parseInt(localStorage.getItem('gravFlipBest'))||0}catch(e){best=0}
+document.getElementById('best').textContent=best;
+function reset(){p={y:80,vy:0,size:22,x:90};grav=1;obs=[];dist=0;t=0;speed=4;running=true;
+  document.getElementById('score').textContent=0;document.getElementById('over').classList.remove('show');}
+function flip(){if(running)grav*=-1;}
+addEventListener('keydown',e=>{if(e.key===' '){e.preventDefault();flip();}});
+c.addEventListener('mousedown',flip);c.addEventListener('touchstart',e=>{flip();e.preventDefault();},{passive:false});
+function spawn(){const gap=110;const top=40+Math.random()*(320-80-gap);
+  obs.push({x:560,top:top,gap:gap,passed:false});}
+function loop(){
+  x.fillStyle='#150825';x.fillRect(0,0,560,320);
+  // moving grid background (animates always)
+  x.strokeStyle='rgba(255,255,255,.05)';x.lineWidth=1;
+  const off=(t*speed)%40;for(let gx=-off;gx<560;gx+=40){x.beginPath();x.moveTo(gx,0);x.lineTo(gx,320);x.stroke();}
+  // floor & ceiling
+  x.fillStyle='rgba(156,77,204,.35)';x.fillRect(0,0,560,8);x.fillRect(0,312,560,8);
+  if(running){
+    t++;speed=4+dist/400;
+    p.vy+=grav*0.7;p.y+=p.vy;
+    if(p.y<14){p.y=14;p.vy=0;}if(p.y>306-p.size){p.y=306-p.size;p.vy=0;}
+    if(t%70===0)spawn();
+    for(let i=obs.length-1;i>=0;i--){const o=obs[i];o.x-=speed;
+      // draw spikes top and bottom
+      x.fillStyle='#b15bff';
+      x.fillRect(o.x,0,30,o.top);x.fillRect(o.x,o.top+o.gap,30,320-(o.top+o.gap));
+      x.fillStyle='rgba(255,255,255,.15)';x.fillRect(o.x,o.top-4,30,4);x.fillRect(o.x,o.top+o.gap,30,4);
+      if(p.x+p.size>o.x&&p.x<o.x+30&&(p.y<o.top||p.y+p.size>o.top+o.gap)){over();}
+      if(!o.passed&&o.x+30<p.x){o.passed=true;dist+=10;document.getElementById('score').textContent=dist;}
+      if(o.x<-30)obs.splice(i,1);
+    }
+    dist+=0; // distance from passes
+    // player
+    x.save();x.translate(p.x+p.size/2,p.y+p.size/2);
+    x.fillStyle=grav>0?'#7dff9b':'#5ec8ff';x.shadowColor=x.fillStyle;x.shadowBlur=16;
+    x.fillRect(-p.size/2,-p.size/2,p.size,p.size);x.shadowBlur=0;
+    x.fillStyle='#150825';x.fillRect(-3,-6,3,5);x.fillRect(3,-6,3,5);
+    x.restore();
+  }
+  requestAnimationFrame(loop);
+}
+function over(){if(!running)return;running=false;if(dist>best){best=dist;try{localStorage.setItem('gravFlipBest',best)}catch(e){}document.getElementById('best').textContent=best;}
+  document.getElementById('fin').textContent=dist;document.getElementById('over').classList.add('show');}
+reset();loop();
+</script>
+<script src="/assets/js/cute.js?v=5&amp;nb=1"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🪐 Orbit Dodge</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(135deg,#2b0b3a,#6a1b9a,#9c4dcc);min-height:100vh;display:flex;justify-content:center;align-items:center;padding:20px}
+  .container{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border-radius:24px;padding:28px;box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.12);text-align:center;max-width:520px;width:100%;position:relative}
+  h1{font-size:2rem;color:#fff;margin-bottom:6px}
+  .subtitle{color:rgba(255,255,255,.65);font-size:.88rem;margin-bottom:16px}
+  .score-board{display:flex;justify-content:space-between;background:rgba(0,0,0,.3);border-radius:12px;padding:10px 20px;margin-bottom:16px;color:#fff;font-size:1.05rem}
+  .score-board span{color:#e9d8ff;font-weight:bold}
+  canvas{display:block;margin:0 auto;border-radius:12px;background:#0d041a;box-shadow:0 0 40px rgba(156,77,204,.25);width:100%;max-width:440px;aspect-ratio:1/1;touch-action:none}
+  .controls{margin-top:16px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .controls button{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:10px 22px;border-radius:10px;cursor:pointer;font-size:1rem;transition:.2s}
+  .controls button:hover{background:#e9d8ff;color:#2b0b3a}
+  .over{display:none;position:absolute;inset:0;background:rgba(20,5,35,.82);border-radius:24px;justify-content:center;align-items:center;flex-direction:column;color:#fff;z-index:10}
+  .over.show{display:flex}.over h2{font-size:2rem;margin-bottom:6px}.over p{opacity:.8;margin-bottom:14px}
+  .over button{background:#e9d8ff;border:none;color:#2b0b3a;padding:10px 30px;border-radius:10px;font-weight:bold;cursor:pointer;font-size:1rem}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="over" id="over"><h2>Boom!</h2><p>Score: <span id="fin">0</span></p><button onclick="reset()">Play Again</button></div>
+  <h1>🪐 Orbit Dodge</h1>
+  <p class="subtitle">Hold SPACE / click to reverse your orbit direction. Dodge the asteroids!</p>
+  <div class="score-board"><div>Score: <span id="score">0</span></div><div>Best: <span id="best">0</span></div></div>
+  <canvas id="c" width="440" height="440"></canvas>
+  <div class="controls"><button onclick="reverse()">🔄 Reverse</button><button onclick="reset()">🔄 Restart</button></div>
+</div>
+<script>
+const c=document.getElementById('c'),x=c.getContext('2d');
+const CX=220,CY=220,R=120;
+let ang,dir,rocks,score,best,running,t;
+try{best=parseInt(localStorage.getItem('orbitDodgeBest'))||0}catch(e){best=0}
+document.getElementById('best').textContent=best;
+function reset(){ang=0;dir=1;rocks=[];score=0;t=0;running=true;
+  document.getElementById('score').textContent=0;document.getElementById('over').classList.remove('show');}
+function reverse(){if(running)dir*=-1;}
+addEventListener('keydown',e=>{if(e.key===' '){e.preventDefault();reverse();}});
+c.addEventListener('mousedown',reverse);c.addEventListener('touchstart',e=>{reverse();e.preventDefault();},{passive:false});
+function spawn(){const a=Math.random()*Math.PI*2;rocks.push({a:a,d:300,r:11+Math.random()*8,v:1.1+score*0.02});}
+function loop(){
+  x.fillStyle='#0d041a';x.fillRect(0,0,440,440);
+  // stars
+  x.fillStyle='rgba(255,255,255,.5)';for(let i=0;i<40;i++){const a=i*0.618*6.283,d=((i*37)%200)+10;x.fillRect(CX+Math.cos(a+t*0.002)*d,CY+Math.sin(a+t*0.002)*d,1.5,1.5);}
+  // planet
+  const pg=x.createRadialGradient(CX-20,CY-20,10,CX,CY,55);pg.addColorStop(0,'#c98bff');pg.addColorStop(1,'#6a1b9a');
+  x.fillStyle=pg;x.beginPath();x.arc(CX,CY,48,0,7);x.fill();
+  // orbit ring
+  x.strokeStyle='rgba(233,216,255,.18)';x.lineWidth=2;x.beginPath();x.arc(CX,CY,R,0,7);x.stroke();
+  if(running){
+    t++;ang+=dir*0.05;
+    if(t%45===0)spawn();
+    const px=CX+Math.cos(ang)*R,py=CY+Math.sin(ang)*R;
+    for(let i=rocks.length-1;i>=0;i--){const o=rocks[i];o.d-=o.v;
+      const ox=CX+Math.cos(o.a)*o.d,oy=CY+Math.sin(o.a)*o.d;
+      x.fillStyle='#b07b4a';x.beginPath();x.arc(ox,oy,o.r,0,7);x.fill();
+      x.fillStyle='rgba(0,0,0,.25)';x.beginPath();x.arc(ox+2,oy+2,o.r*0.5,0,7);x.fill();
+      if(Math.hypot(ox-px,oy-py)<o.r+11){over();}
+      if(o.d<44){rocks.splice(i,1);score++;document.getElementById('score').textContent=score;}
+    }
+    // ship
+    x.save();x.translate(px,py);x.rotate(ang+dir*1.57);
+    x.fillStyle='#7dff9b';x.shadowColor='#7dff9b';x.shadowBlur=14;
+    x.beginPath();x.moveTo(0,-11);x.lineTo(8,9);x.lineTo(-8,9);x.closePath();x.fill();x.shadowBlur=0;
+    x.restore();
+  }
+  requestAnimationFrame(loop);
+}
+function over(){if(!running)return;running=false;if(score>best){best=score;try{localStorage.setItem('orbitDodgeBest',best)}catch(e){}document.getElementById('best').textContent=best;}
+  document.getElementById('fin').textContent=score;document.getElementById('over').classList.add('show');}
+reset();loop();
+</script>
+<script src="/assets/js/cute.js?v=5&amp;nb=1"></script>
+</body>
+</html>
