@@ -74,16 +74,19 @@
   <script type="module">import('../assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
   <script type="module">
     import { currentEmail, hasTradeAccess } from '../assets/js/usermgmt.js';
-    import { APPROVED } from '../assets/approved-users.js';
     const PLATFORM = 'https://trading-home-production.up.railway.app/';
     const OWNER = 'mskhyati17@gmail.com';
     function show(id){ ['t-login','t-wait','t-app'].forEach(x=>{ const el=document.getElementById(x); if(el) el.style.display = (x===id?'':'none'); }); }
-    function onApprovedList(email){ return (APPROVED||[]).map(s=>String(s).toLowerCase()).indexOf((email||'').toLowerCase()) >= 0; }
+    // Always fetch the LATEST approved list (no caching), so new approvals work
+    // immediately without anyone needing to hard-refresh.
+    async function loadApproved(){ try{ const r = await fetch('/assets/approved-users.json?t=' + Date.now(), { cache:'no-store' }); return r.ok ? await r.json() : []; }catch(e){ return []; } }
+    function onList(list, email){ return (list||[]).map(s=>String(s).toLowerCase()).indexOf((email||'').toLowerCase()) >= 0; }
     document.addEventListener('DOMContentLoaded', async ()=>{
       if(window.AuthReady){ try{ await window.AuthReady; }catch(e){} }
       const email = currentEmail();
       if(!email){ show('t-login'); return; }
-      if(hasTradeAccess(email) || onApprovedList(email)){ document.getElementById('t-iframe').src = PLATFORM; show('t-app'); return; }
+      const approved = await loadApproved();
+      if(hasTradeAccess(email) || onList(approved, email)){ document.getElementById('t-iframe').src = PLATFORM; show('t-app'); return; }
 
       // signed in but not approved — show waiting + request-by-email button
       document.getElementById('t-email').textContent = email;
