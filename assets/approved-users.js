@@ -4,4 +4,5 @@
 // works on every device. (Owner: just tell me "approve <email>" and I'll add it.)
 export const APPROVED = [
   "neha.usa12@gmail.com",
+  "gaytri180a1@gmail.com",
 ];
