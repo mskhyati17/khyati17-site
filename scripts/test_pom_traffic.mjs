@@ -23,7 +23,8 @@ let failures=0;
 const assert=(cond,msg)=>{ if(cond){console.log('  ✅ '+msg);} else {console.log('  ❌ '+msg); failures++;} };
 
 const USERS = Number(process.env.USERS || 1000);
-const POOL  = Number(process.env.POOL  || 24);   // concurrent live browser sessions
+const POOL  = Number(process.env.POOL  || 16);   // concurrent live browser sessions
+const SESSION_MS = Number(process.env.SESSION_MS || 90000); // hard cap per session
 const CHAT  = ['hi there','tell me a joke','i love you'];
 
 async function pool(n, size, fn){
@@ -38,30 +39,38 @@ async function runUser(browser, i){
   // seed a unique name + voice off (headless has no audio) BEFORE the page loads
   await ctx.addInitScript(n=>{ try{ localStorage.setItem('pomConfig', JSON.stringify({name:n, acc:'bow', voice:false})); }catch(e){} }, 'Pom'+i);
   const page=await ctx.newPage();
+  page.setDefaultTimeout(45000);
   const jsErr=[]; page.on('pageerror',e=>jsErr.push(e.message.split('\n')[0]));
   const t0=Date.now();
   const m={ ok:false, replies:0, ruffs:0, emotions:new Set(), talk:false, jsErrors:0, ms:0 };
-  try{
-    await page.goto(PAGE,{waitUntil:'domcontentloaded',timeout:45000});
-    await page.waitForSelector('#pom-mascot .pom-dog',{timeout:20000});
-    await page.click('#pom-mascot .pom-stage',{force:true});
-    await page.waitForSelector('#pom-mascot .pom-panel.open',{timeout:10000});
-    for(const msg of CHAT){
-      const before=await page.$$eval('#pom-mascot .pom-msg.bot', n=>n.length);
-      await page.fill('#pom-mascot .pom-input input', msg);
-      await page.click('#pom-mascot .pom-send');
-      await page.waitForFunction(b=>document.querySelectorAll('#pom-mascot .pom-msg.bot').length>b, before, {timeout:8000});
-      for(let k=0;k<5 && !m.talk;k++){ if(/(^| )talking( |$)/.test(await page.getAttribute('#pom-mascot','class'))) m.talk=true; else await page.waitForTimeout(60); }
-      ((await page.getAttribute('#pom-mascot','class')).match(/emo-([a-z]+)/g)||[]).forEach(c=>m.emotions.add(c));
-    }
-    const bots=await page.$$eval('#pom-mascot .pom-msg.bot', n=>n.map(x=>x.textContent));
-    const replies=bots.slice(-CHAT.length);        // ignore status + greeting lines
-    m.replies=replies.length;
-    m.ruffs=replies.filter(t=>/^(Ruff|Arf|Woof|Bark|Yip|Rrrf)/i.test(t)).length;
-    m.jsErrors=jsErr.length;
-    m.ok = m.replies>=CHAT.length && m.talk && m.emotions.size>=1 && m.jsErrors===0;
-  }catch(e){ m.error=e.message.split('\n')[0]; }
-  m.ms=Date.now()-t0; await ctx.close(); return m;
+  const body=(async()=>{
+    try{
+      await page.goto(PAGE,{waitUntil:'domcontentloaded',timeout:45000});
+      await page.waitForSelector('#pom-mascot .pom-dog',{timeout:25000});
+      await page.click('#pom-mascot .pom-stage',{force:true});
+      await page.waitForSelector('#pom-mascot .pom-panel.open',{timeout:15000});
+      for(const msg of CHAT){
+        const before=await page.$$eval('#pom-mascot .pom-msg.bot', n=>n.length);
+        await page.fill('#pom-mascot .pom-input input', msg);
+        await page.click('#pom-mascot .pom-send');
+        await page.waitForFunction(b=>document.querySelectorAll('#pom-mascot .pom-msg.bot').length>b, before, {timeout:12000});
+        for(let k=0;k<5 && !m.talk;k++){ if(/(^| )talking( |$)/.test(await page.getAttribute('#pom-mascot','class'))) m.talk=true; else await page.waitForTimeout(60); }
+        ((await page.getAttribute('#pom-mascot','class')).match(/emo-([a-z]+)/g)||[]).forEach(c=>m.emotions.add(c));
+      }
+      const bots=await page.$$eval('#pom-mascot .pom-msg.bot', n=>n.map(x=>x.textContent));
+      const replies=bots.slice(-CHAT.length);        // ignore status + greeting lines
+      m.replies=replies.length;
+      m.ruffs=replies.filter(t=>/^(Ruff|Arf|Woof|Bark|Yip|Rrrf)/i.test(t)).length;
+      m.jsErrors=jsErr.length;
+      m.ok = m.replies>=CHAT.length && m.talk && m.emotions.size>=1 && m.jsErrors===0;
+    }catch(e){ m.error=(e.message||'err').split('\n')[0]; }
+  })();
+  // Hard per-session cap so one starved session can't block a pool slot forever.
+  let timer; const guard=new Promise(r=>{ timer=setTimeout(()=>{ m.error=m.error||'session-guard-timeout'; r(); }, SESSION_MS); });
+  await Promise.race([body, guard]); clearTimeout(timer);
+  m.ms=Date.now()-t0;
+  try{ await ctx.close(); }catch(e){}
+  return m;
 }
 
 const browser=await chromium.launch({headless:true});

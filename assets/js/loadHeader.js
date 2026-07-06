@@ -21,6 +21,15 @@ export async function loadSharedHeader(){
     try{ if(!document.getElementById('cute-loader')){ const cs=document.createElement('script'); cs.id='cute-loader'; cs.src='/assets/js/cute.js?v=5'; document.body.appendChild(cs); } }catch(e){/* ignore */}
     // placeholder house ads (shared across pages)
     try{ if(!document.getElementById('ads-loader')){ const as=document.createElement('script'); as.id='ads-loader'; as.src='/assets/js/ads.js?v=1'; document.body.appendChild(as); } }catch(e){/* ignore */}
+    // global site search (shared across pages)
+    try{ if(!document.getElementById('search-loader')){ const ss=document.createElement('script'); ss.id='search-loader'; ss.src='/assets/js/search.js?v=1'; document.body.appendChild(ss); } }catch(e){/* ignore */}
+    // PWA: ensure the manifest + theme colour are present, then register the
+    // service worker so the site is installable and works offline.
+    try{
+      if(!document.querySelector('link[rel="manifest"]')){ const ml=document.createElement('link'); ml.rel='manifest'; ml.href='/site.webmanifest'; document.head.appendChild(ml); }
+      if(!document.querySelector('meta[name="theme-color"]')){ const tc=document.createElement('meta'); tc.name='theme-color'; tc.content='#6a1b9a'; document.head.appendChild(tc); }
+      if('serviceWorker' in navigator){ navigator.serviceWorker.register('/sw.js').catch(function(){}); }
+    }catch(e){/* ignore */}
     // after injecting, call Auth.renderAuthArea if available
     try{ if(window.Auth && window.Auth.renderAuthArea) await window.Auth.renderAuthArea(); }catch(e){/* ignore */}
     // make the Trading link always load a fresh page (bypass the static cache),

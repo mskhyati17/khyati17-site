@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Offline — Khyati17</title>
+  <link rel="icon" href="/favicon.svg"/>
+  <meta name="theme-color" content="#6a1b9a"/>
+  <style>
+    :root{color-scheme:dark}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;
+      font-family:Inter,system-ui,sans-serif;color:#fff;text-align:center;
+      background:radial-gradient(1200px 600px at 50% -10%,#7a2ea8,#2b0b3a)}
+    .card{max-width:440px}
+    .pup{font-size:84px;line-height:1;filter:drop-shadow(0 8px 16px rgba(0,0,0,.35));animation:bob 2.4s ease-in-out infinite}
+    @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    h1{font-size:1.7rem;margin:18px 0 8px}
+    p{opacity:.9;line-height:1.5;margin:0 0 22px}
+    button{background:#fff;color:#4a2370;border:none;border-radius:999px;padding:12px 22px;font:800 15px Inter,sans-serif;cursor:pointer}
+    button:hover{transform:translateY(-2px)}
+    .hint{margin-top:16px;font-size:.8rem;opacity:.7}
+    @media (prefers-reduced-motion: reduce){.pup{animation:none}}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="pup">🐶</div>
+    <h1>Ruff… you’re offline</h1>
+    <p>Mochi can’t reach the internet right now. Check your connection and try again — your games, stories and tools will be right here waiting!</p>
+    <button onclick="location.reload()">🔄 Try again</button>
+    <div class="hint">Khyati17 works offline for pages you’ve already visited.</div>
+  </div>
+  <script>
+    // Auto-retry the home page the moment we're back online.
+    addEventListener('online', function(){ location.href = '/home/index.html'; });
+  </script>
+</body>
+</html>
