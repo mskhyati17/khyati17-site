@@ -26,7 +26,7 @@ try{
   await p.click('#pom-mascot .pom-stage',{force:true}); await p.waitForTimeout(400);
   (await p.isVisible('#pom-mascot .pom-panel.open')) ? pass('panel opens on tap') : fail('panel did not open');
   const greet=(await p.$$eval('#pom-mascot .pom-msg.bot', ns=>ns.map(n=>n.textContent))).join(' ');
-  /Pomeranian|Ruff|Arf|Woof|🐾/i.test(greet) ? pass('greeting in character: "'+greet.slice(0,60)+'…"') : fail('greeting: '+greet);
+  /days old|🍖|Mochi|Ruff|Arf|Woof|🐾/i.test(greet) ? pass('greeting in character: "'+greet.slice(0,60)+'…"') : fail('greeting: '+greet);
 
   console.log('\n[3] Reply + emotion + speech bubble + lip-sync');
   await p.fill('#pom-mascot .pom-input input','tell me a joke'); await p.click('.pom-send');

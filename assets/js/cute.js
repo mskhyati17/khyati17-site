@@ -84,6 +84,32 @@
   var learned = loadLearned();
   var pendingLearn = null;
 
+  // ---- Virtual pet: baby that grows if you visit daily, shrinks if you skip
+  //      Visit every day to feed 🍖, bath 🛁, brush teeth 🪥 and pet 🤚.
+  //      Away 30+ days => she grows all the way back to a newborn (restart).
+  function todayIndex(){ var d=new Date(); return Math.floor((d.getTime() - d.getTimezoneOffset()*60000)/86400000); }
+  function freshCare(t){ return { day:t, feed:false, bath:false, brush:false, pet:false }; }
+  function petDefault(){ var t=todayIndex(); return { born:t, age:0, lastDay:t, care:freshCare(t), hearts:0 }; }
+  function loadPet(){ try{ var p=JSON.parse(localStorage.getItem('pomPet')||'null'); if(p&&typeof p.age==='number'){ if(!p.care) p.care=freshCare(todayIndex()); return p; } }catch(e){} return petDefault(); }
+  function savePet(){ try{ localStorage.setItem('pomPet', JSON.stringify(pet)); }catch(e){} }
+  var pet = loadPet();
+  // advance aging on (re)load; returns a status describing what changed today
+  function tickPet(){
+    var t=todayIndex(), gap=t-pet.lastDay, status={type:'sameday'};
+    if(gap>=30){ pet=petDefault(); status={type:'restart', gap:gap}; }
+    else if(gap>=1){ var change=2-gap; /* +1 next-day visit, -1 per extra missed day */ pet.age=Math.max(0, pet.age+change); pet.lastDay=t; pet.care=freshCare(t); status={type:(change>0?'grew':(change<0?'shrank':'same')), change:change, gap:gap}; }
+    else { if(pet.care.day!==t) pet.care=freshCare(t); }
+    savePet(); return status;
+  }
+  var STAGES=[{k:'baby',label:'Baby',emoji:'🍼',scale:.70},{k:'puppy',label:'Puppy',emoji:'🐶',scale:.86},{k:'young',label:'Young pup',emoji:'🐕',scale:1.0},{k:'grown',label:'Grown-up',emoji:'🦴',scale:1.14}];
+  function stageOf(a){ return a<=1?STAGES[0]:a<=6?STAGES[1]:a<=20?STAGES[2]:STAGES[3]; }
+  var CARE_META={
+    feed:{emoji:'🍖',emo:'treat',done:['Nom nom nom! 🍖 Thank youuu!','*munch munch* yummiest treat ever! 😋','My tummy is so happy now! 🍖💜'],again:'I’m all full from today, thank you! 😋'},
+    bath:{emoji:'🛁',emo:'happy',done:['Splish splash! 🛁 So fresh and clean! ✨','*shakes off* all sparkly now! 💦','Bubbly bath time, wheee! 🫧'],again:'Squeaky clean already today! 🛁✨'},
+    brush:{emoji:'🪥',emo:'proud',done:['Sparkly clean teeth! 🪥✨','*big toothy grin* so shiny! 😁','Minty fresh, thank you! 🪥💜'],again:'My teeth already sparkle today! 😁'},
+    pet:{emoji:'🤚',emo:'love',done:['*melts into a fluffy puddle* best pets everrr 🤚💜','*happy wag* I LOVE pets!! 🥰','Ooh, right behind the ears! 😌💜'],again:['*giggle* that tickles! 😹','More pets?! Yes please 🐾','*leans into your hand* 🥰','Boop! 🐽']}
+  };
+
   // ---- Ruff system: a bark before (most) spoken lines --------------------
   var RUFFS = ['Ruff!','Arf!','Woof!','Bark bark!','Yip!','Rrrf!'];
   function maybeRuff(){ return Math.random() < 0.72 ? pick(RUFFS) + ' ' : ''; }
@@ -104,7 +130,7 @@
     if ((m = raww.match(/(?:my name is|call me|name'?s)\s+([a-z][a-z'’-]{0,18})/))){ userName = cap(m[1]); try{ sessionStorage.setItem('pomUserName', userName); }catch(e){} return pick(['Best friend '+userName+'!! *zoomies* 🥰','Hi hi '+userName+'! I’m gonna remember you furrever 💜','Ooh '+userName+' — such a good name, treat-worthy! 🍖']); }
 
     if (/\b(bye|goodbye|see ya|cya|gtg|good night|night)\b/.test(t)) return pick(['Nooo don’t goooo 🥺 …okay bye! I’ll wait right here 🐾','Byeee best friend! Come back for belly rubs 💜','*sad tail* okay… see you soon?? 🥹']);
-    if (/\b(hi|hello|hey|yo|hiya|hola|sup|howdy)\b/.test(t)) return userName ? pick(['My favorite hooman '+userName+' is back!! 🎉🐾','Hi hi '+userName+'! *spins in a happy circle* 💜','You came back!! Best day ever 🥰']) : pick(['Hi best friend!! 🐶 What’s your name??','Hello hello! I’m '+cfg.name+' the teacup Pomeranian! Who are you? 💜','*bounces* A visitor!! Hi hi hi! ✨']);
+    if (/\b(hi|hello|hey|yo|hiya|hola|sup|howdy)\b/.test(t)) return userName ? pick(['My favorite hooman '+userName+' is back!! 🎉🐾','Hi hi '+userName+'! *spins in a happy circle* 💜','You came back!! Best day ever 🥰']) : pick(['Hi best friend!! 🐶 What’s your name??','Hello hello! I’m '+cfg.name+'! Who are you? 💜','*bounces* A visitor!! Hi hi hi! ✨']);
     if (/how are you|how r u|how you doing|hows it going|whats up|what is up/.test(t)) return pick(['Pawsome! I chased my tail 3 times already 🌀 you?','SO happy you’re here I could do zoomies! 🐾 How are you?','Living my best puppy life! 🥰 What about you?']);
     if (/\b(your name|who are you|who r u|what are you)\b/.test(t)) return 'I’m ' + cfg.name + ', a teeny teacup white Pomeranian 🐶 — your fluffy buddy on Khyati17! 💜';
     if (/\b(what can you do|what do you do|help me|your powers)\b/.test(t)) return 'I chat, tell jokes 😹, learn tricks you teach me 🧠, do the cutest zoomies, and show you around — Games 🎮, Stories 📖, Videos 🎬, AI Tools 🤖!';
@@ -331,14 +357,38 @@
     ].join('');
     document.head.appendChild(style);
 
+    // care-bar + growth-stage styling
+    var style2 = document.createElement('style');
+    style2.textContent = [
+      '#pom-mascot .pom-care{display:flex;align-items:center;gap:6px;padding:7px 9px;background:#f3e9fd;border-bottom:1px solid #ead9fb}',
+      '#pom-mascot .pom-agebadge{flex:1;font:700 10.5px Inter,sans-serif;color:#6a1b9a;line-height:1.25;min-width:0}',
+      '#pom-mascot .pom-carebtns{display:flex;gap:4px;flex:0 0 auto}',
+      '#pom-mascot .pom-carebtn{position:relative;width:29px;height:29px;border:1px solid #e0cdf5;background:#fff;border-radius:9px;cursor:pointer;font-size:15px;line-height:1;padding:0;transition:transform .15s,background .2s}',
+      '#pom-mascot .pom-carebtn:hover{transform:translateY(-2px)}',
+      '#pom-mascot .pom-carebtn:active{transform:scale(.9)}',
+      '#pom-mascot .pom-carebtn.done{background:#e5f7e8;border-color:#9fe0b0}',
+      '#pom-mascot .pom-carebtn.done::after{content:"✓";position:absolute;right:-3px;top:-4px;background:#3fae63;color:#fff;font-size:8px;font-weight:800;width:12px;height:12px;border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:1}',
+      '#pom-mascot .pom-dogwrap{transform-box:border-box;transform:scale(var(--dogScale,1));transform-origin:bottom center;transition:transform .8s cubic-bezier(.2,1.25,.4,1)}'
+    ].join('');
+    document.head.appendChild(style2);
+
     var wrap = document.createElement('div');
     wrap.id = 'pom-mascot';
     wrap.innerHTML =
-      '<div class="pom-tip">Ruff! Chat with me 🐶</div>' +
+      '<div class="pom-tip">Ruff! Chat &amp; pet me 🐶</div>' +
       '<div class="pom-panel" role="dialog" aria-label="Chat with Mochi the Pomeranian">' +
         '<div class="pom-head"><span class="pom-title"></span>' +
           '<button class="pom-gear" title="Customize" aria-label="Customize">⚙️</button>' +
           '<button class="pom-x" title="Close" aria-label="Close">✕</button></div>' +
+        '<div class="pom-care">' +
+          '<div class="pom-agebadge"></div>' +
+          '<div class="pom-carebtns">' +
+            '<button class="pom-carebtn" data-care="feed" title="Feed her 🍖">🍖</button>' +
+            '<button class="pom-carebtn" data-care="bath" title="Give her a bath 🛁">🛁</button>' +
+            '<button class="pom-carebtn" data-care="brush" title="Brush her teeth 🪥">🪥</button>' +
+            '<button class="pom-carebtn" data-care="pet" title="Pet her 🤚">🤚</button>' +
+          '</div>' +
+        '</div>' +
         '<div class="pom-msgs"></div>' +
         '<div class="pom-settings">' +
           '<label>Name</label><input class="pom-name" type="text" maxlength="14" />' +
@@ -352,7 +402,7 @@
         '<div class="pom-particles"></div>' +
         '<div class="pom-emobubble" aria-hidden="true"></div>' +
         '<div class="pom-speech" aria-live="polite"></div>' +
-        dogSVG() +
+        '<div class="pom-dogwrap">' + dogSVG() + '</div>' +
       '</div>';
     document.body.appendChild(wrap);
 
@@ -370,16 +420,56 @@
     var emoBubble= wrap.querySelector('.pom-emobubble');
     var particles= wrap.querySelector('.pom-particles');
     var dogEl    = wrap.querySelector('.pom-dog');
+    var dogWrap  = wrap.querySelector('.pom-dogwrap');
+    var ageBadge = wrap.querySelector('.pom-agebadge');
+    var careBtns = Array.prototype.slice.call(wrap.querySelectorAll('.pom-carebtn'));
     var greeted  = false;
+    var petStatus = tickPet();   // advance aging as soon as the page loads
 
     // ---------- config UI ----------
     function applyCfg(){
-      titleEl.textContent = cfg.name + ' the teacup Pomeranian 🐶';
+      titleEl.textContent = cfg.name + ' 🐶';
       input.placeholder = 'Say hi to ' + cfg.name + '…';
       stage.title = 'Chat with ' + cfg.name;
       ACCESSORIES.forEach(function(a){ wrap.classList.remove('acc-'+a.k); });
       if (cfg.acc && cfg.acc !== 'none') wrap.classList.add('acc-'+cfg.acc);
-      wrap.querySelector('.pom-dog').setAttribute('aria-label', cfg.name + ' the teacup Pomeranian');
+      wrap.querySelector('.pom-dog').setAttribute('aria-label', cfg.name + ' the puppy');
+    }
+
+    // ---------- care + aging UI ----------
+    function applyStage(){ var st=stageOf(pet.age); if(dogWrap) dogWrap.style.setProperty('--dogScale', st.scale); wrap.setAttribute('data-stage', st.k); }
+    function renderCare(){
+      var t=todayIndex(); if(pet.care.day!==t){ pet.care=freshCare(t); savePet(); }
+      var st=stageOf(pet.age);
+      ageBadge.textContent = st.emoji + ' ' + st.label + ' ' + cfg.name + ' · ' + pet.age + ' day' + (pet.age===1?'':'s') + ' old';
+      careBtns.forEach(function(b){ b.classList.toggle('done', !!pet.care[b.getAttribute('data-care')]); });
+      applyStage();
+    }
+    function statusLine(s){
+      var a=pet.age, d=function(n){ return n + ' day' + (n===1?'':'s'); };
+      if(!s) return '';
+      if(s.type==='restart') return 'Whoaa, you were away ' + s.gap + ' days… I grew aaaall the way back into a teeny newborn! 🍼 Let’s start over — visit me every day! 💜';
+      if(s.type==='grew')   return 'Yay, you came back!! I grew a little — I’m ' + d(a) + ' old now! 🎉 Will you feed me, bathe me & brush my teeth today?';
+      if(s.type==='shrank') return 'Aww, you missed ' + d(s.gap-1) + ' so I got a bit smaller 🥺 Please visit every day so I grow big and strong!';
+      var todo=[]; if(!pet.care.feed)todo.push('feed me 🍖'); if(!pet.care.bath)todo.push('bathe me 🛁'); if(!pet.care.brush)todo.push('brush my teeth 🪥'); if(!pet.care.pet)todo.push('pet me 🤚');
+      if(todo.length) return 'I’m ' + d(a) + ' old today! Don’t forget to ' + todo.join(', ') + '!';
+      return 'I’m ' + d(a) + ' old and allll cared for today — you’re the best! 💜 Come back tomorrow so I grow!';
+    }
+    function doCare(kind){
+      var t=todayIndex(); if(pet.care.day!==t) pet.care=freshCare(t);
+      var meta=CARE_META[kind]; if(!meta) return;
+      var first=!pet.care[kind];
+      if(first){ pet.care[kind]=true; pet.hearts=(pet.hearts||0)+1; }
+      savePet(); renderCare();
+      var line = first ? pick(meta.done) : (Array.isArray(meta.again)?pick(meta.again):meta.again);
+      setEmotion(meta.emo); showBubble(line); speak(line, meta.emo);
+      if(first){
+        addMsg(line,'bot');
+        if(pet.care.feed && pet.care.bath && pet.care.brush && pet.care.pet){
+          var bonus='🌟 Yippee! You fed me, bathed me, brushed my teeth AND petted me today — I feel amazing! Come back tomorrow so I grow! 💜';
+          setTimeout(function(){ setEmotion('excited'); showBubble(bonus); speak(bonus,'excited'); addMsg(bonus,'bot'); }, 950);
+        }
+      }
     }
     var accsBox = settings.querySelector('.pom-accs');
     ACCESSORIES.forEach(function(a){
@@ -480,15 +570,28 @@
       dogEl.style.setProperty('--mouth', 0);
     }
 
-    // pick a cute high voice once available
+    // Pick the sweetest, least-robotic voice available. Neural / "Natural" /
+    // "Online" voices (Edge, Google, Apple) sound far warmer than the built-in
+    // eSpeak fallback, so we rank strongly toward those and toward soft female
+    // timbres, and away from robotic engines.
     var chosenVoice = null;
+    function scoreVoice(v){
+      var n = (v.name||'') + ' ' + (v.voiceURI||'');
+      var s = 0;
+      if (/en[-_]?(us|gb|au)/i.test(v.lang)) s += 6; else if (/^en/i.test(v.lang)) s += 4;
+      if (/natural|neural|online|premium|enhanced/i.test(n)) s += 20;     // smoothest engines
+      if (/google/i.test(n)) s += 12;                                     // Google voices are warm
+      if (/\b(jenny|aria|ava|allison|samantha|michelle|sonia|libby|nanci|zira|clara|emma|amelie|karen|tessa|serena)\b/i.test(n)) s += 8;
+      if (/female|woman|girl/i.test(n)) s += 5;
+      if (/espeak|robo|synth(?!e)|festival|pico/i.test(n)) s -= 15;       // avoid robotic
+      if (v.localService === false) s += 3;                               // cloud = higher quality
+      return s;
+    }
     function pickVoice(){
       try{
         var vs = window.speechSynthesis.getVoices() || [];
         if (!vs.length) return;
-        var prefer = vs.filter(function(v){ return /en/i.test(v.lang); });
-        var pool = prefer.length ? prefer : vs;
-        chosenVoice = pool.find(function(v){ return /female|zira|samantha|google us english|karen|tessa/i.test(v.name); }) || pool[0];
+        chosenVoice = vs.slice().sort(function(a,b){ return scoreVoice(b) - scoreVoice(a); })[0] || null;
       }catch(e){}
     }
     if ('speechSynthesis' in window){
@@ -507,9 +610,21 @@
           window.speechSynthesis.cancel();
           var u = new SpeechSynthesisUtterance(clean);
           if (chosenVoice) u.voice = chosenVoice;
-          // small-dog voice: high pitch, lively rate, tuned by emotion
-          u.pitch = emotion==='sad'||emotion==='sleepy' ? 1.2 : 1.7;
-          u.rate  = emotion==='excited'||emotion==='laughing' ? 1.18 : (emotion==='sleepy'?0.85:1.05);
+          // Sweet, warm puppy voice — gently bright, never chipmunk-robotic.
+          // Softer pitch + a touch of per-line variation keeps it from sounding
+          // flat/synthetic; each emotion nudges the warmth.
+          var TONE = {
+            excited:  { p:1.45, r:1.06 }, laughing:{ p:1.42, r:1.05 },
+            love:     { p:1.34, r:0.94 }, happy:   { p:1.38, r:0.99 },
+            proud:    { p:1.36, r:1.00 }, treat:   { p:1.40, r:1.02 },
+            surprised:{ p:1.46, r:1.03 }, thinking:{ p:1.28, r:0.95 },
+            confused: { p:1.30, r:0.95 }, sleepy:  { p:1.12, r:0.84 },
+            scared:   { p:1.40, r:1.05 }, sad:     { p:1.16, r:0.90 }
+          };
+          var tone = TONE[emotion] || { p:1.34, r:0.98 };
+          var jitter = (Math.random() - 0.5) * 0.06;   // subtle, natural inflection
+          u.pitch  = Math.max(0.8, Math.min(2, tone.p + jitter));
+          u.rate   = tone.r;
           u.volume = 1;
           var started = false;
           u.onstart = function(){ started = true; startMouth(999999); };
@@ -553,10 +668,11 @@
 
     function showSettings(on){ settings.style.display = on?'block':'none'; msgs.style.display = on?'none':'flex'; inputWrap.style.display = on?'none':'flex'; }
     function open(){
-      panel.classList.add('open'); tip.classList.remove('show'); showSettings(false);
+      panel.classList.add('open'); tip.classList.remove('show'); showSettings(false); renderCare();
       if (!greeted){
         greeted = true;
-        var hi = (userName ? ('Best friend '+userName+'!! ') : '') + 'I’m ' + cfg.name + ' the teacup Pomeranian! Tap ⚙️ to dress me up, or ask me anything! 🐾💜';
+        if (petStatus) addMsg(statusLine(petStatus), 'bot');
+        var hi = (userName ? ('Best friend '+userName+'!! ') : '') + 'I’m ' + cfg.name + '! Feed me 🍖, bathe me 🛁, brush my teeth 🪥 and pet me 🤚 every day so I grow! Or just ask me anything 💜';
         var line = maybeRuff() + hi;
         setEmotion('excited'); showBubble(line); speak(line, 'excited'); addMsg(line, 'bot');
       }
@@ -571,7 +687,9 @@
     }
 
     // ---------- wiring ----------
-    stage.addEventListener('click', function(){ panel.classList.contains('open') ? close() : open(); });
+    // Tap the puppy to open the chat; once open, tapping her = petting her.
+    stage.addEventListener('click', function(){ panel.classList.contains('open') ? doCare('pet') : open(); });
+    careBtns.forEach(function(b){ b.addEventListener('click', function(e){ e.stopPropagation(); doCare(b.getAttribute('data-care')); }); });
     wrap.querySelector('.pom-x').addEventListener('click', function(e){ e.stopPropagation(); close(); });
     wrap.querySelector('.pom-gear').addEventListener('click', function(e){ e.stopPropagation(); showSettings(settings.style.display!=='block'); });
     settings.querySelector('.pom-done').addEventListener('click', function(){ showSettings(false); });
@@ -580,6 +698,7 @@
     wrap.addEventListener('click', function(e){ e.stopPropagation(); });
 
     setEmotion('neutral');
+    renderCare();   // reflect age/size + today's care state right away
     setTimeout(function(){ if (!panel.classList.contains('open')) tip.classList.add('show'); }, 1400);
     setTimeout(function(){ tip.classList.remove('show'); }, 6500);
   }
