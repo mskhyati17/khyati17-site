@@ -19,6 +19,8 @@ export async function loadSharedHeader(){
     // floating-emoji background decoration + cute touches (shared across pages)
     try{ if(!document.getElementById('decor-loader')){ const ds=document.createElement('script'); ds.id='decor-loader'; ds.src='/assets/js/decor.js'; document.body.appendChild(ds); } }catch(e){/* ignore */}
     try{ if(!document.getElementById('cute-loader')){ const cs=document.createElement('script'); cs.id='cute-loader'; cs.src='/assets/js/cute.js?v=5'; document.body.appendChild(cs); } }catch(e){/* ignore */}
+    // placeholder house ads (shared across pages)
+    try{ if(!document.getElementById('ads-loader')){ const as=document.createElement('script'); as.id='ads-loader'; as.src='/assets/js/ads.js?v=1'; document.body.appendChild(as); } }catch(e){/* ignore */}
     // after injecting, call Auth.renderAuthArea if available
     try{ if(window.Auth && window.Auth.renderAuthArea) await window.Auth.renderAuthArea(); }catch(e){/* ignore */}
     // make the Trading link always load a fresh page (bypass the static cache),
