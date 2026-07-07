@@ -103,6 +103,12 @@
     .foot-links a{color:#e9d8ff;text-decoration:none;font-weight:600;font-size:.85rem}
     .foot-links a:hover{color:#fff;text-decoration:underline}
     .foot-note{font-size:.8rem;opacity:.85}
+    /* share */
+    .share-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin-top:34px}
+    .share-label{font-weight:800;color:#6a1b9a;font-size:.95rem}
+    .share-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid #e3d3f6;background:#fff;color:#4a2370;font-weight:700;font-size:.86rem;border-radius:999px;padding:9px 15px;cursor:pointer;text-decoration:none;transition:transform .15s,box-shadow .15s}
+    .share-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(117,80,168,.16)}
+    .share-btn.copied{background:#e5f7e8;border-color:#9fe0b0;color:#2f7d47}
   </style>
 
   <section class="home-explore" aria-labelledby="explore-title">
@@ -151,6 +157,15 @@
         <div class="why"><span>🔒</span> Kid-friendly</div>
         <div class="why"><span>🐶</span> Meet Mochi</div>
       </div>
+
+      <div class="share-row" aria-label="Share Khyati17">
+        <span class="share-label">Love it? Share Khyati17 💜</span>
+        <button class="share-btn" data-share="native" hidden>📤 Share</button>
+        <a class="share-btn" data-share="x" target="_blank" rel="noopener">𝕏 Post</a>
+        <a class="share-btn" data-share="wa" target="_blank" rel="noopener">💬 WhatsApp</a>
+        <a class="share-btn" data-share="fb" target="_blank" rel="noopener">📘 Facebook</a>
+        <button class="share-btn" data-share="copy">🔗 Copy link</button>
+      </div>
     </div>
   </section>
 
@@ -182,6 +197,18 @@
       if(!('IntersectionObserver' in window)){ nums.forEach(function(n){ n.textContent=(+n.getAttribute('data-to')).toLocaleString()+(n.getAttribute('data-suffix')||''); }); return; }
       var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ run(en.target); io.unobserve(en.target); } }); },{threshold:.4});
       nums.forEach(function(n){ io.observe(n); });
+    })();
+    // Share Khyati17
+    (function(){
+      var url='https://khyati17.com/', text='Check out Khyati17 — 2,000+ free games, 100 AI tools, stories & more! 🎮📖🤖';
+      var x=document.querySelector('[data-share="x"]'); if(x) x.href='https://twitter.com/intent/tweet?text='+encodeURIComponent(text)+'&url='+encodeURIComponent(url);
+      var wa=document.querySelector('[data-share="wa"]'); if(wa) wa.href='https://wa.me/?text='+encodeURIComponent(text+' '+url);
+      var fb=document.querySelector('[data-share="fb"]'); if(fb) fb.href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url);
+      var nat=document.querySelector('[data-share="native"]');
+      if(nat && navigator.share){ nat.hidden=false; nat.addEventListener('click',function(){ navigator.share({title:'Khyati17',text:text,url:url}).catch(function(){}); }); }
+      var cp=document.querySelector('[data-share="copy"]');
+      if(cp) cp.addEventListener('click',function(){ var done=function(){ cp.classList.add('copied'); var t=cp.textContent; cp.textContent='✅ Copied!'; setTimeout(function(){ cp.classList.remove('copied'); cp.textContent=t; },1800); };
+        if(navigator.clipboard){ navigator.clipboard.writeText(url).then(done).catch(done); } else { done(); } });
     })();
   </script>
   <script type="module" src="../assets/js/auth.js?v=2"></script>
