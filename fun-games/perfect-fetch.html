@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🎾 Perfect Fetch</title>
+<meta name="description" content="Time your tap to land the ball in the shrinking green zone — a one-tap timing game with Mochi on Khyati17." />
+<meta property="og:title" content="🎾 Perfect Fetch — Khyati17" />
+<meta property="og:description" content="One tap, perfect timing. How high can you score before the zone gets tiny?" />
+<meta property="og:image" content="https://khyati17.com/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(135deg,#2b0b3a,#6a1b9a,#9c4dcc);min-height:100vh;display:flex;justify-content:center;align-items:center;padding:20px}
+  .container{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border-radius:24px;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.12);text-align:center;max-width:460px;width:100%}
+  h1{font-size:1.7rem;color:#fff;margin-bottom:4px;text-shadow:0 0 30px rgba(233,216,255,.4)}
+  .subtitle{color:rgba(255,255,255,.65);font-size:.82rem;margin-bottom:14px;min-height:1.1em}
+  .score-board{display:flex;justify-content:space-between;background:rgba(0,0,0,.3);border-radius:12px;padding:9px 18px;margin-bottom:18px;color:#fff}
+  .score-board b{color:#e9d8ff}
+  .track{position:relative;height:58px;border-radius:14px;background:rgba(0,0,0,.28);overflow:hidden;margin:0 auto;max-width:400px}
+  #zone{position:absolute;top:0;bottom:0;background:linear-gradient(180deg,#7ee081,#4bbf6a);box-shadow:0 0 22px rgba(126,224,129,.6)}
+  #marker{position:absolute;top:6px;bottom:6px;width:10px;border-radius:6px;background:#fff;box-shadow:0 0 16px #fff;transform:translateX(-50%)}
+  #ball{position:absolute;top:50%;transform:translate(-50%,-50%);font-size:26px;pointer-events:none}
+  .tapzone{margin-top:18px}
+  .tapbtn{width:100%;max-width:400px;background:#e9d8ff;color:#2b0b3a;border:none;border-radius:14px;padding:16px;font-weight:800;font-size:1.1rem;cursor:pointer}
+  .tapbtn:active{transform:scale(.98)}
+  .controls{margin-top:14px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .controls a,.controls button{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:9px 20px;border-radius:10px;cursor:pointer;font-size:.95rem;text-decoration:none;display:inline-block}
+  .controls a:hover,.controls button:hover{background:#e9d8ff;color:#2b0b3a}
+  .flash{animation:fl .3s}@keyframes fl{0%{filter:brightness(2)}100%{filter:none}}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🎾 Perfect Fetch</h1>
+  <p class="subtitle" id="msg">Tap when the ball 🎾 is in the green zone!</p>
+  <div class="score-board"><div>Score: <b id="score">0</b></div><div>Lives: <b id="lives">❤️❤️❤️</b></div><div>Best: <b id="best">0</b></div></div>
+  <div class="track" id="track">
+    <div id="zone"></div>
+    <div id="marker"></div>
+    <div id="ball">🎾</div>
+  </div>
+  <div class="tapzone"><button class="tapbtn" id="tap">TAP! (or press Space)</button></div>
+  <div class="controls">
+    <button id="restart">Restart</button>
+    <a href="/fun-games/index.html">← All Games</a>
+  </div>
+</div>
+<script>
+(function(){
+  var track=document.getElementById('track'), zoneEl=document.getElementById('zone'), markerEl=document.getElementById('marker'), ballEl=document.getElementById('ball');
+  var scoreEl=document.getElementById('score'), livesEl=document.getElementById('lives'), bestEl=document.getElementById('best'), msg=document.getElementById('msg');
+  var W=400; // logical width
+  var pos, dir, sp, zLo, zHi, score, lives, state, best, raf, last;
+  try{ best=+localStorage.getItem('perfectFetchBest')||0; }catch(e){} best=best||0; bestEl.textContent=best;
+
+  function newZone(){
+    var width=Math.max(34, 150 - score*6);       // shrinks as you score
+    zLo=20+Math.random()*(W-40-width); zHi=zLo+width;
+    zoneEl.style.left=(zLo/W*100)+'%'; zoneEl.style.width=(width/W*100)+'%';
+  }
+  function reset(){
+    pos=0; dir=1; sp=2.4; score=0; lives=3; state='play'; last=0;
+    scoreEl.textContent=0; livesEl.textContent='❤️❤️❤️'; msg.textContent='Tap when 🎾 is in the green zone!';
+    newZone(); cancelAnimationFrame(raf); raf=requestAnimationFrame(loop);
+  }
+  function loop(ts){
+    if(state!=='play'){ return; }
+    if(!last) last=ts; var dt=Math.min(50,ts-last); last=ts;
+    pos += dir*sp*(dt/16.7);
+    if(pos>=W-6){ pos=W-6; dir=-1; } if(pos<=6){ pos=6; dir=1; }
+    markerEl.style.left=(pos/W*100)+'%'; ballEl.style.left=(pos/W*100)+'%';
+    raf=requestAnimationFrame(loop);
+  }
+  function tap(){
+    if(state!=='play') return;
+    if(pos>=zLo && pos<=zHi){
+      score++; scoreEl.textContent=score; sp+=0.35; // faster each hit
+      track.classList.remove('flash'); void track.offsetWidth; track.classList.add('flash');
+      msg.textContent=['Perfect! 🐾','Good boy! 🎾','Nice fetch! ✨','Wow! 🌟'][Math.min(3,Math.floor(score/5))];
+      newZone();
+    } else {
+      lives--; livesEl.textContent='❤️'.repeat(Math.max(0,lives))||'💔';
+      msg.textContent='Missed! 🙈';
+      if(lives<=0) end();
+    }
+  }
+  function end(){
+    state='over'; cancelAnimationFrame(raf);
+    if(score>best){ best=score; try{ localStorage.setItem('perfectFetchBest',best); }catch(e){} bestEl.textContent=best; msg.textContent='New best: '+best+'! 🏆 Press Restart.'; }
+    else msg.textContent='Game over — score '+score+'. Press Restart!';
+  }
+  document.getElementById('tap').addEventListener('click',tap);
+  document.getElementById('restart').addEventListener('click',reset);
+  document.addEventListener('keydown',function(e){ if(e.key===' '){ e.preventDefault(); tap(); } });
+  track.addEventListener('click',tap);
+
+  // test hooks
+  window.__perfectFetch = { get score(){return score;}, get lives(){return lives;}, get state(){return state;}, zone:function(){return {lo:zLo,hi:zHi};}, setPos:function(x){ pos=x; }, tap:tap, reset:reset };
+
+  reset();
+})();
+</script>
+<script src="/assets/js/cute.js?nb=1"></script>
+</body>
+</html>
