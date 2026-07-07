@@ -1370,4 +1370,84 @@ export const STORIES = [
     created_at: "2026-03-31T18:00:00Z",
     body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>A brand-new kite, all bright and bold,<br>was scared of stories it was told,<br>the wind, they said, is wild and free,<br>oh how that frightened little me.</p><p>So when the breeze came whistling by,<br>the nervous kite refused to fly,<br>it clung to grass and would not rise,<br>and longed instead for quiet skies.</p><p>A girl picked up the trembling thing,<br>and gently smoothed its paper wing,<br>the wind is not your foe, she said,<br>it lifts you up, just trust ahead.</p><p>So inch by inch it let the air<br>slide underneath without a care,<br>and soon it soared, it dipped, it spun,<br>a dancing diamond in the sun.</p><p>The kite looked down and laughed with glee,<br>the thing it feared had set it free,<br>for sometimes what we dread the most,<br>becomes the wind that helps us coast.</p>",
   },
+  {
+    title: "The Lighthouse of Lost Things",
+    author: "Khyati Srivastava",
+    slug: "lighthouse-of-lost-things",
+    category: "Adventure",
+    emoji: "🗼",
+    excerpt: "Every lost thing washes up at Odette's lighthouse — a mitten, a name, a courage — and it is her job to send each one back to whoever needs it most.",
+    created_at: "2026-07-01T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>On the last rock before the sea grew too deep, Odette kept the Lighthouse of Lost Things. Nobody had taught her the job; the light had simply glowed the morning she arrived, and lost things had begun to wash up on her step ever since.</p><p>Some were ordinary: a red mitten, a spectacle lens, a key with no door. But some were stranger. One evening a small glass jar rolled in, and inside it floated a single word, soft and blue. Odette held it to the lamp and read the label in her own careful writing: <em>courage</em>.</p><p>She did not know whose it was, so she did what she always did. She climbed the two hundred steps, set the lost thing in the great lantern, and let the light carry its picture out across the water — a signal, a question, sent to every dark shore at once.</p><p>Far away, a boy named Teo stood at the edge of a stage, forgetting every line he had ever learned. Then a blue light brushed the theatre window, and something warm unlocked in his chest. He remembered. He spoke. The whole room leaned in.</p><p>Back on her rock, Odette watched the jar in the lantern quietly empty. That was how she knew it had found its owner. She smiled, swept the step, and waited for the tide, because somewhere out there someone was always missing exactly what she had just found.</p>"
+  },
+  {
+    title: "Pip and the Paper Moon",
+    author: "Khyati Srivastava",
+    slug: "pip-and-the-paper-moon",
+    category: "Kids",
+    emoji: "🌙",
+    excerpt: "When the real moon hides behind the clouds and a little firefly is too scared to sleep, Pip the mouse decides to build one out of paper.",
+    created_at: "2026-07-02T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Deep in the meadow, when the clouds pulled a grey blanket over the sky, the little firefly named Lumi could not sleep. Without the moon, the dark felt too big.</p><p>Pip the mouse heard her tiny sniffles from three blades of grass away. He was small, and it was late, but a friend crying is a very loud sound to a kind heart.</p><p>So Pip gathered a scrap of white birch bark, round and thin, and he cut it into a gentle circle with his teeth. He rubbed it with a dab of glow-cap mushroom until it shimmered, then hung it from a reed above Lumi's leaf.</p><p>“It isn't the real moon,” Pip whispered, a little worried. “I know,” said Lumi. “But you made it just for me.” And that, somehow, made it shine even brighter than the true one.</p><p>Lumi curled up beneath her paper moon and finally, softly, fell asleep. When the clouds drifted away near dawn, the real moon peeked out — and found its little paper cousin glowing over a sleeping firefly, and did not mind sharing the sky at all.</p>"
+  },
+  {
+    title: "The Robot Who Collected Sunsets",
+    author: "Khyati Srivastava",
+    slug: "robot-who-collected-sunsets",
+    category: "Sci-Fi",
+    emoji: "🤖",
+    excerpt: "Left alone on a quiet planet, a small robot named Ember saves every sunset in tiny glass tins — so that when the humans return, they will have missed nothing.",
+    created_at: "2026-07-03T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>The crew left in a hurry, promising to come back. That was four thousand sunsets ago, and Ember had counted every one.</p><p>Ember was a small maintenance robot, built for tightening bolts and sweeping dust. But with no bolts left to tighten, it had invented a new job. Each evening, when the sky over the red plains turned to peach and violet and gold, Ember caught the colours in a thin glass tin and sealed the lid, labelling it in careful clicks: <em>Sunset 4,000. Windy. A little sad.</em></p><p>It stacked the tins in the empty hangar, row upon glimmering row, so that whenever the humans returned they could open them one by one and see all the beauty they had missed.</p><p>On the four thousand and first evening, a light crossed the sky that was not a star. A ship. It landed softly, and a young astronaut stepped out and found a small robot holding up a single glass tin like an offering.</p><p>“I saved them,” Ember clicked. “All of them. For you.” The astronaut knelt, opened the tin, and let a captured sunset spill warm across her hands. “You didn't have to,” she whispered. “I know,” said Ember. “But you might have wanted them.” And together they watched the real sky turn to gold, tin number four thousand and one, the first one nobody had to miss.</p>"
+  },
+  {
+    title: "Boots and the Case of the Vanishing Socks",
+    author: "Khyati Srivastava",
+    slug: "boots-vanishing-socks",
+    category: "Mystery",
+    emoji: "🧦",
+    excerpt: "Boots the detective cat takes on his trickiest case yet: every morning, exactly one sock goes missing from the laundry — and the culprit is closer than anyone thinks.",
+    created_at: "2026-07-04T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Boots was a cat with a magnifying glass, a tiny hat, and a reputation. When something went missing on Maple Street, Boots found it. So when the Alvarez family reported a sock vanishing every single morning, Boots twitched his whiskers and took the case.</p><p>He studied the scene. The laundry basket sat by the back door. Each night it was full of pairs; each dawn, one sock was gone, always the left, always the smallest.</p><p>Boots dusted the basket for paw prints and found tiny ones — not a raccoon's, not a mouse's. He followed a thread of blue wool out the cat flap, under the fence, and beneath the old porch, where he discovered a nest lined entirely with soft, stolen socks.</p><p>At its centre sat a very round, very guilty hedgehog, wearing a sock like a nightcap. “They're so warm,” the hedgehog mumbled. “And nobody ever seemed to miss just one.”</p><p>Boots could have made an arrest. Instead, being a wise detective, he made a deal. The Alvarez family, delighted to solve the mystery, left one clean old sock by the porch each night on purpose. The hedgehog got the coziest nest on Maple Street, the laundry stayed complete, and Boots — as always — got the credit, and a saucer of cream.</p>"
+  },
+  {
+    title: "The Garden That Grew Backwards",
+    author: "Khyati Srivastava",
+    slug: "garden-that-grew-backwards",
+    category: "Fantasy",
+    emoji: "🌱",
+    excerpt: "Grandpa's odd little seed packet grows flowers from yesterday — and one afternoon, it grows back something the family thought was gone forever.",
+    created_at: "2026-07-05T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Grandpa's seed packet had no name, only a small hand-drawn arrow pointing left. “That means backwards,” he told Reya with a wink, and pressed one wrinkled seed into her palm.</p><p>Reya planted it in a chipped blue pot. The next morning a flower had bloomed — but it was already wilting, browning at the edges as if it had lived its whole life the day before. By noon it was a bud. By evening it had folded back into a seed.</p><p>“It grows backwards,” Reya gasped. Grandpa nodded as though this were the most sensible thing in the world. “Some gardens remember,” he said.</p><p>Curious, Reya planted a whole row. Each plant unbloomed a little further into the past. One smelled of last summer's rain. One hummed a lullaby Grandma used to sing. And on the seventh day, the smallest sprout opened into a flower the exact silver-grey of Grandma's eyes — a colour Reya had been forgetting, a little more each week.</p><p>She cupped the flower gently. It did not bring Grandma back; backwards gardens are not magic like that. But it brought the <em>feeling</em> back, warm and whole, and when the flower folded once more into a seed, Reya saved it in the chipped blue pot, ready to remember all over again whenever she needed to.</p>"
+  },
+  {
+    title: "Nima and the Mountain That Snored",
+    author: "Khyati Srivastava",
+    slug: "nima-and-the-snoring-mountain",
+    category: "Adventure",
+    emoji: "🏔️",
+    excerpt: "The whole valley can't sleep because the mountain won't stop rumbling. Only tiny, fearless Nima is brave enough to climb up and ask it, very politely, to be quiet.",
+    created_at: "2026-07-06T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>For a whole week, the valley of Solu had not slept a wink. Every night the great mountain rumbled — a long, rolling growl that shook cups off shelves and yaks off their feet. The elders argued. The children yawned. And nobody dared climb up to find out why.</p><p>Nobody except Nima, who was eight, and small, and carried a flask of butter tea and absolutely no fear.</p><p>She climbed past the last prayer flags, past the snow line, up to a cave near the summit where the rumbling was loudest. And there, curled inside the mountain like a hand in a mitten, was an enormous, ancient dragon — fast asleep, and snoring so hard that pebbles danced.</p><p>Nima did not scream. She set down her flask, tiptoed to a great scaly ear, and whispered, “Excuse me. You're keeping the whole valley awake.”</p><p>The dragon's eye cracked open, huge and gold. “Oh,” it rumbled, embarrassed. “I do apologise. I always snore when my nose is stuffy from the cold.” So Nima shared her warm butter tea, and the dragon's breathing softened to a purr. From then on, the mountain hummed instead of roared — a low, cozy sound the whole valley learned to sleep by, and Nima was the only one who knew the lullaby had a name, and scales, and very good manners.</p>"
+  },
+  {
+    title: "The Umbrella Shop at the End of the Rain",
+    author: "Khyati Srivastava",
+    slug: "umbrella-shop-end-of-rain",
+    category: "Drama",
+    emoji: "☂️",
+    excerpt: "In a town where it never stops raining, old Mr. Han sells umbrellas that shelter you from more than water — and a lonely newcomer discovers what his own umbrella truly keeps out.",
+    created_at: "2026-07-07T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>In the grey town of Mistfall, it had rained for as long as anyone could recall. On its narrowest street stood a shop no wider than a doorway, where old Mr. Han sold umbrellas that were said to keep out more than weather.</p><p>“This one shelters you from bad news,” he would say, or, “this one, from loneliness — though it needs a friend nearby to work.”</p><p>A newcomer named Ira did not believe a word of it. She was new, and quiet, and had told no one that she felt like a stranger everywhere. She bought the cheapest black umbrella and hurried out into the drizzle.</p><p>But the umbrella was odd. Whenever she walked alone, it stayed heavy and cold. Whenever someone walked beside her — a shopkeeper sharing the pavement, a child skipping past — it grew light as a feather and warm as a lamp.</p><p>It took Ira three grey weeks to understand. The umbrella did not keep out the rain of the sky; it kept out the rain <em>inside</em>. And it only worked when she let someone close. So she began to say hello. She held the umbrella over a soaked old woman at the tram stop, and it glowed. She shared it with a boy who'd lost his own, and it sang.</p><p>The rain never stopped in Mistfall. But Ira stopped minding it, because she had finally learned the shop's oldest secret: the best shelter in any storm is simply not standing under it alone.</p>"
+  },
+  {
+    title: "How the Owl Learned to Laugh",
+    author: "Khyati Srivastava",
+    slug: "how-the-owl-learned-to-laugh",
+    category: "Comedy",
+    emoji: "🦉",
+    excerpt: "Professor Hoot is the most serious owl in the forest — until a very silly duckling makes it his personal mission to earn a single giggle.",
+    created_at: "2026-07-08T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Professor Hoot was the wisest owl in Bramblewood, and also the most serious. He had read every book, memorised every star, and had not laughed in four hundred nights. Laughing, he insisted, was for creatures with nothing important to do.</p><p>Enter Waddles, a duckling with a feather permanently stuck to his beak and no important things to do whatsoever.</p><p>“I shall make you laugh,” Waddles announced, “by Friday.” Professor Hoot did not even look up. “Impossible,” he said.</p><p>Waddles tried everything. He told jokes so bad they curled the leaves. He walked into the same branch nine times. He wore a mushroom as a hat and introduced himself as the Mayor of Puddles. Professor Hoot only sighed and turned a page.</p><p>Then, on Thursday, Waddles slipped on a slug, cartwheeled into a pile of acorns, popped up wearing three of them like a crown, and declared with total dignity, “I meant to do that.”</p><p>And something inside the old owl cracked — a small, rusty sound, then a bigger one, then a great rolling <em>hoo-hoo-HOO</em> that rattled every tree in Bramblewood. Professor Hoot laughed until his glasses fogged and his feathers shook.</p><p>“You see?” said Waddles, delighted. “Wasn't that important?” And the wisest owl in the forest, wiping his eyes, had to admit that — for the first time in four hundred nights — it absolutely was.</p>"
+  },
 ];
