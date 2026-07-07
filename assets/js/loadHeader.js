@@ -1,5 +1,7 @@
 export async function loadSharedHeader(){
   try{
+    // apply the saved colour theme as early as possible to reduce flash
+    try{ const t=localStorage.getItem('theme'); if(t) document.documentElement.setAttribute('data-theme', t); }catch(e){}
     // ensure there is a mount point; some pages may not include it
     let root = document.getElementById('site-header-root');
     if(!root){ root = document.createElement('div'); root.id = 'site-header-root'; document.body.insertBefore(root, document.body.firstChild); }
@@ -16,6 +18,8 @@ export async function loadSharedHeader(){
     }
     if(!html) throw new Error('Failed to fetch header include from any known path');
     root.innerHTML = html;
+    // light/dark theme toggle (shared across pages) — load first so it themes early
+    try{ if(!document.getElementById('theme-loader')){ const ts=document.createElement('script'); ts.id='theme-loader'; ts.src='/assets/js/theme.js?v=1'; document.body.appendChild(ts); } }catch(e){/* ignore */}
     // floating-emoji background decoration + cute touches (shared across pages)
     try{ if(!document.getElementById('decor-loader')){ const ds=document.createElement('script'); ds.id='decor-loader'; ds.src='/assets/js/decor.js'; document.body.appendChild(ds); } }catch(e){/* ignore */}
     try{ if(!document.getElementById('cute-loader')){ const cs=document.createElement('script'); cs.id='cute-loader'; cs.src='/assets/js/cute.js?v=5'; document.body.appendChild(cs); } }catch(e){/* ignore */}
