@@ -69,12 +69,120 @@
     </div>
   </main>
 
+  <style>
+    .home-explore{width:100%;display:flex;justify-content:center;padding:8px 16px 40px}
+    .explore-inner{width:100%;max-width:var(--max-width)}
+    .stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:6px 0 44px}
+    .stat{background:#fff;border:1px solid #efe4fb;border-radius:16px;padding:20px 12px;text-align:center;box-shadow:0 8px 24px rgba(117,80,168,.08)}
+    .stat-num{display:block;font-weight:800;font-size:2rem;line-height:1;background:linear-gradient(90deg,var(--purple-700),var(--purple-500));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .stat-label{display:block;margin-top:8px;font-weight:600;font-size:.82rem;color:#6a4b8f}
+    .explore-title{text-align:center;font-size:1.9rem;margin:0 0 6px;color:var(--purple-900)}
+    .explore-sub{text-align:center;color:#6a4b8f;margin:0 auto 26px;max-width:520px}
+    .explore-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .xcard{position:relative;display:block;text-decoration:none;color:#fff;border-radius:18px;padding:22px 20px;min-height:150px;overflow:hidden;box-shadow:0 12px 30px rgba(80,40,120,.18);transition:transform .2s,box-shadow .2s}
+    .xcard:hover{transform:translateY(-5px);box-shadow:0 20px 44px rgba(80,40,120,.28)}
+    .xcard .xc-emoji{font-size:2.4rem;line-height:1;filter:drop-shadow(0 3px 5px rgba(0,0,0,.25))}
+    .xcard h3{margin:12px 0 4px;font-size:1.2rem}
+    .xcard p{margin:0;font-size:.86rem;opacity:.95;line-height:1.4}
+    .xcard .xc-count{position:absolute;top:16px;right:16px;background:rgba(255,255,255,.9);color:#3a2058;font-weight:800;font-size:.72rem;border-radius:999px;padding:4px 10px}
+    .xcard .xc-go{margin-top:12px;display:inline-block;font-weight:800;font-size:.85rem}
+    .xc-games{background:linear-gradient(135deg,#6a1b9a,#c56be0)}
+    .xc-tools{background:linear-gradient(135deg,#9a1b5c,#e05b8a)}
+    .xc-stories{background:linear-gradient(135deg,#1b6a9a,#4dc0cc)}
+    .xc-videos{background:linear-gradient(135deg,#9a5c1b,#e0a24d)}
+    .xc-trading{background:linear-gradient(135deg,#1b9a5c,#4dcc86)}
+    .xc-others{background:linear-gradient(135deg,#7550a8,#b58be0)}
+    .why-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:34px}
+    .why{background:#fff;border:1px solid #efe4fb;border-radius:999px;padding:9px 16px;font-weight:700;font-size:.85rem;color:#4a2370;display:flex;align-items:center;gap:7px}
+    @media (max-width:820px){ .explore-grid{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:560px){ .stats-strip{grid-template-columns:repeat(2,1fr)} .explore-grid{grid-template-columns:1fr} .stat-num{font-size:1.7rem} }
+    /* richer footer */
+    .site-footer{width:100%}
+    .foot-rich{width:100%;max-width:var(--max-width);margin:0 auto;display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center;padding:6px 16px}
+    .foot-links{display:flex;flex-wrap:wrap;gap:14px}
+    .foot-links a{color:#e9d8ff;text-decoration:none;font-weight:600;font-size:.85rem}
+    .foot-links a:hover{color:#fff;text-decoration:underline}
+    .foot-note{font-size:.8rem;opacity:.85}
+  </style>
+
+  <section class="home-explore" aria-labelledby="explore-title">
+    <div class="explore-inner">
+      <div class="stats-strip" aria-label="Site highlights">
+        <div class="stat"><span class="stat-num" data-to="2137" data-suffix="+">0</span><span class="stat-label">🎮 Free Games</span></div>
+        <div class="stat"><span class="stat-num" data-to="100">0</span><span class="stat-label">🤖 AI Tools</span></div>
+        <div class="stat"><span class="stat-num" data-to="112">0</span><span class="stat-label">📖 Stories</span></div>
+        <div class="stat"><span class="stat-num" data-to="50" data-suffix="+">0</span><span class="stat-label">🎬 Videos</span></div>
+      </div>
+
+      <h2 id="explore-title" class="explore-title">Everything to explore ✨</h2>
+      <p class="explore-sub">One playground for games, stories, tools and more — all free, right in your browser.</p>
+
+      <div class="explore-grid">
+        <a class="xcard xc-games" href="/fun-games/index.html">
+          <span class="xc-count">2,137+</span><div class="xc-emoji">🎮</div>
+          <h3>Fun &amp; Games</h3><p>Over 2,000 games to play instantly — arcade, puzzle, racing and more.</p><span class="xc-go">Play now →</span>
+        </a>
+        <a class="xcard xc-tools" href="/ai-tools/index.html">
+          <span class="xc-count">100</span><div class="xc-emoji">🤖</div>
+          <h3>AI Tools</h3><p>Fancy text, ciphers, converters, generators — 100 tools in your browser.</p><span class="xc-go">Try them →</span>
+        </a>
+        <a class="xcard xc-stories" href="/stories/index.html">
+          <span class="xc-count">112</span><div class="xc-emoji">📖</div>
+          <h3>Story Hub</h3><p>Original tales to read and enjoy — adventure, mystery and heart.</p><span class="xc-go">Read now →</span>
+        </a>
+        <a class="xcard xc-videos" href="/videos/videos.html">
+          <span class="xc-count">50+</span><div class="xc-emoji">🎬</div>
+          <h3>Videos</h3><p>Fun shorts and clips, hand-picked and ready to watch.</p><span class="xc-go">Watch now →</span>
+        </a>
+        <a class="xcard xc-trading" href="/trading/trading.html">
+          <div class="xc-emoji">📈</div>
+          <h3>Trading Zone</h3><p>Learn market basics and follow along with live-style charts.</p><span class="xc-go">Explore →</span>
+        </a>
+        <a class="xcard xc-others" href="/others/others.html">
+          <div class="xc-emoji">🌟</div>
+          <h3>Kid Advice &amp; More</h3><p>Friendly tips to learn, grow and be your best self.</p><span class="xc-go">Discover →</span>
+        </a>
+      </div>
+
+      <div class="why-row">
+        <div class="why"><span>✨</span> 100% free</div>
+        <div class="why"><span>⚡</span> No downloads</div>
+        <div class="why"><span>📱</span> Works offline</div>
+        <div class="why"><span>🔒</span> Kid-friendly</div>
+        <div class="why"><span>🐶</span> Meet Mochi</div>
+      </div>
+    </div>
+  </section>
+
   <footer class="site-footer">
-    <p>© <span id="year"></span> Khyati — All rights reserved</p>
+    <div class="foot-rich">
+      <nav class="foot-links" aria-label="Footer">
+        <a href="/fun-games/index.html">Games</a>
+        <a href="/ai-tools/index.html">AI Tools</a>
+        <a href="/stories/index.html">Stories</a>
+        <a href="/videos/videos.html">Videos</a>
+        <a href="/trading/trading.html">Trading</a>
+        <a href="/about/about.html">About</a>
+      </nav>
+      <p class="foot-note">© <span id="year"></span> Khyati17 — made with 💜</p>
+    </div>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    // Animated count-up when the stats scroll into view
+    (function(){
+      var nums = document.querySelectorAll('.stat-num');
+      function run(el){
+        var to = +el.getAttribute('data-to'), suf = el.getAttribute('data-suffix')||'', t0=null, dur=1400;
+        function step(ts){ if(!t0) t0=ts; var p=Math.min(1,(ts-t0)/dur); var e=1-Math.pow(1-p,3);
+          el.textContent = Math.round(to*e).toLocaleString() + (p===1?suf:''); if(p<1) requestAnimationFrame(step); }
+        requestAnimationFrame(step);
+      }
+      if(!('IntersectionObserver' in window)){ nums.forEach(function(n){ n.textContent=(+n.getAttribute('data-to')).toLocaleString()+(n.getAttribute('data-suffix')||''); }); return; }
+      var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ run(en.target); io.unobserve(en.target); } }); },{threshold:.4});
+      nums.forEach(function(n){ io.observe(n); });
+    })();
   </script>
   <script type="module" src="../assets/js/auth.js?v=2"></script>
   <script type="module">import('../assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
