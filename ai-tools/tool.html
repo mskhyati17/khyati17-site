@@ -56,6 +56,7 @@
       <div class="btn-row">
         <button class="pbtn pbtn-solid" id="t-run">Run</button>
         <button class="pbtn pbtn-ghost" id="t-copy">📋 Copy result</button>
+        <button class="pbtn pbtn-ghost" id="t-share">🔗 Share tool</button>
       </div>
       <div class="out-label">Result</div>
       <div id="t-out"></div>
@@ -113,6 +114,16 @@
         try{ await navigator.clipboard.writeText(txt); b.textContent='✅ Copied!'; }
         catch(e){ b.textContent='Press Ctrl+C'; }
         setTimeout(()=>{ b.textContent='📋 Copy result'; }, 1500);
+      });
+      // share this specific tool (native share on mobile, copy link elsewhere)
+      document.getElementById('t-share').addEventListener('click', async ()=>{
+        const b = document.getElementById('t-share');
+        const shareUrl = 'https://khyati17.com/ai-tools/tool.html?t=' + encodeURIComponent(id);
+        const data = { title: tool.name + ' — Khyati17', text: 'Try the ' + tool.name + ' tool on Khyati17!', url: shareUrl };
+        if(navigator.share){ try{ await navigator.share(data); return; }catch(e){} }
+        try{ await navigator.clipboard.writeText(shareUrl); b.textContent='✅ Link copied!'; }
+        catch(e){ b.textContent='Press Ctrl+C'; }
+        setTimeout(()=>{ b.textContent='🔗 Share tool'; }, 1600);
       });
     }
   </script>

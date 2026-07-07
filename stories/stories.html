@@ -98,9 +98,22 @@
     function showStory(s){
       const el = document.getElementById('story-content');
       if(!el) return;
-      el.innerHTML = `<h2>${escapeHtml(s.title||'')}</h2><p style="color:#6a4b8f">${escapeHtml(s.excerpt||'')}</p><div>${s.body||''}</div>`;
+      const slug = s.slug || s.id || (s.title||'').replace(/\s+/g,'-').toLowerCase();
+      el.innerHTML = `<h2>${escapeHtml(s.title||'')}</h2><p style="color:#6a4b8f">${escapeHtml(s.excerpt||'')}</p>`
+        + `<button id="story-share" class="btn btn-ghost" style="margin:2px 0 12px;font-size:.85rem;padding:6px 14px">🔗 Share story</button>`
+        + `<div>${s.body||''}</div>`;
+      // wire the share button (native share on mobile, copy link elsewhere)
+      const sb = document.getElementById('story-share');
+      if(sb) sb.addEventListener('click', async ()=>{
+        const shareUrl = 'https://khyati17.com/stories/stories.html?story=' + encodeURIComponent(slug);
+        const data = { title: (s.title||'A story') + ' — Khyati17', text: s.excerpt || 'Read this story on Khyati17!', url: shareUrl };
+        if(navigator.share){ try{ await navigator.share(data); return; }catch(e){} }
+        try{ await navigator.clipboard.writeText(shareUrl); sb.textContent='✅ Link copied!'; }
+        catch(e){ sb.textContent='Press Ctrl+C'; }
+        setTimeout(()=>{ sb.textContent='🔗 Share story'; }, 1600);
+      });
       // set a data-content-id for comments to pick up
-      el.setAttribute('data-content-id', s.slug || s.id || (s.title||'').replace(/\s+/g,'-').toLowerCase());
+      el.setAttribute('data-content-id', slug);
       // load comments for this story
       (async ()=>{
         const cid = el.getAttribute('data-content-id');
