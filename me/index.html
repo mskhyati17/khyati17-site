@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Stuff — Khyati17</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <meta name="description" content="Your Khyati17 dashboard — Mochi streak, coins, achievements, favorites and recently opened." />
+  <meta name="theme-color" content="#6a1b9a" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Khyati17" />
+  <meta property="og:title" content="My Stuff — Khyati17" />
+  <meta property="og:description" content="Your streak, coins, achievements and favorites in one place." />
+  <meta property="og:image" content="https://khyati17.com/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <style>
+    .my{max-width:var(--max-width);margin:0 auto;padding:24px 16px 48px;width:100%}
+    .my h1{font-size:1.8rem;color:var(--purple-900);margin:6px 0 4px}
+    .my .sub{color:#6a4b8f;margin-bottom:22px}
+    .my-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:30px}
+    .my-stat{background:#fff;border:1px solid #efe4fb;border-radius:16px;padding:18px 12px;text-align:center;box-shadow:0 8px 24px rgba(117,80,168,.08)}
+    .my-stat .n{display:block;font-weight:800;font-size:1.9rem;line-height:1;color:var(--purple-700)}
+    .my-stat .l{display:block;margin-top:6px;font-weight:600;font-size:.78rem;color:#6a4b8f}
+    .my h2{font-size:1.15rem;color:var(--purple-900);margin:26px 0 12px;display:flex;align-items:center;gap:8px}
+    .badges{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px}
+    .badge{background:#fff;border:1px solid #efe4fb;border-radius:14px;padding:14px 10px;text-align:center;opacity:.42;filter:grayscale(.7);transition:.2s}
+    .badge.earned{opacity:1;filter:none;box-shadow:0 8px 22px rgba(117,80,168,.12);border-color:#e0cdf5}
+    .badge .e{font-size:1.9rem;line-height:1}
+    .badge .n{display:block;margin-top:6px;font-weight:700;font-size:.78rem;color:#4a2370}
+    .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+    .item{display:flex;align-items:center;gap:11px;background:#fff;border:1px solid #efe4fb;border-radius:14px;padding:11px 13px;text-decoration:none;transition:transform .15s,box-shadow .15s}
+    .item:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(117,80,168,.14)}
+    .item .ico{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;background:#f3e9fd;flex:0 0 auto}
+    .item .t{font-weight:700;font-size:.9rem;color:#2b1444;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .item .s{font-size:.72rem;color:#8a7aa0}
+    .empty{background:#faf5ff;border:1px dashed #e0cdf5;border-radius:14px;padding:20px;text-align:center;color:#8a7aa0;font-weight:600}
+    .empty a{color:#6a1b9a}
+    @media (max-width:560px){ .my-stats{grid-template-columns:repeat(2,1fr)} }
+    /* dark */
+    [data-theme="dark"] .my h1,[data-theme="dark"] .my h2{color:#f0e6ff}
+    [data-theme="dark"] .my .sub{color:#c3b0dd}
+    [data-theme="dark"] .my-stat,[data-theme="dark"] .badge,[data-theme="dark"] .item{background:#241633;border-color:#3a2550}
+    [data-theme="dark"] .my-stat .n{color:#d9b8ff}
+    [data-theme="dark"] .my-stat .l,[data-theme="dark"] .item .s{color:#b7a4d6}
+    [data-theme="dark"] .badge .n,[data-theme="dark"] .item .t{color:#f0e8ff}
+    [data-theme="dark"] .item .ico{background:#2a1b3d}
+    [data-theme="dark"] .empty{background:#1c1129;border-color:#3a2550;color:#b7a4d6}
+  </style>
+</head>
+<body>
+  <div id="site-header-root"></div>
+
+  <main class="my container" role="main">
+    <h1>🐾 My Stuff</h1>
+    <p class="sub">Your Mochi streak, coins, achievements and the things you love — all in one place.</p>
+
+    <div class="my-stats" id="stats"></div>
+
+    <h2>🏅 Achievements <span id="badge-count" style="font-weight:600;font-size:.8rem;color:#8a7aa0"></span></h2>
+    <div class="badges" id="badges"></div>
+
+    <h2>⭐ Favorites</h2>
+    <div id="favs"></div>
+
+    <h2>🕘 Recently opened</h2>
+    <div id="recent"></div>
+  </main>
+
+  <footer class="site-footer"><p style="text-align:center;padding:8px">© <span id="year"></span> Khyati17 — made with 💜</p></footer>
+
+  <script type="module" src="../assets/js/auth.js?v=2"></script>
+  <script type="module">import('../assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+    (function(){
+      function load(k,d){ try{ var v=JSON.parse(localStorage.getItem(k)); return v==null?d:v; }catch(e){ return d; } }
+      var r = load('pomRewards', {streak:0,longest:0,coins:0,days:0,badges:[]});
+      var favs = load('ks_favs', []), recent = load('ks_recent', []);
+      var ACH = [
+        {id:'first',emoji:'🐾',name:'First Visit'},{id:'streak3',emoji:'🔥',name:'3-Day Streak'},
+        {id:'streak7',emoji:'⭐',name:'Weekly Warrior'},{id:'streak30',emoji:'👑',name:'Monthly Legend'},
+        {id:'loyal10',emoji:'🏅',name:'10 Days In'},{id:'coins100',emoji:'🪙',name:'Coin Collector'},
+        {id:'coins500',emoji:'💎',name:'Treasure Hunter'}
+      ];
+      var TYPES={Game:{e:'🎮',c:'#6a1b9a'},Story:{e:'📖',c:'#1b6a9a'},Tool:{e:'🤖',c:'#9a1b5c'},Video:{e:'🎬',c:'#9a5c1b'}};
+      function esc(s){ return String(s==null?'':s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c];}); }
+
+      var stats=[['🔥',r.streak||0,'Day streak'],['🏆',r.longest||0,'Best streak'],['🪙',r.coins||0,'Coins'],['📅',r.days||0,'Days visited']];
+      document.getElementById('stats').innerHTML = stats.map(function(s){ return '<div class="my-stat"><span class="n">'+s[0]+' '+s[1]+'</span><span class="l">'+s[2]+'</span></div>'; }).join('');
+
+      var earned = r.badges||[];
+      document.getElementById('badge-count').textContent = '('+earned.length+' / '+ACH.length+')';
+      document.getElementById('badges').innerHTML = ACH.map(function(a){ var on=earned.indexOf(a.id)>=0; return '<div class="badge'+(on?' earned':'')+'"><div class="e">'+a.emoji+'</div><span class="n">'+a.name+'</span></div>'; }).join('');
+
+      function itemHtml(x){ var m=TYPES[x.type]||{e:'✨',c:'#6a1b9a'}; return '<a class="item" href="'+esc(x.url)+'"><span class="ico" style="background:'+m.c+'22">'+m.e+'</span><span style="min-width:0"><div class="t">'+esc(x.title)+'</div><div class="s">'+esc(x.type||x.sub||'')+'</div></span></a>'; }
+      var favEl=document.getElementById('favs');
+      favEl.innerHTML = favs.length ? '<div class="cards">'+favs.map(itemHtml).join('')+'</div>' : '<div class="empty">No favorites yet — tap the search (🔍 or “/”) and star ☆ anything you love!</div>';
+      var recEl=document.getElementById('recent');
+      recEl.innerHTML = recent.length ? '<div class="cards">'+recent.map(itemHtml).join('')+'</div>' : '<div class="empty">Nothing yet — open a <a href="/fun-games/index.html">game</a>, <a href="/stories/index.html">story</a> or <a href="/ai-tools/index.html">tool</a> from search and it’ll show up here.</div>';
+    })();
+  </script>
+</body>
+</html>
