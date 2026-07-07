@@ -27,6 +27,11 @@ export async function loadSharedHeader(){
     try{ if(!document.getElementById('ads-loader')){ const as=document.createElement('script'); as.id='ads-loader'; as.src='/assets/js/ads.js?v=1'; document.body.appendChild(as); } }catch(e){/* ignore */}
     // global site search (shared across pages)
     try{ if(!document.getElementById('search-loader')){ const ss=document.createElement('script'); ss.id='search-loader'; ss.src='/assets/js/search.js?v=1'; document.body.appendChild(ss); } }catch(e){/* ignore */}
+    // accessibility: skip-to-content link + visible keyboard focus outline
+    try{
+      if(!document.getElementById('a11y-css')){ const ac=document.createElement('style'); ac.id='a11y-css'; ac.textContent='#skip-link{position:absolute;left:-999px;top:8px;z-index:100001;background:#6a1b9a;color:#fff;padding:9px 15px;border-radius:8px;font:700 13px Inter,system-ui,sans-serif;text-decoration:none}#skip-link:focus{left:8px}:focus-visible{outline:3px solid #c56be0;outline-offset:2px;border-radius:4px}'; document.head.appendChild(ac); }
+      if(!document.getElementById('skip-link')){ const sk=document.createElement('a'); sk.id='skip-link'; sk.href='#'; sk.textContent='Skip to content'; sk.addEventListener('click',function(e){ e.preventDefault(); const m=document.querySelector('main,[role="main"],.container,.content'); if(m){ m.setAttribute('tabindex','-1'); m.focus(); m.scrollIntoView(); } }); document.body.insertBefore(sk, document.body.firstChild); }
+    }catch(e){/* ignore */}
     // PWA: ensure the manifest + theme colour are present, then register the
     // service worker so the site is installable and works offline.
     try{
