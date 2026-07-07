@@ -1,4 +1,4 @@
-// 100 client-side mini AI tools. Each: { id, name, emoji, cat, desc, gen?, placeholder?, run(input)->string }
+// 125 client-side mini AI tools. Each: { id, name, emoji, cat, desc, gen?, placeholder?, run(input)->string }
 // Rendered by tool.html and listed in the AI Zone. All run in the browser.
 const MORSE={A:'.-',B:'-...',C:'-.-.',D:'-..',E:'.',F:'..-.',G:'--.',H:'....',I:'..',J:'.---',K:'-.-',L:'.-..',M:'--',N:'-.',O:'---',P:'.--.',Q:'--.-',R:'.-.',S:'...',T:'-',U:'..-',V:'...-',W:'.--',X:'-..-',Y:'-.--',Z:'--..','0':'-----','1':'.----','2':'..---','3':'...--','4':'....-','5':'.....','6':'-....','7':'--...','8':'---..','9':'----.','.':'.-.-.-',',':'--..--','?':'..--..','!':'-.-.--','/':'-..-.','-':'-....-','@':'.--.-.'};
 const MORSE_REV=Object.fromEntries(Object.entries(MORSE).map(([k,v])=>[v,k]));
@@ -22,6 +22,14 @@ const toHex2=n=>Math.max(0,Math.min(255,Math.round(n))).toString(16).padStart(2,
 function parseDate(s){ s=(s||'').trim(); const m=s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/); const d=m?new Date(+m[1],+m[2]-1,+m[3]):new Date(s); return isNaN(d)?null:d; }
 const LOREM='lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exercitation ullamco laboris nisi aliquip ex ea commodo consequat duis aute irure in reprehenderit voluptate velit esse cillum eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt culpa qui officia deserunt mollit anim id est laborum'.split(' ');
 function randHex(){ return '#'+Math.floor(Math.random()*16777215).toString(16).padStart(6,'0').toUpperCase(); }
+// ---- helpers for the +25 tools ----
+const B32='ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
+function base32enc(s){ const b=[]; for(const ch of unescape(encodeURIComponent(s))) b.push(ch.charCodeAt(0)); let bits='',out=''; for(const x of b) bits+=x.toString(2).padStart(8,'0'); for(let i=0;i<bits.length;i+=5){ let ch=bits.slice(i,i+5); if(ch.length<5) ch=ch.padEnd(5,'0'); out+=B32[parseInt(ch,2)]; } while(out.length%8) out+='='; return out; }
+const ZALGO_UP=[0x030d,0x030e,0x0304,0x0305,0x033f,0x0311,0x0306,0x0310,0x0352,0x0357,0x0343,0x0344,0x034a,0x034b,0x0303,0x0302,0x035b,0x0341];
+const ZALGO_DN=[0x0316,0x0317,0x0318,0x0319,0x031c,0x031d,0x031e,0x0323,0x0324,0x0325,0x0326,0x0329,0x032a,0x032b,0x032c,0x0330,0x0331,0x0332];
+function zalgo(s){ return Array.from(s).map(ch=>{ if(/\s/.test(ch)) return ch; let o=ch; const n=2+Math.floor(Math.random()*4); for(let i=0;i<n;i++){ const pool=Math.random()<.5?ZALGO_UP:ZALGO_DN; o+=String.fromCodePoint(pool[Math.floor(Math.random()*pool.length)]); } return o; }).join(''); }
+function relLum(r,g,b){ const a=[r,g,b].map(v=>{ v/=255; return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4); }); return 0.2126*a[0]+0.7152*a[1]+0.0722*a[2]; }
+function hslToRgb(h,s,l){ h=((h%360)+360)%360; s/=100; l/=100; const c=(1-Math.abs(2*l-1))*s, x=c*(1-Math.abs((h/60)%2-1)), m=l-c/2; let r,g,b; if(h<60)[r,g,b]=[c,x,0]; else if(h<120)[r,g,b]=[x,c,0]; else if(h<180)[r,g,b]=[0,c,x]; else if(h<240)[r,g,b]=[0,x,c]; else if(h<300)[r,g,b]=[x,0,c]; else [r,g,b]=[c,0,x]; return [(r+m)*255,(g+m)*255,(b+m)*255]; }
 
 export const TOOLS = [
   // ---- Text (15) ----
@@ -151,4 +159,45 @@ export const TOOLS = [
   { id:'lorem-ipsum', name:'Lorem Ipsum', emoji:'📝', cat:'Random', desc:'Generate placeholder text (type a word count).', placeholder:'e.g. 40', run:s=>{ let n=parseInt(s,10); if(isNaN(n)||n<1) n=30; n=Math.min(n,300); let out=[]; for(let i=0;i<n;i++) out.push(pick(LOREM)); let t=out.join(' '); return t.charAt(0).toUpperCase()+t.slice(1)+'.'; } },
   { id:'team-picker', name:'Team Picker', emoji:'🧑‍🤝‍🧑', cat:'Random', desc:'Split a list into two fair teams.', placeholder:'Ava, Ben, Cara, Dan…', run:s=>{ const p=s.split(/[,\n]/).map(x=>x.trim()).filter(Boolean); if(p.length<2) return 'Enter at least two names (comma or line separated)'; for(let i=p.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [p[i],p[j]]=[p[j],p[i]]; } const h=Math.ceil(p.length/2); return `Team A: ${p.slice(0,h).join(', ')}\nTeam B: ${p.slice(h).join(', ')}`; } },
   { id:'pick-winner', name:'Pick a Winner', emoji:'🏆', cat:'Random', desc:'Randomly choose one from your list.', placeholder:'pizza, tacos, sushi…', run:s=>{ const p=s.split(/[,\n]/).map(x=>x.trim()).filter(Boolean); if(!p.length) return 'Enter some options (comma or line separated)'; return '🏆 '+pick(p); } },
+
+  // ================= 25 MORE TOOLS (now 125) =================
+
+  // ---- Text (5) ----
+  { id:'invert-case', name:'iNVERT cASE', emoji:'🔃', cat:'Text', desc:'Swap upper and lower case.', run:s=>s.replace(/[a-z]/gi,c=>c===c.toLowerCase()?c.toUpperCase():c.toLowerCase()) },
+  { id:'acronym', name:'Acronym Maker', emoji:'🔠', cat:'Text', desc:'First letter of each word → acronym.', placeholder:'e.g. National Aeronautics Space Administration', run:s=>{ const w=(s.match(/[A-Za-z0-9]+/g)||[]); return w.length?w.map(x=>x[0].toUpperCase()).join(''):'Enter some words'; } },
+  { id:'initials', name:'Initials', emoji:'🅰️', cat:'Text', desc:'Turn a name into spaced initials.', placeholder:'e.g. Khyati Srivastava', run:s=>{ const w=(s.match(/[A-Za-z]+/g)||[]); return w.length?w.map(x=>x[0].toUpperCase()+'.').join(' '):'Enter a name'; } },
+  { id:'repeat-text', name:'Repeat Text', emoji:'♾️', cat:'Text', desc:'Repeat text N times — "text | 3".', placeholder:'ha | 5', run:s=>{ const m=s.split('|'); const t=(m[0]||'').trim(); let n=parseInt(m[1],10); if(!t) return 'Format: text | count'; if(isNaN(n)||n<1) n=3; n=Math.min(n,1000); return Array(n).fill(t).join(' '); } },
+  { id:'remove-numbers', name:'Remove Numbers', emoji:'🚯', cat:'Text', desc:'Strip out every digit.', run:s=>s.replace(/[0-9]/g,'') },
+
+  // ---- Format (3) ----
+  { id:'spaced-text', name:'S P A C E D', emoji:'📃', cat:'Format', desc:'Put a space between every letter.', run:s=>Array.from(s.replace(/\s+/g,' ')).join(' ').replace(/   /g,'  ') },
+  { id:'reverse-each-word', name:'Reverse Each Word', emoji:'🔁', cat:'Format', desc:'Reverse letters, keep word order.', run:s=>s.replace(/\S+/g,w=>Array.from(w).reverse().join('')) },
+  { id:'zalgo', name:'Z̸a̸l̸g̸o̸ Glitch', emoji:'👹', cat:'Format', desc:'Cursed, glitchy zalgo text.', run:s=>zalgo(s) },
+
+  // ---- Encode (4) ----
+  { id:'base32-encode', name:'Base32 Encode', emoji:'🔠', cat:'Encode', desc:'Encode text to Base32.', run:s=>s?base32enc(s):'Enter some text' },
+  { id:'rot5', name:'ROT5 (digits)', emoji:'5️⃣', cat:'Encode', desc:'Shift each digit by 5.', run:s=>s.replace(/[0-9]/g,d=>String((+d+5)%10)) },
+  { id:'hex-decode', name:'Hex → Text', emoji:'🔡', cat:'Encode', desc:'Decode hex codes back to text.', placeholder:'48 69 21', run:s=>{ try{ const h=s.trim().match(/[0-9a-f]{2}/gi); if(!h) return 'Enter hex like "48 69 21"'; return decodeURIComponent(h.map(x=>'%'+x).join('')); }catch(e){ return 'Invalid hex'; } } },
+  { id:'html-num-entities', name:'Text → HTML Entities', emoji:'🔢', cat:'Encode', desc:'Numeric HTML entities (&#65;).', run:s=>Array.from(s).map(c=>'&#'+c.codePointAt(0)+';').join('') },
+
+  // ---- Calc (6) ----
+  { id:'quadratic', name:'Quadratic Solver', emoji:'📐', cat:'Calc', desc:'Solve ax²+bx+c=0.', placeholder:'a b c  e.g. 1 -3 2', run:s=>{ const n=nums(s); if(n.length<3) return 'Enter a, b, c — e.g. "1 -3 2"'; const [a,b,c]=n; if(a===0) return 'a can’t be 0 (not quadratic)'; const d=b*b-4*a*c; if(d<0) return `No real roots (discriminant ${d})`; const r1=(-b+Math.sqrt(d))/(2*a), r2=(-b-Math.sqrt(d))/(2*a); return d===0?`One root: x = ${r1}`:`x₁ = ${(+r1.toFixed(4))}\nx₂ = ${(+r2.toFixed(4))}`; } },
+  { id:'bmi', name:'BMI Calculator', emoji:'⚖️', cat:'Calc', desc:'Body Mass Index — "kg cm".', placeholder:'weight height  e.g. 70 175', run:s=>{ const n=nums(s); if(n.length<2) return 'Enter weight (kg) & height (cm), e.g. "70 175"'; const [w,h]=n; if(h<=0) return 'Height must be positive'; const bmi=w/Math.pow(h/100,2); const cat=bmi<18.5?'underweight':bmi<25?'healthy':bmi<30?'overweight':'obese'; return `BMI: ${bmi.toFixed(1)}\nCategory: ${cat}`; } },
+  { id:'compound-interest', name:'Compound Interest', emoji:'💰', cat:'Calc', desc:'Grow money — "principal rate% years".', placeholder:'1000 5 10', run:s=>{ const n=nums(s); if(n.length<3) return 'Enter principal, rate%, years — e.g. "1000 5 10"'; const [p,r,t]=n; const amt=p*Math.pow(1+r/100,t); return `Final amount: ${amt.toFixed(2)}\nInterest earned: ${(amt-p).toFixed(2)}`; } },
+  { id:'permutations', name:'nPr & nCr', emoji:'🎰', cat:'Calc', desc:'Permutations & combinations.', placeholder:'n r  e.g. 5 2', run:s=>{ const n=nums(s); if(n.length<2) return 'Enter n and r, e.g. "5 2"'; const [N,R]=n.map(x=>Math.round(x)); if(R>N||N<0||R<0) return 'Need 0 ≤ r ≤ n'; const f=x=>{ let r=1; for(let i=2;i<=x;i++) r*=i; return r; }; const nPr=f(N)/f(N-R), nCr=nPr/f(R); return `${N}P${R} = ${nPr}\n${N}C${R} = ${nCr}`; } },
+  { id:'aspect-ratio', name:'Aspect Ratio', emoji:'🖼️', cat:'Calc', desc:'Simplify width:height to a ratio.', placeholder:'1920 1080', run:s=>{ const n=nums(s); if(n.length<2) return 'Enter width & height, e.g. "1920 1080"'; let [w,h]=n.map(x=>Math.round(x)); if(!w||!h) return 'Both must be non-zero'; const g=(a,b)=>b?g(b,a%b):a; const d=g(w,h); return `${w}×${h} → ${w/d}:${h/d}`; } },
+  { id:'std-dev', name:'Standard Deviation', emoji:'📉', cat:'Calc', desc:'Mean, variance & std deviation.', placeholder:'e.g. 4, 8, 15, 16, 23', run:s=>{ const n=nums(s); if(n.length<2) return 'Enter at least two numbers'; const m=n.reduce((a,b)=>a+b,0)/n.length; const v=n.reduce((a,b)=>a+(b-m)*(b-m),0)/n.length; return `Mean: ${m.toFixed(3)}\nVariance: ${v.toFixed(3)}\nStd Dev: ${Math.sqrt(v).toFixed(3)}`; } },
+
+  // ---- Time (2) ----
+  { id:'unix-time', name:'Unix ↔ Date', emoji:'🕰️', cat:'Time', desc:'Convert a Unix timestamp to a date.', placeholder:'e.g. 1751000000', run:s=>{ const t=parseInt(s,10); if(isNaN(t)) return 'Enter a Unix timestamp (seconds)'; const d=new Date(t*1000); if(isNaN(d)) return 'Invalid timestamp'; return d.toUTCString()+'\n(local: '+d.toLocaleString()+')'; } },
+  { id:'add-days', name:'Add Days to Date', emoji:'📆', cat:'Time', desc:'Date + N days — "2026-01-01 + 30".', placeholder:'2026-01-01 + 30', run:s=>{ const dm=s.match(/\d{4}-\d{1,2}-\d{1,2}/); if(!dm) return 'Format: 2026-01-01 + 30 (or - 30)'; const d=parseDate(dm[0]); if(!d) return 'Bad date'; const nm=s.slice(dm.index+dm[0].length).match(/([+-])?\s*(\d+)/); const n=nm?(nm[1]==='-'?-1:1)*parseInt(nm[2],10):0; d.setDate(d.getDate()+n); return d.toLocaleDateString(undefined,{weekday:'long',year:'numeric',month:'long',day:'numeric'}); } },
+
+  // ---- Color (2) ----
+  { id:'lighten-color', name:'Lighten / Darken', emoji:'🌓', cat:'Color', desc:'Shift a hex color — "#hex +20".', placeholder:'#4f8cff +20', run:s=>{ const hm=(s.match(/#?[0-9a-f]{3,6}/i)||[])[0]; const pm=(s.match(/[+-]?\d+(?!\w)/g)||[]); const r=hexToRgb(hm||''); if(!r) return 'Format: #4f8cff +20 (or -20 to darken)'; const amt=Math.round(255*((pm.length?+pm[pm.length-1]:20)/100)); const c='#'+r.map(v=>toHex2(v+amt)).join(''); return c.toUpperCase(); } },
+  { id:'contrast-checker', name:'Contrast Checker', emoji:'🌗', cat:'Color', desc:'WCAG contrast of two hex colors.', placeholder:'#ffffff #6a1b9a', run:s=>{ const hs=s.match(/#?[0-9a-f]{6}/gi); if(!hs||hs.length<2) return 'Enter two hex colors, e.g. "#ffffff #6a1b9a"'; const a=hexToRgb(hs[0]), b=hexToRgb(hs[1]); if(!a||!b) return 'Invalid colors'; const l1=relLum(...a), l2=relLum(...b); const ratio=(Math.max(l1,l2)+0.05)/(Math.min(l1,l2)+0.05); const grade=ratio>=7?'AAA ✅':ratio>=4.5?'AA ✅':ratio>=3?'AA Large ⚠️':'Fail ❌'; return `Contrast: ${ratio.toFixed(2)}:1\nRating: ${grade}`; } },
+
+  // ---- Random (3) ----
+  { id:'dice-notation', name:'Dice Roller (2d6)', emoji:'🎲', cat:'Random', desc:'Roll RPG dice — "2d6", "1d20", "3d8+2".', placeholder:'e.g. 2d6+1', gen:true, run:s=>{ const m=(s||'1d6').trim().match(/^(\d*)d(\d+)([+-]\d+)?$/i); if(!m) return 'Format: 2d6, 1d20, 3d8+2'; const count=Math.min(+(m[1]||1),100), sides=+m[2], mod=m[3]?+m[3]:0; if(sides<1) return 'Sides must be ≥ 1'; const rolls=Array.from({length:count},()=>1+Math.floor(Math.random()*sides)); const sum=rolls.reduce((a,b)=>a+b,0)+mod; return `🎲 [${rolls.join(', ')}]${mod?(mod>0?' +'+mod:' '+mod):''} = ${sum}`; } },
+  { id:'random-quote', name:'Random Quote', emoji:'💬', cat:'Random', desc:'A little dose of inspiration.', gen:true, run:()=>pick(['“The best way to get started is to quit talking and begin doing.” — Walt Disney','“Dream big and dare to fail.” — Norman Vaughan','“It always seems impossible until it’s done.” — Nelson Mandela','“Little by little, one travels far.” — J.R.R. Tolkien','“Believe you can and you’re halfway there.” — T. Roosevelt','“Stay hungry, stay foolish.” — Steve Jobs','“Whatever you are, be a good one.” — Abraham Lincoln','“Creativity is intelligence having fun.” — Albert Einstein']) },
+  { id:'random-card', name:'Draw a Card', emoji:'🃏', cat:'Random', desc:'Draw a random playing card.', gen:true, run:()=>{ const r=['A','2','3','4','5','6','7','8','9','10','J','Q','K'], suits=['♠️','♥️','♦️','♣️']; return pick(r)+pick(suits); } },
 ];
