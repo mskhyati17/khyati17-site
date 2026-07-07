@@ -69,6 +69,22 @@
     return scored.slice(0, 40).map(function(x){ return x.item; });
   }
 
+  // ---- favorites + recently opened (personalized launcher) ----
+  function loadList(k){ try{ var a=JSON.parse(localStorage.getItem(k)||'[]'); return Array.isArray(a)?a:[]; }catch(e){ return []; } }
+  function saveList(k,a){ try{ localStorage.setItem(k, JSON.stringify(a)); }catch(e){} }
+  var favs = loadList('ks_favs'), recent = loadList('ks_recent');
+  function isFav(url){ return favs.some(function(f){ return f.url===url; }); }
+  function toggleFav(item){
+    if (isFav(item.url)) favs = favs.filter(function(f){ return f.url!==item.url; });
+    else favs.unshift({ title:item.title, sub:item.sub, url:item.url, type:item.type });
+    favs = favs.slice(0,30); saveList('ks_favs', favs);
+  }
+  function pushRecent(item){
+    recent = recent.filter(function(r){ return r.url!==item.url; });
+    recent.unshift({ title:item.title, sub:item.sub, url:item.url, type:item.type });
+    recent = recent.slice(0,12); saveList('ks_recent', recent);
+  }
+
   // ---- UI ----
   var overlay, input, results, countEl, data = null, active = -1, rendered = [];
 
@@ -90,6 +106,10 @@
       '.ks-txt{flex:1;min-width:0}',
       '.ks-title{font:600 14px Inter;color:#2b1444;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}',
       '.ks-sub{font:500 11px Inter;color:#8a7aa0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}',
+      '.ks-star{flex:0 0 auto;font-size:17px;color:#c9b8e0;cursor:pointer;padding:0 2px;line-height:1}',
+      '.ks-star.on{color:#f5b301}',
+      '.ks-star:hover{transform:scale(1.15)}',
+      '.ks-sec{font:800 10px Inter;letter-spacing:.05em;text-transform:uppercase;color:#9a8ab0;padding:10px 12px 4px}',
       '.ks-badge{flex:0 0 auto;font:700 10px Inter;color:#fff;border-radius:999px;padding:3px 8px}',
       '#ks-foot{padding:9px 14px;border-top:1px solid #eee;font:500 11px Inter;color:#9a8ab0;display:flex;justify-content:space-between;gap:8px}',
       '#ks-empty{padding:28px 16px;text-align:center;color:#9a8ab0;font:500 14px Inter}',
@@ -119,14 +139,25 @@
     input.addEventListener('input', onInput);
     input.addEventListener('keydown', onKey);
     overlay.querySelector('#ks-esc').addEventListener('click', close);
+    // Star toggles favorite (no navigation); a normal row click records "recent".
+    results.addEventListener('click', function(e){
+      var star = e.target.closest && e.target.closest('.ks-star');
+      if (star){ e.preventDefault(); e.stopPropagation(); var i=+star.getAttribute('data-i'); if (rendered[i]){ toggleFav(rendered[i]); draw(); } return; }
+      var row = e.target.closest && e.target.closest('.ks-row');
+      if (row){ var j=+row.getAttribute('data-i'); if (rendered[j]) pushRecent(rendered[j]); }
+    });
   }
 
   function open(){
     if (!overlay) build();
+    favs = loadList('ks_favs'); recent = loadList('ks_recent');   // reflect latest (also cross-tab)
     overlay.classList.add('open');
     document.documentElement.style.overflow = 'hidden';
+    input.value = '';
+    draw();   // show favorites + recently-opened right away (no index needed)
     setTimeout(function(){ try{ input.focus(); }catch(e){} }, 30);
-    if (!data){ countEl.textContent = 'Loading the catalog…'; buildIndex().then(function(d){ data = d; countEl.textContent = data.length.toLocaleString() + ' things to search'; if (input.value) onInput(); }); }
+    if (!data){ countEl.textContent = 'Loading the catalog…'; buildIndex().then(function(d){ data = d; countEl.textContent = (favs.length||recent.length) ? 'Type to search '+data.length.toLocaleString()+' things' : data.length.toLocaleString() + ' things to search'; if (input.value) onInput(); }); }
+    else { countEl.textContent = (favs.length||recent.length) ? 'Type to search '+data.length.toLocaleString()+' things' : data.length.toLocaleString() + ' things to search'; }
   }
   function close(){ if(!overlay) return; overlay.classList.remove('open'); document.documentElement.style.overflow=''; try{ input.blur(); }catch(e){} }
 
@@ -137,19 +168,37 @@
     draw();
     countEl.textContent = input.value.trim() ? (rendered.length + ' result' + (rendered.length===1?'':'s')) : (data.length.toLocaleString() + ' things to search');
   }
-  function draw(){
-    if (!input.value.trim()){ results.innerHTML = '<div id="ks-empty">Find any game, story, tool or video ✨</div>'; return; }
-    if (!rendered.length){ results.innerHTML = '<div id="ks-empty">No matches — try another word 🐾</div>'; return; }
-    results.innerHTML = rendered.map(function(r,i){
-      var m = TYPES[r.type] || { emoji:'✨', color:'#6a1b9a' };
-      return '<a class="ks-row'+(i===active?' active':'')+'" data-i="'+i+'" href="'+r.url.replace(/"/g,'&quot;')+'" role="option">' +
-        '<span class="ks-ico" style="background:'+m.color+'22">'+m.emoji+'</span>' +
-        '<span class="ks-txt"><div class="ks-title">'+esc(r.title)+'</div><div class="ks-sub">'+esc(r.sub||'')+'</div></span>' +
-        '<span class="ks-badge" style="background:'+m.color+'">'+r.type+'</span></a>';
-    }).join('');
+  function rowHtml(r, i){
+    var m = TYPES[r.type] || { emoji:'✨', color:'#6a1b9a' };
+    var fav = isFav(r.url);
+    return '<a class="ks-row'+(i===active?' active':'')+'" data-i="'+i+'" href="'+r.url.replace(/"/g,'&quot;')+'" role="option">' +
+      '<span class="ks-ico" style="background:'+m.color+'22">'+m.emoji+'</span>' +
+      '<span class="ks-txt"><div class="ks-title">'+esc(r.title)+'</div><div class="ks-sub">'+esc(r.sub||'')+'</div></span>' +
+      '<span class="ks-star'+(fav?' on':'')+'" data-i="'+i+'" role="button" title="'+(fav?'Remove favorite':'Add favorite')+'" aria-label="Toggle favorite">'+(fav?'★':'☆')+'</span>' +
+      '<span class="ks-badge" style="background:'+m.color+'">'+r.type+'</span></a>';
+  }
+  function paint(list){
+    rendered = list;
     Array.prototype.forEach.call(results.querySelectorAll('.ks-row'), function(row){
       row.addEventListener('mousemove', function(){ active = +row.getAttribute('data-i'); highlight(); });
     });
+  }
+  function draw(){
+    if (!input.value.trim()){
+      // personalized empty state: favorites + recently opened
+      var recOnly = recent.filter(function(r){ return !favs.some(function(f){ return f.url===r.url; }); });
+      if (!favs.length && !recOnly.length){ results.innerHTML = '<div id="ks-empty">Find any game, story, tool or video ✨<br><span style="font-size:12px;opacity:.8">Star ☆ things to pin them here.</span></div>'; rendered=[]; active=-1; return; }
+      var out = '', gi = 0;
+      if (favs.length){ out += '<div class="ks-sec">⭐ Favorites</div>'; favs.forEach(function(r){ out += rowHtml(r, gi++); }); }
+      if (recOnly.length){ out += '<div class="ks-sec">🕘 Recently opened</div>'; recOnly.forEach(function(r){ out += rowHtml(r, gi++); }); }
+      results.innerHTML = out;
+      active = -1;
+      paint(favs.concat(recOnly));
+      return;
+    }
+    if (!rendered.length){ results.innerHTML = '<div id="ks-empty">No matches — try another word 🐾</div>'; return; }
+    results.innerHTML = rendered.map(function(r,i){ return rowHtml(r,i); }).join('');
+    paint(rendered);
   }
   function highlight(){
     Array.prototype.forEach.call(results.querySelectorAll('.ks-row'), function(row){
@@ -160,7 +209,7 @@
     if (e.key === 'Escape'){ close(); return; }
     if (e.key === 'ArrowDown'){ e.preventDefault(); if(rendered.length){ active=(active+1)%rendered.length; highlight(); } }
     else if (e.key === 'ArrowUp'){ e.preventDefault(); if(rendered.length){ active=(active-1+rendered.length)%rendered.length; highlight(); } }
-    else if (e.key === 'Enter'){ if(active>=0 && rendered[active]){ location.href = rendered[active].url; } }
+    else if (e.key === 'Enter'){ if(active>=0 && rendered[active]){ pushRecent(rendered[active]); location.href = rendered[active].url; } }
   }
   function esc(s){ return String(s).replace(/[&<>]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]; }); }
 
