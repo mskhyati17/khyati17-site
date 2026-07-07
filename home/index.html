@@ -156,6 +156,7 @@
         <div class="why"><span>📱</span> Works offline</div>
         <div class="why"><span>🔒</span> Kid-friendly</div>
         <div class="why"><span>🐶</span> Meet Mochi</div>
+        <button class="why" id="install-app" style="display:none;cursor:pointer;border-color:#c9a8f0;background:linear-gradient(90deg,#6a1b9a,#c56be0);color:#fff"><span>📲</span> Install App</button>
       </div>
 
       <div class="share-row" aria-label="Share Khyati17">
@@ -209,6 +210,14 @@
       var cp=document.querySelector('[data-share="copy"]');
       if(cp) cp.addEventListener('click',function(){ var done=function(){ cp.classList.add('copied'); var t=cp.textContent; cp.textContent='✅ Copied!'; setTimeout(function(){ cp.classList.remove('copied'); cp.textContent=t; },1800); };
         if(navigator.clipboard){ navigator.clipboard.writeText(url).then(done).catch(done); } else { done(); } });
+    })();
+    // PWA install prompt — show the button only when the browser offers it
+    (function(){
+      var deferred=null, btn=document.getElementById('install-app');
+      if(!btn) return;
+      window.addEventListener('beforeinstallprompt',function(e){ e.preventDefault(); deferred=e; btn.style.display='inline-flex'; });
+      btn.addEventListener('click',function(){ if(deferred){ deferred.prompt(); deferred=null; btn.style.display='none'; } });
+      window.addEventListener('appinstalled',function(){ btn.style.display='none'; });
     })();
   </script>
   <script type="module" src="../assets/js/auth.js?v=2"></script>
