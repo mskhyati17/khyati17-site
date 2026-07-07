@@ -110,6 +110,29 @@
     pet:{emoji:'🤚',emo:'love',done:['*melts into a fluffy puddle* best pets everrr 🤚💜','*happy wag* I LOVE pets!! 🥰','Ooh, right behind the ears! 😌💜'],again:['*giggle* that tickles! 😹','More pets?! Yes please 🐾','*leans into your hand* 🥰','Boop! 🐽']}
   };
 
+  // ---- Daily rewards: visit streak + coins + achievement badges ----------
+  function loadRewards(){ try{ var r=JSON.parse(localStorage.getItem('pomRewards')||'null'); if(r&&typeof r.coins==='number'){ if(!r.badges) r.badges=[]; return r; } }catch(e){} return { streak:0, longest:0, coins:0, days:0, lastDay:-1, badges:[] }; }
+  function saveRewards(){ try{ localStorage.setItem('pomRewards', JSON.stringify(rewards)); }catch(e){} }
+  var rewards = loadRewards();
+  var ACHIEVEMENTS = [
+    { id:'first',    emoji:'🐾', name:'First Visit',   test:function(){ return rewards.days>=1; } },
+    { id:'streak3',  emoji:'🔥', name:'3-Day Streak',  test:function(){ return rewards.streak>=3; } },
+    { id:'streak7',  emoji:'⭐', name:'Weekly Warrior',test:function(){ return rewards.streak>=7; } },
+    { id:'streak30', emoji:'👑', name:'Monthly Legend',test:function(){ return rewards.streak>=30; } },
+    { id:'loyal10',  emoji:'🏅', name:'10 Days In',    test:function(){ return rewards.days>=10; } },
+    { id:'coins100', emoji:'🪙', name:'Coin Collector',test:function(){ return rewards.coins>=100; } },
+    { id:'coins500', emoji:'💎', name:'Treasure Hunter',test:function(){ return rewards.coins>=500; } }
+  ];
+  function tickRewards(){
+    var t=todayIndex(), gap=t-rewards.lastDay, msg=null;
+    if(rewards.lastDay<0){ rewards.streak=1; rewards.days=1; rewards.longest=1; rewards.lastDay=t; rewards.coins+=10; msg={type:'first',coins:10}; }
+    else if(gap>=1){ rewards.streak = (gap===1 ? rewards.streak+1 : 1); rewards.days+=1; rewards.lastDay=t; rewards.longest=Math.max(rewards.longest,rewards.streak); var bonus=5+Math.min(rewards.streak,10); rewards.coins+=bonus; msg={ type:(gap===1?'streak':'reset'), streak:rewards.streak, coins:bonus }; }
+    var newly=[];
+    ACHIEVEMENTS.forEach(function(a){ if(a.test() && rewards.badges.indexOf(a.id)<0){ rewards.badges.push(a.id); rewards.coins+=20; newly.push(a); } });
+    saveRewards();
+    return { msg:msg, newly:newly };
+  }
+
   // ---- Ruff system: a bark before (most) spoken lines --------------------
   var RUFFS = ['Ruff!','Arf!','Woof!','Bark bark!','Yip!','Rrrf!'];
   function maybeRuff(){ return Math.random() < 0.72 ? pick(RUFFS) + ' ' : ''; }
@@ -368,7 +391,11 @@
       '#pom-mascot .pom-carebtn:active{transform:scale(.9)}',
       '#pom-mascot .pom-carebtn.done{background:#e5f7e8;border-color:#9fe0b0}',
       '#pom-mascot .pom-carebtn.done::after{content:"✓";position:absolute;right:-3px;top:-4px;background:#3fae63;color:#fff;font-size:8px;font-weight:800;width:12px;height:12px;border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:1}',
-      '#pom-mascot .pom-dogwrap{transform-box:border-box;transform:scale(var(--dogScale,1));transform-origin:bottom center;transition:transform .8s cubic-bezier(.2,1.25,.4,1)}'
+      '#pom-mascot .pom-dogwrap{transform-box:border-box;transform:scale(var(--dogScale,1));transform-origin:bottom center;transition:transform .8s cubic-bezier(.2,1.25,.4,1)}',
+      '#pom-mascot .pom-rewards{display:flex;gap:6px;padding:6px 9px;background:linear-gradient(90deg,#fff5e6,#fdeef7);border-bottom:1px solid #f0e0d5}',
+      '#pom-mascot .pom-rw{flex:1;text-align:center;font:800 11px Inter,sans-serif;color:#8a5a1a;background:#fff;border:1px solid #f2e2cf;border-radius:9px;padding:5px 4px;line-height:1.1}',
+      '#pom-mascot .pom-coins{color:#a8791a}',
+      '#pom-mascot .pom-badges{color:#8a1a6a}'
     ].join('');
     document.head.appendChild(style2);
 
@@ -388,6 +415,11 @@
             '<button class="pom-carebtn" data-care="brush" title="Brush her teeth 🪥">🪥</button>' +
             '<button class="pom-carebtn" data-care="pet" title="Pet her 🤚">🤚</button>' +
           '</div>' +
+        '</div>' +
+        '<div class="pom-rewards" title="Visit daily to grow your streak and earn coins!">' +
+          '<span class="pom-rw pom-streak">🔥 0</span>' +
+          '<span class="pom-rw pom-coins">🪙 0</span>' +
+          '<span class="pom-rw pom-badges">🏅 0</span>' +
         '</div>' +
         '<div class="pom-msgs"></div>' +
         '<div class="pom-settings">' +
@@ -423,8 +455,18 @@
     var dogWrap  = wrap.querySelector('.pom-dogwrap');
     var ageBadge = wrap.querySelector('.pom-agebadge');
     var careBtns = Array.prototype.slice.call(wrap.querySelectorAll('.pom-carebtn'));
+    var streakEl = wrap.querySelector('.pom-streak');
+    var coinsEl  = wrap.querySelector('.pom-coins');
+    var badgesEl = wrap.querySelector('.pom-badges');
     var greeted  = false;
     var petStatus = tickPet();   // advance aging as soon as the page loads
+    var rewardStatus = tickRewards();   // daily streak + coins + achievements
+
+    function renderRewards(){
+      if(streakEl) streakEl.textContent = '🔥 ' + rewards.streak + 'd';
+      if(coinsEl)  coinsEl.textContent  = '🪙 ' + rewards.coins;
+      if(badgesEl) badgesEl.textContent = '🏅 ' + rewards.badges.length;
+    }
 
     // ---------- config UI ----------
     function applyCfg(){
@@ -667,14 +709,30 @@
     }
 
     function showSettings(on){ settings.style.display = on?'block':'none'; msgs.style.display = on?'none':'flex'; inputWrap.style.display = on?'none':'flex'; }
+    function announceRewards(){
+      var r = rewardStatus; if(!r) return;
+      if (r.msg){
+        var line;
+        if (r.msg.type==='first') line = 'Welcome, best friend! 🎉 Here’s '+r.msg.coins+' coins 🪙 to start. Visit me every day to build a streak and earn more!';
+        else if (r.msg.type==='streak') line = '🔥 Day '+r.msg.streak+' streak! You came back — here’s +'+r.msg.coins+' coins 🪙 You’re pawsome!';
+        else line = 'Aww your streak reset 🥺 but you’re back! Day 1 again — here’s +'+r.msg.coins+' coins 🪙';
+        setEmotion('excited'); showBubble(line); speak(line,'excited'); addMsg(line,'bot');
+      }
+      (r.newly||[]).forEach(function(a,i){
+        setTimeout(function(){ var l='🏅 Achievement unlocked: '+a.name+' '+a.emoji+'! +20 coins 🪙'; setEmotion('proud'); showBubble(l); addMsg(l,'bot'); renderRewards(); }, 1100*(i+1));
+      });
+      renderRewards();
+      rewardStatus = null; // announce once per page load
+    }
     function open(){
-      panel.classList.add('open'); tip.classList.remove('show'); showSettings(false); renderCare();
+      panel.classList.add('open'); tip.classList.remove('show'); showSettings(false); renderCare(); renderRewards();
       if (!greeted){
         greeted = true;
         if (petStatus) addMsg(statusLine(petStatus), 'bot');
         var hi = (userName ? ('Best friend '+userName+'!! ') : '') + 'I’m ' + cfg.name + '! Feed me 🍖, bathe me 🛁, brush my teeth 🪥 and pet me 🤚 every day so I grow! Or just ask me anything 💜';
         var line = maybeRuff() + hi;
         setEmotion('excited'); showBubble(line); speak(line, 'excited'); addMsg(line, 'bot');
+        setTimeout(announceRewards, 800);
       }
       setTimeout(function(){ try{ input.focus(); }catch(e){} }, 60);
     }
@@ -699,6 +757,7 @@
 
     setEmotion('neutral');
     renderCare();   // reflect age/size + today's care state right away
+    renderRewards();
     setTimeout(function(){ if (!panel.classList.contains('open')) tip.classList.add('show'); }, 1400);
     setTimeout(function(){ tip.classList.remove('show'); }, 6500);
   }

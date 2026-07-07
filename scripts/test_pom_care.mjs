@@ -30,6 +30,9 @@ const lastBot = async p => (await p.$$eval('#pom-mascot .pom-msg.bot', ns=>ns.ma
 
 try{
   const ctx=await b.newContext(); const p=await ctx.newPage(); const js=[]; p.on('pageerror',e=>js.push(e.message.split('\n')[0]));
+  // Seed rewards as already-claimed-today so daily-reward announcements don't
+  // interleave with the care-reply assertions below.
+  await ctx.addInitScript(()=>{ const d=new Date(); const t=Math.floor((d.getTime()-d.getTimezoneOffset()*60000)/86400000); localStorage.setItem('pomRewards', JSON.stringify({streak:5,longest:5,coins:50,days:5,lastDay:t,badges:['first','streak3']})); });
   await p.goto(`${base}/others/others.html`,{waitUntil:'domcontentloaded',timeout:20000});
   await p.waitForSelector('#pom-mascot .pom-dog',{timeout:15000});
   await p.waitForTimeout(300);
