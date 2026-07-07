@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🐶 Mochi's Treat Catch</title>
+<meta name="description" content="Help Mochi the teacup Pomeranian catch falling treats and dodge the bombs! A cute, fast arcade game on Khyati17." />
+<meta property="og:title" content="🐶 Mochi's Treat Catch — Khyati17" />
+<meta property="og:description" content="Catch treats, dodge bombs, beat your best score!" />
+<meta property="og:image" content="https://khyati17.com/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(135deg,#2b0b3a,#6a1b9a,#9c4dcc);min-height:100vh;display:flex;justify-content:center;align-items:center;padding:20px}
+  .container{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border-radius:24px;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.12);text-align:center;max-width:460px;width:100%;position:relative}
+  h1{font-size:1.7rem;color:#fff;margin-bottom:4px;text-shadow:0 0 30px rgba(233,216,255,.4)}
+  .subtitle{color:rgba(255,255,255,.65);font-size:.82rem;margin-bottom:14px}
+  .score-board{display:flex;justify-content:space-between;background:rgba(0,0,0,.3);border-radius:12px;padding:9px 18px;margin-bottom:14px;color:#fff;font-size:1rem}
+  .score-board b{color:#e9d8ff}
+  canvas{display:block;margin:0 auto;border-radius:14px;background:linear-gradient(180deg,#241033,#1a0a2a);box-shadow:0 0 40px rgba(156,77,204,.25);width:100%;max-width:400px;aspect-ratio:5/6;touch-action:none;cursor:none}
+  .controls{margin-top:14px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .controls button,.back{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:9px 20px;border-radius:10px;cursor:pointer;font-size:.95rem;transition:.2s;text-decoration:none;display:inline-block}
+  .controls button:hover,.back:hover{background:#e9d8ff;color:#2b0b3a}
+  .over{display:none;position:absolute;inset:0;background:rgba(20,5,35,.86);border-radius:24px;justify-content:center;align-items:center;flex-direction:column;color:#fff;z-index:10;padding:20px}
+  .over.show{display:flex}
+  .over h2{font-size:1.9rem;margin-bottom:4px}.over p{opacity:.85;margin-bottom:14px}
+  .over .big{font-size:2.4rem;margin-bottom:6px}
+  .over button{background:#e9d8ff;border:none;color:#2b0b3a;padding:10px 28px;border-radius:10px;font-weight:bold;cursor:pointer;font-size:1rem}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="over" id="over"><div class="big" id="fin-emoji">🐶</div><h2 id="fin-title">Game Over</h2><p>Score: <span id="fin">0</span> · Best: <span id="fin-best">0</span></p><button id="again">Play Again 🐾</button></div>
+  <h1>🐶 Mochi's Treat Catch</h1>
+  <p class="subtitle">Move with ← → , mouse or touch. Catch 🍖🦴🍪 — dodge 💣!</p>
+  <div class="score-board"><div>Score: <b id="score">0</b></div><div>Lives: <b id="lives">❤️❤️❤️</b></div><div>Best: <b id="best">0</b></div></div>
+  <canvas id="c" width="400" height="480"></canvas>
+  <div class="controls">
+    <button id="pause">Pause</button>
+    <a class="back" href="/fun-games/index.html">← All Games</a>
+  </div>
+</div>
+<script>
+(function(){
+  var canvas=document.getElementById('c'), ctx=canvas.getContext('2d');
+  var W=canvas.width, H=canvas.height;
+  var scoreEl=document.getElementById('score'), livesEl=document.getElementById('lives'), bestEl=document.getElementById('best');
+  var over=document.getElementById('over'), fin=document.getElementById('fin'), finBest=document.getElementById('fin-best'), finTitle=document.getElementById('fin-title'), finEmoji=document.getElementById('fin-emoji');
+  var TREATS=[{e:'🍖',p:1},{e:'🦴',p:1},{e:'🍪',p:1},{e:'🍗',p:1},{e:'⭐',p:3},{e:'💎',p:5}];
+  var best=0; try{ best=+localStorage.getItem('mochiCatchBest')||0; }catch(e){}
+  bestEl.textContent=best;
+
+  var player, items, score, lives, spawnT, spawnEvery, speed, running, paused, raf, last;
+  function reset(){
+    player={x:W/2, w:64, y:H-46};
+    items=[]; score=0; lives=3; spawnT=0; spawnEvery=780; speed=1; running=true; paused=false; last=0;
+    scoreEl.textContent=0; livesEl.textContent='❤️❤️❤️';
+    over.classList.remove('show');
+    cancelAnimationFrame(raf); raf=requestAnimationFrame(loop);
+  }
+  function spawn(){
+    var bomb = Math.random() < 0.24;
+    var t = bomb ? {e:'💣',p:0,bomb:true} : TREATS[Math.floor(Math.random()*TREATS.length)];
+    items.push({ x:24+Math.random()*(W-48), y:-24, vy:(1.6+Math.random()*1.4)*speed, e:t.e, p:t.p, bomb:!!t.bomb, r:18 });
+  }
+  function drawMochi(){
+    var x=player.x, y=player.y;
+    ctx.save();
+    // body fluff
+    ctx.fillStyle='#fff';
+    [[0,0,26],[-18,4,15],[18,4,15],[-10,-14,13],[10,-14,13],[0,-18,12]].forEach(function(c){ ctx.beginPath(); ctx.arc(x+c[0],y+c[1],c[2],0,7); ctx.fill(); });
+    // ears
+    ctx.beginPath(); ctx.moveTo(x-22,y-14); ctx.lineTo(x-30,y-34); ctx.lineTo(x-10,y-20); ctx.closePath(); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(x+22,y-14); ctx.lineTo(x+30,y-34); ctx.lineTo(x+10,y-20); ctx.closePath(); ctx.fill();
+    // face
+    ctx.fillStyle='#241726';
+    ctx.beginPath(); ctx.arc(x-9,y-2,3.4,0,7); ctx.fill();
+    ctx.beginPath(); ctx.arc(x+9,y-2,3.4,0,7); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(x-3,y+6); ctx.lineTo(x+3,y+6); ctx.lineTo(x,y+10); ctx.closePath(); ctx.fill();
+    ctx.restore();
+  }
+  function loop(ts){
+    if(!running) return;
+    if(!last) last=ts; var dt=Math.min(50,ts-last); last=ts;
+    if(!paused){
+      spawnT+=dt;
+      if(spawnT>=spawnEvery){ spawnT=0; spawn(); }
+      speed += dt*0.00004; // gentle ramp
+      spawnEvery = Math.max(430, 780 - score*4);
+      for(var i=items.length-1;i>=0;i--){
+        var it=items[i]; it.y += it.vy*(dt/16.7);
+        // catch check near player row
+        if(it.y > player.y-22 && it.y < player.y+18 && Math.abs(it.x-player.x) < player.w/2){
+          items.splice(i,1);
+          if(it.bomb){ hit(); } else { score+=it.p; scoreEl.textContent=score; burst(it.x,it.y,'#ffe08a'); }
+          continue;
+        }
+        if(it.y > H+24) items.splice(i,1);
+      }
+    }
+    render();
+    raf=requestAnimationFrame(loop);
+  }
+  var bursts=[];
+  function burst(x,y,col){ for(var i=0;i<7;i++) bursts.push({x:x,y:y,vx:(Math.random()*2-1)*2,vy:-(1+Math.random()*2),life:1,col:col}); }
+  function hit(){
+    lives--; livesEl.textContent='❤️'.repeat(Math.max(0,lives))||'💔';
+    burst(player.x,player.y,'#ff6a8a');
+    if(lives<=0) end();
+  }
+  function end(){
+    running=false; cancelAnimationFrame(raf);
+    if(score>best){ best=score; try{ localStorage.setItem('mochiCatchBest',best); }catch(e){} bestEl.textContent=best; finTitle.textContent='New Best! 🏆'; finEmoji.textContent='🏆'; }
+    else { finTitle.textContent='Game Over'; finEmoji.textContent='🐶'; }
+    fin.textContent=score; finBest.textContent=best; over.classList.add('show');
+  }
+  function render(){
+    ctx.clearRect(0,0,W,H);
+    ctx.font='26px serif'; ctx.textAlign='center'; ctx.textBaseline='middle';
+    for(var i=0;i<items.length;i++){ ctx.fillText(items[i].e, items[i].x, items[i].y); }
+    for(var b=bursts.length-1;b>=0;b--){ var p=bursts[b]; p.x+=p.vx; p.y+=p.vy; p.vy+=0.15; p.life-=0.04; if(p.life<=0){ bursts.splice(b,1); continue; } ctx.globalAlpha=p.life; ctx.fillStyle=p.col; ctx.fillRect(p.x-2,p.y-2,4,4); ctx.globalAlpha=1; }
+    drawMochi();
+  }
+  // controls
+  var keys={};
+  document.addEventListener('keydown',function(e){ if(e.key==='ArrowLeft'||e.key==='ArrowRight'){ keys[e.key]=true; e.preventDefault(); } if(e.key===' '){ togglePause(); } });
+  document.addEventListener('keyup',function(e){ keys[e.key]=false; });
+  setInterval(function(){ if(paused||!running) return; if(keys.ArrowLeft) player.x=Math.max(24,player.x-16); if(keys.ArrowRight) player.x=Math.min(W-24,player.x+16); },16);
+  function moveTo(clientX){ var r=canvas.getBoundingClientRect(); var x=(clientX-r.left)/r.width*W; if(player) player.x=Math.max(24,Math.min(W-24,x)); }
+  canvas.addEventListener('mousemove',function(e){ moveTo(e.clientX); });
+  canvas.addEventListener('touchmove',function(e){ if(e.touches[0]){ moveTo(e.touches[0].clientX); e.preventDefault(); } },{passive:false});
+  function togglePause(){ if(!running) return; paused=!paused; document.getElementById('pause').textContent=paused?'Resume':'Pause'; }
+  document.getElementById('pause').addEventListener('click',togglePause);
+  document.getElementById('again').addEventListener('click',reset);
+
+  // minimal hooks for automated testing
+  window.__mochiCatch = { get score(){return score;}, get lives(){return lives;}, player:function(){return player;}, forceCatchTreat:function(){ score+=1; scoreEl.textContent=score; }, forceBomb:function(){ hit(); }, isOver:function(){return !running;} };
+
+  reset();
+})();
+</script>
+<script src="/assets/js/cute.js?nb=1"></script>
+</body>
+</html>

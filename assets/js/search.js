@@ -59,10 +59,19 @@
   function search(list, raw){
     var q = raw.trim().toLowerCase();
     if (!q) return [];
+    var toks = q.split(/\s+/);
     var scored = [];
     for (var i=0;i<list.length;i++){
-      var s = score(list[i].title, q);
-      if (s < 0 && list[i].sub) s = list[i].sub.toLowerCase().indexOf(q) >= 0 ? 10 : -1;
+      var title = list[i].title, sub = list[i].sub || '';
+      var s = score(title, q);                                  // whole-phrase in title (best)
+      if (s < 0){
+        var hay = (title + ' ' + sub).toLowerCase();
+        if (toks.length > 1 && toks.every(function(t){ return hay.indexOf(t) >= 0; })){
+          s = title.toLowerCase().indexOf(toks[0]) === 0 ? 55 : 24;   // all words present
+        } else if (sub.toLowerCase().indexOf(q) >= 0){
+          s = 10;
+        }
+      }
       if (s >= 0) scored.push({ item:list[i], s:s });
     }
     scored.sort(function(a,b){ return b.s - a.s; });
