@@ -18,15 +18,19 @@
     })();
   </script>
   <link rel="stylesheet" href="../assets/css/styles.css" />
+  <style>
+    /* keep the reader from overflowing on phones (stacks the sidebar) */
+    #story-content{word-wrap:break-word;overflow-wrap:break-word}
+    #story-content img{max-width:100%;height:auto}
+    @media (max-width:700px){
+      .stories-layout{flex-direction:column !important;gap:12px !important}
+      #stories-list{width:auto !important;min-width:0 !important;max-height:220px !important}
+      .stories-layout > div{width:auto !important}
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand">
-      <img src="../assets/img/me.jpg?v=2" alt="Khyati" class="avatar"/>
-      <h1>Khyati</h1>
-    </div>
-    <div id="site-header-root"></div>
-  </header>
+  <div id="site-header-root"></div>
 
   <main class="hero">
     <h2>Stories</h2>
