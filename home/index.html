@@ -64,33 +64,6 @@
         <div class="role-cta">A little bit of everything I do — all in one place.</div>
       </div>
 
-      <div class="hero-cards" aria-hidden="false">
-        <div class="card video-card">
-          <div class="card-emoji">🎥</div>
-          <h4>Videos I've Made</h4>
-          <p>I create and edit fun videos to share.</p>
-        </div>
-        <div class="card web-card">
-          <div class="card-emoji">💻</div>
-          <h4>Websites I've Built</h4>
-          <p>I design and build sites — like this one!</p>
-        </div>
-        <div class="card story-card">
-          <div class="card-emoji">📖</div>
-          <h4>Stories I've Written</h4>
-          <p>Original tales I've written and published here.</p>
-        </div>
-        <div class="card trader-card">
-          <div class="card-emoji">📈</div>
-          <h4>Trading I've Done</h4>
-          <p>I've learned market basics and follow the charts.</p>
-          <div class="sparkline-wrap">
-            <canvas class="mini-sparkline" width="240" height="64" aria-label="Mini stock sparkline"></canvas>
-          </div>
-          <div style="margin-top:8px"><button class="btn btn-ghost spark-toggle">Pause</button></div>
-        </div>
-      </div>
-
       <!-- decorative animated shapes -->
       <div class="hero-shapes" aria-hidden="true">
         <span class="shape s1"></span>
@@ -235,6 +208,21 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    // Land on the "Explore the site" section by default (once the shared header
+    // has injected, so the target position is final). Skip if a different anchor
+    // was requested, or if the visitor has already scrolled themselves.
+    (function(){
+      try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }catch(e){}
+      if(location.hash && location.hash!=='#explore') return;
+      var done=false, tries=0;
+      function land(){
+        if(done) return; if(window.scrollY>40) { done=true; return; } // user already scrolled — leave them be
+        var el=document.getElementById('explore'); if(!el) return; done=true;
+        var h=document.documentElement, prev=h.style.scrollBehavior; h.style.scrollBehavior='auto';
+        el.scrollIntoView({block:'start'}); h.style.scrollBehavior=prev;
+      }
+      (function wait(){ if(done) return; if(document.querySelector('.main-nav') || tries>25){ land(); return; } tries++; setTimeout(wait, 100); })();
+    })();
     // Animated count-up when the stats scroll into view
     (function(){
       var nums = document.querySelectorAll('.stat-num');
