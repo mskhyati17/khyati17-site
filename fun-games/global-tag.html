@@ -899,7 +899,8 @@ window.addEventListener('resize', resizeCanvas);
 // Add simple d-pads for player 1 & 2 on mobile
 document.addEventListener('DOMContentLoaded', () => {
     if ('ontouchstart' in window) {
-        document.querySelector('.mobile-controls')?.style.display = 'flex';
+        const mc = document.querySelector('.mobile-controls');
+        if (mc) mc.style.display = 'flex';
     }
 });
 
