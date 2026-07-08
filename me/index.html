@@ -65,6 +65,9 @@
     <h2>⭐ Favorites</h2>
     <div id="favs"></div>
 
+    <h2>🎮 Your Best Scores <span style="font-weight:600;font-size:.8rem;color:#8a7aa0">(original Mochi games)</span></h2>
+    <div id="scores"></div>
+
     <h2>🕘 Recently opened</h2>
     <div id="recent"></div>
   </main>
@@ -100,6 +103,23 @@
       favEl.innerHTML = favs.length ? '<div class="cards">'+favs.map(itemHtml).join('')+'</div>' : '<div class="empty">No favorites yet — tap the search (🔍 or “/”) and star ☆ anything you love!</div>';
       var recEl=document.getElementById('recent');
       recEl.innerHTML = recent.length ? '<div class="cards">'+recent.map(itemHtml).join('')+'</div>' : '<div class="empty">Nothing yet — open a <a href="/fun-games/index.html">game</a>, <a href="/stories/index.html">story</a> or <a href="/ai-tools/index.html">tool</a> from search and it’ll show up here.</div>';
+
+      // Best scores from the original games (stored per-game in localStorage)
+      function numKey(k){ try{ var v=JSON.parse(localStorage.getItem(k)); return typeof v==='number'?v:null; }catch(e){ var n=parseInt(localStorage.getItem(k),10); return isNaN(n)?null:n; } }
+      var GAMES=[
+        {e:'🐶', name:"Mochi's Treat Catch", key:'mochiCatchBest', url:'/fun-games/mochi-treat-catch.html', unit:'pts'},
+        {e:'🐾', name:'Mochi Says',          key:'mochiSaysBest',  url:'/fun-games/mochi-says.html',        unit:'rounds'},
+        {e:'🎾', name:'Perfect Fetch',       key:'perfectFetchBest',url:'/fun-games/perfect-fetch.html',    unit:'pts'},
+        {e:'🔤', name:'Word Rescue',         key:'wordRescueBest', url:'/fun-games/word-rescue.html',       unit:'solved'},
+        {e:'⚡', name:'Paw Reflex',          key:'pawReflexBest',  url:'/fun-games/paw-reflex.html',        unit:'ms', lowBetter:true}
+      ];
+      var scoresEl=document.getElementById('scores');
+      scoresEl.innerHTML = '<div class="cards">' + GAMES.map(function(g){
+        var v=numKey(g.key);
+        var val = v==null ? '—' : (g.lowBetter ? v+' '+g.unit : v+' '+g.unit);
+        return '<a class="item" href="'+g.url+'"><span class="ico" style="background:#6a1b9a22">'+g.e+'</span>'
+          + '<span style="min-width:0"><div class="t">'+esc(g.name)+'</div><div class="s">Best: '+esc(val)+(v==null?' — play now!':'')+'</div></span></a>';
+      }).join('') + '</div>';
     })();
   </script>
 </body>

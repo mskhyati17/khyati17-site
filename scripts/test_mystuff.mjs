@@ -19,6 +19,7 @@ try{
     localStorage.setItem('pomRewards', JSON.stringify({streak:7,longest:9,coins:245,days:12,badges:['first','streak3','streak7','coins100']}));
     localStorage.setItem('ks_favs', JSON.stringify([{title:'Snake',type:'Game',sub:'Game',url:'/fun-games/snake.html'},{title:'Pig Latin',type:'Tool',sub:'tool',url:'/ai-tools/tool.html?t=pig-latin'}]));
     localStorage.setItem('ks_recent', JSON.stringify([{title:'The Lighthouse of Lost Things',type:'Story',sub:'Story',url:'/stories/stories.html?story=lighthouse-of-lost-things'}]));
+    localStorage.setItem('mochiCatchBest','42'); localStorage.setItem('pawReflexBest','287');
   });
   await p.goto(`${base}/me/index.html`,{waitUntil:'networkidle',timeout:20000});
 
@@ -36,6 +37,10 @@ try{
   (favTitles.includes('Snake') && favTitles.includes('Pig Latin')) ? pass('favorites: '+favTitles.join(', ')) : fail('favs: '+favTitles);
   const recTitles=await p.$$eval('#recent .item .t', e=>e.map(x=>x.textContent));
   recTitles.some(t=>/Lighthouse/.test(t)) ? pass('recent: '+recTitles.join(', ')) : fail('recent: '+recTitles);
+
+  console.log('\n[3b] Best-scores section shows the original games');
+  const scoreCards=await p.$$eval('#scores .item', els=>els.map(e=>e.querySelector('.s').textContent));
+  (scoreCards.length===5 && scoreCards.some(t=>/42/.test(t)) && scoreCards.some(t=>/287/.test(t))) ? pass('5 game score cards with bests') : fail('scores: '+scoreCards.join(' | '));
 
   console.log('\n[4] Reachable from the nav');
   (await p.$('.main-nav a[href="/me/index.html"]')) ? pass('"My Stuff" link in nav') : fail('no nav link');
