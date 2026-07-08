@@ -107,18 +107,28 @@
       // Best scores from the original games (stored per-game in localStorage)
       function numKey(k){ try{ var v=JSON.parse(localStorage.getItem(k)); return typeof v==='number'?v:null; }catch(e){ var n=parseInt(localStorage.getItem(k),10); return isNaN(n)?null:n; } }
       var GAMES=[
-        {e:'🐶', name:"Mochi's Treat Catch", key:'mochiCatchBest', url:'/fun-games/mochi-treat-catch.html', unit:'pts'},
-        {e:'🐾', name:'Mochi Says',          key:'mochiSaysBest',  url:'/fun-games/mochi-says.html',        unit:'rounds'},
-        {e:'🎾', name:'Perfect Fetch',       key:'perfectFetchBest',url:'/fun-games/perfect-fetch.html',    unit:'pts'},
-        {e:'🔤', name:'Word Rescue',         key:'wordRescueBest', url:'/fun-games/word-rescue.html',       unit:'solved'},
-        {e:'⚡', name:'Paw Reflex',          key:'pawReflexBest',  url:'/fun-games/paw-reflex.html',        unit:'ms', lowBetter:true}
+        {e:'🐶', name:"Mochi's Treat Catch", key:'mochiCatchBest', url:'/fun-games/mochi-treat-catch.html', unit:'pts',    tiers:[10,25,50]},
+        {e:'🐾', name:'Mochi Says',          key:'mochiSaysBest',  url:'/fun-games/mochi-says.html',        unit:'rounds', tiers:[3,6,10]},
+        {e:'🎾', name:'Perfect Fetch',       key:'perfectFetchBest',url:'/fun-games/perfect-fetch.html',    unit:'pts',    tiers:[5,15,30]},
+        {e:'🔤', name:'Word Rescue',         key:'wordRescueBest', url:'/fun-games/word-rescue.html',       unit:'solved', tiers:[3,6,10]},
+        {e:'⚡', name:'Paw Reflex',          key:'pawReflexBest',  url:'/fun-games/paw-reflex.html',        unit:'ms',     tiers:[500,350,280], lowBetter:true}
       ];
+      // medal tier from a best score (bronze/silver/gold), plus next target
+      function medal(g, v){
+        if(v==null) return {m:'', next:null};
+        var t=g.tiers, hit=-1;
+        for(var i=0;i<t.length;i++){ if(g.lowBetter ? v<=t[i] : v>=t[i]) hit=i; }
+        var M=['🥉','🥈','🥇'];
+        return { m: hit>=0 ? M[hit] : '', next: hit<2 ? t[hit+1] : null };
+      }
       var scoresEl=document.getElementById('scores');
       scoresEl.innerHTML = '<div class="cards">' + GAMES.map(function(g){
-        var v=numKey(g.key);
-        var val = v==null ? '—' : (g.lowBetter ? v+' '+g.unit : v+' '+g.unit);
-        return '<a class="item" href="'+g.url+'"><span class="ico" style="background:#6a1b9a22">'+g.e+'</span>'
-          + '<span style="min-width:0"><div class="t">'+esc(g.name)+'</div><div class="s">Best: '+esc(val)+(v==null?' — play now!':'')+'</div></span></a>';
+        var v=numKey(g.key), md=medal(g,v);
+        var sub = v==null ? 'Best: — — play now!'
+          : 'Best: '+v+' '+g.unit + (md.m?'  '+md.m:'') + (md.next!=null ? '  · next '+(g.lowBetter?'≤':'')+md.next : '  · maxed! 🏆');
+        return '<a class="item" href="'+g.url+'"><span class="ico" style="background:#6a1b9a22;position:relative">'+g.e
+          + (md.m?'<span style="position:absolute;bottom:-4px;right:-4px;font-size:13px">'+md.m+'</span>':'')+'</span>'
+          + '<span style="min-width:0"><div class="t">'+esc(g.name)+'</div><div class="s">'+esc(sub)+'</div></span></a>';
       }).join('') + '</div>';
     })();
   </script>
