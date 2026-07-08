@@ -59,7 +59,7 @@
         <p class="lead">Hi, I'm Khyati! I've created videos, built websites, written stories and explored trading — and I made this whole playground to share what I love.</p>
         <p class="hero-ctas">
           <a class="btn" href="/about/about.html">Learn more about me</a>
-          <a class="btn btn-ghost" href="/fun-games/index.html" style="margin-left:10px">Explore the site</a>
+          <a class="btn btn-ghost" href="#explore" style="margin-left:10px">Explore the site ↓</a>
         </p>
         <div class="role-cta">A little bit of everything I do — all in one place.</div>
       </div>
@@ -101,7 +101,8 @@
   </main>
 
   <style>
-    .home-explore{width:100%;display:flex;justify-content:center;padding:8px 16px 40px}
+    html{scroll-behavior:smooth}
+    .home-explore{width:100%;display:flex;justify-content:center;padding:8px 16px 40px;scroll-margin-top:20px}
     .explore-inner{width:100%;max-width:var(--max-width)}
     .stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:6px 0 44px}
     .stat{background:#fff;border:1px solid #efe4fb;border-radius:16px;padding:20px 12px;text-align:center;box-shadow:0 8px 24px rgba(117,80,168,.08)}
@@ -154,7 +155,7 @@
     [data-theme="dark"] .pick .pt{color:#e5d8f5}
   </style>
 
-  <section class="home-explore" aria-labelledby="explore-title">
+  <section class="home-explore" id="explore" aria-labelledby="explore-title">
     <div class="explore-inner">
       <div class="stats-strip" aria-label="Site highlights">
         <div class="stat"><span class="stat-num" data-to="2137" data-suffix="+">0</span><span class="stat-label">🎮 Free Games</span></div>
