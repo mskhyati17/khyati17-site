@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🔤 Word Rescue</title>
+<meta name="description" content="Guess the hidden word before Mochi runs out of treats — a friendly word game on Khyati17." />
+<meta property="og:title" content="🔤 Word Rescue — Khyati17" />
+<meta property="og:description" content="Guess the letters, solve the word, keep your streak alive!" />
+<meta property="og:image" content="https://khyati17.com/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(135deg,#2b0b3a,#6a1b9a,#9c4dcc);min-height:100vh;display:flex;justify-content:center;align-items:center;padding:20px}
+  .container{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border-radius:24px;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.12);text-align:center;max-width:520px;width:100%}
+  h1{font-size:1.7rem;color:#fff;margin-bottom:4px;text-shadow:0 0 30px rgba(233,216,255,.4)}
+  .subtitle{color:rgba(255,255,255,.7);font-size:.85rem;margin-bottom:14px;min-height:1.1em}
+  .score-board{display:flex;justify-content:space-between;background:rgba(0,0,0,.3);border-radius:12px;padding:9px 18px;margin-bottom:16px;color:#fff}
+  .score-board b{color:#e9d8ff}
+  .hint{color:#ffd9f0;font-size:.9rem;margin-bottom:10px}
+  .word{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:12px 0 6px;min-height:52px}
+  .slot{width:34px;height:46px;border-bottom:4px solid #e9d8ff;display:flex;align-items:flex-end;justify-content:center;font-size:1.7rem;font-weight:800;color:#fff;padding-bottom:2px}
+  .slot.space{border:none;width:14px}
+  .lives{font-size:1.2rem;margin:6px 0 12px;min-height:1.4em}
+  .keys{display:grid;grid-template-columns:repeat(9,1fr);gap:6px;max-width:440px;margin:0 auto}
+  .key{aspect-ratio:1;border:none;border-radius:8px;background:rgba(255,255,255,.16);color:#fff;font-weight:700;font-size:.95rem;cursor:pointer;transition:.12s}
+  .key:hover:not(:disabled){background:#e9d8ff;color:#2b0b3a}
+  .key:disabled{opacity:.3;cursor:default}
+  .key.good{background:#7ee081;color:#123;opacity:1}
+  .key.bad{background:#ff6a8a;color:#fff;opacity:.6}
+  .controls{margin-top:16px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .controls button,.back{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:9px 20px;border-radius:10px;cursor:pointer;font-size:.95rem;text-decoration:none;display:inline-block}
+  .controls button:hover,.back:hover{background:#e9d8ff;color:#2b0b3a}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🔤 Word Rescue</h1>
+  <p class="subtitle" id="msg">Guess the word before Mochi runs out of treats!</p>
+  <div class="score-board"><div>Solved: <b id="score">0</b></div><div id="cat">🐾</div><div>Best: <b id="best">0</b></div></div>
+  <div class="hint" id="hint"></div>
+  <div class="word" id="word"></div>
+  <div class="lives" id="lives"></div>
+  <div class="keys" id="keys"></div>
+  <div class="controls">
+    <button id="next" style="display:none">Next word →</button>
+    <button id="restart">Restart</button>
+    <a class="back" href="/fun-games/index.html">← All Games</a>
+  </div>
+</div>
+<script>
+(function(){
+  var WORDS=[
+    {w:'RAINBOW',h:'Colours in the sky after rain',c:'🌈 Nature'},{w:'ELEPHANT',h:'The biggest land animal',c:'🐾 Animals'},
+    {w:'BUTTERFLY',h:'It was once a caterpillar',c:'🐾 Animals'},{w:'VOLCANO',h:'A mountain that erupts',c:'🌍 Nature'},
+    {w:'PENGUIN',h:'A bird that swims, not flies',c:'🐾 Animals'},{w:'PANCAKE',h:'Flat breakfast with syrup',c:'🍔 Food'},
+    {w:'DINOSAUR',h:'Giant reptile from long ago',c:'🦕 History'},{w:'TELESCOPE',h:'You use it to see stars',c:'🔭 Science'},
+    {w:'CHOCOLATE',h:'Sweet brown treat',c:'🍔 Food'},{w:'KANGAROO',h:'It hops and has a pouch',c:'🐾 Animals'},
+    {w:'UMBRELLA',h:'Keeps you dry in the rain',c:'☔ Things'},{w:'PYRAMID',h:'Ancient triangle building',c:'🦕 History'},
+    {w:'OCTOPUS',h:'Sea creature with eight arms',c:'🐾 Animals'},{w:'GUITAR',h:'A six-string instrument',c:'🎵 Music'},
+    {w:'JUNGLE',h:'A thick, wild forest',c:'🌍 Nature'},{w:'ROCKET',h:'It blasts off into space',c:'🚀 Science'},
+    {w:'CASTLE',h:'Where kings and queens live',c:'🏰 Things'},{w:'SANDWICH',h:'Filling between two slices',c:'🍔 Food'},
+    {w:'DOLPHIN',h:'A friendly, clever sea mammal',c:'🐾 Animals'},{w:'GARDEN',h:'Where flowers grow',c:'🌍 Nature'},
+    {w:'PUMPKIN',h:'Orange and carved at Halloween',c:'🎃 Things'},{w:'MAGNET',h:'It attracts metal',c:'🔭 Science'},
+    {w:'BICYCLE',h:'Two wheels you pedal',c:'🚲 Things'},{w:'GIRAFFE',h:'The tallest animal',c:'🐾 Animals'},
+    {w:'PLANET',h:'Earth is one of these',c:'🚀 Science'},{w:'COOKIE',h:'A sweet baked snack',c:'🍔 Food'},
+    {w:'TREASURE',h:'Gold that pirates hide',c:'🏴 Things'},{w:'SNOWMAN',h:'You build it in winter',c:'❄️ Things'},
+    {w:'MONKEY',h:'Loves bananas and swinging',c:'🐾 Animals'},{w:'BALLOON',h:'Fills with air and floats',c:'🎈 Things'}
+  ];
+  var wordEl=document.getElementById('word'), keysEl=document.getElementById('keys'), livesEl=document.getElementById('lives'),
+      hintEl=document.getElementById('hint'), catEl=document.getElementById('cat'), scoreEl=document.getElementById('score'),
+      bestEl=document.getElementById('best'), msg=document.getElementById('msg'), nextBtn=document.getElementById('next');
+  var cur, guessed, wrong, lives, score, state, best, order, oi;
+  try{ best=+localStorage.getItem('wordRescueBest')||0; }catch(e){} best=best||0; bestEl.textContent=best;
+  var MAX=6;
+
+  function shuffle(a){ a=a.slice(); for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i];a[i]=a[j];a[j]=t; } return a; }
+  function buildKeys(){
+    keysEl.innerHTML='';
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(function(L){
+      var b=document.createElement('button'); b.className='key'; b.textContent=L; b.setAttribute('data-k',L);
+      b.addEventListener('click', function(){ guess(L); }); keysEl.appendChild(b);
+    });
+  }
+  function renderWord(){
+    wordEl.innerHTML = cur.w.split('').map(function(ch){
+      if(ch===' ') return '<span class="slot space"></span>';
+      return '<span class="slot">'+(guessed[ch]?ch:'')+'</span>';
+    }).join('');
+  }
+  function renderLives(){ livesEl.textContent = '🦴'.repeat(Math.max(0,lives)) + '·'.repeat(MAX-lives).replace(/·/g,'🚫'); }
+  function newWord(){
+    if(oi>=order.length){ order=shuffle(WORDS.map(function(_,i){return i;})); oi=0; }
+    cur=WORDS[order[oi++]]; guessed={}; wrong=0; lives=MAX; state='play';
+    hintEl.textContent='💡 '+cur.h; catEl.textContent=cur.c; msg.textContent='Guess a letter!';
+    nextBtn.style.display='none';
+    buildKeys(); renderWord(); renderLives();
+  }
+  function reset(){ score=0; scoreEl.textContent=0; order=shuffle(WORDS.map(function(_,i){return i;})); oi=0; newWord(); }
+  function guess(L){
+    if(state!=='play' || guessed[L]) return;
+    var btn=keysEl.querySelector('[data-k="'+L+'"]'); if(btn) btn.disabled=true;
+    if(cur.w.indexOf(L)>=0){
+      guessed[L]=true; if(btn) btn.classList.add('good'); renderWord();
+      var done=cur.w.split('').every(function(ch){ return ch===' '||guessed[ch]; });
+      if(done){ state='won'; score++; scoreEl.textContent=score; msg.textContent='🎉 Solved! Great job!'; if(score>best){ best=score; try{localStorage.setItem('wordRescueBest',best);}catch(e){} bestEl.textContent=best; } nextBtn.style.display='inline-block'; }
+    } else {
+      if(btn) btn.classList.add('bad'); lives--; renderLives();
+      if(lives<=0){ state='lost'; msg.textContent='💔 Out of treats! The word was '+cur.w; guessed=cur.w.split('').reduce(function(o,c){o[c]=true;return o;},{}); renderWord(); nextBtn.style.display='inline-block'; nextBtn.textContent='Try another →'; }
+      else msg.textContent='Not in the word — '+lives+' left!';
+    }
+  }
+  document.addEventListener('keydown', function(e){ var k=(e.key||'').toUpperCase(); if(/^[A-Z]$/.test(k)) guess(k); });
+  nextBtn.addEventListener('click', function(){ nextBtn.textContent='Next word →'; newWord(); });
+  document.getElementById('restart').addEventListener('click', reset);
+
+  // test hooks
+  window.__wordRescue={ get word(){return cur.w;}, get score(){return score;}, get lives(){return lives;}, get state(){return state;}, guess:guess, reset:reset, next:newWord };
+
+  reset();
+})();
+</script>
+<script src="/assets/js/cute.js?nb=1"></script>
+</body>
+</html>
