@@ -5,6 +5,23 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sign in</title>
   <link rel="stylesheet" href="../assets/css/styles.css" />
+  <style>
+    #login-form{max-width:400px;margin:22px auto;text-align:left;background:#fff;border:1px solid #efe4fb;border-radius:18px;padding:24px 22px;box-shadow:0 14px 36px rgba(117,80,168,.14)}
+    #login-form label{display:block;font-weight:700;color:#6a1b9a;font-size:.82rem;margin:12px 0 5px}
+    #login-form label:first-of-type{margin-top:0}
+    #login-form input{width:100%;padding:11px 13px;border:2px solid #e3d3f6;border-radius:11px;font:inherit;font-size:.98rem;color:#2b0b3a;outline:none;transition:border-color .15s}
+    #login-form input:focus{border-color:#9c4dcc}
+    #login-form input+br{display:none}
+    #login-form button[type=submit]{width:100%;margin-top:18px;background:linear-gradient(90deg,#6a1b9a,#c56be0);color:#fff;border:none;border-radius:999px;padding:12px;font-weight:800;font-size:1rem;cursor:pointer}
+    #login-form button[type=submit]:hover{transform:translateY(-1px)}
+    #login-form .video-note,#login-form p{margin-top:14px;text-align:center;color:#6a4b8f;font-size:.88rem}
+    #login-form a{color:#6a1b9a;font-weight:700}
+    .hero>h2{text-align:center}
+    [data-theme="dark"] #login-form{background:#241633;border-color:#3a2550}
+    [data-theme="dark"] #login-form input{background:#1a1027;border-color:#3a2550;color:#f0e8ff}
+    [data-theme="dark"] #login-form label{color:#d9b8ff}
+    [data-theme="dark"] #login-form .video-note,[data-theme="dark"] #login-form p{color:#c3b0dd}
+  </style>
 </head>
 <body>
   <div id="site-header-root"></div>
