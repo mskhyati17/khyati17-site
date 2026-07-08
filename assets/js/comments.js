@@ -1,31 +1,45 @@
 // Shared comments logic: fetch, post, edit, and render
 import { Auth, supabase as SUPABASE } from './auth.js';
 
-export async function fetchComments(contentType, contentId){
+function localComments(contentType, contentId){
   try{
-    if(window.supabase){
+    const map = JSON.parse(localStorage.getItem('khyati_comments') || '[]');
+    return map.filter(c=>c.content_type===contentType && c.content_id===contentId).sort((a,b)=> new Date(b.created_at) - new Date(a.created_at));
+  }catch(e){ return []; }
+}
+
+export async function fetchComments(contentType, contentId){
+  if(window.supabase){
+    try{
       const { data, error } = await window.supabase.from('comments').select('*').eq('content_type', contentType).eq('content_id', contentId).order('created_at', {ascending:false});
       if(error) throw error;
-      return data;
-    }
-    const key = 'khyati_comments';
-    const map = JSON.parse(localStorage.getItem(key) || '[]');
-    return map.filter(c=>c.content_type===contentType && c.content_id===contentId).sort((a,b)=> new Date(b.created_at) - new Date(a.created_at));
-  }catch(e){ console.error('fetchComments error', e); return []; }
+      return data || [];
+    }catch(e){ console.warn('fetchComments supabase failed, using local', e); return localComments(contentType, contentId); }
+  }
+  return localComments(contentType, contentId);
+}
+
+function saveLocalComment(user, contentType, contentId, body){
+  const payload = { user_id: user.id || user.email, user_email: user.email, content_type: contentType, content_id: contentId, body, created_at: new Date().toISOString(), display_name: user.metadata?.first_name || user.metadata?.name || user.email };
+  const key = 'khyati_comments'; const list = JSON.parse(localStorage.getItem(key) || '[]'); list.push(payload); localStorage.setItem(key, JSON.stringify(list)); return payload;
 }
 
 export async function postComment(contentType, contentId, body){
-  try{
-    const user = await Auth.currentUser();
-    if(!user) throw new Error('Not authenticated');
-    if(window.supabase){
-      const r = await window.supabase.from('comments').insert([{ user_id: user.id, content_type: contentType, content_id: contentId, body }]);
-      if(r.error) throw r.error; return r.data[0];
-    }else{
-      const payload = { user_id: user.id || user.email, user_email: user.email, content_type: contentType, content_id: contentId, body, created_at: new Date().toISOString(), display_name: user.metadata?.first_name || user.metadata?.name || user.email };
-      const key = 'khyati_comments'; const list = JSON.parse(localStorage.getItem(key) || '[]'); list.push(payload); localStorage.setItem(key, JSON.stringify(list)); return payload;
+  const user = await Auth.currentUser();
+  if(!user) throw new Error('Not authenticated');
+  if(window.supabase){
+    try{
+      const r = await window.supabase.from('comments').insert([{ user_id: user.id, content_type: contentType, content_id: contentId, body }]).select();
+      if(r.error) throw r.error;
+      return (r.data && r.data[0]) || { body };
+    }catch(e){
+      // If the backend rejects (e.g. table/RLS not set up), don't lose the
+      // comment — fall back to saving it locally so posting always works.
+      console.warn('postComment supabase failed, saving locally', e);
+      return saveLocalComment(user, contentType, contentId, body);
     }
-  }catch(e){ console.error('postComment error', e); throw e }
+  }
+  return saveLocalComment(user, contentType, contentId, body);
 }
 
 function esc(s){ return String(s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
@@ -35,7 +49,9 @@ function esc(s){ return String(s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;'
 // After a successful post it refreshes the list rendered in listEl.
 export async function renderCommentForm(wrapperEl, contentType, contentId, listEl){
   if(!wrapperEl) return;
-  if(window.AuthReady){ try{ await window.AuthReady; }catch(e){} }
+  // Wait for auth to settle, but never hang on it — cap the wait so the form
+  // always renders even if AuthReady stalls.
+  if(window.AuthReady){ try{ await Promise.race([window.AuthReady, new Promise(r=>setTimeout(r,2000))]); }catch(e){} }
   wrapperEl.innerHTML = '';
   let user = null;
   try{ user = await Auth.currentUser(); }catch(e){ user = null; }

@@ -324,7 +324,6 @@ const AI_TOOLS = [
   { name:"Decision Maker", category:"Fun", emoji:"🎲", color:"#FFD6E0", uses:5800, featured:false, status:"live", desc:"Flip a coin, roll a die, get a yes/no, or let it pick from your own list.", url:"/ai-tools/decision-maker.html" },
   { name:"News Aggregator", category:"News",    emoji:"📰", color:"#D6E4FF", uses:9800, featured:false, status:"offline", desc:"Latest headlines from BBC, CNN, Reuters, NBC and NYT — all in one place, updated live.", url:"/ai-tools/news-app.html" },
   { name:"Voice Clone",     category:"Audio",   emoji:"🎙️", color:"#FFD6E0", uses:7400, featured:false, status:"offline", desc:"Clone any voice using AI — record a sample and generate realistic speech instantly.", url:"/ai-tools/voice-clone.html" },
-  { name:"Coming Soon",     category:"",        emoji:"✨", color:"#F3ECFB", uses:0,    featured:false, status:"soon", desc:"More AI tools are being built. Check back soon!", url:"" },
 ];
 
 /* ---------- Category styling ---------- */
@@ -344,6 +343,9 @@ TOOLS.forEach((t,i)=>{
     desc:t.desc, url:"/ai-tools/tool.html?t=" + t.id
   });
 });
+
+/* Keep the "Coming Soon" teaser as the very last card in the grid. */
+AI_TOOLS.push({ name:"Coming Soon", category:"", emoji:"✨", color:"#F3ECFB", uses:-1, featured:false, status:"soon", desc:"More AI tools are being built. Check back soon!", url:"" });
 
 /* ============================================================
    STATE + RENDERING

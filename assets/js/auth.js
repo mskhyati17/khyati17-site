@@ -313,7 +313,7 @@ window.AuthReady = AuthReady;
 // also attach to the Auth object for convenience
 Auth.ready = AuthReady;
 
-document.addEventListener('DOMContentLoaded', async ()=>{
+async function initAuth(){
   await Auth.renderAuthArea();
   // (debug auth banner removed — was showing on every page)
   // If a pending profile was saved (from sign-up flow requiring confirmation),
@@ -334,7 +334,16 @@ document.addEventListener('DOMContentLoaded', async ()=>{
   })();
   // signal that Auth initialization and first render are complete
   try{ __authReadyResolve && __authReadyResolve(); }catch(e){/* ignore */}
-});
+}
+// Run on DOMContentLoaded — but if the DOM is ALREADY loaded (modules are
+// deferred, so this script can finish evaluating after the event has fired),
+// run immediately. Otherwise AuthReady would never resolve and anything that
+// `await`s it (e.g. the comment form) would hang and never render.
+if(document.readyState === 'loading'){
+  document.addEventListener('DOMContentLoaded', initAuth);
+}else{
+  initAuth();
+}
 
   // Export Auth, readiness promise and supabase client so other pages can import them directly
   export { Auth, AuthReady, supabase };
