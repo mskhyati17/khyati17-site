@@ -1,4 +1,4 @@
-// 150 client-side mini AI tools. Each: { id, name, emoji, cat, desc, gen?, placeholder?, run(input)->string }
+// 165 client-side mini AI tools. Each: { id, name, emoji, cat, desc, gen?, placeholder?, run(input)->string }
 // Rendered by tool.html and listed in the AI Zone. All run in the browser.
 const MORSE={A:'.-',B:'-...',C:'-.-.',D:'-..',E:'.',F:'..-.',G:'--.',H:'....',I:'..',J:'.---',K:'-.-',L:'.-..',M:'--',N:'-.',O:'---',P:'.--.',Q:'--.-',R:'.-.',S:'...',T:'-',U:'..-',V:'...-',W:'.--',X:'-..-',Y:'-.--',Z:'--..','0':'-----','1':'.----','2':'..---','3':'...--','4':'....-','5':'.....','6':'-....','7':'--...','8':'---..','9':'----.','.':'.-.-.-',',':'--..--','?':'..--..','!':'-.-.--','/':'-..-.','-':'-....-','@':'.--.-.'};
 const MORSE_REV=Object.fromEntries(Object.entries(MORSE).map(([k,v])=>[v,k]));
@@ -237,4 +237,26 @@ export const TOOLS = [
   { id:'flip-coins', name:'Flip N Coins', emoji:'🪙', cat:'Random', desc:'Flip several coins at once.', placeholder:'e.g. 10', run:s=>{ let n=parseInt(s,10); if(isNaN(n)||n<1)n=5; n=Math.min(n,100); let heads=0; const r=Array.from({length:n},()=>{ const hd=Math.random()<0.5; if(hd)heads++; return hd?'H':'T'; }); return r.join(' ')+`\n\nHeads: ${heads}  Tails: ${n-heads}`; } },
   { id:'password-gen', name:'Password Generator', emoji:'🔐', cat:'Random', desc:'Strong random password (type a length).', placeholder:'e.g. 16', run:s=>{ let n=parseInt(s,10); if(isNaN(n)||n<4)n=16; n=Math.min(n,64); const c='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*'; let p=''; for(let i=0;i<n;i++) p+=c[Math.floor(Math.random()*c.length)]; return p; } },
   { id:'team-name-gen', name:'Team Name Generator', emoji:'🏆', cat:'Random', desc:'A punchy random team name.', gen:true, run:()=>{ const a=['Thunder','Cosmic','Savage','Golden','Shadow','Turbo','Mighty','Electric','Wild','Royal','Frost','Blazing']; const b=['Tigers','Dragons','Wolves','Titans','Falcons','Sharks','Ninjas','Phoenix','Vipers','Raptors','Comets','Legends']; return pick(a)+' '+pick(b); } },
+
+  // ================= 15 MORE TOOLS (now 165) =================
+  // ---- Text (4) ----
+  { id:'syllable-count', name:'Syllable Counter', emoji:'🗣️', cat:'Text', desc:'Estimate the syllables in your text.', run:s=>{ const w=(s.toLowerCase().match(/[a-z]+/g)||[]); if(!w.length) return 'Enter some words'; const syl=x=>{ x=x.replace(/e$/,''); const m=x.match(/[aeiouy]+/g); return Math.max(1,m?m.length:1); }; const total=w.reduce((a,b)=>a+syl(b),0); return `${w.length} words\n~${total} syllables`; } },
+  { id:'char-frequency', name:'Letter Frequency', emoji:'📊', cat:'Text', desc:'Your most-used letters.', run:s=>{ const c=(s.toLowerCase().match(/[a-z]/g)||[]); if(!c.length) return 'Enter some letters'; const f={}; c.forEach(x=>f[x]=(f[x]||0)+1); return Object.entries(f).sort((a,b)=>b[1]-a[1]).slice(0,8).map(e=>`${e[0]}: ${e[1]}`).join('\n'); } },
+  { id:'remove-vowels', name:'Remove Vowels', emoji:'🚫', cat:'Text', desc:'Strip out every vowel.', run:s=>s.replace(/[aeiou]/gi,'') },
+  { id:'keep-vowels', name:'Keep Only Vowels', emoji:'🅰️', cat:'Text', desc:'Remove every consonant.', run:s=>s.replace(/[bcdfghjklmnpqrstvwxyz]/gi,'') },
+  // ---- Format (3) ----
+  { id:'calm-caps', name:'Calm the Caps', emoji:'😌', cat:'Format', desc:'Turn SHOUTY all-caps words into normal ones.', run:s=>s.replace(/\b[A-Z]{2,}\b/g, w=>w.charAt(0)+w.slice(1).toLowerCase()) },
+  { id:'dot-case', name:'dot.case', emoji:'🔵', cat:'Format', desc:'join.words.with.dots', run:s=>words(s).map(w=>w.toLowerCase()).join('.') },
+  { id:'train-case', name:'Train-Case', emoji:'🚂', cat:'Format', desc:'Join-Words-With-Hyphens-Capitalized.', run:s=>words(s).map(w=>w.charAt(0).toUpperCase()+w.slice(1).toLowerCase()).join('-') },
+  // ---- Encode (3) ----
+  { id:'a1z26', name:'A1Z26 Cipher', emoji:'🔢', cat:'Encode', desc:'Turn letters into numbers (a=1 … z=26).', run:s=>s.toUpperCase().replace(/[^A-Z ]/g,'').split('').map(c=>c===' '?'/':(c.charCodeAt(0)-64)).join('-') },
+  { id:'a1z26-decode', name:'A1Z26 Decode', emoji:'🔡', cat:'Encode', desc:'Turn A1Z26 numbers back into letters.', placeholder:'8-9 / 20-8-5-18-5', run:s=>s.trim().split(/[-\s]+/).map(t=>{ if(t==='/') return ' '; const n=parseInt(t,10); return (n>=1&&n<=26)?String.fromCharCode(64+n):''; }).join('') },
+  { id:'regional-flags', name:'🇦🇧 Flag Letters', emoji:'🏴', cat:'Encode', desc:'Turn letters into regional-indicator symbols.', run:s=>Array.from(s.toUpperCase()).map(c=>(c>='A'&&c<='Z')?String.fromCodePoint(0x1F1E6+c.charCodeAt(0)-65):c).join('') },
+  // ---- Calc (3) ----
+  { id:'tax-calc', name:'Tax / GST Calculator', emoji:'🧾', cat:'Calc', desc:'Add a percentage tax to an amount.', placeholder:'amount rate%  e.g. 60 18', run:s=>{ const n=nums(s); if(n.length<2) return 'Enter amount & rate%, e.g. "60 18"'; const a=n[0],r=n[1]; const tax=a*r/100; return `Tax: ${tax.toFixed(2)}\nTotal: ${(a+tax).toFixed(2)}`; } },
+  { id:'tip-split', name:'Split the Bill', emoji:'💸', cat:'Calc', desc:'Bill + people (+ tip%) → each pays.', placeholder:'bill people tip%  e.g. 80 4 15', run:s=>{ const n=nums(s); if(n.length<2) return 'Enter bill & people, e.g. "80 4 15"'; const bill=n[0], people=Math.max(1,Math.round(n[1])), tip=n.length>2?n[2]:15; const total=bill*(1+tip/100); return `${tip}% tip → total $${total.toFixed(2)}\nEach of ${people} pays $${(total/people).toFixed(2)}`; } },
+  { id:'dog-years', name:'Dog Years 🐶', emoji:'🐶', cat:'Calc', desc:'Convert human years to dog years.', placeholder:'e.g. 5', run:s=>{ const y=parseFloat(s); if(isNaN(y)||y<0) return 'Enter an age in human years'; let d = y<=2 ? y*10.5 : 21+(y-2)*4; return `${y} human years ≈ ${Math.round(d)} dog years 🐶`; } },
+  // ---- Time (1) ----
+  { id:'day-of-year', name:'Day of the Year', emoji:'📅', cat:'Time', desc:'Which numbered day of the year is a date?', placeholder:'e.g. 2026-07-08', run:s=>{ const dt=parseDate(s); if(!dt) return 'Enter a date, e.g. 2026-07-08'; const start=new Date(dt.getFullYear(),0,0); const day=Math.floor((dt-start)/86400000); return `${dt.getFullYear()} — day ${day} of the year`; } },
+  { id:'tally-marks', name:'Tally Marks', emoji:'✒️', cat:'Fun', desc:'Turn a number into tally marks.', placeholder:'e.g. 12', run:s=>{ const n=parseInt(s,10); if(isNaN(n)||n<0) return 'Enter a whole number ≥ 0'; if(n>1000) return 'Keep it ≤ 1000'; if(n===0) return '0'; let out=[],r=n; while(r>=5){ out.push('卌'); r-=5; } if(r>0) out.push('|'.repeat(r)); return out.join(' '); } },
 ];
