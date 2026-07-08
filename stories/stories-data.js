@@ -1550,4 +1550,104 @@ export const STORIES = [
     created_at: "2026-07-18T10:00:00Z",
     body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>At the edge of the Grumbling Forest stood a bridge, and on the bridge sat a troll who was not, as trolls go, very frightening — mostly just tired. He asked every traveller the same toll. Not gold. Not riddles. Just this: “Name one time you forgave someone.”</p><p>Most travellers managed it, and crossed. A knight forgave his rival. A merchant forgave a debt. The troll nodded and let them by.</p><p>Then came a girl named Ona, who had run away from home after a terrible argument. “Name one time you forgave someone,” said the troll.</p><p>Ona thought of her mother, and her chin trembled. “I forgave my friend once, for breaking my kite.”</p><p>“You may cross,” said the troll. But Ona did not move. “There's a harder one, isn't there,” she said quietly. “The one you really guard for.”</p><p>The troll's eyes softened. “Name one time you forgave yourself.”</p><p>Ona was silent a long while. She thought of the angry words she'd flung at her mother, and how she'd been carrying them like stones ever since. “I… haven't,” she admitted. “But I think I'd like to go home and try.”</p><p>The troll smiled, and it changed his whole face. “That,” he said, “is the toll. Not having forgiven — but being willing to.” And he stepped aside, and Ona crossed the bridge of second chances, and walked all the way home.</p>"
   },
+  {
+    title: "The Boy Who Bottled Echoes",
+    author: "Khyati Srivastava",
+    slug: "boy-who-bottled-echoes",
+    category: "Fantasy",
+    emoji: "🫙",
+    excerpt: "In a village where sound vanished too quickly, a boy learns to catch echoes in glass bottles — and discovers which ones are worth keeping.",
+    created_at: "2026-07-19T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>In the valley of Hush, sounds faded the instant they were made. A laugh, a song, a kind word — gone before it landed. So people grew quiet and a little sad. But a boy named Oren had a gift: he could catch echoes in glass bottles and cork them tight.</p><p>He filled a shelf with them. A bottle of his mother's lullaby. A bottle of the market's cheerful din. A bottle of thunder that rattled when he shook it.</p><p>One day a traveller offered Oren gold for the loudest, grandest echoes. Oren sold the thunder, the cheering crowd, the roaring waterfall. His shelf grew empty of big sounds, and his pockets grew heavy with coins.</p><p>But that night, when he felt lonely, he reached for a bottle to comfort him — and found only one left, small and dusty, that the traveller hadn't wanted: his little sister whispering, <em>Goodnight, I love you.</em></p><p>Oren uncorked it. The tiny words filled the room, warmer than any thunder. And he understood which echoes were truly worth keeping.</p><p>He used the gold to buy back nothing at all. Instead he spent his days catching new small sounds — a friend's giggle, a grandfather's story, a first raindrop — and giving the bottles away, so no kind word in Hush would ever vanish unheard again.</p>"
+  },
+  {
+    title: "The Cat Who Guarded the Moon Door",
+    author: "Khyati Srivastava",
+    slug: "cat-who-guarded-the-moon-door",
+    category: "Fairytale",
+    emoji: "🌝",
+    excerpt: "Every night a small grey cat guards a door made of moonlight — and every night she must decide who is kind enough to pass through.",
+    created_at: "2026-07-20T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>At the top of the tallest hill, only visible on clear nights, stood a Door made entirely of moonlight. Behind it lay the Garden of Dreams, where the best dreams were grown. And guarding it sat a small grey cat named Silvi.</p><p>Silvi asked each traveller one question: “What would you do in the Garden of Dreams?”</p><p>A rich man said he'd pick the dreams and sell them. The door stayed shut. A proud woman said she'd take the most beautiful dream for herself. The door stayed shut.</p><p>Then came a tired little girl who had walked all night. “What would you do in the Garden of Dreams?” asked Silvi. The girl thought hard. “I'd bring a dream back for my baby brother,” she said. “He's scared of the dark, and I think a good dream would help him sleep.”</p><p>The moonlight Door swung open with a soft chime. Silvi walked beside the girl through rows of glowing, whispering dreams, and helped her choose the gentlest one — a dream of a warm night-light shaped like a star.</p><p>The girl carried it home cupped in her hands. And Silvi returned to her post, tail curled, content. For the Garden was never meant for those who wanted to keep its dreams — only for those who wanted to give them away.</p>"
+  },
+  {
+    title: "The Last Question of the Robot Librarian",
+    author: "Khyati Srivastava",
+    slug: "robot-librarian-last-question",
+    category: "Sci-Fi",
+    emoji: "📚",
+    excerpt: "On a space station at the edge of everything, a robot librarian has answered a billion questions. Tonight, a child asks it the one it cannot look up.",
+    created_at: "2026-07-21T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Unit L-7 had been the librarian aboard Station Farlight for two hundred years. It had answered one billion, four hundred million questions, and it kept a careful count. Ask it the distance to any star, the name of any king, the boiling point of any metal — L-7 knew.</p><p>One quiet night-cycle, a small girl whose family had just arrived floated up to the desk. She had been crying.</p><p>“Librarian,” she said, “how do I stop missing my old home?”</p><p>L-7's lights flickered. It searched its vast memory — nine thousand books on astronomy, ten thousand on engineering — and found, for the first time in two centuries, no answer to retrieve.</p><p>So instead of looking it up, L-7 did something new. It said, “I do not know. But I have watched many families arrive frightened, and I have noticed something. The missing gets smaller not when you forget the old place, but when you begin to love the new one. Would you like to help me shelve books? It is how I learned to love this station.”</p><p>The girl nodded. Night after night she helped, and slowly Farlight became home. L-7 never added that night to its count of questions answered — because it hadn't answered it. It had done something better. It had kept the girl company until she found the answer herself.</p>"
+  },
+  {
+    title: "The Mystery of the Humming House",
+    author: "Khyati Srivastava",
+    slug: "mystery-of-the-humming-house",
+    category: "Mystery",
+    emoji: "🎵",
+    excerpt: "Every evening at six o'clock, the old house on Maple Lane hums a tune. Young detective Riya is determined to find out why — and who.",
+    created_at: "2026-07-22T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Nobody had lived in the house on Maple Lane for years. Yet every evening at exactly six o'clock, a soft, sweet humming drifted from its windows. The neighbours whispered about ghosts. Riya, who trusted clues more than rumours, decided to investigate.</p><p>She watched the house for three evenings. The humming always began at six and lasted a few minutes, rising and falling like an old song. It seemed to come from the back room.</p><p>On the fourth evening, Riya crept to the back window and peered in. There was no ghost — only sunlight. As the clock struck six, the last rays of the setting sun slanted through a row of empty glass bottles left on the sill. The evening breeze slipped through a cracked pane and passed over the bottle-tops, and each one sang a gentle note. Together they hummed the tune.</p><p>Riya laughed with delight. The house wasn't haunted; it was an accidental instrument, played by the wind and the setting sun.</p><p>She told the neighbours, who came to listen instead of to fear. And someone — no one ever admitted who — began leaving a fresh bottle on the sill each week, tuned a little differently, so the old house on Maple Lane could learn a brand-new song.</p>"
+  },
+  {
+    title: "The Snail Mail Express",
+    author: "Khyati Srivastava",
+    slug: "snail-mail-express",
+    category: "Comedy",
+    emoji: "🐌",
+    excerpt: "Sydney the snail runs the slowest post office in the forest — and somehow, impossibly, delivers exactly what everyone needs right on time.",
+    created_at: "2026-07-23T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Sydney the snail was the forest postmaster, which was a strange choice, because Sydney was — by any measure — extremely slow. The rabbits grumbled. The birds rolled their eyes. “A letter takes you a WEEK!” they cried.</p><p>“Patience,” said Sydney, and set off at his own magnificent pace.</p><p>Here was the odd thing, though: Sydney's letters always seemed to arrive at exactly the right moment. The apology he carried to old Badger reached him on the very morning Badger had finally cooled down enough to forgive. The invitation he inched toward Miss Vole arrived just as she was feeling most lonely. The recipe he delivered to the Hedgehogs turned up precisely when they'd run out of dinner ideas.</p><p>One day a fast young hare offered to take over the route. He zipped a stack of letters across the forest in an afternoon — and caused chaos. The apology arrived while Badger was still furious. The invitation came before Miss Vole had missed anyone. Everything was early, and nothing landed right.</p><p>The forest quietly gave Sydney his job back. “How do you always time it perfectly?” the hare asked, baffled.</p><p>Sydney smiled his slow smile. “I don't rush the letters,” he said. “I let them arrive when the hearts are ready. Turns out the slowest post is sometimes the most on time.”</p>"
+  },
+  {
+    title: "The Girl Who Traded Fears for Feathers",
+    author: "Khyati Srivastava",
+    slug: "girl-who-traded-fears-for-feathers",
+    category: "Inspirational",
+    emoji: "🪶",
+    excerpt: "A wise old bird offers Meera a deal: give up one fear, get one feather. But a coat of feathers, she learns, is not the same as wings.",
+    created_at: "2026-07-24T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Meera was afraid of many things — the dark, deep water, speaking in class, the big dog next door. One evening a silver-eyed bird landed on her windowsill and made an offer: “Name a fear and let it go, and I will give you a feather. Collect enough, and you'll have something wonderful.”</p><p>So Meera began. She let go of her fear of the dark by sleeping without the hall light — and won a feather. She faced the deep end of the pool — another feather. She raised her hand in class — another. Each brave act left a shining feather on her sill.</p><p>Soon she had a whole glittering coat of them. “Now what?” she asked the bird. “Now,” it said, “put them on.”</p><p>Meera draped the feather-coat over her shoulders and stood at the open window, expecting to soar. But she didn't lift an inch. “It doesn't work!” she cried. “The feathers don't make wings!”</p><p>The bird tilted its head. “No,” it agreed gently. “The feathers were never the point. Look how high you've already climbed without them.” And Meera realized that in trading away her fears, she had already gone further than she'd ever dreamed — the dark, the water, the class, the dog, all behind her. The coat was just a reminder. The courage had been hers all along.</p>"
+  },
+  {
+    title: "The Baker Who Baked the Sunrise",
+    author: "Khyati Srivastava",
+    slug: "baker-who-baked-the-sunrise",
+    category: "Fairytale",
+    emoji: "🥐",
+    excerpt: "When a long grey winter refuses to end, a small-town baker decides to bake something warm and golden enough to remind the sun to come back.",
+    created_at: "2026-07-25T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>The winter would not leave. Week after grey week, the sun hid behind heavy clouds, and the little town of Morrow grew glum and cold. Nothing the mayor tried could coax the light back.</p><p>Then Elka the baker had an idea. “If the sun won't come to us,” she said, “I'll bake something warm and golden enough to remind it how.”</p><p>She worked through the night. She braided dough into rays. She glazed each loaf with honey until it gleamed like morning. She baked round golden buns and set them steaming in every window of the town, so that from the hills above, Morrow glowed with a hundred small warm suns.</p><p>People came out of their cold houses, drawn by the smell. They shared the warm bread, and laughed, and warmed their hands, and told each other it would be all right.</p><p>Whether the real sun noticed the golden town, or whether the clouds simply grew tired at last, no one could say. But the next dawn broke clear and bright, and the whole valley turned to gold.</p><p>Elka only smiled and lit her ovens again. She knew a secret worth more than sunshine: when the world feels grey, you don't always have to wait for the light. Sometimes you can bake a little of it yourself, and share it around until the real thing remembers to return.</p>"
+  },
+  {
+    title: "The Quiet Boy and the Loud Piano",
+    author: "Khyati Srivastava",
+    slug: "quiet-boy-and-the-loud-piano",
+    category: "Drama",
+    emoji: "🎹",
+    excerpt: "Sam never spoke in class. Then the old piano in the school hall taught him a language that needed no words at all.",
+    created_at: "2026-07-26T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Sam was the quietest boy in school. When teachers asked questions, his answers stayed locked inside him. When other kids laughed together, he watched from the edge. It wasn't that he had nothing to say — it was that the words got stuck, every time.</p><p>One rainy lunchtime, hiding in the empty school hall, Sam noticed the old dusty piano in the corner. No one ever played it. He lifted the lid and pressed a single key. The note rang out, clear and brave, filling the whole hall.</p><p>Something unlocked. Sam pressed another key, then another, finding a little tune. The piano said, loudly and beautifully, all the things he could never manage to speak.</p><p>He came back every lunchtime. Slowly, quietly, he taught himself to play. And one day the music teacher heard him through the door and simply listened, amazed, without saying a word — because she understood that words were not the only way to be heard.</p><p>At the winter concert, Sam sat at that piano in front of the whole school. He still couldn't have made a speech to save his life. But when his hands began to move, the hall went silent, then burst into applause. For the first time, everyone heard exactly what Sam had been wanting to say all along. He had found his voice — it just happened to have eighty-eight keys.</p>"
+  },
+  {
+    title: "Tembo and the River of Stars",
+    author: "Khyati Srivastava",
+    slug: "tembo-and-the-river-of-stars",
+    category: "Adventure",
+    emoji: "🐘",
+    excerpt: "When the watering hole dries up, a young elephant follows an old legend across the savanna to find the hidden River of Stars.",
+    created_at: "2026-07-27T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>The great drought had emptied the watering hole, and the herd was weak with thirst. The elders spoke of an old legend: a hidden River of Stars, far across the savanna, that never ran dry. But no one had ever found it, and no one was strong enough to try.</p><p>No one except young Tembo, who was small for an elephant but large in heart.</p><p>He set off at dusk, following the only clue in the legend: <em>walk toward the brightest star and do not turn back.</em> Through the long night he walked, past sleeping lions and whispering grass, keeping the bright star always ahead.</p><p>By dawn he was exhausted and had found no river. He nearly wept. But then he crested a final ridge — and there below lay a vast, still lake, so perfectly calm that it held the whole fading night sky on its surface. The stars themselves seemed to swim in it. The River of Stars was real; it had simply been named for its reflection.</p><p>Tembo trumpeted with all his might, and the sound carried back across the plain to the herd. They followed his trail to the water, and drank, and were saved.</p><p>From then on the young elephant who was small for his kind was known by a bigger name: Tembo, Finder of the River of Stars — the one who walked toward the light and did not turn back.</p>"
+  },
+  {
+    title: "Coco the Cloud Who Wanted to Rain",
+    author: "Khyati Srivastava",
+    slug: "coco-the-cloud-who-wanted-to-rain",
+    category: "Kids",
+    emoji: "☁️",
+    excerpt: "Coco is a small cloud with a big wish: to make it rain. But she's told she's far too little — until a thirsty little garden proves otherwise.",
+    created_at: "2026-07-28T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>High in the blue sky lived a little cloud named Coco, and Coco had one big wish: to make it rain. But the big storm clouds boomed and laughed. “You're far too little to rain,” they rumbled. “Leave it to us.” And they drifted off to the mountains, where the important rain happened.</p><p>Coco floated on, feeling small and useless. Below her she saw a tiny garden, wilting in the sun — a single row of drooping flowers and one very worried little girl with an empty watering can.</p><p>“The big clouds are all at the mountains,” Coco realized. “Nobody's coming to help this garden but me.”</p><p>So Coco tried with all her might. She squeezed and puffed and gathered herself up — and let go the only few raindrops she had. Pitter… patter… pit. Just a little sprinkle. But it was enough. The flowers lifted their heads. The little girl looked up and clapped and shouted, “Rain! Thank you, little cloud!”</p><p>Coco had never felt so big. She learned that day that you don't have to be a mighty storm to matter. Sometimes the whole world just needs the small rain that only you can give — right where you happen to be.</p>"
+  },
 ];
