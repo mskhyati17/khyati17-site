@@ -159,7 +159,7 @@
       if(!list.length){ grid.innerHTML = '<div class="v-empty">No videos match your search 😕</div>'; return; }
       list.forEach(v=>{
         const card = document.createElement('div'); card.className = 'v-card';
-        const thumb = v.thumb ? `<img src="${v.thumb}" alt="" loading="lazy" onerror="this.style.display='none'"/>` : '';
+        const thumb = v.thumb ? `<img src="${v.thumb}" alt="${esc(v.title || 'Video thumbnail')}" loading="lazy" decoding="async" onerror="this.style.display='none'"/>` : '';
         card.innerHTML =
           `<div class="v-thumb">${thumb}<div class="play">▶</div><div class="badge">${CAT_EMOJI[v.cat]||''} ${v.cat}</div></div>`+
           `<div class="v-meta"><div class="v-title">${esc(v.title)}</div><div class="v-channel">${esc(v.channel)}</div></div>`;
