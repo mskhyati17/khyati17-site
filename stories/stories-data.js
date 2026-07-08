@@ -1450,4 +1450,104 @@ export const STORIES = [
     created_at: "2026-07-08T10:00:00Z",
     body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Professor Hoot was the wisest owl in Bramblewood, and also the most serious. He had read every book, memorised every star, and had not laughed in four hundred nights. Laughing, he insisted, was for creatures with nothing important to do.</p><p>Enter Waddles, a duckling with a feather permanently stuck to his beak and no important things to do whatsoever.</p><p>“I shall make you laugh,” Waddles announced, “by Friday.” Professor Hoot did not even look up. “Impossible,” he said.</p><p>Waddles tried everything. He told jokes so bad they curled the leaves. He walked into the same branch nine times. He wore a mushroom as a hat and introduced himself as the Mayor of Puddles. Professor Hoot only sighed and turned a page.</p><p>Then, on Thursday, Waddles slipped on a slug, cartwheeled into a pile of acorns, popped up wearing three of them like a crown, and declared with total dignity, “I meant to do that.”</p><p>And something inside the old owl cracked — a small, rusty sound, then a bigger one, then a great rolling <em>hoo-hoo-HOO</em> that rattled every tree in Bramblewood. Professor Hoot laughed until his glasses fogged and his feathers shook.</p><p>“You see?” said Waddles, delighted. “Wasn't that important?” And the wisest owl in the forest, wiping his eyes, had to admit that — for the first time in four hundred nights — it absolutely was.</p>"
   },
+  {
+    title: "The Boy Who Painted Wind",
+    author: "Khyati Srivastava",
+    slug: "boy-who-painted-wind",
+    category: "Inspirational",
+    emoji: "🎨",
+    excerpt: "Everyone told Kai you cannot paint the wind — it has no shape, no colour. So he spent a whole summer proving them beautifully wrong.",
+    created_at: "2026-07-09T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Kai loved to paint, but he had set himself an impossible task: he wanted to paint the wind. His sister laughed. His teacher smiled kindly. “The wind has no shape,” they said, “and no colour. It cannot be painted.”</p><p>Kai thought about that for a long time. Then he took his paints to the top of the hill and simply watched.</p><p>He watched the way the tall grass bowed all together, like a green sea. He watched a kite dive and climb, tugging at its string. He watched a scarf tumble down the lane and leaves spin in little galloping circles.</p><p>And slowly Kai understood. You cannot paint the wind itself — but you can paint everything the wind touches. So he painted the bending grass and the leaping kite, the flung scarf and the dancing leaves. He painted a mother holding her hat and a dog with its ears streaming back like flags.</p><p>When he showed his picture, no one laughed. They looked at it and felt a breeze on their own faces, though the room was still.</p><p>“But there is no wind in it,” his sister whispered, amazed. “It's everywhere in it,” Kai said. And that was the day he learned that the biggest things — courage, kindness, the wind — are painted not by drawing them, but by showing what they move.</p>"
+  },
+  {
+    title: "Detective Duck and the Missing Quack",
+    author: "Khyati Srivastava",
+    slug: "detective-duck-missing-quack",
+    category: "Comedy",
+    emoji: "🦆",
+    excerpt: "The pond's finest detective wakes up one morning to find his own quack has gone missing — and the only witness is a very smug frog.",
+    created_at: "2026-07-10T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Detective Duck had solved every mystery on Willow Pond — the case of the sunken slipper, the mystery of the vanishing breadcrumbs. But one foggy morning he faced his strangest case yet. He opened his beak to say good morning and… nothing came out. His quack was gone.</p><p>“Thif if a difafter,” he mumbled, which was as close to “this is a disaster” as he could manage.</p><p>He examined the scene. His nest was undisturbed. The only witness was Ferdinand the frog, sitting on a lily pad looking exceptionally pleased with himself.</p><p>Detective Duck mimed his questions. Ferdinand shrugged, then let out a magnificent, echoing “RIBBIT!” — followed, oddly, by a tiny, familiar “quack.”</p><p>Aha. The detective narrowed his eyes. He mimed eating. Ferdinand went pale. The truth wobbled out: the greedy frog had gulped down a moth in the dark — and, tangled in the moth's dust, a single stolen quack that had drifted off while Duck slept.</p><p>One firm pat on Ferdinand's back later, the quack popped free and floated home to its owner. “QUACK!” cried Detective Duck, never so happy to hear himself. Case closed. He wrote it in his notebook under a new rule for all detectives: sometimes the thing you're missing was never lost — it was just borrowed by a frog.</p>"
+  },
+  {
+    title: "The Map That Redrew Itself",
+    author: "Khyati Srivastava",
+    slug: "map-that-redrew-itself",
+    category: "Adventure",
+    emoji: "🗺️",
+    excerpt: "Sol buys a dusty old map from a market stall, only to discover it quietly redraws itself each night to point at whatever the heart most needs.",
+    created_at: "2026-07-11T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>The map cost Sol three coins and one button, and the old stall-keeper threw in a warning for free: “It doesn't show where things are. It shows where you need to go.”</p><p>Sol laughed and rolled it up. But that night, by candlelight, she watched the ink shift like slow water. The rivers rearranged. A red X drew itself over the eastern woods, where there was nothing at all.</p><p>Curious, she followed it at dawn — and found a fawn tangled in a fence, too weak to cry out. She freed it, and the X faded, and a new one bloomed to the north.</p><p>Day after day the map led her: to a lost child, to a spring hidden under stones, to an old woman who only needed someone to listen. Sol grew famous in the villages as the girl who always turned up exactly when she was needed.</p><p>One evening she unrolled the map and found no X at all — just a single word written where her own house stood: <em>home</em>. She understood then. The map had never shown her treasure. It had shown her, again and again, that the fastest way to find your own place in the world is to go wherever kindness is missing, and stand there.</p>"
+  },
+  {
+    title: "The Star That Was Afraid of the Dark",
+    author: "Khyati Srivastava",
+    slug: "star-afraid-of-the-dark",
+    category: "Kids",
+    emoji: "⭐",
+    excerpt: "High in the night sky, one little star has a very embarrassing secret for a star: she is terribly, wonderfully afraid of the dark.",
+    created_at: "2026-07-12T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Of all the stars in the sky, little Twinkle had the most embarrassing secret. She, a star whose entire job was to shine in the night, was afraid of the dark.</p><p>Each evening when the sun clocked out and the great blue-black night unrolled, Twinkle squeezed her light down to the tiniest, tremble-est glow and hid behind a cloud.</p><p>“Why do you hide?” asked the Moon one night, gentle and round. “Because the dark is so big,” Twinkle whispered, “and I am so small.”</p><p>The Moon smiled. “Come out, just for a moment, and look down.”</p><p>So Twinkle peeked. And far, far below, on a dark and ordinary street, a small girl was lying awake, frightened of her shadowy room — until she saw, through her window, one little star flicker on. The girl smiled, held her blanket tighter, and finally slept.</p><p>“You see,” said the Moon, “your light doesn't make the dark disappear. It just keeps someone company inside it. That is the whole point of a star.”</p><p>Twinkle thought about the girl sleeping safely below. Slowly, she let her glow grow bright and steady and brave. She was still a little afraid of the dark. But now she knew a secret worth more than fearlessness: you can be scared and still be someone else's light.</p>"
+  },
+  {
+    title: "The Clockwork Sparrow",
+    author: "Khyati Srivastava",
+    slug: "clockwork-sparrow",
+    category: "Sci-Fi",
+    emoji: "🐦",
+    excerpt: "A lonely inventor builds a perfect mechanical sparrow — but it will only sing when it is set free, and freedom means it might never return.",
+    created_at: "2026-07-13T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>The old inventor Mira had built many wonders, but her masterpiece was a sparrow of brass and glass, with a heart of tiny turning gears. It was perfect in every way but one: it would not sing.</p><p>She oiled it, tuned it, adjusted every cog. Silence. In frustration she carried it to the open window to think — and the moment the cool air touched its wings, the sparrow burst into the most beautiful song she had ever heard, and leapt from her hands into the sky.</p><p>Mira's heart sank. She had lost it. For days her workshop was quiet and grey.</p><p>Then, one bright morning, she heard it: that clockwork song, drifting through the window. The sparrow was perched on the sill. It sang, tilted its glass eye at her, and flew off again — returning each day at dawn to sing, then leaving to fly.</p><p>Mira finally understood the flaw that was not a flaw. She had built a thing with wings and expected it to stay in a cage. It could only make its music free. So she left the window open always, and lived the rest of her days serenaded by a sparrow that came back not because it was kept, but because it was loved — and let go.</p>"
+  },
+  {
+    title: "The Snail Who Won the Race",
+    author: "Khyati Srivastava",
+    slug: "snail-who-won-the-race",
+    category: "Animals",
+    emoji: "🐌",
+    excerpt: "Everyone knows the tortoise beat the hare. Almost nobody knows about the garden race a snail won without ever moving fast at all.",
+    created_at: "2026-07-14T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>The Great Garden Race was the event of the season. Everyone entered — the sprinting beetle, the leaping grasshopper, the darting lizard. And, to much laughter, one small snail named Pearl.</p><p>“You'll finish next winter!” the beetle chuckled. Pearl only smiled and began, at her own gentle pace, to climb.</p><p>The others shot off toward the far wall. But the racecourse wound through the whole garden, and the day grew hot. The beetle stopped to rest and fell asleep. The grasshopper got distracted by a delicious flower. The lizard chased a fly clean out of the garden and forgot the race entirely.</p><p>Pearl, meanwhile, never stopped. She did not hurry, but she did not pause. Up the stem, across the leaf, over the stone, leaving her silver trail — a little further, always a little further.</p><p>When evening came, the finish-line ribbon fluttered untouched… until a small, shining shape reached up and touched it. Pearl had won — not by being fast, but by never once deciding to stop.</p><p>The others woke and gaped. “How?” cried the beetle. Pearl looked back at the long silver thread of her journey glinting in the sunset. “I just kept going,” she said. “Slow is still forward.”</p>"
+  },
+  {
+    title: "The Library Between Raindrops",
+    author: "Khyati Srivastava",
+    slug: "library-between-raindrops",
+    category: "Fantasy",
+    emoji: "📚",
+    excerpt: "On the rainiest day of the year, a girl ducks into a doorway to hide from the downpour and finds a library that exists only while it rains.",
+    created_at: "2026-07-15T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>The rain came down so hard that Anaya darted through the first door she found — a narrow blue door she had never noticed on her own street. Inside was not a hallway but a library, vast and warm, its shelves climbing up into a ceiling of soft grey cloud.</p><p>A librarian with spectacles like tiny windows looked up. “Welcome. You have until the rain stops.”</p><p>“Until it stops?” Anaya asked.</p><p>“This library only exists between raindrops,” the librarian said, as if that were perfectly ordinary. “When the last drop falls, we fold away again. So choose your book wisely.”</p><p>Anaya wandered the aisles. The books were unlike any she knew — <em>The Adventures You Almost Had</em>, <em>Everything Your Grandmother Meant To Tell You</em>, <em>A Field Guide to Being Brave</em>. She pulled one down and began to read, and hours seemed to pass in minutes.</p><p>Outside, the rain softened. The librarian tapped a gentle bell. “It's nearly time.”</p><p>Anaya rushed to check out her book, but the librarian shook her head. “The books stay. But you keep what you read.” And it was true — the story was already warm inside her, hers forever.</p><p>She stepped back onto the wet, shining street just as the last drop fell. When she turned, the blue door was gone. But she smiled all the way home, carrying a whole library between her ears.</p>"
+  },
+  {
+    title: "The Girl Who Kept the Sea in a Jar",
+    author: "Khyati Srivastava",
+    slug: "girl-who-kept-the-sea-in-a-jar",
+    category: "Drama",
+    emoji: "🌊",
+    excerpt: "Before moving far from the coast, Yara scoops one jar of seawater to take with her — and learns that the ocean was never really in the jar at all.",
+    created_at: "2026-07-16T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Yara had lived her whole life beside the sea, and now her family was moving to a city far inland. On her last evening at the shore, she filled a glass jar with seawater and sealed it tight. “Now I'll always have the ocean,” she said.</p><p>In the new city, whenever she felt lost, she would hold the jar up to the light. But the water inside grew still and cloudy. It did not roar. It did not shine. It was just… water in a jar.</p><p>She wrote to her grandmother, sad. “The sea I kept has died.”</p><p>Her grandmother wrote back: “Child, the sea was never the water. It was the sound and the sky and the cold on your feet, the gulls and the going-on-forever. You cannot keep those in glass. But you carry them already — in how you love big things, in how you are never quite afraid of what's deep. Open the jar and let it go.”</p><p>So Yara poured the little jar of seawater into her new garden, over the roots of a young lemon tree. In time the tree grew tall and gave fruit, and she realized her grandmother was right. She had not lost the ocean. She had planted it. And some part of it grew, salt and bright, in everything she chose to nurture from then on.</p>"
+  },
+  {
+    title: "Grandmother's Recipe for Rain",
+    author: "Khyati Srivastava",
+    slug: "grandmothers-recipe-for-rain",
+    category: "Fairytale",
+    emoji: "🌧️",
+    excerpt: "When the village well runs dry, young Devi remembers her grandmother's strange old recipe — not for soup or bread, but for calling the rain.",
+    created_at: "2026-07-17T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>The sun had not blinked in forty days, and the village well showed only cracked mud. The elders argued and worried. But young Devi remembered something: a page in her grandmother's tattered recipe book, tucked between the dumplings and the plum jam, titled simply <em>For Rain</em>.</p><p>The recipe was odd. It called for no herbs and no fire. It read: <em>Gather everyone. Share what little water remains, first with those who have least. Sing the old songs together until the singing is louder than the fear. Plant one seed, though it seems foolish. Wait, together, and do not lose hope before the pot is stirred.</em></p><p>The elders scoffed — that was no recipe. But Devi gathered the village anyway. They pooled their last cups and gave first to the smallest children and the oldest grandfathers. They sang. They planted a single bean by the dry well. And they stayed together, waiting, refusing to despair.</p><p>Perhaps it was chance. Perhaps the mountains simply turned the weather that night. But near dawn a cool wind rose, and clouds gathered, and the first fat drops struck the dust with a sound like applause.</p><p>Devi never knew if the recipe truly called the rain. But she understood at last what her grandmother had really written down — not a spell for the sky, but a recipe for a village that could survive any drought: share, sing, plant hope, and wait together.</p>"
+  },
+  {
+    title: "The Bridge Made of Second Chances",
+    author: "Khyati Srivastava",
+    slug: "bridge-of-second-chances",
+    category: "Fantasy",
+    emoji: "🌉",
+    excerpt: "A troll guards a bridge that only lets you cross if you can name a time you forgave someone — or, harder still, forgave yourself.",
+    created_at: "2026-07-18T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>At the edge of the Grumbling Forest stood a bridge, and on the bridge sat a troll who was not, as trolls go, very frightening — mostly just tired. He asked every traveller the same toll. Not gold. Not riddles. Just this: “Name one time you forgave someone.”</p><p>Most travellers managed it, and crossed. A knight forgave his rival. A merchant forgave a debt. The troll nodded and let them by.</p><p>Then came a girl named Ona, who had run away from home after a terrible argument. “Name one time you forgave someone,” said the troll.</p><p>Ona thought of her mother, and her chin trembled. “I forgave my friend once, for breaking my kite.”</p><p>“You may cross,” said the troll. But Ona did not move. “There's a harder one, isn't there,” she said quietly. “The one you really guard for.”</p><p>The troll's eyes softened. “Name one time you forgave yourself.”</p><p>Ona was silent a long while. She thought of the angry words she'd flung at her mother, and how she'd been carrying them like stones ever since. “I… haven't,” she admitted. “But I think I'd like to go home and try.”</p><p>The troll smiled, and it changed his whole face. “That,” he said, “is the toll. Not having forgiven — but being willing to.” And he stepped aside, and Ona crossed the bridge of second chances, and walked all the way home.</p>"
+  },
 ];
