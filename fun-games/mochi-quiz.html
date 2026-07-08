@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🧠 Mochi Quiz</title>
+<meta name="description" content="Test your smarts with Mochi's kid-friendly trivia quiz — animals, science, space, geography and more. Free on Khyati17." />
+<meta property="og:title" content="🧠 Mochi Quiz — Khyati17" />
+<meta property="og:description" content="10 fun trivia questions per round — how many can you get right?" />
+<meta property="og:image" content="https://khyati17.com/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(135deg,#2b0b3a,#6a1b9a,#9c4dcc);min-height:100vh;display:flex;justify-content:center;align-items:center;padding:20px}
+  .container{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border-radius:24px;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.12);text-align:center;max-width:560px;width:100%}
+  h1{font-size:1.7rem;color:#fff;margin-bottom:4px;text-shadow:0 0 30px rgba(233,216,255,.4)}
+  .subtitle{color:rgba(255,255,255,.7);font-size:.84rem;margin-bottom:14px}
+  .score-board{display:flex;justify-content:space-between;background:rgba(0,0,0,.3);border-radius:12px;padding:9px 18px;margin-bottom:16px;color:#fff}
+  .score-board b{color:#e9d8ff}
+  .cat{color:#ffd9f0;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;min-height:1em}
+  .q{color:#fff;font-size:1.2rem;font-weight:700;line-height:1.35;margin-bottom:16px;min-height:2.4em;display:flex;align-items:center;justify-content:center}
+  .opts{display:grid;gap:10px}
+  .opt{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.2);color:#fff;padding:13px 16px;border-radius:12px;cursor:pointer;font-size:1rem;text-align:left;transition:.15s}
+  .opt:hover:not(:disabled){background:#e9d8ff;color:#2b0b3a}
+  .opt:disabled{cursor:default}
+  .opt.correct{background:#2ecc71;border-color:#27ae60;color:#08331b;font-weight:700}
+  .opt.wrong{background:#ff6a8a;border-color:#e0416a;color:#3a0011}
+  .msg{color:#fff;margin-top:14px;font-weight:700;min-height:1.2em}
+  .over{text-align:center;color:#fff}
+  .over .big{font-size:2.6rem}.over h2{font-size:1.6rem;margin:6px 0}
+  .controls{margin-top:16px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .controls a,.controls button{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:9px 20px;border-radius:10px;cursor:pointer;font-size:.95rem;text-decoration:none;display:inline-block}
+  .controls a:hover,.controls button:hover,#next:hover{background:#e9d8ff;color:#2b0b3a}
+  #next{background:#e9d8ff;color:#2b0b3a;font-weight:bold;display:none}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🧠 Mochi Quiz</h1>
+  <p class="subtitle">10 fun questions a round — tap the right answer!</p>
+  <div class="score-board"><div>Q: <b id="qnum">1</b>/10</div><div>Score: <b id="score">0</b></div><div>Best: <b id="best">0</b></div></div>
+  <div id="play">
+    <div class="cat" id="cat"></div>
+    <div class="q" id="q"></div>
+    <div class="opts" id="opts"></div>
+    <div class="msg" id="msg"></div>
+  </div>
+  <div class="over" id="over" style="display:none">
+    <div class="big" id="over-emoji">🎓</div>
+    <h2 id="over-title">Quiz Complete!</h2>
+    <p id="over-text"></p>
+  </div>
+  <div class="controls">
+    <button id="next">Next →</button>
+    <button id="restart">New Quiz 🔄</button>
+    <a href="/fun-games/index.html">← All Games</a>
+  </div>
+</div>
+<script>
+(function(){
+  var BANK=[
+    {c:'Animals',q:'Which animal is the tallest in the world?',o:['Elephant','Giraffe','Horse','Camel'],a:1},
+    {c:'Space',q:'Which planet is closest to the Sun?',o:['Venus','Earth','Mercury','Mars'],a:2},
+    {c:'Science',q:'What gas do plants breathe in that we breathe out?',o:['Oxygen','Carbon dioxide','Helium','Nitrogen'],a:1},
+    {c:'Geography',q:'What is the largest ocean on Earth?',o:['Atlantic','Indian','Arctic','Pacific'],a:3},
+    {c:'Animals',q:'How many legs does a spider have?',o:['6','8','10','4'],a:1},
+    {c:'Science',q:'What is H₂O more commonly known as?',o:['Salt','Water','Air','Sugar'],a:1},
+    {c:'Space',q:'What is the name of our galaxy?',o:['Andromeda','Milky Way','Whirlpool','Sombrero'],a:1},
+    {c:'Nature',q:'What do you call a baby frog?',o:['Cub','Tadpole','Kit','Joey'],a:1},
+    {c:'Geography',q:'Which is the longest river in the world?',o:['Amazon','Nile','Yangtze','Ganges'],a:1},
+    {c:'Maths',q:'How many sides does a hexagon have?',o:['5','6','7','8'],a:1},
+    {c:'Animals',q:'Which is the fastest land animal?',o:['Cheetah','Lion','Horse','Greyhound'],a:0},
+    {c:'Science',q:'What planet do we live on?',o:['Mars','Venus','Earth','Jupiter'],a:2},
+    {c:'Nature',q:'Which of these is NOT a fruit?',o:['Apple','Banana','Carrot','Mango'],a:2},
+    {c:'Space',q:'What is a shooting star actually?',o:['A tiny sun','A meteor','A comet','A planet'],a:1},
+    {c:'Geography',q:'How many continents are there?',o:['5','6','7','8'],a:2},
+    {c:'Animals',q:'What is a group of lions called?',o:['A pack','A herd','A pride','A flock'],a:2},
+    {c:'Maths',q:'What is 7 × 8?',o:['54','56','48','64'],a:1},
+    {c:'Science',q:'Which part of the body pumps blood?',o:['Brain','Lungs','Heart','Liver'],a:2},
+    {c:'Nature',q:'What season comes after winter?',o:['Summer','Autumn','Spring','Monsoon'],a:2},
+    {c:'Space',q:'How many moons does Earth have?',o:['0','1','2','3'],a:1},
+    {c:'Animals',q:'Which bird cannot fly?',o:['Eagle','Penguin','Sparrow','Parrot'],a:1},
+    {c:'Geography',q:'Which country has the Eiffel Tower?',o:['Italy','France','Spain','Germany'],a:1},
+    {c:'Science',q:'What do bees make?',o:['Milk','Honey','Silk','Web'],a:1},
+    {c:'Maths',q:'What is half of 50?',o:['20','25','30','15'],a:1},
+    {c:'Nature',q:'What do we call frozen rain?',o:['Fog','Hail','Dew','Mist'],a:1}
+  ];
+  var qnumEl=document.getElementById('qnum'), scoreEl=document.getElementById('score'), bestEl=document.getElementById('best');
+  var catEl=document.getElementById('cat'), qEl=document.getElementById('q'), optsEl=document.getElementById('opts'), msgEl=document.getElementById('msg');
+  var nextBtn=document.getElementById('next'), playEl=document.getElementById('play'), overEl=document.getElementById('over');
+  var round=[], idx=0, score=0, state='play', best=0, answered=false;
+  try{ best=+localStorage.getItem('mochiQuizBest')||0; }catch(e){} bestEl.textContent=best;
+
+  function shuffle(a){ a=a.slice(); for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;} return a; }
+  function start(){
+    round=shuffle(BANK).slice(0,10); idx=0; score=0; state='play'; scoreEl.textContent=0;
+    playEl.style.display=''; overEl.style.display='none'; render();
+  }
+  function render(){
+    answered=false; var it=round[idx];
+    qnumEl.textContent=idx+1; catEl.textContent=it.c; qEl.textContent=it.q; msgEl.textContent=''; nextBtn.style.display='none';
+    optsEl.innerHTML='';
+    it.o.forEach(function(opt,i){
+      var btn=document.createElement('button'); btn.className='opt'; btn.textContent=opt; btn.setAttribute('data-i',i);
+      btn.addEventListener('click', function(){ answer(i); });
+      optsEl.appendChild(btn);
+    });
+  }
+  function answer(i){
+    if(answered || state!=='play') return; answered=true;
+    var it=round[idx]; var btns=optsEl.querySelectorAll('.opt');
+    btns.forEach(function(b){ b.disabled=true; var bi=+b.getAttribute('data-i'); if(bi===it.a) b.classList.add('correct'); else if(bi===i) b.classList.add('wrong'); });
+    if(i===it.a){ score++; scoreEl.textContent=score; msgEl.textContent='Correct! 🎉'; }
+    else { msgEl.textContent='Oops! The answer was “'+it.o[it.a]+'”'; }
+    nextBtn.style.display='inline-block';
+    nextBtn.textContent = idx>=round.length-1 ? 'See results →' : 'Next →';
+  }
+  function next(){
+    if(idx>=round.length-1){ end(); return; }
+    idx++; render();
+  }
+  function end(){
+    state='over'; playEl.style.display='none'; overEl.style.display='';
+    var pct=Math.round(score/round.length*100);
+    document.getElementById('over-emoji').textContent = pct===100?'🏆':pct>=70?'🎉':pct>=40?'🙂':'📚';
+    document.getElementById('over-title').textContent = pct===100?'Perfect score!':'Quiz Complete!';
+    document.getElementById('over-text').textContent = 'You got '+score+' out of '+round.length+' right ('+pct+'%).';
+    if(score>best){ best=score; try{ localStorage.setItem('mochiQuizBest',best); }catch(e){} bestEl.textContent=best; }
+    nextBtn.style.display='none';
+  }
+  nextBtn.addEventListener('click', next);
+  document.getElementById('restart').addEventListener('click', start);
+
+  // test hooks
+  window.__mochiQuiz = { get score(){return score;}, get idx(){return idx;}, get state(){return state;}, current:function(){return round[idx];}, answer:answer, next:next, start:start };
+
+  start();
+})();
+</script>
+<script src="/assets/js/cute.js?nb=1"></script>
+</body>
+</html>
