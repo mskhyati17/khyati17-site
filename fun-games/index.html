@@ -330,12 +330,12 @@
    GAMES DATA — pulled from this site's fun-games collection
    ============================================================ */
 const GAMES = [
-  { name:"Mochi's Treat Catch", category:"Skill",    emoji:"🐶", color:"#F3E9FD", plays:1800,  featured:true,  hot:true,  url:"/fun-games/mochi-treat-catch.html" },
-  { name:"Mochi Says",          category:"Puzzle",    emoji:"🐾", color:"#FFE9F3", plays:1500,  featured:true,  hot:true,  url:"/fun-games/mochi-says.html" },
-  { name:"Perfect Fetch",       category:"Skill",     emoji:"🎾", color:"#E9F8EC", plays:1300,  featured:true,  hot:true,  url:"/fun-games/perfect-fetch.html" },
-  { name:"Word Rescue",         category:"Puzzle",    emoji:"🔤", color:"#FFF3D6", plays:1100,  featured:true,  hot:true,  url:"/fun-games/word-rescue.html" },
-  { name:"Paw Reflex",          category:"Skill",     emoji:"⚡", color:"#EFE6FF", plays:1000,  featured:true,  hot:true,  url:"/fun-games/paw-reflex.html" },
-  { name:"Mochi Quiz",          category:"Puzzle",    emoji:"🧠", color:"#E6F0FF", plays:900,   featured:true,  hot:true,  url:"/fun-games/mochi-quiz.html" },
+  { name:"Mochi's Treat Catch", category:"⭐ Original", emoji:"🐶", color:"#F3E9FD", plays:1800,  featured:true,  hot:true,  url:"/fun-games/mochi-treat-catch.html" },
+  { name:"Mochi Says",          category:"⭐ Original", emoji:"🐾", color:"#FFE9F3", plays:1500,  featured:true,  hot:true,  url:"/fun-games/mochi-says.html" },
+  { name:"Perfect Fetch",       category:"⭐ Original", emoji:"🎾", color:"#E9F8EC", plays:1300,  featured:true,  hot:true,  url:"/fun-games/perfect-fetch.html" },
+  { name:"Word Rescue",         category:"⭐ Original", emoji:"🔤", color:"#FFF3D6", plays:1100,  featured:true,  hot:true,  url:"/fun-games/word-rescue.html" },
+  { name:"Paw Reflex",          category:"⭐ Original", emoji:"⚡", color:"#EFE6FF", plays:1000,  featured:true,  hot:true,  url:"/fun-games/paw-reflex.html" },
+  { name:"Mochi Quiz",          category:"⭐ Original", emoji:"🧠", color:"#E6F0FF", plays:900,   featured:true,  hot:true,  url:"/fun-games/mochi-quiz.html" },
   { name:"Tunnel Rush",        category:"Skill",     emoji:"🌀", color:"#D6E4FF", plays:52000, featured:false, hot:true,  url:"/fun-games/tunnel-rush/index.html" },
   { name:"Worldle",            category:"Puzzle",    emoji:"🟩", color:"#D7FFD9", plays:48000, featured:false, hot:true,  url:"/fun-games/worldle/index.html" },
   { name:"Tetris",             category:"Puzzle",    emoji:"🧱", color:"#D6F5FF", plays:47000, featured:false, hot:true,  url:"/fun-games/tetris.html" },
@@ -2475,7 +2475,7 @@ const GAMES = [
 ];
 
 /* ---------- Categories ---------- */
-const CATEGORIES = ["All","Action","Puzzle","Racing","Sports","2 Player","Adventure","Skill",".io Games"];
+const CATEGORIES = ["All","⭐ Original","Action","Puzzle","Racing","Sports","2 Player","Adventure","Skill",".io Games"];
 const CAT_EMOJI = {
   "Action":"💥","Puzzle":"🧩","Racing":"🏎️","Sports":"🏀",
   "2 Player":"👥","Adventure":"🗺️","Skill":"🎯",".io Games":"🌐"
@@ -2489,7 +2489,7 @@ const CAT_COLOR = {
 const PASTELS = ["#FFD6E0","#D6E4FF","#D7FFD9","#FFF3C4","#E0D6FF","#FFE0C4","#D6F5FF"];
 const EMOJI_BY_CAT = {
   "Action":"💥","Puzzle":"🧩","Racing":"🏎️","Sports":"🏀",
-  "2 Player":"👥","Adventure":"🗺️","Skill":"🎯",".io Games":"🌐","All":"🎮"
+  "2 Player":"👥","Adventure":"🗺️","Skill":"🎯",".io Games":"🌐","All":"🎮","⭐ Original":"⭐"
 };
 GAMES.forEach((g,i)=>{
   if(!g.color) g.color = PASTELS[i % PASTELS.length];
