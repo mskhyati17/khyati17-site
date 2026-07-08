@@ -40,7 +40,7 @@ try{
 
   console.log('\n[3b] Best-scores section shows the original games');
   const scoreCards=await p.$$eval('#scores .item', els=>els.map(e=>e.querySelector('.s').textContent));
-  (scoreCards.length===6 && scoreCards.some(t=>/42/.test(t)) && scoreCards.some(t=>/287/.test(t))) ? pass('6 game score cards with bests') : fail('scores: '+scoreCards.join(' | '));
+  (scoreCards.length===7 && scoreCards.some(t=>/42/.test(t)) && scoreCards.some(t=>/287/.test(t))) ? pass('7 game score cards with bests') : fail('scores: '+scoreCards.join(' | '));
 
   console.log('\n[4] Reachable from the nav');
   (await p.$('.main-nav a[href="/me/index.html"]')) ? pass('"My Stuff" link in nav') : fail('no nav link');

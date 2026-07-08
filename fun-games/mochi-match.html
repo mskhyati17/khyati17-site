@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🃏 Mochi Match</title>
+<meta name="description" content="Flip the cards and find the matching pairs in Mochi's memory game — free on Khyati17." />
+<meta property="og:title" content="🃏 Mochi Match — Khyati17" />
+<meta property="og:description" content="A cute memory match game — find all the pairs in the fewest moves!" />
+<meta property="og:image" content="https://khyati17.com/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(135deg,#2b0b3a,#6a1b9a,#9c4dcc);min-height:100vh;display:flex;justify-content:center;align-items:center;padding:20px}
+  .container{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border-radius:24px;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.12);text-align:center;max-width:440px;width:100%}
+  h1{font-size:1.7rem;color:#fff;margin-bottom:4px;text-shadow:0 0 30px rgba(233,216,255,.4)}
+  .subtitle{color:rgba(255,255,255,.7);font-size:.84rem;margin-bottom:14px}
+  .score-board{display:flex;justify-content:space-between;background:rgba(0,0,0,.3);border-radius:12px;padding:9px 18px;margin-bottom:16px;color:#fff}
+  .score-board b{color:#e9d8ff}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:360px;margin:0 auto}
+  .cell{aspect-ratio:1;border-radius:14px;border:none;cursor:pointer;font-size:2rem;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#7550a8,#5e3f8f);transition:transform .15s,background .2s;color:transparent;user-select:none}
+  .cell:hover:not(:disabled){transform:translateY(-2px)}
+  .cell.flipped{background:#fff;color:#000}
+  .cell.matched{background:#2ecc71;color:#08331b;cursor:default}
+  .cell:disabled{cursor:default}
+  .msg{color:#fff;margin-top:14px;font-weight:700;min-height:1.2em}
+  .controls{margin-top:14px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .controls a,.controls button{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:9px 20px;border-radius:10px;cursor:pointer;font-size:.95rem;text-decoration:none;display:inline-block}
+  .controls a:hover,.controls button:hover{background:#e9d8ff;color:#2b0b3a}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🃏 Mochi Match</h1>
+  <p class="subtitle">Flip two cards — find all the matching pairs!</p>
+  <div class="score-board"><div>Moves: <b id="moves">0</b></div><div>Pairs: <b id="pairs">0</b>/8</div><div>Best: <b id="best">—</b></div></div>
+  <div class="grid" id="grid"></div>
+  <div class="msg" id="msg"></div>
+  <div class="controls">
+    <button id="restart">New Game 🔄</button>
+    <a href="/fun-games/index.html">← All Games</a>
+  </div>
+</div>
+<script>
+(function(){
+  var FACES=['🐶','🦴','🍖','🎾','🐾','🌟','🎀','🍪'];
+  var gridEl=document.getElementById('grid'), movesEl=document.getElementById('moves'), pairsEl=document.getElementById('pairs'), bestEl=document.getElementById('best'), msgEl=document.getElementById('msg');
+  var cards=[], flipped=[], moves=0, matched=0, state='play', best=null, lock=false;
+  try{ best=JSON.parse(localStorage.getItem('mochiMatchBest')); }catch(e){}
+  if(best!=null) bestEl.textContent=best;
+
+  function shuffle(a){ a=a.slice(); for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;} return a; }
+  function build(){
+    cards=shuffle(FACES.concat(FACES)).map(function(e){ return {e:e, matched:false, flipped:false}; });
+    flipped=[]; moves=0; matched=0; state='play'; lock=false;
+    movesEl.textContent=0; pairsEl.textContent=0; msgEl.textContent='';
+    render();
+  }
+  function render(){
+    gridEl.innerHTML='';
+    cards.forEach(function(c,i){
+      var b=document.createElement('button'); b.className='cell'+(c.matched?' matched':(c.flipped?' flipped':''));
+      b.textContent=(c.flipped||c.matched)?c.e:''; b.setAttribute('data-i',i);
+      b.disabled = c.matched || c.flipped || lock;
+      b.addEventListener('click', function(){ flip(i); });
+      gridEl.appendChild(b);
+    });
+  }
+  function flip(i){
+    if(lock || state!=='play') return; var c=cards[i]; if(c.matched||c.flipped) return;
+    c.flipped=true; flipped.push(i); render();
+    if(flipped.length===2){
+      moves++; movesEl.textContent=moves; lock=true;
+      var a=cards[flipped[0]], b=cards[flipped[1]];
+      if(a.e===b.e){
+        a.matched=b.matched=true; matched++; pairsEl.textContent=matched; flipped=[]; lock=false; render();
+        if(matched===FACES.length) win();
+      } else {
+        setTimeout(function(){ a.flipped=b.flipped=false; flipped=[]; lock=false; render(); }, 700);
+      }
+    }
+  }
+  function win(){
+    state='won';
+    if(best==null || moves<best){ best=moves; try{ localStorage.setItem('mochiMatchBest',JSON.stringify(best)); }catch(e){} bestEl.textContent=best; msgEl.textContent='🏆 New best — '+moves+' moves! Tap New Game.'; }
+    else msgEl.textContent='🎉 All matched in '+moves+' moves! Tap New Game.';
+  }
+  document.getElementById('restart').addEventListener('click', build);
+
+  // test hooks
+  window.__mochiMatch = { get moves(){return moves;}, get matched(){return matched;}, get state(){return state;}, faceAt:function(i){return cards[i].e;}, count:function(){return cards.length;}, flip:flip, build:build };
+
+  build();
+})();
+</script>
+<script src="/assets/js/cute.js?nb=1"></script>
+</body>
+</html>

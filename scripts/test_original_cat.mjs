@@ -22,9 +22,9 @@ try{
   await p.waitForTimeout(500);
   const names=await p.$$eval('#grid .card .label, #grid .card .name, #grid .card h3', e=>e.map(x=>x.textContent.trim()));
   const cnt=await p.$$eval('#grid .card', e=>e.length);
-  const want=["Mochi's Treat Catch","Mochi Says","Perfect Fetch","Word Rescue","Paw Reflex","Mochi Quiz"];
+  const want=["Mochi's Treat Catch","Mochi Says","Perfect Fetch","Word Rescue","Paw Reflex","Mochi Quiz","Mochi Match"];
   const allShown=want.every(w=>names.some(n=>n.includes(w)));
-  (cnt===6 && allShown) ? pass('Original filter shows exactly the 6 originals') : fail('got '+cnt+' cards: '+names.join(', '));
+  (cnt===7 && allShown) ? pass('Original filter shows exactly the 7 originals') : fail('got '+cnt+' cards: '+names.join(', '));
   js.length ? js.forEach(e=>fail('JS error: '+e)) : pass('no uncaught JS errors');
 } finally { await b.close(); s.close(); }
 console.log('\n'+'='.repeat(50));
