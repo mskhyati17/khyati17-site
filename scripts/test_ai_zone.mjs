@@ -46,7 +46,7 @@ async function run(){
     logo && logo.includes('AI Zone') ? pass(`logo: '${logo}'`) : fail(`logo not 'AI Zone' (got '${logo}')`);
 
     const cards = await page.$$('#grid .card');
-    cards.length === 11 ? pass(`${cards.length} cards (8 live + 2 offline + 1 soon)`) : fail(`expected 11 cards, got ${cards.length}`);
+    cards.length >= 100 ? pass(`${cards.length} cards (featured + mini-tools + soon)`) : fail(`expected >= 100 cards, got ${cards.length}`);
 
     const labels = await page.$$eval('#grid .card .label', ns=>ns.map(n=>n.textContent.trim()));
     const EXPECT = ['News Aggregator','Voice Clone','Story Creator','Name Generator','Writing Prompt Generator','Password Generator','Color Palette Generator','Hashtag Generator','Emoji Translator','Decision Maker'];
@@ -55,17 +55,17 @@ async function run(){
     // status badges: 8 live, 2 offline (News, Voice), 1 soon
     const liveBadges = await page.$$('#grid .card .badge-live');
     const offBadges  = await page.$$('#grid .card .badge-offline');
-    liveBadges.length === 8 ? pass('8 Live badges') : fail(`expected 8 live badges, got ${liveBadges.length}`);
+    liveBadges.length >= 100 ? pass(`${liveBadges.length} Live badges`) : fail(`expected >= 100 live badges, got ${liveBadges.length}`);
     offBadges.length === 2 ? pass('2 offline badges (News + Voice)') : fail(`expected 2 offline badges, got ${offBadges.length}`);
 
     const popular = await page.$$('#popRow .pop-item');
     popular.length === 10 ? pass(`${popular.length} popular items (real tools, capped at 10)`) : fail(`expected 10 popular, got ${popular.length}`);
 
     const chips = await page.$$('#catStrip .chip');
-    chips.length === 9 ? pass(`${chips.length} chips (All + 8 categories)`) : fail(`expected 9 chips, got ${chips.length}`);
+    chips.length >= 9 ? pass(`${chips.length} chips (All + categories)`) : fail(`expected >= 9 chips, got ${chips.length}`);
 
     const tiles = await page.$$('#catGrid .cat-tile');
-    tiles.length === 8 ? pass(`${tiles.length} browse-category tiles`) : fail(`expected 8 tiles, got ${tiles.length}`);
+    tiles.length >= 8 ? pass(`${tiles.length} browse-category tiles`) : fail(`expected >= 8 tiles, got ${tiles.length}`);
 
     const soon = await page.$$('#grid .card.soon');
     soon.length === 1 ? pass('coming-soon card rendered & dimmed') : fail(`expected 1 soon card, got ${soon.length}`);

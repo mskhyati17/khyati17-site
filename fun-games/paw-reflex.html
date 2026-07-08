@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>⚡ Paw Reflex</title>
+<meta name="description" content="Test your reaction time — tap the instant Mochi's paw turns green! A quick reflex game on Khyati17." />
+<meta property="og:title" content="⚡ Paw Reflex — Khyati17" />
+<meta property="og:description" content="How fast are your reflexes? Tap the moment it turns green!" />
+<meta property="og:image" content="https://khyati17.com/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(135deg,#2b0b3a,#6a1b9a,#9c4dcc);min-height:100vh;display:flex;justify-content:center;align-items:center;padding:20px}
+  .container{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border-radius:24px;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.12);text-align:center;max-width:460px;width:100%}
+  h1{font-size:1.7rem;color:#fff;margin-bottom:4px;text-shadow:0 0 30px rgba(233,216,255,.4)}
+  .subtitle{color:rgba(255,255,255,.7);font-size:.84rem;margin-bottom:14px}
+  .score-board{display:flex;justify-content:space-between;background:rgba(0,0,0,.3);border-radius:12px;padding:9px 18px;margin-bottom:16px;color:#fff}
+  .score-board b{color:#e9d8ff}
+  #pad{border-radius:18px;height:230px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;user-select:none;transition:background .05s;color:#fff}
+  #pad.idle{background:linear-gradient(180deg,#4a2a6a,#39215a)}
+  #pad.wait{background:linear-gradient(180deg,#c0392b,#992d22)}
+  #pad.go{background:linear-gradient(180deg,#2ecc71,#27ae60)}
+  #pad.result{background:linear-gradient(180deg,#3a2a6a,#2a1e52)}
+  #pad .big{font-size:2.6rem;line-height:1}
+  #pad .txt{margin-top:8px;font-size:1.1rem;font-weight:700}
+  .controls{margin-top:16px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .controls a,.controls button{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:9px 20px;border-radius:10px;cursor:pointer;font-size:.95rem;text-decoration:none;display:inline-block}
+  .controls a:hover,.controls button:hover{background:#e9d8ff;color:#2b0b3a}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>⚡ Paw Reflex</h1>
+  <p class="subtitle">Wait for green, then TAP as fast as you can!</p>
+  <div class="score-board"><div>Last: <b id="last">—</b></div><div>Avg: <b id="avg">—</b></div><div>Best: <b id="best">—</b></div></div>
+  <div id="pad" class="idle"><div class="big" id="pad-emoji">🐾</div><div class="txt" id="pad-txt">Tap to start</div></div>
+  <div class="controls">
+    <button id="reset">Reset scores</button>
+    <a href="/fun-games/index.html">← All Games</a>
+  </div>
+</div>
+<script>
+(function(){
+  var pad=document.getElementById('pad'), emoji=document.getElementById('pad-emoji'), txt=document.getElementById('pad-txt');
+  var lastEl=document.getElementById('last'), avgEl=document.getElementById('avg'), bestEl=document.getElementById('best');
+  var state='idle', greenAt=0, timer=null, times=[], best=null;
+  try{ best=JSON.parse(localStorage.getItem('pawReflexBest')); }catch(e){}
+  if(best!=null) bestEl.textContent=best+'ms';
+
+  function now(){ return (typeof performance!=='undefined'&&performance.now)?performance.now():Date.now(); }
+  function set(cls, e, t){ pad.className=cls; emoji.textContent=e; txt.textContent=t; }
+  function idle(){ state='idle'; set('idle','🐾','Tap to start'); }
+  function arm(){
+    state='wait'; set('wait','⏳','Wait for green…');
+    var delay=1200+Math.random()*2600;
+    timer=setTimeout(green, delay);
+  }
+  function green(){ state='go'; greenAt=now(); set('go','🐾','TAP!'); }
+  function tap(){
+    if(state==='idle' || state==='result'){ arm(); return; }
+    if(state==='wait'){ clearTimeout(timer); state='result'; set('result','🙈','Too soon! Tap to retry'); return; }
+    if(state==='go'){
+      var ms=Math.round(now()-greenAt); state='result';
+      times.push(ms); if(times.length>20) times.shift();
+      lastEl.textContent=ms+'ms';
+      var avg=Math.round(times.reduce(function(a,b){return a+b;},0)/times.length); avgEl.textContent=avg+'ms';
+      if(best==null||ms<best){ best=ms; try{ localStorage.setItem('pawReflexBest',JSON.stringify(best)); }catch(e){} bestEl.textContent=best+'ms'; set('result','🏆',ms+'ms — new best! Tap again'); }
+      else set('result','⚡',ms+'ms! Tap to go again');
+    }
+  }
+  pad.addEventListener('click', tap);
+  document.addEventListener('keydown', function(e){ if(e.key===' '){ e.preventDefault(); tap(); } });
+  document.getElementById('reset').addEventListener('click', function(){ times=[]; best=null; try{ localStorage.removeItem('pawReflexBest'); }catch(e){} lastEl.textContent=avgEl.textContent=bestEl.textContent='—'; idle(); });
+
+  // test hooks (deterministic control)
+  window.__pawReflex={ get state(){return state;}, get last(){return times[times.length-1];}, get best(){return best;}, tap:tap, forceGreen:function(){ clearTimeout(timer); green(); } };
+
+  idle();
+})();
+</script>
+<script src="/assets/js/cute.js?nb=1"></script>
+</body>
+</html>
