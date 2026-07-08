@@ -25,6 +25,10 @@ try{
   const ok=want.every((w,i)=>stats[i]===w);
   ok ? pass('counters: '+stats.join(' · ')) : fail('counters wrong: got '+stats.join(',')+' want '+want.join(','));
 
+  console.log('\n[1b] Today\'s Picks render');
+  const picks=await p.$$eval('#today-picks .pick', e=>e.map(x=>x.getAttribute('href')));
+  (picks.length===3 && picks.every(h=>h&&h.startsWith('/'))) ? pass('3 daily picks: '+picks.map(h=>h.split('?')[0]).join(', ')) : fail('picks wrong: '+picks.join(','));
+
   console.log('\n[2] Explore cards link to every section');
   const cards=await p.$$eval('.explore-grid .xcard', els=>els.map(e=>({t:e.querySelector('h3').textContent, href:e.getAttribute('href')})));
   const need=['/fun-games/index.html','/ai-tools/index.html','/stories/index.html','/videos/videos.html','/trading/trading.html','/others/others.html'];

@@ -143,6 +143,15 @@
     .surprise-btn{background:linear-gradient(90deg,#6a1b9a,#c56be0);color:#fff;border:none;border-radius:999px;padding:11px 24px;font-weight:800;font-size:.95rem;cursor:pointer;box-shadow:0 8px 22px rgba(117,80,168,.28);transition:transform .15s}
     .surprise-btn:hover{transform:translateY(-2px) scale(1.03)}
     .surprise-btn:active{transform:scale(.97)}
+    .picks-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:2px 0 30px}
+    .pick{display:block;background:#fff;border:1px solid #efe4fb;border-radius:16px;padding:16px;text-decoration:none;color:inherit;text-align:center;transition:transform .15s,box-shadow .15s}
+    .pick:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(117,80,168,.14)}
+    .pick .pe{font-size:2rem;line-height:1}
+    .pick .pk{display:block;font-size:.68rem;font-weight:800;color:#9a8ab0;text-transform:uppercase;letter-spacing:.05em;margin-top:8px}
+    .pick .pt{display:block;font-weight:700;color:#4a2370;margin-top:3px;font-size:.92rem;line-height:1.25}
+    @media (max-width:560px){ .picks-row{grid-template-columns:1fr} }
+    [data-theme="dark"] .pick{background:#241633;border-color:#3a2550}
+    [data-theme="dark"] .pick .pt{color:#e5d8f5}
   </style>
 
   <section class="home-explore" aria-labelledby="explore-title">
@@ -153,6 +162,9 @@
         <div class="stat"><span class="stat-num" data-to="120">0</span><span class="stat-label">📖 Stories</span></div>
         <div class="stat"><span class="stat-num" data-to="50" data-suffix="+">0</span><span class="stat-label">🎬 Videos</span></div>
       </div>
+
+      <h2 class="explore-title" style="margin-bottom:14px">✨ Today's Picks</h2>
+      <div id="today-picks"></div>
 
       <h2 id="explore-title" class="explore-title">Everything to explore ✨</h2>
       <p class="explore-sub">One playground for games, stories, tools and more — all free, right in your browser.</p>
@@ -246,6 +258,17 @@
       var cp=document.querySelector('[data-share="copy"]');
       if(cp) cp.addEventListener('click',function(){ var done=function(){ cp.classList.add('copied'); var t=cp.textContent; cp.textContent='✅ Copied!'; setTimeout(function(){ cp.classList.remove('copied'); cp.textContent=t; },1800); };
         if(navigator.clipboard){ navigator.clipboard.writeText(url).then(done).catch(done); } else { done(); } });
+    })();
+    // Today's Picks — a deterministic daily game/tool/story (same for everyone today)
+    (function(){
+      var el=document.getElementById('today-picks'); if(!el) return;
+      var GP=[{e:'🐶',t:"Mochi's Treat Catch",u:'/fun-games/mochi-treat-catch.html'},{e:'🎾',t:'Perfect Fetch',u:'/fun-games/perfect-fetch.html'},{e:'🔤',t:'Word Rescue',u:'/fun-games/word-rescue.html'},{e:'⚡',t:'Paw Reflex',u:'/fun-games/paw-reflex.html'},{e:'🐾',t:'Mochi Says',u:'/fun-games/mochi-says.html'},{e:'🧱',t:'Tetris',u:'/fun-games/tetris.html'},{e:'🐍',t:'Snake',u:'/fun-games/snake.html'}];
+      var TP=[{e:'👹',t:'Zalgo Glitch',u:'/ai-tools/tool.html?t=zalgo'},{e:'🎲',t:'Dice Roller',u:'/ai-tools/tool.html?t=dice-notation'},{e:'♈',t:'Zodiac Sign',u:'/ai-tools/tool.html?t=zodiac-sign'},{e:'🔐',t:'Password Generator',u:'/ai-tools/tool.html?t=password-gen'},{e:'💬',t:'Random Quote',u:'/ai-tools/tool.html?t=random-quote'},{e:'🎨',t:'HEX → HSL',u:'/ai-tools/tool.html?t=hex-to-hsl'}];
+      var SP=[{e:'🗼',t:'The Lighthouse of Lost Things',u:'/stories/stories.html?story=lighthouse-of-lost-things'},{e:'🤖',t:'The Robot Who Collected Sunsets',u:'/stories/stories.html?story=robot-who-collected-sunsets'},{e:'🦉',t:'How the Owl Learned to Laugh',u:'/stories/stories.html?story=how-the-owl-learned-to-laugh'},{e:'🏔️',t:'Nima and the Mountain That Snored',u:'/stories/stories.html?story=nima-and-the-snoring-mountain'},{e:'🌱',t:'The Garden That Grew Backwards',u:'/stories/stories.html?story=garden-that-grew-backwards'}];
+      var d=new Date(); var day=Math.floor(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/86400000);
+      function pk(a,o){ return a[((day+o)%a.length+a.length)%a.length]; }
+      var picks=[["Today's Game",pk(GP,0)],["Today's Tool",pk(TP,2)],["Today's Story",pk(SP,4)]];
+      el.innerHTML='<div class="picks-row">'+picks.map(function(p){ return '<a class="pick" href="'+p[1].u+'"><div class="pe">'+p[1].e+'</div><span class="pk">'+p[0]+'</span><span class="pt">'+p[1].t+'</span></a>'; }).join('')+'</div>';
     })();
     // Surprise Me — jump to a random hand-picked destination (games, tools, stories)
     (function(){
