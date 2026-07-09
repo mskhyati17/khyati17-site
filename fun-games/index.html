@@ -298,6 +298,7 @@
   <header class="hero">
     <h1>What are you playing today?</h1>
     <p>Free games you can play right now — no downloads, just fun.</p>
+    <button id="lucky" type="button" style="margin-top:14px;background:linear-gradient(90deg,#6a1b9a,#c56be0);color:#fff;border:none;border-radius:999px;padding:11px 24px;font-weight:800;font-size:.95rem;cursor:pointer;box-shadow:0 8px 22px rgba(117,80,168,.35)">🎲 Play a random game</button>
   </header>
 
   <main class="wrap">
@@ -2534,6 +2535,8 @@ let query = "";
 
 const el = (tag,cls)=>{ const n=document.createElement(tag); if(cls) n.className=cls; return n; };
 const open = url => { if(url && url!=="#") window.location.href = url; };
+// "Play a random game" — pick any game from the catalog and open it
+(function(){ var lk=document.getElementById('lucky'); if(lk) lk.addEventListener('click', function(){ if(GAMES && GAMES.length) open(GAMES[Math.floor(Math.random()*GAMES.length)].url); }); })();
 
 /* Animated icon styles, cycled across games so the grid feels lively. 🌀 spins. */
 const ICON_ANIMS = ["anim-float","anim-bounce","anim-pulse","anim-wiggle"];
