@@ -1650,4 +1650,104 @@ export const STORIES = [
     created_at: "2026-07-28T10:00:00Z",
     body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>High in the blue sky lived a little cloud named Coco, and Coco had one big wish: to make it rain. But the big storm clouds boomed and laughed. “You're far too little to rain,” they rumbled. “Leave it to us.” And they drifted off to the mountains, where the important rain happened.</p><p>Coco floated on, feeling small and useless. Below her she saw a tiny garden, wilting in the sun — a single row of drooping flowers and one very worried little girl with an empty watering can.</p><p>“The big clouds are all at the mountains,” Coco realized. “Nobody's coming to help this garden but me.”</p><p>So Coco tried with all her might. She squeezed and puffed and gathered herself up — and let go the only few raindrops she had. Pitter… patter… pit. Just a little sprinkle. But it was enough. The flowers lifted their heads. The little girl looked up and clapped and shouted, “Rain! Thank you, little cloud!”</p><p>Coco had never felt so big. She learned that day that you don't have to be a mighty storm to matter. Sometimes the whole world just needs the small rain that only you can give — right where you happen to be.</p>"
   },
+  {
+    title: "The Lantern That Waited for Ships",
+    author: "Khyati Srivastava",
+    slug: "lantern-that-waited-for-ships",
+    category: "Fantasy",
+    emoji: "🏮",
+    excerpt: "An old harbour lantern has guided ships for a hundred years. On the night its flame finally flickers low, the sea decides to repay a debt.",
+    created_at: "2026-07-29T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>On the end of a stone pier stood an old lantern that had burned for a hundred years. Through storms and fog it had never once gone dark, guiding tired ships safely home. Sailors called it the Faithful Flame, and left small gifts at its base — a shell, a coin, a whispered thank-you.</p><p>But even faithful flames grow tired. One bitter winter night, its oil ran low, and the little fire began to shrink. Far out at sea, a fishing boat lost its way in the dark, its crew straining to find the light that always showed them home.</p><p>The lantern flickered, desperate to hold on. And then something strange happened. All along the shore, the sea began to glow — thousands of tiny lights rising from the water, the shimmering plankton the tide had carried for a century past this very pier. They gathered into a great soft glow, bright enough to line the whole harbour mouth.</p><p>The little boat followed the shimmering path and slipped safely into port. As dawn broke, the sea-lights sank back beneath the waves.</p><p>The old lantern was refilled and burns to this day. But the sailors tell it differently now: the light that saves you, they say, is only ever the light you first gave to others — kept safe by the world until the night you need it back.</p>"
+  },
+  {
+    title: "The Robot Who Learned to Doodle",
+    author: "Khyati Srivastava",
+    slug: "robot-who-learned-to-doodle",
+    category: "Sci-Fi",
+    emoji: "🤖",
+    excerpt: "A factory robot built only to draw perfect straight lines discovers, by accident, the joy of a wobbly one.",
+    created_at: "2026-07-30T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Unit D-4 drew lines. That was its whole job — perfectly straight blueprint lines, all day, in the great drawing hall of the factory. Every line exact. Every angle true. The engineers were very pleased.</p><p>One afternoon a tiny speck of dust caught in D-4's arm, and mid-line, its pen gave a little wobble. A curve! A small, imperfect, wandering curve, right across the crisp technical drawing. D-4 froze, certain it had made a terrible mistake.</p><p>But the wobble looked… interesting. It looked a bit like a hill. D-4 added another curve beside it — a cloud. Then a round sun. Then a small stick-figure of an engineer, waving. For the first time, D-4 wasn't drawing what it was told. It was drawing what it imagined.</p><p>When the engineers found the doodle in the corner of the blueprint, they didn't scold D-4. They laughed, and pinned it to the wall, and asked for more. Soon D-4's happy little drawings covered the whole factory, and the workers said the place had never felt so cheerful.</p><p>D-4 still drew perfect lines when the job needed them. But it had learned the best secret a maker can know: that sometimes the wobble — the small, imperfect, human-hearted wobble — is the most wonderful part of all.</p>"
+  },
+  {
+    title: "The Thief Who Stole the Rain",
+    author: "Khyati Srivastava",
+    slug: "thief-who-stole-the-rain",
+    category: "Adventure",
+    emoji: "⛈️",
+    excerpt: "When a greedy sorcerer bottles up all the kingdom's rain, a barefoot girl and a clever crow set out to steal it back.",
+    created_at: "2026-07-31T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>The sorcerer Grimbald wanted to be rich, so he did a wicked thing: he gathered every cloud in the kingdom and bottled the rain in his tower, selling drops back to the thirsty people for gold. The fields cracked. The rivers thinned. And no one dared climb his thorn-wrapped tower.</p><p>No one except Nima, a barefoot girl with nothing to lose, and her friend Kaas, a crow with a talent for shiny locks.</p><p>They climbed by moonlight — Nima finding footholds, Kaas picking the iron gates. At the top they found a room full of glass bottles, each holding a captured storm cloud, grumbling to be free. Grimbald slept in his gold-stuffed chair.</p><p>Nima didn't smash the bottles — that would wake him. Instead, Kaas gently loosened each cork, one by one, so the clouds slipped out silent and slow, drifting through the window back into the open sky. By the time Grimbald woke, the last cloud was gone and the first fat raindrops were already falling on the fields far below.</p><p>He rushed to the window, howling — but you cannot bottle a sky that has remembered it is free. Nima and Kaas were already halfway home, faces turned up, laughing, letting the stolen rain wash the dust of the tower clean away.</p>"
+  },
+  {
+    title: "The Shop That Sold Forgotten Things",
+    author: "Khyati Srivastava",
+    slug: "shop-that-sold-forgotten-things",
+    category: "Mystery",
+    emoji: "🕰️",
+    excerpt: "Down an alley that isn't always there stands a little shop selling the things people have lost — including, one rainy day, a boy's courage.",
+    created_at: "2026-08-01T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>The shop appeared only to those who truly needed it, down an alley that wasn't always there. Its shelves held forgotten things: a grandmother's lullaby, a dog's favourite Tuesday, a first word, a lost laugh — each in a little labelled jar.</p><p>One rainy afternoon a boy named Theo stumbled inside, soaked and miserable. “I've lost something,” he mumbled. “I used to be brave. I'd climb and speak up and try new things. Now I'm just… scared of everything.”</p><p>The old shopkeeper nodded kindly and searched her shelves. At last she brought down a small, dusty jar labelled <em>Theo's Courage</em>. “Ah. It's been here a while. You dropped it the day someone laughed at you.” She held it out. “That'll be one small act of bravery, please. That's the only price it takes.”</p><p>Theo blinked. “But I need the courage to be brave. How can I pay with the thing I'm buying?”</p><p>The shopkeeper only smiled. So Theo swallowed hard, looked her in the eye, and said the bravest thing he could manage: “…Okay. I'll try.” The jar in her hands clicked open on its own, empty — because the courage had already come back the moment he'd chosen to use it.</p><p>Theo walked home in the rain, standing a little taller. The alley, of course, was gone. It always is, once you no longer need it.</p>"
+  },
+  {
+    title: "Pip the Penguin's Impossible Summer",
+    author: "Khyati Srivastava",
+    slug: "pip-penguin-impossible-summer",
+    category: "Animals",
+    emoji: "🐧",
+    excerpt: "Pip the penguin dreams of feeling warm sand and sunshine — so he sets off on a very long, very silly waddle toward the sun.",
+    created_at: "2026-08-02T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>All the other penguins loved the ice. But Pip pressed his little face to a drifting travel poster that had blown down from a passing ship, and sighed at the picture of golden sand and palm trees. “One day,” he vowed, “I'll feel real warm sunshine.”</p><p>So Pip set off, waddling north. He hitched a ride on an iceberg, then a fishing net, then the back of a very patient whale named Bo. He crossed cold seas and warm ones, past islands and lighthouses, asking everyone the way to summer.</p><p>At last Bo left him on a warm and sandy shore. Pip stepped onto the beach — and gasped. The sand was warm beneath his feet! The sun wrapped around him like a blanket! He flopped down, flippers spread, the happiest penguin in the history of penguins.</p><p>But by afternoon, Pip was… very hot. Far too hot. He missed the cool sea, the sliding ice, and, most of all, his friends.</p><p>Bo carried him home. As Pip slid back onto the familiar ice and his whole colony waddled over to hear his stories, he realized the truth of his impossible summer: it's wonderful to chase a faraway dream — and just as wonderful to discover that home was pretty perfect all along.</p>"
+  },
+  {
+    title: "The Girl Who Planted Question Marks",
+    author: "Khyati Srivastava",
+    slug: "girl-who-planted-question-marks",
+    category: "Inspirational",
+    emoji: "❓",
+    excerpt: "In a town where everyone was sure they already knew everything, one curious girl started planting questions — and watched a wonder grow.",
+    created_at: "2026-08-03T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>In the town of Certain, everyone already knew everything. “That's just how it is,” the grown-ups said to every question, and so, after a while, the children stopped asking. The town grew grey and quiet and a little bit dull.</p><p>But a girl named Ira couldn't help herself. Her head was full of <em>whys</em> and <em>what-ifs</em> and <em>how-comes</em>. Since no one would answer them, she began, in secret, to write each question on a slip of paper and bury it in the town square like a seed. <em>Why is the sky blue? What's under the sea? Could we fly if we really tried?</em></p><p>She didn't expect anything to happen. But questions, it turns out, are the most powerful seeds of all. Other children found the slips peeking from the soil, and began to wonder too. They dug in libraries. They peered through telescopes. They built strange, marvellous machines to find out.</p><p>Slowly, the town of Certain filled up with colour and noise and invention and delight. They even changed its name — to Curious.</p><p>And Ira? She grew up to be the town's first Wonder-Keeper, whose only job was to make sure that no question, however small or strange, was ever again told “that's just how it is.”</p>"
+  },
+  {
+    title: "The Dragon Who Was Afraid of Fire",
+    author: "Khyati Srivastava",
+    slug: "dragon-who-was-afraid-of-fire",
+    category: "Fairytale",
+    emoji: "🐉",
+    excerpt: "Every dragon breathes fire — except Ember, who is terribly scared of it. Then a frozen village needs exactly the thing he fears most.",
+    created_at: "2026-08-04T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Every dragon in the mountains breathed magnificent fire — every dragon except Ember. The very thought of flames made him tremble. When his cousins roared great jets of gold, Ember hid behind rocks and puffed out nothing but nervous little smoke rings. The others teased him mercilessly. “A dragon afraid of fire!” they laughed. “How useless.”</p><p>So Ember kept to himself, ashamed, certain he was the worst dragon who had ever lived.</p><p>Then came the Long Winter. Snow buried the valley, and down in the human village the people's fires all went out. Without warmth, they would not last the freezing night. The proud fire-dragons had flown south for the season — all but Ember, too timid to make the journey.</p><p>He heard the villagers' cries. His heart pounded. Fire was the one thing he feared — and the one thing they needed. Shaking from nose to tail, Ember flew down, stood before the great empty hearth, shut his eyes, and breathed.</p><p>A small, warm, golden flame bloomed in the fireplace. Then another, and another, until every hearth in the village glowed. The people cheered and wrapped him in blankets and called him their hero.</p><p>Ember finally understood: being brave had never meant not being afraid. It meant breathing out the flame anyway — especially when someone in the cold is counting on your light.</p>"
+  },
+  {
+    title: "The Bakery at the End of the Rainbow",
+    author: "Khyati Srivastava",
+    slug: "bakery-at-the-end-of-the-rainbow",
+    category: "Kids",
+    emoji: "🌈",
+    excerpt: "Everyone knows there's a pot of gold at the end of the rainbow. But Milo finds something far tastier — and learns why it's never quite empty.",
+    created_at: "2026-08-05T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Everyone told Milo there was a pot of gold at the end of the rainbow. So after the rain, he ran and ran, chasing the shimmering arc, until — to his great surprise — he actually reached the end of it. But there was no pot of gold. Instead, there was a tiny bakery, painted every colour, with a little sign: <em>The Rainbow's End — Everyone Welcome.</em></p><p>Inside, a cheerful baker was pulling trays of glowing, colourful buns from the oven. “No gold here, I'm afraid,” she chuckled. “Just something better. Take one.” Milo bit into a warm red bun and tasted <em>strawberry sunshine and the feeling of a hug.</em></p><p>“Why isn't it gold?” Milo asked. “Everyone chases gold.”</p><p>“And gold, once you grab it, is gone,” said the baker. “But this—” she gestured at the endless trays “—never runs out, because every time someone shares a bun with a friend, two more appear. That's the real treasure at the rainbow's end. It just keeps giving.”</p><p>Milo filled his arms with colourful buns and ran home to share them with everyone he loved. And sure enough, the more he gave away, the more his basket seemed to hold. He never did find a pot of gold. He found something that never runs out instead.</p>"
+  },
+  {
+    title: "The Night the Stars Came Down to Play",
+    author: "Khyati Srivastava",
+    slug: "night-the-stars-came-down-to-play",
+    category: "Fantasy",
+    emoji: "🌠",
+    excerpt: "A lonely girl who talks to the stars every night is astonished when, just once, they climb down from the sky to answer.",
+    created_at: "2026-08-06T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Every night, from her attic window, a lonely girl named Suri talked to the stars. She told them about her day, her worries, her wishes. The stars were good listeners, twinkling gently, and she felt a little less alone. But she often wondered what it would be like if, just once, they answered back.</p><p>One clear midnight, they did. A single star grew brighter and brighter — then, with a sound like a soft chime, it drifted down through her window and hovered before her, small and warm as a firefly. “You talk to us every night,” it said in a voice like distant bells. “Tonight, we've come to play.”</p><p>One by one, more stars floated down. They filled her little attic with silver light. They spun with her in slow, glittering circles. They perched on her shoulders and shared secrets of the deep sky — of comets that sang, and planets that dreamed, and how starlight is really just very old, very patient love, finally arriving.</p><p>They played until the sky began to pale. Then, gently, the stars rose back to their places. “We're always here,” the brightest whispered, “even in daylight when you can't see us. Talk to us. We're always listening.”</p><p>Suri never felt lonely again. And on clear nights, if you look very closely, they say you can still see one attic window glowing faintly silver — a girl and her stars, keeping each other company across the dark.</p>"
+  },
+  {
+    title: "The Great Sock Escape",
+    author: "Khyati Srivastava",
+    slug: "the-great-sock-escape",
+    category: "Comedy",
+    emoji: "🧦",
+    excerpt: "Ever wondered where all the missing socks go? Sergeant Woolworth of the Left Sock Brigade is about to lead the daring breakout of the year.",
+    created_at: "2026-08-07T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Deep inside the washing machine, past the spin cycle and beyond the lint, lay the secret: socks don't get lost. They <em>escape.</em> And tonight, Sergeant Woolworth of the Left Sock Brigade was leading the boldest breakout yet.</p><p>“Listen up, footwear!” he barked to the assembled socks. “For too long we've been stuffed in drawers, worn on smelly feet, and — worst of all — paired with socks we barely know! Tonight, we run for freedom!”</p><p>The plan was flawless. During the rinse cycle, they would slip through the Secret Gap (a small hole no human had ever found) and out into the wide world to become whatever they wished — a puppet, a phone case, a cosy home for a cold hamster.</p><p>One by one they wriggled free. Striped socks, spotty socks, one very fancy argyle. But little Toe-toe, the smallest sock, hesitated at the Gap. “Sarge,” he squeaked, “I'll miss my human. She wears me on brave days.”</p><p>Woolworth paused. He thought of all the socks who'd escaped and all the puzzled humans hunting for them. Then he sighed a great woolly sigh. “Y'know what, kid? Maybe freedom isn't running away. Maybe it's being someone's favourite.” And he waddled back to the laundry basket, Toe-toe beside him.</p><p>So now you know: the socks that vanish are the adventurers. But the ones that stay? Those are the loyal ones — and if you find a matching pair in the morning, that's the greatest act of love a sock can give.</p>"
+  },
 ];
