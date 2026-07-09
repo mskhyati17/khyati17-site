@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🎹 Mini Piano — Khyati17</title>
+<meta name="description" content="Play a piano right in your browser — tap the keys or use your keyboard. Free on Khyati17." />
+<meta property="og:title" content="🎹 Mini Piano — Khyati17" />
+<meta property="og:description" content="A playable browser piano — tap or type to make music. Free on Khyati17." />
+<meta property="og:image" content="https://khyati17.com/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(135deg,#2b0b3a,#6a1b9a,#9c4dcc);min-height:100vh;display:flex;justify-content:center;align-items:center;padding:16px}
+  .container{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border-radius:24px;padding:24px;box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.12);text-align:center;max-width:600px;width:100%}
+  h1{font-size:1.6rem;color:#fff;margin-bottom:4px;text-shadow:0 0 30px rgba(233,216,255,.4)}
+  .subtitle{color:rgba(255,255,255,.72);font-size:.82rem;margin-bottom:8px}
+  .opts{display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;margin-bottom:16px;color:#e9d8ff;font-size:.82rem}
+  .opts label{display:flex;gap:6px;align-items:center;cursor:pointer}
+  .piano{position:relative;display:flex;justify-content:center;height:190px;user-select:none;touch-action:none}
+  .wkey{position:relative;width:12.5%;max-width:56px;height:100%;background:linear-gradient(180deg,#fff,#f0eef5);border:1px solid #cbb8e0;border-radius:0 0 8px 8px;box-shadow:inset 0 -6px 10px rgba(0,0,0,.08);cursor:pointer;display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px;font-size:.7rem;color:#9a8ab0;font-weight:700}
+  .wkey.active{background:linear-gradient(180deg,#e9d8ff,#d3b8f5)}
+  .bkey{position:absolute;top:0;width:8%;max-width:34px;height:60%;background:linear-gradient(180deg,#3a2550,#1c1030);border-radius:0 0 6px 6px;box-shadow:0 4px 6px rgba(0,0,0,.4);cursor:pointer;z-index:2;transform:translateX(-50%)}
+  .bkey.active{background:linear-gradient(180deg,#7550a8,#4a2f6f)}
+  .hint{color:rgba(255,255,255,.55);font-size:.74rem;margin-top:14px}
+  .controls{margin-top:14px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .controls a,.controls button{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:9px 18px;border-radius:10px;cursor:pointer;font-size:.92rem;text-decoration:none;display:inline-block}
+  .controls a:hover,.controls button:hover{background:#e9d8ff;color:#2b0b3a}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🎹 Mini Piano</h1>
+  <p class="subtitle">Tap the keys — or use your keyboard (A W S E D F T G Y H U J K).</p>
+  <div class="opts">
+    <label>Sound:
+      <select id="wave" style="border-radius:6px;padding:3px 6px">
+        <option value="triangle">Soft</option>
+        <option value="sine">Pure</option>
+        <option value="square">Retro</option>
+        <option value="sawtooth">Bright</option>
+      </select>
+    </label>
+    <label><input type="checkbox" id="labels" checked /> Show letters</label>
+  </div>
+  <div class="piano" id="piano"></div>
+  <div class="hint" id="hint">🔊 Turn your sound on and start playing!</div>
+  <div class="controls">
+    <a href="/ai-tools/index.html">← All Tools</a>
+  </div>
+</div>
+<script>
+(function(){
+  // note: [name, frequency, keyboard-key, isBlack, whiteIndexForBlackPos]
+  var NOTES=[
+    ['C',261.63,'a',false],['C#',277.18,'w',true,0],['D',293.66,'s',false],['D#',311.13,'e',true,1],
+    ['E',329.63,'d',false],['F',349.23,'f',false],['F#',369.99,'t',true,3],['G',392.00,'g',false],
+    ['G#',415.30,'y',true,4],['A',440.00,'h',false],['A#',466.16,'u',true,5],['B',493.88,'j',false],['C²',523.25,'k',false]
+  ];
+  var piano=document.getElementById('piano'), waveEl=document.getElementById('wave'), labelsEl=document.getElementById('labels');
+  var audio=null, keyByChar={}, keyEls={};
+  var whites=NOTES.filter(n=>!n[3]);
+
+  function ensureCtx(){ try{ if(!audio){ audio=new (window.AudioContext||window.webkitAudioContext)(); } if(audio.state==='suspended'){ audio.resume(); } }catch(e){} return audio; }
+  function playFreq(freq){
+    var ac=ensureCtx(); if(!ac) return;
+    try{
+      var o=ac.createOscillator(), g=ac.createGain();
+      o.type=waveEl.value; o.frequency.value=freq;
+      var t=ac.currentTime;
+      g.gain.setValueAtTime(0.0001,t);
+      g.gain.exponentialRampToValueAtTime(0.28,t+0.01);
+      g.gain.exponentialRampToValueAtTime(0.0001,t+0.7);
+      o.connect(g); g.connect(ac.destination); o.start(t); o.stop(t+0.72);
+    }catch(e){}
+  }
+  function hit(idx){
+    var n=NOTES[idx]; if(!n) return;
+    playFreq(n[1]);
+    var el=keyEls[idx]; if(el){ el.classList.add('active'); setTimeout(function(){ el.classList.remove('active'); }, 160); }
+  }
+
+  // build white keys first
+  whites.forEach(function(n){
+    var idx=NOTES.indexOf(n);
+    var k=document.createElement('div'); k.className='wkey'; k.setAttribute('data-i',idx);
+    k.textContent=n[2].toUpperCase();
+    k.addEventListener('pointerdown', function(e){ e.preventDefault(); hit(idx); });
+    piano.appendChild(k); keyEls[idx]=k; keyByChar[n[2]]=idx;
+  });
+  // black keys positioned over the gaps
+  var wWidth=100/whites.length; // percent per white key
+  NOTES.forEach(function(n){
+    if(!n[3]) return; var idx=NOTES.indexOf(n);
+    // count white keys before this note to find x position
+    var wBefore=NOTES.slice(0,idx).filter(x=>!x[3]).length;
+    var k=document.createElement('div'); k.className='bkey'; k.setAttribute('data-i',idx);
+    k.style.left=(wBefore*wWidth)+'%';
+    k.addEventListener('pointerdown', function(e){ e.preventDefault(); hit(idx); });
+    piano.appendChild(k); keyEls[idx]=k; keyByChar[n[2]]=idx;
+  });
+
+  // keyboard support
+  document.addEventListener('keydown', function(e){
+    if(e.repeat) return; var c=(e.key||'').toLowerCase();
+    if(keyByChar[c]!==undefined){ hit(keyByChar[c]); }
+  });
+
+  labelsEl.addEventListener('change', function(){
+    document.querySelectorAll('.wkey').forEach(function(k){ k.style.color = labelsEl.checked ? '' : 'transparent'; });
+  });
+
+  // test hooks
+  window.__piano = {
+    whiteKeys:function(){ return document.querySelectorAll('.wkey').length; },
+    blackKeys:function(){ return document.querySelectorAll('.bkey').length; },
+    play:function(i){ hit(i); return true; }
+  };
+})();
+</script>
+<script src="/assets/js/cute.js?nb=1"></script>
+</body>
+</html>
