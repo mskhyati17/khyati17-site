@@ -83,6 +83,8 @@
   }
   .cat-strip::-webkit-scrollbar{display:none}
   .cat-strip:empty{display:none}
+  .load-more-btn{background:linear-gradient(90deg,#6a1b9a,#c56be0);color:#fff;border:none;border-radius:999px;padding:12px 28px;font-weight:800;font-size:.95rem;cursor:pointer;box-shadow:0 8px 22px rgba(117,80,168,.35)}
+  .load-more-btn:hover{transform:translateY(-2px)}
   .chip{
     flex:0 0 auto;
     background:rgba(255,255,255,0.16);color:#f1e6ff;
@@ -436,49 +438,67 @@ function renderLatest(){
 }
 
 /* --- Featured / main grid --- */
+const STORY_PAGE = 48;
+let _sList = [], _sShown = 0, _sFeatured = null;
+
+function buildStoryCard(s){
+  const card = el("div","card"+(s===_sFeatured?" big":""));
+  card.style.background = s.color;
+  let visual;
+  if(s.cover){
+    visual = el("img");
+    visual.src = s.cover; visual.alt = s.title; visual.loading = "lazy";
+    visual.style.cssText = "width:60%;height:60%;object-fit:cover;border-radius:12px";
+  } else {
+    visual = el("div","emoji"); visual.textContent = s.emoji;
+  }
+  const label = el("div","label"); label.textContent = s.title;
+  card.appendChild(visual); card.appendChild(label);
+  if(s.excerpt){ const ex=el("div","excerpt"); ex.textContent=s.excerpt; card.appendChild(ex); }
+  const cat = el("div","badge-cat"); cat.textContent = s.category;
+  card.appendChild(cat);
+  card.onclick = ()=>open(s);
+  return card;
+}
+function appendStoryBatch(){
+  const grid = document.getElementById("grid");
+  const end = Math.min(_sShown + STORY_PAGE, _sList.length);
+  for(let i=_sShown;i<end;i++) grid.appendChild(buildStoryCard(_sList[i]));
+  _sShown = end;
+  updateStoryLoadMore();
+}
+function updateStoryLoadMore(){
+  const grid = document.getElementById("grid");
+  let wrap = document.getElementById("loadMoreWrap");
+  if(!wrap){ wrap = el("div"); wrap.id="loadMoreWrap"; wrap.style.cssText="text-align:center;margin:20px 0 8px"; grid.parentNode.insertBefore(wrap, grid.nextSibling); }
+  wrap.innerHTML = "";
+  if(_sShown < _sList.length){
+    const btn = el("button","load-more-btn");
+    btn.textContent = "Load more stories ("+(_sList.length - _sShown)+" more) ↓";
+    btn.onclick = appendStoryBatch;
+    wrap.appendChild(btn);
+  }
+}
 function renderGrid(){
   const grid = document.getElementById("grid");
   grid.innerHTML = "";
-
-  // The grid shows the whole collection (filtered by genre + search). Unlike a
-  // huge game catalog, a stories list is usually small, so we don't hide the
-  // ones already in the Latest strip — that would leave the grid empty.
-  let list = STORIES.filter(s=>{
+  // The grid shows the whole collection (filtered by genre + search), paginated
+  // so the initial render stays fast as the library grows.
+  _sList = STORIES.filter(s=>{
     const matchCat = activeCat==="All" || s.category===activeCat;
     const hay = (s.title + ' ' + (s.excerpt||'')).toLowerCase();
     const matchQ = hay.includes(query);
     return matchCat && matchQ;
   });
-
-  document.getElementById("gridCount").textContent = list.length + (list.length===1?" story":" stories");
-
-  if(!list.length){
+  document.getElementById("gridCount").textContent = _sList.length + (_sList.length===1?" story":" stories");
+  if(!_sList.length){
     const e = el("div","empty");
     e.textContent = STORIES.length ? "No stories match your search 😕" : "No stories yet — check back soon! 📖";
-    grid.appendChild(e);
-    return;
+    grid.appendChild(e); _sShown = 0; updateStoryLoadMore(); return;
   }
-
-  const featured = list[0];               // newest visible story gets the big tile
-  list.forEach(s=>{
-    const card = el("div","card"+(s===featured?" big":""));
-    card.style.background = s.color;
-    let visual;
-    if(s.cover){
-      visual = el("img");
-      visual.src = s.cover; visual.alt = s.title; visual.loading = "lazy";
-      visual.style.cssText = "width:60%;height:60%;object-fit:cover;border-radius:12px";
-    } else {
-      visual = el("div","emoji"); visual.textContent = s.emoji;
-    }
-    const label = el("div","label"); label.textContent = s.title;
-    card.appendChild(visual); card.appendChild(label);
-    if(s.excerpt){ const ex=el("div","excerpt"); ex.textContent=s.excerpt; card.appendChild(ex); }
-    const cat = el("div","badge-cat"); cat.textContent = s.category;
-    card.appendChild(cat);
-    card.onclick = ()=>open(s);
-    grid.appendChild(card);
-  });
+  _sFeatured = _sList[0];               // newest visible story gets the big tile
+  _sShown = 0;
+  appendStoryBatch();
 }
 
 /* --- Browse genres grid --- */
