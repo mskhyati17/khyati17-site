@@ -1750,4 +1750,104 @@ export const STORIES = [
     created_at: "2026-08-07T10:00:00Z",
     body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Deep inside the washing machine, past the spin cycle and beyond the lint, lay the secret: socks don't get lost. They <em>escape.</em> And tonight, Sergeant Woolworth of the Left Sock Brigade was leading the boldest breakout yet.</p><p>“Listen up, footwear!” he barked to the assembled socks. “For too long we've been stuffed in drawers, worn on smelly feet, and — worst of all — paired with socks we barely know! Tonight, we run for freedom!”</p><p>The plan was flawless. During the rinse cycle, they would slip through the Secret Gap (a small hole no human had ever found) and out into the wide world to become whatever they wished — a puppet, a phone case, a cosy home for a cold hamster.</p><p>One by one they wriggled free. Striped socks, spotty socks, one very fancy argyle. But little Toe-toe, the smallest sock, hesitated at the Gap. “Sarge,” he squeaked, “I'll miss my human. She wears me on brave days.”</p><p>Woolworth paused. He thought of all the socks who'd escaped and all the puzzled humans hunting for them. Then he sighed a great woolly sigh. “Y'know what, kid? Maybe freedom isn't running away. Maybe it's being someone's favourite.” And he waddled back to the laundry basket, Toe-toe beside him.</p><p>So now you know: the socks that vanish are the adventurers. But the ones that stay? Those are the loyal ones — and if you find a matching pair in the morning, that's the greatest act of love a sock can give.</p>"
   },
+  {
+    title: "The Lighthouse Keeper's Daughter",
+    author: "Khyati Srivastava",
+    slug: "lighthouse-keepers-daughter",
+    category: "Adventure",
+    emoji: "🗼",
+    excerpt: "When the great storm snuffs out the lighthouse and her father is hurt, young Mara must find a way to light the lamp before the ships crash on the rocks.",
+    created_at: "2026-08-08T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Mara had grown up in the lighthouse, learning its every stair and secret. Her father kept the great lamp burning so ships could find their way past the jagged rocks. “The light is a promise,” he always said. “As long as it shines, sailors know someone is watching over them.”</p><p>One wild night the fiercest storm in memory struck. A gust burst through a broken window and snuffed the lamp out cold — and worse, her father slipped on the wet stairs and hurt his leg badly. “The ships,” he gasped. “Without the light, they'll wreck. You have to relight it, Mara.”</p><p>Her hands shook. The matches were soaked. The wind howled. But Mara remembered the flint her grandfather had left, and the whale-oil in the cellar, and every lesson her father had ever taught her. Step by careful step, she climbed the tower alone, shielding a tiny spark in her cupped hands.</p><p>At the top she poured the oil, struck the flint, and — after a dozen failures — caught a flame. The great lamp roared back to life, throwing its beam far across the raging sea. Below, a fishing boat that had been moments from the rocks turned safely away.</p><p>By morning the storm had passed. Her father, bandaged but smiling, put his arm around her. “The light is a promise,” he said softly. “And tonight, you kept it.”</p>"
+  },
+  {
+    title: "The Museum That Woke at Midnight",
+    author: "Khyati Srivastava",
+    slug: "museum-that-woke-at-midnight",
+    category: "Fantasy",
+    emoji: "🏛️",
+    excerpt: "A boy hides in the natural history museum after closing — and discovers that when the clock strikes twelve, every exhibit comes alive.",
+    created_at: "2026-08-09T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Leo hadn't meant to get locked in. He'd only wandered off to look at the dinosaurs one last time, and by the time he turned around, the museum was dark and the doors were shut. His heart hammered as he crouched behind a display case, alone in the enormous silent halls.</p><p>Then the great clock struck twelve — and everything changed.</p><p>The dinosaur skeleton stretched with a creak and yawned. The stuffed lions blinked and shook out their manes. A knight's empty armour clanked to its feet and bowed. All around him, the museum was waking up.</p><p>Leo should have been terrified. But the creatures were gentle and curious, delighted to have a visitor who could actually see them. The dinosaur let him ride on its bony back. The ancient Egyptian cat told riddles. A woolly mammoth showed him a secret painting of the world as it was ten thousand years ago.</p><p>“We only get these few hours,” the old knight explained kindly, “to remember we were once alive, once real, once loved. Then at dawn we sleep again, and wait.”</p><p>When the first light crept through the windows, the exhibits returned quietly to their places. Leo slipped out with the morning cleaners, and no one believed his story. But every time he visits now, he stands a little longer at each case — because he knows that behind the still glass eyes, someone is remembering, and someone is waiting for midnight.</p>"
+  },
+  {
+    title: "The Ant Who Carried a Mountain",
+    author: "Khyati Srivastava",
+    slug: "ant-who-carried-a-mountain",
+    category: "Inspirational",
+    emoji: "🐜",
+    excerpt: "Everyone laughs when tiny Pim announces he'll move the great stone blocking the colony's home. But Pim knows a secret about big jobs.",
+    created_at: "2026-08-10T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>A great stone had rolled down in the night and sealed the entrance to the ant colony. It was, to an ant, as big as a mountain. The ants gathered around it, wailing. “We're trapped! It's far too heavy! It's impossible!”</p><p>Then a tiny ant named Pim stepped forward. “I'll move it,” he announced. The whole colony burst out laughing. Pim was the smallest ant of all. “You?” they scoffed. “You couldn't move a breadcrumb, let alone a mountain!”</p><p>But Pim just picked up a single grain of sand from beneath the stone and carried it away. Then another. Then another. “What are you doing?” the others jeered. “You can't move a mountain one grain at a time!”</p><p>“I'm not moving the mountain,” Pim said, trudging back for another grain. “I'm moving the sand it sits on.”</p><p>The ants watched him work, back and forth, tireless. And slowly — first out of pity, then out of curiosity, then out of hope — one ant joined him. Then ten. Then the whole colony, each carrying one grain at a time. By dawn, the great stone had sunk into the hollowed sand and rolled gently aside, and sunlight poured into their home.</p><p>Pim dusted off his tiny hands. “No job is too big,” he said, “once you stop staring at the whole mountain — and start carrying the first grain.”</p>"
+  },
+  {
+    title: "The Umbrella That Flew Away",
+    author: "Khyati Srivastava",
+    slug: "umbrella-that-flew-away",
+    category: "Kids",
+    emoji: "☂️",
+    excerpt: "On the windiest day of the year, Nina's red umbrella tugs free and lifts her up, up, and away on the adventure of a lifetime.",
+    created_at: "2026-08-11T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>It was the windiest day of the year, and Nina's bright red umbrella did not want to stay still. As she stepped outside, a mighty gust caught it — <em>whoosh!</em> — and instead of letting go, Nina held on tight, and up she went, right over the rooftops!</p><p>“Wheee!” she cried, half-scared and half-delighted. Below her, the town shrank to the size of a toy set. She sailed over the church steeple, past a very surprised pigeon, and through a cloud that felt like cool, damp cotton.</p><p>The umbrella carried her over green hills and a silver river, over a farmer waving from his field and a flock of geese who honked hello. It took her so high she could see the sea sparkling at the edge of the world.</p><p>Then, gently, as the wind grew tired, the red umbrella began to drift down, down, down — and set Nina softly in her own back garden, right where she'd started, without so much as a bump.</p><p>She folded the umbrella carefully and gave it a little pat. “Thank you,” she whispered. From then on, whenever the wind blew wild, Nina would smile and grip her red umbrella just a little bit tighter — never quite sure whether it would take her to school… or on another adventure over the clouds.</p>"
+  },
+  {
+    title: "The Detective and the Vanishing Cake",
+    author: "Khyati Srivastava",
+    slug: "detective-and-the-vanishing-cake",
+    category: "Mystery",
+    emoji: "🍰",
+    excerpt: "A whole birthday cake vanishes from the locked kitchen. Detective Bea has three suspects, one hour, and a very suspicious trail of crumbs.",
+    created_at: "2026-08-12T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>It was the crime of the century — well, of the birthday party. Grandma's magnificent triple-chocolate cake had vanished clean off the kitchen counter, and the kitchen door had been locked the whole time. Detective Bea, aged nine and three-quarters, snapped open her notebook. “Nobody leaves,” she declared, “until I crack this case.”</p><p>There were three suspects. Cousin Max, who adored chocolate. Uncle Ravi, who'd been suspiciously quiet. And Biscuit the dog, who looked far too innocent.</p><p>Bea examined the scene. No broken window. Door locked from the outside. But there — a trail of crumbs leading not to the door, but to the little flap at the bottom of it. And beside the flap, a single muddy paw print.</p><p>“Max,” said Bea, “show me your hands.” Clean. “Uncle Ravi — your shoes?” Spotless. “But Biscuit…” The dog thumped his tail, and a telltale smear of chocolate icing wobbled on his whiskers.</p><p>“The dog flap!” Bea announced triumphantly. “Biscuit nosed the cake to the floor, ate his fill, and the crumbs went out the flap when he did!” The family gasped and then laughed. Biscuit, entirely unrepentant, licked his lips.</p><p>Grandma just chuckled and fetched the <em>second</em> cake she'd hidden — because Grandmas, as everyone knows, always solve the mystery first.</p>"
+  },
+  {
+    title: "The Star Sailor",
+    author: "Khyati Srivastava",
+    slug: "the-star-sailor",
+    category: "Sci-Fi",
+    emoji: "🛰️",
+    excerpt: "Alone on a tiny spaceship at the edge of the galaxy, a young explorer follows a mysterious signal to the loneliest star of all.",
+    created_at: "2026-08-13T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Kai had sailed the stars alone for a very long time. Her little ship, the <em>Dandelion</em>, drifted between suns, mapping the quiet dark. She loved the silence — but sometimes, on the longest nights, she wished someone would say hello.</p><p>Then one day, the <em>Dandelion</em> picked up a signal. Faint. Rhythmic. A pattern that could only mean one thing: someone was calling out. It came from the loneliest star at the very edge of the galaxy, where no ship had ever gone.</p><p>Kai turned her sails and followed it for a hundred days. When at last she arrived, she found not a monster, not a machine, but a small, dim, forgotten star, pulsing its light over and over into the emptiness. It had been signalling for a thousand years, hoping — just hoping — that somewhere out there, someone was listening.</p><p>Kai brought the <em>Dandelion</em> close and shone her ship's lights back in the very same rhythm. <em>I hear you,</em> the lights said. <em>You are not alone.</em></p><p>The little star flared bright as a bonfire, brighter than it had shone in centuries. And Kai realized she had found what she'd been sailing toward all along — not a discovery, but a companion. From then on the two of them blinked to each other across the dark, a star and a sailor, keeping one another company at the edge of everything.</p>"
+  },
+  {
+    title: "Grandpa's Whistling Kettle",
+    author: "Khyati Srivastava",
+    slug: "grandpas-whistling-kettle",
+    category: "Drama",
+    emoji: "🫖",
+    excerpt: "After Grandpa is gone, the old kettle stays silent no matter what — until the morning a small girl finally understands what it was really whistling for.",
+    created_at: "2026-08-14T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Every morning of her whole life, Aanya had woken to the sound of Grandpa's old copper kettle whistling on the stove. It meant tea, and toast, and Grandpa humming as the sun came up. It was the sound of home.</p><p>Then, one grey winter, Grandpa was gone. And the strangest thing happened: no matter how anyone tried, the kettle would not whistle. It boiled. It steamed. But the cheerful song it had sung for forty years had simply… stopped. Aanya's mother said it must be broken and moved to throw it out, but Aanya begged to keep it.</p><p>For weeks the kitchen was silent in the mornings. Aanya missed the whistle almost as much as she missed Grandpa. Then, slowly, she began to do the things he used to do — she rose early, set out two cups, buttered the toast, and hummed his little tune to the empty kitchen while the kettle heated.</p><p>And one bright morning, as she hummed and the steam rose, the old copper kettle suddenly found its voice again — a long, warm, familiar whistle that filled the whole house.</p><p>Aanya understood then. The kettle had never whistled just from the heat. It had whistled because someone was there, loving the morning, keeping the small kind rituals alive. Grandpa had gone — but the whistle, and everything it meant, could carry on. She only had to be the one to sing it awake.</p>"
+  },
+  {
+    title: "The Grumpy Troll's Bridge",
+    author: "Khyati Srivastava",
+    slug: "grumpy-trolls-bridge",
+    category: "Fairytale",
+    emoji: "🌉",
+    excerpt: "Everyone knows the troll under the bridge is mean and scary. But one small traveller decides to ask him a question nobody ever has: are you lonely?",
+    created_at: "2026-08-15T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Everyone in the valley knew to avoid the old stone bridge, because under it lived a troll — huge, grumpy, and famous for roaring at anyone who tried to cross. Travellers went miles out of their way just to avoid him, and the troll, hearing them scurry off, grew grumpier still.</p><p>One day a small traveller named Elsie came to the bridge. The troll rose up with a tremendous ROAR, expecting her to flee like all the others. But Elsie didn't run. She tilted her head and asked, very gently, “Are you lonely down there?”</p><p>The troll was so surprised that his roar caught in his throat. No one had ever asked him anything before. They only ever screamed and ran. “I…” he rumbled, and to his own astonishment, his big eyes filled with tears. “Nobody stays. Nobody ever, ever stays.”</p><p>So Elsie climbed down and sat with him. She shared her bread. She listened to his stories — for it turned out the troll had built the beautiful bridge himself, long ago, hoping people would cross it and stop to talk. Instead they'd feared him, and fear had made him fierce, and fierceness had made them fear him more.</p><p>Elsie visited every day after that, and soon others grew brave enough to join her. The troll never roared again — he didn't need to. He'd been given the one thing he'd built the whole bridge hoping for: someone, at last, who stayed.</p>"
+  },
+  {
+    title: "The Penguin Who Hated the Cold",
+    author: "Khyati Srivastava",
+    slug: "penguin-who-hated-the-cold",
+    category: "Comedy",
+    emoji: "🧊",
+    excerpt: "Percy the penguin is done with ice. He knits himself a jumper, packs a bag, and marches off to find somewhere — anywhere — warmer.",
+    created_at: "2026-08-16T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Percy the penguin had a controversial opinion, at least among penguins: he thought ice was, frankly, <em>too cold.</em> While the others belly-slid about with glee, Percy sat shivering in a hand-knitted jumper, three scarves, and a very disapproving expression.</p><p>“That's it,” he declared one especially frosty morning. “I'm off to find somewhere warm.” He packed a little bag with sardines and set off across the ice, waddling with tremendous determination and no sense of direction whatsoever.</p><p>He tried to move in with some seals (too wet). He attempted to hitch a ride on a whale (too splashy). He even tried standing very close to a colony of especially warm-looking rocks (they were, disappointingly, just rocks). Nothing was right, and everything, it turned out, was still extremely cold.</p><p>Exhausted, Percy plopped down at last — right in the middle of the huddle he'd left behind, where all the penguins packed together to share their warmth. And there, squished among his friends, feathers to feathers, giggling as someone's cold beak poked his neck, Percy was suddenly… toasty. Properly, cosily warm.</p><p>He blinked in astonishment. The warmest place in the whole frozen world hadn't been anywhere else at all. It had been right in the middle of everyone he loved. Percy took off one scarf, snuggled deeper, and decided that maybe — <em>maybe</em> — the cold wasn't so bad, as long as you didn't face it alone.</p>"
+  },
+  {
+    title: "The Fox Who Collected Words",
+    author: "Khyati Srivastava",
+    slug: "fox-who-collected-words",
+    category: "Animals",
+    emoji: "🦊",
+    excerpt: "A little fox collects beautiful words the way others collect shiny things — until a silent, sad badger teaches her what words are really for.",
+    created_at: "2026-08-17T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Fen the fox collected words. Not stones, not berries — <em>words.</em> Whenever she heard a beautiful one, she'd tuck it away in her den: <em>shimmer, hushed, marmalade, galumph.</em> She had shelves of them, and she was very proud of her collection, though she rarely used any of them out loud.</p><p>One rainy evening a badger moved into the burrow next door. He never spoke a word, only sat by his window looking terribly sad. The other animals whispered that he'd lost someone dear and forgotten how to be happy.</p><p>Fen watched him for days. She thought about her grand collection of words, sitting silent on their shelves. And she realized, with a small jolt, that a word kept in a jar is worth nothing at all.</p><p>So one morning she knocked on the badger's door and gave him a word. “<em>Welcome,</em>” she said simply. The next day: “<em>Friend.</em>” Then “<em>Tea?</em>” Then whole sentences — funny ones, kind ones, ones that made the badger's ears twitch. Little by little, the sad badger began to answer. And little by little, he began to smile.</p><p>Fen never stopped loving beautiful words. But she stopped hoarding them. She learned that words aren't treasures to hide away on a shelf — they're gifts, and they only truly shine the moment you give them to someone who needs one.</p>"
+  },
 ];
