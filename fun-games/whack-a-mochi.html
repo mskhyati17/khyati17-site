@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🔨 Whack-a-Mochi</title>
+<meta name="description" content="Tap Mochi as she pops up — but dodge the bombs! A fast, fun whack-a-mole game, free on Khyati17." />
+<meta property="og:title" content="🔨 Whack-a-Mochi — Khyati17" />
+<meta property="og:description" content="Tap Mochi, dodge the bombs — how high can you score in 30 seconds?" />
+<meta property="og:image" content="https://khyati17.com/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(135deg,#2b0b3a,#6a1b9a,#9c4dcc);min-height:100vh;display:flex;justify-content:center;align-items:center;padding:20px}
+  .container{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border-radius:24px;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.12);text-align:center;max-width:440px;width:100%}
+  h1{font-size:1.7rem;color:#fff;margin-bottom:4px;text-shadow:0 0 30px rgba(233,216,255,.4)}
+  .subtitle{color:rgba(255,255,255,.7);font-size:.84rem;margin-bottom:14px}
+  .score-board{display:flex;justify-content:space-between;background:rgba(0,0,0,.3);border-radius:12px;padding:9px 18px;margin-bottom:16px;color:#fff}
+  .score-board b{color:#e9d8ff}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:340px;margin:0 auto}
+  .hole{aspect-ratio:1;border-radius:50%;border:none;cursor:pointer;font-size:2.3rem;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 35%,#3a2550,#241436);box-shadow:inset 0 8px 18px rgba(0,0,0,.5);transition:transform .08s;user-select:none;overflow:hidden}
+  .hole:active{transform:scale(.94)}
+  .hole .pop{transform:translateY(120%);transition:transform .12s ease}
+  .hole.up .pop{transform:translateY(0)}
+  .msg{color:#fff;margin-top:14px;font-weight:700;min-height:1.2em}
+  .controls{margin-top:14px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .controls a,.controls button{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:9px 20px;border-radius:10px;cursor:pointer;font-size:.95rem;text-decoration:none;display:inline-block}
+  .controls a:hover,.controls button:hover,#start:hover{background:#e9d8ff;color:#2b0b3a}
+  #start{background:#e9d8ff;color:#2b0b3a;font-weight:bold}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🔨 Whack-a-Mochi</h1>
+  <p class="subtitle">Tap Mochi 🐶 for points — but dodge the bombs 💣!</p>
+  <div class="score-board"><div>Score: <b id="score">0</b></div><div>Time: <b id="time">30</b>s</div><div>Best: <b id="best">0</b></div></div>
+  <div class="grid" id="grid"></div>
+  <div class="msg" id="msg">Tap Start to play!</div>
+  <div class="controls">
+    <button id="start">Start ▶</button>
+    <a href="/fun-games/index.html">← All Games</a>
+  </div>
+</div>
+<script>
+(function(){
+  var HOLES=9, ROUND=30;
+  var gridEl=document.getElementById('grid'), scoreEl=document.getElementById('score'), timeEl=document.getElementById('time'), bestEl=document.getElementById('best'), msgEl=document.getElementById('msg'), startBtn=document.getElementById('start');
+  var cells=[], score=0, timeLeft=ROUND, state='idle', best=0, active=-1, activeType=null, popTimer=null, tickTimer=null;
+  try{ best=+localStorage.getItem('whackMochiBest')||0; }catch(e){} bestEl.textContent=best;
+
+  for(var i=0;i<HOLES;i++){
+    (function(idx){
+      var b=document.createElement('button'); b.className='hole'; b.setAttribute('data-i',idx);
+      var span=document.createElement('span'); span.className='pop'; b.appendChild(span);
+      b.addEventListener('click', function(){ whack(idx); });
+      cells.push({el:b, span:span}); gridEl.appendChild(b);
+    })(i);
+  }
+
+  function clearActive(){ if(active>=0){ cells[active].el.classList.remove('up'); } active=-1; activeType=null; }
+  function spawn(idx, type){
+    clearActive();
+    active = (idx==null) ? Math.floor(Math.random()*HOLES) : idx;
+    activeType = type || (Math.random()<0.78 ? 'mochi' : 'bomb');
+    cells[active].span.textContent = activeType==='mochi' ? '🐶' : '💣';
+    cells[active].el.classList.add('up');
+  }
+  function whack(i){
+    if(state!=='play') return;
+    if(i!==active) return;
+    if(activeType==='mochi'){ score++; msgEl.textContent='Nice! 🎉'; }
+    else { score=Math.max(0, score-2); msgEl.textContent='Ouch! 💥 −2'; }
+    scoreEl.textContent=score;
+    clearActive();
+  }
+  function loop(){
+    // schedule the next pop at a shrinking interval as time runs down
+    var speed = 900 - Math.min(500, (ROUND-timeLeft)*16);
+    spawn();
+    popTimer = setTimeout(function(){ if(state==='play'){ clearActive(); loop(); } }, speed);
+  }
+  function start(){
+    if(state==='play') return;
+    score=0; timeLeft=ROUND; state='play'; active=-1;
+    scoreEl.textContent=0; timeEl.textContent=ROUND; msgEl.textContent='Go! 🐾'; startBtn.textContent='Playing…'; startBtn.disabled=true;
+    loop();
+    tickTimer=setInterval(function(){ timeLeft--; timeEl.textContent=Math.max(0,timeLeft); if(timeLeft<=0) end(); }, 1000);
+  }
+  function end(){
+    state='over'; clearTimeout(popTimer); clearInterval(tickTimer); clearActive();
+    startBtn.textContent='Play again ▶'; startBtn.disabled=false;
+    if(score>best){ best=score; try{ localStorage.setItem('whackMochiBest',best); }catch(e){} bestEl.textContent=best; msgEl.textContent='🏆 New best: '+score+'!'; }
+    else msgEl.textContent='Time! You scored '+score+'. 🐶';
+  }
+  startBtn.addEventListener('click', start);
+
+  // test hooks
+  window.__whackMochi = { get score(){return score;}, get state(){return state;}, get active(){return active;}, get activeType(){return activeType;}, spawn:spawn, whack:whack, start:start, end:end };
+})();
+</script>
+<script src="/assets/js/cute.js?nb=1"></script>
+</body>
+</html>
