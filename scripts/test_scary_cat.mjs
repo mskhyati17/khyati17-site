@@ -11,7 +11,7 @@ const s=createServer((q,r)=>{let f=decodeURIComponent(join(dir,q.url.split('?')[
 await new Promise(r=>s.listen(8291,r));
 const base='http://localhost:8291';
 const errors=[]; const pass=m=>console.log('  ✓ '+m); const fail=m=>{console.log('  ✗ '+m);errors.push(m);};
-const scaryRe=/horror|scary|creepy|haunt|nightmare|granny|slender|fnaf|freddy|spooky|undead|zombie|ghost|poppy|huggy|scream|backroom|halloween|demon|evil|apocalypse|vampire|werewolf|phantom|cursed|reaper/i;
+const scaryRe=/horror|scary|creepy|haunt|nightmare|granny|slender|fnaf|freddy|spooky|undead|zombie|ghost|poppy|huggy|scream|backroom|halloween|demon|evil|apocalypse|vampire|werewolf|phantom|cursed|reaper|terror|abandoned|night shift/i;
 const b=await chromium.launch({headless:true});
 try{
   const p=await b.newPage(); const js=[]; p.on('pageerror',e=>js.push(e.message.split('\n')[0]));
@@ -24,7 +24,7 @@ try{
 
   console.log('\n[2] Scary tag count in catalog');
   const tagged = await p.evaluate(()=>GAMES.filter(g=>g.scary).length);
-  (tagged>=20 && tagged<=40) ? pass(tagged+' games tagged scary') : fail('unexpected scary count: '+tagged);
+  (tagged>=25 && tagged<=45) ? pass(tagged+' games tagged scary') : fail('unexpected scary count: '+tagged);
 
   console.log('\n[3] Filter shows only scary games');
   for(const c of await p.$$('#catStrip .chip')){ if(/Scary/.test(await c.textContent())){ await c.click(); break; } }
