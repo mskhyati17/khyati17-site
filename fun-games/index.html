@@ -83,6 +83,8 @@
     scrollbar-width:none;
   }
   .cat-strip::-webkit-scrollbar{display:none}
+  .load-more-btn{background:linear-gradient(90deg,#6a1b9a,#c56be0);color:#fff;border:none;border-radius:999px;padding:12px 28px;font-weight:800;font-size:.95rem;cursor:pointer;box-shadow:0 8px 22px rgba(117,80,168,.35)}
+  .load-more-btn:hover{transform:translateY(-2px)}
   .chip{
     flex:0 0 auto;
     background:rgba(255,255,255,0.16);color:#f1e6ff;
@@ -2576,12 +2578,51 @@ function renderPopular(){
   return new Set(top.map(g=>g.name));
 }
 
-/* --- Featured / main grid --- */
+/* --- Featured / main grid (paginated for fast initial render) --- */
+const GRID_PAGE = 60;
+let _gridList = [], _gridShown = 0, _gridFeatured = null;
+
+function buildGameCard(g, idx){
+  const card = el("div","card"+(g===_gridFeatured?" big":""));
+  card.style.background = g.color;
+  if(g.hot){ const b=el("div","badge-hot"); b.textContent="🔥 HOT"; card.appendChild(b); }
+  let visual;
+  if(g.thumbnail){
+    visual = el("img","anim anim-float");
+    visual.src = g.thumbnail; visual.alt = g.name; visual.loading = "lazy";
+    visual.style.cssText = "width:60%;height:60%;object-fit:cover;border-radius:12px";
+  } else {
+    visual = el("div","emoji "+("anim "+animFor(g,idx))); visual.textContent = g.emoji;
+  }
+  const label = el("div","label"); label.textContent = g.name;
+  const cat = el("div","badge-cat"); cat.textContent = g.category;
+  card.appendChild(visual); card.appendChild(label); card.appendChild(cat);
+  card.onclick = ()=>open(g.url);
+  return card;
+}
+function appendGridBatch(){
+  const grid = document.getElementById("grid");
+  const end = Math.min(_gridShown + GRID_PAGE, _gridList.length);
+  for(let i=_gridShown;i<end;i++) grid.appendChild(buildGameCard(_gridList[i], i));
+  _gridShown = end;
+  updateLoadMore();
+}
+function updateLoadMore(){
+  const grid = document.getElementById("grid");
+  let wrap = document.getElementById("loadMoreWrap");
+  if(!wrap){ wrap = el("div"); wrap.id="loadMoreWrap"; wrap.style.cssText="text-align:center;margin:20px 0 8px"; grid.parentNode.insertBefore(wrap, grid.nextSibling); }
+  wrap.innerHTML = "";
+  if(_gridShown < _gridList.length){
+    const btn = el("button","load-more-btn");
+    btn.textContent = "Load more games ("+(_gridList.length - _gridShown)+" more) ↓";
+    btn.onclick = appendGridBatch;
+    wrap.appendChild(btn);
+  }
+}
 function renderGrid(popularNames){
   const grid = document.getElementById("grid");
   grid.innerHTML = "";
-
-  let list = GAMES.filter(g=>{
+  _gridList = GAMES.filter(g=>{
     // On the "All" home view, hide games already shown in the Popular row —
     // but when searching, span the full catalog so every match shows.
     const matchCat = activeCat==="All"
@@ -2590,37 +2631,14 @@ function renderGrid(popularNames){
     const matchQ = g.name.toLowerCase().includes(query);
     return matchCat && matchQ;
   });
-
-  document.getElementById("gridCount").textContent = list.length + " games";
-
-  if(!list.length){
-    const e = el("div","empty");
-    e.textContent = "No games match your search 😕";
-    grid.appendChild(e);
-    return;
+  document.getElementById("gridCount").textContent = _gridList.length + " games";
+  if(!_gridList.length){
+    const e = el("div","empty"); e.textContent = "No games match your search 😕"; grid.appendChild(e);
+    _gridShown = 0; updateLoadMore(); return;
   }
-
-  // pick the large featured tile (first featured & visible)
-  const featuredGame = list.find(g=>g.featured);
-
-  list.forEach((g,idx)=>{
-    const card = el("div","card"+(g===featuredGame?" big":""));
-    card.style.background = g.color;
-    if(g.hot){ const b=el("div","badge-hot"); b.textContent="🔥 HOT"; card.appendChild(b); }
-    let visual;
-    if(g.thumbnail){
-      visual = el("img","anim anim-float");
-      visual.src = g.thumbnail; visual.alt = g.name; visual.loading = "lazy";
-      visual.style.cssText = "width:60%;height:60%;object-fit:cover;border-radius:12px";
-    } else {
-      visual = el("div","emoji "+("anim "+animFor(g,idx))); visual.textContent = g.emoji;
-    }
-    const label = el("div","label"); label.textContent = g.name;
-    const cat = el("div","badge-cat"); cat.textContent = g.category;
-    card.appendChild(visual); card.appendChild(label); card.appendChild(cat);
-    card.onclick = ()=>open(g.url);
-    grid.appendChild(card);
-  });
+  _gridFeatured = _gridList.find(g=>g.featured);
+  _gridShown = 0;
+  appendGridBatch();  // renders the first page + manages the "Load more" button
 }
 
 /* --- Browse categories grid --- */
