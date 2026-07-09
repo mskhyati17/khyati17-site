@@ -281,6 +281,7 @@
   <header class="hero">
     <h1>What will you create today?</h1>
     <p>AI-powered tools you can use right now — no downloads, just create.</p>
+    <button id="surprise-tool" type="button" style="margin-top:14px;background:linear-gradient(90deg,#6a1b9a,#c56be0);color:#fff;border:none;border-radius:999px;padding:11px 24px;font-weight:800;font-size:.95rem;cursor:pointer;box-shadow:0 8px 22px rgba(117,80,168,.35)">🎲 Surprise me with a tool</button>
   </header>
 
   <main class="wrap">
@@ -475,6 +476,18 @@ document.getElementById("search").addEventListener("input", e=>{
   if(query) activeCat = "All";
   render();
 });
+
+/* --- Surprise tool: open a random live tool --- */
+(function(){
+  const btn = document.getElementById('surprise-tool');
+  if(!btn) return;
+  btn.addEventListener('click', ()=>{
+    const live = AI_TOOLS.filter(t=>t.status==='live' && t.url && t.url!=='#');
+    if(!live.length) return;
+    const t = live[Math.floor(Math.random()*live.length)];
+    window.location.href = t.url;
+  });
+})();
 
 /* --- Init --- */
 render();
