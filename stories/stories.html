@@ -70,6 +70,13 @@
     import { STORIES as BAKED } from './stories-data.js?v=20260626a';
 
     const slugOf = s => s.slug || s.id || (s.title||'').replace(/\s+/g,'-').toLowerCase();
+    let ALL_STORIES = [];
+
+    // Estimate reading time from the story body (~200 words/min).
+    function readingTime(html){
+      const words = String(html||'').replace(/<[^>]+>/g,' ').trim().split(/\s+/).filter(Boolean).length;
+      return Math.max(1, Math.round(words/200));
+    }
 
     async function loadStories(){
       let extra = [];
@@ -83,6 +90,7 @@
       const stories = [...BAKED];
       const have = new Set(stories.map(slugOf));
       (extra||[]).forEach(s=>{ if(!have.has(slugOf(s))) stories.push(s); });
+      ALL_STORIES = stories;
       const container = document.getElementById('stories-list-container'); container.innerHTML = '';
       stories.forEach(s=>{
         const a = document.createElement('div'); a.style.padding='8px'; a.style.cursor='pointer'; a.style.borderBottom='1px solid rgba(106,27,154,0.04)';
@@ -103,9 +111,22 @@
       const el = document.getElementById('story-content');
       if(!el) return;
       const slug = s.slug || s.id || (s.title||'').replace(/\s+/g,'-').toLowerCase();
-      el.innerHTML = `<h2>${escapeHtml(s.title||'')}</h2><p style="color:#6a4b8f">${escapeHtml(s.excerpt||'')}</p>`
+      const mins = readingTime(s.body);
+      const meta = `<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:2px 0 10px;font-size:.8rem;color:#8a6fb0">`
+        + (s.category ? `<span style="background:#f3e9fd;color:#6a1b9a;font-weight:700;border-radius:999px;padding:3px 10px">${escapeHtml(s.category)}</span>` : '')
+        + `<span>⏱️ ${mins} min read</span></div>`;
+      el.innerHTML = `<h2>${escapeHtml(s.title||'')}</h2>${meta}<p style="color:#6a4b8f">${escapeHtml(s.excerpt||'')}</p>`
         + `<button id="story-share" class="btn btn-ghost" style="margin:2px 0 12px;font-size:.85rem;padding:6px 14px">🔗 Share story</button>`
-        + `<div>${s.body||''}</div>`;
+        + `<div>${s.body||''}</div>`
+        + `<div style="margin:22px 0 6px;text-align:center"><button id="story-another" class="btn" style="font-size:.9rem">🎲 Read another story</button></div>`;
+      // "Read another" opens a random different story
+      const another = document.getElementById('story-another');
+      if(another) another.addEventListener('click', ()=>{
+        if(ALL_STORIES.length < 2){ return; }
+        let pick; do { pick = ALL_STORIES[Math.floor(Math.random()*ALL_STORIES.length)]; } while(slugOf(pick) === slug);
+        showStory(pick);
+        el.scrollIntoView({behavior:'smooth', block:'start'});
+      });
       // wire the share button (native share on mobile, copy link elsewhere)
       const sb = document.getElementById('story-share');
       if(sb) sb.addEventListener('click', async ()=>{
