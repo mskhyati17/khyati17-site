@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://khyati17.com/home/index.html</loc><lastmod>2026-07-06</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://khyati17.com/fun-games/index.html</loc><lastmod>2026-07-06</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://khyati17.com/ai-tools/index.html</loc><lastmod>2026-07-06</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://khyati17.com/stories/index.html</loc><lastmod>2026-07-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://khyati17.com/home/index.html</loc><lastmod>2026-07-09</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://khyati17.com/fun-games/index.html</loc><lastmod>2026-07-09</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://khyati17.com/ai-tools/index.html</loc><lastmod>2026-07-09</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://khyati17.com/stories/index.html</loc><lastmod>2026-07-09</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://khyati17.com/videos/videos.html</loc><lastmod>2026-07-06</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://khyati17.com/trading/trading.html</loc><lastmod>2026-07-06</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://khyati17.com/me/index.html</loc><lastmod>2026-07-07</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://khyati17.com/others/others.html</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://khyati17.com/about/about.html</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://khyati17.com/about/about.html</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <!-- Original hand-built Mochi games -->
+  <url><loc>https://khyati17.com/fun-games/mochi-treat-catch.html</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://khyati17.com/fun-games/mochi-says.html</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://khyati17.com/fun-games/perfect-fetch.html</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://khyati17.com/fun-games/word-rescue.html</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://khyati17.com/fun-games/paw-reflex.html</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://khyati17.com/fun-games/mochi-quiz.html</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://khyati17.com/fun-games/mochi-match.html</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://khyati17.com/fun-games/whack-a-mochi.html</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
