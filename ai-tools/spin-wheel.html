@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🎡 Spin the Wheel — Khyati17</title>
+<meta name="description" content="A free spin-the-wheel picker — enter your own options and let the wheel decide. Great for groups, classrooms and tough choices." />
+<meta property="og:title" content="🎡 Spin the Wheel — Khyati17" />
+<meta property="og:description" content="Enter options, spin, and let the wheel decide! Free on Khyati17." />
+<meta property="og:image" content="https://khyati17.com/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(135deg,#2b0b3a,#6a1b9a,#9c4dcc);min-height:100vh;display:flex;justify-content:center;align-items:center;padding:16px}
+  .container{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border-radius:24px;padding:24px;box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.12);text-align:center;max-width:520px;width:100%}
+  h1{font-size:1.6rem;color:#fff;margin-bottom:4px;text-shadow:0 0 30px rgba(233,216,255,.4)}
+  .subtitle{color:rgba(255,255,255,.72);font-size:.82rem;margin-bottom:14px}
+  .wheel-wrap{position:relative;width:300px;max-width:80vw;margin:0 auto 6px;aspect-ratio:1}
+  #wheel{width:100%;height:100%;display:block}
+  .pointer{position:absolute;top:-6px;left:50%;transform:translateX(-50%);font-size:1.8rem;z-index:2;filter:drop-shadow(0 2px 3px rgba(0,0,0,.4))}
+  .winner{color:#fff;font-weight:800;font-size:1.15rem;min-height:1.4em;margin:8px 0}
+  .winner b{color:#ffd9f0}
+  .spin-btn{background:linear-gradient(90deg,#6a1b9a,#c56be0);color:#fff;border:none;border-radius:999px;padding:12px 30px;font-weight:800;font-size:1rem;cursor:pointer;box-shadow:0 8px 22px rgba(117,80,168,.4);margin:6px 0}
+  .spin-btn:disabled{opacity:.6;cursor:default}
+  textarea{width:100%;margin-top:12px;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.9);font-family:inherit;font-size:.9rem;resize:vertical;min-height:70px}
+  .controls{margin-top:12px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .controls a,.controls button{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:8px 16px;border-radius:10px;cursor:pointer;font-size:.88rem;text-decoration:none;display:inline-block}
+  .controls a:hover,.controls button:hover{background:#e9d8ff;color:#2b0b3a}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🎡 Spin the Wheel</h1>
+  <p class="subtitle">Enter your options below, then spin to let the wheel decide!</p>
+  <div class="wheel-wrap"><div class="pointer">🔻</div><canvas id="wheel" width="300" height="300"></canvas></div>
+  <div class="winner" id="winner"></div>
+  <button class="spin-btn" id="spin">SPIN! 🎯</button>
+  <textarea id="items" aria-label="Wheel options, one per line">Pizza 🍕
+Tacos 🌮
+Sushi 🍱
+Burger 🍔
+Pasta 🍝
+Salad 🥗</textarea>
+  <div class="controls">
+    <button id="update">🔄 Update wheel</button>
+    <a href="/ai-tools/index.html">← All Tools</a>
+  </div>
+</div>
+<script>
+(function(){
+  var canvas=document.getElementById('wheel'), ctx=canvas.getContext('2d');
+  var itemsEl=document.getElementById('items'), winnerEl=document.getElementById('winner'), spinBtn=document.getElementById('spin');
+  var COLORS=['#6a1b9a','#c2185b','#00897b','#f9a825','#3949ab','#7cb342','#e64a19','#00acc1','#8e24aa','#d81b60'];
+  var items=[], rot=0, spinning=false, lastWinner=null;
+  var R=150, cx=150, cy=150;
+
+  function parseItems(){
+    items = itemsEl.value.split(/\n/).map(function(s){return s.trim();}).filter(Boolean);
+    if(!items.length) items=['(add options)'];
+    if(items.length>20) items=items.slice(0,20);
+    draw();
+  }
+  function draw(){
+    ctx.clearRect(0,0,300,300);
+    var n=items.length, seg=2*Math.PI/n;
+    ctx.save(); ctx.translate(cx,cy); ctx.rotate(rot);
+    for(var i=0;i<n;i++){
+      var a0=i*seg, a1=a0+seg;
+      ctx.beginPath(); ctx.moveTo(0,0); ctx.arc(0,0,R-4,a0,a1); ctx.closePath();
+      ctx.fillStyle=COLORS[i%COLORS.length]; ctx.fill();
+      ctx.strokeStyle='rgba(255,255,255,.5)'; ctx.lineWidth=2; ctx.stroke();
+      // label
+      ctx.save(); ctx.rotate(a0+seg/2); ctx.textAlign='right'; ctx.fillStyle='#fff'; ctx.font='bold 13px Segoe UI,sans-serif';
+      var label=items[i]; if(label.length>14) label=label.slice(0,13)+'…';
+      ctx.fillText(label, R-16, 5); ctx.restore();
+    }
+    ctx.restore();
+    // hub
+    ctx.beginPath(); ctx.arc(cx,cy,16,0,2*Math.PI); ctx.fillStyle='#fff'; ctx.fill(); ctx.strokeStyle='#6a1b9a'; ctx.lineWidth=3; ctx.stroke();
+  }
+  function spin(){
+    if(spinning || items.length<1) return;
+    spinning=true; spinBtn.disabled=true; winnerEl.textContent='';
+    var n=items.length, seg=2*Math.PI/n;
+    var winner=Math.floor(Math.random()*n); lastWinner=items[winner];
+    // rotation that lands winner's centre under the top pointer (-90°)
+    var pointer=-Math.PI/2;
+    var winnerCentre=winner*seg+seg/2;
+    var base=rot % (2*Math.PI);
+    var delta=((pointer - winnerCentre - base) % (2*Math.PI) + 2*Math.PI) % (2*Math.PI);
+    var target=rot + 2*Math.PI*6 + delta;
+    var start=rot, dur=4200, t0=null;
+    function frame(ts){
+      if(t0===null) t0=ts; var p=Math.min(1,(ts-t0)/dur);
+      var ease=1-Math.pow(1-p,3);
+      rot=start+(target-start)*ease; draw();
+      if(p<1) requestAnimationFrame(frame);
+      else { spinning=false; spinBtn.disabled=false; winnerEl.innerHTML='🎉 The wheel picked: <b>'+lastWinner.replace(/[&<>]/g,'')+'</b>'; }
+    }
+    requestAnimationFrame(frame);
+  }
+  spinBtn.addEventListener('click', spin);
+  document.getElementById('update').addEventListener('click', function(){ parseItems(); winnerEl.textContent=''; });
+  itemsEl.addEventListener('change', parseItems);
+  parseItems();
+
+  // test hooks
+  window.__wheel = { items:function(){return items.slice();}, spin:spin, get lastWinner(){return lastWinner;}, setItems:function(txt){ itemsEl.value=txt; parseItems(); } };
+})();
+</script>
+<script src="/assets/js/cute.js?nb=1"></script>
+</body>
+</html>
