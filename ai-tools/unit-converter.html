@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>📐 Unit Converter — Khyati17</title>
+<meta name="description" content="A free unit converter — length, weight, temperature, speed, data and time. Instant results, right in your browser. Free on Khyati17." />
+<meta property="og:title" content="📐 Unit Converter — Khyati17" />
+<meta property="og:description" content="Convert length, weight, temperature, speed, data and time instantly. Free on Khyati17." />
+<meta property="og:image" content="https://khyati17.com/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(135deg,#2b0b3a,#6a1b9a,#9c4dcc);min-height:100vh;display:flex;justify-content:center;align-items:center;padding:16px}
+  .container{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border-radius:24px;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.12);text-align:center;max-width:480px;width:100%}
+  h1{font-size:1.55rem;color:#fff;margin-bottom:4px;text-shadow:0 0 30px rgba(233,216,255,.4)}
+  .subtitle{color:rgba(255,255,255,.72);font-size:.82rem;margin-bottom:16px}
+  .cats{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-bottom:18px}
+  .cat{background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.15);color:#e9d8ff;padding:7px 13px;border-radius:999px;cursor:pointer;font-size:.82rem;font-weight:700}
+  .cat.active{background:#e9d8ff;color:#2b0b3a}
+  .row{display:flex;gap:10px;align-items:center;margin-bottom:12px}
+  .field{flex:1;text-align:left}
+  .field label{display:block;color:#e9d8ff;font-size:.72rem;font-weight:700;margin-bottom:4px}
+  .field input,.field select{width:100%;padding:11px;border-radius:10px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.95);font-family:inherit;font-size:1rem}
+  .field input{font-weight:800}
+  .swap{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1.1rem;flex:0 0 auto;margin-top:18px}
+  .swap:hover{background:#e9d8ff;color:#2b0b3a}
+  .result{color:#fff;font-size:1.15rem;font-weight:800;margin-top:6px;min-height:1.4em}
+  .result b{color:#ffd9f0}
+  .controls{margin-top:18px}
+  .controls a{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:9px 18px;border-radius:10px;text-decoration:none;font-size:.9rem}
+  .controls a:hover{background:#e9d8ff;color:#2b0b3a}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>📐 Unit Converter</h1>
+  <p class="subtitle">Convert between units instantly — no maths required.</p>
+  <div class="cats" id="cats"></div>
+  <div class="row">
+    <div class="field"><label>From</label><input type="number" id="in" value="1" /><select id="from"></select></div>
+    <button class="swap" id="swap" title="Swap">⇄</button>
+    <div class="field"><label>To</label><input type="number" id="out" readonly /><select id="to"></select></div>
+  </div>
+  <div class="result" id="result"></div>
+  <div class="controls"><a href="/ai-tools/index.html">← All Tools</a></div>
+</div>
+<script>
+(function(){
+  // factors relative to a base unit per category
+  var UNITS={
+    Length:{base:'m',u:{mm:0.001,cm:0.01,m:1,km:1000,inch:0.0254,foot:0.3048,yard:0.9144,mile:1609.344}},
+    Weight:{base:'g',u:{mg:0.001,g:1,kg:1000,oz:28.349523,lb:453.59237,ton:1000000}},
+    Temperature:{base:'C',u:{'°C':1,'°F':1,K:1}}, // handled specially
+    Speed:{base:'m/s',u:{'m/s':1,'km/h':0.2777778,mph:0.44704,knot:0.5144444,'ft/s':0.3048}},
+    Data:{base:'B',u:{B:1,KB:1024,MB:1048576,GB:1073741824,TB:1099511627776}},
+    Time:{base:'s',u:{sec:1,min:60,hour:3600,day:86400,week:604800}}
+  };
+  var CATS=Object.keys(UNITS);
+  var cat='Length';
+  var catsEl=document.getElementById('cats'), fromEl=document.getElementById('from'), toEl=document.getElementById('to'), inEl=document.getElementById('in'), outEl=document.getElementById('out'), resEl=document.getElementById('result');
+
+  function tempConvert(v,from,to){
+    // to Celsius
+    var c = from==='°C'?v : from==='°F'?(v-32)*5/9 : v-273.15;
+    if(to==='°C') return c; if(to==='°F') return c*9/5+32; return c+273.15;
+  }
+  function convert(){
+    var v=parseFloat(inEl.value); if(isNaN(v)){ outEl.value=''; resEl.textContent=''; return; }
+    var from=fromEl.value, to=toEl.value, res;
+    if(cat==='Temperature'){ res=tempConvert(v,from,to); }
+    else { var u=UNITS[cat].u; res = v*u[from]/u[to]; }
+    res = Math.round(res*1e6)/1e6;
+    outEl.value=res;
+    resEl.innerHTML = v+' '+from+' = <b>'+res+' '+to+'</b>';
+  }
+  function fillUnits(){
+    var keys=Object.keys(UNITS[cat].u);
+    fromEl.innerHTML=''; toEl.innerHTML='';
+    keys.forEach(function(k){ var o1=document.createElement('option'); o1.value=k; o1.textContent=k; fromEl.appendChild(o1); var o2=document.createElement('option'); o2.value=k; o2.textContent=k; toEl.appendChild(o2); });
+    fromEl.selectedIndex=0; toEl.selectedIndex=Math.min(1,keys.length-1);
+    convert();
+  }
+  function renderCats(){
+    catsEl.innerHTML='';
+    CATS.forEach(function(c){ var b=document.createElement('button'); b.className='cat'+(c===cat?' active':''); b.textContent=c; b.addEventListener('click',function(){ cat=c; document.querySelectorAll('.cat').forEach(function(x){x.classList.remove('active');}); b.classList.add('active'); fillUnits(); }); catsEl.appendChild(b); });
+  }
+  inEl.addEventListener('input',convert); fromEl.addEventListener('change',convert); toEl.addEventListener('change',convert);
+  document.getElementById('swap').addEventListener('click',function(){ var t=fromEl.value; fromEl.value=toEl.value; toEl.value=t; convert(); });
+  renderCats(); fillUnits();
+
+  // test hooks
+  window.__convert = { setCat:function(c){ cat=c; renderCats(); fillUnits(); }, run:function(from,to,v){ inEl.value=v; fromEl.value=from; toEl.value=to; convert(); return parseFloat(outEl.value); }, resultText:function(){ return resEl.textContent; } };
+})();
+</script>
+<script src="/assets/js/cute.js?nb=1"></script>
+</body>
+</html>
