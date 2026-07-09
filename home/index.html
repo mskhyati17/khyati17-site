@@ -150,7 +150,7 @@
       <div id="today-picks"></div>
 
       <h2 class="explore-title" style="margin-bottom:6px">⭐ Original Mochi Games</h2>
-      <p class="explore-sub" style="margin-bottom:16px">Nine little games I built by hand — you won't find these anywhere else. 🐶</p>
+      <p class="explore-sub" style="margin-bottom:16px">Ten little games I built by hand — you won't find these anywhere else. 🐶</p>
       <div class="orig-row">
         <a class="orig" href="/fun-games/mochi-treat-catch.html"><span class="oe">🐶</span><b>Treat Catch</b></a>
         <a class="orig" href="/fun-games/mochi-says.html"><span class="oe">🐾</span><b>Mochi Says</b></a>
@@ -161,6 +161,7 @@
         <a class="orig" href="/fun-games/mochi-match.html"><span class="oe">🃏</span><b>Mochi Match</b></a>
         <a class="orig" href="/fun-games/whack-a-mochi.html"><span class="oe">🔨</span><b>Whack-a-Mochi</b></a>
         <a class="orig" href="/fun-games/mochi-slide.html"><span class="oe">🧩</span><b>Mochi Slide</b></a>
+        <a class="orig" href="/fun-games/mochi-type.html"><span class="oe">⌨️</span><b>Mochi Type</b></a>
       </div>
 
       <h2 id="explore-title" class="explore-title">Everything to explore ✨</h2>
@@ -274,7 +275,7 @@
     // Today's Picks — a deterministic daily game/tool/story (same for everyone today)
     (function(){
       var el=document.getElementById('today-picks'); if(!el) return;
-      var GP=[{e:'🐶',t:"Mochi's Treat Catch",u:'/fun-games/mochi-treat-catch.html'},{e:'🎾',t:'Perfect Fetch',u:'/fun-games/perfect-fetch.html'},{e:'🔤',t:'Word Rescue',u:'/fun-games/word-rescue.html'},{e:'⚡',t:'Paw Reflex',u:'/fun-games/paw-reflex.html'},{e:'🐾',t:'Mochi Says',u:'/fun-games/mochi-says.html'},{e:'🧠',t:'Mochi Quiz',u:'/fun-games/mochi-quiz.html'},{e:'🃏',t:'Mochi Match',u:'/fun-games/mochi-match.html'},{e:'🔨',t:'Whack-a-Mochi',u:'/fun-games/whack-a-mochi.html'},{e:'🧩',t:'Mochi Slide',u:'/fun-games/mochi-slide.html'},{e:'🧱',t:'Tetris',u:'/fun-games/tetris.html'},{e:'🐍',t:'Snake',u:'/fun-games/snake.html'}];
+      var GP=[{e:'🐶',t:"Mochi's Treat Catch",u:'/fun-games/mochi-treat-catch.html'},{e:'🎾',t:'Perfect Fetch',u:'/fun-games/perfect-fetch.html'},{e:'🔤',t:'Word Rescue',u:'/fun-games/word-rescue.html'},{e:'⚡',t:'Paw Reflex',u:'/fun-games/paw-reflex.html'},{e:'🐾',t:'Mochi Says',u:'/fun-games/mochi-says.html'},{e:'🧠',t:'Mochi Quiz',u:'/fun-games/mochi-quiz.html'},{e:'🃏',t:'Mochi Match',u:'/fun-games/mochi-match.html'},{e:'🔨',t:'Whack-a-Mochi',u:'/fun-games/whack-a-mochi.html'},{e:'🧩',t:'Mochi Slide',u:'/fun-games/mochi-slide.html'},{e:'⌨️',t:'Mochi Type',u:'/fun-games/mochi-type.html'},{e:'🧱',t:'Tetris',u:'/fun-games/tetris.html'},{e:'🐍',t:'Snake',u:'/fun-games/snake.html'}];
       var TP=[{e:'👹',t:'Zalgo Glitch',u:'/ai-tools/tool.html?t=zalgo'},{e:'🎲',t:'Dice Roller',u:'/ai-tools/tool.html?t=dice-notation'},{e:'♈',t:'Zodiac Sign',u:'/ai-tools/tool.html?t=zodiac-sign'},{e:'🔐',t:'Password Generator',u:'/ai-tools/tool.html?t=password-gen'},{e:'💬',t:'Random Quote',u:'/ai-tools/tool.html?t=random-quote'},{e:'🎨',t:'HEX → HSL',u:'/ai-tools/tool.html?t=hex-to-hsl'}];
       var SP=[{e:'🗼',t:'The Lighthouse of Lost Things',u:'/stories/stories.html?story=lighthouse-of-lost-things'},{e:'🤖',t:'The Robot Who Collected Sunsets',u:'/stories/stories.html?story=robot-who-collected-sunsets'},{e:'🦉',t:'How the Owl Learned to Laugh',u:'/stories/stories.html?story=how-the-owl-learned-to-laugh'},{e:'🏔️',t:'Nima and the Mountain That Snored',u:'/stories/stories.html?story=nima-and-the-snoring-mountain'},{e:'🌱',t:'The Garden That Grew Backwards',u:'/stories/stories.html?story=garden-that-grew-backwards'}];
       var d=new Date(); var day=Math.floor(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/86400000);

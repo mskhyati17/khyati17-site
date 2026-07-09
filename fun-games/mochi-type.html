@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>⌨️ Mochi Type</title>
+<meta name="description" content="Test your typing speed — type the sentence as fast as you can and see your words-per-minute! Free on Khyati17." />
+<meta property="og:title" content="⌨️ Mochi Type — Khyati17" />
+<meta property="og:description" content="A typing speed test — how many words per minute can you hit?" />
+<meta property="og:image" content="https://khyati17.com/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(135deg,#2b0b3a,#6a1b9a,#9c4dcc);min-height:100vh;display:flex;justify-content:center;align-items:center;padding:18px}
+  .container{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border-radius:24px;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.12);text-align:center;max-width:560px;width:100%}
+  h1{font-size:1.7rem;color:#fff;margin-bottom:4px;text-shadow:0 0 30px rgba(233,216,255,.4)}
+  .subtitle{color:rgba(255,255,255,.7);font-size:.84rem;margin-bottom:16px}
+  .score-board{display:flex;justify-content:space-between;background:rgba(0,0,0,.3);border-radius:12px;padding:9px 18px;margin-bottom:16px;color:#fff}
+  .score-board b{color:#e9d8ff}
+  .target{background:rgba(255,255,255,.95);border-radius:14px;padding:18px;font-size:1.25rem;line-height:1.7;color:#5a5a6a;text-align:left;margin-bottom:14px;letter-spacing:.3px;min-height:70px;overflow-wrap:break-word;word-break:normal}
+  .target .ok{color:#2ecc71}
+  .target .bad{color:#e53935;background:#ffdede;border-radius:3px}
+  .target .cur{border-bottom:3px solid #6a1b9a}
+  #input{width:100%;padding:12px 14px;border-radius:10px;border:2px solid #d9c7ee;font-family:inherit;font-size:1rem;outline:none}
+  #input:focus{border-color:#9c4dcc}
+  #input:disabled{background:#eee}
+  .msg{color:#fff;margin-top:14px;font-weight:700;min-height:1.3em}
+  .controls{margin-top:14px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .controls a,.controls button{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:9px 20px;border-radius:10px;cursor:pointer;font-size:.95rem;text-decoration:none;display:inline-block}
+  .controls a:hover,.controls button:hover{background:#e9d8ff;color:#2b0b3a}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>⌨️ Mochi Type</h1>
+  <p class="subtitle">Type the sentence as fast and accurately as you can!</p>
+  <div class="score-board"><div>WPM: <b id="wpm">0</b></div><div>Accuracy: <b id="acc">100</b>%</div><div>Best: <b id="best">0</b></div></div>
+  <div class="target" id="target"></div>
+  <input id="input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Start typing here…" aria-label="Type the sentence" />
+  <div class="msg" id="msg"></div>
+  <div class="controls">
+    <button id="new">New sentence 🔄</button>
+    <a href="/fun-games/index.html">← All Games</a>
+  </div>
+</div>
+<script>
+(function(){
+  var SENTENCES=[
+    "The quick brown fox jumps over the lazy dog.",
+    "Mochi the puppy loves to chase her fluffy tail.",
+    "A rainbow appeared after the gentle summer rain.",
+    "Practice every day and you will get a little better.",
+    "The curious cat watched the goldfish swim in circles.",
+    "Bright stars twinkle softly in the quiet night sky.",
+    "She packed her bag and set off on a grand adventure.",
+    "Warm cookies and cold milk make a perfect afternoon.",
+    "Kind words can turn a cloudy day into a sunny one.",
+    "The little robot beeped happily as it rolled along."
+  ];
+  var targetEl=document.getElementById('target'), inputEl=document.getElementById('input'), wpmEl=document.getElementById('wpm'), accEl=document.getElementById('acc'), bestEl=document.getElementById('best'), msgEl=document.getElementById('msg');
+  var text='', started=0, done=false, best=0;
+  try{ best=+localStorage.getItem('mochiTypeBest')||0; }catch(e){} bestEl.textContent=best;
+
+  function newSentence(){
+    text=SENTENCES[Math.floor(Math.random()*SENTENCES.length)];
+    started=0; done=false; inputEl.disabled=false; inputEl.value=''; msgEl.textContent=''; wpmEl.textContent=0; accEl.textContent=100;
+    render(''); inputEl.focus();
+  }
+  function render(typed){
+    var html='';
+    for(var i=0;i<text.length;i++){
+      var cls='';
+      if(i<typed.length){ cls = typed[i]===text[i] ? 'ok' : 'bad'; }
+      else if(i===typed.length){ cls='cur'; }
+      var ch=text[i]===' ' ? ' ' : text[i].replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});
+      html += '<span class="'+cls+'">'+ch+'</span>';
+    }
+    targetEl.innerHTML=html;
+  }
+  function finish(typed){
+    done=true; inputEl.disabled=true;
+    var elapsed=Math.max(1, Date.now()-started);
+    var correct=0; for(var i=0;i<text.length;i++){ if(typed[i]===text[i]) correct++; }
+    var wpm=Math.round((text.length/5)/(elapsed/60000));
+    var acc=Math.round(correct/text.length*100);
+    wpmEl.textContent=wpm; accEl.textContent=acc;
+    if(wpm>best){ best=wpm; try{ localStorage.setItem('mochiTypeBest',best); }catch(e){} bestEl.textContent=best; msgEl.textContent='🏆 New best — '+wpm+' WPM at '+acc+'% accuracy!'; }
+    else msgEl.textContent='Done! '+wpm+' WPM · '+acc+'% accuracy. Tap New sentence.';
+  }
+  inputEl.addEventListener('input', function(){
+    if(done) return;
+    var typed=inputEl.value;
+    if(!started && typed.length>0) started=Date.now();
+    render(typed);
+    // live WPM
+    if(started){ var el=Math.max(1,Date.now()-started); wpmEl.textContent=Math.round((typed.length/5)/(el/60000))||0; }
+    if(typed.length>=text.length) finish(typed);
+  });
+  document.getElementById('new').addEventListener('click', newSentence);
+
+  // test hooks
+  window.__mochiType = {
+    target:function(){ return text; }, setText:function(t){ text=t; started=0; done=false; inputEl.disabled=false; inputEl.value=''; render(''); },
+    type:function(str){ inputEl.value=str; inputEl.dispatchEvent(new Event('input')); },
+    wpm:function(){ return +wpmEl.textContent; }, done:function(){ return done; }
+  };
+
+  newSentence();
+})();
+</script>
+<script src="/assets/js/cute.js?nb=1"></script>
+</body>
+</html>
