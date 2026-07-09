@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🎨 Doodle Pad — Khyati17</title>
+<meta name="description" content="A free online drawing pad — pick a colour, choose a brush, doodle away and download your art. Works on touch and mouse." />
+<meta property="og:title" content="🎨 Doodle Pad — Khyati17" />
+<meta property="og:description" content="Draw and paint right in your browser — colours, brushes, eraser and download. Free on Khyati17." />
+<meta property="og:image" content="https://khyati17.com/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(135deg,#2b0b3a,#6a1b9a,#9c4dcc);min-height:100vh;display:flex;justify-content:center;align-items:center;padding:16px}
+  .container{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border-radius:24px;padding:22px;box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.12);text-align:center;max-width:560px;width:100%}
+  h1{font-size:1.6rem;color:#fff;margin-bottom:4px;text-shadow:0 0 30px rgba(233,216,255,.4)}
+  .subtitle{color:rgba(255,255,255,.7);font-size:.82rem;margin-bottom:14px}
+  .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;margin-bottom:12px}
+  .swatch{width:26px;height:26px;border-radius:50%;border:2px solid rgba(255,255,255,.4);cursor:pointer;padding:0;transition:transform .1s}
+  .swatch:hover{transform:scale(1.15)}
+  .swatch.active{border-color:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.35)}
+  .tb-group{display:flex;gap:6px;align-items:center;background:rgba(0,0,0,.25);border-radius:10px;padding:5px 10px}
+  .tb-group label{color:#e9d8ff;font-size:.75rem;font-weight:700}
+  input[type=range]{width:90px;accent-color:#c56be0}
+  input[type=color]{width:30px;height:26px;border:none;border-radius:6px;background:none;cursor:pointer;padding:0}
+  .btn{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);color:#fff;padding:7px 13px;border-radius:9px;cursor:pointer;font-size:.85rem;font-weight:600}
+  .btn:hover{background:#e9d8ff;color:#2b0b3a}
+  .btn.active{background:#e9d8ff;color:#2b0b3a}
+  .canvas-wrap{border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.4);background:#fff;line-height:0}
+  #pad{width:100%;height:auto;touch-action:none;cursor:crosshair;display:block}
+  .controls{margin-top:14px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .controls a,.controls button{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:9px 18px;border-radius:10px;cursor:pointer;font-size:.92rem;text-decoration:none;display:inline-block}
+  .controls a:hover,.controls button:hover{background:#e9d8ff;color:#2b0b3a}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🎨 Doodle Pad</h1>
+  <p class="subtitle">Pick a colour, choose a brush, and draw! Works with mouse or finger.</p>
+  <div class="toolbar" id="swatches"></div>
+  <div class="toolbar">
+    <div class="tb-group"><label for="picker">Colour</label><input type="color" id="picker" value="#6a1b9a" /></div>
+    <div class="tb-group"><label for="size">Brush</label><input type="range" id="size" min="1" max="40" value="6" /></div>
+    <button class="btn" id="eraser">🧽 Eraser</button>
+  </div>
+  <div class="canvas-wrap"><canvas id="pad" width="520" height="380"></canvas></div>
+  <div class="controls">
+    <button id="clear">🗑️ Clear</button>
+    <button id="download">⬇️ Save PNG</button>
+    <a href="/ai-tools/index.html">← All Tools</a>
+  </div>
+</div>
+<script>
+(function(){
+  var canvas=document.getElementById('pad'), ctx=canvas.getContext('2d');
+  var picker=document.getElementById('picker'), sizeEl=document.getElementById('size');
+  var color='#6a1b9a', size=6, erasing=false, drawing=false, last=null;
+  var COLORS=['#000000','#ffffff','#e53935','#fb8c00','#fdd835','#43a047','#1e88e5','#8e24aa','#6a1b9a','#f06292','#795548','#00acc1'];
+
+  function fillWhite(){ ctx.fillStyle='#fff'; ctx.fillRect(0,0,canvas.width,canvas.height); }
+  fillWhite();
+
+  // colour swatches
+  var sw=document.getElementById('swatches');
+  COLORS.forEach(function(c,i){
+    var b=document.createElement('button'); b.className='swatch'+(c==='#6a1b9a'?' active':''); b.style.background=c; b.setAttribute('aria-label','colour '+c);
+    b.addEventListener('click', function(){ setColor(c); document.querySelectorAll('.swatch').forEach(function(x){x.classList.remove('active');}); b.classList.add('active'); });
+    sw.appendChild(b);
+  });
+  function setColor(c){ color=c; erasing=false; document.getElementById('eraser').classList.remove('active'); picker.value=c; }
+
+  picker.addEventListener('input', function(){ setColor(picker.value); document.querySelectorAll('.swatch').forEach(function(x){x.classList.remove('active');}); });
+  sizeEl.addEventListener('input', function(){ size=+sizeEl.value; });
+  document.getElementById('eraser').addEventListener('click', function(){ erasing=!erasing; this.classList.toggle('active', erasing); });
+
+  function pos(e){
+    var r=canvas.getBoundingClientRect();
+    var sx=canvas.width/r.width, sy=canvas.height/r.height;
+    var cx=(e.touches?e.touches[0].clientX:e.clientX)-r.left;
+    var cy=(e.touches?e.touches[0].clientY:e.clientY)-r.top;
+    return {x:cx*sx, y:cy*sy};
+  }
+  function stroke(a,b){
+    ctx.strokeStyle=erasing?'#fff':color; ctx.lineWidth=size; ctx.lineCap='round'; ctx.lineJoin='round';
+    ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+  }
+  function down(e){ e.preventDefault(); drawing=true; last=pos(e); stroke(last,{x:last.x+0.01,y:last.y}); }
+  function move(e){ if(!drawing) return; e.preventDefault(); var p=pos(e); stroke(last,p); last=p; }
+  function up(){ drawing=false; last=null; }
+
+  canvas.addEventListener('mousedown',down); canvas.addEventListener('mousemove',move); window.addEventListener('mouseup',up);
+  canvas.addEventListener('touchstart',down,{passive:false}); canvas.addEventListener('touchmove',move,{passive:false}); canvas.addEventListener('touchend',up);
+
+  document.getElementById('clear').addEventListener('click', function(){ fillWhite(); });
+  document.getElementById('download').addEventListener('click', function(){
+    var a=document.createElement('a'); a.download='my-doodle.png'; a.href=canvas.toDataURL('image/png'); a.click();
+  });
+
+  // test hooks
+  window.__doodle = {
+    strokeLine:function(x1,y1,x2,y2){ stroke({x:x1,y:y1},{x:x2,y:y2}); },
+    clear:function(){ fillWhite(); },
+    nonWhitePixels:function(){ var d=ctx.getImageData(0,0,canvas.width,canvas.height).data, n=0; for(var i=0;i<d.length;i+=4){ if(d[i]<250||d[i+1]<250||d[i+2]<250) n++; } return n; },
+    setColor:setColor, setErasing:function(v){ erasing=v; }
+  };
+})();
+</script>
+<script src="/assets/js/cute.js?nb=1"></script>
+</body>
+</html>
