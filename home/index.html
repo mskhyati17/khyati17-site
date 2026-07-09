@@ -126,6 +126,15 @@
     @media (max-width:560px){ .picks-row{grid-template-columns:1fr} }
     [data-theme="dark"] .pick{background:#241633;border-color:#3a2550}
     [data-theme="dark"] .pick .pt{color:#e5d8f5}
+    /* Original games showcase */
+    .orig-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:2px 0 30px}
+    .orig{display:flex;flex-direction:column;align-items:center;gap:6px;background:#fff;border:1px solid #efe4fb;border-radius:16px;padding:16px 8px;text-decoration:none;color:inherit;transition:transform .15s,box-shadow .15s}
+    .orig:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(117,80,168,.16)}
+    .orig .oe{font-size:2rem;line-height:1}
+    .orig b{font-size:.8rem;color:#4a2370;text-align:center;line-height:1.2}
+    @media (max-width:560px){ .orig-row{grid-template-columns:repeat(2,1fr)} }
+    [data-theme="dark"] .orig{background:#241633;border-color:#3a2550}
+    [data-theme="dark"] .orig b{color:#e5d8f5}
   </style>
 
   <section class="home-explore" id="explore" aria-labelledby="explore-title">
@@ -139,6 +148,19 @@
 
       <h2 class="explore-title" style="margin-bottom:14px">✨ Today's Picks</h2>
       <div id="today-picks"></div>
+
+      <h2 class="explore-title" style="margin-bottom:6px">⭐ Original Mochi Games</h2>
+      <p class="explore-sub" style="margin-bottom:16px">Eight little games I built by hand — you won't find these anywhere else. 🐶</p>
+      <div class="orig-row">
+        <a class="orig" href="/fun-games/mochi-treat-catch.html"><span class="oe">🐶</span><b>Treat Catch</b></a>
+        <a class="orig" href="/fun-games/mochi-says.html"><span class="oe">🐾</span><b>Mochi Says</b></a>
+        <a class="orig" href="/fun-games/perfect-fetch.html"><span class="oe">🎾</span><b>Perfect Fetch</b></a>
+        <a class="orig" href="/fun-games/word-rescue.html"><span class="oe">🔤</span><b>Word Rescue</b></a>
+        <a class="orig" href="/fun-games/paw-reflex.html"><span class="oe">⚡</span><b>Paw Reflex</b></a>
+        <a class="orig" href="/fun-games/mochi-quiz.html"><span class="oe">🧠</span><b>Mochi Quiz</b></a>
+        <a class="orig" href="/fun-games/mochi-match.html"><span class="oe">🃏</span><b>Mochi Match</b></a>
+        <a class="orig" href="/fun-games/whack-a-mochi.html"><span class="oe">🔨</span><b>Whack-a-Mochi</b></a>
+      </div>
 
       <h2 id="explore-title" class="explore-title">Everything to explore ✨</h2>
       <p class="explore-sub">One playground for games, stories, tools and more — all free, right in your browser.</p>
