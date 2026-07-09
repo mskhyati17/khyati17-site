@@ -1850,4 +1850,104 @@ export const STORIES = [
     created_at: "2026-08-17T10:00:00Z",
     body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Fen the fox collected words. Not stones, not berries — <em>words.</em> Whenever she heard a beautiful one, she'd tuck it away in her den: <em>shimmer, hushed, marmalade, galumph.</em> She had shelves of them, and she was very proud of her collection, though she rarely used any of them out loud.</p><p>One rainy evening a badger moved into the burrow next door. He never spoke a word, only sat by his window looking terribly sad. The other animals whispered that he'd lost someone dear and forgotten how to be happy.</p><p>Fen watched him for days. She thought about her grand collection of words, sitting silent on their shelves. And she realized, with a small jolt, that a word kept in a jar is worth nothing at all.</p><p>So one morning she knocked on the badger's door and gave him a word. “<em>Welcome,</em>” she said simply. The next day: “<em>Friend.</em>” Then “<em>Tea?</em>” Then whole sentences — funny ones, kind ones, ones that made the badger's ears twitch. Little by little, the sad badger began to answer. And little by little, he began to smile.</p><p>Fen never stopped loving beautiful words. But she stopped hoarding them. She learned that words aren't treasures to hide away on a shelf — they're gifts, and they only truly shine the moment you give them to someone who needs one.</p>"
   },
+  {
+    title: "The Clockmaker's Last Gift",
+    author: "Khyati Srivastava",
+    slug: "clockmakers-last-gift",
+    category: "Fantasy",
+    emoji: "⏰",
+    excerpt: "An old clockmaker builds one final clock — one that doesn't count the hours you have left, but the moments you'll always remember.",
+    created_at: "2026-08-18T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>In a town full of ticking, old Tobias was the finest clockmaker of all. His clocks kept perfect time, and people came from far away to buy them. But as Tobias grew old, he began to build one last clock — a secret one, unlike any other.</p><p>It had no numbers and no hands. When his granddaughter Lily asked what it counted, he smiled. “Ordinary clocks count the hours you spend,” he said. “This one counts the moments you'll never forget.”</p><p>He showed her: when she laughed at his silly joke, a tiny golden light bloomed inside the glass. When she hugged him goodnight, another. When they watched the first snow fall together, three more. The clock didn't measure time slipping away — it collected the moments worth keeping.</p><p>When Tobias passed on that winter, Lily was heartbroken. But she still had the clock, and inside it glowed hundreds of little golden lights — every joke, every hug, every snowfall they'd ever shared, saved forever.</p><p>She kept the clock her whole life, and added her own bright moments to it, and passed it to her grandchildren in turn. For that was the clockmaker's last and greatest gift: the truth that we don't really lose the ones we love. We keep them, glowing softly, in every moment they helped us remember.</p>"
+  },
+  {
+    title: "The Boy Who Could Talk to Rain",
+    author: "Khyati Srivastava",
+    slug: "boy-who-could-talk-to-rain",
+    category: "Fantasy",
+    emoji: "🌧️",
+    excerpt: "In a village suffering a long drought, a quiet boy discovers he can hear what the rain is waiting for — an apology the whole town forgot to make.",
+    created_at: "2026-08-19T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>The village of Dry Hollow hadn't seen rain in three long years. The fields cracked, the wells ran low, and the people grew short-tempered. Only a quiet boy named Ravi seemed calm — because Ravi, alone among them, could hear the rain whispering from far away.</p><p>“It's not gone,” he told the elders. “It's waiting. It says it won't come back until the town says sorry.” The elders scoffed. “Sorry for what?” they demanded.</p><p>So Ravi listened harder, and the rain told him the story. Years ago, the villagers had cut down the great old willow by the spring — the tree that had shaded travellers and sheltered birds for two hundred years — just to build a bigger market stall. No one had thanked it. No one had said goodbye. And the rain, which had loved that tree, had gone away grieving.</p><p>The elders laughed no longer. Together, the whole village walked to the empty spot by the spring. They planted a young willow in the old one's place. And one by one, they spoke aloud their thanks and their sorrow to the tree that had given them so much.</p><p>As the last apology was spoken, Ravi felt a cool drop land on his cheek. Then another. Then the sky opened, and the long-awaited rain fell soft and forgiving over Dry Hollow — and the little willow lifted its leaves to drink.</p>"
+  },
+  {
+    title: "The Marble Champion",
+    author: "Khyati Srivastava",
+    slug: "the-marble-champion",
+    category: "Drama",
+    emoji: "🔵",
+    excerpt: "Nobody can beat Sam at marbles — until a new girl arrives who plays to lose, and teaches him what winning was costing him.",
+    created_at: "2026-08-20T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Sam was the undefeated marble champion of the schoolyard. He'd won everyone's best marbles — the swirlies, the cat's-eyes, the rare golden shooter — and kept them in a jar that he polished every night. But lately, the other kids had stopped asking him to play. Winning, he was starting to notice, was a lonely business.</p><p>Then a new girl named Priya arrived, and she was <em>terrible</em> at marbles. She lost cheerfully, game after game, laughing at her own wild shots. Sam won every marble she had within a week.</p><p>“Why do you keep playing me?” he finally asked. “You always lose.”</p><p>Priya grinned. “Because it's fun. I don't play to win the marbles. I play to have someone to play with.” And Sam looked around and realized that Priya, who had almost no marbles left, had made ten new friends — while he, with a whole jar of them, had none.</p><p>That afternoon, Sam did something the marble champion had never done. He opened his jar and began giving the marbles back — the swirlies, the cat's-eyes, even the golden shooter. “Rematch?” he asked the kids, one by one. “Loser's choice of game.”</p><p>He never won the championship again. He was far too busy, at last, actually playing.</p>"
+  },
+  {
+    title: "The Cloud Zoo",
+    author: "Khyati Srivastava",
+    slug: "the-cloud-zoo",
+    category: "Kids",
+    emoji: "🐘",
+    excerpt: "Every afternoon, little Theo lies in the grass and visits the zoo that lives in the sky — where the animals are made of clouds and no cage is ever needed.",
+    created_at: "2026-08-21T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Every afternoon, little Theo would lie back in the soft green grass, look up, and visit his very own zoo — the Cloud Zoo, high in the summer sky.</p><p>There was the cloud elephant, big and slow, flapping ears made of mist. There was the cloud giraffe, stretching its fluffy neck to nibble the sun. A whole herd of cloud sheep drifted by, and a cloud whale sailed grandly overhead, spouting a puff of white from its blowhole.</p><p>The best thing about the Cloud Zoo, Theo thought, was that nothing was ever in a cage. The animals wandered wherever the wind took them, free and easy, changing shape as they pleased. The elephant might become a castle, the giraffe a ship, the whale a dragon — and that was allowed, because in the Cloud Zoo, everyone got to become whatever they dreamed of being.</p><p>Some days the sky was empty and blue, and Theo would feel a little sad. But he learned to be patient. Sooner or later a wisp would appear, then another, and his zoo would slowly fill again with wonderful woolly creatures.</p><p>“The trick,” Theo told his baby sister, pointing up as a cloud lion yawned across the sky, “is that you can't <em>keep</em> the clouds. You can only enjoy them while they're here. And somehow, that makes them even more magic.”</p>"
+  },
+  {
+    title: "The Echo Cave and the Two Explorers",
+    author: "Khyati Srivastava",
+    slug: "echo-cave-two-explorers",
+    category: "Adventure",
+    emoji: "🕳️",
+    excerpt: "Two rival explorers race to the treasure at the heart of the Echo Cave — where every word you shout comes back to help you, or to haunt you.",
+    created_at: "2026-08-22T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Legend told of a treasure deep in the Echo Cave, and two explorers set out to claim it: boastful Garrett, who trusted only himself, and gentle Ines, who travelled with her old dog, Pip. They entered the cave at the same moment, from opposite doors.</p><p>The cave, it turned out, was strange. Whatever you called out came echoing back — and here, the echoes were <em>real.</em> When Garrett shouted “Out of my way!” the cave hurled the angry words back at him, and rocks tumbled down to block his path. When he snarled “I don't need anyone!” the echo answered, and the tunnels around him grew dark and lonely and confusing.</p><p>But Ines walked softly. When she came to a fork, she called out kindly, “Which way, friend?” — and the gentle echo returned, guiding her true. When she was frightened, she said aloud, “I can do this,” and the cave whispered it back a hundred times until she believed it. When Pip whimpered, she said “I've got you,” and the echo wrapped them both in courage.</p><p>Ines reached the treasure first — a chest of old gold — while Garrett was still lost in the tunnels of his own harsh words. And being who she was, she called out one last time into the dark: “Garrett! Follow my voice — I'll lead you out.”</p><p>The kind echo carried her offer down every passage, and at last the two explorers walked out into the sunlight together. Ines had learned the cave's secret, the one Garrett never did: the world tends to give you back exactly what you send into it.</p>"
+  },
+  {
+    title: "The Violin That Remembered",
+    author: "Khyati Srivastava",
+    slug: "violin-that-remembered",
+    category: "Drama",
+    emoji: "🎻",
+    excerpt: "A dusty old violin in a pawn shop won't make a sound for anyone — until a shy street kid picks it up, and it finally remembers the song it was waiting for.",
+    created_at: "2026-08-23T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>In the corner of a crowded pawn shop sat an old violin that nobody wanted. It was beautiful once, but now it was dusty and silent — and the strangest thing was, no matter who tried to play it, it made no sound at all. Not a squeak. The shopkeeper had nearly thrown it out a dozen times.</p><p>One cold evening a shy street kid named Milo crept in to warm up. He didn't have a coin to his name, but his eyes fell on the silent violin, and something in it seemed to call to him. Carefully, nervously, he lifted it to his shoulder and drew the bow across the strings.</p><p>And the violin sang.</p><p>Not just a note — a whole melody poured out, warm and aching and full of joy, a song Milo had never learned but somehow knew. The whole shop went still. Tears stood in the old shopkeeper's eyes. “That song,” he whispered. “My daughter used to play that song. On that very violin. Fifty years ago, before she went away.”</p><p>The violin, it seemed, had been waiting all those years — silent, faithful — for someone whose heart could remember the music it held. And in shy, penniless Milo, at last, it had found its player.</p><p>The shopkeeper pressed the violin into Milo's hands. “It's yours,” he said. “It chose you. Just promise me you'll never let it go quiet again.” And Milo, who had never owned anything in his life, held the singing violin close and promised that he would not.</p>"
+  },
+  {
+    title: "The Hundred-Year Nap",
+    author: "Khyati Srivastava",
+    slug: "hundred-year-nap",
+    category: "Comedy",
+    emoji: "😴",
+    excerpt: "A very sleepy dragon lies down for a quick nap and wakes up a hundred years later — to a world of tiny knights, phones, and absolutely no idea what's going on.",
+    created_at: "2026-08-24T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Ember the dragon loved two things: gold, and naps. Mostly naps. One drowsy afternoon he curled up in his mountain cave, muttered “just five more minutes,” and promptly slept for a hundred years.</p><p>When he finally yawned awake and lumbered outside, the world had… changed. The knights who used to challenge him were now tiny, and instead of swords they carried little glowing rectangles they stared at constantly. “Excuse me,” Ember rumbled to a passing villager, “where is the kingdom of Farlingham?” The villager screamed, took a photo of him, and posted it online.</p><p>Within an hour, Ember was famous. Crowds gathered. People pointed their glowing rectangles at him and shouted things like “He's trending!” Ember, deeply confused, tried to demand a tribute of gold and was instead offered a sponsorship deal and a merchandise line.</p><p>It was all very overwhelming for a dragon who just wanted a quiet cave and a good nap. But then a small girl pushed through the crowd, looked up at him without a shred of fear, and asked simply, “Aren't you tired? You look tired.”</p><p>Ember blinked. “You know,” he admitted, “I really am.” So the girl led him away from the noisy crowd to a quiet green hill, where he curled up in the warm sun. “Wake me in another hundred years,” he yawned. “Or… maybe just come visit tomorrow instead.” And for the first time since waking, the old dragon smiled.</p>"
+  },
+  {
+    title: "The Girl Who Gave Away Her Shadow",
+    author: "Khyati Srivastava",
+    slug: "girl-who-gave-away-her-shadow",
+    category: "Inspirational",
+    emoji: "🌘",
+    excerpt: "When a small boy is afraid of the dark, a kind girl offers him the one thing that isn't scared of anything: her very own shadow.",
+    created_at: "2026-08-25T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>There was once a girl named Noor whose shadow was braver than anyone. It stretched tall in the morning and small at noon, and it was never, ever afraid — not of thunder, not of monsters, not even of the deepest dark.</p><p>Now, next door lived a little boy named Sami who was frightened of the night. Every evening when the sun went down, he'd hide under his blanket, certain the shadows in his room were creeping closer.</p><p>One night Noor heard him crying through the wall, and she had an idea. She knocked softly on his door. “I've brought you something,” she said. “My shadow. It isn't scared of anything, and it will keep you company until you're brave enough on your own.”</p><p>Sami wasn't sure a shadow could help. But that night, when the dark pressed in, he watched Noor's brave shadow stand guard at the foot of his bed — tall and steady and unafraid — and slowly his fear melted away. He slept the whole night through.</p><p>Night after night the brave little shadow watched over him, until one evening Sami noticed something wonderful: <em>his own</em> shadow had grown taller and braver too, just from keeping such good company. He didn't need Noor's anymore.</p><p>So he gave it back with a thank-you — and passed the secret on. Because Noor had taught him the truest kind of courage: it isn't something you're born with. It's something brave friends lend you, until one day you find you've grown your own.</p>"
+  },
+  {
+    title: "The Bakery Cat's Secret",
+    author: "Khyati Srivastava",
+    slug: "bakery-cats-secret",
+    category: "Mystery",
+    emoji: "🐈",
+    excerpt: "The little bakery is failing — until a stray cat moves in, and business booms. What's the cat's secret? A curious girl is determined to find out.",
+    created_at: "2026-08-26T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Old Mr. Bianchi's bakery was the best in town, but hardly anyone came anymore — it sat on a forgotten little side street, and folks simply passed it by. Then one rainy morning a scruffy stray cat wandered in, curled up in the front window, and refused to leave. Mr. Bianchi hadn't the heart to shoo her out.</p><p>The very next day, something odd happened: customers came. Then more. Within a week the little bakery was busier than it had ever been, the bell over the door jingling all day long. Mr. Bianchi was baffled and delighted. But a curious girl named Gia, who visited every afternoon for a cinnamon bun, was determined to solve the mystery.</p><p>She watched carefully. And slowly, she pieced it together. The cat in the window was so charming that passers-by stopped to look at her. And once they'd stopped, they smelled the warm bread. And once they'd smelled the bread, well — who could resist? The cat wasn't magic. She simply gave hurrying people a reason to <em>pause</em> — and a paused person notices the good things they'd been rushing past.</p><p>Gia told Mr. Bianchi what she'd worked out, and he laughed and laughed. He named the cat Fortuna, and gave her the sunniest cushion in the window, and a saucer of cream every morning. And the bakery on the forgotten little street was never forgotten again — all thanks to one stray cat who taught a whole town to slow down and smell the cinnamon.</p>"
+  },
+  {
+    title: "The Spaceship Made of Paper",
+    author: "Khyati Srivastava",
+    slug: "spaceship-made-of-paper",
+    category: "Sci-Fi",
+    emoji: "🚀",
+    excerpt: "Everyone says you can't reach the stars in a paper rocket. A determined girl named Orla decides to find out whether everyone is wrong.",
+    created_at: "2026-08-27T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Orla wanted to visit the stars more than anything. She had no rocket, no fuel, and no fortune — only a big stack of paper and a bigger imagination. So she started folding.</p><p>She folded a nose cone, and wings, and little paper windows. The grown-ups chuckled. “You can't fly to space in a paper spaceship,” they said kindly. “That's impossible.” But Orla just kept folding, and dreaming, and drawing star maps on the back of old envelopes.</p><p>She launched her paper ship from the top of the hill. It sailed a beautiful arc — and landed in the grass. It didn't reach space. Of course it didn't. But a boy named Theo had watched it fly, and he ran over with shining eyes. “Can you teach me to make one?” So she did. Then a whole crowd of children wanted to learn, and soon the hill was full of paper rockets soaring against the sky.</p><p>Years and years later, Orla stood in a great control room, watching a real rocket — one she had helped design — thunder up through the clouds toward the stars. A reporter asked how it all began. Orla smiled and pulled a small, worn paper spaceship from her pocket.</p><p>“With this,” she said. “Everyone told me it was impossible. But an impossible thing you actually try is how every possible thing begins. You just have to be brave enough to launch the paper one first.”</p>"
+  },
 ];
