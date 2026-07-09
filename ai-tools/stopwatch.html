@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>⏱️ Stopwatch & Timer — Khyati17</title>
+<meta name="description" content="A free online stopwatch with lap times and a countdown timer — right in your browser, no downloads. Free on Khyati17." />
+<meta property="og:title" content="⏱️ Stopwatch & Timer — Khyati17" />
+<meta property="og:description" content="An online stopwatch (with laps) and countdown timer — free on Khyati17." />
+<meta property="og:image" content="https://khyati17.com/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(135deg,#2b0b3a,#6a1b9a,#9c4dcc);min-height:100vh;display:flex;justify-content:center;align-items:center;padding:16px}
+  .container{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border-radius:24px;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.12);text-align:center;max-width:440px;width:100%}
+  h1{font-size:1.55rem;color:#fff;margin-bottom:14px;text-shadow:0 0 30px rgba(233,216,255,.4)}
+  .tabs{display:flex;gap:8px;justify-content:center;margin-bottom:18px}
+  .tab{flex:1;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.15);color:#e9d8ff;padding:9px;border-radius:10px;cursor:pointer;font-weight:700;font-size:.9rem}
+  .tab.active{background:#e9d8ff;color:#2b0b3a}
+  .display{font-variant-numeric:tabular-nums;font-size:3.2rem;font-weight:800;color:#fff;letter-spacing:1px;margin:10px 0 18px;text-shadow:0 0 24px rgba(233,216,255,.35)}
+  .display small{font-size:1.6rem;opacity:.8}
+  .btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .btns button{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);color:#fff;padding:10px 20px;border-radius:10px;cursor:pointer;font-size:.95rem;font-weight:700}
+  .btns button:hover{background:#e9d8ff;color:#2b0b3a}
+  .btns .primary{background:#e9d8ff;color:#2b0b3a}
+  .timer-set{display:flex;gap:8px;justify-content:center;align-items:center;color:#e9d8ff;margin-bottom:16px}
+  .timer-set input{width:64px;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,.3);text-align:center;font-size:1rem;font-family:inherit}
+  .laps{list-style:none;margin:16px 0 0;max-height:150px;overflow:auto;text-align:left}
+  .laps li{display:flex;justify-content:space-between;color:#e9d8ff;font-size:.88rem;padding:6px 8px;border-bottom:1px solid rgba(255,255,255,.1);font-variant-numeric:tabular-nums}
+  .controls{margin-top:18px}
+  .controls a{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:9px 18px;border-radius:10px;text-decoration:none;font-size:.9rem}
+  .controls a:hover{background:#e9d8ff;color:#2b0b3a}
+  .hidden{display:none}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>⏱️ Stopwatch &amp; Timer</h1>
+  <div class="tabs">
+    <button class="tab active" id="tab-sw">Stopwatch</button>
+    <button class="tab" id="tab-tm">Timer</button>
+  </div>
+
+  <!-- Stopwatch -->
+  <div id="sw">
+    <div class="display" id="sw-display">00:00<small>.00</small></div>
+    <div class="btns">
+      <button class="primary" id="sw-toggle">Start</button>
+      <button id="sw-lap">Lap</button>
+      <button id="sw-reset">Reset</button>
+    </div>
+    <ul class="laps" id="sw-laps"></ul>
+  </div>
+
+  <!-- Timer -->
+  <div id="tm" class="hidden">
+    <div class="timer-set">
+      <input type="number" id="tm-min" min="0" max="180" value="5" aria-label="Minutes" /> min
+      <input type="number" id="tm-sec" min="0" max="59" value="0" aria-label="Seconds" /> sec
+    </div>
+    <div class="display" id="tm-display">05:00</div>
+    <div class="btns">
+      <button class="primary" id="tm-toggle">Start</button>
+      <button id="tm-reset">Reset</button>
+    </div>
+  </div>
+
+  <div class="controls"><a href="/ai-tools/index.html">← All Tools</a></div>
+</div>
+<script>
+(function(){
+  // ---------- Stopwatch ----------
+  var swDisp=document.getElementById('sw-display'), swToggle=document.getElementById('sw-toggle'), swLapsEl=document.getElementById('sw-laps');
+  var swRunning=false, swElapsed=0, swStart=0, swRAF=null, laps=[];
+  function fmt(ms){ var cs=Math.floor(ms/10)%100, s=Math.floor(ms/1000)%60, m=Math.floor(ms/60000); function p(n){return (n<10?'0':'')+n;} return p(m)+':'+p(s)+'<small>.'+p(cs)+'</small>'; }
+  function swRender(){ swDisp.innerHTML=fmt(swElapsed); }
+  function swTick(){ swElapsed = Date.now()-swStart; swRender(); if(swRunning) swRAF=requestAnimationFrame(swTick); }
+  function swStartStop(){
+    if(swRunning){ swRunning=false; cancelAnimationFrame(swRAF); swToggle.textContent='Start'; swToggle.classList.add('primary'); }
+    else { swRunning=true; swStart=Date.now()-swElapsed; swToggle.textContent='Stop'; swToggle.classList.remove('primary'); swTick(); }
+  }
+  swToggle.addEventListener('click', swStartStop);
+  document.getElementById('sw-lap').addEventListener('click', function(){ if(swElapsed<=0) return; laps.push(swElapsed); var li=document.createElement('li'); li.innerHTML='<span>Lap '+laps.length+'</span><span>'+fmt(swElapsed).replace(/<\/?small>/g,'')+'</span>'; swLapsEl.insertBefore(li, swLapsEl.firstChild); });
+  document.getElementById('sw-reset').addEventListener('click', function(){ swRunning=false; cancelAnimationFrame(swRAF); swElapsed=0; laps=[]; swLapsEl.innerHTML=''; swToggle.textContent='Start'; swToggle.classList.add('primary'); swRender(); });
+  swRender();
+
+  // ---------- Timer ----------
+  var tmDisp=document.getElementById('tm-display'), tmToggle=document.getElementById('tm-toggle'), tmMin=document.getElementById('tm-min'), tmSec=document.getElementById('tm-sec');
+  var tmRunning=false, tmRemaining=300000, tmEnd=0, tmInt=null, audio=null;
+  function tfmt(ms){ ms=Math.max(0,ms); var s=Math.ceil(ms/1000); var m=Math.floor(s/60); s=s%60; function p(n){return (n<10?'0':'')+n;} return p(m)+':'+p(s); }
+  function tmRender(){ tmDisp.textContent=tfmt(tmRemaining); }
+  function setFromInputs(){ var m=Math.max(0,Math.min(180,parseInt(tmMin.value,10)||0)); var s=Math.max(0,Math.min(59,parseInt(tmSec.value,10)||0)); tmRemaining=(m*60+s)*1000; tmRender(); }
+  function beep(){ try{ if(!audio) audio=new (window.AudioContext||window.webkitAudioContext)(); if(audio.state==='suspended') audio.resume(); var o=audio.createOscillator(),g=audio.createGain(); o.type='sine'; o.frequency.value=880; var t=audio.currentTime; g.gain.setValueAtTime(0.001,t); g.gain.exponentialRampToValueAtTime(0.3,t+0.02); g.gain.exponentialRampToValueAtTime(0.001,t+0.5); o.connect(g); g.connect(audio.destination); o.start(t); o.stop(t+0.52); }catch(e){} }
+  function tmTick(){ tmRemaining = tmEnd-Date.now(); if(tmRemaining<=0){ tmRemaining=0; tmRender(); tmStop(true); return; } tmRender(); }
+  function tmStop(finished){ tmRunning=false; clearInterval(tmInt); tmToggle.textContent='Start'; tmToggle.classList.add('primary'); tmMin.disabled=false; tmSec.disabled=false; if(finished){ tmDisp.textContent="00:00"; for(var i=0;i<3;i++) setTimeout(beep, i*250); } }
+  tmToggle.addEventListener('click', function(){
+    if(tmRunning){ tmStop(false); return; }
+    if(tmRemaining<=0) setFromInputs();
+    if(tmRemaining<=0) return;
+    tmRunning=true; tmEnd=Date.now()+tmRemaining; tmToggle.textContent='Pause'; tmToggle.classList.remove('primary'); tmMin.disabled=true; tmSec.disabled=true; beep && ensureAudioGesture(); tmInt=setInterval(tmTick,100);
+  });
+  function ensureAudioGesture(){ try{ if(!audio) audio=new (window.AudioContext||window.webkitAudioContext)(); if(audio.state==='suspended') audio.resume(); }catch(e){} }
+  document.getElementById('tm-reset').addEventListener('click', function(){ tmStop(false); setFromInputs(); });
+  tmMin.addEventListener('change', setFromInputs); tmSec.addEventListener('change', setFromInputs);
+  setFromInputs();
+
+  // ---------- Tabs ----------
+  var tabSw=document.getElementById('tab-sw'), tabTm=document.getElementById('tab-tm'), swEl=document.getElementById('sw'), tmEl=document.getElementById('tm');
+  tabSw.addEventListener('click', function(){ tabSw.classList.add('active'); tabTm.classList.remove('active'); swEl.classList.remove('hidden'); tmEl.classList.add('hidden'); });
+  tabTm.addEventListener('click', function(){ tabTm.classList.add('active'); tabSw.classList.remove('active'); tmEl.classList.remove('hidden'); swEl.classList.add('hidden'); });
+
+  // test hooks
+  window.__timer = {
+    swStart:function(){ if(!swRunning) swStartStop(); }, swStop:function(){ if(swRunning) swStartStop(); },
+    swElapsed:function(){ return swElapsed; }, lapCount:function(){ return laps.length; }, lap:function(){ document.getElementById('sw-lap').click(); },
+    setTimer:function(m,s){ tmMin.value=m; tmSec.value=s; setFromInputs(); }, timerRemaining:function(){ return tmRemaining; }, timerText:function(){ return tmDisp.textContent; }
+  };
+})();
+</script>
+<script src="/assets/js/cute.js?nb=1"></script>
+</body>
+</html>
