@@ -1950,4 +1950,104 @@ export const STORIES = [
     created_at: "2026-08-27T10:00:00Z",
     body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Orla wanted to visit the stars more than anything. She had no rocket, no fuel, and no fortune — only a big stack of paper and a bigger imagination. So she started folding.</p><p>She folded a nose cone, and wings, and little paper windows. The grown-ups chuckled. “You can't fly to space in a paper spaceship,” they said kindly. “That's impossible.” But Orla just kept folding, and dreaming, and drawing star maps on the back of old envelopes.</p><p>She launched her paper ship from the top of the hill. It sailed a beautiful arc — and landed in the grass. It didn't reach space. Of course it didn't. But a boy named Theo had watched it fly, and he ran over with shining eyes. “Can you teach me to make one?” So she did. Then a whole crowd of children wanted to learn, and soon the hill was full of paper rockets soaring against the sky.</p><p>Years and years later, Orla stood in a great control room, watching a real rocket — one she had helped design — thunder up through the clouds toward the stars. A reporter asked how it all began. Orla smiled and pulled a small, worn paper spaceship from her pocket.</p><p>“With this,” she said. “Everyone told me it was impossible. But an impossible thing you actually try is how every possible thing begins. You just have to be brave enough to launch the paper one first.”</p>"
   },
+  {
+    title: "The Boy and the Origami Zoo",
+    author: "Khyati Srivastava",
+    slug: "boy-and-the-origami-zoo",
+    category: "Fantasy",
+    emoji: "🦢",
+    excerpt: "A lonely boy folds paper animals to keep him company — and one moonlit night, they quietly unfold themselves and come alive.",
+    created_at: "2026-08-28T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Kenji was new to the town and had no friends yet, so he kept himself company the only way he knew how — by folding paper. From bright squares he made a crane, a frog, an elephant, a whole little zoo that lined his windowsill.</p><p>One clear, moonlit night, Kenji woke to a soft rustling. He rubbed his eyes and gasped: the paper crane was stretching its crisp wings. The frog gave a papery hop. One by one, his whole origami zoo was coming quietly to life.</p><p>They couldn't speak, but they didn't need to. The elephant let him ride on its folded back. The crane flew loops around his lamp. The frog told jokes in cheerful little bows. For the first time since moving, Kenji laughed out loud in his empty new room.</p><p>Every night after that, the paper animals kept him company. But the crane seemed to want something more. It kept nudging a fresh square of paper toward him, then pointing its beak at the window, where a girl his age lived next door, looking just as lonely as he had been.</p><p>Kenji understood. The next morning he folded a small paper crane and left it on her doorstep with a note: <em>Want to learn?</em> She did. Soon two windowsills glowed with paper zoos — and Kenji found that the best magic of all wasn't the animals coming alive. It was that they'd nudged him, gently, back to life too.</p>"
+  },
+  {
+    title: "The Girl Who Raced the Wind",
+    author: "Khyati Srivastava",
+    slug: "girl-who-raced-the-wind",
+    category: "Adventure",
+    emoji: "🌬️",
+    excerpt: "Everyone says the wind can't be beaten. So of course, one stubborn girl on a homemade kite-cart sets out to try.",
+    created_at: "2026-08-29T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>On the wide, flat salt plains where the wind never stopped blowing, the people had a saying: “You can ride the wind, but you can never beat it.” Tam, a stubborn girl with grease on her hands and stars in her eyes, decided she would find out for herself.</p><p>She built a cart — light as a whisper, with a great bright sail and wheels she'd carved by hand. The elders shook their heads. The other children laughed. But Tam just tightened the last bolt, climbed aboard, and let the wind fill her sail.</p><p>The cart shot forward, faster and faster, until the salt flats blurred to silver. The wind howled beside her, and for one glorious stretch she was neck and neck with it, her hair streaming, her heart pounding. She wasn't beating the wind — she was <em>dancing</em> with it.</p><p>Then a gust caught her sail wrong, and the cart tumbled, spilling her laughing into the soft salt. She hadn't won. But as she lay there catching her breath, she realized she'd learned the wind's real secret. You don't beat the wind by fighting it. You go far, far faster by working <em>with</em> it.</p><p>Tam rebuilt her cart stronger and smarter, and by summer's end she could ride the wind further than anyone ever had. She never did beat it. But she and the wind became the very best of racing partners — and that, she decided, was even better than winning.</p>"
+  },
+  {
+    title: "The Very Honest Mirror",
+    author: "Khyati Srivastava",
+    slug: "the-very-honest-mirror",
+    category: "Fairytale",
+    emoji: "🪞",
+    excerpt: "A vain queen owns a mirror that only tells the truth. She wants to hear she's the fairest — but the mirror keeps showing her something far more useful.",
+    created_at: "2026-08-30T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Queen Isolde owned a mirror that could not tell a lie. Every morning she asked it, “Mirror, am I the fairest of them all?” And every morning the honest mirror answered, “You are lovely, Your Majesty — but the fairest is she whose heart is kindest.”</p><p>This annoyed the queen enormously. She had jewels and gowns and a face people called beautiful. Yet the mirror kept showing her, in its truthful glass, not her reflection but images of others: a servant girl sharing her only bread, a gardener singing to the sick, a child comforting a crying friend.</p><p>“Why do you show me <em>them</em>?” the queen demanded. “Because,” the mirror replied gently, “you asked to see the fairest. And this is what fair truly looks like.”</p><p>For a long time the queen sulked. But the images stayed with her — the bread, the song, the comfort. Slowly, almost without noticing, she began to do small kind things herself. She freed the songbirds she'd kept in cages. She visited the sick. She learned the names of the servants who'd served her for years.</p><p>One morning she stood before the mirror and forgot, for once, to ask her usual question. She simply smiled at the glass — and there, at last, the honest mirror showed her <em>her own face.</em> “Ah,” it said warmly. “Now you understand.” And Queen Isolde, fairest at last, smiled back.</p>"
+  },
+  {
+    title: "The Robot Who Wanted to Sneeze",
+    author: "Khyati Srivastava",
+    slug: "robot-who-wanted-to-sneeze",
+    category: "Comedy",
+    emoji: "🤖",
+    excerpt: "Beep-3000 has watched humans sneeze and finds it fascinating. Now the little robot is absolutely determined to do it too — with hilarious results.",
+    created_at: "2026-08-31T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Beep-3000 was a curious little household robot, and lately it had become fascinated by one very human thing: sneezing. “A-CHOO!” went the family, and Beep-3000 would tilt its head in wonder. It was so sudden, so dramatic, so gloriously silly. Beep-3000 wanted, more than anything, to sneeze too.</p><p>The trouble was, robots do not sneeze. But Beep-3000 was nothing if not determined. It tried sniffing pepper (its sensors just flashed <em>ERROR: SPICY</em>). It tried looking at a bright light like Grandpa did (it only overheated a little). It tried saying “a… a… a…” and waiting hopefully, but nothing ever came after.</p><p>The family watched its efforts with great amusement and grew very fond of their sneeze-obsessed robot. They cheered on every attempt. They made it a tiny tissue box. Still, no sneeze came.</p><p>Then one dusty afternoon, while Beep-3000 was helping clean the attic, a great cloud of dust puffed straight into its air-intake vent. Its lights flickered. Its fans whirred. Its whole body shook — and then, at last: <em>“A-CHOO-BEEP!”</em> A magnificent little robotic sneeze, complete with a puff of dust and a very surprised beep.</p><p>The family erupted in cheers. Beep-3000 blinked its lights in pure joy. It had finally, gloriously sneezed. And from that day on — much to everyone's delight — it absolutely refused to stop.</p>"
+  },
+  {
+    title: "The Keeper of Lost Balloons",
+    author: "Khyati Srivastava",
+    slug: "keeper-of-lost-balloons",
+    category: "Inspirational",
+    emoji: "🎈",
+    excerpt: "High above the clouds lives an old man who catches every balloon a child has ever let go — and one day, a small visitor helps him send them all back.",
+    created_at: "2026-09-01T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Far above the clouds, where the sky turns deep and quiet, lived an old man named Bartholomew, and his job was a curious one. He was the Keeper of Lost Balloons. Every balloon that ever slipped from a child's hand drifted up and up, and Bartholomew caught them all, tying each to his great floating house until it bristled with a thousand colours.</p><p>He kept them safe, but he was rather lonely up there, and the balloons — though beautiful — seemed a little sad, so far from the children who'd loved them.</p><p>One day a girl named Wenna floated up on a balloon of her own, refusing to let go, and so she arrived at Bartholomew's door. She looked at all the tethered balloons and felt their quiet sadness at once. “They miss their children,” she said. “And their children miss <em>them.</em> Why keep them up here?”</p><p>“I was only trying to keep them safe,” said Bartholomew, a little surprised. He had never thought that keeping something safe and keeping it happy might be two different things.</p><p>So together they began to let the balloons go — not carelessly, but with care, each one tied with a little note and aimed gently back toward the child it belonged to. All across the world, children looked up in wonder as a long-lost balloon came drifting home.</p><p>Bartholomew's house grew emptier, and lighter, and — strangely — far happier. And Wenna visited him often after that, so he was never lonely again. For he had finally learned the difference between holding on and letting go — and how much love there can be in both.</p>"
+  },
+  {
+    title: "The Midnight Bakery",
+    author: "Khyati Srivastava",
+    slug: "the-midnight-bakery-2",
+    category: "Fantasy",
+    emoji: "🥐",
+    excerpt: "Only children who can't sleep ever find the little bakery that opens at midnight — where the baker cooks up not bread, but the sweetest of dreams.",
+    created_at: "2026-09-02T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>There is a bakery that only opens at midnight, and only children who cannot sleep ever find it. Its window glows warm and gold at the end of a street that isn't there in the daytime, and the smell that drifts from its door is the smell of every cozy thing you've ever loved.</p><p>A boy named Sami, who lay awake most nights with a head too full of worries, found it one restless midnight. Inside, a kind baker with flour-dusted sleeves was pulling trays from a great oven — but the trays held no bread. They held <em>dreams.</em> Soft golden loaves of adventure. Little iced buns of laughter. A whole rack of gentle, drifting dreams of the sea.</p><p>“Couldn't sleep?” asked the baker kindly. Sami shook his head and spilled out all his worries — the test tomorrow, the friend he'd argued with, the dark he didn't like. The baker listened, nodded, and then baked him a special dream, just for him: warm and calm and safe.</p><p>“Here,” said the baker, wrapping it up. “Breathe it in on your way home.” Sami did. And by the time he reached his bed, his eyes were heavy and his worries had grown small and far away.</p><p>He slept the whole night through, and dreamed the loveliest dream. He never could find the midnight bakery again on purpose — but on the hardest nights, when he truly needed it, the warm gold window would always, somehow, be there.</p>"
+  },
+  {
+    title: "The Turtle Who Delivered the Mail",
+    author: "Khyati Srivastava",
+    slug: "turtle-who-delivered-the-mail",
+    category: "Animals",
+    emoji: "🐢",
+    excerpt: "Sheldon the turtle is the slowest postman in the meadow — but when a big storm grounds all the swift birds, slow and steady saves the day.",
+    created_at: "2026-09-03T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Sheldon the turtle delivered the mail in the meadow, and he was, without question, the slowest postman there had ever been. The speedy swallows who carried the urgent letters teased him endlessly. “By the time <em>you</em> arrive, Sheldon, the news will be older than you are!” they laughed, zipping past.</p><p>Sheldon didn't mind. He just plodded along his route, one steady step at a time, greeting everyone he passed and never, ever dropping a single letter.</p><p>Then came the Great Storm. The wind howled so fiercely that not one bird could fly — every swift swallow was grounded, huddled in the trees. And that very night, a letter needed to reach old Doctor Hedgehog on the far side of the meadow: little Fenn the rabbit had fallen ill, and only the doctor's medicine could help.</p><p>Nobody could fly it there. But low to the ground, slow and steady and utterly unbothered by the wind, one creature could still make the journey. Sheldon tucked the letter safely under his shell and set off into the storm.</p><p>All night he plodded, step by patient step, while the wind roared overhead. And just before dawn, he reached the doctor's door. The medicine came in time. Little Fenn was saved.</p><p>The swift swallows never teased Sheldon again. For they had learned what the slow old turtle had always known: it isn't the fastest who matters most, but the one who keeps going — steadily, faithfully — no matter the storm.</p>"
+  },
+  {
+    title: "The Painting That Wouldn't Stay Still",
+    author: "Khyati Srivastava",
+    slug: "painting-that-wouldnt-stay-still",
+    category: "Mystery",
+    emoji: "🖼️",
+    excerpt: "Every morning the painting in the museum is a little different. Junior curator Elif is determined to catch it in the act — and uncover a gentle secret.",
+    created_at: "2026-09-04T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>In the quietest room of the museum hung an old painting of a little seaside village. It was lovely, but ordinary — except for one impossible thing. Every morning it was <em>different.</em> One day a boat had sailed further out to sea. The next, a light glowed in a cottage window that had been dark. Junior curator Elif was the only one who noticed, and she was determined to solve the mystery.</p><p>She studied it for weeks. She measured it, photographed it, guarded it. Still, each dawn brought some small, quiet change no one could explain.</p><p>So one night, Elif hid in the museum after closing, and waited in the dark. At the stroke of midnight, the painting began, very softly, to glow. And as she watched in wonder, the tiny painted people came to life and went about a whole day — fishing, laughing, lighting lamps, walking home — living one more little day in their village, before settling back into place by dawn.</p><p>Elif understood then. The painting wasn't broken or haunted. It was simply <em>alive</em> — a small world where time still gently flowed, one quiet day at a time.</p><p>She never told the other curators her secret. But every morning after that, Elif was the first one in, hurrying to the quiet room to see what small, wonderful thing had happened overnight in the little painted village that would not stay still.</p>"
+  },
+  {
+    title: "The Last Firefly of Summer",
+    author: "Khyati Srivastava",
+    slug: "last-firefly-of-summer",
+    category: "Drama",
+    emoji: "✨",
+    excerpt: "As summer fades, a small girl worries the fireflies will never return. A wise grandmother teaches her what light really leaves behind.",
+    created_at: "2026-09-05T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>All summer long, Mira had chased the fireflies through the tall grass at dusk, cupping their gentle light in her hands and letting them go again. They were, she thought, the most magical thing in the whole world. But now summer was ending, and the fireflies were growing fewer each night, and Mira was afraid.</p><p>“What if they never come back?” she asked her grandmother, watching a single lonely firefly blink over the darkening field. “What if that's the very last one?”</p><p>Her grandmother pulled her close. “Perhaps it is,” she said softly. “But look — do you see how it glows?” Together they watched the little light rise and fall, patient and warm against the coming dark.</p><p>“A firefly's light is small and it doesn't last long,” Grandmother went on. “But while it shines, it makes the whole night more beautiful. And every child who ever saw it carries a little of that glow inside them, always. That's how the light stays, Mira — not in the field, but in <em>you.</em> The summers end. But the wonder they gave you never does.”</p><p>Mira watched the last firefly blink one final time and disappear into the night. She wasn't afraid anymore. Because she understood now that she was carrying its light with her — and next summer, and every summer after, when new fireflies rose glowing from the grass, a little of this one would be rising too.</p>"
+  },
+  {
+    title: "The Kid Who Fixed the Moon",
+    author: "Khyati Srivastava",
+    slug: "kid-who-fixed-the-moon",
+    category: "Sci-Fi",
+    emoji: "🌙",
+    excerpt: "When the moon starts flickering like a dying bulb, the world's scientists are stumped — but a ten-year-old with a toolbox has a theory.",
+    created_at: "2026-09-06T10:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>One night the moon flickered. Just once, like a candle in a draft. The next night it did it twice. Soon the whole world was watching in alarm as the moon blinked on and off like a dying light bulb. The greatest scientists gathered and argued and scribbled equations, but not one of them could say why.</p><p>A ten-year-old named Pia watched from her rooftop with her grandpa's old toolbox on her lap. “It's not broken exactly,” she said thoughtfully. “It's flickering. Loose things flicker. Grandpa's lamp did that when the bulb was loose. Somebody just needs to go up and give it a little twist.”</p><p>The grown-ups laughed — you can't climb to the moon with a toolbox. But Pia wrote her idea down anyway and sent it to the space agency, complete with a diagram and a very polite note. To everyone's surprise, a kind engineer wrote back: “Actually… a loose connection is exactly what our instruments show. We hadn't thought to say it so simply.”</p><p>They sent up a repair crew — and sure enough, deep in the moon's ancient machinery (for it turned out the moon had always had a little), one great glowing bolt had worked itself loose. The crew gave it a careful twist, just as Pia had suggested. And the moon, at last, glowed steady and full and calm once more.</p><p>Pia became rather famous after that. But she stayed exactly the same girl on the same rooftop, tinkering with her grandpa's toolbox — because, as she liked to say, the biggest problems in the world are often just little loose things, waiting for someone simple enough to see it, and brave enough to say so.</p>"
+  },
 ];
