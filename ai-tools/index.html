@@ -215,6 +215,8 @@
     grid-column:1/-1;text-align:center;color:var(--muted);
     padding:40px 0;font-size:.95rem;
   }
+  .load-more-btn{background:linear-gradient(90deg,#6a1b9a,#c56be0);color:#fff;border:none;border-radius:999px;padding:12px 28px;font-weight:800;font-size:.95rem;cursor:pointer;box-shadow:0 8px 22px rgba(117,80,168,.35)}
+  .load-more-btn:hover{transform:translateY(-2px)}
 
   /* ---------- Browse categories ---------- */
   .cat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
@@ -353,8 +355,8 @@ TOOLS.forEach((t,i)=>{
   });
 });
 
-/* Keep the "Coming Soon" teaser as the very last card in the grid. */
-AI_TOOLS.push({ name:"Coming Soon", category:"", emoji:"✨", color:"#F3ECFB", uses:-1, featured:false, status:"soon", desc:"More AI tools are being built. Check back soon!", url:"" });
+/* (The old "Coming Soon" teaser was removed — with 10,000+ tools it no longer
+   made sense.) */
 
 /* ============================================================
    STATE + RENDERING
@@ -406,48 +408,57 @@ function renderPopular(){
   });
 }
 
-/* --- Featured / main grid --- */
+/* --- Featured / main grid (paginated for fast render with a big toolbox) --- */
+const TOOL_PAGE = 60;
+let _tList = [], _tShown = 0, _tFeatured = null;
+
+function buildToolCard(t){
+  const card = el("div","card"+(t===_tFeatured?" big":"")+(t.status==="soon"?" soon":""));
+  card.style.background = t.color;
+  const BADGE = { live:["badge-live","● Live"], offline:["badge-offline","● Back soon"], soon:["badge-soon","Coming Soon"] };
+  const [bcls,btxt] = BADGE[t.status] || BADGE.live;
+  const badge = el("div", bcls); badge.textContent = btxt; card.appendChild(badge);
+  const visual = el("div","emoji"); visual.textContent = t.emoji;
+  const label = el("div","label"); label.textContent = t.name;
+  card.appendChild(visual); card.appendChild(label);
+  if(t.desc){ const ex=el("div","excerpt"); ex.textContent=t.desc; card.appendChild(ex); }
+  if(t.category){ const cat = el("div","badge-cat"); cat.textContent = t.category; card.appendChild(cat); }
+  card.onclick = ()=>open(t);
+  return card;
+}
+function appendToolBatch(){
+  const grid = document.getElementById("grid");
+  const end = Math.min(_tShown + TOOL_PAGE, _tList.length);
+  for(let i=_tShown;i<end;i++) grid.appendChild(buildToolCard(_tList[i]));
+  _tShown = end;
+  updateToolLoadMore();
+}
+function updateToolLoadMore(){
+  const grid = document.getElementById("grid");
+  let wrap = document.getElementById("loadMoreWrap");
+  if(!wrap){ wrap = el("div"); wrap.id="loadMoreWrap"; wrap.style.cssText="text-align:center;margin:20px 0 8px"; grid.parentNode.insertBefore(wrap, grid.nextSibling); }
+  wrap.innerHTML = "";
+  if(_tShown < _tList.length){
+    const btn = el("button","load-more-btn");
+    btn.textContent = "Load more tools ("+(_tList.length - _tShown)+" more) ↓";
+    btn.onclick = appendToolBatch;
+    wrap.appendChild(btn);
+  }
+}
 function renderGrid(){
   const grid = document.getElementById("grid");
   grid.innerHTML = "";
-
-  let list = AI_TOOLS.filter(t=>{
+  _tList = AI_TOOLS.filter(t=>{
     const matchCat = activeCat==="All" || t.category===activeCat;
     const hay = (t.name + ' ' + (t.desc||'')).toLowerCase();
-    const matchQ = hay.includes(query);
-    return matchCat && matchQ;
+    return matchCat && hay.includes(query);
   });
-
-  const toolCount = list.filter(t=>t.status!=="soon").length;
+  const toolCount = _tList.filter(t=>t.status!=="soon").length;
   document.getElementById("gridCount").textContent = toolCount + (toolCount===1?" tool":" tools");
-
-  if(!list.length){
-    const e = el("div","empty");
-    e.textContent = "No tools match your search 😕";
-    grid.appendChild(e);
-    return;
-  }
-
-  const featured = list.find(t=>t.featured && t.status==="live");
-  list.forEach(t=>{
-    const card = el("div","card"+(t===featured?" big":"")+(t.status==="soon"?" soon":""));
-    card.style.background = t.color;
-    const BADGE = {
-      live:    ["badge-live","● Live"],
-      offline: ["badge-offline","● Back soon"],
-      soon:    ["badge-soon","Coming Soon"],
-    };
-    const [bcls,btxt] = BADGE[t.status] || BADGE.live;
-    const badge = el("div", bcls); badge.textContent = btxt;
-    card.appendChild(badge);
-    const visual = el("div","emoji"); visual.textContent = t.emoji;
-    const label = el("div","label"); label.textContent = t.name;
-    card.appendChild(visual); card.appendChild(label);
-    if(t.desc){ const ex=el("div","excerpt"); ex.textContent=t.desc; card.appendChild(ex); }
-    if(t.category){ const cat = el("div","badge-cat"); cat.textContent = t.category; card.appendChild(cat); }
-    card.onclick = ()=>open(t);
-    grid.appendChild(card);
-  });
+  if(!_tList.length){ const e=el("div","empty"); e.textContent="No tools match your search 😕"; grid.appendChild(e); _tShown=0; updateToolLoadMore(); return; }
+  _tFeatured = _tList.find(t=>t.featured && t.status==="live");
+  _tShown = 0;
+  appendToolBatch();
 }
 
 /* --- Browse categories grid --- */

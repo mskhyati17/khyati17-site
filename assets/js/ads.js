@@ -22,7 +22,7 @@
   var ADS = [
     { emoji:'🎮', title:'10,000+ Free Games',   body:'Play instantly in your browser — no downloads, no sign-up.', cta:'Play now',   url:'/fun-games/index.html', bg:'linear-gradient(135deg,#6a1b9a,#c56be0)' },
     { emoji:'📖', title:'180 Original Stories',  body:'Dive into a brand-new adventure at the Story Hub.',           cta:'Read now',   url:'/stories/index.html',   bg:'linear-gradient(135deg,#1b6a9a,#4dc0cc)' },
-    { emoji:'🤖', title:'200 Free AI Tools',    body:'Fancy text, ciphers, converters & more — all in your browser.', cta:'Try them',  url:'/ai-tools/index.html',  bg:'linear-gradient(135deg,#9a1b5c,#e05b8a)' },
+    { emoji:'🤖', title:'10,000+ Free AI Tools',    body:'Fancy text, ciphers, converters & more — all in your browser.', cta:'Try them',  url:'/ai-tools/index.html',  bg:'linear-gradient(135deg,#9a1b5c,#e05b8a)' },
     { emoji:'🎬', title:'Fun Videos & Shorts',  body:'Kick back and watch something fun.',                          cta:'Watch now',  url:'/videos/videos.html',   bg:'linear-gradient(135deg,#9a5c1b,#e0a24d)' },
     { emoji:'📈', title:'The Trading Zone',      body:'Explore markets and track your picks.',                       cta:'Explore',    url:'/trading/trading.html', bg:'linear-gradient(135deg,#1b9a5c,#4dcc86)' },
     { emoji:'🐶', title:'Meet Mochi',           body:'Chat with your very own AI teacup Pomeranian.',                cta:'Say hi',     url:'/others/others.html',   bg:'linear-gradient(135deg,#7550a8,#b58be0)' }

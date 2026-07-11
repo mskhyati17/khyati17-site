@@ -46,7 +46,8 @@ async function run(){
     logo && logo.includes('AI Zone') ? pass(`logo: '${logo}'`) : fail(`logo not 'AI Zone' (got '${logo}')`);
 
     const cards = await page.$$('#grid .card');
-    cards.length >= 100 ? pass(`${cards.length} cards (featured + mini-tools + soon)`) : fail(`expected >= 100 cards, got ${cards.length}`);
+    const gcTotal = parseInt((await page.textContent('#gridCount')||'0').replace(/[^0-9]/g,''),10);
+    (gcTotal >= 100 && cards.length <= 61) ? pass(`${gcTotal} tools total, grid paginated to ${cards.length}`) : fail(`gridCount=${gcTotal}, rendered=${cards.length}`);
 
     const labels = await page.$$eval('#grid .card .label', ns=>ns.map(n=>n.textContent.trim()));
     const EXPECT = ['News Aggregator','Voice Clone','Story Creator','Name Generator','Writing Prompt Generator','Password Generator','Color Palette Generator','Hashtag Generator','Emoji Translator','Decision Maker'];
@@ -55,7 +56,7 @@ async function run(){
     // status badges: 8 live, 2 offline (News, Voice), 1 soon
     const liveBadges = await page.$$('#grid .card .badge-live');
     const offBadges  = await page.$$('#grid .card .badge-offline');
-    liveBadges.length >= 100 ? pass(`${liveBadges.length} Live badges`) : fail(`expected >= 100 live badges, got ${liveBadges.length}`);
+    liveBadges.length >= 40 ? pass(`${liveBadges.length} Live badges on page 1`) : fail(`expected >= 40 live badges, got ${liveBadges.length}`);
     offBadges.length === 2 ? pass('2 offline badges (News + Voice)') : fail(`expected 2 offline badges, got ${offBadges.length}`);
 
     const popular = await page.$$('#popRow .pop-item');
@@ -67,8 +68,7 @@ async function run(){
     const tiles = await page.$$('#catGrid .cat-tile');
     tiles.length >= 8 ? pass(`${tiles.length} browse-category tiles`) : fail(`expected >= 8 tiles, got ${tiles.length}`);
 
-    const soon = await page.$$('#grid .card.soon');
-    soon.length === 1 ? pass('coming-soon card rendered & dimmed') : fail(`expected 1 soon card, got ${soon.length}`);
+    // (The "Coming Soon" teaser was removed at 10,000+ tools — no longer checked.)
 
     // ---- 2. Search ----
     console.log('\n[2] Search');
