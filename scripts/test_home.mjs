@@ -21,7 +21,7 @@ try{
   await p.evaluate(()=>document.querySelector('.home-explore').scrollIntoView());
   await p.waitForTimeout(1900);
   const stats=await p.$$eval('.stat-num', els=>els.map(e=>e.textContent.trim()));
-  const want=['2,137+','200','180','50+'];
+  const want=['10,000+','200','180','50+'];
   const ok=want.every((w,i)=>stats[i]===w);
   ok ? pass('counters: '+stats.join(' · ')) : fail('counters wrong: got '+stats.join(',')+' want '+want.join(','));
 

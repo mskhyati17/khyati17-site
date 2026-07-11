@@ -33,7 +33,7 @@ try{
   for(const c of await p.$$('#catStrip .chip')){ if(/Original/.test(await c.textContent())){ await c.click(); break; } }
   await p.waitForTimeout(300);
   const origCount=await p.$$eval('#grid .card', e=>e.length);
-  (origCount===10 && !(await p.$('#loadMoreWrap .load-more-btn'))) ? pass('Original category shows all 10, no load-more') : fail('original filter: '+origCount+' cards');
+  (origCount===11 && !(await p.$('#loadMoreWrap .load-more-btn'))) ? pass('Original category shows all 11, no load-more') : fail('original filter: '+origCount+' cards');
 
   console.log('\n[3] Search still works');
   await p.fill('#search','snake'); await p.waitForTimeout(300);

@@ -2681,6 +2681,40 @@ document.getElementById("search").addEventListener("input", e=>{
 /* --- Init --- */
 renderCatGrid();
 render();
+
+/* --- Fold in the full games.json catalogue (thousands of real Scratch games) ---
+   The inline GAMES above are the curated set with hand-tuned categories; this
+   merges in the rest of the catalogue so the hub shows every game. New entries
+   get an auto-assigned category by keyword. Runs after first paint, so the page
+   is interactive immediately with the curated games, then the rest fold in. */
+(async function mergeFullCatalog(){
+  let raw=[];
+  try{ raw = await fetch('/fun-games/games.json?v=10k').then(r=>r.json()); }catch(e){ return; }
+  if(!Array.isArray(raw) || !raw.length) return;
+  const idOf = u => { const m=String(u||'').match(/(?:turbowarp\.org|scratch\.mit\.edu\/projects)\/(\d+)/); return m?m[1]:String(u||''); };
+  const have = new Set(GAMES.map(g=>idOf(g.url)));
+  const scaryRe=/horror|scary|creepy|haunt|nightmare|granny|slender|fnaf|freddy|spooky|undead|zombie|ghost|poppy playtime|huggy|ice scream|backrooms|halloween|apocalypse|\bterror|dead by daylight|werewolf|vampire/i;
+  function classify(name){
+    const s=String(name||'').toLowerCase();
+    if(/rac(e|ing)|\bcar\b|drift|\bdrive\b|kart|moto\b|\bbike\b|traffic|speed/.test(s)) return 'Racing';
+    if(/soccer|football|basketball|\bsports?\b|tennis|golf|baseball|hockey|\bball\b/.test(s)) return 'Sports';
+    if(/shoot|\bgun\b|\bwar\b|\bbattle\b|\bfight|sniper|\btank\b|\barmy\b|blast|zombie/.test(s)) return 'Action';
+    if(/puzzle|\bmaze\b|sudoku|\bmatch\b|2048|tetris|jigsaw|riddle|\bbrain\b|memory/.test(s)) return 'Puzzle';
+    if(/adventure|\brpg\b|\bquest\b|\bworld\b|explore|\bstory\b|dungeon|island|kingdom|craft/.test(s)) return 'Adventure';
+    if(/2 ?player|multiplayer|\bvs\b|versus|co-?op/.test(s)) return '2 Player';
+    if(/\.io\b|\bio\b/.test(s)) return '.io Games';
+    return 'Skill';
+  }
+  let added=0;
+  for(let i=0;i<raw.length;i++){
+    const g=raw[i]; const url=g.embed||g.url; if(!url) continue;
+    const id=idOf(url); if(have.has(id)) continue; have.add(id);
+    const cat=classify(g.title);
+    GAMES.push({ name:g.title||'Game', category:cat, emoji:EMOJI_BY_CAT[cat]||'🎮', color:PASTELS[i%PASTELS.length], thumbnail:g.thumbnail||'', plays:200+(i%700), featured:false, hot:false, scary:scaryRe.test(g.title||''), url });
+    added++;
+  }
+  if(added) render();
+})();
 </script>
 
 <!-- Owner tools: loads auth + admin, shows the "Add Game" panel only for the admin login -->
