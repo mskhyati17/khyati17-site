@@ -20,7 +20,8 @@ try{
 
   console.log('\n[1] Gallery renders');
   const cards=await p.$$('#v-grid .v-card');
-  cards.length===VIDEOS.length ? pass(`${cards.length} video cards (matches data)`) : fail(`expected ${VIDEOS.length} cards, got ${cards.length}`);
+  // grid is paginated (48/page + Load more) — first page renders a capped batch
+  (cards.length>0 && cards.length<=49 && VIDEOS.length>=cards.length) ? pass(`${cards.length} of ${VIDEOS.length} video cards (paginated)`) : fail(`page 1 rendered ${cards.length}, data has ${VIDEOS.length}`);
   const thumbs=await p.$$eval('#v-grid .v-thumb img', ns=>ns.filter(n=>n.src.includes('i.ytimg.com')).length);
   thumbs>40 ? pass(`${thumbs} real YouTube thumbnails`) : fail(`few thumbnails: ${thumbs}`);
 

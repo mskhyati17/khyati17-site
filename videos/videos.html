@@ -155,24 +155,41 @@
       });
     }
 
+    const V_PAGE = 48;
+    let _vList = [], _vShown = 0;
+    function buildVideoCard(v){
+      const card = document.createElement('div'); card.className = 'v-card';
+      const thumb = v.thumb ? `<img src="${v.thumb}" alt="${esc(v.title || 'Video thumbnail')}" loading="lazy" decoding="async" onerror="this.style.display='none'"/>` : '';
+      card.innerHTML =
+        `<div class="v-thumb">${thumb}<div class="play">▶</div><div class="badge">${CAT_EMOJI[v.cat]||''} ${v.cat}</div></div>`+
+        `<div class="v-meta"><div class="v-title">${esc(v.title)}</div><div class="v-channel">${esc(v.channel)}</div></div>`;
+      card.onclick = ()=> openVideo(v);
+      return card;
+    }
+    function appendVideoBatch(){
+      const end = Math.min(_vShown + V_PAGE, _vList.length);
+      for(let i=_vShown;i<end;i++) grid.appendChild(buildVideoCard(_vList[i]));
+      _vShown = end;
+      let wrap = document.getElementById('vLoadMore');
+      if(!wrap){ wrap = document.createElement('div'); wrap.id='vLoadMore'; wrap.style.cssText='text-align:center;margin:22px 0 4px'; grid.parentNode.insertBefore(wrap, grid.nextSibling); }
+      wrap.innerHTML = '';
+      if(_vShown < _vList.length){
+        const btn = document.createElement('button'); btn.textContent = 'Load more videos ('+(_vList.length-_vShown)+' more) ↓';
+        btn.style.cssText='background:linear-gradient(90deg,#6a1b9a,#9c4dcc);color:#fff;border:none;border-radius:999px;padding:11px 26px;font-weight:700;cursor:pointer;font-size:.92rem;box-shadow:0 6px 16px rgba(117,80,168,.3)';
+        btn.onclick = appendVideoBatch; wrap.appendChild(btn);
+      }
+    }
     function render(){
       renderChips();
       grid.innerHTML = "";
-      const list = VIDS.filter(v=>{
+      _vList = VIDS.filter(v=>{
         const okCat = activeCat==='All' || v.cat===activeCat;
         const hay = (v.title + ' ' + v.channel + ' ' + v.cat).toLowerCase();
         return okCat && hay.includes(query);
       });
-      if(!list.length){ grid.innerHTML = '<div class="v-empty">No videos match your search 😕</div>'; return; }
-      list.forEach(v=>{
-        const card = document.createElement('div'); card.className = 'v-card';
-        const thumb = v.thumb ? `<img src="${v.thumb}" alt="${esc(v.title || 'Video thumbnail')}" loading="lazy" decoding="async" onerror="this.style.display='none'"/>` : '';
-        card.innerHTML =
-          `<div class="v-thumb">${thumb}<div class="play">▶</div><div class="badge">${CAT_EMOJI[v.cat]||''} ${v.cat}</div></div>`+
-          `<div class="v-meta"><div class="v-title">${esc(v.title)}</div><div class="v-channel">${esc(v.channel)}</div></div>`;
-        card.onclick = ()=> openVideo(v);
-        grid.appendChild(card);
-      });
+      if(!_vList.length){ grid.innerHTML = '<div class="v-empty">No videos match your search 😕</div>'; const w=document.getElementById('vLoadMore'); if(w) w.innerHTML=''; return; }
+      _vShown = 0;
+      appendVideoBatch();
     }
 
     function esc(s){ return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
