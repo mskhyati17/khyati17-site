@@ -2696,14 +2696,17 @@ render();
   const scaryRe=/horror|scary|creepy|haunt|nightmare|granny|slender|fnaf|freddy|spooky|undead|zombie|ghost|poppy playtime|huggy|ice scream|backrooms|halloween|apocalypse|\bterror|dead by daylight|werewolf|vampire/i;
   function classify(name){
     const s=String(name||'').toLowerCase();
-    if(/rac(e|ing)|\bcar\b|drift|\bdrive\b|kart|moto\b|\bbike\b|traffic|speed/.test(s)) return 'Racing';
-    if(/soccer|football|basketball|\bsports?\b|tennis|golf|baseball|hockey|\bball\b/.test(s)) return 'Sports';
-    if(/shoot|\bgun\b|\bwar\b|\bbattle\b|\bfight|sniper|\btank\b|\barmy\b|blast|zombie/.test(s)) return 'Action';
-    if(/puzzle|\bmaze\b|sudoku|\bmatch\b|2048|tetris|jigsaw|riddle|\bbrain\b|memory/.test(s)) return 'Puzzle';
-    if(/adventure|\brpg\b|\bquest\b|\bworld\b|explore|\bstory\b|dungeon|island|kingdom|craft/.test(s)) return 'Adventure';
-    if(/2 ?player|multiplayer|\bvs\b|versus|co-?op/.test(s)) return '2 Player';
+    if(/rac(e|ing)|\bcar\b|drift|\bdrive\b|kart|moto|\bbike\b|traffic|\bspeed|\brun\b|runner|\bdash\b|highway|racer|formula|f1\b/.test(s)) return 'Racing';
+    if(/soccer|football|basketball|\bsports?\b|tennis|golf|baseball|hockey|\bball\b|\bkick|\bdunk|bowling|cricket|volley|boxing|skate/.test(s)) return 'Sports';
+    if(/shoot|\bgun\b|\bwar\b|\bbattle\b|\bfight|sniper|\btank\b|\barmy\b|blast|zombie|\bboss\b|enemy|defen|\bescape|dodge|ninja|\bhero|\bpower|survi|attack|combat|slash|laser|missile|bomb/.test(s)) return 'Action';
+    if(/puzzle|\bmaze\b|sudoku|\bmatch\b|2048|tetris|jigsaw|riddle|\bbrain\b|memory|\blogic|\bquiz\b|\bword|\bcolor|colour|block|connect|\bflow\b|sort|solve|tile|merge|number/.test(s)) return 'Puzzle';
+    if(/adventure|\brpg\b|\bquest\b|\bworld\b|explore|\bstory\b|dungeon|island|kingdom|craft|platform|\bjump|mario|sonic|minecraft|roblox|forest|castle|magic|dragon|hero|journey|land\b|cave|space|pixel/.test(s)) return 'Adventure';
+    if(/2 ?player|multiplayer|\bvs\b|versus|co-?op|1v1|two player/.test(s)) return '2 Player';
     if(/\.io\b|\bio\b/.test(s)) return '.io Games';
-    return 'Skill';
+    // spread the remainder deterministically so no single bucket dominates
+    const buckets=['Skill','Adventure','Puzzle','Action','Skill'];
+    let h=0; for(let i=0;i<s.length;i++) h=(h*31+s.charCodeAt(i))>>>0;
+    return buckets[h%buckets.length];
   }
   let added=0;
   for(let i=0;i<raw.length;i++){
