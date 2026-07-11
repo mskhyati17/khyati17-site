@@ -324,25 +324,25 @@ export const TOOLS = [
   const num = fn => s => { const x = parseFloat(s); return isNaN(x) ? 'Enter a number' : String(fn(x)); };
   const r6 = x => Math.round(x * 1e6) / 1e6;
   // Times tables (1..100)
-  for(let n=1;n<=100;n++) TOOLS.push({ id:'times-table-'+n, name:n+' Times Table', emoji:'✖️', cat:'Calc', desc:'The '+n+' times table (×1 to ×12).', gen:true, run:()=>{ let o=''; for(let i=1;i<=12;i++) o+=n+' × '+i+' = '+(n*i)+'\n'; return o.trim(); } });
+  for(let n=1;n<=100;n++) TOOLS.push({ id:'times-table-'+n, name:n+' Times Table', emoji:'✖️', cat:'Math', desc:'The '+n+' times table (×1 to ×12).', gen:true, run:()=>{ let o=''; for(let i=1;i<=12;i++) o+=n+' × '+i+' = '+(n*i)+'\n'; return o.trim(); } });
   // Multiply / Divide by N  (2..2400)
-  for(let n=2;n<=2400;n++) TOOLS.push({ id:'multiply-by-'+n, name:'Multiply by '+n, emoji:'✖️', cat:'Calc', desc:'Multiply your number by '+n+'.', placeholder:'e.g. 8', run:num(x=>x+' × '+n+' = '+r6(x*n)) });
-  for(let n=2;n<=2400;n++) TOOLS.push({ id:'divide-by-'+n, name:'Divide by '+n, emoji:'➗', cat:'Calc', desc:'Divide your number by '+n+'.', placeholder:'e.g. 100', run:num(x=>x+' ÷ '+n+' = '+r6(x/n)) });
+  for(let n=2;n<=2400;n++) TOOLS.push({ id:'multiply-by-'+n, name:'Multiply by '+n, emoji:'✖️', cat:'Math', desc:'Multiply your number by '+n+'.', placeholder:'e.g. 8', run:num(x=>x+' × '+n+' = '+r6(x*n)) });
+  for(let n=2;n<=2400;n++) TOOLS.push({ id:'divide-by-'+n, name:'Divide by '+n, emoji:'➗', cat:'Math', desc:'Divide your number by '+n+'.', placeholder:'e.g. 100', run:num(x=>x+' ÷ '+n+' = '+r6(x/n)) });
   // Add / Subtract N  (1..2400)
-  for(let n=1;n<=2400;n++) TOOLS.push({ id:'add-num-'+n, name:'Add '+n, emoji:'➕', cat:'Calc', desc:'Add '+n+' to your number.', placeholder:'e.g. 50', run:num(x=>x+' + '+n+' = '+r6(x+n)) });
-  for(let n=1;n<=2400;n++) TOOLS.push({ id:'subtract-num-'+n, name:'Subtract '+n, emoji:'➖', cat:'Calc', desc:'Subtract '+n+' from your number.', placeholder:'e.g. 50', run:num(x=>x+' − '+n+' = '+r6(x-n)) });
+  for(let n=1;n<=2400;n++) TOOLS.push({ id:'add-num-'+n, name:'Add '+n, emoji:'➕', cat:'Math', desc:'Add '+n+' to your number.', placeholder:'e.g. 50', run:num(x=>x+' + '+n+' = '+r6(x+n)) });
+  for(let n=1;n<=2400;n++) TOOLS.push({ id:'subtract-num-'+n, name:'Subtract '+n, emoji:'➖', cat:'Math', desc:'Subtract '+n+' from your number.', placeholder:'e.g. 50', run:num(x=>x+' − '+n+' = '+r6(x-n)) });
   // Percent of N (1..100)
-  for(let n=1;n<=100;n++) TOOLS.push({ id:'percent-'+n+'-of', name:n+'% of a Number', emoji:'💯', cat:'Calc', desc:'Find '+n+'% of your number.', placeholder:'e.g. 200', run:num(x=>n+'% of '+x+' = '+r6(x*n/100)) });
+  for(let n=1;n<=100;n++) TOOLS.push({ id:'percent-'+n+'-of', name:n+'% of a Number', emoji:'💯', cat:'Math', desc:'Find '+n+'% of your number.', placeholder:'e.g. 200', run:num(x=>n+'% of '+x+' = '+r6(x*n/100)) });
   // Caesar shifts (1..25)
   for(let n=1;n<=25;n++) TOOLS.push({ id:'caesar-shift-'+n, name:'Caesar Shift +'+n, emoji:'🔐', cat:'Encode', desc:'Shift each letter forward by '+n+' places.', run:s=>String(s).replace(/[a-z]/gi,c=>{ const b=c<='Z'?65:97; return String.fromCharCode((c.charCodeAt(0)-b+n)%26+b); }) });
   // Countdown to Jan 1, YEAR (2027..2126)
   for(let y=2027;y<=2126;y++) TOOLS.push({ id:'days-to-'+y, name:'Days to New Year '+y, emoji:'📆', cat:'Time', desc:'How many days until 1 January '+y+'.', gen:true, run:()=>{ const t=new Date(); t.setHours(0,0,0,0); const d=Math.round((new Date(y,0,1)-t)/86400000); return d>0? d+' days until '+y+' 🎉' : 'That New Year has passed'; } });
   // Round to N decimals (0..15)
-  for(let n=0;n<=15;n++) TOOLS.push({ id:'round-'+n+'dp', name:'Round to '+n+' Decimal'+(n===1?'':'s'), emoji:'🔢', cat:'Calc', desc:'Round to '+n+' decimal place'+(n===1?'':'s')+'.', placeholder:'e.g. 3.14159', run:num(x=>x.toFixed(n)) });
+  for(let n=0;n<=15;n++) TOOLS.push({ id:'round-'+n+'dp', name:'Round to '+n+' Decimal'+(n===1?'':'s'), emoji:'🔢', cat:'Math', desc:'Round to '+n+' decimal place'+(n===1?'':'s')+'.', placeholder:'e.g. 3.14159', run:num(x=>x.toFixed(n)) });
   // Power of N (2..50)
-  for(let n=2;n<=50;n++) TOOLS.push({ id:'power-of-'+n, name:'Raise to Power '+n, emoji:'🔺', cat:'Calc', desc:'Raise your number to the power '+n+'.', placeholder:'e.g. 2', run:num(x=>x+'^'+n+' = '+Math.pow(x,n)) });
+  for(let n=2;n<=50;n++) TOOLS.push({ id:'power-of-'+n, name:'Raise to Power '+n, emoji:'🔺', cat:'Math', desc:'Raise your number to the power '+n+'.', placeholder:'e.g. 2', run:num(x=>x+'^'+n+' = '+Math.pow(x,n)) });
   // Nth root (2..50)
-  for(let n=2;n<=50;n++) TOOLS.push({ id:'nth-root-'+n, name:n+'th Root', emoji:'√', cat:'Calc', desc:'The '+n+'th root of your number.', placeholder:'e.g. 64', run:num(x=> (x<0 && n%2===0) ? 'No real '+n+'th root of a negative' : r6(Math.sign(x)*Math.pow(Math.abs(x),1/n)) ) });
+  for(let n=2;n<=50;n++) TOOLS.push({ id:'nth-root-'+n, name:n+'th Root', emoji:'√', cat:'Math', desc:'The '+n+'th root of your number.', placeholder:'e.g. 64', run:num(x=> (x<0 && n%2===0) ? 'No real '+n+'th root of a negative' : r6(Math.sign(x)*Math.pow(Math.abs(x),1/n)) ) });
   // Repeat text N times (2..100)
   for(let n=2;n<=100;n++) TOOLS.push({ id:'repeat-'+n+'x', name:'Repeat '+n+'×', emoji:'🔁', cat:'Text', desc:'Repeat your text '+n+' times.', run:s=>{ s=String(s).trim(); return s? new Array(n+1).join(s+' ').trim() : 'Enter some text'; } });
   // Decimal → base B (2..36)
