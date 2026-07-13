@@ -52,11 +52,19 @@ export async function loadSharedHeader(){
       if(!isAdm && em){ try{ const us = JSON.parse(localStorage.getItem('khyati_users')||'{}'); if(us[em] && us[em].level==='admin') isAdm = true; }catch(e){} }
       const al = root.querySelector('#nav-admin'); if(al && isAdm) al.style.display = '';
     }catch(e){/* ignore */}
-    // mark active nav link based on current pathname
+    // mark active nav link based on the current top-level section, so e.g. the
+    // "Fun & Games" link is flagged current on /fun-games/index.html AND on any
+    // individual game page like /fun-games/tetris.html.
     try{
       const links = root.querySelectorAll('.main-nav a');
-      const path = location.pathname.replace(/.*\//,'/');
-      links.forEach(a=>{ a.removeAttribute('aria-current'); if(a.getAttribute('href') && a.getAttribute('href') === path) a.setAttribute('aria-current','page'); });
+      const seg = '/' + (location.pathname.split('/').filter(Boolean)[0] || '');
+      links.forEach(a=>{
+        a.removeAttribute('aria-current');
+        const href = a.getAttribute('href') || '';
+        if(!href.startsWith('/')) return; // skip the absolute Home link
+        const hseg = '/' + (href.split('/').filter(Boolean)[0] || '');
+        if(seg !== '/' && hseg === seg) a.setAttribute('aria-current','page');
+      });
     }catch(e){/* ignore */}
     // keyboard: make avatar enter key navigate to profile if signed in
     try{
