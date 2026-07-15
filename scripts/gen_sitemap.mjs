@@ -6,7 +6,7 @@ import { join, resolve, extname } from 'path';
 import { fileURLToPath } from 'url';
 const root = resolve(join(fileURLToPath(import.meta.url), '..', '..'));
 const ORIGIN = 'https://khyati17.com';
-const TODAY = '2026-07-14';
+const TODAY = '2026-07-15';
 
 function walk(d, acc = []) {
   for (const e of readdirSync(d)) {

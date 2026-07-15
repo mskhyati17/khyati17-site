@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🎨 Gradient Generator — Khyati17</title>
+<!-- SEO + social share preview: meta description, Open Graph & Twitter Card tags. (khyati:seo-meta) -->
+<meta name="description" content="Build a CSS linear-gradient visually — pick colours and angle, preview live, copy the CSS. Free on Khyati17." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Khyati17" />
+<meta property="og:title" content="🎨 Gradient Generator — Khyati17" />
+<meta property="og:description" content="Pick colours and an angle, preview live, copy the CSS — a free instant gradient builder." />
+<meta property="og:image" content="https://khyati17.com/og-image.png" />
+<meta property="og:url" content="https://khyati17.com/ai-tools/gradient-generator.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="🎨 Gradient Generator — Khyati17" />
+<meta name="twitter:description" content="Pick colours and an angle, preview live, copy the CSS — a free instant gradient builder." />
+<meta name="twitter:image" content="https://khyati17.com/og-image.png" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="canonical" href="https://khyati17.com/ai-tools/gradient-generator.html" />
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(135deg,#2b0b3a,#6a1b9a,#9c4dcc);min-height:100vh;display:flex;justify-content:center;align-items:center;padding:16px}
+  .container{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border-radius:24px;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.12);text-align:center;max-width:460px;width:100%}
+  h1{font-size:1.55rem;color:#fff;margin-bottom:4px;text-shadow:0 0 30px rgba(233,216,255,.4)}
+  .subtitle{color:rgba(255,255,255,.65);font-size:.82rem;margin-bottom:16px}
+  #preview{height:150px;border-radius:16px;margin-bottom:16px;border:1px solid rgba(255,255,255,.18);transition:background .1s}
+  .row{display:flex;gap:12px;justify-content:center;align-items:center;margin-bottom:12px;color:#e9d8ff;font-size:.85rem;flex-wrap:wrap}
+  .row label{display:flex;align-items:center;gap:6px}
+  input[type=color]{width:44px;height:34px;border:none;border-radius:8px;cursor:pointer;background:none;padding:0}
+  input[type=range]{width:150px}
+  #angleVal{min-width:40px;display:inline-block}
+  .code{background:rgba(0,0,0,.35);border-radius:10px;padding:10px 12px;color:#e9d8ff;font-family:'Consolas',monospace;font-size:.8rem;text-align:left;word-break:break-all;margin-bottom:14px;user-select:all}
+  .controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .controls button,.controls a{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);color:#fff;padding:10px 20px;border-radius:10px;cursor:pointer;font-size:.9rem;font-weight:700;text-decoration:none;display:inline-block}
+  .controls button:hover,.controls a:hover{background:#e9d8ff;color:#2b0b3a}
+  #copyBtn{background:#e9d8ff;color:#2b0b3a}
+  #copyMsg{color:#7ee081;font-size:.78rem;margin-top:8px;min-height:1.1em}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🎨 Gradient Generator</h1>
+  <p class="subtitle">Pick two colours and an angle — preview live, copy the CSS.</p>
+  <div id="preview"></div>
+  <div class="row">
+    <label>From <input type="color" id="c1" value="#6a1b9a" /></label>
+    <label>To <input type="color" id="c2" value="#e9d8ff" /></label>
+  </div>
+  <div class="row">
+    <label>Angle <input type="range" id="angle" min="0" max="360" value="135" /> <span id="angleVal">135°</span></label>
+  </div>
+  <div class="code" id="code">background: linear-gradient(135deg, #6a1b9a, #e9d8ff);</div>
+  <div class="controls">
+    <button id="randomBtn">Randomize 🎲</button>
+    <button id="copyBtn">Copy CSS 📋</button>
+    <a href="/ai-tools/index.html">← All Tools</a>
+  </div>
+  <p id="copyMsg"></p>
+</div>
+<script>
+(function(){
+  var c1=document.getElementById('c1'), c2=document.getElementById('c2'), angle=document.getElementById('angle'),
+      angleVal=document.getElementById('angleVal'), preview=document.getElementById('preview'), code=document.getElementById('code'),
+      copyMsg=document.getElementById('copyMsg');
+
+  function css(){ return 'background: linear-gradient('+angle.value+'deg, '+c1.value+', '+c2.value+');'; }
+  function render(){
+    angleVal.textContent=angle.value+'°';
+    var grad='linear-gradient('+angle.value+'deg, '+c1.value+', '+c2.value+')';
+    preview.style.background=grad;
+    code.textContent=css();
+    copyMsg.textContent='';
+  }
+  function rand(){ return '#'+Math.floor(Math.random()*0xffffff).toString(16).padStart(6,'0'); }
+
+  [c1,c2,angle].forEach(function(el){ el.addEventListener('input', render); });
+  document.getElementById('randomBtn').addEventListener('click', function(){
+    c1.value=rand(); c2.value=rand(); angle.value=Math.floor(Math.random()*361); render();
+  });
+  document.getElementById('copyBtn').addEventListener('click', function(){
+    var text=css();
+    function shown(){ copyMsg.textContent='Copied!'; setTimeout(function(){ copyMsg.textContent=''; },1600); }
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(shown).catch(shown); }
+    else { shown(); }
+  });
+
+  render();
+
+  // test hooks
+  window.__gradientGen = {
+    setColors:function(a,b){ c1.value=a; c2.value=b; render(); },
+    setAngle:function(a){ angle.value=a; render(); },
+    css:function(){ return css(); },
+    randomize:function(){ document.getElementById('randomBtn').click(); }
+  };
+})();
+</script>
+<script src="/assets/js/cute.js?nb=1"></script>
+</body>
+</html>
