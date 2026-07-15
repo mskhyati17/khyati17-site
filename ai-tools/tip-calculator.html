@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🧾 Tip Calculator & Bill Splitter — Khyati17</title>
+<!-- SEO + social share preview: meta description, Open Graph & Twitter Card tags. (khyati:seo-meta) -->
+<meta name="description" content="Calculate the tip and split the bill between any number of people, instantly, right in your browser. Free on Khyati17." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Khyati17" />
+<meta property="og:title" content="🧾 Tip Calculator & Bill Splitter — Khyati17" />
+<meta property="og:description" content="Enter the bill, pick a tip %, split between friends — see each person's share instantly." />
+<meta property="og:image" content="https://khyati17.com/og-image.png" />
+<meta property="og:url" content="https://khyati17.com/ai-tools/tip-calculator.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="🧾 Tip Calculator & Bill Splitter — Khyati17" />
+<meta name="twitter:description" content="Enter the bill, pick a tip %, split between friends — see each person's share instantly." />
+<meta name="twitter:image" content="https://khyati17.com/og-image.png" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="canonical" href="https://khyati17.com/ai-tools/tip-calculator.html" />
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(135deg,#2b0b3a,#6a1b9a,#9c4dcc);min-height:100vh;display:flex;justify-content:center;align-items:center;padding:16px}
+  .container{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border-radius:24px;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.12);text-align:center;max-width:420px;width:100%}
+  h1{font-size:1.5rem;color:#fff;margin-bottom:16px;text-shadow:0 0 30px rgba(233,216,255,.4)}
+  .field{margin-bottom:14px;text-align:left}
+  .field label{display:block;color:#e9d8ff;font-size:.82rem;margin-bottom:5px;font-weight:600}
+  .field input{width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.9);font-size:1rem;font-family:inherit}
+  .tips{display:flex;gap:6px;margin-bottom:14px}
+  .tips button{flex:1;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;padding:8px 4px;border-radius:8px;cursor:pointer;font-size:.85rem;font-weight:700}
+  .tips button.active{background:#e9d8ff;color:#2b0b3a}
+  .stepper{display:flex;align-items:center;gap:10px;justify-content:center}
+  .stepper button{width:34px;height:34px;border-radius:8px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.12);color:#fff;font-size:1.1rem;cursor:pointer}
+  .stepper span{color:#fff;font-weight:700;min-width:20px}
+  .results{background:rgba(0,0,0,.3);border-radius:12px;padding:14px 16px;margin:16px 0;text-align:left}
+  .results .row{display:flex;justify-content:space-between;color:#e9d8ff;font-size:.88rem;padding:4px 0}
+  .results .row b{color:#fff}
+  .results .total{border-top:1px solid rgba(255,255,255,.18);margin-top:6px;padding-top:8px;font-size:1rem}
+  .controls{margin-top:6px}
+  .controls a{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:9px 18px;border-radius:10px;text-decoration:none;font-size:.9rem;display:inline-block}
+  .controls a:hover{background:#e9d8ff;color:#2b0b3a}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🧾 Tip Calculator &amp; Bill Splitter</h1>
+  <div class="field">
+    <label for="bill">Bill amount</label>
+    <input type="number" id="bill" min="0" step="0.01" value="100" inputmode="decimal" />
+  </div>
+  <div class="field">
+    <label>Tip %</label>
+    <div class="tips">
+      <button data-tip="10">10%</button>
+      <button data-tip="15" class="active">15%</button>
+      <button data-tip="18">18%</button>
+      <button data-tip="20">20%</button>
+    </div>
+  </div>
+  <div class="field">
+    <label>Split between</label>
+    <div class="stepper">
+      <button id="dec">−</button>
+      <span id="people">1</span>
+      <button id="inc">+</button>
+    </div>
+  </div>
+  <div class="results">
+    <div class="row"><span>Tip amount</span><b id="tipAmt">$15.00</b></div>
+    <div class="row"><span>Total</span><b id="totalAmt">$115.00</b></div>
+    <div class="row total"><span>Per person</span><b id="perPerson">$115.00</b></div>
+  </div>
+  <div class="controls"><a href="/ai-tools/index.html">← All Tools</a></div>
+</div>
+<script>
+(function(){
+  var billEl=document.getElementById('bill'), peopleEl=document.getElementById('people'),
+      tipAmtEl=document.getElementById('tipAmt'), totalAmtEl=document.getElementById('totalAmt'), perPersonEl=document.getElementById('perPerson');
+  var tipPct=15, people=1;
+  var tipBtns=[].slice.call(document.querySelectorAll('.tips button'));
+
+  function money(n){ return '$'+(isFinite(n)?n:0).toFixed(2); }
+  function calc(){
+    var bill=Math.max(0, parseFloat(billEl.value)||0);
+    var tip=bill*(tipPct/100);
+    var total=bill+tip;
+    var per=total/Math.max(1,people);
+    tipAmtEl.textContent=money(tip);
+    totalAmtEl.textContent=money(total);
+    perPersonEl.textContent=money(per);
+    return { bill:bill, tip:tip, total:total, perPerson:per };
+  }
+
+  billEl.addEventListener('input', calc);
+  tipBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      tipBtns.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      tipPct=+btn.getAttribute('data-tip');
+      calc();
+    });
+  });
+  document.getElementById('inc').addEventListener('click', function(){ people=Math.min(50,people+1); peopleEl.textContent=people; calc(); });
+  document.getElementById('dec').addEventListener('click', function(){ people=Math.max(1,people-1); peopleEl.textContent=people; calc(); });
+
+  calc();
+
+  // test hooks
+  window.__tipCalc = {
+    setBill:function(v){ billEl.value=v; return calc(); },
+    setTip:function(p){ var btn=tipBtns.find(function(b){ return +b.getAttribute('data-tip')===p; }); if(btn) btn.click(); else { tipPct=p; return calc(); } return calc(); },
+    setPeople:function(n){ people=Math.max(1,Math.min(50,n)); peopleEl.textContent=people; return calc(); },
+    values:calc
+  };
+})();
+</script>
+<script src="/assets/js/cute.js?nb=1"></script>
+</body>
+</html>
