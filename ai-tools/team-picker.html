@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>👥 Random Team Picker — Khyati17</title>
+<!-- SEO + social share preview: meta description, Open Graph & Twitter Card tags. (khyati:seo-meta) -->
+<meta name="description" content="Paste a list of names and split them into fair random teams or groups, instantly, right in your browser. Free on Khyati17." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Khyati17" />
+<meta property="og:title" content="👥 Random Team Picker — Khyati17" />
+<meta property="og:description" content="Paste your names, pick a number of teams, and get a fair random split instantly." />
+<meta property="og:image" content="https://khyati17.com/og-image.png" />
+<meta property="og:url" content="https://khyati17.com/ai-tools/team-picker.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="👥 Random Team Picker — Khyati17" />
+<meta name="twitter:description" content="Paste your names, pick a number of teams, and get a fair random split instantly." />
+<meta name="twitter:image" content="https://khyati17.com/og-image.png" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="canonical" href="https://khyati17.com/ai-tools/team-picker.html" />
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(135deg,#2b0b3a,#6a1b9a,#9c4dcc);min-height:100vh;display:flex;justify-content:center;align-items:center;padding:16px}
+  .container{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border-radius:24px;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.12);text-align:center;max-width:460px;width:100%}
+  h1{font-size:1.5rem;color:#fff;margin-bottom:4px;text-shadow:0 0 30px rgba(233,216,255,.4)}
+  .subtitle{color:rgba(255,255,255,.65);font-size:.82rem;margin-bottom:14px}
+  .field{margin-bottom:14px;text-align:left}
+  .field label{display:block;color:#e9d8ff;font-size:.82rem;margin-bottom:5px;font-weight:600}
+  textarea{width:100%;min-height:110px;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.9);font-size:.92rem;font-family:inherit;resize:vertical}
+  .stepper{display:flex;align-items:center;gap:10px;justify-content:center}
+  .stepper button{width:34px;height:34px;border-radius:8px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.12);color:#fff;font-size:1.1rem;cursor:pointer}
+  .stepper span{color:#fff;font-weight:700;min-width:20px}
+  .controls{display:flex;gap:10px;justify-content:center;margin:16px 0;flex-wrap:wrap}
+  .controls button,.controls a{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);color:#fff;padding:10px 20px;border-radius:10px;cursor:pointer;font-size:.9rem;font-weight:700;text-decoration:none;display:inline-block}
+  .controls button:hover,.controls a:hover{background:#e9d8ff;color:#2b0b3a}
+  #shuffleBtn{background:#e9d8ff;color:#2b0b3a}
+  .teams{display:grid;gap:10px;text-align:left}
+  .team{background:rgba(0,0,0,.3);border-radius:10px;padding:10px 14px}
+  .team h3{color:#e9d8ff;font-size:.85rem;margin-bottom:6px}
+  .team ul{list-style:none;color:#fff;font-size:.88rem}
+  .team li{padding:2px 0}
+  .msg{color:#ffb3b3;font-size:.78rem;min-height:1.1em;margin-bottom:6px}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>👥 Random Team Picker</h1>
+  <p class="subtitle">Paste your names (one per line), pick a number of teams, shuffle.</p>
+  <div class="field">
+    <label for="names">Names</label>
+    <textarea id="names" placeholder="Ava&#10;Noah&#10;Mia&#10;Leo&#10;Zoe&#10;Sam">Ava
+Noah
+Mia
+Leo
+Zoe
+Sam</textarea>
+  </div>
+  <div class="field">
+    <label>Number of teams</label>
+    <div class="stepper">
+      <button id="dec">−</button>
+      <span id="teamCount">2</span>
+      <button id="inc">+</button>
+    </div>
+  </div>
+  <p class="msg" id="msg"></p>
+  <div class="controls">
+    <button id="shuffleBtn">Shuffle Teams 🔀</button>
+    <a href="/ai-tools/index.html">← All Tools</a>
+  </div>
+  <div class="teams" id="teams"></div>
+</div>
+<script>
+(function(){
+  var namesEl=document.getElementById('names'), teamCountEl=document.getElementById('teamCount'),
+      teamsEl=document.getElementById('teams'), msg=document.getElementById('msg');
+  var teamCount=2, lastTeams=[];
+
+  function parseNames(){
+    return namesEl.value.split('\n').map(function(s){ return s.trim(); }).filter(Boolean);
+  }
+  function shuffle(arr){
+    var a=arr.slice();
+    for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t; }
+    return a;
+  }
+  function makeTeams(){
+    var names=parseNames();
+    msg.textContent='';
+    if(names.length===0){ msg.textContent='Add at least one name.'; lastTeams=[]; render(); return; }
+    var n=Math.max(1,Math.min(teamCount, names.length));
+    var shuffled=shuffle(names);
+    var teams=[]; for(var i=0;i<n;i++) teams.push([]);
+    shuffled.forEach(function(name,i){ teams[i%n].push(name); });
+    lastTeams=teams;
+    render();
+  }
+  function render(){
+    teamsEl.innerHTML='';
+    lastTeams.forEach(function(team,i){
+      var div=document.createElement('div'); div.className='team';
+      var h=document.createElement('h3'); h.textContent='Team '+(i+1)+' ('+team.length+')';
+      var ul=document.createElement('ul');
+      team.forEach(function(name){ var li=document.createElement('li'); li.textContent='• '+name; ul.appendChild(li); });
+      div.appendChild(h); div.appendChild(ul); teamsEl.appendChild(div);
+    });
+  }
+
+  document.getElementById('inc').addEventListener('click', function(){ teamCount=Math.min(20,teamCount+1); teamCountEl.textContent=teamCount; });
+  document.getElementById('dec').addEventListener('click', function(){ teamCount=Math.max(1,teamCount-1); teamCountEl.textContent=teamCount; });
+  document.getElementById('shuffleBtn').addEventListener('click', makeTeams);
+
+  makeTeams();
+
+  // test hooks
+  window.__teamPicker = {
+    setNames:function(list){ namesEl.value=list.join('\n'); },
+    setTeamCount:function(n){ teamCount=Math.max(1,Math.min(20,n)); teamCountEl.textContent=teamCount; },
+    shuffle:function(){ makeTeams(); return lastTeams.map(function(t){ return t.slice(); }); },
+    teams:function(){ return lastTeams.map(function(t){ return t.slice(); }); }
+  };
+})();
+</script>
+<script src="/assets/js/cute.js?nb=1"></script>
+</body>
+</html>
