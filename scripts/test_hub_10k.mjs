@@ -29,7 +29,7 @@ try{
   console.log('\n[categories still work]');
   for(const c of await p.$$('#catStrip .chip')){ if(/Original/.test(await c.textContent())){ await c.click(); break; } }
   await p.waitForTimeout(300);
-  (await p.$$eval('#grid .card', e=>e.length))===12 ? pass('Original = 12 (curated intact)') : fail('Original count wrong: '+await p.$$eval('#grid .card',e=>e.length));
+  (await p.$$eval('#grid .card', e=>e.length))===13 ? pass('Original = 13 (curated intact)') : fail('Original count wrong: '+await p.$$eval('#grid .card',e=>e.length));
   // a genre chip
   const racing=await p.evaluate(()=>GAMES.filter(g=>g.category==='Racing').length);
   (racing>100) ? pass('Racing category now has '+racing+' games (merged catalogue)') : fail('Racing only '+racing);

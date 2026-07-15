@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🧭 Mochi Maze</title>
+<!-- SEO + social share preview: meta description, Open Graph & Twitter Card tags. (khyati:seo-meta) -->
+<meta name="description" content="Guide Mochi through a fresh procedural maze to the treat as fast as you can. A free original puzzle game on Khyati17." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Khyati17" />
+<meta property="og:title" content="🧭 Mochi Maze — Khyati17" />
+<meta property="og:description" content="A new maze every round — race Mochi to the treat and beat your best time." />
+<meta property="og:image" content="https://khyati17.com/og-image.png" />
+<meta property="og:url" content="https://khyati17.com/fun-games/mochi-maze.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="🧭 Mochi Maze — Khyati17" />
+<meta name="twitter:description" content="A new maze every round — race Mochi to the treat and beat your best time." />
+<meta name="twitter:image" content="https://khyati17.com/og-image.png" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="canonical" href="https://khyati17.com/fun-games/mochi-maze.html" />
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Tahoma,sans-serif;background:linear-gradient(135deg,#2b0b3a,#6a1b9a,#9c4dcc);min-height:100vh;display:flex;justify-content:center;align-items:center;padding:20px}
+  .container{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border-radius:24px;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.12);text-align:center;max-width:460px;width:100%}
+  h1{font-size:1.6rem;color:#fff;margin-bottom:4px;text-shadow:0 0 30px rgba(233,216,255,.4)}
+  .subtitle{color:rgba(255,255,255,.65);font-size:.82rem;margin-bottom:14px}
+  .score-board{display:flex;justify-content:space-between;background:rgba(0,0,0,.3);border-radius:12px;padding:9px 18px;margin-bottom:14px;color:#fff;font-size:.9rem}
+  .score-board b{color:#e9d8ff}
+  #maze{display:grid;margin:0 auto;background:rgba(0,0,0,.35);border-radius:10px;padding:6px}
+  .cell{width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:15px}
+  .wall-r{box-shadow:inset -2px 0 0 #e9d8ff}
+  .wall-b{box-shadow:inset 0 -2px 0 #e9d8ff}
+  .wall-r.wall-b{box-shadow:inset -2px 0 0 #e9d8ff, inset 0 -2px 0 #e9d8ff}
+  .controls{margin-top:16px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .controls button,.back{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:10px 22px;border-radius:10px;cursor:pointer;font-size:.95rem;transition:.2s;text-decoration:none;display:inline-block}
+  .controls button:hover,.back:hover{background:#e9d8ff;color:#2b0b3a}
+  #newMaze{background:#e9d8ff;color:#2b0b3a;font-weight:bold}
+  .dpad{display:grid;grid-template-columns:repeat(3,44px);grid-template-rows:repeat(2,44px);gap:6px;justify-content:center;margin-top:14px}
+  .dpad button{width:44px;height:44px;padding:0;font-size:1.1rem}
+  .dpad .up{grid-column:2;grid-row:1}
+  .dpad .left{grid-column:1;grid-row:2}
+  .dpad .down{grid-column:2;grid-row:2}
+  .dpad .right{grid-column:3;grid-row:2}
+  .hint{color:rgba(255,255,255,.55);font-size:.75rem;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🧭 Mochi Maze</h1>
+  <p class="subtitle">Guide Mochi 🐶 to the treat 🍖 — arrow keys / WASD or the pad below.</p>
+  <div class="score-board"><div>Time: <b id="time">0.0s</b></div><div>Level: <b id="level">1</b></div><div>Best: <b id="best">—</b></div></div>
+  <div id="maze"></div>
+  <div class="dpad">
+    <button class="up" data-dir="up" aria-label="up">⬆️</button>
+    <button class="left" data-dir="left" aria-label="left">⬅️</button>
+    <button class="down" data-dir="down" aria-label="down">⬇️</button>
+    <button class="right" data-dir="right" aria-label="right">➡️</button>
+  </div>
+  <div class="controls">
+    <button id="newMaze">New Maze 🔀</button>
+    <a class="back" href="/fun-games/index.html">← All Games</a>
+  </div>
+  <p class="hint" id="msg">Reach the treat to start the next level!</p>
+</div>
+<script>
+(function(){
+  var mazeEl=document.getElementById('maze'), timeEl=document.getElementById('time'),
+      levelEl=document.getElementById('level'), bestEl=document.getElementById('best'), msg=document.getElementById('msg');
+  var SIZE=7, level=1, cells=[], player={x:0,y:0}, goal={x:0,y:0}, startTs=0, timer=null, won=false;
+  var best=null; try{ best=+localStorage.getItem('mochiMazeBest')||null; }catch(e){}
+  if(best) bestEl.textContent=best.toFixed(1)+'s';
+
+  // Recursive-backtracker maze generator on a SIZE x SIZE grid.
+  function genMaze(n){
+    var grid=[];
+    for(var y=0;y<n;y++){ var row=[]; for(var x=0;x<n;x++) row.push({x:x,y:y,walls:{r:true,b:true},visited:false}); grid.push(row); }
+    var stack=[grid[0][0]]; grid[0][0].visited=true;
+    function neighbors(c){
+      var list=[];
+      if(c.y>0 && !grid[c.y-1][c.x].visited) list.push(['t',grid[c.y-1][c.x]]);
+      if(c.x<n-1 && !grid[c.y][c.x+1].visited) list.push(['r',grid[c.y][c.x+1]]);
+      if(c.y<n-1 && !grid[c.y+1][c.x].visited) list.push(['b',grid[c.y+1][c.x]]);
+      if(c.x>0 && !grid[c.y][c.x-1].visited) list.push(['l',grid[c.y][c.x-1]]);
+      return list;
+    }
+    while(stack.length){
+      var cur=stack[stack.length-1], opts=neighbors(cur);
+      if(!opts.length){ stack.pop(); continue; }
+      var pick=opts[Math.floor(Math.random()*opts.length)], dir=pick[0], nb=pick[1];
+      if(dir==='r') cur.walls.r=false;
+      else if(dir==='b') cur.walls.b=false;
+      else if(dir==='t') grid[nb.y][nb.x].walls.b=false;
+      else if(dir==='l') grid[nb.y][nb.x].walls.r=false;
+      nb.visited=true; stack.push(nb);
+    }
+    return grid;
+  }
+
+  function render(){
+    mazeEl.style.gridTemplateColumns='repeat('+SIZE+',26px)';
+    mazeEl.innerHTML='';
+    for(var y=0;y<SIZE;y++){
+      for(var x=0;x<SIZE;x++){
+        var c=cells[y][x], div=document.createElement('div');
+        div.className='cell'+(c.walls.r?' wall-r':'')+(c.walls.b?' wall-b':'');
+        if(x===player.x && y===player.y) div.textContent='🐶';
+        else if(x===goal.x && y===goal.y) div.textContent='🍖';
+        mazeEl.appendChild(div);
+      }
+    }
+  }
+
+  function canMove(x,y,dir){
+    if(dir==='right') return x<SIZE-1 && !cells[y][x].walls.r;
+    if(dir==='left') return x>0 && !cells[y][x-1].walls.r;
+    if(dir==='down') return y<SIZE-1 && !cells[y][x].walls.b;
+    if(dir==='up') return y>0 && !cells[y-1][x].walls.b;
+    return false;
+  }
+
+  function move(dir){
+    if(won) return;
+    if(!canMove(player.x,player.y,dir)) return;
+    if(dir==='right') player.x++; else if(dir==='left') player.x--;
+    else if(dir==='down') player.y++; else if(dir==='up') player.y--;
+    render();
+    if(player.x===goal.x && player.y===goal.y) finish();
+  }
+
+  function tick(){
+    var t=(Date.now()-startTs)/1000;
+    timeEl.textContent=t.toFixed(1)+'s';
+  }
+
+  function finish(){
+    won=true; clearInterval(timer);
+    var t=(Date.now()-startTs)/1000;
+    if(!best || t<best){ best=t; try{ localStorage.setItem('mochiMazeBest',best); }catch(e){} bestEl.textContent=best.toFixed(1)+'s'; msg.textContent='New best time! 🏆 '+t.toFixed(1)+'s — starting level '+(level+1)+'…'; }
+    else msg.textContent='Yum! 🍖 Finished in '+t.toFixed(1)+'s — starting level '+(level+1)+'…';
+    level++; levelEl.textContent=level;
+    setTimeout(start, 900);
+  }
+
+  function start(){
+    SIZE=Math.min(6+level,12);
+    cells=genMaze(SIZE);
+    player={x:0,y:0}; goal={x:SIZE-1,y:SIZE-1}; won=false;
+    startTs=Date.now(); timeEl.textContent='0.0s';
+    clearInterval(timer); timer=setInterval(tick,100);
+    render();
+  }
+
+  document.addEventListener('keydown', function(e){
+    var map={ArrowUp:'up',ArrowDown:'down',ArrowLeft:'left',ArrowRight:'right',w:'up',s:'down',a:'left',d:'right'};
+    var dir=map[e.key]; if(dir){ e.preventDefault(); move(dir); }
+  });
+  [].slice.call(document.querySelectorAll('.dpad button')).forEach(function(b){
+    b.addEventListener('click', function(){ move(b.getAttribute('data-dir')); });
+  });
+  document.getElementById('newMaze').addEventListener('click', function(){ level=1; levelEl.textContent=1; start(); });
+
+  start();
+
+  // test hooks
+  window.__mochiMaze = {
+    get player(){return {x:player.x,y:player.y};},
+    get goal(){return {x:goal.x,y:goal.y};},
+    get level(){return level;},
+    get won(){return won;},
+    get size(){return SIZE;},
+    canMove:canMove,
+    move:move,
+    restart:function(){ level=1; levelEl.textContent=1; start(); }
+  };
+})();
+</script>
+<script src="/assets/js/cute.js?nb=1"></script>
+</body>
+</html>
