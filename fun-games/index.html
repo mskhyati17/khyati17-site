@@ -192,6 +192,12 @@
     color:#1a1a2e;font-size:.6rem;font-weight:500;
     padding:2px 8px;border-radius:999px;backdrop-filter:blur(3px);
   }
+  .badge-via{
+    position:absolute;bottom:8px;left:8px;
+    background:rgba(0,0,0,.45);color:#fff;
+    font-size:.58rem;font-weight:500;
+    padding:2px 7px;border-radius:999px;backdrop-filter:blur(3px);
+  }
   .empty{
     grid-column:1/-1;text-align:center;color:var(--muted);
     padding:40px 0;font-size:.95rem;
@@ -2601,6 +2607,7 @@ function buildGameCard(g, idx){
   const card = el("div","card"+(g===_gridFeatured?" big":""));
   card.style.background = g.color;
   if(g.hot){ const b=el("div","badge-hot"); b.textContent="🔥 HOT"; card.appendChild(b); }
+  if(g.url && g.url.indexOf("turbowarp.org")!==-1){ const v=el("div","badge-via"); v.textContent="via Scratch"; card.appendChild(v); }
   let visual;
   if(g.thumbnail){
     visual = el("img","anim anim-float");
