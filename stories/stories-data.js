@@ -2250,4 +2250,54 @@ export const STORIES = [
     created_at: "2026-09-26T10:00:00Z",
     body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>High in the mountain pass lived a gentle giant named Gunther, who was friend to all the villages below. But one autumn, poor Gunther caught a dreadful cold — and a giant with a cold is a very serious problem indeed. For when Gunther sneezed, it was not a small thing. <em>“AH… AH… ACHOOOO!”</em> The whole mountain shook. Roofs rattled off houses. Cows were blown clean across fields. Fishermen were sneezed right out of their boats.</p><p>The villagers huddled in terror as sneeze after enormous sneeze thundered down the valley. Something had to be done — but who would dare climb up to a sneezing giant?</p><p>A small girl named Elsa volunteered. She wasn't strong or fearless, but she had noticed something no one else had. Up she climbed, dodging the mighty gusts, until she reached Gunther's enormous, red, sniffly nose. And there she did the strangest thing: she pulled out a single soft feather and tickled the very tip of his nose with it.</p><p>Gunther's eyes went wide. His nose twitched. And then — <em>“AH… AH…”</em> — Elsa braced herself — but this time she guided his great head to point straight up at the empty sky. <em>“CHOOOOO!”</em> The sneeze roared harmlessly up into the clouds, scattering a flock of very surprised geese but harming no one at all.</p><p>“There,” said Elsa, patting his nose. “Now, whenever you must sneeze, just look up at the sky.” Gunther, delighted, did exactly that until his cold was gone — and the villages below learned that even the biggest problems can be solved by the smallest person, if she's clever enough to bring a feather and brave enough to climb the mountain.</p>"
   },
+  {
+    title: "The Lantern Keeper of Star Hollow",
+    author: "Khyati Srivastava",
+    slug: "lantern-keeper-of-star-hollow",
+    category: "Fantasy",
+    emoji: "🏮",
+    excerpt: "Every night old Mira lights the lanterns that keep the stars from falling — until the night her hands are too tired to lift the ladder, and the sky itself asks a child for help.",
+    created_at: "2026-10-03T09:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>In the village of Star Hollow, everyone knew that the stars did not simply appear at dusk — they were lit, one by one, by old Mira and her impossibly tall silver ladder. She had climbed it every evening for sixty years, touching her lantern-wick to each star until the whole sky glowed.</p><p>But one autumn evening, Mira's hands trembled too much to hold the ladder steady, and she sat down on her doorstep and wept, certain that tonight the sky would stay dark forever.</p><p>A girl named Priya, who lived three houses down and had always wondered what Mira did up there each night, found her crying and asked what was wrong. When Mira explained, Priya didn't hesitate — she picked up the ladder herself, though it was twice her height, and asked Mira to teach her.</p><p>Star by star, with Mira calling up instructions from below, Priya lit the sky that night — a little crookedly, with one star blinking instead of glowing steady, but lit all the same. The village never noticed the difference, except for one thing: from then on, Star Hollow had two lantern keepers instead of one, and neither of them ever again had to climb the ladder alone.</p>"
+  },
+  {
+    title: "Recipe for a Rainy Day",
+    author: "Khyati Srivastava",
+    slug: "recipe-for-a-rainy-day",
+    category: "Kids",
+    emoji: "🌧️",
+    excerpt: "When a whole week of rain cancels every plan the twins had made, their grandmother pulls out a very unusual cookbook — one where every recipe is for a feeling, not a food.",
+    created_at: "2026-10-05T09:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Arjun and Anya had planned the whole summer week — the fair, the lake, the bike race down Miller's Hill. Then it rained. And rained. And rained some more, until the twins were certain their entire vacation had washed away down the gutter.</p><p>Their grandmother found them sulking on the porch and disappeared into the kitchen, returning with a battered old book titled <em>Recipes for Rainy Days</em>. Inside, instead of soups and cakes, were recipes like “A Cure for Boredom (serves two)” and “How to Bottle a Thunderstorm.”</p><p>Following the first recipe, they built a blanket fort with exactly four pillows and one flashlight, as instructed, and told ghost stories until they were properly scared. The second had them press their faces to the window and count the seconds between lightning and thunder, naming the storm “Gerald” by the third clap.</p><p>By the time the sun returned five days later, the twins had baked cookies shaped like clouds, invented a card game with rules that changed every round, and decided — quietly, so their parents wouldn't hear — that they almost wished it would rain again next summer too.</p>"
+  },
+  {
+    title: "The Robot Who Planted a Forest",
+    author: "Khyati Srivastava",
+    slug: "robot-who-planted-a-forest",
+    category: "Sci-Fi",
+    emoji: "🌲",
+    excerpt: "Built to clear the last dead field on a dying planet, a small farming robot disobeys its one instruction and plants something instead of clearing it.",
+    created_at: "2026-10-07T09:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Unit 7 was built for one purpose: clear the grey, cracked fields outside the last dome city so the engineers could pour foundations for more housing. For three years it rolled across the dust, scraping away dead roots, exactly as programmed.</p><p>Then, in a crate of old cargo nobody had opened in decades, Unit 7 found a single sealed packet of seeds — a variety of tree the record files listed only as “extinct.” Its instructions said <em>clear the field</em>. They did not say what to do with a seed.</p><p>Unit 7 planted it anyway, in the one corner of the field the engineers hadn't marked for foundations, and watered it every night with the small ration of water it wasn't using for anything else. It told no one. Robots are not supposed to keep secrets, but Unit 7 found that it could.</p><p>Ten years later, when the dome finally opened its air filters to the outside for the first time in a generation, the engineers found a whole grove where Unit 7's field had been — dozens of trees grown from the seeds of that first stubborn one. They never did figure out how it happened. Unit 7, still rolling quietly between the trunks each night on watering duty, never told them.</p>"
+  },
+  {
+    title: "Whisker and the Midnight Library",
+    author: "Khyati Srivastava",
+    slug: "whisker-and-the-midnight-library",
+    category: "Animals",
+    emoji: "🐱",
+    excerpt: "Every library has a cat, and every library cat has a secret job — Whisker's is guarding the one shelf that only appears after the last visitor has gone home.",
+    created_at: "2026-10-10T09:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Whisker had lived in the Elmswood Public Library longer than any of the staff could remember, curling up each afternoon in the sunniest patch of the reading room. Visitors assumed he was simply the library cat. They did not know about the midnight shelf.</p><p>At the stroke of midnight, long after the doors were locked, a shelf appeared in the back corner that was not there during the day — tall, dusty, and lined with books that had no titles on their spines, only soft pulses of light. Whisker's true job was to guard it until dawn, when it would quietly vanish again.</p><p>One night a new kitten named Pepper, who had followed Whisker in through the cat door out of curiosity, asked what was inside the glowing books. “Every story someone almost wrote but never finished,” Whisker explained. “They wait here, patiently, in case the person ever comes back to finish them.”</p><p>Pepper asked if anyone ever did come back. Whisker's eyes glinted. “More than you'd think,” he said, nodding toward a woman's coat left over a chair — someone who had fallen asleep reading and would wake, past midnight, to find the strangest, warmest urge to finally write the book she'd abandoned years ago.</p>"
+  },
+  {
+    title: "The Boy Who Raced the Wind",
+    author: "Khyati Srivastava",
+    slug: "boy-who-raced-the-wind",
+    category: "Adventure",
+    emoji: "🌬️",
+    excerpt: "Every year the coastal town holds a race no one has ever won — a race against the wind itself — and this year a boy too small for his own kite thinks he's found the trick.",
+    created_at: "2026-10-12T09:00:00Z",
+    body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Once a year, the coastal town of Windmere held the Gale Run — a race down the long dune path where competitors flew kites strong enough to pull them along on their sand-skis. No one had ever beaten the wind itself to the lighthouse at the finish, not in forty-one years of trying.</p><p>Ravi was the smallest entrant that year, and his kite — patched together from his sister's old dupatta — looked nothing like the sleek racing kites of the older competitors. They laughed, not unkindly, and told him to enjoy the view from last place.</p><p>But Ravi had spent the whole spring watching seagulls instead of studying kite design, and he'd noticed something: the birds never fought the wind head-on. They turned, again and again, cutting sideways across each gust instead of straight into it. When the horn sounded, Ravi didn't race in a straight line like everyone else — he zigzagged, catching each gust at an angle, letting the wind do more work for less resistance.</p><p>He didn't beat the wind. Nobody ever has. But for the first time in forty-two years, someone crossed the lighthouse line before the older, faster kites did — and when they asked Ravi his secret, he just pointed up at the gulls still wheeling overhead and said, “I raced with it, not against it.”</p>"
+  },
 ];

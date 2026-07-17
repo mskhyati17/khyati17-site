@@ -4,6 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Admin Panel — Khyati</title>
+  <!-- SEO: meta description for search-result snippets. (khyati:seo-meta) -->
+  <meta name="description" content="Khyati17 account area. Sign in to manage your profile and content." />
+  <meta name="robots" content="noindex,nofollow" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="../assets/css/styles.css" />
   <style>
@@ -32,6 +35,8 @@
     .ap-cmt{ border-top:1px solid #f0e6fb; padding:8px 0; font-size:.9rem; }
     .ap-cmt .who{ font-weight:700; color:#4a2370; }
   </style>
+  <!-- canonical + site icon (khyati:head) -->
+  <link rel="canonical" href="https://khyati17.com/admin/panel.html" />
 </head>
 <body>
   <div id="site-header-root"></div>
@@ -60,7 +65,7 @@
     </div>
   </main>
 
-  <footer class="site-footer"><p>© <span id="year"></span> Khyati — All rights reserved</p></footer>
+  <footer class="site-footer"><p>© <span id="year"></span> Khyati17 — All rights reserved</p></footer>
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   <script type="module" src="../assets/js/auth.js?v=2"></script>
@@ -85,8 +90,8 @@
           (until && has ? '<div class="ap-meta">Approved until ' + until + '</div>' : '') +
           '<div class="ap-controls">' +
             (has ? '<button class="revoke" data-act="revoke">Revoke trading</button>' : '<button class="grant" data-act="grant">Grant trading (1 yr)</button>') +
-            '<select data-act="level"><option value="user"' + (u.level!=='admin'?' selected':'') + '>Level: user</option><option value="admin"' + (u.level==='admin'?' selected':'') + '>Level: admin</option></select>' +
-            '<input type="text" placeholder="new password" data-pw />' +
+            '<select data-act="level" aria-label="Account level for ' + esc(u.email) + '"><option value="user"' + (u.level!=='admin'?' selected':'') + '>Level: user</option><option value="admin"' + (u.level==='admin'?' selected':'') + '>Level: admin</option></select>' +
+            '<input type="text" placeholder="new password" aria-label="New password for ' + esc(u.email) + '" data-pw />' +
             '<button data-act="setpw">Set password</button>' +
             '<button class="del" data-act="del">Delete</button>' +
           '</div>';

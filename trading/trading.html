@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Trading — Khyati</title>
+  <!-- SEO + social share preview: meta description, Open Graph & Twitter Card tags. (khyati:seo-meta) -->
   <meta name="description" content="The Khyati17 Trading Zone — learn stock-market basics and follow along with live-style charts." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Khyati17" />
@@ -35,6 +36,8 @@
     .pill-solid{ background:linear-gradient(90deg,var(--pp),var(--pp2)); color:#fff; }
     .pill-ghost{ background:#fff; color:var(--pp); border:1px solid var(--pp2); }
   </style>
+  <!-- canonical + site icon (khyati:head) -->
+  <link rel="canonical" href="https://khyati17.com/trading/trading.html" />
 </head>
 <body>
   <div id="site-header-root"></div>
@@ -43,7 +46,7 @@
     <!-- not signed in -->
     <div class="t-state" id="t-login" style="display:none">
       <div class="ico">🔒</div>
-      <h2>Please sign in</h2>
+      <h1>Please sign in</h1>
       <p>The Trading area is for signed-in members only.</p>
       <div class="btn-row">
         <a class="pill pill-solid" href="/admin/login.html">Sign in</a>
@@ -54,11 +57,11 @@
     <!-- signed in, awaiting approval -->
     <div class="t-state" id="t-wait" style="display:none">
       <div class="ico">⏳</div>
-      <h2>Waiting for approval</h2>
+      <h1>Waiting for approval</h1>
       <p>You're signed in as <strong id="t-email"></strong>, but your access to Trading hasn't been approved yet by <strong>mskhyati17@gmail.com</strong>. You'll be let in once it's approved.</p>
       <div class="btn-row">
         <button class="pill pill-solid" id="t-request">✉️ Request access</button>
-        <a class="pill pill-ghost" href="/home/index.html">← Back to site</a>
+        <a class="pill pill-ghost" href="/">← Back to site</a>
       </div>
       <p id="t-reqmsg" style="margin-top:12px;font-weight:600;display:none"></p>
     </div>
@@ -66,8 +69,8 @@
     <!-- approved: show the platform -->
     <div id="t-app" style="display:none">
       <div class="t-frame-bar">
-        <h2>📈 CBT TradingHome — Algo Hub</h2>
-        <a class="pill pill-ghost" href="/home/index.html">← Back to khyati17.com</a>
+        <h1>📈 CBT TradingHome — Algo Hub</h1>
+        <a class="pill pill-ghost" href="/">← Back to khyati17.com</a>
       </div>
       <div class="t-frame-wrap">
         <iframe id="t-iframe" title="CBT TradingHome — Algo Hub" allow="clipboard-write; fullscreen"></iframe>
@@ -75,7 +78,7 @@
     </div>
   </main>
 
-  <footer class="site-footer"><p>© <span id="year"></span> Khyati — All rights reserved</p></footer>
+  <footer class="site-footer"><p>© <span id="year"></span> Khyati17 — All rights reserved</p></footer>
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   <script type="module" src="../assets/js/auth.js?v=2"></script>

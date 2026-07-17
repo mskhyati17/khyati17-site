@@ -2,11 +2,320 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="refresh" content="0;url=/home/index.html" />
-  <title>Khyati17</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Khyati17 — Home</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <!-- SEO + social share preview: meta description, Open Graph & Twitter Card tags. (khyati:seo-meta) -->
+  <meta name="description" content="Khyati17 — games, stories, AI tools, videos and more. Learn, create and share." />
+  <meta name="theme-color" content="#6a1b9a" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Khyati17" />
+  <meta property="og:title" content="Khyati17 — Home" />
+  <meta property="og:description" content="Games, stories, AI tools and videos — learn, create and share." />
+  <meta property="og:image" content="https://khyati17.com/og-image.png" />
+  <meta property="og:url" content="https://khyati17.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://khyati17.com/#website",
+        "name": "Khyati17",
+        "alternateName": "Khyati17.com",
+        "url": "https://khyati17.com/",
+        "description": "A free browser playground: 10,000+ games, 10,000+ AI tools, 200 stories, videos and more — learn, create and share.",
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://khyati17.com/#org",
+        "name": "Khyati17",
+        "url": "https://khyati17.com/",
+        "logo": "https://khyati17.com/apple-touch-icon.png",
+        "description": "A small girl with big dreams building games, stories, AI tools and more."
+      },
+      {
+        "@type": "CollectionPage",
+        "name": "Khyati17 — Home",
+        "url": "https://khyati17.com/",
+        "isPartOf": { "@id": "https://khyati17.com/#website" },
+        "about": ["Games", "AI Tools", "Stories", "Videos"]
+      }
+    ]
+  }
+  </script>
+  <!-- canonical + site icon (khyati:head) -->
+  <link rel="canonical" href="https://khyati17.com/" />
 </head>
 <body>
-  <p>Redirecting to <a href="/home/index.html">Khyati17.com</a>...</p>
-  <script>location.href='/home/index.html';</script>
+  <div id="site-header-root"></div>
+
+  <main class="hero hero-rich" role="main" aria-labelledby="hero-title">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1 id="hero-title">A small girl. Big dreams.</h1>
+        <p class="lead">Hi, I'm Khyati! I've created videos, built websites, written stories and explored trading — and I made this whole playground to share what I love.</p>
+        <p class="hero-ctas">
+          <a class="btn" href="/about/about.html">Learn more about me</a>
+          <a class="btn btn-ghost" href="#explore" style="margin-left:10px">Explore the site ↓</a>
+        </p>
+        <div class="role-cta">A little bit of everything I do — all in one place.</div>
+      </div>
+
+      <!-- decorative animated shapes -->
+      <div class="hero-shapes" aria-hidden="true">
+        <span class="shape s1"></span>
+        <span class="shape s2"></span>
+        <span class="shape s3"></span>
+      </div>
+    </div>
+  </main>
+
+  <style>
+    html{scroll-behavior:smooth}
+    .home-explore{width:100%;display:flex;justify-content:center;padding:8px 16px 40px;scroll-margin-top:20px}
+    .explore-inner{width:100%;max-width:var(--max-width)}
+    .stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:6px 0 44px}
+    .stat{background:#fff;border:1px solid #efe4fb;border-radius:16px;padding:20px 12px;text-align:center;box-shadow:0 8px 24px rgba(117,80,168,.08)}
+    .stat-num{display:block;font-weight:800;font-size:2rem;line-height:1;background:linear-gradient(90deg,var(--purple-700),var(--purple-500));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .stat-label{display:block;margin-top:8px;font-weight:600;font-size:.82rem;color:#6a4b8f}
+    .explore-title{text-align:center;font-size:1.9rem;margin:0 0 6px;color:var(--purple-900)}
+    .explore-sub{text-align:center;color:#6a4b8f;margin:0 auto 26px;max-width:520px}
+    .explore-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .xcard{position:relative;display:block;text-decoration:none;color:#fff;border-radius:18px;padding:22px 20px;min-height:150px;overflow:hidden;box-shadow:0 12px 30px rgba(80,40,120,.18);transition:transform .2s,box-shadow .2s}
+    .xcard:hover{transform:translateY(-5px);box-shadow:0 20px 44px rgba(80,40,120,.28)}
+    .xcard .xc-emoji{font-size:2.4rem;line-height:1;filter:drop-shadow(0 3px 5px rgba(0,0,0,.25))}
+    .xcard h3{margin:12px 0 4px;font-size:1.2rem}
+    .xcard p{margin:0;font-size:.86rem;opacity:.95;line-height:1.4}
+    .xcard .xc-count{position:absolute;top:16px;right:16px;background:rgba(255,255,255,.9);color:#3a2058;font-weight:800;font-size:.72rem;border-radius:999px;padding:4px 10px}
+    .xcard .xc-go{margin-top:12px;display:inline-block;font-weight:800;font-size:.85rem}
+    .xc-games{background:linear-gradient(135deg,#6a1b9a,#c56be0)}
+    .xc-tools{background:linear-gradient(135deg,#9a1b5c,#e05b8a)}
+    .xc-stories{background:linear-gradient(135deg,#1b6a9a,#4dc0cc)}
+    .xc-videos{background:linear-gradient(135deg,#9a5c1b,#e0a24d)}
+    .xc-trading{background:linear-gradient(135deg,#1b9a5c,#4dcc86)}
+    .xc-others{background:linear-gradient(135deg,#7550a8,#b58be0)}
+    .why-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:34px}
+    .why{background:#fff;border:1px solid #efe4fb;border-radius:999px;padding:9px 16px;font-weight:700;font-size:.85rem;color:#4a2370;display:flex;align-items:center;gap:7px}
+    @media (max-width:820px){ .explore-grid{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:560px){ .stats-strip{grid-template-columns:repeat(2,1fr)} .explore-grid{grid-template-columns:1fr} .stat-num{font-size:1.7rem} }
+    /* richer footer */
+    .site-footer{width:100%}
+    .foot-rich{width:100%;max-width:var(--max-width);margin:0 auto;display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center;padding:6px 16px}
+    .foot-links{display:flex;flex-wrap:wrap;gap:14px}
+    .foot-links a{color:#e9d8ff;text-decoration:none;font-weight:600;font-size:.85rem}
+    .foot-links a:hover{color:#fff;text-decoration:underline}
+    .foot-note{font-size:.8rem;opacity:.85}
+    /* share */
+    .share-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin-top:34px}
+    .share-label{font-weight:800;color:#6a1b9a;font-size:.95rem}
+    .share-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid #e3d3f6;background:#fff;color:#4a2370;font-weight:700;font-size:.86rem;border-radius:999px;padding:9px 15px;cursor:pointer;text-decoration:none;transition:transform .15s,box-shadow .15s}
+    .share-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(117,80,168,.16)}
+    .share-btn.copied{background:#e5f7e8;border-color:#9fe0b0;color:#2f7d47}
+    .surprise-btn{background:linear-gradient(90deg,#6a1b9a,#c56be0);color:#fff;border:none;border-radius:999px;padding:11px 24px;font-weight:800;font-size:.95rem;cursor:pointer;box-shadow:0 8px 22px rgba(117,80,168,.28);transition:transform .15s}
+    .surprise-btn:hover{transform:translateY(-2px) scale(1.03)}
+    .surprise-btn:active{transform:scale(.97)}
+    .picks-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:2px 0 30px}
+    .pick{display:block;background:#fff;border:1px solid #efe4fb;border-radius:16px;padding:16px;text-decoration:none;color:inherit;text-align:center;transition:transform .15s,box-shadow .15s}
+    .pick:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(117,80,168,.14)}
+    .pick .pe{font-size:2rem;line-height:1}
+    .pick .pk{display:block;font-size:.68rem;font-weight:800;color:#9a8ab0;text-transform:uppercase;letter-spacing:.05em;margin-top:8px}
+    .pick .pt{display:block;font-weight:700;color:#4a2370;margin-top:3px;font-size:.92rem;line-height:1.25}
+    @media (max-width:560px){ .picks-row{grid-template-columns:1fr} }
+    [data-theme="dark"] .pick{background:#241633;border-color:#3a2550}
+    [data-theme="dark"] .pick .pt{color:#e5d8f5}
+    /* Original games showcase */
+    .orig-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:2px 0 30px}
+    .orig{display:flex;flex-direction:column;align-items:center;gap:6px;background:#fff;border:1px solid #efe4fb;border-radius:16px;padding:16px 8px;text-decoration:none;color:inherit;transition:transform .15s,box-shadow .15s}
+    .orig:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(117,80,168,.16)}
+    .orig .oe{font-size:2rem;line-height:1}
+    .orig b{font-size:.8rem;color:#4a2370;text-align:center;line-height:1.2}
+    @media (max-width:560px){ .orig-row{grid-template-columns:repeat(2,1fr)} }
+    [data-theme="dark"] .orig{background:#241633;border-color:#3a2550}
+    [data-theme="dark"] .orig b{color:#e5d8f5}
+  </style>
+
+  <section class="home-explore" id="explore" aria-labelledby="explore-title">
+    <div class="explore-inner">
+      <div class="stats-strip" aria-label="Site highlights">
+        <div class="stat"><span class="stat-num" data-to="10000" data-suffix="+">0</span><span class="stat-label">🎮 Free Games</span></div>
+        <div class="stat"><span class="stat-num" data-to="10000" data-suffix="+">0</span><span class="stat-label">🤖 AI Tools</span></div>
+        <div class="stat"><span class="stat-num" data-to="200">0</span><span class="stat-label">📖 Stories</span></div>
+        <div class="stat"><span class="stat-num" data-to="700" data-suffix="+">0</span><span class="stat-label">🎬 Videos</span></div>
+      </div>
+
+      <h2 class="explore-title" style="margin-bottom:14px">✨ Today's Picks</h2>
+      <div id="today-picks"></div>
+
+      <h2 class="explore-title" style="margin-bottom:6px">⭐ Original Mochi Games</h2>
+      <p class="explore-sub" style="margin-bottom:16px">Twelve little games I built by hand — you won't find these anywhere else. 🐶</p>
+      <div class="orig-row">
+        <a class="orig" href="/fun-games/mochi-treat-catch.html"><span class="oe">🐶</span><b>Treat Catch</b></a>
+        <a class="orig" href="/fun-games/mochi-says.html"><span class="oe">🐾</span><b>Mochi Says</b></a>
+        <a class="orig" href="/fun-games/perfect-fetch.html"><span class="oe">🎾</span><b>Perfect Fetch</b></a>
+        <a class="orig" href="/fun-games/word-rescue.html"><span class="oe">🔤</span><b>Word Rescue</b></a>
+        <a class="orig" href="/fun-games/paw-reflex.html"><span class="oe">⚡</span><b>Paw Reflex</b></a>
+        <a class="orig" href="/fun-games/mochi-quiz.html"><span class="oe">🧠</span><b>Mochi Quiz</b></a>
+        <a class="orig" href="/fun-games/mochi-match.html"><span class="oe">🃏</span><b>Mochi Match</b></a>
+        <a class="orig" href="/fun-games/whack-a-mochi.html"><span class="oe">🔨</span><b>Whack-a-Mochi</b></a>
+        <a class="orig" href="/fun-games/mochi-slide.html"><span class="oe">🧩</span><b>Mochi Slide</b></a>
+        <a class="orig" href="/fun-games/mochi-type.html"><span class="oe">⌨️</span><b>Mochi Type</b></a>
+        <a class="orig" href="/fun-games/mochi-2048.html"><span class="oe">🔢</span><b>Mochi 2048</b></a>
+        <a class="orig" href="/fun-games/mochi-flap.html"><span class="oe">🐤</span><b>Mochi Flap</b></a>
+      </div>
+
+      <h2 id="explore-title" class="explore-title">Everything to explore ✨</h2>
+      <p class="explore-sub">One playground for games, stories, tools and more — all free, right in your browser.</p>
+      <div style="text-align:center;margin:-8px 0 24px"><button id="surprise" class="surprise-btn">🎲 Surprise Me!</button></div>
+
+      <div class="explore-grid">
+        <a class="xcard xc-games" href="/fun-games/index.html">
+          <span class="xc-count">10,000+</span><div class="xc-emoji">🎮</div>
+          <h3>Fun &amp; Games</h3><p>Over 10,000 games to play instantly — arcade, puzzle, racing and more.</p><span class="xc-go">Play now →</span>
+        </a>
+        <a class="xcard xc-tools" href="/ai-tools/index.html">
+          <span class="xc-count">10,000+</span><div class="xc-emoji">🤖</div>
+          <h3>AI Tools</h3><p>Fancy text, ciphers, converters, generators — 200 tools in your browser.</p><span class="xc-go">Try them →</span>
+        </a>
+        <a class="xcard xc-stories" href="/stories/index.html">
+          <span class="xc-count">200</span><div class="xc-emoji">📖</div>
+          <h3>Story Hub</h3><p>Original tales to read and enjoy — adventure, mystery and heart.</p><span class="xc-go">Read now →</span>
+        </a>
+        <a class="xcard xc-videos" href="/videos/videos.html">
+          <span class="xc-count">700+</span><div class="xc-emoji">🎬</div>
+          <h3>Videos</h3><p>Fun shorts and clips, hand-picked and ready to watch.</p><span class="xc-go">Watch now →</span>
+        </a>
+        <a class="xcard xc-trading" href="/trading/trading.html">
+          <div class="xc-emoji">📈</div>
+          <h3>Trading Zone</h3><p>Learn market basics and follow along with live-style charts.</p><span class="xc-go">Explore →</span>
+        </a>
+        <a class="xcard xc-others" href="/others/others.html">
+          <div class="xc-emoji">🌟</div>
+          <h3>Kid Advice &amp; More</h3><p>Friendly tips to learn, grow and be your best self.</p><span class="xc-go">Discover →</span>
+        </a>
+      </div>
+
+      <div class="why-row">
+        <div class="why"><span>✨</span> 100% free</div>
+        <div class="why"><span>⚡</span> No downloads</div>
+        <div class="why"><span>📱</span> Works offline</div>
+        <div class="why"><span>🔒</span> Kid-friendly</div>
+        <div class="why"><span>🐶</span> Meet Mochi</div>
+        <button class="why" id="install-app" style="display:none;cursor:pointer;border-color:#c9a8f0;background:linear-gradient(90deg,#6a1b9a,#c56be0);color:#fff"><span>📲</span> Install App</button>
+      </div>
+
+      <div class="share-row" aria-label="Share Khyati17">
+        <span class="share-label">Love it? Share Khyati17 💜</span>
+        <button class="share-btn" data-share="native" hidden>📤 Share</button>
+        <a class="share-btn" data-share="x" target="_blank" rel="noopener">𝕏 Post</a>
+        <a class="share-btn" data-share="wa" target="_blank" rel="noopener">💬 WhatsApp</a>
+        <a class="share-btn" data-share="fb" target="_blank" rel="noopener">📘 Facebook</a>
+        <button class="share-btn" data-share="copy">🔗 Copy link</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="foot-rich">
+      <nav class="foot-links" aria-label="Footer">
+        <a href="/fun-games/index.html">Games</a>
+        <a href="/ai-tools/index.html">AI Tools</a>
+        <a href="/stories/index.html">Stories</a>
+        <a href="/videos/videos.html">Videos</a>
+        <a href="/trading/trading.html">Trading</a>
+        <a href="/me/index.html">My Stuff</a>
+        <a href="/about/about.html">About</a>
+      </nav>
+      <p class="foot-note">© <span id="year"></span> Khyati17 — All rights reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Land on the "Explore the site" section by default (once the shared header
+    // has injected, so the target position is final). Skip if a different anchor
+    // was requested, or if the visitor has already scrolled themselves.
+    (function(){
+      try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }catch(e){}
+      if(location.hash && location.hash!=='#explore') return;
+      var done=false, tries=0;
+      function land(){
+        if(done) return; if(window.scrollY>40) { done=true; return; } // user already scrolled — leave them be
+        var el=document.getElementById('explore'); if(!el) return; done=true;
+        var h=document.documentElement, prev=h.style.scrollBehavior; h.style.scrollBehavior='auto';
+        el.scrollIntoView({block:'start'}); h.style.scrollBehavior=prev;
+      }
+      (function wait(){ if(done) return; if(document.querySelector('.main-nav') || tries>25){ land(); return; } tries++; setTimeout(wait, 100); })();
+    })();
+    // Animated count-up when the stats scroll into view
+    (function(){
+      var nums = document.querySelectorAll('.stat-num');
+      function run(el){
+        var to = +el.getAttribute('data-to'), suf = el.getAttribute('data-suffix')||'', t0=null, dur=1400;
+        function step(ts){ if(!t0) t0=ts; var p=Math.min(1,(ts-t0)/dur); var e=1-Math.pow(1-p,3);
+          el.textContent = Math.round(to*e).toLocaleString() + (p===1?suf:''); if(p<1) requestAnimationFrame(step); }
+        requestAnimationFrame(step);
+      }
+      if(!('IntersectionObserver' in window)){ nums.forEach(function(n){ n.textContent=(+n.getAttribute('data-to')).toLocaleString()+(n.getAttribute('data-suffix')||''); }); return; }
+      var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ run(en.target); io.unobserve(en.target); } }); },{threshold:.4});
+      nums.forEach(function(n){ io.observe(n); });
+    })();
+    // Share Khyati17
+    (function(){
+      var url='https://khyati17.com/', text='Check out Khyati17 — 2,000+ free games, 100 AI tools, stories & more! 🎮📖🤖';
+      var x=document.querySelector('[data-share="x"]'); if(x) x.href='https://twitter.com/intent/tweet?text='+encodeURIComponent(text)+'&url='+encodeURIComponent(url);
+      var wa=document.querySelector('[data-share="wa"]'); if(wa) wa.href='https://wa.me/?text='+encodeURIComponent(text+' '+url);
+      var fb=document.querySelector('[data-share="fb"]'); if(fb) fb.href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url);
+      var nat=document.querySelector('[data-share="native"]');
+      if(nat && navigator.share){ nat.hidden=false; nat.addEventListener('click',function(){ navigator.share({title:'Khyati17',text:text,url:url}).catch(function(){}); }); }
+      var cp=document.querySelector('[data-share="copy"]');
+      if(cp) cp.addEventListener('click',function(){ var done=function(){ cp.classList.add('copied'); var t=cp.textContent; cp.textContent='✅ Copied!'; setTimeout(function(){ cp.classList.remove('copied'); cp.textContent=t; },1800); };
+        if(navigator.clipboard){ navigator.clipboard.writeText(url).then(done).catch(done); } else { done(); } });
+    })();
+    // Today's Picks — a deterministic daily game/tool/story (same for everyone today)
+    (function(){
+      var el=document.getElementById('today-picks'); if(!el) return;
+      var GP=[{e:'🐶',t:"Mochi's Treat Catch",u:'/fun-games/mochi-treat-catch.html'},{e:'🎾',t:'Perfect Fetch',u:'/fun-games/perfect-fetch.html'},{e:'🔤',t:'Word Rescue',u:'/fun-games/word-rescue.html'},{e:'⚡',t:'Paw Reflex',u:'/fun-games/paw-reflex.html'},{e:'🐾',t:'Mochi Says',u:'/fun-games/mochi-says.html'},{e:'🧠',t:'Mochi Quiz',u:'/fun-games/mochi-quiz.html'},{e:'🃏',t:'Mochi Match',u:'/fun-games/mochi-match.html'},{e:'🔨',t:'Whack-a-Mochi',u:'/fun-games/whack-a-mochi.html'},{e:'🧩',t:'Mochi Slide',u:'/fun-games/mochi-slide.html'},{e:'⌨️',t:'Mochi Type',u:'/fun-games/mochi-type.html'},{e:'🔢',t:'Mochi 2048',u:'/fun-games/mochi-2048.html'},{e:'🐤',t:'Mochi Flap',u:'/fun-games/mochi-flap.html'},{e:'🧱',t:'Tetris',u:'/fun-games/tetris.html'},{e:'🐍',t:'Snake',u:'/fun-games/snake.html'}];
+      var TP=[{e:'👹',t:'Zalgo Glitch',u:'/ai-tools/tool.html?t=zalgo'},{e:'🎲',t:'Dice Roller',u:'/ai-tools/tool.html?t=dice-notation'},{e:'♈',t:'Zodiac Sign',u:'/ai-tools/tool.html?t=zodiac-sign'},{e:'🔐',t:'Password Generator',u:'/ai-tools/tool.html?t=password-gen'},{e:'💬',t:'Random Quote',u:'/ai-tools/tool.html?t=random-quote'},{e:'🎨',t:'HEX → HSL',u:'/ai-tools/tool.html?t=hex-to-hsl'}];
+      var SP=[{e:'🗼',t:'The Lighthouse of Lost Things',u:'/stories/stories.html?story=lighthouse-of-lost-things'},{e:'🤖',t:'The Robot Who Collected Sunsets',u:'/stories/stories.html?story=robot-who-collected-sunsets'},{e:'🦉',t:'How the Owl Learned to Laugh',u:'/stories/stories.html?story=how-the-owl-learned-to-laugh'},{e:'🏔️',t:'Nima and the Mountain That Snored',u:'/stories/stories.html?story=nima-and-the-snoring-mountain'},{e:'🌱',t:'The Garden That Grew Backwards',u:'/stories/stories.html?story=garden-that-grew-backwards'}];
+      var d=new Date(); var day=Math.floor(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/86400000);
+      function pk(a,o){ return a[((day+o)%a.length+a.length)%a.length]; }
+      var picks=[["Today's Game",pk(GP,0)],["Today's Tool",pk(TP,2)],["Today's Story",pk(SP,4)]];
+      el.innerHTML='<div class="picks-row">'+picks.map(function(p){ return '<a class="pick" href="'+p[1].u+'"><div class="pe">'+p[1].e+'</div><span class="pk">'+p[0]+'</span><span class="pt">'+p[1].t+'</span></a>'; }).join('')+'</div>';
+    })();
+    // Surprise Me — jump to a random hand-picked destination (games, tools, stories)
+    (function(){
+      var btn=document.getElementById('surprise'); if(!btn) return;
+      var picks=[
+        '/fun-games/mochi-treat-catch.html','/fun-games/mochi-says.html','/fun-games/perfect-fetch.html','/fun-games/word-rescue.html',
+        '/fun-games/snake.html','/fun-games/tetris.html','/fun-games/worldle/index.html','/fun-games/index.html',
+        '/ai-tools/tool.html?t=zalgo','/ai-tools/tool.html?t=dice-notation','/ai-tools/tool.html?t=random-quote','/ai-tools/tool.html?t=bold-unicode',
+        '/ai-tools/tool.html?t=magic-8-ball','/ai-tools/index.html',
+        '/stories/stories.html?story=lighthouse-of-lost-things','/stories/stories.html?story=how-the-owl-learned-to-laugh','/stories/index.html',
+        '/videos/videos.html'
+      ];
+      var last=-1;
+      btn.addEventListener('click',function(){
+        var i; do { i=Math.floor(Math.random()*picks.length); } while(i===last && picks.length>1); last=i;
+        btn.textContent='🎲 …'; location.href=picks[i];
+      });
+    })();
+    // PWA install prompt — show the button only when the browser offers it
+    (function(){
+      var deferred=null, btn=document.getElementById('install-app');
+      if(!btn) return;
+      window.addEventListener('beforeinstallprompt',function(e){ e.preventDefault(); deferred=e; btn.style.display='inline-flex'; });
+      btn.addEventListener('click',function(){ if(deferred){ deferred.prompt(); deferred=null; btn.style.display='none'; } });
+      window.addEventListener('appinstalled',function(){ btn.style.display='none'; });
+    })();
+  </script>
+  <script type="module" src="/assets/js/auth.js?v=2"></script>
+  <script type="module">import('/assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
+  <script type="module" src="/assets/js/hero.js"></script>
 </body>
 </html>

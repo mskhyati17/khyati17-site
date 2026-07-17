@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>📐 Unit Converter — Khyati17</title>
+<!-- SEO + social share preview: meta description, Open Graph & Twitter Card tags. (khyati:seo-meta) -->
 <meta name="description" content="A free unit converter — length, weight, temperature, speed, data and time. Instant results, right in your browser. Free on Khyati17." />
 <meta property="og:title" content="📐 Unit Converter — Khyati17" />
 <meta property="og:description" content="Convert length, weight, temperature, speed, data and time instantly. Free on Khyati17." />
@@ -32,6 +33,8 @@
   .controls a{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:9px 18px;border-radius:10px;text-decoration:none;font-size:.9rem}
   .controls a:hover{background:#e9d8ff;color:#2b0b3a}
 </style>
+  <!-- canonical + site icon (khyati:head) -->
+  <link rel="canonical" href="https://khyati17.com/ai-tools/unit-converter.html" />
 </head>
 <body>
 <div class="container">
@@ -39,9 +42,9 @@
   <p class="subtitle">Convert between units instantly — no maths required.</p>
   <div class="cats" id="cats"></div>
   <div class="row">
-    <div class="field"><label>From</label><input type="number" id="in" value="1" /><select id="from"></select></div>
+    <div class="field"><label for="in">From</label><input type="number" id="in" value="1" /><select id="from" aria-label="From unit"></select></div>
     <button class="swap" id="swap" title="Swap">⇄</button>
-    <div class="field"><label>To</label><input type="number" id="out" readonly /><select id="to"></select></div>
+    <div class="field"><label for="out">To</label><input type="number" id="out" readonly /><select id="to" aria-label="To unit"></select></div>
   </div>
   <div class="result" id="result"></div>
   <div class="controls"><a href="/ai-tools/index.html">← All Tools</a></div>

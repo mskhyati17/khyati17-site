@@ -4,6 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sign in</title>
+  <!-- SEO: meta description for search-result snippets. (khyati:seo-meta) -->
+  <meta name="description" content="Khyati17 account area. Sign in to manage your profile and content." />
+  <meta name="robots" content="noindex,nofollow" />
   <link rel="stylesheet" href="../assets/css/styles.css" />
   <style>
     #login-form{max-width:400px;margin:22px auto;text-align:left;background:#fff;border:1px solid #efe4fb;border-radius:18px;padding:24px 22px;box-shadow:0 14px 36px rgba(117,80,168,.14)}
@@ -22,6 +25,11 @@
     [data-theme="dark"] #login-form label{color:#d9b8ff}
     [data-theme="dark"] #login-form .video-note,[data-theme="dark"] #login-form p{color:#c3b0dd}
   </style>
+  <!-- canonical + site icon (khyati:head) -->
+  <link rel="canonical" href="https://khyati17.com/admin/login.html" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#6a1b9a" />
 </head>
 <body>
   <div id="site-header-root"></div>
@@ -38,7 +46,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> Khyati — All rights reserved</p>
+    <p>© <span id="year"></span> Khyati17 — All rights reserved</p>
   </footer>
 
   <script>
@@ -64,7 +72,7 @@
         // Signed in (or demo auth). Update UI and redirect to home.
         await Auth.renderAuthArea();
         msg.textContent = 'Signed in — redirecting...';
-        setTimeout(()=>location.href='../home/index.html',700);
+        setTimeout(()=>location.href='/',700);
         return;
       }
 

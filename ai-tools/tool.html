@@ -4,6 +4,18 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>AI Tool — Khyati17</title>
+<!-- SEO + social share preview: meta description, Open Graph & Twitter Card tags. (khyati:seo-meta) -->
+<meta name="description" content="AI Tool — a free online tool on Khyati17. Fast, easy to use and runs right in your browser, no sign-up needed." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Khyati17" />
+<meta property="og:title" content="AI Tool — Khyati17" />
+<meta property="og:description" content="AI Tool — a free online tool on Khyati17. Fast, easy to use and runs right in your browser, no sign-up needed." />
+<meta property="og:image" content="https://khyati17.com/og-image.png" />
+<meta property="og:url" content="https://khyati17.com/ai-tools/tool.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AI Tool — Khyati17" />
+<meta name="twitter:description" content="AI Tool — a free online tool on Khyati17. Fast, easy to use and runs right in your browser, no sign-up needed." />
+<meta name="twitter:image" content="https://khyati17.com/og-image.png" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="stylesheet" href="../assets/css/styles.css" />
 <style>
@@ -31,6 +43,9 @@
   .more{ text-align:center; margin-top:22px; }
   .more a{ color:var(--pp2); font-weight:600; }
 </style>
+  <!-- canonical + site icon (khyati:head) -->
+  <link rel="canonical" href="https://khyati17.com/ai-tools/tool.html" />
+  <script type="application/ld+json" id="tool-jsonld"></script>
 </head>
 <body>
   <div id="site-header-root"></div>
@@ -58,7 +73,7 @@
     <div class="more"><a href="/ai-tools/index.html">✨ Explore all AI tools</a></div>
   </main>
 
-  <footer class="site-footer"><p>© <span id="year"></span> Khyati — All rights reserved</p></footer>
+  <footer class="site-footer"><p>© <span id="year"></span> Khyati17 — All rights reserved</p></footer>
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   <script type="module" src="../assets/js/auth.js?v=2"></script>
@@ -74,7 +89,34 @@
     if(!tool){
       card.innerHTML = '<div class="nf">😕 Sorry, that tool wasn’t found.<br><br><a class="back" href="/ai-tools/index.html">← Back to AI Zone</a></div>';
     } else {
-      document.title = tool.name + ' — Khyati17 AI Zone';
+      // Per-tool SEO: give each ?t=<id> its own canonical URL, title and
+      // description so search engines index tools individually instead of
+      // collapsing them all onto this one static page.
+      const toolTitle = tool.name + ' — Khyati17 AI Zone';
+      const toolDesc = tool.desc || (tool.name + ' — a free online tool on Khyati17. Fast, easy to use and runs right in your browser, no sign-up needed.');
+      const toolUrl = 'https://khyati17.com/ai-tools/tool.html?t=' + encodeURIComponent(tool.id);
+      document.title = toolTitle;
+      const canon = document.querySelector('link[rel="canonical"]');
+      if(canon) canon.setAttribute('href', toolUrl);
+      const setMeta = (sel, attr, val) => { const el = document.querySelector(sel); if(el) el.setAttribute(attr, val); };
+      setMeta('meta[name="description"]', 'content', toolDesc);
+      setMeta('meta[property="og:title"]', 'content', toolTitle);
+      setMeta('meta[property="og:description"]', 'content', toolDesc);
+      setMeta('meta[property="og:url"]', 'content', toolUrl);
+      setMeta('meta[name="twitter:title"]', 'content', toolTitle);
+      setMeta('meta[name="twitter:description"]', 'content', toolDesc);
+      const jsonld = document.getElementById('tool-jsonld');
+      if(jsonld) jsonld.textContent = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareApplication',
+        name: tool.name,
+        description: toolDesc,
+        url: toolUrl,
+        applicationCategory: tool.cat ? (tool.cat + ' Tool') : 'UtilitiesApplication',
+        operatingSystem: 'Any (runs in browser)',
+        isAccessibleForFree: true,
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }
+      });
       document.getElementById('t-ico').textContent = tool.emoji;
       document.getElementById('t-name').textContent = tool.name;
       document.getElementById('t-desc').textContent = tool.desc;

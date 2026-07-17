@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>🎮 GameZone — Fun & Games</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<!-- SEO + social share preview: meta description, Open Graph & Twitter Card tags. (khyati:seo-meta) -->
 <meta name="description" content="Play 2130+ free games in the Khyati17 GameZone — no downloads, just fun." />
 <meta name="theme-color" content="#6a1b9a" />
 <meta property="og:type" content="website" />
@@ -191,6 +192,12 @@
     color:#1a1a2e;font-size:.6rem;font-weight:500;
     padding:2px 8px;border-radius:999px;backdrop-filter:blur(3px);
   }
+  .badge-via{
+    position:absolute;bottom:8px;left:8px;
+    background:rgba(0,0,0,.45);color:#fff;
+    font-size:.58rem;font-weight:500;
+    padding:2px 7px;border-radius:999px;backdrop-filter:blur(3px);
+  }
   .empty{
     grid-column:1/-1;text-align:center;color:var(--muted);
     padding:40px 0;font-size:.95rem;
@@ -276,6 +283,8 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"CollectionPage","name":"GameZone — 2,000+ Free Games","url":"https://khyati17.com/fun-games/index.html","description":"Over 2,000 free browser games plus 8 original hand-built Mochi games — arcade, puzzle, racing, skill and more. No downloads.","isPartOf":{"@type":"WebSite","name":"Khyati17","url":"https://khyati17.com/"},"inLanguage":"en"}
 </script>
+  <!-- canonical + site icon (khyati:head) -->
+  <link rel="canonical" href="https://khyati17.com/fun-games/index.html" />
 </head>
 <body>
 
@@ -286,7 +295,7 @@
       <input id="search" class="search" type="search" placeholder="Search games…" autocomplete="off" aria-label="Search games" />
     </div>
     <nav class="zone-nav" aria-label="Site sections">
-      <a href="/home/index.html">🏠 Home</a>
+      <a href="/">🏠 Home</a>
       <a href="/stories/index.html">📖 Stories</a>
       <a href="/ai-tools/index.html">🤖 AI</a>
       <a href="/videos/videos.html">🎬 Videos</a>
@@ -329,6 +338,15 @@
   <!-- 7. Footer -->
   <footer class="footer">
     Let the world play · Built with <span>❤️</span>
+    <p style="max-width:640px;margin:10px auto 0;font-size:.72rem;line-height:1.5;opacity:.65">
+      Games marked <strong>⭐ Original</strong> were built by Khyati17. Many other games on this page are
+      community projects created by independent Scratch developers and played here live via
+      <a href="https://turbowarp.org" target="_blank" rel="noopener">TurboWarp</a>, an open-source Scratch
+      player — full credit belongs to each project's original creator. Any franchise or character names that
+      appear in community project titles (e.g. game names referencing existing characters or brands) are the
+      property of their respective owners; their appearance here does not imply affiliation, sponsorship, or
+      endorsement.
+    </p>
   </footer>
 
 <script>
@@ -348,6 +366,7 @@ const GAMES = [
   { name:"Mochi Type",          category:"⭐ Original", emoji:"⌨️", color:"#E6FFF0", plays:500,   featured:true,  hot:true,  url:"/fun-games/mochi-type.html" },
   { name:"Mochi 2048",          category:"⭐ Original", emoji:"🔢", color:"#FFF0E0", plays:450,   featured:true,  hot:true,  url:"/fun-games/mochi-2048.html" },
   { name:"Mochi Flap",          category:"⭐ Original", emoji:"🐤", color:"#E6F4FF", plays:400,   featured:true,  hot:true,  url:"/fun-games/mochi-flap.html" },
+  { name:"Mochi Maze",          category:"⭐ Original", emoji:"🧭", color:"#F0E6FF", plays:350,   featured:true,  hot:true,  url:"/fun-games/mochi-maze.html" },
   { name:"Tunnel Rush",        category:"Skill",     emoji:"🌀", color:"#D6E4FF", plays:52000, featured:false, hot:true,  url:"/fun-games/tunnel-rush/index.html" },
   { name:"Worldle",            category:"Puzzle",    emoji:"🟩", color:"#D7FFD9", plays:48000, featured:false, hot:true,  url:"/fun-games/worldle/index.html" },
   { name:"Tetris",             category:"Puzzle",    emoji:"🧱", color:"#D6F5FF", plays:47000, featured:false, hot:true,  url:"/fun-games/tetris.html" },
@@ -2588,6 +2607,7 @@ function buildGameCard(g, idx){
   const card = el("div","card"+(g===_gridFeatured?" big":""));
   card.style.background = g.color;
   if(g.hot){ const b=el("div","badge-hot"); b.textContent="🔥 HOT"; card.appendChild(b); }
+  if(g.url && g.url.indexOf("turbowarp.org")!==-1){ const v=el("div","badge-via"); v.textContent="via Scratch"; card.appendChild(v); }
   let visual;
   if(g.thumbnail){
     visual = el("img","anim anim-float");
