@@ -26,7 +26,7 @@ try{
   console.log('\n[2] Home CTAs fixed (absolute + resolve)');
   await p.goto(`${base}/home/index.html`,{waitUntil:'networkidle',timeout:15000});
   const ctas=await p.$$eval('.hero-ctas a',ns=>ns.map(n=>n.getAttribute('href')));
-  (ctas.includes('/admin/signup.html') && ctas.includes('/about/about.html')) ? pass('CTAs use absolute paths: '+JSON.stringify(ctas)) : fail('CTAs wrong: '+JSON.stringify(ctas));
+  (ctas.includes('/about/about.html') && ctas.includes('#explore')) ? pass('CTAs use absolute/anchor paths: '+JSON.stringify(ctas)) : fail('CTAs wrong: '+JSON.stringify(ctas));
   for(const h of ctas){ const r=await fetch(base+h); r.status===200?null:fail(`CTA ${h} -> ${r.status}`); }
   pass('both CTA targets resolve (200)');
 
