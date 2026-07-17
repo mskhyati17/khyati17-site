@@ -1,4 +1,4 @@
-// Verify the "⭐ Original" GameZone category surfaces exactly the 6 original games.
+// Verify the "⭐ Original" GameZone category surfaces exactly the 13 original games.
 import { chromium } from 'playwright';
 import { createServer } from 'http';
 import { readFileSync, existsSync } from 'fs';

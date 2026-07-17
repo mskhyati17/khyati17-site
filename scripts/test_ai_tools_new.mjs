@@ -74,9 +74,12 @@ try{
   console.log('\n[1] AI Zone lists ~100 mini tools + new category chips');
   await p.goto(`${base}/ai-tools/index.html`,{waitUntil:'networkidle',timeout:20000}); await p.waitForTimeout(300);
   const count=await p.evaluate(()=>window.TOOLS?window.TOOLS.length:(typeof TOOLS!=='undefined'?TOOLS.length:-1));
-  // TOOLS may be module-scoped; fall back to counting live cards mentioning a known new tool
+  // The grid only renders the first 60 (of 200+) tools until "Load more" is
+  // clicked, and Pig Latin isn't in that first page — search for it instead.
+  await p.fill('#search','pig latin'); await p.waitForTimeout(200);
   const hasPigLatin=await p.$$eval('.card, .grid *', els=>els.some(e=>/Pig Latin/i.test(e.textContent)));
   hasPigLatin ? pass('new tool "Pig Latin" is listed in the AI Zone') : fail('Pig Latin not listed');
+  await p.fill('#search',''); await p.waitForTimeout(200);
   const chips=await p.$$eval('#catStrip .chip', els=>els.map(e=>e.textContent.trim()));
   const needChips=['Web','Time','Color','Random'];
   const gotChips=needChips.filter(c=>chips.some(x=>x.includes(c)));
