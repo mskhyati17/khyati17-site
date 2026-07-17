@@ -40,7 +40,7 @@ const TABS = [
   { path: '/others/others.html', name: 'Others', title: 'Others' },
   { path: '/admin/login.html', name: 'Login', title: 'Sign in' },
   { path: '/admin/signup.html', name: 'Sign Up', title: 'Sign up' },
-  { path: '/index.html', name: 'Root Redirect', expectedRedirect: '/home/index.html' },
+  { path: '/index.html', name: 'Root (canonical homepage)', title: 'Khyati' },
 ];
 
 function startServer(port) {
