@@ -31,7 +31,7 @@ try{
 
   console.log('\n[3] On the approved list (cross-device) -> platform unlocked');
   { const c=await b.newContext(); await c.addInitScript(sess('vip@e.com')); const p=await c.newPage();
-    await p.route('**/assets/approved-users.js', route=>route.fulfill({status:200,contentType:'application/javascript',body:'export const APPROVED=["vip@e.com"];'}));
+    await p.route('**/assets/approved-users.json**', route=>route.fulfill({status:200,contentType:'application/json',body:'["vip@e.com"]'}));
     await p.goto(`${base}/trading/trading.html`,{waitUntil:'networkidle',timeout:15000}); await p.waitForTimeout(500);
     (await p.isVisible('#t-app'))?pass('platform shown for approved-list user'):fail('app not shown');
     const src=await p.getAttribute('#t-iframe','src'); (src&&src.includes('trading-home-production.up.railway.app'))?pass('embeds Railway app'):fail('src: '+src);
