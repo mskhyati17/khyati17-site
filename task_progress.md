@@ -1,7 +1,7 @@
 - [x] Analyze current codebase and identify issues
-- [ ] Fix Supabase config to force DemoAuth mode (set keys to null)
-- [ ] Fix admin email check in admin.js (ms.khyati17@gmail.com → mskhyati.17@gmail.com)
-- [ ] Pre-seed admin account (mskhyati.17@gmail.com / SriMadhav12#) in DemoAuth
-- [ ] Update admin.js stories section to accept Google Docs embed URL
-- [ ] Update admin.js videos section to accept video links
-- [ ] Deploy to GitHub
+- [x] Fix Supabase config to force DemoAuth mode (set keys to null)
+- [x] Fix admin email check in admin.js (ms.khyati17@gmail.com → mskhyati.17@gmail.com)
+- [x] Pre-seed admin account (mskhyati.17@gmail.com / SriMadhav12#) in DemoAuth
+- [x] Update admin.js stories section to accept Google Docs embed URL
+- [x] Update admin.js videos section to accept video links
+- [ ] Deploy to GitHub (10 local commits ahead of origin/main, unpushed)

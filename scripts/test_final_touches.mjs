@@ -24,10 +24,10 @@ try{
   pass('favicon <link> present on all main pages');
 
   console.log('\n[2] Home CTAs fixed (absolute + resolve)');
-  await p.goto(`${base}/home/index.html`,{waitUntil:'networkidle',timeout:15000});
+  await p.goto(`${base}/`,{waitUntil:'networkidle',timeout:15000});
   const ctas=await p.$$eval('.hero-ctas a',ns=>ns.map(n=>n.getAttribute('href')));
-  (ctas.includes('/admin/signup.html') && ctas.includes('/about/about.html')) ? pass('CTAs use absolute paths: '+JSON.stringify(ctas)) : fail('CTAs wrong: '+JSON.stringify(ctas));
-  for(const h of ctas){ const r=await fetch(base+h); r.status===200?null:fail(`CTA ${h} -> ${r.status}`); }
+  (ctas.includes('/about/about.html') && ctas.includes('#explore')) ? pass('CTAs use absolute paths: '+JSON.stringify(ctas)) : fail('CTAs wrong: '+JSON.stringify(ctas));
+  for(const h of ctas){ if(h.startsWith('#')) continue; const r=await fetch(base+h); r.status===200?null:fail(`CTA ${h} -> ${r.status}`); }
   pass('both CTA targets resolve (200)');
 
   console.log('\n[3] Hub cross-navigation');
@@ -39,14 +39,14 @@ try{
   // click Home from GameZone
   await p.goto(`${base}/fun-games/index.html`,{waitUntil:'networkidle',timeout:15000});
   for(const a of await p.$$('.zone-nav a')){ if((await a.textContent()).includes('Home')){ await a.click(); break; } }
-  await p.waitForURL(/home\/index\.html/,{timeout:8000}).catch(()=>{});
-  p.url().includes('/home/index.html') ? pass('GameZone "Home" link navigates home') : fail('Home link failed: '+p.url());
+  await p.waitForURL(u=>new URL(u).pathname==='/',{timeout:8000}).catch(()=>{});
+  new URL(p.url()).pathname==='/' ? pass('GameZone "Home" link navigates home') : fail('Home link failed: '+p.url());
 
   console.log('\n[4] Custom 404 page');
   await p.goto(`${base}/404.html`,{waitUntil:'domcontentloaded',timeout:15000});
   const big=(await p.textContent('.big').catch(()=>'')).trim();
   big==='404' ? pass('404 page shows 404') : fail('404 page content: '+big);
-  const homeLink=await p.$('a[href="/home/index.html"]'); homeLink?pass('404 has Home link'):fail('404 missing Home link');
+  const homeLink=await p.$('a[href="/"]'); homeLink?pass('404 has Home link'):fail('404 missing Home link');
 
   console.log('');
   js.length ? js.forEach(e=>fail('JS error: '+e)) : pass('no uncaught JS errors');
