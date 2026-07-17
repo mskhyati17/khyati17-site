@@ -4,4 +4,4 @@
 - [x] Pre-seed admin account (mskhyati.17@gmail.com / SriMadhav12#) in DemoAuth
 - [x] Update admin.js stories section to accept Google Docs embed URL
 - [x] Update admin.js videos section to accept video links
-- [ ] Deploy to GitHub (10 local commits ahead of origin/main, unpushed)
+- [x] Deploy to GitHub
