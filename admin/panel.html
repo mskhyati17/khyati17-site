@@ -90,8 +90,8 @@
           (until && has ? '<div class="ap-meta">Approved until ' + until + '</div>' : '') +
           '<div class="ap-controls">' +
             (has ? '<button class="revoke" data-act="revoke">Revoke trading</button>' : '<button class="grant" data-act="grant">Grant trading (1 yr)</button>') +
-            '<select data-act="level"><option value="user"' + (u.level!=='admin'?' selected':'') + '>Level: user</option><option value="admin"' + (u.level==='admin'?' selected':'') + '>Level: admin</option></select>' +
-            '<input type="text" placeholder="new password" data-pw />' +
+            '<select data-act="level" aria-label="Account level for ' + esc(u.email) + '"><option value="user"' + (u.level!=='admin'?' selected':'') + '>Level: user</option><option value="admin"' + (u.level==='admin'?' selected':'') + '>Level: admin</option></select>' +
+            '<input type="text" placeholder="new password" aria-label="New password for ' + esc(u.email) + '" data-pw />' +
             '<button data-act="setpw">Set password</button>' +
             '<button class="del" data-act="del">Delete</button>' +
           '</div>';
