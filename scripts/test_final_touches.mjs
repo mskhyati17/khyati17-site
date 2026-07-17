@@ -39,14 +39,14 @@ try{
   // click Home from GameZone
   await p.goto(`${base}/fun-games/index.html`,{waitUntil:'networkidle',timeout:15000});
   for(const a of await p.$$('.zone-nav a')){ if((await a.textContent()).includes('Home')){ await a.click(); break; } }
-  await p.waitForURL(/home\/index\.html/,{timeout:8000}).catch(()=>{});
-  p.url().includes('/home/index.html') ? pass('GameZone "Home" link navigates home') : fail('Home link failed: '+p.url());
+  await p.waitForURL(base+'/',{timeout:8000}).catch(()=>{});
+  p.url()===base+'/' ? pass('GameZone "Home" link navigates home') : fail('Home link failed: '+p.url());
 
   console.log('\n[4] Custom 404 page');
   await p.goto(`${base}/404.html`,{waitUntil:'domcontentloaded',timeout:15000});
   const big=(await p.textContent('.big').catch(()=>'')).trim();
   big==='404' ? pass('404 page shows 404') : fail('404 page content: '+big);
-  const homeLink=await p.$('a[href="/home/index.html"]'); homeLink?pass('404 has Home link'):fail('404 missing Home link');
+  const homeLink=await p.$('a[href="/"]'); homeLink?pass('404 has Home link'):fail('404 missing Home link');
 
   console.log('');
   js.length ? js.forEach(e=>fail('JS error: '+e)) : pass('no uncaught JS errors');
