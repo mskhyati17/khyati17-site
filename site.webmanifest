@@ -2,7 +2,7 @@
   "name": "Khyati17",
   "short_name": "Khyati17",
   "description": "Games, stories, AI tools and videos — learn, create and share.",
-  "start_url": "/home/index.html",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#2b0b3a",
   "theme_color": "#6a1b9a",

@@ -6,6 +6,7 @@
   <title>Sign in</title>
   <!-- SEO: meta description for search-result snippets. (khyati:seo-meta) -->
   <meta name="description" content="Khyati17 account area. Sign in to manage your profile and content." />
+  <meta name="robots" content="noindex,nofollow" />
   <link rel="stylesheet" href="../assets/css/styles.css" />
   <style>
     #login-form{max-width:400px;margin:22px auto;text-align:left;background:#fff;border:1px solid #efe4fb;border-radius:18px;padding:24px 22px;box-shadow:0 14px 36px rgba(117,80,168,.14)}
@@ -45,7 +46,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> Khyati — All rights reserved</p>
+    <p>© <span id="year"></span> Khyati17 — All rights reserved</p>
   </footer>
 
   <script>
@@ -71,7 +72,7 @@
         // Signed in (or demo auth). Update UI and redirect to home.
         await Auth.renderAuthArea();
         msg.textContent = 'Signed in — redirecting...';
-        setTimeout(()=>location.href='../home/index.html',700);
+        setTimeout(()=>location.href='/',700);
         return;
       }
 

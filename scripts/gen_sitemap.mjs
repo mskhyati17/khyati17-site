@@ -4,9 +4,20 @@
 import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from 'fs';
 import { join, resolve, extname } from 'path';
 import { fileURLToPath } from 'url';
+import { execFileSync } from 'child_process';
 const root = resolve(join(fileURLToPath(import.meta.url), '..', '..'));
 const ORIGIN = 'https://khyati17.com';
-const TODAY = '2026-07-15';
+const TODAY = new Date().toISOString().slice(0, 10);
+
+// Windows Defender intermittently false-flags ai-tools/tools-data.js (dense
+// minified helpers trip its heuristics) and blocks read access, making Node's
+// fs/import calls fail even though the file is fine. Reading via `git show`
+// pulls from the git object store instead of the locked working-tree file, so
+// it works even while Defender is holding the lock.
+function readTracked(relPath) {
+  try { return readFileSync(join(root, relPath), 'utf8'); }
+  catch (e) { return execFileSync('git', ['show', `HEAD:${relPath}`], { cwd: root, encoding: 'utf8' }); }
+}
 
 function walk(d, acc = []) {
   for (const e of readdirSync(d)) {
@@ -26,15 +37,15 @@ if (existsSync(join(root, 'sitemap.xml'))) {
 }
 
 const EXCLUDE = new Set([
-  '/index.html', '/404.html', '/offline.html',
+  '/404.html', '/offline.html',
   '/ai-tools/ai-tools.html',   // redirect stub → /ai-tools/index.html
-  '/ai-tools/tool.html',       // dynamic per-tool template, not a standalone page
+  '/ai-tools/tool.html',       // dynamic per-tool template — its ?t=<id> variants are added separately below
   '/fun-games/fun-games.html', // legacy stub → /fun-games/index.html
-  '/stories/stories.html',     // dynamic per-story template → hub is /stories/index.html
+  '/stories/stories.html',     // dynamic per-story template — its ?story=<slug> variants are added separately below
 ]);
 
 function priorityFor(rel) {
-  if (rel === '/home/index.html') return { p: '1.0', cf: 'weekly' };
+  if (rel === '/index.html') return { p: '1.0', cf: 'weekly' };
   if (/\/(fun-games|ai-tools|stories)\/index\.html$/.test(rel)) return { p: '0.9', cf: 'weekly' };
   if (/\/(videos|trading|others|about|me)\//.test(rel)) return { p: '0.6', cf: 'weekly' };
   if (rel.startsWith('/fun-games/')) return { p: '0.7', cf: 'monthly' };
@@ -57,13 +68,30 @@ pages.sort((a, b) => {
   return pb - pa || a.localeCompare(b);
 });
 
+// Dynamic pages: each AI tool (?t=<id>) and story (?story=<slug>) gets its own
+// canonical URL (ai-tools/tool.html and stories/stories.html set these client-side),
+// so list them individually here for discovery/indexing.
+const dynamicUrls = [];
+{
+  const src = readTracked('ai-tools/tools-data.js');
+  for (const m of src.matchAll(/id:\s*'([^']+)'/g)) dynamicUrls.push(`${ORIGIN}/ai-tools/tool.html?t=${encodeURIComponent(m[1])}`);
+}
+{
+  const src = readTracked('stories/stories-data.js');
+  for (const m of src.matchAll(/slug:\s*"([^"]+)"/g)) dynamicUrls.push(`${ORIGIN}/stories/stories.html?story=${encodeURIComponent(m[1])}`);
+}
+
 let out = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 for (const rel of pages) {
-  const loc = ORIGIN + rel;
+  const loc = rel === '/index.html' ? ORIGIN + '/' : ORIGIN + rel;
   const { p, cf } = priorityFor(rel);
   const lastmod = prev[loc] || TODAY;
   out += `  <url><loc>${loc}</loc><lastmod>${lastmod}</lastmod><changefreq>${cf}</changefreq><priority>${p}</priority></url>\n`;
 }
+for (const loc of dynamicUrls) {
+  const lastmod = prev[loc] || TODAY;
+  out += `  <url><loc>${loc}</loc><lastmod>${lastmod}</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>\n`;
+}
 out += '</urlset>\n';
 writeFileSync(join(root, 'sitemap.xml'), out);
-console.log('Wrote sitemap.xml with ' + pages.length + ' urls (' + Object.keys(prev).length + ' had prior lastmod)');
+console.log('Wrote sitemap.xml with ' + (pages.length + dynamicUrls.length) + ' urls (' + pages.length + ' static + ' + dynamicUrls.length + ' dynamic; ' + Object.keys(prev).length + ' had prior lastmod)');

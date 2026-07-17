@@ -42,6 +42,7 @@
   </style>
   <!-- canonical + site icon (khyati:head) -->
   <link rel="canonical" href="https://khyati17.com/stories/stories.html" />
+  <script type="application/ld+json" id="story-jsonld"></script>
 </head>
 <body>
   <div id="site-header-root"></div>
@@ -69,7 +70,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> Khyati — All rights reserved</p>
+    <p>© <span id="year"></span> Khyati17 — All rights reserved</p>
   </footer>
 
   <script>
@@ -121,10 +122,41 @@
       if(toShow) showStory(toShow);
     }
 
+    // Per-story SEO: give each ?story=<slug> its own canonical URL, title and
+    // description so search engines index stories individually instead of
+    // collapsing them all onto this one static page.
+    function updateStoryMeta(s, slug){
+      const title = (s.title||'Story') + ' — Khyati17';
+      const desc = s.excerpt || ('Read "' + (s.title||'this story') + '" — a free original story on Khyati17.');
+      const url = 'https://khyati17.com/stories/stories.html?story=' + encodeURIComponent(slug);
+      document.title = title;
+      const canon = document.querySelector('link[rel="canonical"]');
+      if(canon) canon.setAttribute('href', url);
+      const setMeta = (sel, attr, val) => { const el = document.querySelector(sel); if(el) el.setAttribute(attr, val); };
+      setMeta('meta[name="description"]', 'content', desc);
+      setMeta('meta[property="og:title"]', 'content', title);
+      setMeta('meta[property="og:description"]', 'content', desc);
+      setMeta('meta[property="og:url"]', 'content', url);
+      setMeta('meta[name="twitter:title"]', 'content', title);
+      setMeta('meta[name="twitter:description"]', 'content', desc);
+      const jsonld = document.getElementById('story-jsonld');
+      if(jsonld) jsonld.textContent = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: s.title || 'Story',
+        description: desc,
+        url,
+        author: { '@type': 'Person', name: 'Khyati Srivastava' },
+        publisher: { '@type': 'Organization', name: 'Khyati17', url: 'https://khyati17.com/' },
+        isAccessibleForFree: true
+      });
+    }
+
     function showStory(s){
       const el = document.getElementById('story-content');
       if(!el) return;
       const slug = s.slug || s.id || (s.title||'').replace(/\s+/g,'-').toLowerCase();
+      updateStoryMeta(s, slug);
       const mins = readingTime(s.body);
       const meta = `<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:2px 0 10px;font-size:.8rem;color:#8a6fb0">`
         + (s.category ? `<span style="background:#f3e9fd;color:#6a1b9a;font-weight:700;border-radius:999px;padding:3px 10px">${escapeHtml(s.category)}</span>` : '')

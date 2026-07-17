@@ -22,7 +22,8 @@ const MIME_TYPES = {
 function startServer(port) {
   return new Promise((resolve) => {
     const server = createServer((req, res) => {
-      let filePath = join(projectDir, req.url === '/' ? '/index.html' : req.url);
+      const urlPath = req.url.split('?')[0];
+      let filePath = join(projectDir, urlPath === '/' ? '/index.html' : urlPath);
       filePath = decodeURIComponent(filePath);
       if (!existsSync(filePath)) {
         res.writeHead(404, { 'Content-Type': 'text/plain' });
@@ -106,7 +107,7 @@ async function runTests() {
       await page.goto(`http://localhost:${PORT}/`, { waitUntil: 'networkidle', timeout: 15000 });
       await page.waitForTimeout(500);
       const currentUrl = page.url();
-      record('Root redirects to /home/index.html', currentUrl.includes('/home/index.html'), `Redirected to ${currentUrl}`);
+      record('Root stays at /', currentUrl === `http://localhost:${PORT}/`, `Redirected to ${currentUrl}`);
     } catch (err) {
       record('Root redirect', false, err.message);
     }
@@ -143,8 +144,11 @@ async function runTests() {
     record('Profile page shows auth links when logged out', hasAuthLinks, 'No auth links visible');
     
     // Test navigation header shows auth links when not logged in
+    // /home/index.html is now a redirect stub to /, so wait for that navigation
+    // to land and for the async auth-area render to finish before reading text.
     await page.goto(`http://localhost:${PORT}/home/index.html`, { waitUntil: 'networkidle', timeout: 15000 });
-    await page.waitForTimeout(1500);
+    await page.waitForURL(`http://localhost:${PORT}/`, { timeout: 5000 }).catch(() => {});
+    await page.waitForSelector('#auth-area a, #auth-area button', { timeout: 5000 }).catch(() => {});
     const headerText = await page.textContent('header, .site-header, .header').catch(() => '');
     const headerHasAuth = headerText.includes('Sign in') || headerText.includes('Login') || headerText.includes('Sign Up');
     record('Header shows Sign in links', headerHasAuth, `Header text: ${headerText.substring(0, 100)}`);
