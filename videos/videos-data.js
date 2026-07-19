@@ -767,4 +767,19 @@ export const VIDEOS = [
   { id:"dPuPnQ0XYaY", title:"Cooking yummy wash fish deep fry recipe", channel:"Natural Life TV", cat:"Food" },
   { id:"Cpf8RSKvDHY", title:"Cooking yummy chicken leg crispy recipe", channel:"Natural Life TV", cat:"Food" },
   { id:"FGWYx4cQk2Q", title:"Amazing cooking my yummy food in my countryside recipe", channel:"Natural Life TV", cat:"Food" },
+
+  { id:"GPgute7Qglo", title:"Kinetic Sand Cutting ASMR — So Satisfying", channel:"satisfyzone", cat:"Satisfying" },
+  { id:"c0VMv5GlHig", title:"Colorful Kinetic Sand Cutting ASMR", channel:"CleanSlice ASMR", cat:"Satisfying" },
+  { id:"_5m0-6JcN58", title:"Submarine — Satisfying Kinetic Sand ASMR", channel:"Rutin Satisfying", cat:"Satisfying" },
+  { id:"05-uXsEe0a0", title:"Kinetic Sand Cutting ASMR — Shapes", channel:"Sand Rose", cat:"Satisfying" },
+
+  { id:"DMXsNLKEE_A", title:"Try Not to Laugh — Funniest Pets Compilation", channel:"Random Funny Riches", cat:"Animals" },
+  { id:"A7sXmY7b5Ws", title:"FUNNY Animals For Kids — Hilarious Cats and Dogs", channel:"The Pet Collective", cat:"Animals" },
+  { id:"jTBX_-JoZMs", title:"Cute & Funny Animals Compilation", channel:"Papa Animals", cat:"Animals" },
+  { id:"LTY3itWtq50", title:"Cat vs Dog", channel:"Varanese Neagle", cat:"Animals" },
+
+  { id:"CtXXkDtLbiA", title:"Cool Science Experiment with Batteries, Spoons & a Coin", channel:"Little Mia", cat:"Science" },
+  { id:"Alegd3R7i6w", title:"Easy Soap Science Experiment for Kids", channel:"Emily Calandrelli", cat:"Science" },
+  { id:"ZhKLgMbfKJw", title:"Spinning Snake STEM Challenge", channel:"DIY Sprinkles", cat:"Science" },
+  { id:"_ZevEa7qOLo", title:"Save the Frozen Penguins — Fun Science Experiment", channel:"SLICK SLIME SAM", cat:"Science" },
 ];

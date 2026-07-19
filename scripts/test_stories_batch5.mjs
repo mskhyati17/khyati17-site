@@ -46,13 +46,13 @@ try{
   await p.fill('#ks-input','lantern keeper'); await p.waitForTimeout(300);
   (await p.$$eval('#ks-results .ks-row', e=>e.some(x=>/Lantern Keeper/i.test(x.textContent)))) ? pass('search finds a new story') : fail('search miss');
 
-  console.log('\n[4] Story count reached 205');
+  console.log('\n[4] Story count reached 210');
   await p.goto(`${base}/stories/index.html`,{waitUntil:'networkidle',timeout:20000});
   const total=await p.evaluate(async ()=>{
     const m=await import('/stories/stories-data.js');
     return m.STORIES.length;
   });
-  total===205 ? pass('STORIES.length === 205') : fail('STORIES.length = '+total);
+  total===210 ? pass('STORIES.length === 210') : fail('STORIES.length = '+total);
 
   console.log('');
   js.length ? js.forEach(e=>fail('JS error: '+e)) : pass('no uncaught JS errors');
