@@ -47,6 +47,25 @@
     .ka-card h3{ margin:8px 0 10px; color:var(--pp); font-size:1.12rem; }
     .ka-card ul{ margin:0; padding-left:18px; color:var(--ink); }
     .ka-card li{ margin:7px 0; line-height:1.5; }
+
+    /* Mini widget cards (jokes, riddles, facts, etc.) */
+    .ka-mini-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:18px; }
+    .ka-mini{
+      background:#fff; border:1px solid var(--acc); border-radius:16px; padding:22px;
+      text-align:center; box-shadow:0 6px 20px rgba(117,80,168,.08);
+      display:flex; flex-direction:column; align-items:center;
+    }
+    .ka-mini .mini-ico{ font-size:2.1rem; }
+    .ka-mini h3{ margin:8px 0 12px; color:var(--pp); font-size:1.08rem; }
+    .ka-mini .mini-txt{ min-height:3.2em; color:var(--ink); font-weight:600; margin:0 0 14px; line-height:1.45; }
+    .ka-mini .mini-answer{ color:var(--pp); font-weight:700; margin:-6px 0 12px; }
+    .mini-btn{
+      cursor:pointer; border:none; border-radius:999px; background:var(--pp); color:#fff;
+      font-weight:700; padding:9px 18px; font-size:.88rem; margin:4px;
+    }
+    .mini-btn:hover{ background:var(--pp2); }
+    .mini-btn.ghost{ background:transparent; color:var(--pp); border:1px solid var(--acc); }
+    .mini-btn.ghost:hover{ background:var(--acc); }
   </style>
   <!-- canonical + site icon (khyati:head) -->
   <link rel="canonical" href="https://khyati17.com/others/others.html" />
@@ -67,6 +86,52 @@
     </div>
 
     <div class="ka-grid" id="adviceGrid"></div>
+
+    <div class="ka-head" style="margin-top:44px">
+      <h2>🎉 More Fun Stuff</h2>
+      <p>Quick little things to make you smile, think and grow.</p>
+    </div>
+
+    <div class="ka-mini-grid">
+      <div class="ka-mini">
+        <div class="mini-ico">😂</div>
+        <h3>Joke of the Day</h3>
+        <p class="mini-txt" id="jokeText">—</p>
+        <button class="mini-btn" id="jokeBtn">🔄 Another joke</button>
+      </div>
+      <div class="ka-mini">
+        <div class="mini-ico">🧩</div>
+        <h3>Riddle Me This</h3>
+        <p class="mini-txt" id="riddleQ">—</p>
+        <p class="mini-answer" id="riddleA" hidden>—</p>
+        <button class="mini-btn ghost" id="riddleReveal">👀 Reveal answer</button>
+        <button class="mini-btn" id="riddleBtn">🔄 New riddle</button>
+      </div>
+      <div class="ka-mini">
+        <div class="mini-ico">🧠</div>
+        <h3>Fun Fact Machine</h3>
+        <p class="mini-txt" id="factText">—</p>
+        <button class="mini-btn" id="factBtn">🔄 Another fact</button>
+      </div>
+      <div class="ka-mini">
+        <div class="mini-ico">🤔</div>
+        <h3>Would You Rather</h3>
+        <p class="mini-txt" id="wyrText">—</p>
+        <button class="mini-btn" id="wyrBtn">🔄 New question</button>
+      </div>
+      <div class="ka-mini">
+        <div class="mini-ico">💜</div>
+        <h3>Kindness Challenge</h3>
+        <p class="mini-txt" id="kindText">—</p>
+        <button class="mini-btn" id="kindBtn">🔄 New challenge</button>
+      </div>
+      <div class="ka-mini">
+        <div class="mini-ico">✨</div>
+        <h3>Say It To Yourself</h3>
+        <p class="mini-txt" id="affirmText">—</p>
+        <button class="mini-btn" id="affirmBtn">🔄 Another one</button>
+      </div>
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -127,6 +192,26 @@
         "Practice beats talent — keep going, even when it's hard.",
         "Dream big, start small, and never give up on yourself."
       ]},
+      { ico:"🏆", title:"Good Sportsmanship", tips:[
+        "Shake hands or say \"good game\" whether you win or lose.",
+        "Cheer for your teammates as loudly as you'd want them to cheer for you.",
+        "Losing isn't fun, but how you handle it says a lot about you."
+      ]},
+      { ico:"🎤", title:"Public Speaking Confidence", tips:[
+        "Practice out loud, even just to your mirror or a pet.",
+        "Take one slow breath before you start — it calms the nerves.",
+        "Being nervous doesn't mean you're not ready; it means you care."
+      ]},
+      { ico:"❓", title:"Curiosity & Asking Questions", tips:[
+        "There's no such thing as a silly question — only unasked ones.",
+        "If you're curious about something, look it up or ask someone who knows.",
+        "Following your interests is one of the best ways to learn."
+      ]},
+      { ico:"👨‍👩‍👧", title:"Family Time", tips:[
+        "Put phones away during meals — conversations grow better that way.",
+        "Ask a grandparent or older relative to tell you a story from their childhood.",
+        "Small moments together add up to the biggest memories."
+      ]},
     ];
 
     const TIPS = [
@@ -142,6 +227,224 @@
       "Listen more than you talk — you'll learn twice as much.",
       "Be patient with yourself. Growing takes time.",
       "Always tell the truth — it keeps things simple and builds trust.",
+    ];
+
+    const JOKES = [
+      "Why did the bicycle fall over? Because it was two-tired!",
+      "What do you call a fish with no eyes? A fsh!",
+      "Why don't scientists trust atoms? Because they make up everything!",
+      "What do you call cheese that isn't yours? Nacho cheese!",
+      "Why did the scarecrow win an award? Because he was outstanding in his field!",
+      "What do you call a bear with no teeth? A gummy bear!",
+      "Why can't you give Elsa a balloon? Because she'll let it go!",
+      "What did one wall say to the other wall? I'll meet you at the corner!",
+      "Why did the math book look sad? Because it had too many problems!",
+      "What do you call a dinosaur that crashes his car? Tyrannosaurus wrecks!",
+      "Why did the cookie go to the doctor? Because it felt crummy!",
+      "What do you call a sleeping dinosaur? A dino-snore!",
+      "Why don't eggs tell jokes? They'd crack each other up!",
+      "What has ears but cannot hear? A cornfield!",
+      "Why did the golfer bring two pairs of pants? In case he got a hole in one!",
+      "What do you call a fish wearing a crown? A king fish!",
+      "Why did the picture go to jail? Because it was framed!",
+      "What do you call a duck that gets all A's? A wise quacker!",
+      "Why did the tomato turn red? Because it saw the salad dressing!",
+      "What do you call an alligator in a vest? An investigator!",
+      "Why did the student eat his homework? Because his teacher said it was a piece of cake!",
+      "What do you call a snowman in July? A puddle!",
+      "Why did the banana go to the doctor? It wasn't peeling well!",
+      "What do you call a bee that can't make up its mind? A maybe!",
+      "Why did the computer go to the doctor? It had a virus!",
+      "What do you call a cow with no legs? Ground beef!",
+      "Why did the karate teacher never get pulled over? Because he had good chops!",
+      "What do you call a can opener that doesn't work? A can't opener!",
+      "Why did the stadium get hot after the game? All the fans left!",
+      "What do you call a pile of cats? A meow-ntain!",
+      "Why did the astronaut break up with his girlfriend? He needed space!",
+      "What do you call a fake noodle? An impasta!",
+      "Why did the frog take the bus to work? His car got toad away!",
+      "What do you call a group of musical whales? An orca-stra!",
+      "Why did the skeleton go to the party alone? He had no body to go with!",
+      "What do you call a boomerang that doesn't come back? A stick!",
+      "Why don't oysters share their pearls? Because they're shellfish!",
+      "What do you call a pig that does karate? A pork chop!",
+      "Why did the teddy bear say no to dessert? Because she was already stuffed!",
+      "What do you call a rabbit with fleas? Bugs Bunny!",
+    ];
+
+    const RIDDLES = [
+      { q:"What has to be broken before you can use it?", a:"An egg." },
+      { q:"I speak without a mouth and hear without ears. What am I?", a:"An echo." },
+      { q:"The more you take, the more you leave behind. What am I?", a:"Footsteps." },
+      { q:"What has keys but can't open a single lock?", a:"A piano." },
+      { q:"What gets wetter as it dries?", a:"A towel." },
+      { q:"What has a face and two hands but no arms or legs?", a:"A clock." },
+      { q:"What can travel around the world while staying in a corner?", a:"A stamp." },
+      { q:"What has a neck but no head?", a:"A bottle." },
+      { q:"What goes up but never comes down?", a:"Your age." },
+      { q:"I'm tall when I'm young and short when I'm old. What am I?", a:"A candle." },
+      { q:"What has one eye but can't see?", a:"A needle." },
+      { q:"What can you catch but not throw?", a:"A cold." },
+      { q:"What has many teeth but can't bite?", a:"A comb." },
+      { q:"What runs but never walks?", a:"A river." },
+      { q:"What has a thumb and four fingers but isn't alive?", a:"A glove." },
+      { q:"What kind of room has no doors or windows?", a:"A mushroom." },
+      { q:"What can you break without ever touching it?", a:"A promise." },
+      { q:"What has legs but doesn't walk?", a:"A table." },
+      { q:"What comes once in a minute, twice in a moment, but never in a thousand years?", a:"The letter M." },
+      { q:"What invention lets you look right through a wall?", a:"A window." },
+      { q:"What is full of holes but still holds water?", a:"A sponge." },
+      { q:"What building has the most stories?", a:"A library." },
+      { q:"What can you keep even after you give it to someone?", a:"Your word." },
+      { q:"What has a head and a tail but no body?", a:"A coin." },
+      { q:"What kind of tree can you carry in your hand?", a:"A palm tree." },
+      { q:"What goes through cities and fields but never actually moves?", a:"A road." },
+      { q:"What has words but never speaks?", a:"A book." },
+      { q:"What can fill a whole room but takes up no space?", a:"Light." },
+      { q:"What has a ring but no finger?", a:"A telephone." },
+      { q:"What has an eye but cannot see?", a:"A needle." },
+    ];
+
+    const FACTS = [
+      "Honey never spoils — archaeologists have found edible honey thousands of years old.",
+      "Octopuses have three hearts.",
+      "A group of flamingos is called a \"flamboyance.\"",
+      "Bananas are botanically berries, but strawberries aren't.",
+      "Sharks have been around longer than trees.",
+      "A single fluffy cloud can weigh more than a million pounds.",
+      "Sea otters hold hands while sleeping so they don't drift apart.",
+      "The Eiffel Tower grows a little taller in summer heat.",
+      "Butterflies taste with their feet.",
+      "A group of crows is called a \"murder.\"",
+      "There may be more stars in the universe than grains of sand on every beach on Earth.",
+      "Elephants are the only mammals that can't jump.",
+      "A shrimp's heart is located in its head.",
+      "You can't hum a tune while holding your nose closed.",
+      "A single bolt of lightning is hotter than the surface of the sun.",
+      "Wombats produce cube-shaped poop.",
+      "A group of pandas is called an \"embarrassment.\"",
+      "Some turtles can breathe through their rear ends.",
+      "Cows form close friendships and get stressed when separated from their best friend.",
+      "The shortest war in recorded history lasted about 38 minutes.",
+      "A \"jiffy\" is an actual unit of time — one hundredth of a second.",
+      "Polar bears have black skin hiding under their white fur.",
+      "You can't fully taste food without saliva to help dissolve it.",
+      "Dolphins call each other by unique signature whistles, almost like names.",
+      "A hummingbird's heart can beat over 1,200 times per minute in flight.",
+      "Venus is the hottest planet in our solar system, even hotter than Mercury.",
+      "Some land snails can sleep for up to three years.",
+      "The dot above a lowercase i or j has a name: a tittle.",
+      "A group of owls is called a \"parliament.\"",
+      "The human nose can recognize tens of thousands of different scents.",
+      "Starfish don't have a brain — just a simple nerve network.",
+      "Scientists believe it may rain diamonds on Jupiter and Saturn.",
+      "Koala fingerprints look so similar to human ones they can be mixed up.",
+      "The world record flight for a chicken is only about 13 seconds.",
+      "A \"moment\" was once an official unit of time — 90 seconds long.",
+      "Squirrels forget where they bury many of their nuts, accidentally planting new trees.",
+      "Giraffes need only about 30 minutes of sleep a day.",
+      "The unicorn is the official national animal of Scotland.",
+      "Tigers have striped skin, not just striped fur.",
+      "A crocodile can't stick its tongue out.",
+    ];
+
+    const WYR = [
+      "Would you rather have the ability to fly or be invisible?",
+      "Would you rather talk to animals or speak every human language fluently?",
+      "Would you rather have to sing everything you say or dance everywhere you walk?",
+      "Would you rather live in a treehouse or an underwater house?",
+      "Would you rather have a pet dragon or a pet unicorn?",
+      "Would you rather never eat pizza again or never eat ice cream again?",
+      "Would you rather be the funniest kid in school or the smartest?",
+      "Would you rather explore outer space or the deepest part of the ocean?",
+      "Would you rather have super strength or super speed?",
+      "Would you rather always be ten minutes late or always be twenty minutes early?",
+      "Would you rather have hair that changes color with your mood or eyes that glow in the dark?",
+      "Would you rather be able to freeze time or rewind time?",
+      "Would you rather live without music or live without television?",
+      "Would you rather ride a giant eagle or a giant turtle?",
+      "Would you rather have a robot best friend or a magical talking-animal best friend?",
+      "Would you rather always know when someone is lying or always be able to convince anyone of anything?",
+      "Would you rather be the best player on a losing team or the worst player on a winning team?",
+      "Would you rather have unlimited books or unlimited video games?",
+      "Would you rather be able to teleport anywhere or read anyone's mind?",
+      "Would you rather have a pause button for real life or a rewind button?",
+      "Would you rather live in a world with no winter or a world with no summer?",
+      "Would you rather be really good at one sport or pretty good at every sport?",
+      "Would you rather have a snack that never runs out or a drink that never runs out?",
+      "Would you rather explore a spooky old castle or a hidden jungle temple?",
+      "Would you rather breathe underwater or run as fast as a cheetah?",
+      "Would you rather have your own island or your own spaceship?",
+      "Would you rather always have to whisper or always have to shout?",
+      "Would you rather grow up to be an astronaut or a deep-sea explorer?",
+      "Would you rather have a room that cleans itself or a fridge that never runs out of your favorite food?",
+      "Would you rather get three small wishes or one giant wish?",
+    ];
+
+    const KINDNESS = [
+      "Give someone a genuine compliment today.",
+      "Write a thank-you note to someone who helped you.",
+      "Help clean up without being asked.",
+      "Save a seat for someone who's usually alone.",
+      "Share something you love with a friend.",
+      "Say \"good morning\" to three people you don't usually talk to.",
+      "Hold the door open for the next few people you see.",
+      "Tell a family member exactly why you appreciate them.",
+      "Let someone else pick the game or show today.",
+      "Smile at someone who looks like they're having a rough day.",
+      "Draw a picture for someone to brighten their day.",
+      "Offer to help a sibling or classmate with something tricky.",
+      "Give up your turn in line for someone in a hurry.",
+      "Leave a kind note somewhere for a stranger to find.",
+      "Ask a new kid at school to sit with you.",
+      "Compliment someone's effort, not just their result.",
+      "Say sorry first, even if you think it wasn't all your fault.",
+      "Introduce two friends who haven't met yet.",
+      "Tell a teacher or coach how much you appreciate them.",
+      "Pick up litter you see, even if it isn't yours.",
+      "Listen to someone's whole story without interrupting.",
+      "Donate a toy or book you've outgrown.",
+      "Cheer loudly for someone else's win.",
+      "Message or call someone you haven't talked to in a while.",
+      "Let someone go first, just because.",
+      "Ask someone how their day is really going — and mean it.",
+      "Stand up for someone who's being teased.",
+      "Make a card for someone who's sick or sad.",
+      "Share the credit when a group project goes well.",
+      "Do a chore that isn't yours, quietly, without asking for thanks.",
+    ];
+
+    const AFFIRM = [
+      "I am capable of amazing things.",
+      "Mistakes help me grow — they don't define me.",
+      "I am kind, and kindness matters.",
+      "I don't have to be perfect to be proud of myself.",
+      "I can handle hard things, one step at a time.",
+      "My feelings are valid, even the tricky ones.",
+      "I am learning and growing every single day.",
+      "I get to decide how I treat myself.",
+      "Being different makes me interesting, not wrong.",
+      "I am allowed to ask for help.",
+      "I am proud of how far I've come.",
+      "My best today doesn't have to look like my best yesterday.",
+      "I can be a beginner at something and still be brave.",
+      "I am worthy of love and respect, exactly as I am.",
+      "I choose to be patient with myself.",
+      "I am stronger than I think.",
+      "It's okay to rest — rest is part of growing too.",
+      "I bring something good to every room I walk into.",
+      "I can disagree with someone and still be kind.",
+      "My voice matters, and I'm allowed to use it.",
+      "I don't need everyone to like me to be okay.",
+      "Today is a fresh start.",
+      "I am allowed to change my mind.",
+      "I can be scared and brave at the same time.",
+      "I am proud of my own pace.",
+      "Kindness to myself is not selfish.",
+      "I trust myself to figure things out.",
+      "I am more than one bad day.",
+      "I can try again tomorrow.",
+      "I am exactly who I need to be right now.",
     ];
 
     // render advice cards
@@ -161,6 +464,47 @@
     }
     document.getElementById('tipBtn').addEventListener('click', newTip);
     newTip();
+
+    // generic "pick a random item, avoid repeating the last one" rotator
+    function makeRotator(list, render){
+      let last = -1;
+      return function(){
+        let i; do { i = Math.floor(Math.random()*list.length); } while(i===last && list.length>1);
+        last = i; render(list[i]);
+      };
+    }
+
+    const jokeText = document.getElementById('jokeText');
+    const newJoke = makeRotator(JOKES, j=>{ jokeText.textContent = j; });
+    document.getElementById('jokeBtn').addEventListener('click', newJoke);
+    newJoke();
+
+    const riddleQ = document.getElementById('riddleQ');
+    const riddleA = document.getElementById('riddleA');
+    const newRiddle = makeRotator(RIDDLES, r=>{ riddleQ.textContent = r.q; riddleA.textContent = r.a; riddleA.hidden = true; });
+    document.getElementById('riddleReveal').addEventListener('click', ()=>{ riddleA.hidden = !riddleA.hidden; });
+    document.getElementById('riddleBtn').addEventListener('click', newRiddle);
+    newRiddle();
+
+    const factText = document.getElementById('factText');
+    const newFact = makeRotator(FACTS, f=>{ factText.textContent = f; });
+    document.getElementById('factBtn').addEventListener('click', newFact);
+    newFact();
+
+    const wyrText = document.getElementById('wyrText');
+    const newWyr = makeRotator(WYR, w=>{ wyrText.textContent = w; });
+    document.getElementById('wyrBtn').addEventListener('click', newWyr);
+    newWyr();
+
+    const kindText = document.getElementById('kindText');
+    const newKind = makeRotator(KINDNESS, k=>{ kindText.textContent = k; });
+    document.getElementById('kindBtn').addEventListener('click', newKind);
+    newKind();
+
+    const affirmText = document.getElementById('affirmText');
+    const newAffirm = makeRotator(AFFIRM, a=>{ affirmText.textContent = a; });
+    document.getElementById('affirmBtn').addEventListener('click', newAffirm);
+    newAffirm();
   })();
   </script>
   <script type="module" src="../assets/js/auth.js?v=2"></script>
