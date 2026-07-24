@@ -41,6 +41,14 @@
     '[data-theme="dark"] .site-footer{color:#b9a6d6}',
     // generic content cards used across hubs
     '[data-theme="dark"] .card{color:#ece7f2}',
+    // story reader + comments: these keep their white/near-white card
+    // background even in dark mode (inline style, so we can't repaint the
+    // background from here) — force dark ink text so it stays readable
+    // instead of the global near-white body text vanishing on white.
+    '[data-theme="dark"] #story-content{color:#2b0b3a}',
+    '[data-theme="dark"] #story-content h2{color:#2b0b3a}',
+    '[data-theme="dark"] .comments-area{color:#2b0b3a}',
+    '[data-theme="dark"] .comments-area textarea{color:#2b0b3a;background:#fff}',
     // search overlay
     '[data-theme="dark"] #ks-box{background:#1a1027;color:#ece7f2}',
     '[data-theme="dark"] #ks-head,[data-theme="dark"] #ks-foot{border-color:#33234a}',
