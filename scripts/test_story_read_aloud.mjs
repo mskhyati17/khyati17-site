@@ -24,6 +24,10 @@ const fakeTts = () => {
   // window.speechSynthesis is a getter-only IDL attribute in real Chromium,
   // so a plain `window.speechSynthesis = ...` silently no-ops. Use
   // defineProperty to actually replace it with our fake engine.
+  // The production code now rejects any chunk that "finishes" faster than a
+  // real voice plausibly could (see stories.html's minPlausibleMs check), so
+  // this fake must take a proportional amount of (fake) time per chunk too —
+  // a flat short delay would itself get flagged as a failure.
   window.__ttsCalls = [];
   let paused = false;
   const fake = {
@@ -31,12 +35,13 @@ const fakeTts = () => {
     speak(utterance){
       window.__ttsCalls.push({ type: 'speak', text: utterance.text });
       fake.speaking = true; paused = false;
+      const duration = Math.max(350, utterance.text.length * 10); // safely above the 8ms/char production floor
       const tick = () => {
         if(paused){ setTimeout(tick, 15); return; }
         fake.speaking = false;
         if(utterance.onend) utterance.onend();
       };
-      setTimeout(tick, 25);
+      setTimeout(tick, duration);
     },
     pause(){ window.__ttsCalls.push({ type: 'pause' }); paused = true; fake.paused = true; },
     resume(){ window.__ttsCalls.push({ type: 'resume' }); paused = false; fake.paused = false; },
@@ -56,7 +61,10 @@ try{
   const jsErrors = []; page.on('pageerror', e => jsErrors.push(e.message));
   await page.addInitScript(fakeTts);
 
-  await page.goto(`${base}/stories/stories.html?story=gloomy-crown`, { waitUntil: 'networkidle', timeout: 15000 });
+  // A short story (5 chunks) keeps the "let it finish" step fast even though
+  // the fake engine's per-chunk timing must stay above the production
+  // plausibility floor (see fakeTts above).
+  await page.goto(`${base}/stories/stories.html?story=the-weather-of-growing-older`, { waitUntil: 'networkidle', timeout: 15000 });
   await page.waitForSelector('#story-read', { timeout: 10000 });
   pass('Read aloud button rendered');
 
@@ -71,7 +79,7 @@ try{
   callsAfterStart > 0 ? pass(`speak() invoked (${callsAfterStart} chunk(s) queued so far)`) : fail('speak() was never called');
 
   const firstChunk = await page.evaluate(() => window.__ttsCalls.find(c => c.type === 'speak').text);
-  firstChunk.toLowerCase().includes('gloomy') || firstChunk.length > 0 ? pass('first spoken chunk contains story text') : fail('first chunk empty/unexpected');
+  firstChunk.length > 0 ? pass('first spoken chunk contains story text') : fail('first chunk empty/unexpected');
 
   await page.click('#story-read'); // pause
   await page.waitForFunction(() => document.getElementById('story-read').textContent.includes('Resume'), { timeout: 3000 });
@@ -153,6 +161,40 @@ try{
   await page3.waitForFunction(() => document.getElementById('story-read').textContent.includes('Read aloud') && !document.getElementById('story-read').textContent.includes("Couldn't"), { timeout: 4000 });
   pass('error label reverts to "Read aloud" so the button is usable again');
   jsErrors3.length === 0 ? pass('no JS errors on synthesis-failure path') : fail(`JS errors: ${jsErrors3.join(', ')}`);
+
+  // Fourth page: the reported real-world bug — some Windows Chrome/Edge setups
+  // with no working TTS voice fire "end" almost instantly (not "error"), so
+  // the whole ~19-chunk story races through in a flash: looks exactly like
+  // "flips to Pause, instantly back to Read aloud, no sound, no message".
+  const page4 = await browser.newPage();
+  const jsErrors4 = []; page4.on('pageerror', e => jsErrors4.push(e.message));
+  await page4.addInitScript(() => {
+    window.__ttsCalls = [];
+    const fake = {
+      speaking: false, paused: false, pending: false,
+      speak(utterance){
+        window.__ttsCalls.push({ type: 'speak' });
+        // "Finishes" a whole sentence in 2ms — physically impossible for real
+        // speech, which is exactly the silent-failure signature we're guarding against.
+        setTimeout(() => { if(utterance.onend) utterance.onend(); }, 2);
+      },
+      pause(){}, resume(){}, cancel(){ window.__ttsCalls.push({ type: 'cancel' }); },
+      getVoices(){ return []; },
+    };
+    Object.defineProperty(window, 'speechSynthesis', { value: fake, configurable: true, writable: true });
+    Object.defineProperty(window, 'SpeechSynthesisUtterance', {
+      value: function(text){ this.text = text; this.rate = 1; this.onend = null; this.onerror = null; },
+      configurable: true, writable: true,
+    });
+  });
+  await page4.goto(`${base}/stories/stories.html?story=gloomy-crown`, { waitUntil: 'networkidle', timeout: 15000 });
+  await page4.waitForSelector('#story-read', { timeout: 10000 });
+  await page4.click('#story-read');
+  await page4.waitForFunction(() => document.getElementById('story-read').textContent.includes('No voice found'), { timeout: 3000 });
+  pass('a suspiciously-instant "end" is caught and shows "No voice found" instead of racing through every chunk');
+  const speakAttempts4 = await page4.evaluate(() => window.__ttsCalls.filter(c => c.type === 'speak').length);
+  speakAttempts4 === 1 ? pass('stops after the first suspicious chunk instead of blitzing through all 19') : fail(`expected exactly 1 speak() attempt before stopping, got ${speakAttempts4}`);
+  jsErrors4.length === 0 ? pass('no JS errors on the instant-end path') : fail(`JS errors: ${jsErrors4.join(', ')}`);
 
   await browser.close();
 }catch(err){

@@ -242,21 +242,37 @@
 
       function speakNext(){
         if(idx >= queue.length){ stop(); return; }
-        const u = new SpeechSynthesisUtterance(queue[idx]);
+        const text = queue[idx];
+        const startedAt = Date.now();
+        const u = new SpeechSynthesisUtterance(text);
         currentUtterance = u; // pin — see note above
         u.rate = 0.95;
-        u.onend = () => { idx++; speakNext(); };
+        u.onend = () => {
+          // Some Windows Chrome/Edge setups with no working TTS voice fire
+          // "end" almost instantly instead of erroring — no audio, no error,
+          // just an immediate silent "success". A real voice can't finish a
+          // chunk this fast, so treat a suspiciously-quick end as a failure
+          // instead of racing through the rest of the story in a flash.
+          const elapsed = Date.now() - startedAt;
+          const minPlausibleMs = Math.max(300, text.length * 8);
+          if(elapsed < minPlausibleMs){
+            console.warn(`Read aloud: chunk "ended" in ${elapsed}ms (too fast for ${text.length} chars) — no voice likely available`);
+            fail(true);
+            return;
+          }
+          idx++; speakNext();
+        };
         u.onerror = e => {
           console.warn('Read aloud: speech failed', e && e.error);
-          fail();
+          fail(false);
         };
         speechSynthesis.speak(u);
       }
 
-      function fail(){
+      function fail(noVoice){
         queue = []; idx = 0; state = 'idle'; currentUtterance = null;
-        setLabel("⚠️ Couldn't play — tap to retry");
-        setTimeout(() => { if(state === 'idle') setLabel('🔊 Read aloud'); }, 2600);
+        setLabel(noVoice ? '🔇 No voice found on this device' : "⚠️ Couldn't play — tap to retry");
+        setTimeout(() => { if(state === 'idle') setLabel('🔊 Read aloud'); }, 3200);
       }
 
       function start(s){
@@ -292,6 +308,10 @@
       if(supported){
         window.addEventListener('pagehide', stop);
         window.addEventListener('beforeunload', stop);
+        // Voices load asynchronously in some browsers; calling getVoices() early
+        // (rather than only at the moment of the first click) gives the browser
+        // a head start so the list is more likely ready by the time we speak.
+        try{ speechSynthesis.getVoices(); speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices(); }catch(e){}
       }
 
       return { bind, stop };
