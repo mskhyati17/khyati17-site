@@ -38,7 +38,7 @@ const TABS = [
   { path: '/stories/stories.html', name: 'Stories', title: 'Stories' },
   { path: '/videos/videos.html', name: 'Videos', title: 'Videos' },
   { path: '/others/others.html', name: 'Others', title: 'Others' },
-  { path: '/friends/friends.html', name: 'Friends', title: 'Friends' },
+  { path: '/friends/friends.html', name: 'Friends', title: 'Explore Together' },
   { path: '/admin/login.html', name: 'Login', title: 'Sign in' },
   { path: '/admin/signup.html', name: 'Sign Up', title: 'Sign up' },
   { path: '/index.html', name: 'Root (canonical homepage)', title: 'Khyati' },
