@@ -1,6 +1,9 @@
 This project includes optional Supabase-backed persistence for games, videos, stories and comments.
 
-Run order in Supabase SQL Editor
+Easiest path: open `all.sql` and run the whole file in one paste — it already
+contains every table below in the right order, including friends.sql.
+
+Run order in Supabase SQL Editor (if running files individually instead)
 1. profiles.sql       -- creates public.profiles and RLS policies
 2. games.sql          -- creates public.games
 3. videos.sql         -- creates public.videos
@@ -8,6 +11,7 @@ Run order in Supabase SQL Editor
 5. comments.sql       -- creates public.comments and RLS policies
 6. upsert_content.sql -- helper functions for upserts
 7. (optional) games_json_inserts.sql -- seed games from local JSON
+8. friends.sql        -- friend requests, block list, and friend chat (needs profiles.sql first)
 
 Notes and RLS
 - The provided policies in `profiles.sql` and `comments.sql` allow public reads for comments and require auth.uid() to match user_id for comment inserts.
