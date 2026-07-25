@@ -194,6 +194,21 @@ try{
   pass('a suspiciously-instant "end" is caught and shows "No voice found" instead of racing through every chunk');
   const speakAttempts4 = await page4.evaluate(() => window.__ttsCalls.filter(c => c.type === 'speak').length);
   speakAttempts4 === 1 ? pass('stops after the first suspicious chunk instead of blitzing through all 19') : fail(`expected exactly 1 speak() attempt before stopping, got ${speakAttempts4}`);
+
+  const helpVisible = await page4.isVisible('#read-aloud-help');
+  helpVisible ? pass('help panel appears with fix instructions on a no-voice failure') : fail('help panel did not appear');
+  const helpText = await page4.textContent('#read-aloud-help');
+  /no voice/i.test(helpText) ? pass(`help panel text is relevant: "${helpText.slice(0,60)}…"`) : fail(`unexpected help text: ${helpText}`);
+
+  // Switching stories should clear the stale help panel (this fake engine
+  // keeps failing, so retrying on the *same* story re-triggers it again
+  // within milliseconds — switching away is the deterministic way to confirm
+  // the panel actually gets cleared rather than just staying visible forever).
+  await page4.click('#story-another');
+  await page4.waitForTimeout(50);
+  const helpHiddenOnSwitch = !(await page4.isVisible('#read-aloud-help'));
+  helpHiddenOnSwitch ? pass('help panel clears when switching to another story') : fail('help panel should hide when switching stories');
+
   jsErrors4.length === 0 ? pass('no JS errors on the instant-end path') : fail(`JS errors: ${jsErrors4.join(', ')}`);
 
   await browser.close();

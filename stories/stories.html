@@ -167,6 +167,7 @@
         + `<button id="story-share" class="btn btn-ghost" style="font-size:.85rem;padding:6px 14px">🔗 Share story</button>`
         + `<button id="story-read" class="btn btn-ghost" style="font-size:.85rem;padding:6px 14px">🔊 Read aloud</button>`
         + `</div>`
+        + `<div id="read-aloud-help" style="display:none;background:#fff8e6;border:1px solid #f3ddab;border-radius:10px;padding:10px 14px;margin:-4px 0 14px;font-size:.82rem;color:#6a4b8f;line-height:1.5"></div>`
         + `<div>${s.body||''}</div>`
         + `<div style="margin:22px 0 6px;text-align:center"><button id="story-another" class="btn" style="font-size:.9rem">🎲 Read another story</button></div>`;
       Reader.bind(document.getElementById('story-read'), s);
@@ -209,7 +210,7 @@
     // is already built into the visitor's browser/OS.
     const Reader = (() => {
       const supported = typeof window !== 'undefined' && !!window.speechSynthesis && typeof window.SpeechSynthesisUtterance === 'function';
-      let queue = [], idx = 0, state = 'idle', btn = null;
+      let queue = [], idx = 0, state = 'idle', btn = null, helpEl = null;
       // Chrome has a well-known bug where it silently stops speaking (fires
       // "end" almost instantly, no audio, no error) if the SpeechSynthesisUtterance
       // gets garbage-collected — which can happen because nothing else in JS
@@ -239,6 +240,19 @@
       }
 
       function setLabel(text){ if(btn) btn.textContent = text; }
+
+      function osHelpText(){
+        const ua = navigator.userAgent || '';
+        if(/Windows/i.test(ua)){
+          return '🔇 <strong>No voice found</strong> — Windows doesn\'t have a text-to-speech voice installed/selected. Try <a href="ms-settings:speech" style="color:#6a1b9a;font-weight:600">Open Speech Settings</a> (or search "Speech settings" in the Start menu), make sure a voice is installed, then reload this page.';
+        }
+        if(/Macintosh|Mac OS X/i.test(ua)){
+          return '🔇 <strong>No voice found</strong> — open <strong>System Settings → Accessibility → Spoken Content</strong>, pick a system voice, then reload this page.';
+        }
+        return '🔇 <strong>No voice found</strong> — your device doesn\'t seem to have a text-to-speech voice available. Check your system\'s accessibility/speech settings, then reload this page.';
+      }
+      function showHelp(){ if(helpEl){ helpEl.innerHTML = osHelpText(); helpEl.style.display = 'block'; } }
+      function hideHelp(){ if(helpEl) helpEl.style.display = 'none'; }
 
       function speakNext(){
         if(idx >= queue.length){ stop(); return; }
@@ -272,11 +286,13 @@
       function fail(noVoice){
         queue = []; idx = 0; state = 'idle'; currentUtterance = null;
         setLabel(noVoice ? '🔇 No voice found on this device' : "⚠️ Couldn't play — tap to retry");
+        if(noVoice) showHelp();
         setTimeout(() => { if(state === 'idle') setLabel('🔊 Read aloud'); }, 3200);
       }
 
       function start(s){
         if(!supported) return;
+        hideHelp();
         const wasActive = speechSynthesis.speaking || speechSynthesis.pending;
         queue = chunkText(textFromStory(s)); idx = 0; state = 'speaking';
         setLabel('⏸️ Pause reading');
@@ -291,10 +307,11 @@
       }
       function pause(){ if(!supported || state!=='speaking') return; speechSynthesis.pause(); state='paused'; setLabel('▶️ Resume reading'); }
       function resume(){ if(!supported || state!=='paused') return; speechSynthesis.resume(); state='speaking'; setLabel('⏸️ Pause reading'); }
-      function stop(){ if(supported) speechSynthesis.cancel(); queue=[]; idx=0; state='idle'; currentUtterance=null; setLabel('🔊 Read aloud'); }
+      function stop(){ if(supported) speechSynthesis.cancel(); queue=[]; idx=0; state='idle'; currentUtterance=null; setLabel('🔊 Read aloud'); hideHelp(); }
 
       function bind(button, s){
         btn = button;
+        helpEl = document.getElementById('read-aloud-help');
         if(!button) return;
         if(!supported){ button.disabled = true; button.textContent = '🔊 Not supported here'; button.title = 'Text-to-speech isn\'t available in this browser'; return; }
         setLabel('🔊 Read aloud');
