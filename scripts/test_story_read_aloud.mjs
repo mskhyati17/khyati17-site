@@ -27,7 +27,7 @@ const fakeTts = () => {
   window.__ttsCalls = [];
   let paused = false;
   const fake = {
-    speaking: false, paused: false,
+    speaking: false, paused: false, pending: false,
     speak(utterance){
       window.__ttsCalls.push({ type: 'speak', text: utterance.text });
       fake.speaking = true; paused = false;
@@ -118,6 +118,41 @@ try{
   disabled ? pass('button disabled when speechSynthesis unsupported') : fail('button should be disabled without speechSynthesis');
   fallbackLabel.includes('Not supported') ? pass(`shows fallback label: "${fallbackLabel}"`) : fail(`unexpected fallback label: ${fallbackLabel}`);
   jsErrors2.length === 0 ? pass('no JS errors on unsupported-browser fallback') : fail(`JS errors: ${jsErrors2.join(', ')}`);
+
+  // Third page: simulate a browser with the API present but no working voice
+  // (e.g. no TTS voice installed) — speak() "fires" but errors out instantly.
+  // This is the real-world case behind the "it un-presses right away" report:
+  // the button must show visible feedback instead of silently flickering
+  // back to idle with no explanation.
+  const page3 = await browser.newPage();
+  const jsErrors3 = []; page3.on('pageerror', e => jsErrors3.push(e.message));
+  await page3.addInitScript(() => {
+    window.__ttsCalls = [];
+    const fake = {
+      speaking: false, paused: false, pending: false,
+      speak(utterance){
+        window.__ttsCalls.push({ type: 'speak' });
+        setTimeout(() => { if(utterance.onerror) utterance.onerror({ error: 'synthesis-failed' }); }, 10);
+      },
+      pause(){}, resume(){}, cancel(){ window.__ttsCalls.push({ type: 'cancel' }); },
+      getVoices(){ return []; },
+    };
+    Object.defineProperty(window, 'speechSynthesis', { value: fake, configurable: true, writable: true });
+    Object.defineProperty(window, 'SpeechSynthesisUtterance', {
+      value: function(text){ this.text = text; this.rate = 1; this.onend = null; this.onerror = null; },
+      configurable: true, writable: true,
+    });
+  });
+  await page3.goto(`${base}/stories/stories.html?story=gloomy-crown`, { waitUntil: 'networkidle', timeout: 15000 });
+  await page3.waitForSelector('#story-read', { timeout: 10000 });
+  await page3.click('#story-read');
+  await page3.waitForFunction(() => document.getElementById('story-read').textContent.includes("Couldn't play"), { timeout: 3000 });
+  pass('a synthesis failure shows a visible error label instead of silently resetting');
+  const speakAttempts = await page3.evaluate(() => window.__ttsCalls.filter(c => c.type === 'speak').length);
+  speakAttempts === 1 ? pass('stops after the first failure instead of blitzing through every chunk') : fail(`expected exactly 1 speak() attempt before stopping, got ${speakAttempts}`);
+  await page3.waitForFunction(() => document.getElementById('story-read').textContent.includes('Read aloud') && !document.getElementById('story-read').textContent.includes("Couldn't"), { timeout: 4000 });
+  pass('error label reverts to "Read aloud" so the button is usable again');
+  jsErrors3.length === 0 ? pass('no JS errors on synthesis-failure path') : fail(`JS errors: ${jsErrors3.join(', ')}`);
 
   await browser.close();
 }catch(err){

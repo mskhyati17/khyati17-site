@@ -210,6 +210,12 @@
     const Reader = (() => {
       const supported = typeof window !== 'undefined' && !!window.speechSynthesis && typeof window.SpeechSynthesisUtterance === 'function';
       let queue = [], idx = 0, state = 'idle', btn = null;
+      // Chrome has a well-known bug where it silently stops speaking (fires
+      // "end" almost instantly, no audio, no error) if the SpeechSynthesisUtterance
+      // gets garbage-collected — which can happen because nothing else in JS
+      // holds a reference to it once the function that created it returns.
+      // Keeping one in this outer variable pins it alive for its whole lifetime.
+      let currentUtterance = null;
 
       // Chrome has a long-standing bug where a single very long utterance can
       // silently stop partway through. Splitting into sentence-ish chunks and
@@ -237,22 +243,39 @@
       function speakNext(){
         if(idx >= queue.length){ stop(); return; }
         const u = new SpeechSynthesisUtterance(queue[idx]);
+        currentUtterance = u; // pin — see note above
         u.rate = 0.95;
         u.onend = () => { idx++; speakNext(); };
-        u.onerror = () => { idx++; speakNext(); };
+        u.onerror = e => {
+          console.warn('Read aloud: speech failed', e && e.error);
+          fail();
+        };
         speechSynthesis.speak(u);
+      }
+
+      function fail(){
+        queue = []; idx = 0; state = 'idle'; currentUtterance = null;
+        setLabel("⚠️ Couldn't play — tap to retry");
+        setTimeout(() => { if(state === 'idle') setLabel('🔊 Read aloud'); }, 2600);
       }
 
       function start(s){
         if(!supported) return;
-        speechSynthesis.cancel();
+        const wasActive = speechSynthesis.speaking || speechSynthesis.pending;
         queue = chunkText(textFromStory(s)); idx = 0; state = 'speaking';
         setLabel('⏸️ Pause reading');
-        speakNext();
+        if(wasActive){
+          // A short delay after cancel() avoids a Chrome quirk where speak()
+          // called immediately after cancel() can silently produce no audio.
+          speechSynthesis.cancel();
+          setTimeout(speakNext, 60);
+        } else {
+          speakNext();
+        }
       }
       function pause(){ if(!supported || state!=='speaking') return; speechSynthesis.pause(); state='paused'; setLabel('▶️ Resume reading'); }
       function resume(){ if(!supported || state!=='paused') return; speechSynthesis.resume(); state='speaking'; setLabel('⏸️ Pause reading'); }
-      function stop(){ if(supported) speechSynthesis.cancel(); queue=[]; idx=0; state='idle'; setLabel('🔊 Read aloud'); }
+      function stop(){ if(supported) speechSynthesis.cancel(); queue=[]; idx=0; state='idle'; currentUtterance=null; setLabel('🔊 Read aloud'); }
 
       function bind(button, s){
         btn = button;
