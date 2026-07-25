@@ -66,6 +66,7 @@
   </style>
   <!-- canonical + site icon (khyati:head) -->
   <link rel="canonical" href="https://khyati17.com/videos/videos.html" />
+  <script type="application/ld+json" id="video-jsonld"></script>
 </head>
 <body>
   <div id="site-header-root"></div>
@@ -95,7 +96,11 @@
         <button class="v-close" id="v-close" aria-label="Close">✕</button>
         <div id="v-player-mount"></div>
       </div>
-      <div class="v-info"><h3 id="v-title"></h3><div class="ch" id="v-channel"></div></div>
+      <div class="v-info">
+        <h3 id="v-title"></h3>
+        <div class="ch" id="v-channel"></div>
+        <button id="v-share" class="btn btn-ghost" style="margin-top:8px;font-size:.82rem;padding:6px 14px">🔗 Share video</button>
+      </div>
       <div class="v-comments">
         <h4>Comments</h4>
         <div id="comments-list" style="margin-bottom:12px"></div>
@@ -206,11 +211,59 @@
     let ytReady = new Promise(res=>{ window.onYouTubeIframeAPIReady = ()=>res(); });
     (function(){ const s=document.createElement('script'); s.src='https://www.youtube.com/iframe_api'; document.head.appendChild(s); })();
     let player = null;
+    let currentVideo = null;
 
-    async function openVideo(v){
+    // Per-video SEO: give each ?video=<id> its own canonical URL, title and
+    // description, the same way stories.html does per ?story=<slug>, so each
+    // video is individually bookmarkable/shareable and indexable instead of
+    // every video collapsing onto one generic "Videos" page.
+    function updateVideoMeta(v){
+      const title = (v.title || 'Video') + ' — Khyati17';
+      const desc = `Watch "${v.title}" by ${v.channel} — free on Khyati17.`;
+      const url = 'https://khyati17.com/videos/videos.html?video=' + encodeURIComponent(v.id);
+      document.title = title;
+      const canon = document.querySelector('link[rel="canonical"]');
+      if(canon) canon.setAttribute('href', url);
+      const setMeta = (sel, attr, val) => { const el = document.querySelector(sel); if(el) el.setAttribute(attr, val); };
+      setMeta('meta[name="description"]', 'content', desc);
+      setMeta('meta[property="og:title"]', 'content', title);
+      setMeta('meta[property="og:description"]', 'content', desc);
+      setMeta('meta[property="og:url"]', 'content', url);
+      if(v.thumb) setMeta('meta[property="og:image"]', 'content', v.thumb);
+      const jsonld = document.getElementById('video-jsonld');
+      if(jsonld) jsonld.textContent = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'VideoObject',
+        name: v.title,
+        description: desc,
+        thumbnailUrl: v.thumb || undefined,
+        url,
+        uploadDate: undefined
+      });
+    }
+    function resetVideoMeta(){
+      document.title = 'Videos — Khyati';
+      const canon = document.querySelector('link[rel="canonical"]');
+      if(canon) canon.setAttribute('href', 'https://khyati17.com/videos/videos.html');
+      const setMeta = (sel, attr, val) => { const el = document.querySelector(sel); if(el) el.setAttribute(attr, val); };
+      setMeta('meta[name="description"]', 'content', 'A gallery of popular YouTube Shorts on Khyati17 — tap any video to watch.');
+      setMeta('meta[property="og:title"]', 'content', '🎬 Videos — Khyati17');
+      setMeta('meta[property="og:description"]', 'content', 'A gallery of popular YouTube Shorts — tap any video to watch.');
+      setMeta('meta[property="og:url"]', 'content', 'https://khyati17.com/videos/videos.html');
+      const jsonld = document.getElementById('video-jsonld');
+      if(jsonld) jsonld.textContent = '';
+    }
+
+    async function openVideo(v, { pushHistory = true } = {}){
+      currentVideo = v;
       modal.classList.add('open'); document.body.style.overflow='hidden';
       document.getElementById('v-title').textContent = v.title;
       document.getElementById('v-channel').textContent = v.channel;
+      updateVideoMeta(v);
+      if(pushHistory){
+        const url = 'videos.html?video=' + encodeURIComponent(v.id);
+        if(location.search !== '?video=' + encodeURIComponent(v.id)) history.pushState({video:v.id}, '', url);
+      }
       try{ if(player && player.destroy) player.destroy(); }catch(_){}
       player = null;
       if(v.ytid){
@@ -232,10 +285,35 @@
         renderCommentForm(document.getElementById('comment-form-wrapper'), 'video', v.id, list);
       })();
     }
-    function closeVideo(){ modal.classList.remove('open'); try{ if(player&&player.destroy) player.destroy(); }catch(_){} player=null; mount.innerHTML=''; document.body.style.overflow=''; }
-    document.getElementById('v-close').addEventListener('click', closeVideo);
+    function closeVideo({ pushHistory = true } = {}){
+      modal.classList.remove('open'); try{ if(player&&player.destroy) player.destroy(); }catch(_){} player=null; mount.innerHTML=''; document.body.style.overflow='';
+      currentVideo = null;
+      resetVideoMeta();
+      if(pushHistory && location.search) history.pushState({}, '', 'videos.html');
+    }
+    document.getElementById('v-close').addEventListener('click', ()=>closeVideo());
     modal.addEventListener('click', e=>{ if(e.target===modal) closeVideo(); });
     document.addEventListener('keydown', e=>{ if(e.key==='Escape' && modal.classList.contains('open')) closeVideo(); });
+
+    // Back/forward button support: the URL is the source of truth for which
+    // video (if any) should be open, matching how the Stories reader behaves.
+    window.addEventListener('popstate', ()=>{
+      const params = new URLSearchParams(location.search);
+      const id = params.get('video');
+      if(id){ const v = VIDS.find(x=>x.id===id); if(v) openVideo(v, {pushHistory:false}); else closeVideo({pushHistory:false}); }
+      else if(modal.classList.contains('open')) closeVideo({pushHistory:false});
+    });
+
+    document.getElementById('v-share').addEventListener('click', async ()=>{
+      if(!currentVideo) return;
+      const shareUrl = 'https://khyati17.com/videos/videos.html?video=' + encodeURIComponent(currentVideo.id);
+      const data = { title: currentVideo.title + ' — Khyati17', text: 'Watch this on Khyati17!', url: shareUrl };
+      const btn = document.getElementById('v-share');
+      if(navigator.share){ try{ await navigator.share(data); return; }catch(e){} }
+      try{ await navigator.clipboard.writeText(shareUrl); btn.textContent = '✅ Link copied!'; }
+      catch(e){ btn.textContent = 'Press Ctrl+C'; }
+      setTimeout(()=>{ btn.textContent = '🔗 Share video'; }, 1600);
+    });
 
     document.getElementById('v-search').addEventListener('input', e=>{ query = e.target.value.trim().toLowerCase(); render(); });
     document.getElementById('v-surprise').addEventListener('click', ()=>{ if(VIDS.length) openVideo(VIDS[Math.floor(Math.random()*VIDS.length)]); });
@@ -245,6 +323,12 @@
     document.addEventListener('DOMContentLoaded', async ()=>{
       if(window.AuthReady) try{ await window.AuthReady }catch(e){}
       try{ await adminModule.mountAdminUI('videos'); VIDS = loadVideos(); render(); }catch(e){/* ignore */}
+      // Deep link: if the page was opened as videos.html?video=<id>, open it
+      // directly instead of requiring a click from the grid first.
+      try{
+        const id = new URLSearchParams(location.search).get('video');
+        if(id){ const v = VIDS.find(x=>x.id===id); if(v) openVideo(v, {pushHistory:false}); }
+      }catch(e){/* ignore */}
     });
   </script>
 </body>
