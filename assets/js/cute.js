@@ -636,7 +636,7 @@
         chosenVoice = vs.slice().sort(function(a,b){ return scoreVoice(b) - scoreVoice(a); })[0] || null;
       }catch(e){}
     }
-    if ('speechSynthesis' in window){
+    if (window.speechSynthesis){
       pickVoice();
       window.speechSynthesis.onvoiceschanged = pickVoice;
     }
@@ -646,7 +646,7 @@
                       .replace(/[\u{1F000}-\u{1FAFF}☀-➿←-⇿⬀-⯿]/gu,'')
                       .replace(/\s+/g,' ').trim();
       var duration = Math.min(6500, Math.max(1100, clean.length * 62));
-      var canSpeak = cfg.voice && 'speechSynthesis' in window && clean;
+      var canSpeak = cfg.voice && !!window.speechSynthesis && clean;
       if (canSpeak){
         try{
           window.speechSynthesis.cancel();

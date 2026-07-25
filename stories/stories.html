@@ -155,6 +155,7 @@
     function showStory(s){
       const el = document.getElementById('story-content');
       if(!el) return;
+      Reader.stop(); // switching stories cancels any speech from the previous one
       const slug = s.slug || s.id || (s.title||'').replace(/\s+/g,'-').toLowerCase();
       updateStoryMeta(s, slug);
       const mins = readingTime(s.body);
@@ -162,9 +163,13 @@
         + (s.category ? `<span style="background:#f3e9fd;color:#6a1b9a;font-weight:700;border-radius:999px;padding:3px 10px">${escapeHtml(s.category)}</span>` : '')
         + `<span>⏱️ ${mins} min read</span></div>`;
       el.innerHTML = `<h2>${escapeHtml(s.title||'')}</h2>${meta}<p style="color:#6a4b8f">${escapeHtml(s.excerpt||'')}</p>`
-        + `<button id="story-share" class="btn btn-ghost" style="margin:2px 0 12px;font-size:.85rem;padding:6px 14px">🔗 Share story</button>`
+        + `<div style="display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 12px">`
+        + `<button id="story-share" class="btn btn-ghost" style="font-size:.85rem;padding:6px 14px">🔗 Share story</button>`
+        + `<button id="story-read" class="btn btn-ghost" style="font-size:.85rem;padding:6px 14px">🔊 Read aloud</button>`
+        + `</div>`
         + `<div>${s.body||''}</div>`
         + `<div style="margin:22px 0 6px;text-align:center"><button id="story-another" class="btn" style="font-size:.9rem">🎲 Read another story</button></div>`;
+      Reader.bind(document.getElementById('story-read'), s);
       // "Read another" opens a random different story
       const another = document.getElementById('story-another');
       if(another) another.addEventListener('click', ()=>{
@@ -198,6 +203,76 @@
 
     // simple HTML escaper
     function escapeHtml(s){ return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+    // ---- Read Aloud: the browser's own text-to-speech (Web Speech API).
+    // No account, no server, no setup — it just uses whatever voice engine
+    // is already built into the visitor's browser/OS.
+    const Reader = (() => {
+      const supported = typeof window !== 'undefined' && !!window.speechSynthesis && typeof window.SpeechSynthesisUtterance === 'function';
+      let queue = [], idx = 0, state = 'idle', btn = null;
+
+      // Chrome has a long-standing bug where a single very long utterance can
+      // silently stop partway through. Splitting into sentence-ish chunks and
+      // chaining them via onend sidesteps it and also makes pause/resume feel
+      // more responsive.
+      function chunkText(text){
+        const sentences = text.match(/[^.!?\n]+[.!?\n]*/g) || [text];
+        const chunks = []; let cur = '';
+        for(const part of sentences){
+          if((cur + part).length > 220 && cur){ chunks.push(cur.trim()); cur = ''; }
+          cur += part;
+        }
+        if(cur.trim()) chunks.push(cur.trim());
+        return chunks.length ? chunks : [text];
+      }
+
+      function textFromStory(s){
+        const div = document.createElement('div'); div.innerHTML = s.body || '';
+        const plain = (div.textContent || div.innerText || '').replace(/\s+/g,' ').trim();
+        return `${s.title||'Story'}. ${plain}`;
+      }
+
+      function setLabel(text){ if(btn) btn.textContent = text; }
+
+      function speakNext(){
+        if(idx >= queue.length){ stop(); return; }
+        const u = new SpeechSynthesisUtterance(queue[idx]);
+        u.rate = 0.95;
+        u.onend = () => { idx++; speakNext(); };
+        u.onerror = () => { idx++; speakNext(); };
+        speechSynthesis.speak(u);
+      }
+
+      function start(s){
+        if(!supported) return;
+        speechSynthesis.cancel();
+        queue = chunkText(textFromStory(s)); idx = 0; state = 'speaking';
+        setLabel('⏸️ Pause reading');
+        speakNext();
+      }
+      function pause(){ if(!supported || state!=='speaking') return; speechSynthesis.pause(); state='paused'; setLabel('▶️ Resume reading'); }
+      function resume(){ if(!supported || state!=='paused') return; speechSynthesis.resume(); state='speaking'; setLabel('⏸️ Pause reading'); }
+      function stop(){ if(supported) speechSynthesis.cancel(); queue=[]; idx=0; state='idle'; setLabel('🔊 Read aloud'); }
+
+      function bind(button, s){
+        btn = button;
+        if(!button) return;
+        if(!supported){ button.disabled = true; button.textContent = '🔊 Not supported here'; button.title = 'Text-to-speech isn\'t available in this browser'; return; }
+        setLabel('🔊 Read aloud');
+        button.addEventListener('click', () => {
+          if(state === 'idle') start(s);
+          else if(state === 'speaking') pause();
+          else if(state === 'paused') resume();
+        });
+      }
+
+      if(supported){
+        window.addEventListener('pagehide', stop);
+        window.addEventListener('beforeunload', stop);
+      }
+
+      return { bind, stop };
+    })();
 
     document.addEventListener('DOMContentLoaded', async ()=>{
       if(window.AuthReady) try{ await window.AuthReady }catch(e){}
