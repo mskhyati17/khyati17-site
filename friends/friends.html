@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Friends — Khyati17</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <meta name="description" content="Add friends, see who's online, and chat while you explore Khyati17 together." />
+  <meta name="theme-color" content="#6a1b9a" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Khyati17" />
+  <meta property="og:title" content="Friends — Khyati17" />
+  <meta property="og:description" content="Add friends, see who's online, and chat while you explore together." />
+  <meta property="og:image" content="https://khyati17.com/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <style>
+    .fr{max-width:1000px;margin:0 auto;padding:24px 16px 48px;width:100%}
+    .fr h1{font-size:1.8rem;color:var(--purple-900);margin:6px 0 4px}
+    .fr .sub{color:#6a4b8f;margin-bottom:22px}
+    .fr-notice{background:#fff8e6;border:1px solid #f3ddab;border-radius:14px;padding:16px 18px;color:#6a4b8f;margin-bottom:20px;line-height:1.5}
+    .fr-search{display:flex;gap:8px;margin-bottom:18px}
+    .fr-search input{flex:1;padding:10px 14px;border:1px solid #d9c7ee;border-radius:10px;font:inherit}
+    .fr-search button{white-space:nowrap}
+    .fr-tabs{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
+    .fr-tab{border:1px solid #e0cdf5;background:#fff;border-radius:999px;padding:7px 16px;font-weight:700;font-size:.85rem;cursor:pointer;color:#6a4b8f}
+    .fr-tab.active{background:var(--purple-700,#6a1b9a);color:#fff;border-color:transparent}
+    .fr-badge{display:inline-block;min-width:18px;text-align:center;background:#e0245e;color:#fff;border-radius:999px;font-size:.68rem;padding:1px 5px;margin-left:4px}
+    .fr-list{display:flex;flex-direction:column;gap:10px}
+    .fr-row{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #efe4fb;border-radius:14px;padding:12px 14px;box-shadow:0 6px 18px rgba(117,80,168,.06)}
+    .fr-avatar{width:40px;height:40px;border-radius:50%;background:#f3e9fd;display:flex;align-items:center;justify-content:center;font-weight:800;color:#6a1b9a;flex:0 0 auto;position:relative}
+    .fr-dot{position:absolute;bottom:-1px;right:-1px;width:11px;height:11px;border-radius:50%;background:#bbb;border:2px solid #fff}
+    .fr-dot.online{background:#2ecc71}
+    .fr-name{font-weight:700;color:#2b1444}
+    .fr-sub{font-size:.76rem;color:#8a7aa0}
+    .fr-row .spacer{flex:1}
+    .fr-row .btn{font-size:.8rem;padding:6px 12px}
+    .fr-empty{background:#faf5ff;border:1px dashed #e0cdf5;border-radius:14px;padding:20px;text-align:center;color:#8a7aa0;font-weight:600}
+    /* chat modal */
+    .fr-chat-backdrop{position:fixed;inset:0;background:rgba(30,12,50,.5);display:none;align-items:center;justify-content:center;z-index:10000;padding:16px}
+    .fr-chat-backdrop.open{display:flex}
+    .fr-chat{background:#fff;border-radius:18px;width:100%;max-width:460px;max-height:80vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 30px 80px rgba(40,10,70,.4)}
+    .fr-chat-head{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid #eee}
+    .fr-chat-head .close{margin-left:auto;background:none;border:none;font-size:20px;cursor:pointer;color:#8a7aa0}
+    .fr-chat-body{flex:1;overflow-y:auto;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+    .fr-msg{max-width:80%;padding:8px 12px;border-radius:14px;font-size:.9rem;line-height:1.4;word-wrap:break-word}
+    .fr-msg.mine{align-self:flex-end;background:linear-gradient(90deg,#6a1b9a,#9c4dcc);color:#fff}
+    .fr-msg.theirs{align-self:flex-start;background:#f3e9fd;color:#2b1444}
+    .fr-msg a{color:inherit;text-decoration:underline}
+    .fr-chat-foot{border-top:1px solid #eee;padding:10px 12px;display:flex;gap:8px;align-items:flex-end}
+    .fr-chat-foot textarea{flex:1;resize:none;border:1px solid #d9c7ee;border-radius:10px;padding:8px 10px;font:inherit;max-height:80px}
+    .fr-share{padding:8px 12px;border-top:1px solid #f3e9fd;display:flex;gap:6px;overflow-x:auto}
+    .fr-share button{white-space:nowrap;font-size:.72rem;padding:5px 10px;border-radius:999px;border:1px solid #e0cdf5;background:#faf5ff;color:#6a1b9a;cursor:pointer}
+    [data-theme="dark"] .fr h1,[data-theme="dark"] .fr-name{color:#f0e6ff}
+    [data-theme="dark"] .fr .sub,[data-theme="dark"] .fr-sub{color:#c3b0dd}
+    [data-theme="dark"] .fr-row,[data-theme="dark"] .fr-chat{background:#241633;border-color:#3a2550}
+    [data-theme="dark"] .fr-notice{background:#2a2214;border-color:#4a3e1f;color:#e5d8f5}
+    [data-theme="dark"] .fr-avatar{background:#2a1b3d}
+    [data-theme="dark"] .fr-msg.theirs{background:#2a1b3d;color:#f0e8ff}
+    [data-theme="dark"] .fr-chat-head,[data-theme="dark"] .fr-chat-foot,[data-theme="dark"] .fr-share{border-color:#3a2550}
+    [data-theme="dark"] .fr-empty{background:#1c1129;border-color:#3a2550;color:#b7a4d6}
+  </style>
+  <link rel="canonical" href="https://khyati17.com/friends/friends.html" />
+</head>
+<body>
+  <div id="site-header-root"></div>
+
+  <main class="fr container" role="main">
+    <h1>👥 Friends</h1>
+    <p class="sub">Add friends, see who's online, and chat while you explore the site together.</p>
+
+    <div id="signedOutNotice" class="fr-notice" style="display:none">
+      Please <a href="/admin/login.html">sign in</a> (or <a href="/admin/signup.html">create an account</a>) to use Friends.
+    </div>
+    <div id="unavailableNotice" class="fr-notice" style="display:none">
+      Friends isn't turned on for this site yet — it needs the real account system, not the quick demo sign-in. Ask a grown-up to finish the Supabase setup (see <code>admin/SUPABASE-SETUP.md</code>).
+    </div>
+
+    <div id="frApp" style="display:none">
+      <div class="fr-search">
+        <input id="searchInput" type="text" placeholder="Search by username…" autocomplete="off" />
+        <button id="searchBtn" class="btn">Search</button>
+      </div>
+      <div id="searchResults" class="fr-list" style="margin-bottom:22px"></div>
+
+      <div class="fr-tabs">
+        <button class="fr-tab active" data-tab="friends">Friends <span id="friendsCount" class="fr-sub"></span></button>
+        <button class="fr-tab" data-tab="requests">Requests <span id="reqBadge"></span></button>
+        <button class="fr-tab" data-tab="blocked">Blocked</button>
+      </div>
+
+      <div id="tab-friends" class="fr-list"></div>
+      <div id="tab-requests" class="fr-list" style="display:none"></div>
+      <div id="tab-blocked" class="fr-list" style="display:none"></div>
+    </div>
+  </main>
+
+  <div class="fr-chat-backdrop" id="chatBackdrop">
+    <div class="fr-chat">
+      <div class="fr-chat-head">
+        <div class="fr-avatar" id="chatAvatar">?</div>
+        <div>
+          <div class="fr-name" id="chatName">—</div>
+          <div class="fr-sub" id="chatStatus">offline</div>
+        </div>
+        <button class="close" id="chatClose" aria-label="Close chat">✕</button>
+      </div>
+      <div class="fr-chat-body" id="chatBody"></div>
+      <div class="fr-share" id="chatShare"></div>
+      <div class="fr-chat-foot">
+        <textarea id="chatInput" rows="1" placeholder="Say hi…" maxlength="1000"></textarea>
+        <button class="btn" id="chatSend">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer"><p style="text-align:center;padding:8px">© <span id="year"></span> Khyati17 — All rights reserved</p></footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script type="module" src="../assets/js/auth.js?v=2"></script>
+  <script type="module">import('../assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
+  <script type="module">
+    import { Auth, AuthReady } from '../assets/js/auth.js';
+    import { FriendsAPI } from '../assets/js/friends.js';
+
+    const $ = sel => document.querySelector(sel);
+    let stopPresence = () => {};
+    let stopMessages = () => {};
+    let activeChatUserId = null;
+    let activeChatName = '';
+    let unreadByUser = {};
+
+    function initials(profile, fallbackId){
+      const n = profile?.first_name || profile?.username || fallbackId || '?';
+      return String(n).trim().slice(0,1).toUpperCase();
+    }
+
+    function rowHtml({ userId, profile, extraButtons, dot }){
+      const name = FriendsAPI.esc(profile?.first_name || profile?.username || 'Someone');
+      const uname = profile?.username ? '@' + FriendsAPI.esc(profile.username) : '';
+      return `<div class="fr-row" data-user="${FriendsAPI.esc(userId)}">
+        <div class="fr-avatar">${FriendsAPI.esc(initials(profile, userId))}${dot!==undefined?`<span class="fr-dot${dot?' online':''}"></span>`:''}</div>
+        <div><div class="fr-name">${name}</div><div class="fr-sub">${uname}</div></div>
+        <span class="spacer"></span>
+        ${extraButtons}
+      </div>`;
+    }
+
+    async function refreshFriends(){
+      const r = await FriendsAPI.listFriends();
+      const list = $('#tab-friends');
+      if(!r.ok || !r.friends.length){ list.innerHTML = '<div class="fr-empty">No friends yet — search for a username above to send a request!</div>'; $('#friendsCount').textContent=''; return; }
+      $('#friendsCount').textContent = '(' + r.friends.length + ')';
+      list.innerHTML = r.friends.map(f => rowHtml({
+        userId: f.userId, profile: f.profile, dot: FriendsAPI.isOnline(f.userId),
+        extraButtons: `<button class="btn chat-btn" data-user="${FriendsAPI.esc(f.userId)}">💬 Chat</button>
+          <button class="btn btn-ghost remove-btn" data-req="${f.requestId}">Remove</button>
+          <button class="btn btn-ghost block-btn" data-user="${FriendsAPI.esc(f.userId)}">Block</button>`
+      })).join('');
+      list.querySelectorAll('.chat-btn').forEach(b => b.addEventListener('click', () => openChat(b.dataset.user)));
+      list.querySelectorAll('.remove-btn').forEach(b => b.addEventListener('click', async () => { await FriendsAPI.removeFriend(Number(b.dataset.req)); refreshFriends(); }));
+      list.querySelectorAll('.block-btn').forEach(b => b.addEventListener('click', async () => { if(confirm('Block this person? They will be removed as a friend and cannot send you requests again.')) { await FriendsAPI.blockUser(b.dataset.user); refreshFriends(); refreshRequests(); refreshBlocked(); } }));
+    }
+
+    async function refreshRequests(){
+      const [inc, out] = await Promise.all([FriendsAPI.listIncoming(), FriendsAPI.listOutgoing()]);
+      const badge = $('#reqBadge');
+      badge.innerHTML = (inc.requests?.length) ? `<span class="fr-badge">${inc.requests.length}</span>` : '';
+      const list = $('#tab-requests');
+      const parts = [];
+      if(inc.requests?.length){
+        parts.push('<div class="fr-sub" style="margin:4px 0">Incoming</div>');
+        parts.push(inc.requests.map(rr => rowHtml({
+          userId: rr.from_user, profile: rr.profile,
+          extraButtons: `<button class="btn accept-btn" data-id="${rr.id}">Accept</button><button class="btn btn-ghost decline-btn" data-id="${rr.id}">Decline</button>`
+        })).join(''));
+      }
+      if(out.requests?.length){
+        parts.push('<div class="fr-sub" style="margin:12px 0 4px">Sent, waiting for reply</div>');
+        parts.push(out.requests.map(rr => rowHtml({
+          userId: rr.to_user, profile: rr.profile,
+          extraButtons: `<button class="btn btn-ghost cancel-btn" data-id="${rr.id}">Cancel</button>`
+        })).join(''));
+      }
+      list.innerHTML = parts.length ? parts.join('') : '<div class="fr-empty">No pending requests.</div>';
+      list.querySelectorAll('.accept-btn').forEach(b => b.addEventListener('click', async () => { await FriendsAPI.respondRequest(Number(b.dataset.id), true); refreshRequests(); refreshFriends(); }));
+      list.querySelectorAll('.decline-btn').forEach(b => b.addEventListener('click', async () => { await FriendsAPI.respondRequest(Number(b.dataset.id), false); refreshRequests(); }));
+      list.querySelectorAll('.cancel-btn').forEach(b => b.addEventListener('click', async () => { await FriendsAPI.cancelRequest(Number(b.dataset.id)); refreshRequests(); }));
+    }
+
+    async function refreshBlocked(){
+      const r = await FriendsAPI.listBlocked();
+      const list = $('#tab-blocked');
+      if(!r.ok || !r.blocked.length){ list.innerHTML = '<div class="fr-empty">Nobody blocked.</div>'; return; }
+      list.innerHTML = r.blocked.map(b => rowHtml({
+        userId: b.userId, profile: b.profile,
+        extraButtons: `<button class="btn btn-ghost unblock-btn" data-user="${FriendsAPI.esc(b.userId)}">Unblock</button>`
+      })).join('');
+      list.querySelectorAll('.unblock-btn').forEach(b => b.addEventListener('click', async () => { await FriendsAPI.unblockUser(b.dataset.user); refreshBlocked(); }));
+    }
+
+    document.querySelectorAll('.fr-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.fr-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        ['friends','requests','blocked'].forEach(name => { $('#tab-'+name).style.display = (name===tab.dataset.tab) ? 'flex' : 'none'; });
+      });
+    });
+
+    async function doSearch(){
+      const q = $('#searchInput').value;
+      const r = await FriendsAPI.searchUsers(q);
+      const box = $('#searchResults');
+      if(!r.ok){ box.innerHTML = `<div class="fr-empty">${FriendsAPI.esc(r.msg)}</div>`; return; }
+      if(!r.users.length){ box.innerHTML = q.trim().length >= 2 ? '<div class="fr-empty">No matching usernames.</div>' : ''; return; }
+      box.innerHTML = r.users.map(u => rowHtml({
+        userId: u.id, profile: u,
+        extraButtons: `<button class="btn add-btn" data-user="${FriendsAPI.esc(u.id)}">➕ Add friend</button>`
+      })).join('');
+      box.querySelectorAll('.add-btn').forEach(b => b.addEventListener('click', async () => {
+        const res = await FriendsAPI.sendRequest(b.dataset.user);
+        b.textContent = res.ok ? '✅ Sent' : res.msg;
+        b.disabled = true;
+        refreshRequests();
+      }));
+    }
+    $('#searchBtn').addEventListener('click', doSearch);
+    $('#searchInput').addEventListener('keydown', e => { if(e.key === 'Enter') doSearch(); });
+
+    // ---- chat -----------------------------------------------------------
+    function appendMessage(msg, mine){
+      const body = $('#chatBody');
+      const div = document.createElement('div');
+      div.className = 'fr-msg ' + (mine ? 'mine' : 'theirs');
+      div.innerHTML = linkify(FriendsAPI.esc(msg.body));
+      body.appendChild(div);
+      body.scrollTop = body.scrollHeight;
+    }
+    function linkify(escapedText){
+      return escapedText.replace(/(https?:\/\/[^\s<]+)/g, url => `<a href="${url}" target="_blank" rel="noopener">${url}</a>`);
+    }
+
+    async function openChat(userId){
+      activeChatUserId = userId;
+      const r = await FriendsAPI.listFriends();
+      const f = (r.friends||[]).find(x => x.userId === userId);
+      activeChatName = f?.profile?.first_name || f?.profile?.username || 'Friend';
+      $('#chatName').textContent = activeChatName;
+      $('#chatAvatar').textContent = initials(f?.profile, userId);
+      $('#chatStatus').textContent = FriendsAPI.isOnline(userId) ? '🟢 online now' : 'offline';
+      $('#chatBody').innerHTML = '';
+      unreadByUser[userId] = 0;
+
+      // "Explore together": offer quick-share buttons for recently visited pages.
+      let recent = [];
+      try{ recent = JSON.parse(localStorage.getItem('ks_recent') || '[]').slice(0,5); }catch(e){}
+      const shareBox = $('#chatShare');
+      shareBox.innerHTML = recent.length
+        ? recent.map(item => `<button data-url="${FriendsAPI.esc(item.url)}" data-title="${FriendsAPI.esc(item.title)}">🔗 Share “${FriendsAPI.esc(item.title)}”</button>`).join('')
+        : '';
+      shareBox.querySelectorAll('button').forEach(b => b.addEventListener('click', async () => {
+        const text = `Come check this out with me: ${location.origin}${b.dataset.url}`;
+        const res = await FriendsAPI.sendMessage(userId, text);
+        if(res.ok) appendMessage(res.message, true);
+      }));
+
+      const hist = await FriendsAPI.listMessages(userId);
+      const me = await FriendsAPI.myId();
+      (hist.messages || []).forEach(m => appendMessage(m, m.from_user === me));
+
+      $('#chatBackdrop').classList.add('open');
+      $('#chatInput').focus();
+    }
+
+    $('#chatClose').addEventListener('click', () => { $('#chatBackdrop').classList.remove('open'); activeChatUserId = null; });
+    $('#chatBackdrop').addEventListener('click', e => { if(e.target.id === 'chatBackdrop'){ $('#chatBackdrop').classList.remove('open'); activeChatUserId = null; } });
+
+    async function sendCurrent(){
+      const ta = $('#chatInput');
+      const text = ta.value;
+      if(!text.trim() || !activeChatUserId) return;
+      ta.value = '';
+      const res = await FriendsAPI.sendMessage(activeChatUserId, text);
+      if(res.ok) appendMessage(res.message, true);
+      else alert(res.msg);
+    }
+    $('#chatSend').addEventListener('click', sendCurrent);
+    $('#chatInput').addEventListener('keydown', e => { if(e.key === 'Enter' && !e.shiftKey){ e.preventDefault(); sendCurrent(); } });
+
+    // ---- boot -------------------------------------------------------------
+    (async function boot(){
+      await AuthReady;
+      const user = await Auth.currentUser();
+      if(!user){ $('#signedOutNotice').style.display = 'block'; return; }
+      if(!FriendsAPI.available){ $('#unavailableNotice').style.display = 'block'; return; }
+
+      $('#frApp').style.display = 'block';
+      await refreshFriends();
+      await refreshRequests();
+      await refreshBlocked();
+
+      stopPresence = await FriendsAPI.trackPresence();
+      FriendsAPI.onPresenceChange(() => { refreshFriends(); if(activeChatUserId){ $('#chatStatus').textContent = FriendsAPI.isOnline(activeChatUserId) ? '🟢 online now' : 'offline'; } });
+
+      stopMessages = await FriendsAPI.subscribeMessages(async msg => {
+        if(activeChatUserId && msg.from_user === activeChatUserId){ appendMessage(msg, false); }
+        else { refreshRequests(); refreshFriends(); }
+      });
+    })();
+
+    window.addEventListener('beforeunload', () => { stopPresence(); stopMessages(); });
+  </script>
+</body>
+</html>

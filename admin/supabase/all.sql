@@ -241,3 +241,159 @@ INSERT INTO public.games (title, embed, src, thumbnail, metadata) VALUES
 (NULL, 'https://turbowarp.org/1203954575/embed', 'https://scratch.mit.edu/projects/1203954575/', 'https://cdn2.scratch.mit.edu/get_image/project/1203954575_480x360.png', '{}'::jsonb);
 
 -- End games_json_inserts.sql
+
+
+-- 8) friends, blocks, chat (see friends.sql for full notes/limitations)
+-- -----------------------------------------------------------------
+-- Begin friends.sql
+CREATE OR REPLACE VIEW public.public_profiles AS
+  SELECT id, username, first_name, avatar_url
+  FROM public.profiles;
+
+GRANT SELECT ON public.public_profiles TO authenticated;
+
+CREATE TABLE IF NOT EXISTS public.blocks (
+  id bigserial PRIMARY KEY,
+  blocker uuid REFERENCES auth.users(id) ON DELETE CASCADE NOT NULL,
+  blocked uuid REFERENCES auth.users(id) ON DELETE CASCADE NOT NULL,
+  created_at timestamptz DEFAULT now() NOT NULL,
+  CONSTRAINT blocks_no_self CHECK (blocker <> blocked),
+  CONSTRAINT blocks_unique UNIQUE (blocker, blocked)
+);
+
+CREATE INDEX IF NOT EXISTS blocks_blocker_idx ON public.blocks (blocker);
+CREATE INDEX IF NOT EXISTS blocks_blocked_idx ON public.blocks (blocked);
+
+ALTER TABLE public.blocks ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "blocks_select_own" ON public.blocks;
+CREATE POLICY "blocks_select_own" ON public.blocks
+  FOR SELECT USING ( auth.uid() = blocker );
+
+DROP POLICY IF EXISTS "blocks_insert_own" ON public.blocks;
+CREATE POLICY "blocks_insert_own" ON public.blocks
+  FOR INSERT WITH CHECK ( auth.uid() = blocker );
+
+DROP POLICY IF EXISTS "blocks_delete_own" ON public.blocks;
+CREATE POLICY "blocks_delete_own" ON public.blocks
+  FOR DELETE USING ( auth.uid() = blocker );
+
+CREATE OR REPLACE FUNCTION public.is_blocked(a uuid, b uuid)
+RETURNS boolean LANGUAGE sql STABLE AS $$
+  SELECT EXISTS (
+    SELECT 1 FROM public.blocks
+    WHERE (blocker = a AND blocked = b) OR (blocker = b AND blocked = a)
+  );
+$$;
+
+CREATE TABLE IF NOT EXISTS public.friend_requests (
+  id bigserial PRIMARY KEY,
+  from_user uuid REFERENCES auth.users(id) ON DELETE CASCADE NOT NULL,
+  to_user uuid REFERENCES auth.users(id) ON DELETE CASCADE NOT NULL,
+  status text NOT NULL DEFAULT 'pending' CHECK (status IN ('pending','accepted','declined')),
+  created_at timestamptz DEFAULT now() NOT NULL,
+  updated_at timestamptz DEFAULT now() NOT NULL,
+  CONSTRAINT friend_requests_no_self CHECK (from_user <> to_user),
+  CONSTRAINT friend_requests_unique_pair UNIQUE (from_user, to_user)
+);
+
+CREATE INDEX IF NOT EXISTS friend_requests_to_idx ON public.friend_requests (to_user, status);
+CREATE INDEX IF NOT EXISTS friend_requests_from_idx ON public.friend_requests (from_user, status);
+
+DROP TRIGGER IF EXISTS set_timestamp ON public.friend_requests;
+CREATE TRIGGER set_timestamp BEFORE UPDATE ON public.friend_requests
+FOR EACH ROW EXECUTE FUNCTION public.set_timestamp();
+
+ALTER TABLE public.friend_requests ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "friend_requests_select" ON public.friend_requests;
+CREATE POLICY "friend_requests_select" ON public.friend_requests
+  FOR SELECT USING ( auth.uid() = from_user OR auth.uid() = to_user );
+
+DROP POLICY IF EXISTS "friend_requests_insert" ON public.friend_requests;
+CREATE POLICY "friend_requests_insert" ON public.friend_requests
+  FOR INSERT WITH CHECK (
+    auth.uid() = from_user
+    AND NOT public.is_blocked(from_user, to_user)
+  );
+
+DROP POLICY IF EXISTS "friend_requests_update_recipient" ON public.friend_requests;
+CREATE POLICY "friend_requests_update_recipient" ON public.friend_requests
+  FOR UPDATE USING ( auth.uid() = to_user ) WITH CHECK ( auth.uid() = to_user );
+
+DROP POLICY IF EXISTS "friend_requests_delete_own" ON public.friend_requests;
+CREATE POLICY "friend_requests_delete_own" ON public.friend_requests
+  FOR DELETE USING ( auth.uid() = from_user OR auth.uid() = to_user );
+
+CREATE OR REPLACE FUNCTION public.are_friends(a uuid, b uuid)
+RETURNS boolean LANGUAGE sql STABLE AS $$
+  SELECT EXISTS (
+    SELECT 1 FROM public.friend_requests
+    WHERE status = 'accepted'
+      AND ((from_user = a AND to_user = b) OR (from_user = b AND to_user = a))
+  );
+$$;
+
+CREATE TABLE IF NOT EXISTS public.friend_messages (
+  id bigserial PRIMARY KEY,
+  from_user uuid REFERENCES auth.users(id) ON DELETE CASCADE NOT NULL,
+  to_user uuid REFERENCES auth.users(id) ON DELETE CASCADE NOT NULL,
+  body text NOT NULL CHECK ( char_length(body) BETWEEN 1 AND 1000 ),
+  created_at timestamptz DEFAULT now() NOT NULL,
+  read_at timestamptz,
+  CONSTRAINT friend_messages_no_self CHECK (from_user <> to_user)
+);
+
+CREATE INDEX IF NOT EXISTS friend_messages_pair_idx
+  ON public.friend_messages (LEAST(from_user, to_user), GREATEST(from_user, to_user), created_at);
+
+ALTER TABLE public.friend_messages ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "friend_messages_select" ON public.friend_messages;
+CREATE POLICY "friend_messages_select" ON public.friend_messages
+  FOR SELECT USING ( auth.uid() = from_user OR auth.uid() = to_user );
+
+DROP POLICY IF EXISTS "friend_messages_insert" ON public.friend_messages;
+CREATE POLICY "friend_messages_insert" ON public.friend_messages
+  FOR INSERT WITH CHECK (
+    auth.uid() = from_user
+    AND public.are_friends(from_user, to_user)
+    AND NOT public.is_blocked(from_user, to_user)
+  );
+
+DROP POLICY IF EXISTS "friend_messages_update_read" ON public.friend_messages;
+CREATE POLICY "friend_messages_update_read" ON public.friend_messages
+  FOR UPDATE USING ( auth.uid() = to_user ) WITH CHECK ( auth.uid() = to_user );
+
+CREATE OR REPLACE FUNCTION public.friend_messages_rate_limit() RETURNS trigger AS $$
+DECLARE
+  recent_count integer;
+BEGIN
+  SELECT count(*) INTO recent_count
+  FROM public.friend_messages
+  WHERE from_user = NEW.from_user
+    AND created_at > now() - interval '10 seconds';
+  IF recent_count >= 20 THEN
+    RAISE EXCEPTION 'Sending too fast — please slow down.';
+  END IF;
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+DROP TRIGGER IF EXISTS friend_messages_rate_limit ON public.friend_messages;
+CREATE TRIGGER friend_messages_rate_limit BEFORE INSERT ON public.friend_messages
+FOR EACH ROW EXECUTE FUNCTION public.friend_messages_rate_limit();
+
+DO $$
+BEGIN
+  BEGIN
+    ALTER PUBLICATION supabase_realtime ADD TABLE public.friend_requests;
+  EXCEPTION WHEN duplicate_object THEN NULL;
+  END;
+  BEGIN
+    ALTER PUBLICATION supabase_realtime ADD TABLE public.friend_messages;
+  EXCEPTION WHEN duplicate_object THEN NULL;
+  END;
+END $$;
+
+-- End friends.sql (see admin/supabase/friends.sql for full notes/limitations)

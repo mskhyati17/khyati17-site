@@ -47,7 +47,7 @@ const EXCLUDE = new Set([
 function priorityFor(rel) {
   if (rel === '/index.html') return { p: '1.0', cf: 'weekly' };
   if (/\/(fun-games|ai-tools|stories)\/index\.html$/.test(rel)) return { p: '0.9', cf: 'weekly' };
-  if (/\/(videos|trading|others|about|me)\//.test(rel)) return { p: '0.6', cf: 'weekly' };
+  if (/\/(videos|trading|others|about|me|friends)\//.test(rel)) return { p: '0.6', cf: 'weekly' };
   if (rel.startsWith('/fun-games/')) return { p: '0.7', cf: 'monthly' };
   if (rel.startsWith('/ai-tools/')) return { p: '0.7', cf: 'monthly' };
   return { p: '0.6', cf: 'monthly' };
