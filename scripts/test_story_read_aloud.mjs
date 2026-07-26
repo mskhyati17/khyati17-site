@@ -1,12 +1,15 @@
-// Verify the "Read aloud" text-to-speech control on the story reader page.
+// Verify the "Read aloud" text-to-speech control on the story reader page,
+// including the automatic backup voice (meSpeak.js, loaded from a CDN) that
+// kicks in when the native browser/OS voice doesn't actually work.
+//
 // Headless Chromium exposes the Web Speech API shape but has no real TTS
-// voice backend, so `speak()` never actually produces audio or fires events
-// in CI. To test the *logic* (chunking, sequencing, pause/resume, cancel-on-
-// story-switch) honestly, we inject a fake speechSynthesis engine before the
-// page loads that mimics real event timing. Real audio output still needs a
-// human to confirm on an actual browser, but the control flow that decides
-// what gets spoken, when, and how it reacts to pause/resume/switch is fully
-// exercised here.
+// voice backend, so native `speak()` never actually produces audio or fires
+// events in CI. To test the *native-path logic* (chunking, pause/resume,
+// cancel-on-switch) honestly, we inject a fake speechSynthesis engine that
+// mimics real event timing. To test the *backup-voice path*, we let it hit
+// the real CDN — that's a genuine integration, not something worth faking.
+// All fallback-triggering scenarios share one browser context so the ~3MB
+// library only downloads once (subsequent navigations hit HTTP cache).
 import { chromium } from 'playwright';
 import { createServer } from 'http';
 import { readFileSync, existsSync } from 'fs';
@@ -24,10 +27,9 @@ const fakeTts = () => {
   // window.speechSynthesis is a getter-only IDL attribute in real Chromium,
   // so a plain `window.speechSynthesis = ...` silently no-ops. Use
   // defineProperty to actually replace it with our fake engine.
-  // The production code now rejects any chunk that "finishes" faster than a
-  // real voice plausibly could (see stories.html's minPlausibleMs check), so
-  // this fake must take a proportional amount of (fake) time per chunk too —
-  // a flat short delay would itself get flagged as a failure.
+  // The production code rejects any chunk that "finishes" faster than a real
+  // voice plausibly could, so this fake must take a proportional amount of
+  // (fake) time per chunk too — a flat short delay would itself get flagged.
   window.__ttsCalls = [];
   let paused = false;
   const fake = {
@@ -57,6 +59,7 @@ const fakeTts = () => {
 
 const browser = await chromium.launch({ headless: true });
 try{
+  // ---- Test 1: native engine present and working (fake) ----------------
   const page = await browser.newPage();
   const jsErrors = []; page.on('pageerror', e => jsErrors.push(e.message));
   await page.addInitScript(fakeTts);
@@ -112,104 +115,90 @@ try{
 
   jsErrors.length === 0 ? pass('no JS errors') : fail(`JS errors: ${jsErrors.join(', ')}`);
 
-  // Separate page: verify graceful fallback when the browser has no speechSynthesis at all.
-  const page2 = await browser.newPage();
-  const jsErrors2 = []; page2.on('pageerror', e => jsErrors2.push(e.message));
-  await page2.addInitScript(() => {
+  // ---- Tests 2-4: backup voice, real CDN, shared context for cache -----
+  const ctx = await browser.newContext();
+
+  // Test 2: native completely absent — this is the main end-to-end proof
+  // that the real backup voice actually loads and engages.
+  const pageA = await ctx.newPage();
+  const jsErrorsA = []; pageA.on('pageerror', e => jsErrorsA.push(e.message));
+  await pageA.addInitScript(() => {
     Object.defineProperty(window, 'speechSynthesis', { value: undefined, configurable: true });
     Object.defineProperty(window, 'SpeechSynthesisUtterance', { value: undefined, configurable: true });
   });
-  await page2.goto(`${base}/stories/stories.html?story=gloomy-crown`, { waitUntil: 'networkidle', timeout: 15000 });
-  await page2.waitForSelector('#story-read', { timeout: 10000 });
-  const disabled = await page2.isDisabled('#story-read');
-  const fallbackLabel = await page2.textContent('#story-read');
-  disabled ? pass('button disabled when speechSynthesis unsupported') : fail('button should be disabled without speechSynthesis');
-  fallbackLabel.includes('Not supported') ? pass(`shows fallback label: "${fallbackLabel}"`) : fail(`unexpected fallback label: ${fallbackLabel}`);
-  jsErrors2.length === 0 ? pass('no JS errors on unsupported-browser fallback') : fail(`JS errors: ${jsErrors2.join(', ')}`);
+  await pageA.goto(`${base}/stories/stories.html?story=the-weather-of-growing-older`, { waitUntil: 'networkidle', timeout: 15000 });
+  await pageA.waitForSelector('#story-read', { timeout: 10000 });
+  const disabledA = await pageA.isDisabled('#story-read');
+  !disabledA ? pass('button stays enabled with no native voice at all (backup voice can still read)') : fail('button should not be disabled — backup voice should cover this case');
 
-  // Third page: simulate a browser with the API present but no working voice
-  // (e.g. no TTS voice installed) — speak() "fires" but errors out instantly.
-  // This is the real-world case behind the "it un-presses right away" report:
-  // the button must show visible feedback instead of silently flickering
-  // back to idle with no explanation.
-  const page3 = await browser.newPage();
-  const jsErrors3 = []; page3.on('pageerror', e => jsErrors3.push(e.message));
-  await page3.addInitScript(() => {
+  await pageA.click('#story-read');
+  await pageA.waitForFunction(() => document.getElementById('story-read').textContent.includes('Pause reading (backup voice)'), { timeout: 30000 });
+  pass('backup voice engages and starts reading (real meSpeak.js load + speak over the network)');
+  const meSpeakLoaded = await pageA.evaluate(() => typeof window.meSpeak !== 'undefined');
+  meSpeakLoaded ? pass('meSpeak.js actually loaded into the page') : fail('window.meSpeak never appeared');
+  jsErrorsA.length === 0 ? pass('no JS errors using the backup voice') : fail(`JS errors: ${jsErrorsA.join(', ')}`);
+
+  // Test 3: native fires a genuine error — should recover via the backup voice too.
+  const pageB = await ctx.newPage();
+  const jsErrorsB = []; pageB.on('pageerror', e => jsErrorsB.push(e.message));
+  await pageB.addInitScript(() => {
     window.__ttsCalls = [];
     const fake = {
       speaking: false, paused: false, pending: false,
-      speak(utterance){
-        window.__ttsCalls.push({ type: 'speak' });
-        setTimeout(() => { if(utterance.onerror) utterance.onerror({ error: 'synthesis-failed' }); }, 10);
-      },
-      pause(){}, resume(){}, cancel(){ window.__ttsCalls.push({ type: 'cancel' }); },
-      getVoices(){ return []; },
+      speak(utterance){ window.__ttsCalls.push({ type: 'speak' }); setTimeout(() => { if(utterance.onerror) utterance.onerror({ error: 'synthesis-failed' }); }, 10); },
+      pause(){}, resume(){}, cancel(){}, getVoices(){ return []; },
     };
     Object.defineProperty(window, 'speechSynthesis', { value: fake, configurable: true, writable: true });
-    Object.defineProperty(window, 'SpeechSynthesisUtterance', {
-      value: function(text){ this.text = text; this.rate = 1; this.onend = null; this.onerror = null; },
-      configurable: true, writable: true,
-    });
+    Object.defineProperty(window, 'SpeechSynthesisUtterance', { value: function(text){ this.text = text; this.onend = null; this.onerror = null; }, configurable: true, writable: true });
   });
-  await page3.goto(`${base}/stories/stories.html?story=gloomy-crown`, { waitUntil: 'networkidle', timeout: 15000 });
-  await page3.waitForSelector('#story-read', { timeout: 10000 });
-  await page3.click('#story-read');
-  await page3.waitForFunction(() => document.getElementById('story-read').textContent.includes("Couldn't play"), { timeout: 3000 });
-  pass('a synthesis failure shows a visible error label instead of silently resetting');
-  const speakAttempts = await page3.evaluate(() => window.__ttsCalls.filter(c => c.type === 'speak').length);
-  speakAttempts === 1 ? pass('stops after the first failure instead of blitzing through every chunk') : fail(`expected exactly 1 speak() attempt before stopping, got ${speakAttempts}`);
-  await page3.waitForFunction(() => document.getElementById('story-read').textContent.includes('Read aloud') && !document.getElementById('story-read').textContent.includes("Couldn't"), { timeout: 4000 });
-  pass('error label reverts to "Read aloud" so the button is usable again');
-  jsErrors3.length === 0 ? pass('no JS errors on synthesis-failure path') : fail(`JS errors: ${jsErrors3.join(', ')}`);
+  await pageB.goto(`${base}/stories/stories.html?story=gloomy-crown`, { waitUntil: 'networkidle', timeout: 15000 });
+  await pageB.waitForSelector('#story-read', { timeout: 10000 });
+  await pageB.click('#story-read');
+  await pageB.waitForFunction(() => document.getElementById('story-read').textContent.includes('Pause reading (backup voice)'), { timeout: 30000 });
+  pass('a native synthesis error also recovers via the backup voice instead of just failing');
+  jsErrorsB.length === 0 ? pass('no JS errors on the native-error-then-backup path') : fail(`JS errors: ${jsErrorsB.join(', ')}`);
 
-  // Fourth page: the reported real-world bug — some Windows Chrome/Edge setups
-  // with no working TTS voice fire "end" almost instantly (not "error"), so
-  // the whole ~19-chunk story races through in a flash: looks exactly like
-  // "flips to Pause, instantly back to Read aloud, no sound, no message".
-  const page4 = await browser.newPage();
-  const jsErrors4 = []; page4.on('pageerror', e => jsErrors4.push(e.message));
-  await page4.addInitScript(() => {
+  // Test 4: native "ends" suspiciously fast (the original reported bug) — same recovery.
+  const pageC = await ctx.newPage();
+  const jsErrorsC = []; pageC.on('pageerror', e => jsErrorsC.push(e.message));
+  await pageC.addInitScript(() => {
     window.__ttsCalls = [];
     const fake = {
       speaking: false, paused: false, pending: false,
-      speak(utterance){
-        window.__ttsCalls.push({ type: 'speak' });
-        // "Finishes" a whole sentence in 2ms — physically impossible for real
-        // speech, which is exactly the silent-failure signature we're guarding against.
-        setTimeout(() => { if(utterance.onend) utterance.onend(); }, 2);
-      },
-      pause(){}, resume(){}, cancel(){ window.__ttsCalls.push({ type: 'cancel' }); },
-      getVoices(){ return []; },
+      speak(utterance){ window.__ttsCalls.push({ type: 'speak' }); setTimeout(() => { if(utterance.onend) utterance.onend(); }, 2); },
+      pause(){}, resume(){}, cancel(){}, getVoices(){ return []; },
     };
     Object.defineProperty(window, 'speechSynthesis', { value: fake, configurable: true, writable: true });
-    Object.defineProperty(window, 'SpeechSynthesisUtterance', {
-      value: function(text){ this.text = text; this.rate = 1; this.onend = null; this.onerror = null; },
-      configurable: true, writable: true,
-    });
+    Object.defineProperty(window, 'SpeechSynthesisUtterance', { value: function(text){ this.text = text; this.onend = null; this.onerror = null; }, configurable: true, writable: true });
   });
-  await page4.goto(`${base}/stories/stories.html?story=gloomy-crown`, { waitUntil: 'networkidle', timeout: 15000 });
-  await page4.waitForSelector('#story-read', { timeout: 10000 });
-  await page4.click('#story-read');
-  await page4.waitForFunction(() => document.getElementById('story-read').textContent.includes('No voice found'), { timeout: 3000 });
-  pass('a suspiciously-instant "end" is caught and shows "No voice found" instead of racing through every chunk');
-  const speakAttempts4 = await page4.evaluate(() => window.__ttsCalls.filter(c => c.type === 'speak').length);
-  speakAttempts4 === 1 ? pass('stops after the first suspicious chunk instead of blitzing through all 19') : fail(`expected exactly 1 speak() attempt before stopping, got ${speakAttempts4}`);
+  await pageC.goto(`${base}/stories/stories.html?story=gloomy-crown`, { waitUntil: 'networkidle', timeout: 15000 });
+  await pageC.waitForSelector('#story-read', { timeout: 10000 });
+  await pageC.click('#story-read');
+  await pageC.waitForFunction(() => document.getElementById('story-read').textContent.includes('Pause reading (backup voice)'), { timeout: 30000 });
+  pass('the original "instant end, no voice" bug now also recovers via the backup voice');
+  jsErrorsC.length === 0 ? pass('no JS errors on the instant-end-then-backup path') : fail(`JS errors: ${jsErrorsC.join(', ')}`);
 
-  const helpVisible = await page4.isVisible('#read-aloud-help');
-  helpVisible ? pass('help panel appears with fix instructions on a no-voice failure') : fail('help panel did not appear');
-  const helpText = await page4.textContent('#read-aloud-help');
-  /no voice/i.test(helpText) ? pass(`help panel text is relevant: "${helpText.slice(0,60)}…"`) : fail(`unexpected help text: ${helpText}`);
-
-  // Switching stories should clear the stale help panel (this fake engine
-  // keeps failing, so retrying on the *same* story re-triggers it again
-  // within milliseconds — switching away is the deterministic way to confirm
-  // the panel actually gets cleared rather than just staying visible forever).
-  await page4.click('#story-another');
-  await page4.waitForTimeout(50);
-  const helpHiddenOnSwitch = !(await page4.isVisible('#read-aloud-help'));
-  helpHiddenOnSwitch ? pass('help panel clears when switching to another story') : fail('help panel should hide when switching stories');
-
-  jsErrors4.length === 0 ? pass('no JS errors on the instant-end path') : fail(`JS errors: ${jsErrors4.join(', ')}`);
+  // ---- Test 5: genuine total failure (native broken AND backup blocked) ----
+  const pageD = await ctx.newPage();
+  const jsErrorsD = []; pageD.on('pageerror', e => jsErrorsD.push(e.message));
+  await pageD.route('https://cdn.jsdelivr.net/npm/mespeak**', route => route.abort());
+  await pageD.addInitScript(() => {
+    const fake = {
+      speaking: false, paused: false, pending: false,
+      speak(utterance){ setTimeout(() => { if(utterance.onend) utterance.onend(); }, 2); },
+      pause(){}, resume(){}, cancel(){}, getVoices(){ return []; },
+    };
+    Object.defineProperty(window, 'speechSynthesis', { value: fake, configurable: true, writable: true });
+    Object.defineProperty(window, 'SpeechSynthesisUtterance', { value: function(text){ this.text = text; this.onend = null; this.onerror = null; }, configurable: true, writable: true });
+  });
+  await pageD.goto(`${base}/stories/stories.html?story=gloomy-crown`, { waitUntil: 'networkidle', timeout: 15000 });
+  await pageD.waitForSelector('#story-read', { timeout: 10000 });
+  await pageD.click('#story-read');
+  await pageD.waitForFunction(() => document.getElementById('story-read').textContent.includes('No voice found'), { timeout: 15000 });
+  pass('when both native AND the backup voice fail, shows the final "No voice found" message');
+  const helpVisibleD = await pageD.isVisible('#read-aloud-help');
+  helpVisibleD ? pass('help panel with OS fix instructions appears on total failure') : fail('help panel did not appear');
+  jsErrorsD.length === 0 ? pass('no JS errors on the total-failure path') : fail(`JS errors: ${jsErrorsD.join(', ')}`);
 
   await browser.close();
 }catch(err){

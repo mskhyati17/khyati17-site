@@ -218,6 +218,86 @@
       // Keeping one in this outer variable pins it alive for its whole lifetime.
       let currentUtterance = null;
 
+      // ---- Backup voice: if the OS/browser has no working native voice, fall
+      // back to meSpeak.js — a text-to-speech engine that synthesizes audio
+      // itself via the Web Audio API, so it needs nothing installed on the
+      // visitor's device. It's lazy-loaded (~3MB) only the first time it's
+      // actually needed, and sounds noticeably more robotic than a real voice
+      // — that trade-off is the whole point: zero install, ever.
+      const MESPEAK_BASE = 'https://cdn.jsdelivr.net/npm/mespeak@1.9.6/';
+      let usingFallback = false, nativeKnownBroken = false;
+      let fallbackReady = false, fallbackLoadPromise = null;
+
+      function loadScriptOnce(src){
+        return new Promise((resolve, reject) => {
+          if(document.querySelector(`script[src="${src}"]`)){ resolve(); return; }
+          const el = document.createElement('script');
+          el.src = src; el.onload = () => resolve(); el.onerror = () => reject(new Error('failed to load ' + src));
+          document.head.appendChild(el);
+        });
+      }
+      // meSpeak's loadConfig(url) — unlike loadVoice(url, callback) — takes no
+      // callback at all; completion has to be polled via isConfigLoaded().
+      function waitUntil(checkFn, timeoutMs){
+        return new Promise((resolve, reject) => {
+          const startedAt = Date.now();
+          (function poll(){
+            if(checkFn()) return resolve();
+            if(Date.now() - startedAt > timeoutMs) return reject(new Error('timed out waiting'));
+            setTimeout(poll, 60);
+          })();
+        });
+      }
+      function ensureFallback(){
+        if(fallbackReady) return Promise.resolve(true);
+        if(fallbackLoadPromise) return fallbackLoadPromise;
+        fallbackLoadPromise = (async () => {
+          try{
+            if(!window.meSpeak) await loadScriptOnce(MESPEAK_BASE + 'mespeak.js');
+            if(!window.meSpeak.isConfigLoaded()){
+              window.meSpeak.loadConfig(MESPEAK_BASE + 'mespeak_config.json');
+              await waitUntil(() => window.meSpeak.isConfigLoaded(), 15000);
+            }
+            if(!window.meSpeak.isVoiceLoaded()){
+              const ok = await new Promise(res => window.meSpeak.loadVoice(MESPEAK_BASE + 'voices/en/en-us.json', success => res(success)));
+              if(!ok) throw new Error('voice failed to load');
+            }
+            fallbackReady = true;
+            return true;
+          }catch(e){
+            console.warn('Read aloud: backup voice failed to load', e);
+            return false;
+          }
+        })();
+        return fallbackLoadPromise;
+      }
+      function showFallbackNotice(){
+        if(!helpEl) return;
+        helpEl.innerHTML = '🔊 Using a backup voice built into this page — it sounds a little robotic, but needs nothing installed.';
+        helpEl.style.display = 'block';
+        setTimeout(() => { if(usingFallback) helpEl.style.display = 'none'; }, 4500);
+      }
+      function fallbackSpeakNext(){
+        if(idx >= queue.length){ stop(); return; }
+        const text = queue[idx];
+        window.meSpeak.speak(text, { rate: 165, amplitude: 100 }, success => {
+          if(state !== 'speaking' || !usingFallback) return; // paused/stopped/switched mid-chunk
+          if(!success){ fail(true); return; }
+          idx++; fallbackSpeakNext();
+        });
+      }
+      async function startFallback(){
+        nativeKnownBroken = true;
+        setLabel('⏳ Loading backup voice…');
+        const ok = await ensureFallback();
+        if(state !== 'speaking') return; // user hit stop/paused/switched story while loading
+        if(!ok){ fail(true); return; }
+        usingFallback = true;
+        setLabel('⏸️ Pause reading (backup voice)');
+        showFallbackNotice();
+        fallbackSpeakNext();
+      }
+
       // Chrome has a long-standing bug where a single very long utterance can
       // silently stop partway through. Splitting into sentence-ish chunks and
       // chaining them via onend sidesteps it and also makes pause/resume feel
@@ -270,32 +350,36 @@
           const elapsed = Date.now() - startedAt;
           const minPlausibleMs = Math.max(300, text.length * 8);
           if(elapsed < minPlausibleMs){
-            console.warn(`Read aloud: chunk "ended" in ${elapsed}ms (too fast for ${text.length} chars) — no voice likely available`);
-            fail(true);
+            console.warn(`Read aloud: chunk "ended" in ${elapsed}ms (too fast for ${text.length} chars) — no native voice available, trying backup`);
+            startFallback();
             return;
           }
           idx++; speakNext();
         };
         u.onerror = e => {
-          console.warn('Read aloud: speech failed', e && e.error);
-          fail(false);
+          console.warn('Read aloud: native speech failed, trying backup', e && e.error);
+          startFallback();
         };
         speechSynthesis.speak(u);
       }
 
       function fail(noVoice){
-        queue = []; idx = 0; state = 'idle'; currentUtterance = null;
+        queue = []; idx = 0; state = 'idle'; currentUtterance = null; usingFallback = false;
         setLabel(noVoice ? '🔇 No voice found on this device' : "⚠️ Couldn't play — tap to retry");
         if(noVoice) showHelp();
         setTimeout(() => { if(state === 'idle') setLabel('🔊 Read aloud'); }, 3200);
       }
 
       function start(s){
-        if(!supported) return;
         hideHelp();
-        const wasActive = speechSynthesis.speaking || speechSynthesis.pending;
+        usingFallback = false;
         queue = chunkText(textFromStory(s)); idx = 0; state = 'speaking';
+        // Once we've confirmed this browser/OS has no working native voice,
+        // don't waste time retrying it on every subsequent story — go
+        // straight to the backup voice.
+        if(nativeKnownBroken || !supported){ startFallback(); return; }
         setLabel('⏸️ Pause reading');
+        const wasActive = speechSynthesis.speaking || speechSynthesis.pending;
         if(wasActive){
           // A short delay after cancel() avoids a Chrome quirk where speak()
           // called immediately after cancel() can silently produce no audio.
@@ -305,15 +389,30 @@
           speakNext();
         }
       }
-      function pause(){ if(!supported || state!=='speaking') return; speechSynthesis.pause(); state='paused'; setLabel('▶️ Resume reading'); }
-      function resume(){ if(!supported || state!=='paused') return; speechSynthesis.resume(); state='speaking'; setLabel('⏸️ Pause reading'); }
-      function stop(){ if(supported) speechSynthesis.cancel(); queue=[]; idx=0; state='idle'; currentUtterance=null; setLabel('🔊 Read aloud'); hideHelp(); }
+      function pause(){
+        if(state!=='speaking') return;
+        if(usingFallback){ try{ window.meSpeak.resetQueue(); }catch(e){} state='paused'; setLabel('▶️ Resume reading'); return; }
+        if(!supported) return;
+        speechSynthesis.pause(); state='paused'; setLabel('▶️ Resume reading');
+      }
+      function resume(){
+        if(state!=='paused') return;
+        if(usingFallback){ state='speaking'; setLabel('⏸️ Pause reading (backup voice)'); fallbackSpeakNext(); return; }
+        if(!supported) return;
+        speechSynthesis.resume(); state='speaking'; setLabel('⏸️ Pause reading');
+      }
+      function stop(){
+        if(usingFallback){ try{ window.meSpeak.resetQueue(); }catch(e){} }
+        if(supported) speechSynthesis.cancel();
+        queue=[]; idx=0; state='idle'; currentUtterance=null; usingFallback=false; setLabel('🔊 Read aloud'); hideHelp();
+      }
 
       function bind(button, s){
         btn = button;
         helpEl = document.getElementById('read-aloud-help');
         if(!button) return;
-        if(!supported){ button.disabled = true; button.textContent = '🔊 Not supported here'; button.title = 'Text-to-speech isn\'t available in this browser'; return; }
+        // Even with no native speechSynthesis at all, the backup voice (see
+        // above) can still read the story — so the button always stays live.
         setLabel('🔊 Read aloud');
         button.addEventListener('click', () => {
           if(state === 'idle') start(s);
@@ -322,9 +421,9 @@
         });
       }
 
+      window.addEventListener('pagehide', stop);
+      window.addEventListener('beforeunload', stop);
       if(supported){
-        window.addEventListener('pagehide', stop);
-        window.addEventListener('beforeunload', stop);
         // Voices load asynchronously in some browsers; calling getVoices() early
         // (rather than only at the moment of the first click) gives the browser
         // a head start so the list is more likely ready by the time we speak.
