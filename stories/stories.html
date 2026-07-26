@@ -228,6 +228,29 @@
       let usingFallback = false, nativeKnownBroken = false;
       let fallbackReady = false, fallbackLoadPromise = null;
 
+      // meSpeak plays audio through a lazily-created AudioContext, created
+      // only once the network loading above has finished — well outside the
+      // original click's "user gesture" window. Browsers require an
+      // AudioContext to start/resume within a gesture or it stays silently
+      // suspended (no error, no sound — exactly the symptom reported). The
+      // fix: synchronously play a silent blip on click, before any await.
+      // Once real audio has played from a gesture, browsers generally allow
+      // the page's later AudioContexts to play without a fresh gesture too.
+      let audioUnlocked = false;
+      function unlockAudioOnce(){
+        if(audioUnlocked) return;
+        audioUnlocked = true;
+        try{
+          const Ctx = window.AudioContext || window.webkitAudioContext;
+          if(!Ctx) return;
+          const ctx = new Ctx();
+          const buffer = ctx.createBuffer(1, 1, 22050);
+          const src = ctx.createBufferSource();
+          src.buffer = buffer; src.connect(ctx.destination); src.start(0);
+          if(ctx.resume) ctx.resume().catch(()=>{});
+        }catch(e){ /* ignore — best-effort unlock */ }
+      }
+
       function loadScriptOnce(src){
         return new Promise((resolve, reject) => {
           if(document.querySelector(`script[src="${src}"]`)){ resolve(); return; }
@@ -415,6 +438,7 @@
         // above) can still read the story — so the button always stays live.
         setLabel('🔊 Read aloud');
         button.addEventListener('click', () => {
+          unlockAudioOnce(); // must run synchronously inside the click, before any await
           if(state === 'idle') start(s);
           else if(state === 'speaking') pause();
           else if(state === 'paused') resume();
