@@ -692,8 +692,16 @@
     }
 
     // ---------- chat log ----------
-    function addMsg(text, who){
+    // `kind` optionally marks a bot message as a real conversational reply
+    // (vs. care-response/reward/achievement lines, which share this same
+    // log and CSS class but never go through the ruff/emotion pipeline).
+    // Anything that needs to reliably find "an actual reply Mochi gave to
+    // something the user typed" — rather than every bot-authored line —
+    // should filter on this marker instead of message order/position,
+    // since reward announcements can land in between real replies.
+    function addMsg(text, who, kind){
       var d = document.createElement('div'); d.className = 'pom-msg ' + (who==='me'?'me':'bot'); d.textContent = text;
+      if(kind) d.dataset.kind = kind;
       msgs.appendChild(d); msgs.scrollTop = msgs.scrollHeight;
     }
 
@@ -705,7 +713,7 @@
       setEmotion(emotion);
       showBubble(line);
       speak(line, emotion);
-      addMsg(line, 'bot');
+      addMsg(line, 'bot', 'reply');
     }
 
     function showSettings(on){ settings.style.display = on?'block':'none'; msgs.style.display = on?'none':'flex'; inputWrap.style.display = on?'none':'flex'; }

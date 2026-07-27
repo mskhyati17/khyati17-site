@@ -19,9 +19,14 @@ const MIME = {
   '.woff':'font/woff', '.woff2':'font/woff2',
 };
 
+// Both title AND slug are prefixed "QA Fixture:" / "qa-fixture-" so a future
+// real story can never collide with these — on either field — and either
+// silently get deduped away or make the "click the card with this title"
+// step below ambiguous. (A real story previously ended up titled "Signal
+// Lost" too, which made both problems happen without any actual site bug.)
 const SEED = [
-  { title:'The Glass Forest', slug:'the-glass-forest', excerpt:'A traveler wanders into a wood of mirrors.', body:'<p>Once upon a time…</p>', category:'Fantasy', created_at:'2026-06-10T00:00:00Z' },
-  { title:'Signal Lost',      slug:'signal-lost',      excerpt:'The last message from orbit.',            body:'<p>Static.</p>',          category:'Sci-Fi',  created_at:'2026-06-15T00:00:00Z' },
+  { title:'QA Fixture: The Glass Forest', slug:'qa-fixture-the-glass-forest', excerpt:'A traveler wanders into a wood of mirrors.', body:'<p>Once upon a time…</p>', category:'Fantasy', created_at:'2026-06-10T00:00:00Z' },
+  { title:'QA Fixture: Signal Lost',      slug:'qa-fixture-signal-lost',      excerpt:'The last message from orbit.',            body:'<p>Static.</p>',          category:'Sci-Fi',  created_at:'2026-06-15T00:00:00Z' },
 ];
 
 function startServer(port){
@@ -99,21 +104,21 @@ async function run(){
 
     // ---- 3. Card click deep-links into the reader ----
     console.log('\n[3] Card click -> reader ?story=');
-    // click the "Signal Lost" card specifically
+    // click the seeded "QA Fixture: Signal Lost" card specifically
     const target = await page.$$('#grid .card');
     let clicked = false;
     for(const c of target){
       const label = (await c.$eval('.label', n=>n.textContent)).trim();
-      if(label === 'Signal Lost'){ await c.click(); clicked = true; break; }
+      if(label === 'QA Fixture: Signal Lost'){ await c.click(); clicked = true; break; }
     }
     if(!clicked){ await target[0].click(); }
     await page.waitForURL(/stories\.html\?story=/, { timeout:10000 });
     const url = page.url();
-    url.includes('story=signal-lost') ? pass(`navigated: ${url.replace(base,'')}`) : fail(`unexpected reader url: ${url}`);
+    url.includes('story=qa-fixture-signal-lost') ? pass(`navigated: ${url.replace(base,'')}`) : fail(`unexpected reader url: ${url}`);
 
     await page.waitForTimeout(400); // reader loadStories()
     const readerTitle = (await page.textContent('#story-content h2'))?.trim();
-    readerTitle === 'Signal Lost' ? pass(`reader shows '${readerTitle}'`) : fail(`reader expected 'Signal Lost', got '${readerTitle}'`);
+    readerTitle === 'QA Fixture: Signal Lost' ? pass(`reader shows '${readerTitle}'`) : fail(`reader expected 'QA Fixture: Signal Lost', got '${readerTitle}'`);
 
     // ---- 3b. Baked story opens and renders its chapters ----
     console.log('\n[3b] Baked story opens in reader with chapters');

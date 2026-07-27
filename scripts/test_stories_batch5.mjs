@@ -46,13 +46,17 @@ try{
   await p.fill('#ks-input','lantern keeper'); await p.waitForTimeout(300);
   (await p.$$eval('#ks-results .ks-row', e=>e.some(x=>/Lantern Keeper/i.test(x.textContent)))) ? pass('search finds a new story') : fail('search miss');
 
-  console.log('\n[4] Story count reached 210');
+  console.log('\n[4] Story count has kept growing since this batch (>= 210)');
   await p.goto(`${base}/stories/index.html`,{waitUntil:'networkidle',timeout:20000});
   const total=await p.evaluate(async ()=>{
     const m=await import('/stories/stories-data.js');
     return m.STORIES.length;
   });
-  total===210 ? pass('STORIES.length === 210') : fail('STORIES.length = '+total);
+  // This was a one-time "we just hit 210" milestone check at the time this
+  // batch was written; the library keeps growing in later batches, so pin
+  // it to "at least the milestone" instead of an exact count that goes
+  // stale (and starts reporting a false failure) every time more are added.
+  total>=210 ? pass(`STORIES.length = ${total} (>= 210)`) : fail('STORIES.length = '+total+' — dropped below the 210 milestone');
 
   console.log('');
   js.length ? js.forEach(e=>fail('JS error: '+e)) : pass('no uncaught JS errors');

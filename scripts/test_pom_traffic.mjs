@@ -50,15 +50,23 @@ async function runUser(browser, i){
       await page.click('#pom-mascot .pom-stage',{force:true});
       await page.waitForSelector('#pom-mascot .pom-panel.open',{timeout:15000});
       for(const msg of CHAT){
-        const before=await page.$$eval('#pom-mascot .pom-msg.bot', n=>n.length);
+        // Wait for a real reply specifically (data-kind="reply"), not just
+        // any new bot message — a reward/achievement announcement firing at
+        // the same moment can otherwise satisfy a generic "bot count went
+        // up" check before the actual reply to this message has arrived.
+        const before=await page.$$eval('#pom-mascot .pom-msg.bot[data-kind="reply"]', n=>n.length);
         await page.fill('#pom-mascot .pom-input input', msg);
         await page.click('#pom-mascot .pom-send');
-        await page.waitForFunction(b=>document.querySelectorAll('#pom-mascot .pom-msg.bot').length>b, before, {timeout:12000});
+        await page.waitForFunction(b=>document.querySelectorAll('#pom-mascot .pom-msg.bot[data-kind="reply"]').length>b, before, {timeout:12000});
         for(let k=0;k<5 && !m.talk;k++){ if(/(^| )talking( |$)/.test(await page.getAttribute('#pom-mascot','class'))) m.talk=true; else await page.waitForTimeout(60); }
         ((await page.getAttribute('#pom-mascot','class')).match(/emo-([a-z]+)/g)||[]).forEach(c=>m.emotions.add(c));
       }
-      const bots=await page.$$eval('#pom-mascot .pom-msg.bot', n=>n.map(x=>x.textContent));
-      const replies=bots.slice(-CHAT.length);        // ignore status + greeting lines
+      // Filter on the "reply" marker rather than "last N messages" — reward/
+      // achievement announcements share the same .pom-msg.bot log and can
+      // land in between real replies under timing, which silently corrupted
+      // a position-based slice (diluted the measured ruff rate well below
+      // the real 72%, since those announcements never ruff).
+      const replies=await page.$$eval('#pom-mascot .pom-msg.bot[data-kind="reply"]', n=>n.map(x=>x.textContent));
       m.replies=replies.length;
       m.ruffs=replies.filter(t=>/^(Ruff|Arf|Woof|Bark|Yip|Rrrf)/i.test(t)).length;
       m.jsErrors=jsErr.length;
