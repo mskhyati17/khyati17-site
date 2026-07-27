@@ -26,9 +26,6 @@
     .fr-card p{color:#6a4b8f;font-size:.9rem;line-height:1.5;margin:0 0 14px}
     .fr-code-box{display:flex;gap:8px;margin-bottom:10px}
     .fr-code-box input{flex:1;padding:10px 12px;border:1px solid #d9c7ee;border-radius:10px;font:inherit;font-size:.8rem;background:#faf5ff;color:#4a2370}
-    .fr-name-row{display:flex;gap:8px;align-items:center;margin-bottom:16px}
-    .fr-name-row label{font-size:.8rem;color:#6a4b8f;white-space:nowrap}
-    .fr-name-row input{flex:1;padding:8px 12px;border:1px solid #d9c7ee;border-radius:10px;font:inherit;font-size:.85rem;background:#faf5ff;color:#4a2370}
     .fr-status{font-size:.85rem;color:#8a7aa0;display:flex;align-items:center;gap:8px;margin-top:10px}
     .fr-dot{width:9px;height:9px;border-radius:50%;background:#f0ad4e;animation:frPulse 1.4s infinite}
     .fr-dot.connected{background:#2ecc71;animation:none}
@@ -38,15 +35,6 @@
     .fr-divider{text-align:center;color:#b7a4d6;font-size:.8rem;margin:18px 0;position:relative}
     .fr-divider::before,.fr-divider::after{content:"";position:absolute;top:50%;width:40%;height:1px;background:#eadffb}
     .fr-divider::before{left:0}.fr-divider::after{right:0}
-    /* friends list */
-    .fr-flist{display:flex;flex-direction:column;gap:8px}
-    .fr-frow{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid #eee1fb;border-radius:12px;background:#faf5ff}
-    .fr-favatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#6a1b9a,#9c4dcc);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
-    .fr-fmeta{flex:1;min-width:0}
-    .fr-fname{font-weight:600;color:#2b0b3a;font-size:.92rem}
-    .fr-flast{font-size:.75rem;color:#8a7aa0}
-    .fr-frow button{flex-shrink:0;font-size:.8rem;padding:7px 12px;border-radius:999px;border:none;background:linear-gradient(90deg,#6a1b9a,#9c4dcc);color:#fff;font-weight:600;cursor:pointer}
-    .fr-empty{color:#8a7aa0;font-size:.85rem;font-style:italic}
     /* chat */
     .fr-chat-head{display:flex;align-items:center;gap:10px;padding-bottom:10px;border-bottom:1px solid #eee;margin-bottom:12px}
     .fr-chat-body{height:340px;overflow-y:auto;display:flex;flex-direction:column;gap:8px;padding:4px 2px}
@@ -60,15 +48,13 @@
     .fr-chat-foot{display:flex;gap:8px;margin-top:8px}
     .fr-chat-foot textarea{flex:1;resize:none;border:1px solid #d9c7ee;border-radius:10px;padding:8px 10px;font:inherit;max-height:80px}
     [data-theme="dark"] .fr h1{color:#f0e6ff}
-    [data-theme="dark"] .fr .sub,[data-theme="dark"] .fr-card p,[data-theme="dark"] .fr-status,[data-theme="dark"] .fr-name-row label{color:#c3b0dd}
+    [data-theme="dark"] .fr .sub,[data-theme="dark"] .fr-card p,[data-theme="dark"] .fr-status{color:#c3b0dd}
     [data-theme="dark"] .fr-note{background:#2a2214;border-color:#4a3e1f;color:#e5d8f5}
     [data-theme="dark"] .fr-card{background:#241633;border-color:#3a2550}
     [data-theme="dark"] .fr-card h2{color:#f0e6ff}
-    [data-theme="dark"] .fr-code-box input,[data-theme="dark"] .fr-name-row input{background:#1c1129;border-color:#3a2550;color:#e5d8f5}
+    [data-theme="dark"] .fr-code-box input{background:#1c1129;border-color:#3a2550;color:#e5d8f5}
     [data-theme="dark"] .fr-msg.theirs{background:#2a1b3d;color:#f0e8ff}
     [data-theme="dark"] .fr-chat-head{border-color:#3a2550}
-    [data-theme="dark"] .fr-frow{background:#1c1129;border-color:#3a2550}
-    [data-theme="dark"] .fr-fname{color:#f0e6ff}
   </style>
   <link rel="canonical" href="https://khyati17.com/friends/friends.html" />
 </head>
@@ -78,48 +64,39 @@
   <main class="fr container" role="main">
     <h1>👥 Explore Together</h1>
     <p class="sub">Share a link, connect instantly, and chat live while you explore Khyati17 together.</p>
-    <div class="fr-note">No account needed — this connects your browser directly to your friend's, so nothing is ever saved except a small list of friends' names on this device. It works best while both of you keep this tab open. On some strict school or office Wi-Fi it may not be able to connect — home and mobile networks work great.</div>
-
-    <div id="stage-friends" class="fr-card" style="display:none">
-      <h2>👥 Your Friends</h2>
-      <p>Reconnecting still needs one quick new link (there's no server to keep the old connection open), but it's a single tap now — no re-introducing yourselves.</p>
-      <div id="friendsListBody" class="fr-flist"></div>
-    </div>
+    <div class="fr-note">No account needed — this connects your browser directly to your friend's, so nothing is ever saved or stored anywhere. It works best while both of you keep this tab open. On some strict school or office Wi-Fi it may not be able to connect — home and mobile networks work great.</div>
 
     <div id="stage-idle" class="fr-card">
-      <h2 id="idleTitle">Start exploring with a friend</h2>
-      <div class="fr-name-row">
-        <label for="myNameInput">Your name</label>
-        <input id="myNameInput" placeholder="What should friends call you?" maxlength="24" />
-      </div>
-      <p id="idleHint">Get a link to send your friend (by text, chat, however you'd normally reach them). Once they open it, you'll be connected.</p>
-      <button id="startRoomBtn" class="fr-big-btn">🚪 Connect with someone new</button>
+      <h2>Start exploring with a friend</h2>
+      <p>Get a link to send your friend (by text, chat, however you'd normally reach them). Once they open it, you'll be connected.</p>
+      <button id="startRoomBtn" class="fr-big-btn">🚪 Create a room</button>
     </div>
 
     <div id="stage-invited" class="fr-card" style="display:none">
-      <h2 id="invitedTitle">🎉 Someone invited you to explore together!</h2>
-      <p id="invitedHint">Preparing your reply…</p>
+      <h2>🎉 Someone invited you to explore together!</h2>
+      <p>Tap join to connect, then send them the reply code you'll get.</p>
+      <button id="joinRoomBtn" class="fr-big-btn">Join room</button>
     </div>
 
     <div id="stage-hosting" class="fr-card" style="display:none">
-      <h2 id="hostingTitle">Ready to connect!</h2>
-      <p>1. Send this link to your friend — one tap:</p>
-      <div class="fr-code-box"><input id="hostLink" readonly /><button id="shareLinkBtn" class="btn">📤 Share</button></div>
-      <p style="margin-top:14px">2. Once they reply with their code, paste it here (auto-connects):</p>
-      <div class="fr-code-box"><input id="answerInput" placeholder="Paste your friend's reply code…" /><button id="pasteAnswerBtn" class="btn">📋 Paste</button></div>
+      <h2>Room created!</h2>
+      <p>1. Send this link to your friend:</p>
+      <div class="fr-code-box"><input id="hostLink" readonly /><button id="copyLinkBtn" class="btn">Copy</button></div>
+      <p style="margin-top:14px">2. Once they reply with their code, paste it here:</p>
+      <div class="fr-code-box"><input id="answerInput" placeholder="Paste your friend's reply code…" /><button id="connectBtn" class="btn">Connect</button></div>
       <div class="fr-status"><span class="fr-dot" id="hostDot"></span><span id="hostStatus">Waiting for your friend…</span></div>
     </div>
 
     <div id="stage-answering" class="fr-card" style="display:none">
-      <h2>Send this back</h2>
-      <p id="answeringHint">Tap share and send this reply to whoever invited you (the same way they reached you).</p>
-      <div class="fr-code-box"><input id="answerCode" readonly /><button id="shareAnswerBtn" class="btn">📤 Share</button></div>
+      <h2>Send this back to your friend</h2>
+      <p>Copy this reply code and send it to whoever invited you (the same way they sent you the link).</p>
+      <div class="fr-code-box"><input id="answerCode" readonly /><button id="copyAnswerBtn" class="btn">Copy</button></div>
       <div class="fr-status"><span class="fr-dot" id="guestDot"></span><span id="guestStatus">Waiting to connect…</span></div>
     </div>
 
     <div id="stage-chat" class="fr-card" style="display:none">
       <div class="fr-chat-head">
-        <div><strong id="chatTitle">🟢 Connected</strong><div class="fr-status" style="margin-top:2px">Say hi and share what you're exploring!</div></div>
+        <div><strong>🟢 Connected</strong><div class="fr-status" style="margin-top:2px">Say hi and share what you're exploring!</div></div>
         <span style="flex:1"></span>
         <button id="disconnectBtn" class="btn btn-ghost">Disconnect</button>
       </div>
@@ -142,63 +119,13 @@
 
     const $ = sel => document.querySelector(sel);
     const stages = ['idle','invited','hosting','answering','chat'];
-    function showStage(name){
-      stages.forEach(s => { $('#stage-'+s).style.display = (s===name) ? 'block' : 'none'; });
-      // The friends list stays visible alongside the two "not connected yet" stages.
-      $('#stage-friends').style.display = (name === 'idle' || name === 'invited') && loadFriends().length ? 'block' : 'none';
-    }
+    function showStage(name){ stages.forEach(s => { $('#stage-'+s).style.display = (s===name) ? 'block' : 'none'; }); }
 
     function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
     function linkify(escapedText){ return escapedText.replace(/(https?:\/\/[^\s<]+)/g, url => `<a href="${url}" target="_blank" rel="noopener">${url}</a>`); }
 
-    // ---- persistent (local-only) friends list --------------------------
-    const FRIENDS_KEY = 'ks_explore_friends';
-    const NAME_KEY = 'ks_explore_name';
-    function loadFriends(){ try{ return JSON.parse(localStorage.getItem(FRIENDS_KEY) || '[]'); }catch(e){ return []; } }
-    function saveFriends(list){ localStorage.setItem(FRIENDS_KEY, JSON.stringify(list)); }
-    function upsertFriend(pairId, name){
-      if(!pairId) return;
-      const list = loadFriends();
-      const existing = list.find(f => f.pairId === pairId);
-      if(existing){ if(name) existing.name = name; existing.lastConnectedAt = Date.now(); }
-      else list.unshift({ pairId, name: name || 'Friend', lastConnectedAt: Date.now() });
-      list.sort((a,b) => b.lastConnectedAt - a.lastConnectedAt);
-      saveFriends(list);
-      renderFriendsList();
-    }
-    function friendName(pairId){ const f = loadFriends().find(f => f.pairId === pairId); return f ? f.name : null; }
-    function timeAgo(ts){
-      const s = Math.max(0, Math.round((Date.now() - ts) / 1000));
-      if(s < 60) return 'just now';
-      const m = Math.round(s/60); if(m < 60) return m + ' min ago';
-      const h = Math.round(m/60); if(h < 24) return h + ' hr ago';
-      const d = Math.round(h/24); return d + (d===1?' day ago':' days ago');
-    }
-    function initials(name){ return String(name||'?').trim().slice(0,2).toUpperCase(); }
-    function renderFriendsList(){
-      const list = loadFriends();
-      const box = $('#friendsListBody');
-      box.innerHTML = list.length ? '' : '<p class="fr-empty">No friends yet — connect with someone new below and they\'ll show up here.</p>';
-      list.forEach(f => {
-        const row = document.createElement('div'); row.className = 'fr-frow';
-        row.innerHTML = `<div class="fr-favatar">${esc(initials(f.name))}</div>`
-          + `<div class="fr-fmeta"><div class="fr-fname">${esc(f.name)}</div><div class="fr-flast">Last connected ${timeAgo(f.lastConnectedAt)}</div></div>`
-          + `<button data-reconnect>💬 Reconnect</button>`;
-        row.querySelector('[data-reconnect]').addEventListener('click', () => startHost(f.pairId, f.name));
-        box.appendChild(row);
-      });
-      const visible = ($('#stage-idle').style.display !== 'none') || ($('#stage-invited').style.display !== 'none');
-      $('#stage-friends').style.display = (visible && list.length) ? 'block' : 'none';
-    }
-    function getMyName(){ return (localStorage.getItem(NAME_KEY) || '').trim(); }
-    function setMyName(v){ localStorage.setItem(NAME_KEY, v.trim().slice(0,24)); }
-    $('#myNameInput').value = getMyName();
-    $('#myNameInput').addEventListener('input', () => setMyName($('#myNameInput').value));
-
     let controller = null;
     let pc = null;
-    let currentPairId = null;
-    let introSent = false;
 
     function appendMessage(text, kind){
       const body = $('#chatBody');
@@ -209,37 +136,10 @@
       body.scrollTop = body.scrollHeight;
     }
 
-    // The first message on a freshly-opened channel is a hidden "introduce
-    // yourself" handshake (not shown in the chat log) so both sides learn
-    // each other's name and can save/update the friends list — this is what
-    // makes reconnecting later show a name instead of a stranger.
-    function sendIntro(){
-      if(introSent || !controller) return;
-      introSent = true;
-      const myName = getMyName() || 'Friend';
-      try{ controller.sendRaw({ __intro: true, name: myName }); }catch(e){}
-    }
-    function handleIncoming(msg){
-      if(msg && msg.__intro){
-        upsertFriend(currentPairId, msg.name);
-        const already = $('#chatBody').querySelector('[data-intro]');
-        if(!already){
-          const div = document.createElement('div'); div.className = 'fr-msg system'; div.dataset.intro = '1';
-          div.textContent = `Connected with ${msg.name}!`;
-          $('#chatBody').appendChild(div);
-        }
-        $('#chatTitle').textContent = '🟢 Connected with ' + msg.name;
-        return;
-      }
-      appendMessage(msg.body, 'theirs');
-    }
-
     function goToChat(){
       showStage('chat');
-      $('#chatTitle').textContent = currentPairId && friendName(currentPairId) ? ('🟢 Connected with ' + friendName(currentPairId)) : '🟢 Connected';
+      appendMessage('Connected! Anything typed here goes straight to your friend and nowhere else.', 'system');
       renderShareRow();
-      sendIntro();
-      upsertFriend(currentPairId, null); // records/refreshes lastConnectedAt even before the name handshake lands
       $('#chatInput').focus();
     }
 
@@ -264,116 +164,70 @@
     }
     $('#sendBtn').addEventListener('click', sendCurrent);
     $('#chatInput').addEventListener('keydown', e => { if(e.key === 'Enter' && !e.shiftKey){ e.preventDefault(); sendCurrent(); } });
-    // Shared by both "I clicked Disconnect" and "the connection closed
-    // because the other person disconnected/closed their tab" — either way,
-    // the stale pc/controller references must actually clear, or a later
-    // reconnect attempt on this page won't be recognized (hashchange checks
-    // `!pc` to decide whether it's safe to auto-join a new invite).
-    function resetConnectionState(){
-      controller = null; pc = null; currentPairId = null; introSent = false;
-      showStage('idle');
-      renderFriendsList();
-    }
     $('#disconnectBtn').addEventListener('click', () => {
       if(controller) controller.close();
-      resetConnectionState();
+      controller = null; pc = null;
+      showStage('idle');
       history.pushState({}, '', 'friends.html');
     });
 
-    async function shareOrCopy(text, button){
-      if(navigator.share){
-        try{ await navigator.share({ text }); return; }catch(e){ /* user cancelled or unsupported — fall through to copy */ }
-      }
-      try{ await navigator.clipboard.writeText(text); const orig = button.textContent; button.textContent = '✅ Copied'; setTimeout(()=>button.textContent = orig, 1400); }
-      catch(e){ button.textContent = 'Press Ctrl+C'; }
-    }
-
-    // ---- host flow (also used for "Reconnect" from the friends list) ---
-    async function startHost(pairId, name){
-      introSent = false;
-      const reconnecting = !!(pairId && name);
-      $('#hostingTitle').textContent = reconnecting ? `Reconnecting with ${name}` : 'Ready to connect!';
-      $('#hostLink').value = ''; $('#answerInput').value = ''; // clear any previous room's stale values
-      const room = createRoom(pairId);
-      currentPairId = room.pairId;
+    // ---- host flow ------------------------------------------------------
+    $('#startRoomBtn').addEventListener('click', async () => {
+      const room = createRoom();
       pc = room.pc;
       controller = wireChannel(pc, room.channel, {
         onOpen: goToChat,
-        onMessage: handleIncoming,
-        onClose: resetConnectionState,
+        onMessage: msg => appendMessage(msg.body, 'theirs'),
+        onClose: () => { showStage('idle'); },
       });
       showStage('hosting');
-      $('#hostStatus').textContent = 'Creating your link…';
+      $('#hostStatus').textContent = 'Creating your room…';
       const code = await room.getOfferCode();
       const link = `${location.origin}${location.pathname}#offer=${code}`;
       $('#hostLink').value = link;
       $('#hostStatus').textContent = 'Waiting for your friend…';
-      window._exploreRoom = room; // used by the paste/auto-connect handler below
-    }
-    $('#startRoomBtn').addEventListener('click', () => startHost());
-    $('#shareLinkBtn').addEventListener('click', () => {
-      const name = getMyName();
-      shareOrCopy(`${name ? name + ' wants' : 'I want'} to explore Khyati17 together — open this to connect: ${$('#hostLink').value}`, $('#shareLinkBtn'));
+      window._exploreRoom = room; // used by the "Connect" button below
     });
-    async function tryConnectWithCode(code){
-      code = code.trim();
+    $('#copyLinkBtn').addEventListener('click', async () => {
+      try{ await navigator.clipboard.writeText($('#hostLink').value); $('#copyLinkBtn').textContent = '✅'; setTimeout(()=>$('#copyLinkBtn').textContent='Copy', 1200); }catch(e){}
+    });
+    $('#connectBtn').addEventListener('click', async () => {
+      const code = $('#answerInput').value.trim();
       if(!code || !window._exploreRoom) return;
       $('#hostStatus').textContent = 'Connecting…';
       try{ await window._exploreRoom.acceptAnswerCode(code); }
       catch(e){ $('#hostStatus').textContent = "That code didn't work — double check it was pasted in full."; }
-    }
-    $('#pasteAnswerBtn').addEventListener('click', async () => {
-      try{ const text = await navigator.clipboard.readText(); $('#answerInput').value = text; tryConnectWithCode(text); }
-      catch(e){ $('#answerInput').focus(); }
-    });
-    // Also auto-connect if a full code is typed/pasted manually (Ctrl+V),
-    // so the "Connect" step doesn't need a separate tap in the common case.
-    $('#answerInput').addEventListener('input', () => {
-      const v = $('#answerInput').value.trim();
-      if(v.length > 80) tryConnectWithCode(v);
     });
 
-    // ---- guest flow: auto-joins immediately, no separate "Join" tap ----
-    async function autoJoin(offerCode){
-      $('#answerCode').value = ''; // clear any previous room's stale value
-      const room = joinRoom(offerCode);
-      currentPairId = room.pairId; introSent = false;
-      const known = friendName(currentPairId);
-      $('#invitedTitle').textContent = known ? `🎉 ${known} wants to reconnect!` : '🎉 Someone invited you to explore together!';
-      pc = room.pc;
-      controller = wireChannel(pc, null, {
-        onOpen: goToChat,
-        onMessage: handleIncoming,
-        onClose: resetConnectionState,
-      });
-      room.channelPromise.then(ch => controller.bindLateChannel(ch));
-      showStage('invited');
-      $('#invitedHint').textContent = 'Preparing your reply…';
-      const code = await room.getAnswerCode();
-      $('#answerCode').value = code;
-      $('#answeringHint').textContent = known ? `Send this back to ${known} to finish reconnecting.` : "Tap share and send this reply to whoever invited you (the same way they reached you).";
-      showStage('answering');
-      $('#guestStatus').textContent = 'Waiting to connect…';
-    }
-    $('#shareAnswerBtn').addEventListener('click', () => {
-      const name = getMyName();
-      shareOrCopy(`${name ? name + "'s" : 'My'} reply code: ${$('#answerCode').value}`, $('#shareAnswerBtn'));
-    });
-
+    // ---- guest flow -------------------------------------------------------
+    let pendingOfferCode = null;
     function detectInvite(){
       const hash = location.hash || '';
       const m = hash.match(/offer=([^&]+)/);
-      if(m) autoJoin(decodeURIComponent(m[1]));
-      else showStage('idle');
+      if(m){ pendingOfferCode = decodeURIComponent(m[1]); showStage('invited'); }
     }
+    $('#joinRoomBtn').addEventListener('click', async () => {
+      if(!pendingOfferCode) return;
+      const room = joinRoom(pendingOfferCode);
+      pc = room.pc;
+      controller = wireChannel(pc, null, {
+        onOpen: goToChat,
+        onMessage: msg => appendMessage(msg.body, 'theirs'),
+        onClose: () => { showStage('idle'); },
+      });
+      room.channelPromise.then(ch => controller.bindLateChannel(ch));
+      showStage('answering');
+      $('#guestStatus').textContent = 'Preparing your reply code…';
+      const code = await room.getAnswerCode();
+      $('#answerCode').value = code;
+      $('#guestStatus').textContent = 'Waiting to connect…';
+    });
+    $('#copyAnswerBtn').addEventListener('click', async () => {
+      try{ await navigator.clipboard.writeText($('#answerCode').value); $('#copyAnswerBtn').textContent = '✅'; setTimeout(()=>$('#copyAnswerBtn').textContent='Copy', 1200); }catch(e){}
+    });
 
-    renderFriendsList();
     detectInvite();
-    // Navigating to a same-page URL that only differs by the #offer=... hash
-    // (e.g. clicking a fresh invite link while this tab is already open on
-    // this page) doesn't reload the document, so detectInvite() above would
-    // never re-run without this — hashchange is what actually fires then.
-    window.addEventListener('hashchange', () => { if(!pc) detectInvite(); });
+    if(pendingOfferCode === null) showStage('idle');
 
     // Reflect real connection state once ICE finishes, regardless of role.
     function watchConnectionState(){
