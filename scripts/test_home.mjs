@@ -31,7 +31,7 @@ try{
 
   console.log('\n[2] Explore cards link to every section');
   const cards=await p.$$eval('.explore-grid .xcard', els=>els.map(e=>({t:e.querySelector('h3').textContent, href:e.getAttribute('href')})));
-  const need=['/fun-games/index.html','/ai-tools/index.html','/stories/index.html','/videos/videos.html','/trading/trading.html','/others/others.html'];
+  const need=['/fun-games/index.html','/ai-tools/index.html','/stories/index.html','/videos/index.html','/trading/trading.html','/others/others.html'];
   const hrefs=cards.map(c=>c.href);
   const allThere=need.every(h=>hrefs.includes(h));
   (cards.length>=6 && allThere) ? pass(`${cards.length} cards linking to all sections`) : fail('missing section links: '+hrefs.join(', '));

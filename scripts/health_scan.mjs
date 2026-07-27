@@ -24,7 +24,7 @@ const pages = [
   '/fun-games/index.html','/fun-games/fun-games.html',
   '/ai-tools/index.html','/ai-tools/ai-tools.html',
   '/stories/index.html','/stories/stories.html',
-  '/videos/videos.html','/trading/trading.html','/others/others.html',
+  '/videos/index.html','/trading/trading.html','/others/others.html',
   '/admin/login.html','/admin/signup.html','/admin/panel.html','/admin/profile.html',
   '/404.html','/offline.html',
   // a sample of games & tools

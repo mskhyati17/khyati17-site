@@ -35,19 +35,21 @@ try{
   /Loved this story/.test(await p.textContent('#comments-list')) ? pass('comment persists after reload') : fail('did not persist');
   await ctx.close();
 
-  // ---- VIDEOS (comments live in the video modal) ----
-  console.log('\n[Videos] signed out → gate (in modal)');
+  // ---- VIDEOS (comments live on the dedicated per-video reader page) ----
+  console.log('\n[Videos] signed out → gate');
   ctx=await b.newContext(); p=await ctx.newPage(); p.on('pageerror',e=>js.push(e.message.split('\n')[0]));
-  await p.goto(`${base}/videos/videos.html`,{waitUntil:'domcontentloaded',timeout:20000}); await p.waitForTimeout(1000);
-  await p.click('.v-card'); await p.waitForTimeout(1200);
-  (!(await p.$('#cmt-body')) && /sign in/i.test(await p.textContent('#comment-form-wrapper'))) ? pass('gate shown in modal') : fail('videos gate missing');
+  await p.goto(`${base}/videos/index.html`,{waitUntil:'domcontentloaded',timeout:20000}); await p.waitForTimeout(1000);
+  await Promise.all([ p.waitForNavigation({waitUntil:'domcontentloaded',timeout:15000}), p.click('.v-card') ]);
+  await p.waitForTimeout(1200);
+  (!(await p.$('#cmt-body')) && /sign in/i.test(await p.textContent('#comment-form-wrapper'))) ? pass('gate shown') : fail('videos gate missing');
   await ctx.close();
 
   console.log('\n[Videos] signed in → post works');
   ctx=await b.newContext(); await signIn(ctx); p=await ctx.newPage(); p.on('pageerror',e=>js.push(e.message.split('\n')[0]));
-  await p.goto(`${base}/videos/videos.html`,{waitUntil:'domcontentloaded',timeout:20000}); await p.waitForTimeout(1000);
-  await p.click('.v-card'); await p.waitForTimeout(1200);
-  (await p.$('#cmt-body')) ? pass('textarea shown in modal') : fail('no textarea in modal');
+  await p.goto(`${base}/videos/index.html`,{waitUntil:'domcontentloaded',timeout:20000}); await p.waitForTimeout(1000);
+  await Promise.all([ p.waitForNavigation({waitUntil:'domcontentloaded',timeout:15000}), p.click('.v-card') ]);
+  await p.waitForTimeout(1200);
+  (await p.$('#cmt-body')) ? pass('textarea shown') : fail('no textarea');
   await p.fill('#cmt-body','Great clip!'); await p.click('#cmt-post'); await p.waitForTimeout(700);
   /Great clip/.test(await p.textContent('#comments-list')) ? pass('video comment posted') : fail('video post not shown');
   await ctx.close();

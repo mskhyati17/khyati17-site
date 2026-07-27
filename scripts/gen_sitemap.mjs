@@ -21,7 +21,7 @@ function readTracked(relPath) {
 
 function walk(d, acc = []) {
   for (const e of readdirSync(d)) {
-    if (['node_modules', '.venv', '.git', 'test-results', '__pycache__', 'scripts', 'assets', 'admin'].includes(e)) continue;
+    if (['node_modules', '.venv', '.git', '.claude', 'test-results', '__pycache__', 'scripts', 'assets', 'admin'].includes(e)) continue;
     const f = join(d, e); const st = statSync(f);
     if (st.isDirectory()) walk(f, acc);
     else if (extname(f) === '.html') acc.push(f);

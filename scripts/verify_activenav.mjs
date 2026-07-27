@@ -11,7 +11,7 @@ const base='http://localhost:8172';
 const cases=[
   ['/ai-tools/color-palette.html','AI Tools'],
   ['/ai-tools/password-generator.html','AI Tools'],
-  ['/videos/videos.html','Videos'],
+  ['/videos/index.html','Videos'],
   ['/trading/trading.html','Trading'],
   ['/others/others.html','Others'],
   ['/me/index.html','My Stuff'],

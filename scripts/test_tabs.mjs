@@ -36,7 +36,7 @@ const TABS = [
   { path: '/fun-games/fun-games.html', name: 'Fun & Games', title: 'Fun' },
   { path: '/trading/trading.html', name: 'Trading', title: 'Trading' },
   { path: '/stories/stories.html', name: 'Stories', title: 'Stories' },
-  { path: '/videos/videos.html', name: 'Videos', title: 'Videos' },
+  { path: '/videos/index.html', name: 'Videos', title: 'VideoZone' },
   { path: '/others/others.html', name: 'Others', title: 'Others' },
   { path: '/friends/friends.html', name: 'Friends', title: 'Explore Together' },
   { path: '/admin/login.html', name: 'Login', title: 'Sign in' },

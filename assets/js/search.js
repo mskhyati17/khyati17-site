@@ -40,7 +40,7 @@
       // Videos
       try {
         var vm = await import('/videos/videos-data.js');
-        (vm.VIDEOS||[]).forEach(function(v){ if(v.title) out.push({ title:String(v.title), sub:(v.channel||'Video'), url:'/videos/videos.html#'+(v.id||''), type:'Video' }); });
+        (vm.VIDEOS||[]).forEach(function(v){ if(v.title) out.push({ title:String(v.title), sub:(v.channel||'Video'), url:'/videos/videos.html?video='+encodeURIComponent(v.id||''), type:'Video' }); });
       } catch(e){}
       return out;
     })();

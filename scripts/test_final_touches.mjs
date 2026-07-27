@@ -17,7 +17,7 @@ try{
 
   console.log('\n[1] Favicon');
   const fav=await fetch(`${base}/favicon.svg`); fav.status===200 ? pass('favicon.svg served (200)') : fail('favicon.svg '+fav.status);
-  for(const u of ['/home/index.html','/fun-games/index.html','/stories/index.html','/ai-tools/index.html','/videos/videos.html','/others/others.html']){
+  for(const u of ['/home/index.html','/fun-games/index.html','/stories/index.html','/ai-tools/index.html','/videos/index.html','/others/others.html']){
     await p.goto(base+u,{waitUntil:'domcontentloaded',timeout:15000});
     const has=await p.$('link[rel="icon"]'); has?null:fail('no favicon link on '+u);
   }

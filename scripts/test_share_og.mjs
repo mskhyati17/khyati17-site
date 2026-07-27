@@ -18,7 +18,7 @@ try{
   const p=await b.newPage(); const js=[]; p.on('pageerror',e=>js.push(e.message.split('\n')[0]));
 
   console.log('\n[1] Every section page has rich OG + Twitter meta');
-  const pages=['/home/index.html','/fun-games/index.html','/ai-tools/index.html','/stories/index.html','/videos/videos.html','/trading/trading.html','/others/others.html','/about/about.html'];
+  const pages=['/home/index.html','/fun-games/index.html','/ai-tools/index.html','/stories/index.html','/videos/index.html','/trading/trading.html','/others/others.html','/about/about.html'];
   for(const pg of pages){
     await p.goto(base+pg,{waitUntil:'domcontentloaded',timeout:15000});
     const ogt=await meta(p,'meta[property="og:title"]');

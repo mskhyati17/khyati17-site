@@ -57,7 +57,7 @@ const TABS = [
   { path: '/fun-games/fun-games.html', name: 'Fun & Games', title: 'Fun' },
   { path: '/trading/trading.html', name: 'Trading', title: 'Trading' },
   { path: '/stories/stories.html', name: 'Stories', title: 'Stories' },
-  { path: '/videos/videos.html', name: 'Videos', title: 'Videos' },
+  { path: '/videos/index.html', name: 'Videos', title: 'Videos' },
   { path: '/others/others.html', name: 'Others', title: 'Others' },
   { path: '/admin/login.html', name: 'Login', title: 'Sign in' },
   { path: '/admin/signup.html', name: 'Sign Up', title: 'Sign up' },
@@ -228,7 +228,7 @@ async function runTests() {
       '/home/index.html', '/about/about.html', '/ai-tools/ai-tools.html', '/ai-tools/news-app.html',
       '/ai-tools/voice-clone.html', '/ai-tools/story-creator.html', '/fun-games/fun-games.html',
       '/fun-games/games.json', '/fun-games/games.js', '/trading/trading.html', '/stories/stories.html',
-      '/videos/videos.html', '/others/others.html', '/admin/login.html', '/admin/signup.html',
+      '/videos/index.html', '/others/others.html', '/admin/login.html', '/admin/signup.html',
       '/admin/profile.html', '/assets/css/styles.css', '/assets/js/auth.js', '/assets/js/loadHeader.js',
       '/assets/includes/header.html',
     ];
