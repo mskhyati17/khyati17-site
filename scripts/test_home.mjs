@@ -6,6 +6,8 @@ import { createServer } from 'http';
 import { readFileSync, existsSync } from 'fs';
 import { join, extname } from 'path';
 import { fileURLToPath } from 'url';
+import { STORIES } from '../stories/stories-data.js';
+import { VIDEOS } from '../videos/videos-data.js';
 const dir=join(fileURLToPath(import.meta.url),'..','..');
 const MIME={'.html':'text/html','.js':'application/javascript','.css':'text/css','.png':'image/png','.jpg':'image/jpeg','.svg':'image/svg+xml','.json':'application/json','.ico':'image/x-icon','.webmanifest':'application/manifest+json'};
 const s=createServer((q,r)=>{let f=decodeURIComponent(join(dir,q.url.split('?')[0]));if(!existsSync(f)||extname(f)===''){if(existsSync(f+'/index.html'))f=f+'/index.html';else{r.writeHead(404);r.end();return;}}r.writeHead(200,{'Content-Type':MIME[extname(f).toLowerCase()]||'application/octet-stream'});r.end(readFileSync(f));});
@@ -21,7 +23,12 @@ try{
   await p.evaluate(()=>document.querySelector('.home-explore').scrollIntoView());
   await p.waitForTimeout(1900);
   const stats=await p.$$eval('.stat-num', els=>els.map(e=>e.textContent.trim()));
-  const want=['10,000+','10,000+','450+','700+'];
+  // Stories/Videos counters are computed live from the actual data files
+  // (rounded down to the nearest 50), not hardcoded — so this expectation
+  // is computed the same way instead of a fixed number that goes stale
+  // every time more stories/videos get added.
+  const roundDown = (n, step) => Math.floor(n/step)*step;
+  const want=['10,000+','10,000+', roundDown(STORIES.length,50).toLocaleString()+'+', roundDown(VIDEOS.length,50).toLocaleString()+'+'];
   const ok=want.every((w,i)=>stats[i]===w);
   ok ? pass('counters: '+stats.join(' · ')) : fail('counters wrong: got '+stats.join(',')+' want '+want.join(','));
 

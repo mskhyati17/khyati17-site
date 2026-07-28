@@ -28,7 +28,7 @@
         "name": "Khyati17",
         "alternateName": "Khyati17.com",
         "url": "https://khyati17.com/",
-        "description": "A free browser playground: 10,000+ games, 10,000+ AI tools, 450+ stories, videos and more — learn, create and share.",
+        "description": "A free browser playground: 10,000+ games, 10,000+ AI tools, 1,000+ stories, videos and more — learn, create and share.",
         "inLanguage": "en"
       },
       {
@@ -145,8 +145,8 @@
       <div class="stats-strip" aria-label="Site highlights">
         <div class="stat"><span class="stat-num" data-to="10000" data-suffix="+">0</span><span class="stat-label">🎮 Free Games</span></div>
         <div class="stat"><span class="stat-num" data-to="10000" data-suffix="+">0</span><span class="stat-label">🤖 AI Tools</span></div>
-        <div class="stat"><span class="stat-num" data-to="450" data-suffix="+">0</span><span class="stat-label">📖 Stories</span></div>
-        <div class="stat"><span class="stat-num" data-to="700" data-suffix="+">0</span><span class="stat-label">🎬 Videos</span></div>
+        <div class="stat"><span class="stat-num" id="statStories" data-to="450" data-suffix="+">0</span><span class="stat-label">📖 Stories</span></div>
+        <div class="stat"><span class="stat-num" id="statVideos" data-to="700" data-suffix="+">0</span><span class="stat-label">🎬 Videos</span></div>
       </div>
 
       <h2 class="explore-title" style="margin-bottom:14px">✨ Today's Picks</h2>
@@ -252,8 +252,13 @@
       }
       (function wait(){ if(done) return; if(document.querySelector('.main-nav') || tries>25){ land(); return; } tries++; setTimeout(wait, 100); })();
     })();
-    // Animated count-up when the stats scroll into view
-    (function(){
+    // Animated count-up when the stats scroll into view. Stories/Videos pull
+    // their real counts from the actual data files first (rounded down to
+    // the nearest 50, so the "X+" stays a true lower bound without needing
+    // an update on every single story/video added) — the IntersectionObserver
+    // below is only set up *after* that resolves, so a fast scroll can never
+    // race ahead and animate to the stale fallback number in the markup.
+    (async function(){
       var nums = document.querySelectorAll('.stat-num');
       function run(el){
         var to = +el.getAttribute('data-to'), suf = el.getAttribute('data-suffix')||'', t0=null, dur=1400;
@@ -261,6 +266,12 @@
           el.textContent = Math.round(to*e).toLocaleString() + (p===1?suf:''); if(p<1) requestAnimationFrame(step); }
         requestAnimationFrame(step);
       }
+      var roundDown = function(n, step){ return Math.floor(n/step)*step; };
+      var sEl = document.getElementById('statStories'), vEl = document.getElementById('statVideos');
+      await Promise.all([
+        import('./stories/stories-data.js').then(function(m){ if(sEl && m.STORIES && m.STORIES.length) sEl.setAttribute('data-to', String(roundDown(m.STORIES.length, 50))); }).catch(function(){ /* keep the static fallback already in the markup */ }),
+        import('./videos/videos-data.js').then(function(m){ if(vEl && m.VIDEOS && m.VIDEOS.length) vEl.setAttribute('data-to', String(roundDown(m.VIDEOS.length, 50))); }).catch(function(){ /* keep the static fallback already in the markup */ }),
+      ]);
       if(!('IntersectionObserver' in window)){ nums.forEach(function(n){ n.textContent=(+n.getAttribute('data-to')).toLocaleString()+(n.getAttribute('data-suffix')||''); }); return; }
       var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ run(en.target); io.unobserve(en.target); } }); },{threshold:.4});
       nums.forEach(function(n){ io.observe(n); });
