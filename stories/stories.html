@@ -163,7 +163,7 @@
         + (s.category ? `<span style="background:#f3e9fd;color:#6a1b9a;font-weight:700;border-radius:999px;padding:3px 10px">${escapeHtml(s.category)}</span>` : '')
         + `<span>⏱️ ${mins} min read</span></div>`;
       el.innerHTML = `<h2>${escapeHtml(s.title||'')}</h2>${meta}<p style="color:#6a4b8f">${escapeHtml(s.excerpt||'')}</p>`
-        + `<div style="display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 12px">`
+        + `<div id="story-actions" style="display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 12px">`
         + `<button id="story-share" class="btn btn-ghost" style="font-size:.85rem;padding:6px 14px">🔗 Share story</button>`
         + `<button id="story-read" class="btn btn-ghost" style="font-size:.85rem;padding:6px 14px">🔊 Read aloud</button>`
         + `</div>`
@@ -171,6 +171,32 @@
         + `<div>${s.body||''}</div>`
         + `<div style="margin:22px 0 6px;text-align:center"><button id="story-another" class="btn" style="font-size:.9rem">🎲 Read another story</button></div>`;
       Reader.bind(document.getElementById('story-read'), s);
+      // Admin-only delete for locally-added (non-baked) stories — the site's
+      // real stories live in the repo and can't be deleted from a page
+      // button, but ones added via "Add Story" only live in this browser's
+      // localStorage, so this is a real, safe delete for exactly those.
+      if(!BAKED.some(b => slugOf(b) === slug)){
+        adminModule.isAdmin().then(ok => {
+          if(!ok) return;
+          const actions = document.getElementById('story-actions');
+          if(!actions) return;
+          const delBtn = document.createElement('button');
+          delBtn.id = 'story-delete-local';
+          delBtn.className = 'btn btn-ghost';
+          delBtn.style.cssText = 'font-size:.85rem;padding:6px 14px;color:#ef4444;border-color:#ef4444';
+          delBtn.textContent = '🗑️ Delete this story';
+          delBtn.addEventListener('click', () => {
+            if(!confirm('Delete "' + (s.title||'this story') + '"? This only removes it from this browser.')) return;
+            try{
+              const key = 'khyati_stories_admin';
+              const list = JSON.parse(localStorage.getItem(key) || '[]');
+              localStorage.setItem(key, JSON.stringify(list.filter(x => slugOf(x) !== slug)));
+            }catch(e){}
+            window.location.href = '/stories/index.html';
+          });
+          actions.appendChild(delBtn);
+        }).catch(()=>{});
+      }
       // "Read another" opens a random different story
       const another = document.getElementById('story-another');
       if(another) another.addEventListener('click', ()=>{

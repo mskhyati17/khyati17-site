@@ -39,9 +39,12 @@ async function addStory(payload){
 
 function el(tag,attrs={},inner=''){ const e=document.createElement(tag); for(const k in attrs) e.setAttribute(k, attrs[k]); if(typeof inner === 'string') e.innerHTML=inner; else if(inner) e.appendChild(inner); return e }
 
-// Helper to escape attribute values (used for embedding Google Doc URL into iframe src)
+// Escapes text for safe use as HTML content (story paragraphs, byline).
+// `&` must be escaped first — otherwise it would double-escape the entities
+// the later replacements just inserted.
 function escapeAttr(s){
   return String(s)
+    .replace(/&/g, '\x26amp\x3B')
     .replace(/\x22/g, '\x26quot\x3B')
     .replace(/\x27/g, '\x26#39\x3B')
     .replace(/</g, '\x26lt\x3B')
@@ -99,31 +102,55 @@ export async function mountAdminUI(page){
   }
   if(page === 'stories'){
     const form = el('div',{},`
-      <h3>Add Story (Google Doc)</h3>
+      <h3>Add Story</h3>
       <label>Title<br/><input id="admin-story-title"/></label><br/>
-      <label>Slug (unique id)<br/><input id="admin-story-slug"/></label><br/>
-      <label>Excerpt / Short description<br/><input id="admin-story-excerpt"/></label><br/>
-      <label>Google Doc Embed URL<br/><input id="admin-story-doc-url" placeholder="e.g. https://docs.google.com/document/d/e/.../pub"/></label><br/>
+      <label>Description<br/><input id="admin-story-excerpt"/></label><br/>
+      <label>Story text file (.txt)<br/><input id="admin-story-file" type="file" accept=".txt,text/plain"/></label><br/>
       <p style="font-size:0.9em;color:#666">
-        To publish a Google Doc: File → Share → Publish to web → Embed → copy the &lt;iframe&gt; src URL (the URL inside the src attribute).
+        Write your story in a plain .txt file first — leave a blank line between paragraphs — then choose it here. The story appears as a normal page on the site (readers can't edit it); there's no separate slug or link to manage.
       </p>
       <button id="admin-add-story" class="btn">Add story</button>
       <div id="admin-story-msg" style="color:#7a2a9b;margin-top:8px"></div>
     `);
     root.appendChild(form);
     document.getElementById('admin-add-story').addEventListener('click', async ()=>{
+      const msgEl = document.getElementById('admin-story-msg');
       const title = document.getElementById('admin-story-title').value.trim();
-      const slug = document.getElementById('admin-story-slug').value.trim();
       const excerpt = document.getElementById('admin-story-excerpt').value.trim();
-      const docUrl = document.getElementById('admin-story-doc-url').value.trim();
-      if(!slug){ document.getElementById('admin-story-msg').textContent='Slug required'; return; }
-      // Build the story body as an iframe embed of the Google Doc
-      const body = docUrl ? `<iframe src="${escapeAttr(docUrl)}" width="100%" height="600" frameborder="0" allowfullscreen></iframe>` : '';
-      const payload = { title, slug, excerpt, body, doc_url: docUrl, created_at: new Date().toISOString() };
-      try{ await addStory(payload); document.getElementById('admin-story-msg').textContent = 'Story added'; location.reload(); }catch(e){ document.getElementById('admin-story-msg').textContent = 'Failed: '+(e.message||e); }
+      const fileInput = document.getElementById('admin-story-file');
+      const file = fileInput.files && fileInput.files[0];
+      if(!title){ msgEl.textContent = 'Please enter a title'; return; }
+      if(!file){ msgEl.textContent = 'Please choose a .txt file with your story'; return; }
+      msgEl.textContent = 'Reading file…';
+      try{
+        const text = await file.text();
+        if(!text.trim()){ msgEl.textContent = 'That file looks empty'; return; }
+        const slug = (title.toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/(^-+|-+$)/g,'') || 'story') + '-' + Date.now().toString(36);
+        const body = textFileToStoryBody(text, 'Khyati Srivastava');
+        const payload = { title, slug, excerpt, body, created_at: new Date().toISOString() };
+        await addStory(payload);
+        msgEl.textContent = 'Story added!';
+        location.reload();
+      }catch(e){ msgEl.textContent = 'Failed: '+(e.message||e); }
     });
     return;
   }
+}
+
+// Converts a plain-text file's contents into the same paragraph-based HTML
+// every other story on the site uses (byline + one <p> per paragraph),
+// instead of embedding an external, publicly-editable Google Doc — a reader
+// landing on the story page now sees a normal, read-only page like any
+// other, not something they can click into and edit.
+function textFileToStoryBody(text, author){
+  const byline = `<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By ${escapeAttr(author)}</p>`;
+  const paragraphs = text
+    .replace(/\r\n/g, '\n')
+    .split(/\n\s*\n/)
+    .map(p => p.trim())
+    .filter(Boolean)
+    .map(p => `<p>${escapeAttr(p).replace(/\n/g, '<br>')}</p>`);
+  return byline + (paragraphs.join('') || `<p>${escapeAttr(text.trim())}</p>`);
 }
 
 export { isAdmin, ADMIN_IDS };

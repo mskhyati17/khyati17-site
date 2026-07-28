@@ -34,6 +34,17 @@
     .ap-meta{ font-size:.78rem; color:#8a76a3; margin-top:4px; }
     .ap-cmt{ border-top:1px solid #f0e6fb; padding:8px 0; font-size:.9rem; }
     .ap-cmt .who{ font-weight:700; color:#4a2370; }
+    /* The cards below hardcode a white background (by design, for the badge
+       colors), but the global dark-mode text color override made their text
+       nearly invisible against it — same class of bug as the story reader
+       and comments had earlier. */
+    [data-theme="dark"] .ap-gate,[data-theme="dark"] .ap-card{ background:#241633; border-color:#3a2550; }
+    [data-theme="dark"] .ap-head p{ color:#c3b0dd; }
+    [data-theme="dark"] .ap-uemail,[data-theme="dark"] .ap-cmt .who{ color:#f0e6ff; }
+    [data-theme="dark"] .ap-user{ border-top-color:#3a2550; }
+    [data-theme="dark"] .ap-cmt{ border-top-color:#3a2550; }
+    [data-theme="dark"] .ap-meta{ color:#a893c9; }
+    [data-theme="dark"] .ap-controls button,[data-theme="dark"] .ap-controls select,[data-theme="dark"] .ap-controls input{ background:#1c1129; border-color:#3a2550; color:#e5d8f5; }
   </style>
   <!-- canonical + site icon (khyati:head) -->
   <link rel="canonical" href="https://khyati17.com/admin/panel.html" />
@@ -61,6 +72,11 @@
       <div class="ap-card">
         <h3>💬 Comments <span id="ap-ccount" style="font-size:.8rem;color:#8a76a3"></span></h3>
         <div id="ap-comments"></div>
+      </div>
+      <div class="ap-card">
+        <h3>📖 Locally Added Stories <span id="ap-scount" style="font-size:.8rem;color:#8a76a3"></span></h3>
+        <p style="font-size:.82rem;color:#8a76a3;margin-bottom:10px">Stories added via "Add Story" on the Story Hub live only in this browser (there's no shared database), so this list — and deleting from it — only affects what you see on this device.</p>
+        <div id="ap-stories"></div>
       </div>
     </div>
   </main>
@@ -122,6 +138,22 @@
       if(!comments.length) box.innerHTML = '<p style="color:#8a76a3">No comments yet.</p>';
     }
 
+    function listLocalStories(){ try{ return JSON.parse(localStorage.getItem('khyati_stories_admin') || '[]'); }catch(e){ return []; } }
+    function saveLocalStories(list){ localStorage.setItem('khyati_stories_admin', JSON.stringify(list)); }
+    function renderLocalStories(){
+      const box = document.getElementById('ap-stories'); box.innerHTML = '';
+      let list = listLocalStories();
+      document.getElementById('ap-scount').textContent = '(' + list.length + ')';
+      list.forEach((s, i) => {
+        const d = document.createElement('div'); d.className = 'ap-cmt';
+        d.innerHTML = '<span class="who">' + esc(s.title || '(untitled)') + '</span>' + (s.excerpt ? ' · <span style="color:#8a76a3;font-size:.75rem">' + esc(s.excerpt) + '</span>' : '') + '<br/>' +
+          '<button data-del style="margin-top:4px;font-size:11px;border:none;border-radius:6px;background:#ef4444;color:#fff;cursor:pointer">delete</button>';
+        d.querySelector('[data-del]').addEventListener('click', ()=>{ if(confirm('Delete story "' + (s.title || 'this story') + '"? This only removes it from this browser.')){ list.splice(i,1); saveLocalStories(list); renderLocalStories(); } });
+        box.appendChild(d);
+      });
+      if(!list.length) box.innerHTML = '<p style="color:#8a76a3">No locally-added stories on this device.</p>';
+    }
+
     document.addEventListener('DOMContentLoaded', async ()=>{
       if(window.AuthReady){ try{ await window.AuthReady; }catch(e){} }
       if(!UM.isAdmin()){
@@ -130,7 +162,7 @@
         return;
       }
       document.getElementById('ap-content').style.display = '';
-      renderUsers(); renderComments();
+      renderUsers(); renderComments(); renderLocalStories();
     });
   </script>
   <script src="/assets/js/cute.js?v=5"></script>
