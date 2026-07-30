@@ -66,6 +66,27 @@
     .mini-btn:hover{ background:var(--pp2); }
     .mini-btn.ghost{ background:transparent; color:var(--pp); border:1px solid var(--acc); }
     .mini-btn.ghost:hover{ background:var(--acc); }
+
+    /* 10,000+ combo machine */
+    .ka-combo{
+      background:linear-gradient(135deg,#2b0b3a,#6a1b9a 60%,#9c4dcc); color:#fff;
+      border-radius:20px; padding:30px 24px; text-align:center; margin:0 auto 10px;
+      box-shadow:0 12px 32px rgba(60,20,90,.28);
+    }
+    .ka-combo .lbl{ font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; opacity:.85; }
+    .ka-combo h2{ margin:6px 0 4px; font-size:clamp(1.3rem,3.4vw,1.9rem); }
+    .ka-combo .combo-sub{ opacity:.85; font-size:.92rem; margin:0 0 20px; }
+    .ka-combo .combo-q{
+      font-size:clamp(1.05rem,2.6vw,1.35rem); font-weight:600; line-height:1.5;
+      background:rgba(255,255,255,.1); border-radius:14px; padding:22px 20px;
+      min-height:4.5em; display:flex; align-items:center; justify-content:center;
+    }
+    .ka-combo .combo-count{ font-size:.85rem; opacity:.8; margin-top:14px; }
+    .ka-combo button{
+      cursor:pointer; border:none; border-radius:999px; background:rgba(255,255,255,.95);
+      color:var(--pp); font-weight:700; padding:12px 26px; font-size:1rem; margin-top:18px;
+    }
+    .ka-combo button:hover{ background:#fff; }
   </style>
   <!-- canonical + site icon (khyati:head) -->
   <link rel="canonical" href="https://khyati17.com/others/others.html" />
@@ -131,6 +152,18 @@
         <p class="mini-txt" id="affirmText">—</p>
         <button class="mini-btn" id="affirmBtn">🔄 Another one</button>
       </div>
+    </div>
+
+    <div class="ka-head" style="margin-top:44px">
+      <h2>🎲 The 10,000+ Combo Machine</h2>
+      <p>163 wild abilities, mixed and matched into thousands of "would you rather" combos.</p>
+    </div>
+
+    <div class="ka-combo">
+      <div class="lbl">🎲 Would You Rather</div>
+      <div class="combo-q" id="comboText">—</div>
+      <div class="combo-count" id="comboCount">—</div>
+      <button id="comboBtn">🔄 Mix a new combo</button>
     </div>
   </main>
 
@@ -447,6 +480,174 @@
       "I am exactly who I need to be right now.",
     ];
 
+    // Word bank for the 10,000+ Combo Machine — every unique pair of these
+    // 163 options forms one distinct "would you rather" combo (163*162/2 = 13,203 combos).
+    const COMBO_OPTIONS = [
+      'fly like a bird',
+      'breathe underwater',
+      'talk to animals',
+      'read minds',
+      'turn invisible',
+      'freeze time for everyone but you',
+      'teleport anywhere instantly',
+      'shrink to the size of an ant',
+      'grow as tall as a building',
+      'never need to sleep',
+      'have super strength',
+      'run faster than a cheetah',
+      'see in the dark',
+      'control the weather',
+      'shoot rainbows from your fingertips',
+      'understand every language on Earth',
+      'have a photographic memory',
+      'never feel cold',
+      'never feel too hot',
+      'walk through walls',
+      'bounce like a rubber ball',
+      'stick to any surface like a gecko',
+      'have a tail',
+      'have wings',
+      'glow in the dark',
+      'change your hair color just by thinking about it',
+      'summon a snack whenever you want',
+      'talk to plants',
+      'control electricity',
+      'turn anything into gold',
+      'have super hearing',
+      'have x-ray vision',
+      'heal any scrape instantly',
+      'never get tired',
+      'be double-jointed everywhere',
+      'have perfect balance',
+      'juggle anything perfectly',
+      'solve any math problem instantly',
+      'remember every book you\'ve ever read',
+      'speak to dolphins',
+      'ride a dragon to school',
+      'live in a treehouse',
+      'live on a houseboat',
+      'have a pet dinosaur',
+      'have a robot best friend',
+      'control your own dreams',
+      'never lose a video game',
+      'win every race you enter',
+      'be the fastest reader in the world',
+      'paint pictures using only your mind',
+      'turn into any animal you choose',
+      'breathe fire safely',
+      'control gravity around you',
+      'pause time for everyone but you',
+      'rewind the last five minutes',
+      'know what everyone nearby is thinking',
+      'be invisible only to bugs',
+      'have super smell',
+      'taste colors',
+      'hear colors',
+      'see sounds',
+      'never trip or fall',
+      'always land on your feet',
+      'climb any wall like a spider',
+      'swim as fast as a dolphin',
+      'outrun a cheetah',
+      'jump as high as a kangaroo',
+      'have the strength of an elephant',
+      'be as flexible as a gymnast',
+      'never get a paper cut again',
+      'never step on a Lego again',
+      'have unlimited screen time but only for shows that teach you something',
+      'eat dessert first every single day',
+      'skip one chore forever',
+      'choose dinner every night for a month',
+      'be the DJ on every family car ride',
+      'pick the movie every single time',
+      'have your own private snack cabinet',
+      'get a free pass on one homework assignment',
+      'have a room that cleans itself',
+      'have a backpack that never feels heavy',
+      'never forget your homework again',
+      'never lose your water bottle',
+      'always find matching socks',
+      'have shoes that tie themselves',
+      'have a jacket that\'s always the right temperature',
+      'never get carsick again',
+      'never get hiccups again',
+      'sneeze glitter instead of germs',
+      'have hair that never gets tangled',
+      'grow a whole garden overnight',
+      'have your stuffed animals actually talk back',
+      'control your own personal weather bubble',
+      'have a magic paintbrush',
+      'turn your doodles into real objects',
+      'have a treehouse that can fly',
+      'ride a bicycle that never gets a flat tire',
+      'have a skateboard that never wipes out',
+      'win at rock-paper-scissors every single time',
+      'always guess a movie\'s ending correctly',
+      'always know the answer in class',
+      'never feel embarrassed again',
+      'laugh so hard you snort and not care one bit',
+      'have a laugh that\'s contagious',
+      'make anyone smile with one joke',
+      'be the funniest person in every room',
+      'be the calmest person in any crisis',
+      'give the best hugs in the world',
+      'always know exactly what to say',
+      'be really good at one sport',
+      'be pretty good at every sport',
+      'never strike out',
+      'score the winning goal in every game',
+      'do a perfect cartwheel every single time',
+      'nail every high-five, no misses',
+      'never miss a free throw',
+      'always find the treasure first',
+      'solve any puzzle in record time',
+      'win every board game',
+      'always roll exactly the number you need',
+      'find a dollar on the sidewalk every week',
+      'have a lucky charm that actually works',
+      'know exactly when it\'s about to rain',
+      'predict the weather perfectly',
+      'always pick the fastest-moving line',
+      'never miss the bus',
+      'catch every ball thrown to you',
+      'never drop your ice cream cone',
+      'have ice cream that never melts',
+      'have popcorn that never runs out',
+      'have a water bottle that refills itself',
+      'grow your own candy garden',
+      'have a chocolate river in your backyard',
+      'live inside your favorite video game for a day',
+      'be a character in your favorite book for a day',
+      'visit any moment in history for one afternoon',
+      'see one day into the future',
+      'talk to your future self',
+      'talk to your past self',
+      'know how every story ends before you start reading',
+      'skip straight to the fun part of any chore',
+      'turn homework into a game automatically',
+      'make vegetables taste like candy',
+      'have your bed make itself every morning',
+      'have toys that put themselves away',
+      'never lose at hide and seek again',
+      'be undetectable while playing tag',
+      'run so fast you leave a trail of sparkles',
+      'leave rainbows wherever you walk',
+      'have footprints that turn into flowers',
+      'have a shadow that dances on its own',
+      'summon your favorite song whenever you want',
+      'have background music follow you everywhere you go',
+      'never have a bad hair day',
+      'always wake up before your alarm, well rested',
+      'have a snack that magically refills your lunchbox',
+      'be able to talk your way out of any awkward moment',
+      'never get carsick on long road trips',
+      'have a blanket that\'s always perfectly warm',
+      'be able to skip to your birthday whenever you want',
+      'always get the last cookie without anyone noticing',
+      'have a voice that can calm any crying baby',
+      'be able to fix any broken toy instantly'
+    ];
+
     // render advice cards
     const grid = document.getElementById('adviceGrid');
     ADVICE.forEach(a=>{
@@ -505,6 +706,26 @@
     const newAffirm = makeRotator(AFFIRM, a=>{ affirmText.textContent = a; });
     document.getElementById('affirmBtn').addEventListener('click', newAffirm);
     newAffirm();
+
+    // 10,000+ Combo Machine: every unique pair of two options from
+    // COMBO_OPTIONS is its own distinct "would you rather" combo.
+    const comboText = document.getElementById('comboText');
+    const comboCount = document.getElementById('comboCount');
+    const n = COMBO_OPTIONS.length;
+    const totalCombos = (n * (n - 1)) / 2;
+    comboCount.textContent = `${totalCombos.toLocaleString()} total combos possible from ${n} options`;
+    let lastA = -1, lastB = -1;
+    function newCombo(){
+      let i, j;
+      do {
+        i = Math.floor(Math.random() * n);
+        do { j = Math.floor(Math.random() * n); } while (j === i);
+      } while (i === lastA && j === lastB && n > 2);
+      lastA = i; lastB = j;
+      comboText.textContent = `Would you rather ${COMBO_OPTIONS[i]} or ${COMBO_OPTIONS[j]}?`;
+    }
+    document.getElementById('comboBtn').addEventListener('click', newCombo);
+    newCombo();
   })();
   </script>
   <script type="module" src="../assets/js/auth.js?v=2"></script>
