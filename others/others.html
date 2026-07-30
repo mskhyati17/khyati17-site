@@ -87,6 +87,19 @@
       color:var(--pp); font-weight:700; padding:12px 26px; font-size:1rem; margin-top:18px;
     }
     .ka-combo button:hover{ background:#fff; }
+
+    /* 100 Amazing Things — a grid of 100 distinct, individual entries */
+    .ka-100-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:14px; }
+    .ka-100-item{
+      background:#fff; border:1px solid var(--acc); border-radius:14px; padding:16px 16px 16px 46px;
+      position:relative; box-shadow:0 4px 14px rgba(117,80,168,.07); font-size:.92rem; line-height:1.5;
+      color:var(--ink);
+    }
+    .ka-100-item .num{
+      position:absolute; left:12px; top:14px; font-weight:800; color:var(--pp2);
+      font-size:.78rem; background:var(--acc); border-radius:999px; width:22px; height:22px;
+      display:flex; align-items:center; justify-content:center;
+    }
   </style>
   <!-- canonical + site icon (khyati:head) -->
   <link rel="canonical" href="https://khyati17.com/others/others.html" />
@@ -165,6 +178,13 @@
       <div class="combo-count" id="comboCount">—</div>
       <button id="comboBtn">🔄 Mix a new combo</button>
     </div>
+
+    <div class="ka-head" style="margin-top:44px">
+      <h2>💯 100 Amazing Things</h2>
+      <p>100 separate facts, ideas, and tiny challenges to know, try, or wonder about — every single one different.</p>
+    </div>
+
+    <div class="ka-100-grid" id="hundredGrid"></div>
   </main>
 
   <footer class="site-footer">
@@ -7754,6 +7774,117 @@
     }
     document.getElementById('comboBtn').addEventListener('click', newCombo);
     newCombo();
+
+    // 100 Amazing Things — 100 separate, individual entries (not paired/combined).
+    const HUNDRED_THINGS = [
+      'Octopuses have three hearts and blue blood.',
+      'Try naming five things you can see, four you can hear, and three you can touch right now.',
+      'A group of flamingos is called a "flamboyance."',
+      'Compliment the next person you talk to on something specific, not just "nice job."',
+      'Honey never spoils — archaeologists have found 3,000-year-old honey that\'s still edible.',
+      'Learn to say "hello" and "thank you" in three languages other than your own.',
+      'A shrimp\'s heart is located in its head.',
+      'Draw a picture of your favorite animal doing something silly.',
+      'The Eiffel Tower grows about six inches taller in summer heat.',
+      'Write a thank-you note to someone who helped you this week.',
+      'Butterflies taste with their feet.',
+      'Try holding a plank for thirty seconds and see how it feels.',
+      'A single bolt of lightning is hotter than the surface of the sun.',
+      'Ask a grandparent or older relative about their favorite childhood memory.',
+      'Wombats produce cube-shaped poop.',
+      'Practice writing your name with your non-dominant hand.',
+      'Sea otters hold hands while sleeping so they don\'t drift apart.',
+      'Make a list of five things you\'re grateful for today.',
+      'A "jiffy" is an actual unit of time — one hundredth of a second.',
+      'Try balancing a spoon on your nose for as long as you can.',
+      'Polar bears have black skin hidden under their white fur.',
+      'Fold a paper airplane and see how far it flies.',
+      'Dolphins call each other by unique signature whistles, almost like names.',
+      'Learn one new fact about a country you\'ve never visited.',
+      'A hummingbird\'s heart can beat over 1,200 times per minute in flight.',
+      'Try humming your favorite song without moving your lips.',
+      'Venus is the hottest planet in the solar system, even hotter than Mercury.',
+      'Write a tiny story that\'s exactly six words long.',
+      'Some land snails can sleep for up to three years.',
+      'Do ten jumping jacks right where you\'re standing.',
+      'A group of owls is called a "parliament."',
+      'Ask someone how their day is really going, and actually listen.',
+      'The human nose can recognize tens of thousands of different scents.',
+      'Try whistling a tune you\'ve never whistled before.',
+      'Starfish don\'t have a brain — just a simple nerve network.',
+      'Practice catching a ball with your eyes closed (carefully!).',
+      'Scientists believe it may rain diamonds on Jupiter and Saturn.',
+      'Give someone a genuine compliment about something they made or did.',
+      'Koala fingerprints look so similar to human ones they can be mixed up by mistake.',
+      'Try tying your shoelaces a new way.',
+      'The world record flight for a chicken is only about 13 seconds.',
+      'Write down one thing you\'d like to get better at this month.',
+      'A "moment" was once an official unit of time — 90 seconds long.',
+      'Squirrels forget where they bury many of their nuts, accidentally planting new trees.',
+      'Try drawing your house from memory, without looking at it.',
+      'Giraffes need only about 30 minutes of sleep a day.',
+      'Ask a friend to teach you a word in a language they know.',
+      'The unicorn is the official national animal of Scotland.',
+      'Tigers have striped skin, not just striped fur.',
+      'Do a cartwheel, or try your best attempt at one.',
+      'A crocodile can\'t stick its tongue out.',
+      'Write a short letter to your future self, one year from now.',
+      'Bananas are botanically berries, but strawberries aren\'t.',
+      'Try snapping your fingers with your other hand if you usually can\'t.',
+      'Sharks have been around longer than trees.',
+      'Name three things that make you laugh every time.',
+      'A single fluffy cloud can weigh more than a million pounds.',
+      'Practice a magic trick you already sort of know.',
+      'Cows form close friendships and get stressed when separated from their best friend.',
+      'Offer to help with a chore before anyone asks you to.',
+      'The shortest war in recorded history lasted about 38 minutes.',
+      'Try touching your toes without bending your knees.',
+      'A group of crows is called a "murder."',
+      'Learn the name of one constellation and find it in the sky tonight.',
+      'There may be more stars in the universe than grains of sand on every beach on Earth.',
+      'Try juggling with two socks instead of balls.',
+      'Elephants are the only mammals that can\'t jump.',
+      'Write down your favorite word and why you like how it sounds.',
+      'You can\'t hum a tune while holding your nose closed.',
+      'Practice skipping instead of walking for one whole minute.',
+      'A group of pandas is called an "embarrassment."',
+      'Ask someone to teach you a card trick or game you don\'t know.',
+      'Some turtles can breathe through their rear ends.',
+      'Try standing on one foot with your eyes closed.',
+      'The dot above a lowercase i or j has a name: a tittle.',
+      'Make up a secret handshake with a friend or sibling.',
+      'Bees can recognize individual human faces.',
+      'Try drawing a perfect circle without any help.',
+      'A rainbow can actually be a full circle if you\'re high enough up to see it.',
+      'Write a list of five places you\'d love to visit someday.',
+      'Slugs have four noses.',
+      'Practice writing the alphabet backward.',
+      'An ostrich\'s eye is bigger than its brain.',
+      'Try folding a fitted sheet — it\'s harder than it looks.',
+      'A blue whale\'s heart is roughly the size of a small car.',
+      'Learn to spell one long word you\'ve never spelled before.',
+      'Cats can\'t taste sweetness.',
+      'Try clapping a rhythm and having someone else clap it back.',
+      'A group of jellyfish is called a "smack."',
+      'Draw your favorite meal as if it were a cartoon character.',
+      'Kangaroos can\'t walk backward.',
+      'Practice tongue twisters until you can say one without messing up.',
+      'A snail can sleep for three years straight if it needs to.',
+      'Write a riddle of your own and try it on someone.',
+      'Peanuts aren\'t technically nuts — they\'re legumes.',
+      'Try memorizing a short poem in five minutes.',
+      'Frogs absorb water through their skin instead of drinking it.',
+      'Make a paper fortune teller and use it with a friend.',
+      'Try walking heel-to-toe in a straight line like a tightrope.',
+      'Wolves can hear another wolf\'s howl from up to ten miles away.'
+    ];
+    const hundredGrid = document.getElementById('hundredGrid');
+    HUNDRED_THINGS.forEach((t, idx) => {
+      const item = document.createElement('div');
+      item.className = 'ka-100-item';
+      item.innerHTML = `<span class="num">${idx + 1}</span>${t}`;
+      hundredGrid.appendChild(item);
+    });
   })();
   </script>
   <script type="module" src="../assets/js/auth.js?v=2"></script>
