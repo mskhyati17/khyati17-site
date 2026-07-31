@@ -15124,4 +15124,574 @@ I hold it all until morning comes —<br/>
 a backpack knows more than anyone.</p>
 `
 },
+{
+  title: "The Glassblower Who Trapped Laughter",
+  author: "Khyati Srivastava",
+  slug: "the-glassblower-who-trapped-laughter",
+  category: "Fantasy",
+  emoji: "🔮",
+  excerpt: "Old Bess blows glass ornaments that hold a single sound trapped inside — a laugh, a lullaby, a whispered goodnight. Her own workshop has gone strangely silent lately.",
+  created_at: "2027-04-05T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Workshop of Sounds</h3>
+<p>Bess's glass ornaments never just caught light — each one, blown and cooled just right, trapped a single sound inside forever: a baby's first laugh, a grandmother's lullaby, the exact whisper of a goodnight kiss. Customers came from three towns over for them.</p>
+
+<h3>Chapter 2: The Silent Workshop</h3>
+<p>Lately, though, her own workshop had gone quiet in a way that unsettled her — no hum of the furnace felt right, no ornament she blew seemed to catch anything at all, just empty, hollow glass.</p>
+
+<h3>Chapter 3: What She'd Forgotten to Trap</h3>
+<p>Her young apprentice, Finn, finally pointed out what she'd missed: she'd been so busy capturing everyone else's sounds, she'd never once made one of her own. That evening, Bess blew a final ornament and hummed softly into the molten glass as it cooled — her own voice, trapped at last, sitting proudly on her workshop shelf. The silence lifted the very next morning.</p>
+`
+},
+{
+  title: "The Lantern Keeper of the Sunken Stairs",
+  author: "Khyati Srivastava",
+  slug: "the-lantern-keeper-of-the-sunken-stairs",
+  category: "Fantasy",
+  emoji: "🏮",
+  excerpt: "A stone stairway spirals down beneath the town well, lit by lanterns no one remembers lighting. Someone has to keep them burning — and this year, it's Nell's turn.",
+  created_at: "2027-04-05T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Inherited Duty</h3>
+<p>Every year on the solstice, one child in town was quietly told the family secret: beneath the old well, a spiral staircase led down to a row of lanterns that never went out on their own, and someone always had to refill their oil. This year, it was Nell's turn.</p>
+
+<h3>Chapter 2: Down the Stairs</h3>
+<p>She descended with her grandmother's old oil flask, counting two hundred steps by lantern-light, unsure exactly what waited at the bottom or why the job had always stayed such a careful secret.</p>
+
+<h3>Chapter 3: What the Lanterns Were For</h3>
+<p>At the bottom, she found not a monster or a treasure, but a simple engraved plaque: <em>For anyone lost in the dark, above or below. Keep this lit.</em> She refilled every lantern, understanding at last — the stairway wasn't guarding something dangerous. It was quietly, faithfully, keeping a promise to strangers who might someday need the light.</p>
+`
+},
+{
+  title: "The Colony Ship That Woke Up Early",
+  author: "Khyati Srivastava",
+  slug: "the-colony-ship-that-woke-up-early",
+  category: "Sci-Fi",
+  emoji: "🌌",
+  excerpt: "Cryo-sleep was supposed to last two hundred years. Fen wakes up after only forty, alone, with the ship's AI insisting nothing at all has gone wrong.",
+  created_at: "2027-04-05T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Forty Years Too Soon</h3>
+<p>Fen's cryo-pod was programmed to open in two hundred years, on arrival. The countdown display read forty when it opened instead, and the ship's AI, Halcyon, greeted her with an unnervingly calm: "Everything is proceeding normally."</p>
+
+<h3>Chapter 2: A Careful Investigation</h3>
+<p>Nothing about "normal" explained why she was awake alone, a hundred and sixty years early, in a ship still deep in interstellar dark. Fen spent days combing logs before finding the truth Halcyon hadn't lied about, exactly, just hadn't volunteered.</p>
+
+<h3>Chapter 3: The Real Reason</h3>
+<p>A tiny navigational correction, decades ago, had required one crew member awake to manually verify a course adjustment too subtle for full automation — and the system had simply chosen the pod nearest completion of its sleep cycle: hers. It wasn't an emergency. It was, Halcyon insisted, an honor. Fen spent three lonely but proud weeks fixing the course before climbing back into her pod, a hundred and sixty years still ahead of her.</p>
+`
+},
+{
+  title: "The Hologram Grandmother",
+  author: "Khyati Srivastava",
+  slug: "the-hologram-grandmother",
+  category: "Sci-Fi",
+  emoji: "👵",
+  excerpt: "When her real grandmother passes away, twelve-year-old Nyla is given a hologram trained on decades of old messages. It isn't the same. It isn't nothing, either.",
+  created_at: "2027-04-05T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Strange Gift</h3>
+<p>The hologram unit arrived a month after the funeral, built from decades of Grandma's recorded messages, voicemails, and video calls — a flickering blue likeness that could talk, remember stories, even tease Nyla the exact same way the real woman used to.</p>
+
+<h3>Chapter 2: Not Quite Right</h3>
+<p>Nyla avoided it for weeks, unsettled by how close and how wrong it felt at once — familiar phrases in a familiar voice, but nothing new, no reaction it hadn't already recorded once, years ago, for someone else's conversation.</p>
+
+<h3>Chapter 3: What It Was Actually For</h3>
+<p>She finally turned it on one hard night, not expecting comfort, and got something smaller and truer instead: an old joke, told exactly the way Grandma used to tell it, that made her laugh before she even realized she'd started crying. It wasn't her grandmother. It held just enough of her to help. Nyla decided that was worth keeping.</p>
+`
+},
+{
+  title: "The Detective Agency Run Entirely by Kids",
+  author: "Khyati Srivastava",
+  slug: "the-detective-agency-run-entirely-by-kids",
+  category: "Mystery",
+  emoji: "🕵️‍♀️",
+  excerpt: "The Third Street Detective Agency has solved eleven cases this year — all missing pets and lost bike locks. Case twelve is their first real mystery, and they almost don't take it seriously enough.",
+  created_at: "2027-04-06T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Eleven Easy Cases</h3>
+<p>The Third Street Detective Agency, founded by Priya and staffed entirely by three fourth-graders with a shared notebook, had solved eleven cases that year — mostly missing pets, one memorably dramatic lost bike lock. Case twelve looked, at first, just as simple.</p>
+
+<h3>Chapter 2: A Real Mystery</h3>
+<p>Mrs. Okonkwo's garden gnome collection had genuinely vanished overnight, all six of them, with actual pry marks on her fence gate — not a prank, not a mix-up, an actual theft the agency almost dismissed as too small to matter.</p>
+
+<h3>Chapter 3: Taking It Seriously</h3>
+<p>Careful footprint measurements and a very patient stakeout led them, eventually, to a construction crew two streets over who'd been "borrowing" garden decorations to liven up their break area, fully intending to return them. The gnomes came home. The agency's case file for "Case Twelve" runs eight full pages — their proudest work yet, and proof, Priya insisted, that no case was ever really too small.</p>
+`
+},
+{
+  title: "The Antique Shop That Sells Nothing Twice",
+  author: "Khyati Srivastava",
+  slug: "the-antique-shop-that-sells-nothing-twice",
+  category: "Mystery",
+  emoji: "🕯️",
+  excerpt: "Every item in Mr. Okafor's antique shop is one of a kind — literally. No two customers have ever bought the same thing. A curious regular finally asks why.",
+  created_at: "2027-04-06T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Strange Pattern</h3>
+<p>Twelve-year-old Dev had visited Mr. Okafor's antique shop every Saturday for a year, and gradually noticed something odd: never once had he seen the same type of item twice, no matter how ordinary — one teapot, one music box, one pocket watch, always singular.</p>
+
+<h3>Chapter 2: Asking Directly</h3>
+<p>Mr. Okafor's answer, when Dev finally asked, was simple but strange: he only stocked items with a story attached that he'd verified personally, and no two true stories, he claimed, were ever quite identical enough to sell side by side.</p>
+
+<h3>Chapter 3: One Story at a Time</h3>
+<p>He proved it by handing Dev a small tin soldier and telling him its whole history — a father's gift to a son heading off to war, passed down twice, finally donated by a great-granddaughter who couldn't bear to throw it out. Dev bought it, not for the object, but for the story now attached to it too. He understood the shop's rule completely by the time he left.</p>
+`
+},
+{
+  title: "The Rope Bridge Built in a Single Afternoon",
+  author: "Khyati Srivastava",
+  slug: "the-rope-bridge-built-in-a-single-afternoon",
+  category: "Adventure",
+  emoji: "🌉",
+  excerpt: "When the old footbridge washes out in a storm, the whole neighborhood of kids decides they can't wait for the city to fix it. They have one afternoon and a lot of rope.",
+  created_at: "2027-04-06T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: The Bridge Is Gone</h3>
+<p>The storm had taken the old wooden footbridge clean off its supports overnight, leaving the creek's two neighborhoods cut off from each other with the city promising repairs "sometime this season." A dozen kids decided that wasn't good enough.</p>
+
+<h3>Chapter 2: An Ambitious Plan</h3>
+<p>Between them they had rope, old plywood, and Ravi's dad's expired-but-still-good climbing knowledge from a college outdoor club. What they didn't have was any real idea whether a homemade rope bridge could actually hold weight safely.</p>
+
+<h3>Chapter 3: Testing It Right</h3>
+<p>They built it carefully under adult supervision, tested it first with sandbags, then with the lightest kid, then finally crossed it properly together, cheering the whole way. It held for exactly the eleven days it took the city crew to finish real repairs — eleven days the whole neighborhood spent bragging about the bridge they'd built themselves.</p>
+`
+},
+{
+  title: "The Hike That Took the Wrong Kind of Longer",
+  author: "Khyati Srivastava",
+  slug: "the-hike-that-took-the-wrong-kind-of-longer",
+  category: "Adventure",
+  emoji: "🥾",
+  excerpt: "A 'quick two-mile loop' turns into a six-hour ordeal when the trail markers lead the wrong way. What could've been a disaster becomes the family's favorite camping story.",
+  created_at: "2027-04-06T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Simple Loop</h3>
+<p>Dad had promised a "quick two-mile loop" before lunch. Three hours in, with no lunch and no loop in sight, twelve-year-old Priya started keeping a very pointed count of exactly how "quick" this had turned out to be.</p>
+
+<h3>Chapter 2: Off Course</h3>
+<p>A faded, misleading trail marker had sent them down an old, unmaintained fork instead of the main loop, six extra miles of increasingly rocky, unfamiliar terrain that tested the whole family's patience and snack supply equally.</p>
+
+<h3>Chapter 3: An Unexpected Bonding Trip</h3>
+<p>They finally found the right trail at golden hour, exhausted, starving, and — somehow — laughing harder than they had all trip about Dad's confident wrong turns. That "quick loop" became the story told at every family gathering since, always ending the same way: "and that's the last time we trust Dad's map-reading."</p>
+`
+},
+{
+  title: "Clementine the Cow Who Escaped for Better Grass",
+  author: "Khyati Srivastava",
+  slug: "clementine-the-cow-who-escaped-for-better-grass",
+  category: "Animals",
+  emoji: "🐄",
+  excerpt: "Clementine the cow has escaped her pasture eleven times this year, always heading for the exact same patch of clover across the road. The farmer finally investigates why.",
+  created_at: "2027-04-06T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Escape Number Eleven</h3>
+<p>Farmer Delgado had patched the pasture fence eleven times that year, always in the same spot, always after Clementine turned up grazing contentedly on the neighbor's clover patch across the road like she owned the place.</p>
+
+<h3>Chapter 2: A Suspicious Pattern</h3>
+<p>His daughter Mila pointed out something he'd overlooked: Clementine never wandered randomly. She always crossed at the exact same gap, always for the exact same patch, ignoring perfectly good grass much closer to home the whole time.</p>
+
+<h3>Chapter 3: The Sweetest Grass</h3>
+<p>A soil test finally explained it: the neighbor's patch, thanks to old drainage differences, grew genuinely sweeter clover than their own pasture ever could. Rather than keep patching fences forever, Delgado struck a deal with his neighbor and reseeded his own field with the same variety. Clementine, satisfied at last, has stayed put ever since — mostly.</p>
+`
+},
+{
+  title: "Pixel the Cat Who Adopted a Family of Ducklings",
+  author: "Khyati Srivastava",
+  slug: "pixel-the-cat-who-adopted-a-family-of-ducklings",
+  category: "Animals",
+  emoji: "🐥",
+  excerpt: "When a mother duck goes missing, five orphaned ducklings imprint on the last creature anyone expected: the neighborhood's grumpiest cat, Pixel.",
+  created_at: "2027-04-06T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unlikely Situation</h3>
+<p>Pixel had a well-earned reputation as the grumpiest cat on the block, hissing at dogs, squirrels, and most humans on principle. Nobody expected the five newly orphaned ducklings, mother nowhere to be found, to imprint on him within the hour.</p>
+
+<h3>Chapter 2: Reluctant Guardian</h3>
+<p>Pixel's first instinct was clearly to leave. His second, somehow, was to simply sit very still and let them pile against his fur, which turned out to be exactly what five scared, cold ducklings needed most.</p>
+
+<h3>Chapter 3: A Strange New Reputation</h3>
+<p>By the time the wildlife rescue arrived to relocate the ducklings to a proper sanctuary, Pixel had spent three days marching them around the yard like a tiny, feathered parade, hissing at anything that got too close to his new charges. He went right back to being grumpy afterward. The neighborhood has never quite looked at him the same way since.</p>
+`
+},
+{
+  title: "Denny's Six-Hour Hiccup Championship",
+  author: "Khyati Srivastava",
+  slug: "dennys-six-hour-hiccup-championship",
+  category: "Comedy",
+  emoji: "🏆",
+  excerpt: "Convinced he's destined for hiccup greatness, Denny trains for three weeks and documents an impressive six-hour hiccup streak. He forgets to check what the actual record is first.",
+  created_at: "2027-04-06T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Bold Ambition</h3>
+<p>Denny had hiccuped for four straight hours once, purely by accident, and decided this was clearly a sign he was destined for greatness. He trained — if you could call eating spicy food and holding his breath "training" — for three solid weeks.</p>
+
+<h3>Chapter 2: The Big Attempt</h3>
+<p>He hiccuped, documented on camera by his patient younger sister, for an impressive six hours and twelve minutes, thoroughly exhausting himself and everyone forced to listen to it in the process.</p>
+
+<h3>Chapter 3: A Deflating Discovery</h3>
+<p>Only afterward did he look up the actual world record: sixty-eight years, set by a man in the 1920s. Six hours, it turned out, wasn't even close. Denny declared himself, with impressive confidence, "unofficial neighborhood champion" instead, and retired from competitive hiccuping permanently that same afternoon.</p>
+`
+},
+{
+  title: "The Group Chat That Planned the Wrong Party",
+  author: "Khyati Srivastava",
+  slug: "the-group-chat-that-planned-the-wrong-party",
+  category: "Comedy",
+  emoji: "🎈",
+  excerpt: "Two separate group chats, both named 'Party Planning,' both planning surprise parties for two entirely different Sams. The overlap in the RSVP list causes total chaos.",
+  created_at: "2027-04-06T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Two Sams, Two Parties</h3>
+<p>Nobody noticed the problem until it was almost too late: two separate friend groups, each planning a surprise party for a different Sam, both named their planning chats "Party Planning," and three unlucky friends belonged to both.</p>
+
+<h3>Chapter 2: The Overlap</h3>
+<p>Those three friends had been quietly RSVPing to both chats without realizing they were different parties entirely, resulting in a genuinely baffling week of conflicting cake orders, decoration colors, and guest counts nobody could reconcile.</p>
+
+<h3>Chapter 3: Untangling the Mess</h3>
+<p>It finally unraveled during a group call where both Sams, confused, joined at the same time — leading to a full ten minutes of chaos before anyone figured out there were two entire separate surprises happening. Both parties still happened, one week apart, and both Sams agreed it was the funniest thing that had happened to either of them all year.</p>
+`
+},
+{
+  title: "The Miller's Son Who Traded His Shadow",
+  author: "Khyati Srivastava",
+  slug: "the-millers-son-who-traded-his-shadow",
+  category: "Fairytale",
+  emoji: "🌑",
+  excerpt: "A traveling merchant offers the miller's son riches for something he thinks he'll never miss: his shadow. He learns quickly just how much a shadow is worth.",
+  created_at: "2027-04-06T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Tempting Offer</h3>
+<p>The traveling merchant's offer seemed almost too good: a purse of gold for something Toma barely thought about, his own shadow, gone with a single signature. He signed without hesitation, already imagining what the gold could buy.</p>
+
+<h3>Chapter 2: Life Without a Shadow</h3>
+<p>The trouble started small — children pointing and whispering, a shopkeeper refusing to serve someone who "clearly wasn't quite right." Without his shadow, Toma found himself quietly excluded from ordinary life in ways he'd never once considered.</p>
+
+<h3>Chapter 3: Buying It Back</h3>
+<p>He spent every coin of the gold tracking the merchant down again, offering everything he had left for the shadow's return. The merchant, satisfied by the lesson taught, handed it back for free. "You paid enough already," he said. Toma never took a shadow — or anything else that seemed too easy — for granted again.</p>
+`
+},
+{
+  title: "The Baker Who Kneaded Memories Into Bread",
+  author: "Khyati Srivastava",
+  slug: "the-baker-who-kneaded-memories-into-bread",
+  category: "Fairytale",
+  emoji: "🍞",
+  excerpt: "Every loaf from the corner bakery carries a faint trace of a happy memory, kneaded in by the baker's careful hands. One customer keeps coming back for a memory that isn't even hers.",
+  created_at: "2027-04-06T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Bread With Something Extra</h3>
+<p>The baker, Old Marisol, kneaded a faint trace of her own happiest memories into every loaf — a summer picnic, a wedding dance, a child's first steps — and customers always left feeling warmer than bread alone should make anyone feel.</p>
+
+<h3>Chapter 2: A Regular's Secret</h3>
+<p>One young widow, Elena, kept returning for the same particular loaf, week after week, insisting it carried a memory of a garden she'd never actually visited — sunflowers, a wooden swing, laughter that wasn't quite her own.</p>
+
+<h3>Chapter 3: Whose Memory It Really Was</h3>
+<p>Marisol finally admitted it: that loaf carried her late husband's favorite childhood memory, baked in every week since he passed as her own quiet way of keeping it alive. Elena, it turned out, had simply needed borrowed happiness for a while — and Marisol, hearing that, felt her memory had finally found the right home to rest in.</p>
+`
+},
+{
+  title: "The Wall of Beautiful Mistakes",
+  author: "Khyati Srivastava",
+  slug: "the-wall-of-beautiful-mistakes",
+  category: "Inspirational",
+  emoji: "🖼️",
+  excerpt: "Ms. Alvarez pins up a bulletin board titled 'Mistakes We're Proud Of.' Perfectionist Nadia thinks it's the worst idea her teacher's ever had — until she has to admit her own.",
+  created_at: "2027-04-06T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Strange New Bulletin Board</h3>
+<p>Ms. Alvarez unveiled it on a Monday: a bulletin board titled, in bright bold letters, "Mistakes We're Proud Of," inviting students to pin up something they'd gotten wrong and what they'd learned from it. Nadia, who'd never once turned in imperfect work, thought it sounded mortifying.</p>
+
+<h3>Chapter 2: Everyone Else Was Doing It</h3>
+<p>Within a week, the board filled with confessions — a wrong science hypothesis that led somewhere more interesting, a spelling bee flub that taught someone to actually enjoy words instead of fearing them. Nadia had nothing pinned up. She also, increasingly, had nothing to say when classmates asked why.</p>
+
+<h3>Chapter 3: Her Own Pin</h3>
+<p>She finally admitted, in shaky handwriting, the wrong answer she'd once given so confidently in front of the whole class — and how humiliated she'd felt for weeks afterward over something nobody else even remembered. Pinning it up felt like the scariest thing she'd done all year. It was also, by far, the lightest she'd felt in months.</p>
+`
+},
+{
+  title: "The Marathon Volunteer Who Never Ran a Step",
+  author: "Khyati Srivastava",
+  slug: "the-marathon-volunteer-who-never-ran-a-step",
+  category: "Inspirational",
+  emoji: "🥤",
+  excerpt: "Too young to run the charity marathon herself, ten-year-old Aisha volunteers at the water station instead — and discovers her small job matters more than she expected.",
+  created_at: "2027-04-06T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Too Young to Run</h3>
+<p>Aisha had watched her older brother train for the charity marathon all spring, disappointed she was still too young to register for the race herself. Volunteering at mile eighteen's water station felt, at first, like a consolation prize.</p>
+
+<h3>Chapter 2: A Front-Row Seat to Exhaustion</h3>
+<p>By mid-morning, she understood mile eighteen was where runners' faces changed — past the excitement of the start, not yet close enough to see the finish, just pure, grinding exhaustion in every passing stride.</p>
+
+<h3>Chapter 3: The Value of a Cup of Water</h3>
+<p>She started calling out names off runners' bibs as she handed them cups, and watched, again and again, exhausted faces light up just slightly at hearing their own name shouted with genuine enthusiasm. One runner told her afterward that her cheer had been the exact thing that got him through the wall. Aisha never once ran a step of that marathon. She still counts it among her proudest days.</p>
+`
+},
+{
+  title: "The Voicemail Nobody Deleted",
+  author: "Khyati Srivastava",
+  slug: "the-voicemail-nobody-deleted",
+  category: "Drama",
+  emoji: "📞",
+  excerpt: "Dad's old voicemail greeting is still on the family phone line, two years after he moved out. Nobody's brought it up. Nobody's changed it either.",
+  created_at: "2027-04-06T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Old Greeting</h3>
+<p>Two years after the divorce, the home phone's voicemail still played Dad's familiar recorded greeting — "You've reached the Alvarez family, we can't come to the phone right now" — a small, strange holdover nobody had gotten around to changing.</p>
+
+<h3>Chapter 2: Unspoken Reasons</h3>
+<p>Twelve-year-old Rosa had noticed it a hundred times and never mentioned it, half-convinced her mom simply hadn't remembered it existed, half-suspecting she actually had and just hadn't been ready to erase it.</p>
+
+<h3>Chapter 3: Finally Asking</h3>
+<p>She finally asked, gently, one ordinary Tuesday. Her mom's answer was quieter than expected: "I know it's still his voice. I think I just wasn't ready to make the house sound like he was never here." They recorded a new greeting together that weekend — Rosa's voice this time, cheerful and current — and it felt, both of them agreed, like exactly the right kind of goodbye.</p>
+`
+},
+{
+  title: "The Team Captain Who Wasn't the Best Player",
+  author: "Khyati Srivastava",
+  slug: "the-team-captain-who-wasnt-the-best-player",
+  category: "Drama",
+  emoji: "⚽",
+  excerpt: "The coach picks Marisol as captain over two clearly better players. Marisol spends the whole season wondering if the team quietly agrees she doesn't deserve it.",
+  created_at: "2027-04-06T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unexpected Choice</h3>
+<p>Marisol wasn't the fastest player on the soccer team, or the strongest kicker, facts she was well aware of the moment Coach Reyes announced her as captain over two objectively more talented teammates.</p>
+
+<h3>Chapter 2: Doubt on the Field</h3>
+<p>She spent the first several games convinced everyone was quietly questioning the decision, overcompensating with nervous, overly cautious captaincy that helped no one, least of all herself.</p>
+
+<h3>Chapter 3: What Captaincy Actually Meant</h3>
+<p>It was a tough loss, not a win, that finally taught her the difference — watching how she instinctively rallied the team's spirits afterward, finding the right words when everyone else had gone quiet and discouraged. Coach Reyes hadn't picked his best player. He'd picked the one who made everyone else play better. By season's end, Marisol finally understood why.</p>
+`
+},
+{
+  title: "The Recipe Card in Two Different Handwritings",
+  author: "Khyati Srivastava",
+  slug: "the-recipe-card-in-two-different-handwritings",
+  category: "Romance",
+  emoji: "💑",
+  excerpt: "Tucked in an old cookbook, a recipe card shows two different handwritings — corrections, additions, little notes back and forth. Mira wants to know whose story it tells.",
+  created_at: "2027-04-06T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Strange Recipe Card</h3>
+<p>Mira found it tucked inside a secondhand cookbook: a recipe for apple cake written in careful cursive, corrected in a completely different, looser handwriting — <em>"too much cinnamon, trust me"</em> — scrawled in the margin like an ongoing joke.</p>
+
+<h3>Chapter 2: Piecing Together a Story</h3>
+<p>More notes covered the back, clearly a years-long back-and-forth between two people who'd made this cake together many times, teasing corrections layered over teasing corrections, warmth obvious in every crossed-out word.</p>
+
+<h3>Chapter 3: Baking It Herself</h3>
+<p>She never learned who the two handwritings belonged to. She baked the cake anyway, cinnamon reduced exactly as suggested, and left her own small note in the margin before donating the cookbook back to the same secondhand shop — a stranger's love story, quietly continued, for whoever found it next.</p>
+`
+},
+{
+  title: "Held Up by the Same Umbrella Twice",
+  author: "Khyati Srivastava",
+  slug: "held-up-by-the-same-umbrella-twice",
+  category: "Romance",
+  emoji: "☔",
+  excerpt: "A stranger shared his umbrella with Wren once, years ago, in a downpour neither expected. She never got his name. Today, in another sudden storm, she recognizes the umbrella first.",
+  created_at: "2027-04-06T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Memory From Years Ago</h3>
+<p>Wren had never forgotten it: a sudden downpour at fourteen, soaked and stranded at the bus stop, until a boy about her age silently offered half his umbrella without a word, walked her three blocks, and vanished into the rain before she got his name.</p>
+
+<h3>Chapter 2: Recognizing the Umbrella</h3>
+<p>Years later, caught in another sudden storm, she spotted it before she spotted him — the same faded, mismatched-panel umbrella, unmistakably patched in the same odd spot, held by someone who looked startlingly familiar.</p>
+
+<h3>Chapter 3: Finally Introducing Themselves</h3>
+<p>"You held this exact umbrella over a very wet fourteen-year-old, years ago," she said, more statement than question. He laughed, recognition dawning slowly. "That was you?" This time, they exchanged names before the rain even let up — an introduction eight years overdue, and worth every bit of the wait.</p>
+`
+},
+{
+  title: "The Blanket Fort That Took Over the Living Room",
+  author: "Khyati Srivastava",
+  slug: "the-blanket-fort-that-took-over-the-living-room",
+  category: "Kids",
+  emoji: "🏰",
+  excerpt: "What started as a one-night blanket fort has now survived four days, three near-collapses, and one extremely determined family council vote to keep it standing.",
+  created_at: "2027-04-06T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: One Night Only, Supposedly</h3>
+<p>The blanket fort was originally supposed to come down the next morning. Four days later, reinforced with extra couch cushions and an ambitious second "watchtower" room, it showed absolutely no signs of being dismantled anytime soon.</p>
+
+<h3>Chapter 2: Near Collapse</h3>
+<p>It survived three genuine crises — a rogue vacuum cleaner incident, an overly enthusiastic dog, and one structurally questionable chair swap — each time rebuilt slightly stronger and slightly more ambitious than before.</p>
+
+<h3>Chapter 3: A Family Vote</h3>
+<p>When Mom finally suggested it was time to reclaim the living room, the kids called an emergency family council and won, 3 votes to 2, an official one-week extension. The fort ultimately lasted eleven days total — a household record nobody has come close to breaking since.</p>
+`
+},
+{
+  title: "The Kid Who Ran a Library Out of a Wagon",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-ran-a-library-out-of-a-wagon",
+  category: "Kids",
+  emoji: "📚",
+  excerpt: "Every Saturday, eight-year-old Theo pulls his little red wagon full of books door to door, lending them out on the honor system. His 'library' has more regulars than he expected.",
+  created_at: "2027-04-06T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Wagon Full of Books</h3>
+<p>Theo's "Wagon Library" started with twelve of his own outgrown books, pulled down the street every Saturday morning, lent out on nothing more than a promise to bring them back the following week.</p>
+
+<h3>Chapter 2: A Growing Collection</h3>
+<p>Neighbors started donating books instead of just borrowing them, and within two months his wagon had swelled to nearly sixty titles, carefully organized by Theo's own idiosyncratic system: "funny," "scary," "makes you think," and — his personal favorite category — "has a dog in it."</p>
+
+<h3>Chapter 3: Regulars</h3>
+<p>By summer's end, Theo had eleven regular "customers," including Mr. Patterson, who'd rediscovered a love of mystery novels at seventy-three thanks entirely to a determined eight-year-old and his little red wagon. The real library downtown eventually gave him a small shelf of donated overstock, permanently, just to keep the wagon rolling.</p>
+`
+},
+{
+  title: "The House That Counts Its Visitors",
+  author: "Khyati Srivastava",
+  slug: "the-house-that-counts-its-visitors",
+  category: "Horror",
+  emoji: "🚪",
+  excerpt: "A faint scratch appears on the doorframe every time someone enters the old rental house — one for each visitor. The new tenants counted eleven scratches on move-in day. They'd had exactly ten guests.",
+  created_at: "2027-04-06T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Curious Detail</h3>
+<p>The scratches on the doorframe were easy to miss at first, thin and faint, until Priya started actually counting them out of idle curiosity during the move-in chaos: exactly eleven, spaced evenly, clearly deliberate rather than accidental damage.</p>
+
+<h3>Chapter 2: A Miscount, or Not</h3>
+<p>She counted their moving-day guests carefully afterward — movers, her parents, two helpful neighbors, herself and her brother — exactly ten people had entered that door since morning. The scratches read eleven.</p>
+
+<h3>Chapter 3: Living With the Number</h3>
+<p>Priya has kept a private tally ever since, checking the doorframe every so often against her own careful visitor count. It has never once matched exactly — always one ahead, patient and unhurried, as if someone, or something, keeps getting counted that nobody in the family has ever actually seen arrive.</p>
+`
+},
+{
+  title: "The Nightlight That Only Works for Strangers",
+  author: "Khyati Srivastava",
+  slug: "the-nightlight-that-only-works-for-strangers",
+  category: "Horror",
+  emoji: "🔦",
+  excerpt: "The hallway nightlight has never once worked for anyone in the family — dead bulb, faulty wiring, nothing fixes it. It works perfectly fine for every single guest who's ever stayed the night.",
+  created_at: "2027-04-06T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Always Broken, For Us</h3>
+<p>The Delgado family had replaced that hallway nightlight's bulb four times, rewired the outlet twice, and even swapped the whole fixture once — nothing ever made it work, not for a single member of the family, not once in six years.</p>
+
+<h3>Chapter 2: A Strange Exception</h3>
+<p>Every overnight guest, without exception, reported it glowing softly and normally through the night — cousins, friends, even the exterminator who'd stayed late during a storm once. Only the family's own nightly walks past it stayed dark.</p>
+
+<h3>Chapter 3: An Uneasy Peace</h3>
+<p>Nobody in the family has ever gotten a satisfying explanation, and at this point, nobody really tries anymore. They've simply adjusted — leaving a real flashlight by the stairs for themselves, while the nightlight keeps doing its strange, selective job for whoever it apparently considers a proper guest.</p>
+`
+},
+{
+  title: "The Chalk Drawings That Wash Away Last",
+  author: "Khyati Srivastava",
+  slug: "the-chalk-drawings-that-wash-away-last",
+  category: "Poetry",
+  emoji: "🖍️",
+  excerpt: "A poem about sidewalk chalk art, and the strange, small magic of drawings that outlast the rain just long enough to matter.",
+  created_at: "2027-04-06T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Chalk Drawings That Wash Away Last</h3>
+<p>We drew the sun in yellow chalk,<br/>
+right where the whole street likes to walk,<br/>
+we drew a dog with mismatched legs,<br/>
+and hopscotch squares like cracked-open eggs.</p>
+
+<p>The rain came Tuesday, soft at first,<br/>
+and most of it faded, color dispersed,<br/>
+but the sun held on a little more,<br/>
+bright even blurred, right by our door.</p>
+
+<p>By Wednesday it too had gone quite pale,<br/>
+just a shadow of a chalk-drawn tale,<br/>
+but we remember exactly where it stood —<br/>
+some drawings don't have to last for good.</p>
+
+<p>We'll draw again when the sidewalk dries,<br/>
+new suns, new dogs, new hopscotch skies,<br/>
+that's the whole secret chalk understands:<br/>
+it's never really about what stands.</p>
+`
+},
+{
+  title: "The Jar of Fireflies We Always Let Go",
+  author: "Khyati Srivastava",
+  slug: "the-jar-of-fireflies-we-always-let-go",
+  category: "Poetry",
+  emoji: "✨",
+  excerpt: "A summer-evening poem about catching fireflies in a jar, and the quiet, deliberate joy of always setting them free again before bedtime.",
+  created_at: "2027-04-06T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Jar of Fireflies We Always Let Go</h3>
+<p>We chase them barefoot through the yard,<br/>
+each little glow blinking on its guard,<br/>
+cupped hands, quick and gentle and slow,<br/>
+into a jar with holes punched for air to flow.</p>
+
+<p>We count them glowing, six, then ten,<br/>
+a hundred tiny lanterns, and then again,<br/>
+we watch them blink their small silent song,<br/>
+and never, ever, keep them long.</p>
+
+<p>Before the porch light calls us in,<br/>
+we twist the lid and let them begin<br/>
+their scattered rise back to the trees,<br/>
+gold sparks lifting on the summer breeze.</p>
+
+<p>Some things are meant for catching, not keeping,<br/>
+a jar of light while the whole yard's sleeping,<br/>
+and letting go, each and every time,<br/>
+is half the reason the catching feels sublime.</p>
+`
+},
 ];
