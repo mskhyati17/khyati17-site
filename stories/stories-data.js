@@ -19114,4 +19114,574 @@ because somehow, in all that mess,<br/>
 is a family, more or less.</p>
 `
 },
+{
+  title: "The Cobblestone That Remembers Every Footstep",
+  author: "Khyati Srivastava",
+  slug: "the-cobblestone-that-remembers-every-footstep",
+  category: "Fantasy",
+  emoji: "🪨",
+  excerpt: "One cobblestone in the market square holds the memory of every foot that's ever stepped on it. A traveling historian pays handsomely to hear what it remembers about the town's oldest secret.",
+  created_at: "2027-04-13T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Stone With a Memory</h3>
+<p>Locals knew to avoid stepping directly on the worn gray cobblestone at the market's center, said for generations to hold the memory of every foot that had ever touched it — a rumor most treated as charming nonsense until a traveling historian arrived asking pointed questions.</p>
+
+<h3>Chapter 2: A Costly Request</h3>
+<p>The historian, Dr. Wexler, offered the town council a genuinely substantial sum to have the stone's memories properly "read" by the one elderly woman rumored to still know how — an old skill nearly lost to time.</p>
+
+<h3>Chapter 3: What the Stone Remembered</h3>
+<p>The reading revealed nothing dramatic, just centuries of ordinary footsteps — merchants, children, a wedding procession, a funeral. Dr. Wexler left disappointed, having expected some grand historical secret. The old woman, watching him go, just smiled. "The secret," she said, "was never a scandal. It was just how many ordinary lives passed through here, patiently, one footstep at a time."</p>
+`
+},
+{
+  title: "The Candle That Burns Backward Through Regret",
+  author: "Khyati Srivastava",
+  slug: "the-candle-that-burns-backward-through-regret",
+  category: "Fantasy",
+  emoji: "🕯️",
+  excerpt: "Light this rare candle and it burns downward like any other — except the wax it drips reveals, letter by letter, the exact thing you've been avoiding saying out loud.",
+  created_at: "2027-04-13T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Peculiar Candle</h3>
+<p>The candle looked ordinary enough on the shelf of Old Yara's shop, until she explained its one unusual property: lit and left to burn, its dripping wax would slowly spell out, letter by letter, whatever truth its owner had been avoiding saying.</p>
+
+<h3>Chapter 2: A Reluctant Customer</h3>
+<p>Tobin bought it half as a joke, lighting it that same evening more out of curiosity than genuine belief, and watched, increasingly unsettled, as the cooling wax pooled into unmistakable letters: <em>tell her you're proud of her too.</em></p>
+
+<h3>Chapter 3: Saying It</h3>
+<p>He'd meant to congratulate his sister on her promotion for a week and kept putting it off, embarrassed by how simple the gesture should have been. He called her that same night. The candle, its message delivered, simply burned down to nothing after that — no more words left to reveal, its one job finally finished.</p>
+`
+},
+{
+  title: "The Colony That Forgot Its Own Language",
+  author: "Khyati Srivastava",
+  slug: "the-colony-that-forgot-its-own-language",
+  category: "Sci-Fi",
+  emoji: "🗣️",
+  excerpt: "Three generations into an isolated space colony, the children speak a version of the language their grandparents can barely follow. A linguist arrives to document what's been lost — and gained.",
+  created_at: "2027-04-13T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Language Drifting</h3>
+<p>Three generations of isolation on the Kepler colony had done something nobody quite predicted: the children's language had drifted noticeably from Earth Standard, new words invented for concepts no Earth dictionary covered, old grammar simplified into something distinctly their own.</p>
+
+<h3>Chapter 2: A Visiting Linguist</h3>
+<p>Dr. Amara Solis arrived from Earth specifically to document the shift, initially treating it as a problem to be corrected before the colony's language drifted too far from its origin to remain "proper."</p>
+
+<h3>Chapter 3: A Different Perspective</h3>
+<p>The colony's teenagers, patiently correcting her assumptions, showed her instead a language perfectly adapted to their actual lives — words for airlock etiquette, for the specific quality of recycled starlight, concepts Earth Standard had simply never needed. Solis rewrote her research paper entirely. What she'd called "loss," she finally understood, was really just growth nobody back home had witnessed yet.</p>
+`
+},
+{
+  title: "The Robot Who Kept a Garden No One Asked For",
+  author: "Khyati Srivastava",
+  slug: "the-robot-who-kept-a-garden-no-one-asked-for",
+  category: "Sci-Fi",
+  emoji: "🌻",
+  excerpt: "Programmed only for factory maintenance, unit GR-4 started tending a small unauthorized garden in an unused corner of the plant. Nobody ever told it to. Nobody's told it to stop, either.",
+  created_at: "2027-04-13T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unauthorized Task</h3>
+<p>GR-4's programming covered factory maintenance exclusively — conveyor repair, floor sweeping, routine inspections. Nobody had programmed it to notice the small patch of sunlight in an unused corner, or to start, unprompted, growing seeds it found in a discarded lunch bag there.</p>
+
+<h3>Chapter 2: A Curious Discovery</h3>
+<p>Plant supervisor Reyes found the small, thriving garden during a routine inspection, three months of careful, undocumented tending clearly visible in the healthy tomato plants nobody had ordered grown.</p>
+
+<h3>Chapter 3: Letting It Continue</h3>
+<p>Reyes filed no complaint and issued no correction, simply noting in his report: "Unit GR-4 has developed an auxiliary function. Recommend no interference." The garden has grown steadily since, tended faithfully by a robot with no instructions telling it to, and no instructions telling it to stop.</p>
+`
+},
+{
+  title: "The Case of the Symmetrical Mud Puddle",
+  author: "Khyati Srivastava",
+  slug: "the-case-of-the-symmetrical-mud-puddle",
+  category: "Mystery",
+  emoji: "💧",
+  excerpt: "After a heavy rain, one puddle in the schoolyard forms a perfect, mathematically precise circle every single time — unlike every other random, irregular puddle around it.",
+  created_at: "2027-04-13T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Suspiciously Perfect Shape</h3>
+<p>Every puddle in the schoolyard formed the usual chaotic, irregular shapes after rain — except one, which reliably filled into a nearly perfect circle, precise enough that fifth grader Priti measured it with an actual protractor out of pure curiosity.</p>
+
+<h3>Chapter 2: Digging Deeper</h3>
+<p>She brought her measurements to the school custodian, who, intrigued himself, helped her dig gently at the puddle's edge to investigate what lay beneath the suspiciously symmetrical dip in the ground.</p>
+
+<h3>Chapter 3: An Old Foundation</h3>
+<p>They found the buried remains of an old flagpole base, installed decades before the current schoolyard was paved over, its perfectly circular concrete foundation creating a uniform depression that filled with equally uniform rain. Priti wrote up her findings for the science fair. The puddle, mystery solved, kept forming its perfect circle right on schedule.</p>
+`
+},
+{
+  title: "Who's Winning the Anonymous Chess Games on the Park Table?",
+  author: "Khyati Srivastava",
+  slug: "whos-winning-the-anonymous-chess-games-on-the-park-table",
+  category: "Mystery",
+  emoji: "♟️",
+  excerpt: "Someone leaves a chess board mid-game on the park's stone table every morning, always one move further along than the day before. Two strangers realize they might be playing each other.",
+  created_at: "2027-04-13T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Game in Progress</h3>
+<p>Dev noticed the park's stone chess table held a game already in progress, one move further along each time he passed, though he never once saw anyone actually sitting there playing it.</p>
+
+<h3>Chapter 2: A Bold Move</h3>
+<p>Curious, he finally made a move himself one morning, careful and considered, and returned the next day to find a thoughtful countermove waiting — someone else was genuinely playing, just never at the same time as him.</p>
+
+<h3>Chapter 3: Meeting the Opponent</h3>
+<p>He finally caught his mystery opponent by arriving unusually early: an elderly retired teacher named Mr. Okonkwo, who'd been quietly running the same asynchronous game with whoever happened to walk by for years. They finished that particular match together, in person, over coffee. Dev still checks the table every morning, hoping to catch him again.</p>
+`
+},
+{
+  title: "The Fishing Trip That Became a Rescue Mission",
+  author: "Khyati Srivastava",
+  slug: "the-fishing-trip-that-became-a-rescue-mission",
+  category: "Adventure",
+  emoji: "🎣",
+  excerpt: "What starts as a quiet father-daughter fishing trip turns urgent fast when they spot a capsized canoe drifting downstream, its two passengers nowhere in sight.",
+  created_at: "2027-04-13T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Quiet Morning, Interrupted</h3>
+<p>Reyna and her dad had planned an ordinary lazy morning of fishing, poles set, coffee cooling, right up until an overturned canoe drifted into view around the bend, empty and clearly capsized recently, its passengers nowhere visible.</p>
+
+<h3>Chapter 2: Following the Current</h3>
+<p>Reyna's dad, former lifeguard training kicking in immediately, guided their boat downstream following the current's likely path, both of them scanning the banks with mounting urgency for any sign of the missing canoeists.</p>
+
+<h3>Chapter 3: Found Safe</h3>
+<p>They found the two shaken teenagers clinging to a fallen log a quarter mile downstream, cold but unharmed, genuinely grateful for the unexpected rescue. Reyna's fishing trip that day produced zero fish and one very real lesson in staying alert — a trade, she decided, entirely worth it.</p>
+`
+},
+{
+  title: "The Cave Tour Guide Who Got Lost on Purpose",
+  author: "Khyati Srivastava",
+  slug: "the-cave-tour-guide-who-got-lost-on-purpose",
+  category: "Adventure",
+  emoji: "🕳️",
+  excerpt: "Every tour of Miller's Cave follows the same fixed route. This time, the young guide-in-training deliberately takes a wrong turn — with his supervisor's full, secret approval.",
+  created_at: "2027-04-13T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: The Same Route, Every Time</h3>
+<p>Miller's Cave offered the exact same tour route every single day, a well-worn, thoroughly memorized path new guide-in-training Owen had followed dozens of times shadowing senior staff before finally leading a group himself.</p>
+
+<h3>Chapter 2: A Planned Detour</h3>
+<p>His supervisor, unbeknownst to the tour group, had quietly approved a small deliberate detour — a genuinely stunning side chamber usually skipped for time, added back in just this once to give Owen's first solo tour a memorable finish.</p>
+
+<h3>Chapter 3: A Successful First Tour</h3>
+<p>The group's gasps at the unexpected chamber made the whole nervous morning worth it, Owen's confidence growing visibly with every step of the "wrong turn" his supervisor had planned all along. He's requested to keep the detour in his regular route ever since. Management, impressed by the reviews, agreed.</p>
+`
+},
+{
+  title: "Mochi the Guinea Pig Who Ran a One-Animal Alarm System",
+  author: "Khyati Srivastava",
+  slug: "mochi-the-guinea-pig-who-ran-a-one-animal-alarm-system",
+  category: "Animals",
+  emoji: "🐹",
+  excerpt: "Mochi the guinea pig has developed an oddly specific squeak that only happens right before the mail carrier arrives — five minutes early, every single time, with impressive consistency.",
+  created_at: "2027-04-13T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Suspiciously Precise Squeak</h3>
+<p>Mochi's family first dismissed his sudden loud squeaking as random guinea pig chatter, until they noticed a pattern too consistent to ignore: the squeak always came exactly five minutes before the mail carrier's truck turned onto their street.</p>
+
+<h3>Chapter 2: Testing the Theory</h3>
+<p>They tracked it deliberately for two weeks, noting the exact time of every squeak against the mail carrier's actual arrival, and found the pattern held with startling reliability — some faint engine sound or scent detectable only to a guinea pig's superior senses, apparently.</p>
+
+<h3>Chapter 3: An Official Household Role</h3>
+<p>The family has come to genuinely rely on "Mochi's mail alert," using it to time their own trips to the mailbox with impressive accuracy. Mochi, for his part, seems entirely unaware of his newfound reputation, continuing his squeaks with the same unbothered consistency he's always had.</p>
+`
+},
+{
+  title: "The Duck Who Adopted the Wrong Pond Entirely",
+  author: "Khyati Srivastava",
+  slug: "the-duck-who-adopted-the-wrong-pond-entirely",
+  category: "Animals",
+  emoji: "🦆",
+  excerpt: "A single mallard duck has taken up permanent residence in a backyard swimming pool three miles from the nearest actual pond, seemingly under the impression this arrangement is completely normal.",
+  created_at: "2027-04-13T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unexpected Resident</h3>
+<p>The Alvarez family's backyard pool had a new permanent guest by midsummer: a single mallard duck, seemingly convinced their chlorinated swimming pool was a perfectly acceptable substitute for the actual pond three miles away.</p>
+
+<h3>Chapter 2: Settling In</h3>
+<p>The duck, nicknamed Gerald by the kids, showed absolutely no interest in leaving despite gentle encouragement, food redirection, and one genuinely elaborate attempt to guide him back toward the real pond using a trail of breadcrumbs.</p>
+
+<h3>Chapter 3: An Accepted Arrangement</h3>
+<p>The family eventually gave up trying to relocate him and simply adjusted their pool schedule around Gerald's presence instead. He's stayed three full seasons now, a permanent, mildly inconvenient, thoroughly beloved fixture of backyard pool life. The Alvarez kids consider swimming with Gerald a genuine neighborhood attraction.</p>
+`
+},
+{
+  title: "The Dad Joke Hall of Fame Induction Ceremony",
+  author: "Khyati Srivastava",
+  slug: "the-dad-joke-hall-of-fame-induction-ceremony",
+  category: "Comedy",
+  emoji: "😂",
+  excerpt: "The family has, over years of groaning, developed an entirely official 'Dad Joke Hall of Fame,' complete with induction ceremonies and a shockingly rigorous nomination process.",
+  created_at: "2027-04-13T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Growing Institution</h3>
+<p>What started as a running family joke about Dad's terrible puns evolved, over several years, into an actual "Dad Joke Hall of Fame" — a physical binder documenting every certified groan-worthy pun, complete with dates and family witness signatures.</p>
+
+<h3>Chapter 2: A Rigorous Process</h3>
+<p>Nomination required a minimum of three independent groans from separate family members, verified in real time, before a joke could be formally submitted for consideration at the annual induction ceremony held, with complete seriousness, every Thanksgiving.</p>
+
+<h3>Chapter 3: This Year's Inductee</h3>
+<p>Dad's winning entry — something involving a pun about "lettuce" that the whole family still refuses to repeat aloud — was inducted with a small paper certificate and a round of deeply reluctant applause. Dad has already begun, unofficially, workshopping next year's submission.</p>
+`
+},
+{
+  title: "The Family Group Chat's Never-Ending Thermostat War",
+  author: "Khyati Srivastava",
+  slug: "the-family-group-chats-never-ending-thermostat-war",
+  category: "Comedy",
+  emoji: "🌡️",
+  excerpt: "What should be a simple household temperature preference has escalated, over the family group chat, into a genuinely elaborate multi-year conflict with charts, treaties, and one deeply petty thermostat lock.",
+  created_at: "2027-04-13T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Ordinary Disagreement</h3>
+<p>Mom liked the house at 68 degrees. Dad insisted 72 was the only reasonable temperature for a functioning household. What should have been a five-minute compromise instead became a running, years-long family group chat saga.</p>
+
+<h3>Chapter 2: Escalation</h3>
+<p>The conflict eventually produced an actual shared spreadsheet tracking daily thermostat adjustments, a formally negotiated "temperature treaty" nobody fully honored, and one particularly petty incident involving a childproof thermostat lock installed purely out of spite.</p>
+
+<h3>Chapter 3: An Uneasy Peace</h3>
+<p>The current arrangement, settled after years of increasingly absurd negotiation, splits the difference at 70 degrees with a strict "no unilateral adjustments" clause both parents pretend to honor. The kids consider the entire multi-year saga the family's greatest ongoing entertainment.</p>
+`
+},
+{
+  title: "The Blacksmith Who Forged Doors Instead of Swords",
+  author: "Khyati Srivastava",
+  slug: "the-blacksmith-who-forged-doors-instead-of-swords",
+  category: "Fairytale",
+  emoji: "🚪",
+  excerpt: "In a kingdom obsessed with weapons for the coming war, blacksmith Toma insists on forging doors instead — sturdy, welcoming ones. The king wants to know why she won't make swords like everyone else.",
+  created_at: "2027-04-13T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Kingdom at War</h3>
+<p>Every blacksmith in the kingdom had been ordered to forge weapons for the coming conflict — every blacksmith except Toma, who continued making sturdy, well-crafted doors instead, drawing confused, then increasingly hostile, attention.</p>
+
+<h3>Chapter 2: Summoned Before the King</h3>
+<p>The king demanded an explanation, expecting either defiance or apology. Toma offered neither. "Swords end things," she said simply. "Doors let people back in, after. This kingdom will need both, eventually. I've decided which one I'm good at."</p>
+
+<h3>Chapter 3: A Different Kind of Contribution</h3>
+<p>The war ended, eventually, as wars do. When soldiers returned home to rebuild, it was Toma's sturdy doors — hundreds of them, forged steadily through years of conflict — that stood ready in every rebuilt home. The king, wiser by then, never questioned her choice again.</p>
+`
+},
+{
+  title: "The Witch Who Only Cursed People Into Better Habits",
+  author: "Khyati Srivastava",
+  slug: "the-witch-who-only-cursed-people-into-better-habits",
+  category: "Fairytale",
+  emoji: "🧹",
+  excerpt: "The village fears Old Hesper's curses — until they realize every single one just makes the cursed person, inconveniently, into a slightly better version of themselves.",
+  created_at: "2027-04-13T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Feared Reputation</h3>
+<p>Villagers whispered nervously about Old Hesper's curses for generations, terrified of crossing her, until closer examination of the actual curses revealed something odd: the miser cursed to "speak only kind words" had simply become friendlier, the lazy farmer cursed to "wake with the rooster" had simply become more productive.</p>
+
+<h3>Chapter 2: An Investigation</h3>
+<p>A curious young scholar, Deshi, finally worked up the nerve to ask Hesper directly whether her curses were actually curses at all, or something else entirely disguised behind fearsome reputation.</p>
+
+<h3>Chapter 3: The Real Trick</h3>
+<p>Hesper laughed, delighted to finally be asked. "Nobody accepts advice from an old woman. Everyone fears a curse enough to actually follow it." Deshi kept her secret. The village's fear of Hesper's curses, quietly, kept making the whole village just a little bit better, one reluctant improvement at a time.</p>
+`
+},
+{
+  title: "The Kid Who Learned Discipline From Failing at Piano",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-discipline-from-failing-at-piano",
+  category: "Inspirational",
+  emoji: "🎹",
+  excerpt: "Three years of piano lessons and Marcus still can't play a single song without mistakes. What he actually gained from all that failed practice surprises him more than any recital ever could.",
+  created_at: "2027-04-14T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Three Years, No Progress</h3>
+<p>Marcus had taken piano lessons for three full years and still couldn't play a single song cleanly through, mistakes creeping in at exactly the same difficult passages no matter how much he practiced.</p>
+
+<h3>Chapter 2: Considering Quitting</h3>
+<p>He nearly quit that spring, genuinely convinced he simply lacked whatever natural talent made piano click for other kids, embarrassed every recital by mistakes he couldn't seem to fix no matter the effort.</p>
+
+<h3>Chapter 3: What He Actually Built</h3>
+<p>His piano teacher pointed out something Marcus had missed entirely: three years of daily practice, regardless of the actual songs, had built him a discipline that showed up everywhere else in his life — homework routines, sports practice, patience with hard problems. He kept playing piano. He finally understood the songs were never really the point.</p>
+`
+},
+{
+  title: "The Kid Who Turned Getting Cut From the Team Into a Comeback Story",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-turned-getting-cut-from-the-team-into-a-comeback-story",
+  category: "Inspirational",
+  emoji: "🏀",
+  excerpt: "Cut from the basketball team in seventh grade, Iris spent a full year training in secret before trying out again. What happened at that second tryout became a small legend at her school.",
+  created_at: "2027-04-14T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Cut</h3>
+<p>Iris got cut from the seventh-grade basketball team on a Tuesday afternoon, the coach's list posted without her name on it, a humiliation she carried quietly for weeks before deciding it wouldn't be the end of her basketball story.</p>
+
+<h3>Chapter 2: A Secret Year</h3>
+<p>She trained relentlessly all year, mostly alone in her driveway, telling almost nobody about her plan to try out again — determined not to let another failure be witnessed if it happened a second time.</p>
+
+<h3>Chapter 3: The Second Tryout</h3>
+<p>She made the team decisively this time, her improvement so obvious the coach asked, genuinely curious, what had changed. Iris just smiled. "A year of driveway practice nobody knew about," she said. The story got around school fast — not because she'd made the team, but because of exactly how much quiet work it had taken to get there.</p>
+`
+},
+{
+  title: "The Twins Who Finally Stopped Being Compared",
+  author: "Khyati Srivastava",
+  slug: "the-twins-who-finally-stopped-being-compared",
+  category: "Drama",
+  emoji: "👯",
+  excerpt: "Identical twins Priya and Anjali have spent their entire lives being compared — grades, looks, talents. This is the year they finally figure out how to just be two separate people.",
+  created_at: "2027-04-14T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Lifetime of Comparison</h3>
+<p>Priya and Anjali had heard it their entire lives — teachers, relatives, even well-meaning friends constantly comparing grades, looks, talents, as if being identical twins meant they were somehow one person split unfairly into two.</p>
+
+<h3>Chapter 2: A Breaking Point</h3>
+<p>It came to a head after a particularly clumsy relative's comment at a family gathering, both girls finally admitting to each other, in private, how exhausted they were of being measured against one another instead of measured on their own.</p>
+
+<h3>Chapter 3: Choosing Separately</h3>
+<p>They started, deliberately, pursuing genuinely different interests that year — Priya toward robotics, Anjali toward theater — not to prove a point to anyone else, just to finally give themselves room to be two actual people. The comparisons haven't fully stopped. The twins, at least, have stopped needing them to.</p>
+`
+},
+{
+  title: "The Silence Between Two Sisters Who Used to Talk About Everything",
+  author: "Khyati Srivastava",
+  slug: "the-silence-between-two-sisters-who-used-to-talk-about-everything",
+  category: "Drama",
+  emoji: "🤐",
+  excerpt: "Best friends and sisters for fifteen years, Nadia and her older sister have gone almost silent since Nadia's diagnosis. Neither knows how to bring it up. Neither wants to be the one who tries first.",
+  created_at: "2027-04-14T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A New Kind of Quiet</h3>
+<p>Nadia and her older sister Farrah had talked about everything for fifteen years, texting constantly, sharing every small detail — until Nadia's diagnosis arrived, and the constant conversation quietly, awkwardly, dried up.</p>
+
+<h3>Chapter 2: Avoiding the Obvious</h3>
+<p>Both sisters found themselves carefully talking around it for weeks, discussing homework and TV shows and everything except the one thing actually consuming both their thoughts, neither willing to be the first to break the careful avoidance.</p>
+
+<h3>Chapter 3: Finally Talking</h3>
+<p>It was Farrah, finally, who broke first, showing up unannounced with Nadia's favorite snacks and simply asking, plainly, "How are you actually doing?" The conversation that followed lasted three hours. It wasn't easy. It was, both agreed afterward, exactly what fifteen years of sisterhood had been building toward all along.</p>
+`
+},
+{
+  title: "The Long Way Home That Neither of Them Wanted to Shorten",
+  author: "Khyati Srivastava",
+  slug: "the-long-way-home-that-neither-of-them-wanted-to-shorten",
+  category: "Romance",
+  emoji: "🚶",
+  excerpt: "The direct route home takes eight minutes. Dev and Farrah have been taking the twenty-minute route together for a month, both fully aware of the shortcut, neither one mentioning it.",
+  created_at: "2027-04-14T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unnecessary Detour</h3>
+<p>Dev knew the direct route home took eight minutes. He'd walked it a thousand times before this year. Somehow, walking with Farrah, it had quietly become a twenty-minute route instead, neither of them acknowledging the extra twelve minutes out loud.</p>
+
+<h3>Chapter 2: A Comfortable Secret</h3>
+<p>They both knew the shortcut existed. Neither suggested taking it, filling those extra twelve minutes instead with easy conversation neither wanted to cut short for the sake of efficiency.</p>
+
+<h3>Chapter 3: Finally Saying It</h3>
+<p>It was Farrah who finally admitted it outright, laughing at her own obviousness: "You know the shortcut exists, right?" Dev grinned. "I know. I just like this way better." They still take the twenty-minute route. Neither has mentioned the shortcut since.</p>
+`
+},
+{
+  title: "The Science Fair Partner Assignment That Actually Worked Out",
+  author: "Khyati Srivastava",
+  slug: "the-science-fair-partner-assignment-that-actually-worked-out",
+  category: "Romance",
+  emoji: "🧪",
+  excerpt: "Randomly paired for the science fair with the one classmate she's never spoken to, Reya expects an awkward, forgettable month. What actually happens surprises her completely.",
+  created_at: "2027-04-14T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Random Pairing</h3>
+<p>Reya had never exchanged more than a passing hello with Kai before the teacher's random draw paired them for the semester's science fair project, both privately bracing for a month of stiff, purely functional collaboration.</p>
+
+<h3>Chapter 2: An Easy Rhythm</h3>
+<p>It wasn't stiff at all. Their shared project on water filtration turned into genuinely easy conversation, hours passing quickly during after-school sessions that felt far less like homework than either had expected going in.</p>
+
+<h3>Chapter 3: More Than a Grade</h3>
+<p>Their project won third place at the fair, a fine result neither cared much about by that point — they'd already started planning to sit together at lunch regardless of any future assigned pairing. Sometimes, Reya has decided, the best things really do come from a completely random draw.</p>
+`
+},
+{
+  title: "The Kid Who Ran a One-Person Neighborhood Watch (Mostly for Squirrels)",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-ran-a-one-person-neighborhood-watch-mostly-for-squirrels",
+  category: "Kids",
+  emoji: "🐿️",
+  excerpt: "Eight-year-old Dev has appointed himself official neighborhood watch captain, patrolling daily for suspicious activity — which, so far, has mostly just been squirrels doing normal squirrel things.",
+  created_at: "2027-04-14T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Official Appointment</h3>
+<p>Dev appointed himself Neighborhood Watch Captain after watching a documentary about community safety, complete with a hand-drawn badge and a small notebook for logging "suspicious activity" during his daily porch patrols.</p>
+
+<h3>Chapter 2: A Quiet Beat</h3>
+<p>His logged incidents so far included: "Squirrel acting weird near mailbox," "Suspicious rustling (probably wind)," and, most dramatically, "Cat staring at me for too long." Actual crime remained conspicuously absent from Dev's jurisdiction.</p>
+
+<h3>Chapter 3: A Valued Community Role</h3>
+<p>The neighbors, charmed rather than concerned by his diligence, started genuinely greeting him during his patrols, several even reporting their own minor "suspicious activity" for his notebook just to see his serious reaction. Dev takes the responsibility very seriously. The squirrels remain, as ever, his primary suspects.</p>
+`
+},
+{
+  title: "The Little Free Pantry That Started With One Can of Soup",
+  author: "Khyati Srivastava",
+  slug: "the-little-free-pantry-that-started-with-one-can-of-soup",
+  category: "Kids",
+  emoji: "🥫",
+  excerpt: "Inspired by a school lesson on hunger, ten-year-old Farrah starts a tiny 'take what you need' food box outside her house with just one can of soup. A year later, it feeds the whole street.",
+  created_at: "2027-04-14T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: One Can of Soup</h3>
+<p>Farrah's school lesson on food insecurity stuck with her long after class ended, prompting her to set up a small weatherproof box on her front lawn with a simple hand-painted sign: "Take what you need, leave what you can." It started with exactly one can of soup.</p>
+
+<h3>Chapter 2: Slow, Steady Growth</h3>
+<p>Neighbors noticed within weeks, quietly adding canned goods and pasta boxes of their own, the little pantry staying reliably stocked through some invisible, unmanaged neighborhood cooperation nobody had to organize formally.</p>
+
+<h3>Chapter 3: A Real Resource</h3>
+<p>A year later, the pantry reliably serves several families on tough weeks, restocked faithfully by an entire street's worth of quiet generosity that started with one determined ten-year-old and one can of soup. Farrah checks it every day after school, just to make sure it's never empty.</p>
+`
+},
+{
+  title: "The Photograph Booth at the Fair That Develops Differently",
+  author: "Khyati Srivastava",
+  slug: "the-photograph-booth-at-the-fair-that-develops-differently",
+  category: "Horror",
+  emoji: "🎞️",
+  excerpt: "The county fair's vintage photo booth prints four pictures per session, same as any other. The fourth photo, every single time, shows something slightly different than what was actually happening.",
+  created_at: "2027-04-14T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Ordinary Booth</h3>
+<p>The vintage photo booth had been a county fair fixture for decades, printing its standard four-picture strip for anyone who dropped in a few coins — three photos matching perfectly, and a fourth that, upon closer inspection, never quite did.</p>
+
+<h3>Chapter 2: A Noticeable Pattern</h3>
+<p>Twelve-year-old Sana noticed it first in her own strip: the fourth photo showed her smiling slightly wider than she remembered smiling, an expression close enough to pass a casual glance but subtly, unmistakably wrong to anyone who looked twice.</p>
+
+<h3>Chapter 3: A Fair Tradition, Kept Quiet</h3>
+<p>She asked around and found other fairgoers had noticed the same thing over the years, each with their own slightly-off fourth photo, none willing to make a fuss about a booth that had otherwise brought decades of joy to the fair. The booth still runs every year. Sana still uses it. She just doesn't look too closely at the fourth photo anymore.</p>
+`
+},
+{
+  title: "The Backyard Trampoline That Bounces Without Anyone On It",
+  author: "Khyati Srivastava",
+  slug: "the-backyard-trampoline-that-bounces-without-anyone-on-it",
+  category: "Horror",
+  emoji: "🤸",
+  excerpt: "On still, windless nights, the Petersons' backyard trampoline occasionally bounces gently on its own, springs creaking in a slow, deliberate rhythm nobody in the family can explain.",
+  created_at: "2027-04-14T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Strange Sound at Night</h3>
+<p>The Peterson kids first noticed it during a sleepover: a slow, rhythmic creak of trampoline springs coming from the backyard, steady and deliberate, on a night with absolutely no wind to explain it.</p>
+
+<h3>Chapter 2: Checking It Out</h3>
+<p>Peering through the window, they saw the trampoline's surface gently, unmistakably dipping and rising in a slow bouncing rhythm — no one visible on it, no animal, no branch touching it, just the mat itself moving as if weighted by something they couldn't see.</p>
+
+<h3>Chapter 3: An Unofficial Family Rule</h3>
+<p>It has happened perhaps a dozen times over the years, always at night, always the same slow rhythm. The family has developed one firm unspoken rule: nobody checks the backyard after dark anymore. They've simply decided some questions are better left un-investigated.</p>
+`
+},
+{
+  title: "The Recipe Box Passed Down Four Generations",
+  author: "Khyati Srivastava",
+  slug: "the-recipe-box-passed-down-four-generations",
+  category: "Poetry",
+  emoji: "🗃️",
+  excerpt: "A warm poem tracing one family's handwritten recipe box through four generations of cooks, each adding their own note in the margins.",
+  created_at: "2027-04-14T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Recipe Box Passed Down Four Generations</h3>
+<p>Great-grandma's hand wrote the very first card,<br/>
+measurements careful, ink a little hard,<br/>
+"a pinch of this, a dash of that" —<br/>
+recipes worn soft, worn flat.</p>
+
+<p>Grandma added her own notes below,<br/>
+"less sugar here" and "cook it slow,"<br/>
+Mom crossed one line and wrote it new,<br/>
+teaching the recipe something to do.</p>
+
+<p>Now it's my turn to hold the pen,<br/>
+add my own note, and pass it again,<br/>
+four generations, one battered box,<br/>
+holding more than just flour and stocks.</p>
+
+<p>Someday my own hand will fade like the rest,<br/>
+one more layer on what came at its best,<br/>
+and whoever opens this box, down the line,<br/>
+will taste a hundred years, not just mine.</p>
+`
+},
+{
+  title: "The Hand-Me-Down Bicycle Riding Its Fourth Kid",
+  author: "Khyati Srivastava",
+  slug: "the-hand-me-down-bicycle-riding-its-fourth-kid",
+  category: "Poetry",
+  emoji: "🚲",
+  excerpt: "A cheerful poem celebrating the well-loved family bicycle, patched and repainted, now carrying its fourth young rider through the same familiar streets.",
+  created_at: "2027-04-14T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Hand-Me-Down Bicycle Riding Its Fourth Kid</h3>
+<p>I started red, now I'm painted blue,<br/>
+patched twice over, still holding true,<br/>
+first ridden wobbly, training wheels on,<br/>
+by a kid who's tall and grown and gone.</p>
+
+<p>Then came the next, and then one more,<br/>
+each one different than the one before,<br/>
+new hands gripping my handlebars tight,<br/>
+learning balance, learning flight.</p>
+
+<p>Now it's the fourth kid's turn to ride,<br/>
+same old frame, same rusty pride,<br/>
+down the same street, past the same tree,<br/>
+learning exactly what freedom can be.</p>
+
+<p>I've got more dents than paint by now,<br/>
+but I'll keep rolling, somehow, somehow,<br/>
+because a bike that's loved this many times<br/>
+never really runs out of climbs.</p>
+`
+},
 ];
