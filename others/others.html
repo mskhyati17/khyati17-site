@@ -26,6 +26,8 @@
     .ka-head p{ color:#6b5b7e; margin:8px 0 0; }
 
     /* Section tabs */
+    .ka-coin-badge{ position:sticky; top:8px; z-index:6; float:right; background:linear-gradient(135deg,var(--pp),var(--pp2)); color:#fff; font-weight:800; font-size:.9rem; padding:7px 14px; border-radius:999px; box-shadow:0 4px 12px rgba(117,80,168,.3); transition:transform .15s; }
+    .ka-coin-badge.bump{ transform:scale(1.18); }
     .ka-tabs{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:0 0 30px; position:sticky; top:0; z-index:5; background:#fff; padding:10px 0; }
     .ka-tab{ cursor:pointer; border:2px solid var(--acc); background:#fff; color:var(--pp); font-weight:700; font-size:.85rem; padding:9px 16px; border-radius:999px; transition:background .15s,color .15s,transform .1s; white-space:nowrap; }
     .ka-tab:hover{ background:var(--acc); }
@@ -204,6 +206,8 @@
       <h1>🌟 Kid Advice</h1>
       <p>Simple, friendly tips to help you learn, grow and be your best self.</p>
     </div>
+
+    <div class="ka-coin-badge" id="globalCoinBadge" title="Your coin balance">🪙 <span id="globalCoinCount">0</span></div>
 
     <div class="ka-tabs" role="tablist">
       <button class="ka-tab active" data-tab="advice">💡 Advice &amp; Tips</button>
@@ -9056,9 +9060,19 @@
     }
     saveState();
 
+    let lastBadgeCoins = mstate.coins;
     function renderMochi(){
       document.getElementById('streakCount').textContent = mstate.streak;
       document.getElementById('coinCount').textContent = mstate.coins;
+      const badge = document.getElementById('globalCoinBadge');
+      document.getElementById('globalCoinCount').textContent = mstate.coins;
+      if (mstate.coins > lastBadgeCoins) {
+        badge.classList.remove('bump');
+        void badge.offsetWidth;
+        badge.classList.add('bump');
+        setTimeout(()=> badge.classList.remove('bump'), 400);
+      }
+      lastBadgeCoins = mstate.coins;
       const face = document.getElementById('mochiFace');
       const msg = document.getElementById('mochiMsg');
       const revive = document.getElementById('reviveBtn');
@@ -9203,7 +9217,8 @@
         mstate.coins += reward;
         mstate.lastCoinSpinDate = today;
         saveState();
-        coinResult.textContent = reward >= 1000 ? `🎉 JACKPOT! +${reward} 🪙!` : `You won +${reward} 🪙!`;
+        const prefix = reward >= 1000 ? `🎉 JACKPOT! +${reward} 🪙!` : `You won +${reward} 🪙!`;
+        coinResult.textContent = `${prefix} (total: ${mstate.coins} 🪙)`;
         renderMochi();
         updateCoinBtn();
       });
