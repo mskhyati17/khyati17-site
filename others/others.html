@@ -203,8 +203,8 @@
 
   <main class="ka-main">
     <div class="ka-head">
-      <h1>🌟 Kid Advice</h1>
-      <p>Simple, friendly tips to help you learn, grow and be your best self.</p>
+      <h1 id="pageH1">🌟 Kid Advice</h1>
+      <p id="pageSub">Simple, friendly tips to help you learn, grow and be your best self.</p>
     </div>
 
     <div class="ka-coin-badge" id="globalCoinBadge" title="Your coin balance">🪙 <span id="globalCoinCount">0</span></div>
@@ -416,9 +416,24 @@
       const tabBtns = document.querySelectorAll('.ka-tab');
       const panels = document.querySelectorAll('.ka-panel');
       const TAB_KEY = 'k17_others_tab';
+      const TAB_META = {
+        advice: { h1: '🌟 Kid Advice', sub: 'Simple, friendly tips to help you learn, grow and be your best self.', title: 'Kid Advice — Others' },
+        combo: { h1: '🎲 Combo Machine', sub: '7,169 wild abilities, mixed and matched into over 25,600,000 "would you rather" combos.', title: 'Combo Machine — Others' },
+        things: { h1: '💯 1,000 Amazing Things', sub: '1,000 separate facts, ideas, and tiny challenges to know, try, or wonder about.', title: '1,000 Amazing Things — Others' },
+        mochi: { h1: "🐾 Mochi & Checklist", sub: "Check off your daily list to earn coins and keep Mochi's streak alive.", title: 'Mochi & Checklist — Others' },
+        wheels: { h1: '🎡 Spin Wheels', sub: 'A daily coin spin, plus wheels for Would You Rather, Truth or Dare, and more.', title: 'Spin Wheels — Others' },
+      };
+      const pageH1 = document.getElementById('pageH1');
+      const pageSub = document.getElementById('pageSub');
       function activateTab(name){
         tabBtns.forEach(b=> b.classList.toggle('active', b.dataset.tab === name));
         panels.forEach(p=> { p.hidden = p.dataset.panel !== name; });
+        const meta = TAB_META[name];
+        if (meta) {
+          pageH1.textContent = meta.h1;
+          pageSub.textContent = meta.sub;
+          document.title = meta.title;
+        }
         try { localStorage.setItem(TAB_KEY, name); } catch(e){}
       }
       tabBtns.forEach(b=> b.addEventListener('click', ()=> activateTab(b.dataset.tab)));
