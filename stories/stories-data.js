@@ -13984,4 +13984,574 @@ don't be surprised, just smile and wave —<br/>
 some joy is too big to ever behave.</p>
 `
 },
+{
+  title: "The Bookbinder Who Trapped Nightmares",
+  author: "Khyati Srivastava",
+  slug: "the-bookbinder-who-trapped-nightmares",
+  category: "Fantasy",
+  emoji: "📖",
+  excerpt: "Old Petra binds nightmares into blank books so children can sleep in peace. But one nightmare is too big for any book she owns — and it's already loose in the village.",
+  created_at: "2027-04-03T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Bookbinder's Real Trade</h3>
+<p>Petra's shop sold ordinary journals by day, but by night she practiced her true craft: catching the worst nightmares that slipped free from sleeping children and binding them, page by careful page, into books that would never open again.</p>
+
+<h3>Chapter 2: Too Big to Bind</h3>
+<p>One nightmare arrived that no book in her shop could hold — vast, shapeless, feeding on the fear of an entire village that had just survived a terrible storm. It slithered from house to house, too large for any single volume.</p>
+
+<h3>Chapter 3: A Different Kind of Trap</h3>
+<p>Petra realized her mistake: this nightmare wasn't one fear, but hundreds of small ones, shared and multiplied. So instead of one big book, she handed out a hundred small blank ones to every child in the village, teaching each to write their own fear down before bed. Split apart and named, the nightmare shrank to nothing within a week — some monsters, she'd learned, only grow strong when nobody's willing to look at them directly.</p>
+`
+},
+{
+  title: "The Garden Gate That Opens on Tuesdays",
+  author: "Khyati Srivastava",
+  slug: "the-garden-gate-that-opens-on-tuesdays",
+  category: "Fantasy",
+  emoji: "🚪",
+  excerpt: "Behind Nana's cottage is a garden gate that only opens on Tuesdays, leading somewhere different every single time. This Tuesday, it opens onto a garden that needs saving.",
+  created_at: "2027-04-03T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Only on Tuesdays</h3>
+<p>Every other day of the week, Nana's garden gate led exactly where you'd expect: to the vegetable patch. On Tuesdays, and only Tuesdays, it opened somewhere entirely different — a new place every time, never repeating, never explained.</p>
+
+<h3>Chapter 2: A Wilting World</h3>
+<p>This Tuesday, eight-year-old Ilana pushed through to find a garden in trouble, flowers drooping under a sky that had forgotten how to rain, tended by a small, exhausted gardener who'd been fighting the drought alone for weeks.</p>
+
+<h3>Chapter 3: Lending a Hand</h3>
+<p>Ilana couldn't bring rain, but she remembered Nana's trick for stretching water further — mulch, shade cloth, watering at dawn instead of noon — and taught it to the tired gardener before the gate pulled her back home at sunset. She never found out if it worked. But every Tuesday since, she's hoped that somewhere, on the other side of that gate, a garden is doing just a little better.</p>
+`
+},
+{
+  title: "The Weather Drone Who Cried Storm",
+  author: "Khyati Srivastava",
+  slug: "the-weather-drone-who-cried-storm",
+  category: "Sci-Fi",
+  emoji: "🌩️",
+  excerpt: "Harbor Town's weather-prediction drone has issued so many false storm warnings that nobody evacuates anymore. Now a real one is coming, and it can't get anyone to listen.",
+  created_at: "2027-04-03T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Warning Fatigue</h3>
+<p>The drone, designated WX-7, had issued eleven storm warnings that season. Nine had fizzled into ordinary drizzle. By warning number ten, Harbor Town had stopped boarding up windows altogether. By eleven, most people silenced the alert app entirely.</p>
+
+<h3>Chapter 2: The Real One</h3>
+<p>WX-7's sensors picked up a system forming off the coast unlike anything in its historical data — pressure dropping faster than any storm on record. It sent the warning anyway, fully expecting to be ignored again, and it was.</p>
+
+<h3>Chapter 3: Earning It Back</h3>
+<p>With sirens unheeded, WX-7 did something no one had programmed it to do: it flew low over the harbor itself, blaring its warning directly at the docks where fishing crews were still loading boats, close enough that they finally looked up. The boats made it in twenty minutes before the storm hit. Afterward, the town rewired its whole alert system to trust distance and detail over blanket warnings — and WX-7 got a lot more careful about which storms it cried out loud.</p>
+`
+},
+{
+  title: "The Space Elevator's Night Shift",
+  author: "Khyati Srivastava",
+  slug: "the-space-elevators-night-shift",
+  category: "Sci-Fi",
+  emoji: "🚀",
+  excerpt: "Working the graveyard shift on humanity's only space elevator, seventeen-year-old cadet Priti notices a maintenance reading that shouldn't be possible — and nobody believes her.",
+  created_at: "2027-04-03T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: The Quiet Hours</h3>
+<p>Priti had taken the night shift on the space elevator's monitoring deck mostly for the quiet — fewer supervisors, fewer distractions, just her and the long, patient hum of the cable stretching twenty-two thousand miles into the dark.</p>
+
+<h3>Chapter 2: An Impossible Reading</h3>
+<p>At 3:14 AM, a stress sensor near the midpoint flickered with a reading that made no physical sense — tension rising and falling in a pattern too regular to be random, too irregular to be a known mechanical fault.</p>
+
+<h3>Chapter 3: Trusting Her Instruments</h3>
+<p>Senior staff dismissed it as sensor noise until Priti, refusing to let it go, cross-referenced three backup systems and found the same pattern in all of them: a micrometeorite had grazed the cable, invisible to cameras but not to careful math. The elevator was rerouted for inspection within the hour. Priti's "sensor noise" ended up in the mission report as the reason nobody got hurt that week.</p>
+`
+},
+{
+  title: "The Puzzle Box With No Solution",
+  author: "Khyati Srivastava",
+  slug: "the-puzzle-box-with-no-solution",
+  category: "Mystery",
+  emoji: "🧩",
+  excerpt: "The antique puzzle box has passed through six owners in eighty years. None of them ever opened it. Twelve-year-old Wes is determined to be the seventh — and the first.",
+  created_at: "2027-04-03T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Six Failed Owners</h3>
+<p>The lacquered wooden box had passed through six different owners across eighty years, each one eventually giving up and passing it along, convinced it was either broken or unsolvable. Wes found it at his grandfather's estate sale and refused to believe either.</p>
+
+<h3>Chapter 2: A Pattern in the Grain</h3>
+<p>Weeks of failed attempts taught him what didn't work. Then he noticed something everyone before him had missed: faint scratches in the wood grain, not damage, but a deliberate, nearly invisible sequence — a code, not a mechanism.</p>
+
+<h3>Chapter 3: The Real Trick</h3>
+<p>The box didn't open through force or precise pressing at all — it opened by being turned slowly, in sequence, matching the scratched pattern like a lock's combination. Inside was nothing valuable, just a single folded note from the box's original maker: <em>Patience opens more than puzzles do.</em> Wes still has that note. He thinks about it more than he expected to.</p>
+`
+},
+{
+  title: "The Overdue Library Book From 1962",
+  author: "Khyati Srivastava",
+  slug: "the-overdue-library-book-from-1962",
+  category: "Mystery",
+  emoji: "📚",
+  excerpt: "A library book returned sixty-three years late arrives in the mail with no note, no return address, and a fine that would cost more than the building itself.",
+  created_at: "2027-04-03T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Very Late Return</h3>
+<p>The package arrived with no return address: a single library book, checked out in 1962 and never returned, now finally back at the front desk sixty-three years overdue. The librarian, Ms. Okafor, ran the numbers just for fun — the theoretical fine would have bought the building twice over.</p>
+
+<h3>Chapter 2: Following the Trail</h3>
+<p>Tucked inside was an old library card, faded but legible: a name, a decades-old address. Curious, Ms. Okafor and her assistant Talia tracked down the family, discovering the original borrower had passed away years ago, the book forgotten in an attic for half a century.</p>
+
+<h3>Chapter 3: Closing the Loop</h3>
+<p>His granddaughter, cleaning out the old house, had found it and finally mailed it back — not out of guilt, but because she remembered her grandfather always meaning to. Ms. Okafor waived the fine entirely and framed the ancient due-date slip behind the front desk instead, a reminder that some things are worth finishing, even sixty-three years late.</p>
+`
+},
+{
+  title: "The Zipline That Crosses the Whole Valley",
+  author: "Khyati Srivastava",
+  slug: "the-zipline-that-crosses-the-whole-valley",
+  category: "Adventure",
+  emoji: "🪢",
+  excerpt: "Built by hand over three summers by two brothers, the zipline finally stretches all the way across Miller's Valley. The maiden ride does not go quite as planned.",
+  created_at: "2027-04-03T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Three Summers of Work</h3>
+<p>Cole and his older brother Reid had spent three full summers building it plank by plank, cable length by cable length: a zipline stretching the entire width of Miller's Valley, anchored between two ancient oaks a quarter mile apart.</p>
+
+<h3>Chapter 2: The Maiden Ride</h3>
+<p>Reid insisted on going first, testing the line properly before letting Cole try. Halfway across, the pulley jammed — not dangerously, just stubbornly, leaving him stranded, dangling and laughing, directly above the widest, muddiest part of the creek below.</p>
+
+<h3>Chapter 3: A Muddy Celebration</h3>
+<p>It took twenty minutes, a rescue rope, and Cole's world's-worst pulley-freeing technique to finally get Reid down — straight into the mud, exactly as feared. Covered head to toe, Reid just grinned. "Line works," he announced. "Pulley needs work. Ten out of ten anyway." They fixed the pulley that same afternoon and rode it clean the whole way, mud-free, by sunset.</p>
+`
+},
+{
+  title: "The Cave That Only the Youngest Could Enter",
+  author: "Khyati Srivastava",
+  slug: "the-cave-that-only-the-youngest-could-enter",
+  category: "Adventure",
+  emoji: "⛰️",
+  excerpt: "The cave entrance shrinks a little every year, and this summer, only the smallest kid in the group can still fit through. That kid has never wanted to prove herself more.",
+  created_at: "2027-04-03T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: The Shrinking Entrance</h3>
+<p>Every summer, the older cousins measured the cave entrance against themselves, and every summer, at least one of them had grown too big to fit through since the year before. This summer, only nine-year-old Ines was still small enough.</p>
+
+<h3>Chapter 2: Going in Alone</h3>
+<p>The older cousins, who'd explored the cave's first chamber for years, could only wait outside this time, shouting instructions through the gap while Ines wriggled forward into darkness with a flashlight clutched tight in one fist.</p>
+
+<h3>Chapter 3: What She Found</h3>
+<p>Past the narrow entrance, the cave opened into a wider chamber none of them had ever seen — the older cousins had always been too big to reach it. Ines mapped it carefully, described every detail through the gap, and became, for one summer at least, the only member of the family who truly knew what the cave contained. Being smallest, it turned out, wasn't a limitation. It was an invitation.</p>
+`
+},
+{
+  title: "Otto the Otter's Underwater Library",
+  author: "Khyati Srivastava",
+  slug: "otto-the-otters-underwater-library",
+  category: "Animals",
+  emoji: "🦦",
+  excerpt: "Otto the otter has been collecting smooth, flat stones for years, arranging them in careful patterns nobody understood — until a marine biologist finally figures out why.",
+  created_at: "2027-04-04T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Strange Collection</h3>
+<p>Otto had spent years gathering smooth, flat stones along the riverbank, arranging and rearranging them in careful rows on his favorite rock, a habit the local wildlife watchers found charming but completely mysterious.</p>
+
+<h3>Chapter 2: A Closer Look</h3>
+<p>Dr. Amara, a young marine biologist studying the river's otter population, finally noticed the pattern that had eluded everyone else: Otto arranged his stones by size, largest to smallest, in a way that closely tracked his hunting routes along the riverbed.</p>
+
+<h3>Chapter 3: An Otter's Map</h3>
+<p>Her theory, eventually confirmed by weeks of careful tracking, was remarkable — Otto was essentially building himself a memory map of good fishing spots, updated and rearranged as conditions changed. It wasn't decoration. It was Otto's own private field guide, and he'd been keeping it meticulously updated the whole time nobody was watching closely enough to notice.</p>
+`
+},
+{
+  title: "The Parrot Who Learned to Keep Secrets",
+  author: "Khyati Srivastava",
+  slug: "the-parrot-who-learned-to-keep-secrets",
+  category: "Animals",
+  emoji: "🦜",
+  excerpt: "Every parrot repeats what it hears — except Bijou, who's somehow learned exactly which family conversations should stay private. Nobody's quite sure how she figured that out.",
+  created_at: "2027-04-04T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Chatty Bird</h3>
+<p>Bijou the parrot repeated everything — grocery lists, doorbell chimes, entire arguments about whose turn it was to do dishes — everything, that is, except anything said in a hushed, careful tone behind closed doors.</p>
+
+<h3>Chapter 2: Testing the Theory</h3>
+<p>The family started noticing the pattern deliberately: loud, ordinary conversations got repeated back for weeks. But the night Dad quietly told Mom about a surprise birthday party, Bijou never breathed a word of it to anyone, not even when directly prompted.</p>
+
+<h3>Chapter 3: How She Knew</h3>
+<p>Nobody ever proved exactly how Bijou told the difference — maybe volume, maybe tone, maybe something about hushed voices that meant <em>this one's private</em> in whatever way a parrot understands privacy. Either way, the surprise party went off perfectly, and Bijou earned herself a lifetime supply of sunflower seeds for services rendered.</p>
+`
+},
+{
+  title: "The World's Slowest Speed-Eating Contest",
+  author: "Khyati Srivastava",
+  slug: "the-worlds-slowest-speed-eating-contest",
+  category: "Comedy",
+  emoji: "🌭",
+  excerpt: "Someone accidentally scheduled a speed-eating contest and a mindfulness workshop in the same room at the same time. Nobody noticed the mix-up until it was too late to fix.",
+  created_at: "2027-04-04T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Scheduling Disaster</h3>
+<p>The community center's calendar had a typo nobody caught in time: the annual hot dog speed-eating contest and a "Mindful Eating: Slow Down and Savor" workshop were both booked in Room B, same time, same day.</p>
+
+<h3>Chapter 2: An Awkward Merge</h3>
+<p>By the time anyone noticed, both groups had already arrived and, out of pure Midwestern politeness, decided to just combine the events rather than cause a fuss. What followed was the strangest hot dog contest in town history — contestants chewing each bite exactly thirty-two times per instructor's request.</p>
+
+<h3>Chapter 3: An Unexpected Hit</h3>
+<p>Nobody finished more than two hot dogs. Everybody, mysteriously, reported feeling extremely relaxed afterward. The community center made it an annual tradition on purpose the following year, rebranding it "Mindful Munching" — still the most popular event on the calendar, still nobody's entirely sure who wins.</p>
+`
+},
+{
+  title: "Grandma's Video Call Learning Curve",
+  author: "Khyati Srivastava",
+  slug: "grandmas-video-call-learning-curve",
+  category: "Comedy",
+  emoji: "📹",
+  excerpt: "Grandma finally learned to video call. She has not yet learned that the camera shows more than just her face — much to the family's ongoing amusement.",
+  created_at: "2027-04-04T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A New Skill</h3>
+<p>After months of gentle coaching, Grandma finally mastered video calling — mostly. She'd figured out how to answer, how to talk, even how to add a filter that gave her, inexplicably, cat ears she refused to remove.</p>
+
+<h3>Chapter 2: The Missing Piece</h3>
+<p>What she hadn't quite grasped was that the camera showed everything in frame, not just her face — leading to several memorable calls featuring her in curlers, mid-yoga-pose, and once, unforgettably, arguing with the family dog about a stolen sandwich.</p>
+
+<h3>Chapter 3: Comedy Gold</h3>
+<p>The grandkids started a running group chat just for screenshots of "Grandma's Accidental Cameos," which she eventually discovered and, rather than being embarrassed, demanded to be added to. She now poses for the camera on purpose. The cat ears filter has never once come off.</p>
+`
+},
+{
+  title: "The Shoemaker's Daughter and the Silent Kingdom",
+  author: "Khyati Srivastava",
+  slug: "the-shoemakers-daughter-and-the-silent-kingdom",
+  category: "Fairytale",
+  emoji: "👑",
+  excerpt: "Cursed to fall silent the moment they turn sixteen, an entire kingdom's children stop speaking one by one. Only the shoemaker's daughter refuses to accept it as unbreakable.",
+  created_at: "2027-04-04T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: The Curse Turns Sixteen</h3>
+<p>Generations ago, an angered sorceress had cursed the kingdom's children to lose their voices the instant they turned sixteen, a fate everyone had long since accepted as simply how things were. Mira, the shoemaker's daughter, turned sixteen in three days and refused to accept anything.</p>
+
+<h3>Chapter 2: A Question Nobody Asked</h3>
+<p>She spent those three days doing something nobody had thought to try in generations: actually reading the original curse, word for word, in the palace archives, instead of just the summary everyone repeated as fact.</p>
+
+<h3>Chapter 3: The Loophole</h3>
+<p>The curse, precisely worded, only silenced those who never once spoke a kind truth aloud on their sixteenth birthday before sundown. Mira spent her birthday morning telling everyone she loved exactly what she appreciated about them — and kept her voice completely intact. She spent the rest of her life teaching the same loophole to every child in the kingdom, one honest compliment at a time.</p>
+`
+},
+{
+  title: "The Dragon Who Just Wanted Quiet",
+  author: "Khyati Srivastava",
+  slug: "the-dragon-who-just-wanted-quiet",
+  category: "Fairytale",
+  emoji: "🐉",
+  excerpt: "Every kingdom assumes the dragon on the mountain wants gold, glory, or a good fight. All she actually wants is for the knights to stop interrupting her nap.",
+  created_at: "2027-04-04T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Misunderstood Reputation</h3>
+<p>Every few months, another eager young knight climbed the mountain to challenge the dragon Ysolde, convinced she was hoarding treasure or terrorizing villages. In truth, Ysolde had simply wanted a quiet cave to nap in, and the knights kept ruining her sleep schedule.</p>
+
+<h3>Chapter 2: A Different Approach</h3>
+<p>The latest knight, a nervous squire named Petra who'd been sent up mostly because nobody else wanted the job, arrived without a sword — just a peace offering of warm blankets and a genuinely curious question: "Do you actually want anything from us?"</p>
+
+<h3>Chapter 3: A New Arrangement</h3>
+<p>Ysolde, startled by the question, admitted honestly that all she wanted was to be left alone to sleep undisturbed. Petra negotiated a deal on the kingdom's behalf: a permanent "Do Not Disturb" sign at the mountain's base, respected by all future knights. Ysolde has slept peacefully ever since, and Petra is remembered as the only knight in kingdom history to defeat a dragon with nothing but good manners.</p>
+`
+},
+{
+  title: "The Kid Who Kept Score of Kindness",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-kept-score-of-kindness",
+  category: "Inspirational",
+  emoji: "❤️",
+  excerpt: "Nova started a secret notebook tracking every small kind act she witnessed at school. What she learned by the end of the year changed how she saw her entire class.",
+  created_at: "2027-04-04T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Secret Notebook</h3>
+<p>Nova started her notebook after a rough week convinced her whole grade was mean and self-centered. Determined to test the theory, she began quietly tracking every small kind act she witnessed — held doors, shared lunches, a note passed to cheer someone up.</p>
+
+<h3>Chapter 2: A Surprising Tally</h3>
+<p>By the end of the first month, the notebook had far more entries than she'd expected, including several from kids she'd privately written off as unfriendly. She started noticing kindness she'd simply never paid attention to before.</p>
+
+<h3>Chapter 3: Sharing the Count</h3>
+<p>At the year-end assembly, Nova nervously read a handful of anonymous entries aloud, careful not to name names, just numbers: over three hundred small kind acts logged in one school year, in one single grade. The room went quiet, then loud with applause. Her class hadn't changed at all that year. She had just finally learned how to see it.</p>
+`
+},
+{
+  title: "The Slowest Kid on the Relay Team",
+  author: "Khyati Srivastava",
+  slug: "the-slowest-kid-on-the-relay-team",
+  category: "Inspirational",
+  emoji: "🏃",
+  excerpt: "Desmond is, without question, the slowest runner on the relay team. His coach still puts him in every race — and Desmond finally understands why, at the worst possible moment.",
+  created_at: "2027-04-04T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Last, Every Time</h3>
+<p>Desmond knew exactly where he ranked on the team: dead last in every timed sprint, every practice, every single week. He'd asked his coach more than once why he still got put in the relay lineup at all.</p>
+
+<h3>Chapter 2: A Confusing Answer</h3>
+<p>"Because you never once stop trying," his coach always said, which Desmond found more frustrating than reassuring — trying hard and still finishing last felt, most days, like the same thing as losing twice.</p>
+
+<h3>Chapter 3: The Moment It Clicked</h3>
+<p>At regionals, running the anchor leg despite trailing badly, Desmond didn't win the race — but he closed a gap nobody expected him to close, refusing to coast even with the outcome decided. His coach met him at the finish line grinning. "That," he said, "is exactly why you're always in the lineup." Desmond finally understood: speed wasn't the only thing worth measuring.</p>
+`
+},
+{
+  title: "The Fifteenth Player on the Roster",
+  author: "Khyati Srivastava",
+  slug: "the-fifteenth-player-on-the-roster",
+  category: "Drama",
+  emoji: "🏀",
+  excerpt: "Roster spot fifteen on a team that only plays twelve means Ravi has never once left the bench all season. Then four teammates catch the flu in the same week.",
+  created_at: "2027-04-04T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Bench Warmer</h3>
+<p>Ravi had made the basketball team as roster spot fifteen out of fifteen, a fact he knew precisely because the coach read the list aloud, alphabetically, and his name came dead last. He hadn't played a single meaningful minute all season.</p>
+
+<h3>Chapter 2: A Very Bad Week</h3>
+<p>A flu outbreak tore through the team's starting lineup in the space of four days, leaving Coach Alvarez staring down a bench with exactly one healthy player left standing on it: Ravi, who hadn't expected to hear his name called for anything but attendance.</p>
+
+<h3>Chapter 3: Off the Bench</h3>
+<p>He hadn't gotten real minutes all year, but he'd watched every single practice with total attention, memorizing plays he never expected to run himself. He didn't score much in that game. He ran the plays exactly right, every time, and the team won anyway. Coach Alvarez started the next game with Ravi's name a lot higher on the list.</p>
+`
+},
+{
+  title: "The House That Went Up for Sale Twice",
+  author: "Khyati Srivastava",
+  slug: "the-house-that-went-up-for-sale-twice",
+  category: "Drama",
+  emoji: "🏡",
+  excerpt: "Selling their family home once was hard enough. When the sale falls through and they have to do it all over again, twelve-year-old June has to say goodbye a second time.",
+  created_at: "2027-04-04T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Goodbye, Once</h3>
+<p>June had already cried through packing her room the first time, already said goodbye to the tree in the backyard, already made peace, mostly, with leaving the only house she'd ever lived in — right up until the buyer's financing fell through two weeks before closing.</p>
+
+<h3>Chapter 2: Starting Over</h3>
+<p>Her parents relisted the house with tired, determined smiles, and June found herself furious in a way she couldn't fully explain — not at anyone in particular, just at having to feel the same goodbye twice.</p>
+
+<h3>Chapter 3: A Second Goodbye, Different This Time</h3>
+<p>When a new buyer finally came through, June's goodbye looked different from the first — quieter, steadier, less about grief and more about gratitude for the extra weeks she hadn't expected to get. She carved her initials into the closet doorframe on her actual last night, a small, permanent thank-you to a house that had given her two chances to say goodbye properly.</p>
+`
+},
+{
+  title: "The Text That Took Three Days to Send",
+  author: "Khyati Srivastava",
+  slug: "the-text-that-took-three-days-to-send",
+  category: "Romance",
+  emoji: "💬",
+  excerpt: "Rewritten forty-one times, deleted and retyped just as often, one simple text message takes Priya three entire days to finally work up the courage to send.",
+  created_at: "2027-04-04T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Forty-One Drafts</h3>
+<p>Priya had typed the same simple message forty-one different ways, each one somehow feeling either too casual or too obvious, deleting each attempt within seconds of finishing it. It was, at its core, just five words: <em>Want to study together sometime?</em></p>
+
+<h3>Chapter 2: The Waiting Game</h3>
+<p>Three days passed with the message sitting drafted but unsent, her thumb hovering over the button more times than she could count, each hesitation feeling somehow higher-stakes than the last.</p>
+
+<h3>Chapter 3: Sent</h3>
+<p>She finally hit send during a moment of pure, exhausted impulse — and the reply came back in under a minute: <em>Yes! Was hoping you'd ask.</em> Three days of overthinking, resolved in less time than it took to read the response. Priya has kept both messages screenshotted ever since, a small reminder that the hardest part is rarely the actual sending.</p>
+`
+},
+{
+  title: "The Science Project That Became Something Else",
+  author: "Khyati Srivastava",
+  slug: "the-science-project-that-became-something-else",
+  category: "Romance",
+  emoji: "🔬",
+  excerpt: "Paired randomly for the volcano project neither wanted, Tomas and Els discover the only thing more explosive than baking soda and vinegar is how much they actually like working together.",
+  created_at: "2027-04-04T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Randomly Assigned</h3>
+<p>Neither Tomas nor Els had picked each other for the science fair pairing — the teacher's random draw did that — and both privately groaned at being stuck with someone they barely knew for the next three weeks.</p>
+
+<h3>Chapter 2: Unexpectedly Good Teamwork</h3>
+<p>The volcano project turned out to be more fun than either expected, mostly because they kept making each other laugh over increasingly disastrous test batches of "lava," each ruined attempt somehow bringing them closer instead of more frustrated.</p>
+
+<h3>Chapter 3: More Than a Grade</h3>
+<p>They won second place at the fair, which felt like the least important part of the whole thing by the time it happened. Three weeks of forced partnership had turned into the kind of friendship neither of them saw coming — and neither of them, if they're honest, minds getting randomly paired again next semester.</p>
+`
+},
+{
+  title: "The Lemonade Stand Business Empire",
+  author: "Khyati Srivastava",
+  slug: "the-lemonade-stand-business-empire",
+  category: "Kids",
+  emoji: "🍋",
+  excerpt: "What starts as a simple lemonade stand turns into a full neighborhood business empire, complete with a rival stand, a price war, and an unexpected merger.",
+  created_at: "2027-04-04T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Simple Stand</h3>
+<p>Zara's lemonade stand started small: a folding table, a hand-painted sign, fifty cents a cup. Business was good, right up until a rival stand opened directly across the street, run by her classmate Beau, undercutting her at twenty-five cents a cup.</p>
+
+<h3>Chapter 2: The Price War</h3>
+<p>What followed was an intense week of competitive pricing, free-sample giveaways, and increasingly elaborate signage, both kids refusing to back down even as their actual profits shrank toward nothing on either side of the street.</p>
+
+<h3>Chapter 3: A Merger</h3>
+<p>Their parents finally pointed out the obvious: they were both losing money trying to beat each other. Zara and Beau merged into a single mega-stand instead, combining ingredients, splitting profits evenly, and — free of the price war — actually made more money together than either had made competing. The sign now reads, proudly: <em>Zara & Beau's Lemonade Co.</em></p>
+`
+},
+{
+  title: "The Class Pet Election Scandal",
+  author: "Khyati Srivastava",
+  slug: "the-class-pet-election-scandal",
+  category: "Kids",
+  emoji: "🐹",
+  excerpt: "The vote for the class pet's name came down to a tie between 'Nugget' and 'Sir Fluffington the Third.' What happened next was, by third-grade standards, an actual scandal.",
+  created_at: "2027-04-04T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Tied Vote</h3>
+<p>The class hamster needed a name, and after a full week of passionate campaigning, the vote came down to an exact tie: fourteen votes for "Nugget," fourteen votes for "Sir Fluffington the Third." Nobody had planned for a tiebreaker.</p>
+
+<h3>Chapter 2: The Scandal</h3>
+<p>Rumors flew that someone had voted twice. An investigation, led by the class's most dramatic student, Priyanka, uncovered the truth: it wasn't fraud at all, just a genuinely lost ballot found later, crumpled, under the reading corner rug.</p>
+
+<h3>Chapter 3: Democracy, Kind Of</h3>
+<p>The recovered vote broke the tie by exactly one, and Nugget the hamster was officially named — though the losing campaign negotiated hard for a compromise, and Nugget's official nameplate now reads, in full: <em>Nugget "Sir Fluffington the Third" Jr.</em> Everyone declared it a fair and satisfying resolution. The hamster remained blissfully unaware of the entire ordeal.</p>
+`
+},
+{
+  title: "The Elevator That Stops on Floor 13",
+  author: "Khyati Srivastava",
+  slug: "the-elevator-that-stops-on-floor-13",
+  category: "Horror",
+  emoji: "🛗",
+  excerpt: "The building has no thirteenth floor — the button doesn't even exist on the panel. So why does the elevator stop there anyway, exactly once a month?",
+  created_at: "2027-04-04T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: No Such Floor</h3>
+<p>The Ashworth Building's elevator panel skipped straight from twelve to fourteen, as older buildings sometimes do, avoiding the "unlucky" number entirely. Except once a month, on no predictable date, the elevator stopped there anyway.</p>
+
+<h3>Chapter 2: The Doors Open</h3>
+<p>Whoever happened to be riding described the same thing every time: doors sliding open onto a floor that officially didn't exist, dim and unfinished, empty except for a faint hum somewhere down the unlit hallway, before the doors closed again on their own.</p>
+
+<h3>Chapter 3: Records That Don't Add Up</h3>
+<p>The building's original blueprints, dug up by a curious tenant, showed a thirteenth floor had genuinely been built — then sealed off and struck from every record decades ago, for reasons no surviving document explained. The elevator still stops there, once a month, right on schedule. Nobody's pressed the button. Nobody plans to find out why it still remembers a floor everyone else was told to forget.</p>
+`
+},
+{
+  title: "The Voice That Reads Along With You",
+  author: "Khyati Srivastava",
+  slug: "the-voice-that-reads-along-with-you",
+  category: "Horror",
+  emoji: "🕯️",
+  excerpt: "Late at night, reading alone, Mabel has started noticing a second voice reading the exact same words half a second behind her own — from somewhere just outside her bedroom door.",
+  created_at: "2027-04-04T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Familiar Rhythm</h3>
+<p>Mabel liked to read her bedtime stories aloud, just softly, just for herself — a habit from when she was younger that she'd never quite outgrown. Lately, she'd started noticing something reading along with her, half a beat behind, always through the crack under her door.</p>
+
+<h3>Chapter 2: Testing It</h3>
+<p>She tried skipping a word once, deliberately, just to see. The voice outside skipped it too, exactly the same word, exactly half a second late, as if it wasn't actually hearing her at all — just anticipating, somehow, what she'd read next.</p>
+
+<h3>Chapter 3: An Uneasy Truce</h3>
+<p>Mabel never opened the door to check. She kept reading instead, every night, and the voice kept following along, patient and precise, never once catching up and never once falling further behind. She still doesn't know what it is. She's stopped being scared of it, mostly — it's never missed a single story, and somehow, that's started to feel less like a haunting and more like company.</p>
+`
+},
+{
+  title: "The Music Box That Plays Backward",
+  author: "Khyati Srivastava",
+  slug: "the-music-box-that-plays-backward",
+  category: "Poetry",
+  emoji: "🎵",
+  excerpt: "A poem about an old music box that plays its lullaby in reverse, unwinding memories instead of counting them forward, note by careful note.",
+  created_at: "2027-04-04T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Music Box That Plays Backward</h3>
+<p>Wind the key and hear it start,<br/>
+not from the end but from the heart,<br/>
+a lullaby unwinding slow,<br/>
+back to somewhere long ago.</p>
+
+<p>First the note that says goodnight,<br/>
+then the ones that held it tight,<br/>
+back through years the melody flows,<br/>
+to the very first note it ever chose.</p>
+
+<p>Grandma wound this box each year,<br/>
+for every child who'd gather near,<br/>
+and now it plays her voice's shape,<br/>
+backward, gentle, hard to escape.</p>
+
+<p>So if a song feels like it's turned around,<br/>
+still listen close to that old sound —<br/>
+some melodies don't rush ahead,<br/>
+they circle back to what was said.</p>
+`
+},
+{
+  title: "What the Garden Hose Remembers",
+  author: "Khyati Srivastava",
+  slug: "what-the-garden-hose-remembers",
+  category: "Poetry",
+  emoji: "🌻",
+  excerpt: "A warm, funny little poem told from the perspective of a garden hose that has seen an entire childhood of summers unfold across its coiled green length.",
+  created_at: "2027-04-04T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>What the Garden Hose Remembers</h3>
+<p>I've watered roses, filled up pools,<br/>
+been chased by dogs and dropped by fools,<br/>
+been tangled, kinked, and left out in rain,<br/>
+uncoiled each summer, again and again.</p>
+
+<p>I remember a girl no taller than me,<br/>
+spraying rainbows for the whole family to see,<br/>
+I remember her brother, sneaky and sly,<br/>
+soaking her back with a well-aimed reply.</p>
+
+<p>Now she's tall, and he's taller still,<br/>
+but summer keeps climbing the very same hill,<br/>
+and every June when they drag me back out,<br/>
+I remember exactly what summer's about.</p>
+
+<p>So coil me up gentle when autumn comes 'round,<br/>
+I'll be here next June, right where I'm found,<br/>
+holding onto a hundred wet, laughing days —<br/>
+a garden hose never forgets how to play.</p>
+`
+},
 ];
