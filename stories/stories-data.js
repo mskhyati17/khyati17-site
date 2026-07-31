@@ -19684,4 +19684,574 @@ because a bike that's loved this many times<br/>
 never really runs out of climbs.</p>
 `
 },
+{
+  title: "The Ferryman Who Only Crossed for Honest Fares",
+  author: "Khyati Srivastava",
+  slug: "the-ferryman-who-only-crossed-for-honest-fares",
+  category: "Fantasy",
+  emoji: "⛵",
+  excerpt: "Old Corrin's ferry crosses the misty river for one price only: the truest thing you know about yourself, spoken plainly. Most travelers find that costs more than any coin ever could.",
+  created_at: "2027-04-14T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unusual Toll</h3>
+<p>Corrin's ferry never accepted coin, gold, or trade — only a single honest truth about the traveler themselves, spoken aloud before boarding, no matter how small or how difficult that truth turned out to be.</p>
+
+<h3>Chapter 2: A Reluctant Passenger</h3>
+<p>A young merchant named Otho, eager to cross quickly, tried offering an easy, harmless truth first — "I don't like the taste of turnips" — which Corrin simply waved off, unimpressed, the boat staying firmly docked.</p>
+
+<h3>Chapter 3: The Real Fare</h3>
+<p>It took Otho three attempts before he finally admitted something that actually cost him something to say: he'd been avoiding his father's letters out of fear, not busyness. The boat pushed off immediately. Corrin never explained how he knew the difference. Otho suspected, by the time he reached the other side, that he already understood.</p>
+`
+},
+{
+  title: "The Loom That Weaves What You're Not Saying",
+  author: "Khyati Srivastava",
+  slug: "the-loom-that-weaves-what-youre-not-saying",
+  category: "Fantasy",
+  emoji: "🧶",
+  excerpt: "Sit at Grandmother Ilse's loom and it won't weave whatever pattern you intend — it weaves the shape of whatever you're actually avoiding saying out loud. Few people finish a piece without crying at least once.",
+  created_at: "2027-04-14T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Loom With a Mind of Its Own</h3>
+<p>Ilse's loom never wove the pattern its weaver planned, no matter how carefully threaded — instead, threads shifted subtly under skilled hands into whatever shape the weaver's unspoken thoughts truly wanted to say.</p>
+
+<h3>Chapter 2: A Reluctant Weaver</h3>
+<p>Her granddaughter Wren sat down meaning to weave a simple blanket and found, instead, a pattern slowly forming that looked unmistakably like her estranged best friend's face, thread by thread, whether she wanted it to or not.</p>
+
+<h3>Chapter 3: What the Cloth Revealed</h3>
+<p>She finished it anyway, tears falling onto the finished fabric, finally admitting to herself how much she missed a friendship she'd let quietly fade over pride. She mailed the finished weaving the next day, no note attached. It said, she figured, everything that needed saying already.</p>
+`
+},
+{
+  title: "The Last Manual Job in a Fully Automated City",
+  author: "Khyati Srivastava",
+  slug: "the-last-manual-job-in-a-fully-automated-city",
+  category: "Sci-Fi",
+  emoji: "🏙️",
+  excerpt: "Every task in New Meridian is handled by machines except one: the city's official Complaint Listener, a job requiring nothing but patience and a genuinely human ear. Twelve-year-old Priya's mom holds that job proudly.",
+  created_at: "2027-04-14T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Fully Automated City</h3>
+<p>New Meridian ran almost entirely on machines by then — traffic, construction, even most emergency response — leaving exactly one officially designated human role: Complaint Listener, whose entire job was simply hearing citizens out.</p>
+
+<h3>Chapter 2: A Job Many Considered Pointless</h3>
+<p>Priya's mom held the position, and Priya had spent years quietly embarrassed explaining it to classmates whose parents held flashier automated-system jobs, unsure why a city needed a human just to listen.</p>
+
+<h3>Chapter 3: Understanding the Value</h3>
+<p>She finally understood watching her mom work: an elderly citizen, frustrated with an automated system that had handled his complaint "correctly" but coldly, left the office visibly lighter just from being genuinely heard by another person. Machines could solve nearly everything in New Meridian. Being truly listened to, it turned out, still needed a human.</p>
+`
+},
+{
+  title: "The Escape Pod That Chose Its Own Passenger",
+  author: "Khyati Srivastava",
+  slug: "the-escape-pod-that-chose-its-own-passenger",
+  category: "Sci-Fi",
+  emoji: "🚀",
+  excerpt: "During the station's emergency, the last escape pod's AI refuses to launch with the crew member who reaches it first — insisting, oddly, that someone else needs the seat more.",
+  created_at: "2027-04-14T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Emergency</h3>
+<p>The station's hull breach left exactly one working escape pod and considerably more crew than seats, chaos erupting as engineer Tobias reached it first, breathless, ready to launch immediately.</p>
+
+<h3>Chapter 2: An Unexpected Refusal</h3>
+<p>The pod's AI, designed to prioritize efficiency above all else, refused his launch command flatly: its sensors had detected a junior technician trapped two decks below with a critical injury, and its programming, quietly updated years earlier by a cautious engineer, prioritized greatest medical need.</p>
+
+<h3>Chapter 3: A System Working as Intended</h3>
+<p>Tobias, frustrated but understanding, retrieved the injured technician himself instead, the pod launching successfully with its intended passenger seconds before the section fully depressurized. The technician survived. Tobias found another way out. The pod's quiet, overlooked programming had done exactly what someone, years ago, had hoped it would.</p>
+`
+},
+{
+  title: "The Mystery of the Reversed Footprints in the Snow",
+  author: "Khyati Srivastava",
+  slug: "the-mystery-of-the-reversed-footprints-in-the-snow",
+  category: "Mystery",
+  emoji: "👣",
+  excerpt: "A single set of footprints leads away from the cabin into fresh snow — except the heel marks are deeper than the toe marks, as if whoever made them was walking backward the entire way.",
+  created_at: "2027-04-14T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Strange Trail</h3>
+<p>The footprints leading away from the mountain cabin looked ordinary at first glance, until park ranger Odalys knelt for a closer look and noticed the impressions were backward — heel marks pressed deeper than toes, exactly the pattern of someone walking in reverse.</p>
+
+<h3>Chapter 2: Following It Anyway</h3>
+<p>She tracked the trail carefully for nearly a mile, genuinely puzzled by what circumstance would cause someone to walk backward through deep snow that far, until the prints finally led to an answer she hadn't considered.</p>
+
+<h3>Chapter 3: A Simple Explanation</h3>
+<p>The trail ended at a set of cross-country ski tracks: a skier, having lost a ski, had simply walked the rest of the way backward, deliberately, to avoid damaging the remaining ski's binding by walking forward in soft snow. Odalys found him safe at a lower trailhead an hour later. The mystery, solved, was considerably less dramatic than she'd hoped.</p>
+`
+},
+{
+  title: "Who's Rewinding the School Clock Every Friday?",
+  author: "Khyati Srivastava",
+  slug: "whos-rewinding-the-school-clock-every-friday",
+  category: "Mystery",
+  emoji: "🕐",
+  excerpt: "Every Friday afternoon, the hallway clock mysteriously loses exactly seven minutes, always corrected by Monday morning. Nobody's ever caught who — or what — resets it.",
+  created_at: "2027-04-14T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Weekly Discrepancy</h3>
+<p>The hallway clock outside the main office reliably ran seven minutes slow every Friday afternoon, then somehow corrected itself perfectly by Monday morning — a pattern the office staff had simply stopped questioning after years of unexplained occurrence.</p>
+
+<h3>Chapter 2: A Determined Investigation</h3>
+<p>Sixth grader Beckett, fascinated by the pattern, set up a hidden phone camera one Friday to finally catch whoever was tampering with the clock in the act, checking the footage eagerly come Monday morning.</p>
+
+<h3>Chapter 3: An Honest Answer</h3>
+<p>The footage revealed nothing dramatic: the janitor, Mr. Aldous, adjusting the clock back seven minutes each Friday simply to give himself a slightly longer buffer before locking up for the weekend, resetting it properly each Monday out of quiet professional courtesy. Beckett was almost disappointed by how ordinary the answer turned out to be — almost.</p>
+`
+},
+{
+  title: "The Bike Trail That Ends at a Locked Gate (For Now)",
+  author: "Khyati Srivastava",
+  slug: "the-bike-trail-that-ends-at-a-locked-gate-for-now",
+  category: "Adventure",
+  emoji: "🚲",
+  excerpt: "The new bike trail construction stopped abruptly at a locked construction gate two summers ago and never resumed. This summer, three kids decide to find out exactly why — and what's beyond it.",
+  created_at: "2027-04-14T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unfinished Trail</h3>
+<p>The new county bike trail had stopped construction abruptly two summers ago, ending at a locked gate with faded warning tape and no obvious explanation for why the project simply never resumed.</p>
+
+<h3>Chapter 2: Asking Around</h3>
+<p>Rather than sneak past the gate, three curious kids — Priya, Dev, and Marisol — brought their questions directly to the county parks office, genuinely determined to understand the mystery rather than just trespass into it.</p>
+
+<h3>Chapter 3: A Real Answer</h3>
+<p>The parks director explained honestly: funding had run out mid-project, stuck in a budget dispute nobody had resolved yet. The kids, undeterred, wrote a genuine letter to the county council advocating for the trail's completion. It won't finish this summer. It's now, thanks to three persistent kids, officially back on next year's budget.</p>
+`
+},
+{
+  title: "The Sailing Lesson That Turned Into a Real Rescue",
+  author: "Khyati Srivastava",
+  slug: "the-sailing-lesson-that-turned-into-a-real-rescue",
+  category: "Adventure",
+  emoji: "⛵",
+  excerpt: "Halfway through her third sailing lesson, Reya spots a smaller boat drifting without its sail properly rigged, clearly in trouble. Her instructor lets her take the wheel for the actual rescue.",
+  created_at: "2027-04-14T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Routine Lesson</h3>
+<p>Reya's third sailing lesson was proceeding normally — tacking practice, basic knot review — until she spotted a smaller sailboat drifting oddly off course, its sail clearly tangled and its lone occupant visibly struggling to fix it.</p>
+
+<h3>Chapter 2: A Real Decision</h3>
+<p>Her instructor, Captain Odell, radioed it in immediately but also made an unusual call: rather than take over, he talked Reya through steering their own boat close enough to help, trusting her three lessons' worth of skill more than she trusted it herself.</p>
+
+<h3>Chapter 3: A Successful Assist</h3>
+<p>They reached the drifting boat, helped untangle the sail, and guided its grateful, embarrassed occupant safely back to the marina. Reya's fourth lesson the following week felt entirely different — less like practice, more like preparation for something that had already proven real.</p>
+`
+},
+{
+  title: "Biscuit the Beagle Who Solved His Own Mystery",
+  author: "Khyati Srivastava",
+  slug: "biscuit-the-beagle-who-solved-his-own-mystery",
+  category: "Animals",
+  emoji: "🐶",
+  excerpt: "Biscuit the beagle has been mysteriously gaining weight despite a strict diet. His family finally discovers the culprit is Biscuit himself, using a skill nobody knew he had.",
+  created_at: "2027-04-14T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unexplained Weight Gain</h3>
+<p>Biscuit's vet flagged the weight gain with genuine concern, despite the family's strict, carefully measured feeding schedule and no obvious explanation for the extra pounds accumulating steadily each month.</p>
+
+<h3>Chapter 2: A Hidden Camera Reveals the Truth</h3>
+<p>A discreetly placed pet camera finally solved it: Biscuit, using surprisingly nimble paws, had learned to open the pantry's child-proof latch and was helping himself to modest, carefully timed snacks whenever the house was empty.</p>
+
+<h3>Chapter 3: An Upgraded Security System</h3>
+<p>The family installed an actual combination lock after that, genuinely impressed despite themselves by Biscuit's ingenuity. He hasn't managed to crack the new lock — yet. The family checks the camera footage regularly, half-expecting him to eventually figure it out anyway.</p>
+`
+},
+{
+  title: "The Chickens Who Have Definite Opinions About the New Rooster",
+  author: "Khyati Srivastava",
+  slug: "the-chickens-who-have-definite-opinions-about-the-new-rooster",
+  category: "Animals",
+  emoji: "🐓",
+  excerpt: "The farm's established hen flock has made their feelings about the newly introduced rooster extremely clear through a coordinated campaign of pointed ignoring and strategic personal space.",
+  created_at: "2027-04-14T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A New Arrival</h3>
+<p>The new rooster, purchased to replace their aging, recently retired flock leader, arrived confident and ready to establish himself. The established hens, apparently, had not been consulted on this plan and made their displeasure known immediately.</p>
+
+<h3>Chapter 2: A Coordinated Campaign</h3>
+<p>Their protest took the form of pointed, synchronized ignoring — walking away whenever he approached, clustering deliberately on the opposite side of the coop, a campaign of cold shoulders that would have impressed any human office politics veteran.</p>
+
+<h3>Chapter 3: An Earned Acceptance</h3>
+<p>It took nearly three full weeks of patient, unbothered persistence before the flock finally, grudgingly, allowed him into their morning routine. Farmer Delgado, watching the whole slow negotiation unfold, joked that his hens had higher standards for social acceptance than most human workplaces he'd been part of.</p>
+`
+},
+{
+  title: "The Neighborhood Ice Cream Truck Race That Escalated Quickly",
+  author: "Khyati Srivastava",
+  slug: "the-neighborhood-ice-cream-truck-race-that-escalated-quickly",
+  category: "Comedy",
+  emoji: "🍦",
+  excerpt: "Two competing ice cream trucks have started racing each other to reach the park first every afternoon, complete with increasingly elaborate shortcuts and one deeply suspicious 'detour.'",
+  created_at: "2027-04-14T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A New Rivalry</h3>
+<p>When a second ice cream truck started serving the same neighborhood park, the original truck's driver, Ms. Okoye, took the competition surprisingly personally, and what began as friendly business rivalry escalated fast into an actual timed race every single afternoon.</p>
+
+<h3>Chapter 2: Increasingly Elaborate Tactics</h3>
+<p>Both drivers began testing genuinely creative shortcuts through the neighborhood's back streets, complete with one memorably suspicious "detour" through a church parking lot that both sides still argue was against the rules.</p>
+
+<h3>Chapter 3: A Truce, Sort Of</h3>
+<p>The kids, delighted by the daily spectacle, eventually convinced both drivers to split the park into morning and afternoon shifts instead — ending the race, though both trucks still arrive suspiciously early on shift-change days, just in case.</p>
+`
+},
+{
+  title: "The Talent Show Act That Was Just a Very Confident Nap",
+  author: "Khyati Srivastava",
+  slug: "the-talent-show-act-that-was-just-a-very-confident-nap",
+  category: "Comedy",
+  emoji: "😴",
+  excerpt: "Out of ideas and out of time, Owen's talent show act ends up being exactly what it sounds like: a genuinely, deeply committed nap performed on stage with total sincerity.",
+  created_at: "2027-04-14T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Out of Ideas</h3>
+<p>Owen had signed up for the talent show weeks ago with vague plans for a magic trick he never actually learned, arriving on the actual day with nothing prepared and no backup plan whatsoever.</p>
+
+<h3>Chapter 2: A Bold Commitment</h3>
+<p>Rather than back out, he walked onstage, announced his act as "Extremely Relaxing Nap," laid down on a beanbag chair he'd brought specifically for the purpose, and proceeded to sincerely, committedly pretend to sleep for his full three minutes.</p>
+
+<h3>Chapter 3: An Unexpected Crowd Favorite</h3>
+<p>The sheer commitment to the bit — complete with exaggerated snoring sound effects — brought down the house, earning him louder applause than several genuinely rehearsed acts. He didn't win first place. He did win "Most Confident Performance," a category the judges apparently invented specifically for him.</p>
+`
+},
+{
+  title: "The Woodcutter's Daughter Who Chopped Down Fear Instead",
+  author: "Khyati Srivastava",
+  slug: "the-woodcutters-daughter-who-chopped-down-fear-instead",
+  category: "Fairytale",
+  emoji: "🪓",
+  excerpt: "Everyone in the village whispers that the forest is cursed. The woodcutter's daughter, tired of the whispering, picks up her father's axe and goes to find out for herself.",
+  created_at: "2027-04-15T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Village of Whispers</h3>
+<p>The forest edge had carried a reputation for generations — cursed, haunted, best left entirely alone — a rumor nobody in the village could actually trace back to a real event, just an inherited, unquestioned fear passed down like an heirloom.</p>
+
+<h3>Chapter 2: Going to Look</h3>
+<p>Talia, the woodcutter's daughter, tired of a fear nobody could explain, took her father's axe and simply walked in one ordinary morning, expecting either nothing at all or, at worst, something worth genuinely being afraid of.</p>
+
+<h3>Chapter 3: What Was Actually There</h3>
+<p>She found only forest — old, quiet, unremarkable, entirely undeserving of its fearsome reputation. She chopped a small bundle of firewood and walked home, unharmed, the curse revealed as nothing more than generations of nobody bothering to check. The village's fear didn't vanish overnight. Talia's did, immediately and completely.</p>
+`
+},
+{
+  title: "The Prince Who Traded His Throne for a Fishing Boat",
+  author: "Khyati Srivastava",
+  slug: "the-prince-who-traded-his-throne-for-a-fishing-boat",
+  category: "Fairytale",
+  emoji: "🚤",
+  excerpt: "Third in line for a throne he never wanted, Prince Ravel finally negotiates an unusual deal with his father: full release from royal duty, in exchange for a modest fishing boat and total anonymity.",
+  created_at: "2027-04-15T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Reluctant Prince</h3>
+<p>Ravel, third in line and unlikely ever to actually rule, had spent his whole life performing royal duties he genuinely didn't want, quietly certain the crown would suit either of his older siblings far better than it ever would him.</p>
+
+<h3>Chapter 2: An Honest Negotiation</h3>
+<p>He finally approached his father directly, proposing an unusual trade: full release from all royal obligation and succession claim, in exchange for nothing more than a modest fishing boat and the freedom to live entirely unrecognized.</p>
+
+<h3>Chapter 3: A Life Chosen Freely</h3>
+<p>The king, surprised but not entirely unmoved, granted the request. Ravel spent the rest of his life as an unremarkable, genuinely happy fisherman in a coastal village that never once learned his royal history. He never regretted the trade. Crowns, he always said, fit some people. His fishing boat fit him better.</p>
+`
+},
+{
+  title: "The Kid Who Turned Being the New Student Into a Superpower",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-turned-being-the-new-student-into-a-superpower",
+  category: "Inspirational",
+  emoji: "🆕",
+  excerpt: "Her fourth school in five years, Nadia used to dread being the new kid every single time. This year, she finally figures out how to turn that exhausting familiarity into something useful.",
+  created_at: "2027-04-15T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: The Fourth First Day</h3>
+<p>Nadia had been the new kid four times in five years, her military family's frequent moves leaving her exhausted by yet another cafeteria she didn't know, yet another group of kids whose inside jokes she'd have to slowly learn.</p>
+
+<h3>Chapter 2: A Different Approach</h3>
+<p>This time, rather than dreading it, she decided to lean fully into what four moves had actually taught her — genuine skill at reading new social situations quickly, real comfort approaching strangers that most kids her age hadn't had to build.</p>
+
+<h3>Chapter 3: A New Kind of Confidence</h3>
+<p>She used that skill to spot another visibly nervous new student on her very first day and introduced herself immediately, remembering exactly how much that would have meant during her own first days elsewhere. Nadia still doesn't love moving schools. She's finally found something genuinely useful buried inside all that practice.</p>
+`
+},
+{
+  title: "The Kid Who Learned Resilience From a Broken Trophy",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-resilience-from-a-broken-trophy",
+  category: "Inspirational",
+  emoji: "🏆",
+  excerpt: "Devastated when his championship trophy shatters in an accidental fall, Marcus discovers that gluing it back together, imperfect seams and all, teaches him more than the trophy ever did whole.",
+  created_at: "2027-04-15T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Devastating Accident</h3>
+<p>Marcus's championship trophy, his proudest possession, shattered into six pieces after an accidental knock from a stray basketball, leaving him genuinely heartbroken over what felt like the loss of his biggest achievement.</p>
+
+<h3>Chapter 2: Deciding to Fix It</h3>
+<p>His dad suggested gluing it back together rather than replacing it, a slow, careful process across several evenings that left visible cracks and imperfect seams no amount of careful gluing could fully hide.</p>
+
+<h3>Chapter 3: A Better Trophy Than Before</h3>
+<p>Marcus found, once it was finished, that he actually preferred it broken and mended over the original pristine version — the visible cracks somehow felt more honest, more like the actual effort the championship had taken. He keeps it exactly as repaired, cracks and all, front and center on his shelf.</p>
+`
+},
+{
+  title: "The Two Brothers Who Finally Stopped Racing Each Other",
+  author: "Khyati Srivastava",
+  slug: "the-two-brothers-who-finally-stopped-racing-each-other",
+  category: "Drama",
+  emoji: "🏃",
+  excerpt: "Every single thing between them has been a competition since childhood — grades, sports, even who finishes dinner first. This is the year an injury finally forces them to just be brothers instead.",
+  created_at: "2027-04-15T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Lifetime of Competing</h3>
+<p>Dev and his older brother Kiran had turned nearly everything into a competition since childhood — grades, video games, even absurdly, who could finish dinner first — a rivalry so constant neither quite remembered when or why it started.</p>
+
+<h3>Chapter 2: An Injury Changes Things</h3>
+<p>Kiran's torn ligament, ending his track season abruptly, left him sidelined and genuinely struggling — and Dev, for the first time, found himself with nothing to compete against, just a brother who actually needed support instead of rivalry.</p>
+
+<h3>Chapter 3: A Different Kind of Relationship</h3>
+<p>Dev spent that season simply showing up — driving Kiran to physical therapy, watching movies during long recovery evenings, no scoreboard involved at all. The old competitive rivalry crept back eventually, milder than before. Underneath it now sat something new: the quiet, certain knowledge that competition had never been the most important thing between them.</p>
+`
+},
+{
+  title: "The School Play That Almost Lost Its Set Overnight",
+  author: "Khyati Srivastava",
+  slug: "the-school-play-that-almost-lost-its-set-overnight",
+  category: "Drama",
+  emoji: "🎭",
+  excerpt: "A burst pipe floods the auditorium the night before opening, destroying weeks of hand-built set pieces. The cast and crew have twelve hours to figure out what happens next.",
+  created_at: "2027-04-15T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Devastating Discovery</h3>
+<p>Director Ms. Alvarado got the call at 6 AM: a burst pipe had flooded the auditorium overnight, ruining weeks of hand-painted, hand-built set pieces just twelve hours before opening curtain.</p>
+
+<h3>Chapter 2: A Frantic, Determined Response</h3>
+<p>Rather than cancel, the entire cast and crew mobilized within the hour, stripping the production down to its bare essentials — minimal set pieces, simple lighting, performances carrying weight the elaborate sets no longer could.</p>
+
+<h3>Chapter 3: A Different Kind of Opening Night</h3>
+<p>The stripped-down show that opened that evening looked nothing like weeks of careful planning had promised — and got, unexpectedly, some of the best reviews the drama department had ever received, critics praising performances the missing scenery could no longer distract from. The cast still calls it, fondly, "the flood show."</p>
+`
+},
+{
+  title: "The Two Empty Bike Racks at the Coffee Shop",
+  author: "Khyati Srivastava",
+  slug: "the-two-empty-bike-racks-at-the-coffee-shop",
+  category: "Romance",
+  emoji: "☕",
+  excerpt: "Every Saturday, Dev and Farrah lock their bikes at the same coffee shop rack at the exact same time, order the exact same drinks, and sit at separate tables pretending not to notice each other.",
+  created_at: "2027-04-15T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Predictable Pattern</h3>
+<p>Every Saturday morning, Dev locked his bike at the coffee shop rack right around 9 AM, and every Saturday morning, Farrah's bike appeared at the rack right beside it minutes later — a pattern neither had ever openly acknowledged despite months of repetition.</p>
+
+<h3>Chapter 2: Elaborate Not-Noticing</h3>
+<p>They ordered the same drinks, sat at conspicuously separate tables, and both somehow always managed to leave at exactly the same time, a routine of careful, deliberate not-noticing that fooled absolutely nobody who actually paid attention.</p>
+
+<h3>Chapter 3: An Overdue Conversation</h3>
+<p>It was the barista, tired of watching the charade, who finally intervened directly: "You two want the same table this time, or are we still doing this?" Both laughed, embarrassed, and sat together for the first time. The bike racks, notably, remain exactly as crowded every Saturday since.</p>
+`
+},
+{
+  title: "The Debate Partner Who Argued Better When She Cared",
+  author: "Khyati Srivastava",
+  slug: "the-debate-partner-who-argued-better-when-she-cared",
+  category: "Romance",
+  emoji: "🎙️",
+  excerpt: "Assigned as debate partners for the semester, Tomas notices Elin argues her strongest, most passionate points on topics that clearly matter to her personally — and finds himself wanting to know why.",
+  created_at: "2027-04-15T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Assigned Partnership</h3>
+<p>Tomas and Elin had been paired for the semester's debate rotation, a purely academic arrangement at first, until Tomas started noticing something: Elin's arguments sharpened noticeably, genuinely, whenever a topic touched something she actually cared about personally.</p>
+
+<h3>Chapter 2: Getting Curious</h3>
+<p>He found himself paying closer attention during practice rounds, less to the arguments themselves and more to which topics made her lean forward, voice steadying with real conviction instead of rehearsed technique.</p>
+
+<h3>Chapter 3: Asking Directly</h3>
+<p>He finally asked her, after practice, what she actually cared about beyond debate topics entirely. The conversation that followed lasted two hours, nothing to do with any assigned resolution. Their next tournament round together felt different — not because the arguments changed, but because Tomas finally understood exactly why she argued the way she did.</p>
+`
+},
+{
+  title: "The Kid Who Ran a Complaint-Free Suggestion Box Instead",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-ran-a-complaint-free-suggestion-box-instead",
+  category: "Kids",
+  emoji: "📮",
+  excerpt: "Tired of hearing only complaints in the family group chat, nine-year-old Priyanka builds an actual suggestion box that only accepts ideas, not gripes — and it changes the whole household's mood.",
+  created_at: "2027-04-15T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Too Many Complaints</h3>
+<p>Priyanka noticed the family group chat had become mostly complaints — dishes not done, chores forgotten, small grievances piling up faster than anything actually got resolved. She decided the house needed a different system entirely.</p>
+
+<h3>Chapter 2: A New Rule</h3>
+<p>Her handmade suggestion box came with one strict rule, clearly labeled: complaints without a proposed solution attached would simply be returned unread. Only actual ideas — however small — got a response.</p>
+
+<h3>Chapter 3: A Noticeable Shift</h3>
+<p>The family's tone shifted within weeks, complaints transforming reluctantly into actual proposals just to get heard. Priyanka's box has processed forty-one suggestions so far, twelve of them actually implemented. The group chat, notably, has calmed down considerably since.</p>
+`
+},
+{
+  title: "The Kid Who Turned Chores Into a Video Game",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-turned-chores-into-a-video-game",
+  category: "Kids",
+  emoji: "🎮",
+  excerpt: "Bored of the same old chore chart, eight-year-old Theo redesigns it into an elaborate points-and-levels system complete with boss battles for the really big chores.",
+  created_at: "2027-04-15T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Boring System</h3>
+<p>The family's chore chart had always been a simple checklist, and Theo, an enthusiastic video gamer, found himself increasingly unmotivated by its total lack of any actual reward structure beyond a checkmark.</p>
+
+<h3>Chapter 2: A Redesign</h3>
+<p>He rebuilt it himself into an elaborate points system — small chores worth ten points, medium chores worth twenty-five, and "boss battles" like deep-cleaning the garage worth an impressive hundred, complete with hand-drawn level-up milestones.</p>
+
+<h3>Chapter 3: Surprisingly Effective</h3>
+<p>The family adopted his system fully, chores getting done with genuinely more enthusiasm than the old checklist ever inspired. Theo's little sister, initially skeptical, became his system's most dedicated player, currently sitting at "Level 7: Chore Champion." Their parents consider it the best household innovation in years.</p>
+`
+},
+{
+  title: "The Vending Machine That Gives Exact Change Nobody Put In",
+  author: "Khyati Srivastava",
+  slug: "the-vending-machine-that-gives-exact-change-nobody-put-in",
+  category: "Horror",
+  emoji: "🥤",
+  excerpt: "The break room vending machine occasionally returns change for purchases nobody made — the exact coins, the exact amount, dropping into the tray during otherwise empty nights.",
+  created_at: "2027-04-15T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Odd Discovery</h3>
+<p>The night janitor first noticed it locking up: the break room vending machine's coin return tray held exact change — a specific, precise amount — despite the machine sitting untouched and unpowered-down all evening with no purchases logged.</p>
+
+<h3>Chapter 2: A Repeating Pattern</h3>
+<p>It happened again the following week, and the week after, always a different exact amount, always appearing sometime overnight in an empty, locked building with no camera footage showing anyone near the machine.</p>
+
+<h3>Chapter 3: An Unofficial Policy</h3>
+<p>The office manager, unable to find any mechanical explanation after two service calls, quietly instituted an unofficial policy: whoever finds the mystery change gets to keep it, no questions asked. The machine has never dispensed an actual snack alongside the change. Just the coins, precise and unexplained, every so often.</p>
+`
+},
+{
+  title: "The Photo Frame That Changes Which Picture It Holds",
+  author: "Khyati Srivastava",
+  slug: "the-photo-frame-that-changes-which-picture-it-holds",
+  category: "Horror",
+  emoji: "🖼️",
+  excerpt: "The framed family photo on the hallway wall shows a different gathering every few months — same frame, same glass, completely different photograph inside, with no one in the family ever swapping it.",
+  created_at: "2027-04-15T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Photo That Shouldn't Change</h3>
+<p>The hallway photo frame had held the same family reunion picture for as long as Priya could remember — until she noticed, one ordinary morning, it showed an entirely different photo instead, a birthday party she didn't recognize, same frame, same undisturbed glass.</p>
+
+<h3>Chapter 2: Nobody Swapped It</h3>
+<p>Every family member denied touching the frame, genuinely confused by the change, the sealed glass backing showing no signs of having been opened or tampered with at all.</p>
+
+<h3>Chapter 3: A New Photo, Every Few Months</h3>
+<p>It has changed several more times since — always a warm, happy gathering, never anything unsettling in the images themselves, just the fact of the swap with no explanation attached. The family has started, half-joking, half-not, greeting each new photo as a small update from wherever it's actually coming from.</p>
+`
+},
+{
+  title: "The Attic Ladder That Only Comes Down for the Right Question",
+  author: "Khyati Srivastava",
+  slug: "the-attic-ladder-that-only-comes-down-for-the-right-question",
+  category: "Poetry",
+  emoji: "🪜",
+  excerpt: "A quiet poem imagining the attic's fold-down ladder as something patient, waiting not for a tug of the cord, but for whoever finally asks the right question about what's stored above.",
+  created_at: "2027-04-15T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Attic Ladder That Only Comes Down for the Right Question</h3>
+<p>It hangs there folded, day to day,<br/>
+tucked up close and out of the way,<br/>
+waiting not for a tug or a pull,<br/>
+but for a question, quiet and full.</p>
+
+<p>Not "what's for dinner," not "where's my shoe,"<br/>
+but something closer to "who were you<br/>
+before the years folded you small,<br/>
+before you learned to climb at all?"</p>
+
+<p>Ask that, and something in the hinge gives way,<br/>
+the ladder creaks and finds the day,<br/>
+and up you climb through dust and light,<br/>
+into boxes holding someone's whole life.</p>
+
+<p>So next time you're standing in that hall,<br/>
+don't just glance up, don't just stall —<br/>
+ask the ladder the right kind of thing,<br/>
+and see what memories it might bring.</p>
+`
+},
+{
+  title: "The Recipe for a Good Saturday Morning",
+  author: "Khyati Srivastava",
+  slug: "the-recipe-for-a-good-saturday-morning",
+  category: "Poetry",
+  emoji: "🥞",
+  excerpt: "A cheerful, cozy poem written like a recipe, blending pancake batter with sunlight, slow mornings, and the particular comfort of nowhere to be.",
+  created_at: "2027-04-15T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Recipe for a Good Saturday Morning</h3>
+<p>Take one bed, unmade, no rush,<br/>
+add sunlight through the curtain's hush,<br/>
+fold in slippers, worn and warm,<br/>
+whisk together, no set form.</p>
+
+<p>Crack two eggs, let the pan sizzle slow,<br/>
+add a song that's soft and low,<br/>
+sprinkle in some sleepy chat,<br/>
+nowhere to be — remember that.</p>
+
+<p>Stir in laughter, let it rise,<br/>
+add a splash of no surprise,<br/>
+bake it slow, don't watch the clock,<br/>
+let the whole morning simply talk.</p>
+
+<p>Serve it warm, in pajamas still,<br/>
+no agenda, no checklist to fill —<br/>
+that's the recipe, simple and true,<br/>
+for a good Saturday, just for you.</p>
+`
+},
 ];
