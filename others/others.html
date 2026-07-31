@@ -100,6 +100,90 @@
       font-size:.78rem; background:var(--acc); border-radius:999px; width:22px; height:22px;
       display:flex; align-items:center; justify-content:center;
     }
+
+    /* Mochi streak card */
+    .mochi-card{
+      background:linear-gradient(135deg,#3a0b3a,#7a1b9a 60%,#c14dcc); color:#fff;
+      border-radius:20px; padding:26px 24px; text-align:center; margin:0 auto 10px;
+      box-shadow:0 12px 32px rgba(90,20,90,.28);
+    }
+    .mochi-face{ font-size:3.4rem; line-height:1; margin-bottom:6px; }
+    .mochi-stats{ display:flex; justify-content:center; gap:28px; margin:14px 0 6px; flex-wrap:wrap; }
+    .mochi-stat{ text-align:center; }
+    .mochi-stat .n{ font-size:1.6rem; font-weight:800; }
+    .mochi-stat .l{ font-size:.78rem; opacity:.85; text-transform:uppercase; letter-spacing:.06em; }
+    .mochi-msg{ font-size:.92rem; opacity:.92; margin:10px 0 4px; min-height:1.4em; }
+    .mochi-card button{
+      cursor:pointer; border:none; border-radius:999px; background:rgba(255,255,255,.95);
+      color:#7a1b9a; font-weight:700; padding:10px 22px; font-size:.92rem; margin-top:10px;
+    }
+    .mochi-card button:hover{ background:#fff; }
+    .mochi-card button:disabled{ opacity:.5; cursor:not-allowed; }
+
+    /* Daily checklist */
+    .checklist-card{
+      background:#fff; border:1px solid var(--acc); border-radius:18px; padding:22px;
+      box-shadow:0 6px 20px rgba(117,80,168,.08); max-width:520px; margin:0 auto;
+    }
+    .checklist-add{ display:flex; gap:8px; margin-bottom:14px; }
+    .checklist-add input{
+      flex:1; padding:10px 14px; border-radius:999px; border:1px solid var(--acc);
+      font-size:.92rem; font-family:inherit;
+    }
+    .checklist-add button{
+      cursor:pointer; border:none; border-radius:999px; background:var(--pp); color:#fff;
+      font-weight:700; padding:10px 18px; font-size:.88rem; white-space:nowrap;
+    }
+    .checklist-add button:hover{ background:var(--pp2); }
+    .checklist-items{ display:flex; flex-direction:column; gap:8px; }
+    .checklist-item{
+      display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:12px;
+      background:#faf6ff; border:1px solid var(--acc);
+    }
+    .checklist-item input[type=checkbox]{ width:20px; height:20px; accent-color:var(--pp); cursor:pointer; flex-shrink:0; }
+    .checklist-item span{ flex:1; font-size:.92rem; color:var(--ink); }
+    .checklist-item.done span{ text-decoration:line-through; opacity:.55; }
+    .checklist-item .del{
+      cursor:pointer; border:none; background:transparent; color:#b23a5e; font-size:1rem; padding:2px 6px;
+    }
+    .checklist-empty{ text-align:center; color:#6b5b7e; font-size:.88rem; padding:10px 0; }
+    .checklist-note{ text-align:center; font-size:.78rem; color:#6b5b7e; margin-top:12px; }
+
+    /* Spin wheels (shared component) */
+    .wheels-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; }
+    .wheel-card{
+      background:#fff; border:1px solid var(--acc); border-radius:18px; padding:22px;
+      box-shadow:0 6px 20px rgba(117,80,168,.08); text-align:center;
+    }
+    .wheel-card h3{ margin:0 0 4px; color:var(--pp); font-size:1.05rem; }
+    .wheel-card .sub{ font-size:.8rem; color:#6b5b7e; margin:0 0 16px; }
+    .wheel-wrap{ position:relative; width:210px; height:210px; margin:0 auto 16px; }
+    .wheel-pointer{
+      position:absolute; top:-4px; left:50%; transform:translateX(-50%); width:0; height:0;
+      border-left:13px solid transparent; border-right:13px solid transparent;
+      border-top:20px solid var(--ink); z-index:3;
+    }
+    .wheel-disc{
+      width:100%; height:100%; border-radius:50%; border:5px solid #fff;
+      box-shadow:0 6px 20px rgba(0,0,0,.22); transition:transform 3.6s cubic-bezier(.13,.75,.11,1);
+    }
+    .wheel-center-btn{
+      position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+      width:58px; height:58px; border-radius:50%; background:#fff; border:3px solid var(--pp);
+      font-weight:800; color:var(--pp); cursor:pointer; z-index:4; font-size:.78rem;
+      display:flex; align-items:center; justify-content:center; text-align:center; line-height:1.05;
+    }
+    .wheel-center-btn:disabled{ opacity:.55; cursor:not-allowed; }
+    .wheel-result{
+      min-height:2.6em; font-weight:700; color:var(--pp); font-size:.95rem; margin-top:4px;
+      display:flex; align-items:center; justify-content:center; padding:0 6px;
+    }
+    .wheel-custom-input{
+      width:100%; padding:9px 12px; border-radius:12px; border:1px solid var(--acc);
+      font-size:.85rem; font-family:inherit; margin-bottom:10px; box-sizing:border-box;
+    }
+    .wheel-label{ position:absolute; left:50%; top:50%; width:92px; height:18px; margin-top:-9px; transform-origin:0 50%; text-align:right; padding-right:12px; box-sizing:border-box; pointer-events:none; }
+    .wheel-label span{ font-size:.66rem; font-weight:800; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.45); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; display:inline-block; max-width:100%; }
   </style>
   <!-- canonical + site icon (khyati:head) -->
   <link rel="canonical" href="https://khyati17.com/others/others.html" />
@@ -185,6 +269,109 @@
     </div>
 
     <div class="ka-100-grid" id="hundredGrid"></div>
+
+    <div class="ka-head" style="margin-top:44px">
+      <h2>🐾 Mochi's Daily Streak</h2>
+      <p>Check off your daily list to earn coins and keep Mochi's streak alive.</p>
+    </div>
+
+    <div class="mochi-card">
+      <div class="mochi-face" id="mochiFace">🐹</div>
+      <div class="mochi-stats">
+        <div class="mochi-stat"><div class="n" id="streakCount">0</div><div class="l">Day Streak</div></div>
+        <div class="mochi-stat"><div class="n" id="coinCount">0</div><div class="l">🪙 Coins</div></div>
+      </div>
+      <div class="mochi-msg" id="mochiMsg">Check off something on your list today to start a streak!</div>
+      <button id="reviveBtn" hidden>💔 Revive Mochi (10 🪙)</button>
+    </div>
+
+    <div class="ka-head" style="margin-top:36px">
+      <h2>✅ My Daily Checklist</h2>
+      <p>Add your own everyday things — checkmarks clear automatically at the start of a new day.</p>
+    </div>
+
+    <div class="checklist-card">
+      <div class="checklist-add">
+        <input id="checklistInput" type="text" placeholder="e.g. Brush my teeth" maxlength="60" />
+        <button id="checklistAddBtn">➕ Add</button>
+      </div>
+      <div class="checklist-items" id="checklistItems"></div>
+      <div class="checklist-note">Each new item checked today earns you 5 🪙. Come back tomorrow for a fresh list!</div>
+    </div>
+
+    <div class="ka-head" style="margin-top:36px">
+      <h2>🎡 Spin Wheels</h2>
+      <p>A daily coin spin, plus wheels for Would You Rather, Truth or Dare, your own custom list, emojis and colors.</p>
+    </div>
+
+    <div class="wheels-grid">
+      <div class="wheel-card">
+        <h3>🪙 Daily Coin Spin</h3>
+        <div class="sub">One free spin a day — 10, 50, 100, 500 or the 1000 jackpot!</div>
+        <div class="wheel-wrap">
+          <div class="wheel-pointer"></div>
+          <div class="wheel-disc" id="coinWheelDisc"></div>
+          <button class="wheel-center-btn" id="coinWheelBtn">SPIN</button>
+        </div>
+        <div class="wheel-result" id="coinWheelResult">—</div>
+      </div>
+
+      <div class="wheel-card">
+        <h3>🤔 Would You Rather Wheel</h3>
+        <div class="sub">Spin for a random would-you-rather question.</div>
+        <div class="wheel-wrap">
+          <div class="wheel-pointer"></div>
+          <div class="wheel-disc" id="wyrWheelDisc"></div>
+          <button class="wheel-center-btn" id="wyrWheelBtn">SPIN</button>
+        </div>
+        <div class="wheel-result" id="wyrWheelResult">—</div>
+      </div>
+
+      <div class="wheel-card">
+        <h3>😈 Truth or Dare Wheel</h3>
+        <div class="sub">Spin to land on Truth or Dare, then get a prompt.</div>
+        <div class="wheel-wrap">
+          <div class="wheel-pointer"></div>
+          <div class="wheel-disc" id="tdWheelDisc"></div>
+          <button class="wheel-center-btn" id="tdWheelBtn">SPIN</button>
+        </div>
+        <div class="wheel-result" id="tdWheelResult">—</div>
+      </div>
+
+      <div class="wheel-card">
+        <h3>🎨 Customizable Wheel</h3>
+        <div class="sub">Type your own options, separated by commas, then spin!</div>
+        <input class="wheel-custom-input" id="customWheelInput" type="text" placeholder="Pizza, Tacos, Sushi, Pasta" />
+        <div class="wheel-wrap">
+          <div class="wheel-pointer"></div>
+          <div class="wheel-disc" id="customWheelDisc"></div>
+          <button class="wheel-center-btn" id="customWheelBtn">SPIN</button>
+        </div>
+        <div class="wheel-result" id="customWheelResult">—</div>
+      </div>
+
+      <div class="wheel-card">
+        <h3>😄 Emoji Wheel</h3>
+        <div class="sub">Spin for a random fun emoji.</div>
+        <div class="wheel-wrap">
+          <div class="wheel-pointer"></div>
+          <div class="wheel-disc" id="emojiWheelDisc"></div>
+          <button class="wheel-center-btn" id="emojiWheelBtn">SPIN</button>
+        </div>
+        <div class="wheel-result" id="emojiWheelResult">—</div>
+      </div>
+
+      <div class="wheel-card">
+        <h3>🌈 Color Wheel</h3>
+        <div class="sub">Spin for a random color.</div>
+        <div class="wheel-wrap">
+          <div class="wheel-pointer"></div>
+          <div class="wheel-disc" id="colorWheelDisc"></div>
+          <button class="wheel-center-btn" id="colorWheelBtn">SPIN</button>
+        </div>
+        <div class="wheel-result" id="colorWheelResult">—</div>
+      </div>
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -8785,6 +8972,310 @@
       item.className = 'ka-100-item';
       item.innerHTML = `<span class="num">${idx + 1}</span>${t}`;
       hundredGrid.appendChild(item);
+    });
+
+    /* ---- Mochi streak, daily checklist, coins & spin wheels ---- */
+    function todayStr(){
+      const d = new Date();
+      return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+    }
+    function daysBetween(a,b){
+      return Math.round((new Date(b+'T00:00:00') - new Date(a+'T00:00:00')) / 86400000);
+    }
+    const today = todayStr();
+    const STATE_KEY = 'k17_mochi_v1';
+    function loadState(){
+      let s;
+      try { s = JSON.parse(localStorage.getItem(STATE_KEY)); } catch(e){ s = null; }
+      if (!s || typeof s !== 'object') s = {};
+      s.coins = typeof s.coins === 'number' ? s.coins : 0;
+      s.streak = typeof s.streak === 'number' ? s.streak : 0;
+      s.mochiAlive = typeof s.mochiAlive === 'boolean' ? s.mochiAlive : true;
+      s.lastActiveDate = s.lastActiveDate || null;
+      s.lastCoinSpinDate = s.lastCoinSpinDate || null;
+      s.checklist = Array.isArray(s.checklist) ? s.checklist : [];
+      s.checklistDate = s.checklistDate || null;
+      return s;
+    }
+    const mstate = loadState();
+    function saveState(){ localStorage.setItem(STATE_KEY, JSON.stringify(mstate)); }
+
+    if (mstate.checklistDate !== today) {
+      mstate.checklist.forEach(it => { it.done = false; });
+      mstate.checklistDate = today;
+    }
+    if (mstate.lastActiveDate && mstate.lastActiveDate !== today) {
+      const gap = daysBetween(mstate.lastActiveDate, today);
+      if (gap >= 2 && mstate.mochiAlive) {
+        mstate.mochiAlive = false;
+        mstate.streak = 0;
+      }
+    }
+    saveState();
+
+    function renderMochi(){
+      document.getElementById('streakCount').textContent = mstate.streak;
+      document.getElementById('coinCount').textContent = mstate.coins;
+      const face = document.getElementById('mochiFace');
+      const msg = document.getElementById('mochiMsg');
+      const revive = document.getElementById('reviveBtn');
+      if (!mstate.mochiAlive) {
+        face.textContent = '💀';
+        msg.textContent = "Oh no, Mochi's streak broke and she needs your help! Revive her for 10 🪙.";
+        revive.hidden = false;
+        revive.disabled = mstate.coins < 10;
+      } else {
+        revive.hidden = true;
+        if (mstate.lastActiveDate === today) {
+          face.textContent = '🥳';
+          msg.textContent = `Mochi is happy! You're on a ${mstate.streak}-day streak.`;
+        } else {
+          face.textContent = '🐹';
+          msg.textContent = mstate.streak > 0 ? `Check something off today to keep your ${mstate.streak}-day streak going!` : 'Check off something on your list today to start a streak!';
+        }
+      }
+    }
+    document.getElementById('reviveBtn').addEventListener('click', ()=>{
+      if (mstate.mochiAlive || mstate.coins < 10) return;
+      mstate.coins -= 10;
+      mstate.mochiAlive = true;
+      mstate.streak = 0;
+      mstate.lastActiveDate = null;
+      saveState();
+      renderMochi();
+    });
+
+    function renderChecklist(){
+      const wrap = document.getElementById('checklistItems');
+      wrap.innerHTML = '';
+      if (!mstate.checklist.length) {
+        wrap.innerHTML = '<div class="checklist-empty">No items yet — add your first daily activity above! ✨</div>';
+        return;
+      }
+      mstate.checklist.forEach(item=>{
+        const row = document.createElement('div');
+        row.className = 'checklist-item' + (item.done ? ' done' : '');
+        const cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.checked = !!item.done;
+        cb.addEventListener('change', ()=> toggleChecklistItem(item.id, cb.checked));
+        const span = document.createElement('span');
+        span.textContent = item.text;
+        const del = document.createElement('button');
+        del.className = 'del';
+        del.textContent = '✕';
+        del.title = 'Delete';
+        del.addEventListener('click', ()=> deleteChecklistItem(item.id));
+        row.appendChild(cb); row.appendChild(span); row.appendChild(del);
+        wrap.appendChild(row);
+      });
+    }
+    function toggleChecklistItem(id, done){
+      const item = mstate.checklist.find(i=>i.id===id);
+      if (!item) return;
+      const wasDone = item.done;
+      item.done = done;
+      if (done && !wasDone) {
+        mstate.coins += 5;
+        if (mstate.mochiAlive && mstate.lastActiveDate !== today) {
+          mstate.streak += 1;
+          mstate.lastActiveDate = today;
+        }
+      }
+      saveState();
+      renderChecklist();
+      renderMochi();
+    }
+    function deleteChecklistItem(id){
+      mstate.checklist = mstate.checklist.filter(i=>i.id!==id);
+      saveState();
+      renderChecklist();
+    }
+    function addChecklistItem(){
+      const input = document.getElementById('checklistInput');
+      const text = input.value.trim();
+      if (!text) return;
+      mstate.checklist.push({ id: 'c'+Date.now()+Math.random().toString(36).slice(2,7), text, done:false });
+      input.value = '';
+      saveState();
+      renderChecklist();
+    }
+    document.getElementById('checklistAddBtn').addEventListener('click', addChecklistItem);
+    document.getElementById('checklistInput').addEventListener('keydown', e=>{ if (e.key === 'Enter') addChecklistItem(); });
+
+    renderMochi();
+    renderChecklist();
+
+    /* ---- Reusable spin-wheel component ---- */
+    const WHEEL_COLORS = ['#7a1b9a','#c14dcc','#e91e8c','#ff6f61','#ffb347','#ffe066','#8bd450','#3ec6c6','#4a90e2','#9b6bff'];
+    function buildWheel(discEl, labels, colors){
+      const n = labels.length;
+      const slice = 360 / n;
+      const parts = labels.map((_,i)=> `${colors[i%colors.length]} ${(i*slice).toFixed(3)}deg ${((i+1)*slice).toFixed(3)}deg`);
+      discEl.style.background = `conic-gradient(${parts.join(',')})`;
+      discEl.innerHTML = '';
+      labels.forEach((label,i)=>{
+        const mid = i*slice + slice/2;
+        const lw = document.createElement('div');
+        lw.className = 'wheel-label';
+        lw.style.transform = `rotate(${mid-90}deg)`;
+        const span = document.createElement('span');
+        span.textContent = label;
+        lw.appendChild(span);
+        discEl.appendChild(lw);
+      });
+      discEl.dataset.n = String(n);
+      discEl.dataset.slice = String(slice);
+    }
+    function spinTo(discEl, targetIndex, onDone){
+      const n = +discEl.dataset.n, slice = +discEl.dataset.slice;
+      const prevRot = parseFloat(discEl.dataset.rot || '0');
+      const targetMid = targetIndex*slice + slice/2;
+      const needed = ((360 - targetMid) % 360 + 360) % 360;
+      const base = prevRot - (prevRot % 360);
+      const newRot = base + 360*4 + needed;
+      discEl.style.transform = `rotate(${newRot}deg)`;
+      discEl.dataset.rot = String(newRot);
+      setTimeout(onDone, 3650);
+    }
+
+    /* Daily coin spin */
+    const COIN_LABELS = ['10','50','100','10','500','50','100','1000'];
+    const coinDisc = document.getElementById('coinWheelDisc');
+    buildWheel(coinDisc, COIN_LABELS, WHEEL_COLORS);
+    const coinBtn = document.getElementById('coinWheelBtn');
+    const coinResult = document.getElementById('coinWheelResult');
+    function updateCoinBtn(){
+      const spun = mstate.lastCoinSpinDate === today;
+      coinBtn.disabled = spun;
+      coinBtn.textContent = spun ? 'DONE' : 'SPIN';
+    }
+    coinBtn.addEventListener('click', ()=>{
+      if (mstate.lastCoinSpinDate === today) return;
+      coinBtn.disabled = true;
+      const idx = Math.floor(Math.random()*COIN_LABELS.length);
+      coinResult.textContent = 'Spinning...';
+      spinTo(coinDisc, idx, ()=>{
+        const reward = +COIN_LABELS[idx];
+        mstate.coins += reward;
+        mstate.lastCoinSpinDate = today;
+        saveState();
+        coinResult.textContent = reward >= 1000 ? `🎉 JACKPOT! +${reward} 🪙!` : `You won +${reward} 🪙!`;
+        renderMochi();
+        updateCoinBtn();
+      });
+    });
+    updateCoinBtn();
+    if (mstate.lastCoinSpinDate === today) coinResult.textContent = 'Come back tomorrow for another spin!';
+
+    /* Would You Rather wheel (reuses the WYR question bank) */
+    const wyrDisc = document.getElementById('wyrWheelDisc');
+    buildWheel(wyrDisc, ['🤔','🤔','🤔','🤔','🤔','🤔'], WHEEL_COLORS);
+    document.getElementById('wyrWheelBtn').addEventListener('click', ()=>{
+      const idx = Math.floor(Math.random()*6);
+      const resultEl = document.getElementById('wyrWheelResult');
+      resultEl.textContent = 'Spinning...';
+      spinTo(wyrDisc, idx, ()=>{
+        resultEl.textContent = WYR[Math.floor(Math.random()*WYR.length)];
+      });
+    });
+
+    /* Truth or Dare wheel */
+    const TRUTHS = [
+      "What's the silliest thing you've ever done when you thought no one was looking?",
+      "What's a fear you have that isn't scary to anyone else?",
+      "What's the most embarrassing thing that ever happened to you at school?",
+      "If you could trade places with anyone for a day, who would it be and why?",
+      "What's one food you pretend to like but actually don't?",
+      "What's the weirdest dream you can remember?",
+      "Who is your secret role model and why?",
+      "What's a rule at home you sometimes wish you could bend?",
+      "What's the nicest thing someone has ever done for you?",
+      "What's something you're really proud of but rarely talk about?",
+      "What's your most-used excuse for being late?",
+      "If your pet could talk, what do you think it would say about you?",
+      "What's a talent you have that not many people know about?",
+      "What's something you used to be scared of but aren't anymore?",
+      "What's the funniest thing that's ever happened to your family?"
+    ];
+    const DARES = [
+      "Do your best impression of a chicken for 15 seconds.",
+      "Sing the alphabet backward as fast as you can.",
+      "Do five push-ups, or your best try!",
+      "Talk in a robot voice for the next two minutes.",
+      "Try to lick your elbow.",
+      "Do a silly dance for 20 seconds.",
+      "Balance a book on your head and walk five steps.",
+      "Make up a two-line rap about your day.",
+      "Do your best superhero pose and hold it for ten seconds.",
+      "Try to say \"unique New York\" five times fast.",
+      "Act like your favorite animal for 30 seconds.",
+      "Hop on one foot while counting to twenty.",
+      "Make the funniest face you can and hold it for ten seconds.",
+      "Pretend you're a news reporter describing what's for dinner.",
+      "Do your best moonwalk across the room."
+    ];
+    const tdDisc = document.getElementById('tdWheelDisc');
+    buildWheel(tdDisc, ['😇 TRUTH','😈 DARE','😇 TRUTH','😈 DARE','😇 TRUTH','😈 DARE'], WHEEL_COLORS);
+    document.getElementById('tdWheelBtn').addEventListener('click', ()=>{
+      const idx = Math.floor(Math.random()*6);
+      const resultEl = document.getElementById('tdWheelResult');
+      resultEl.textContent = 'Spinning...';
+      spinTo(tdDisc, idx, ()=>{
+        const isTruth = idx % 2 === 0;
+        const pool = isTruth ? TRUTHS : DARES;
+        const pick = pool[Math.floor(Math.random()*pool.length)];
+        resultEl.textContent = (isTruth ? '😇 TRUTH: ' : '😈 DARE: ') + pick;
+      });
+    });
+
+    /* Fully customizable wheel */
+    const customDisc = document.getElementById('customWheelDisc');
+    buildWheel(customDisc, ['Type', 'your', 'options', 'above'], WHEEL_COLORS);
+    document.getElementById('customWheelBtn').addEventListener('click', ()=>{
+      const raw = document.getElementById('customWheelInput').value;
+      const opts = raw.split(',').map(s=>s.trim()).filter(Boolean);
+      const resultEl = document.getElementById('customWheelResult');
+      if (opts.length < 2) {
+        resultEl.textContent = 'Type at least 2 options separated by commas!';
+        return;
+      }
+      buildWheel(customDisc, opts, WHEEL_COLORS);
+      const idx = Math.floor(Math.random()*opts.length);
+      resultEl.textContent = 'Spinning...';
+      spinTo(customDisc, idx, ()=>{
+        resultEl.textContent = `🎯 ${opts[idx]}`;
+      });
+    });
+
+    /* Bonus: emoji wheel */
+    const EMOJI_OPTIONS = ['😀','🎉','🚀','🐶','🌈','⭐','🍕','🎈','🦄','🔥'];
+    const emojiDisc = document.getElementById('emojiWheelDisc');
+    buildWheel(emojiDisc, EMOJI_OPTIONS, WHEEL_COLORS);
+    document.getElementById('emojiWheelBtn').addEventListener('click', ()=>{
+      const idx = Math.floor(Math.random()*EMOJI_OPTIONS.length);
+      const resultEl = document.getElementById('emojiWheelResult');
+      resultEl.textContent = 'Spinning...';
+      spinTo(emojiDisc, idx, ()=>{
+        resultEl.textContent = `You got ${EMOJI_OPTIONS[idx]}!`;
+      });
+    });
+
+    /* Bonus: color wheel */
+    const COLOR_OPTIONS = [
+      {name:'Purple',hex:'#7a1b9a'},{name:'Pink',hex:'#e91e8c'},{name:'Red',hex:'#ff5252'},
+      {name:'Orange',hex:'#ff9800'},{name:'Yellow',hex:'#ffd54f'},{name:'Green',hex:'#66bb6a'},
+      {name:'Teal',hex:'#26c6da'},{name:'Blue',hex:'#42a5f5'},{name:'Indigo',hex:'#5c6bc0'},{name:'Magenta',hex:'#ec407a'}
+    ];
+    const colorDisc = document.getElementById('colorWheelDisc');
+    buildWheel(colorDisc, COLOR_OPTIONS.map(c=>c.name), COLOR_OPTIONS.map(c=>c.hex));
+    document.getElementById('colorWheelBtn').addEventListener('click', ()=>{
+      const idx = Math.floor(Math.random()*COLOR_OPTIONS.length);
+      const resultEl = document.getElementById('colorWheelResult');
+      resultEl.textContent = 'Spinning...';
+      spinTo(colorDisc, idx, ()=>{
+        resultEl.textContent = `You got ${COLOR_OPTIONS[idx].name}!`;
+      });
     });
   })();
   </script>
