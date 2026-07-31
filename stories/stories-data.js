@@ -17974,4 +17974,574 @@ each pair of shoes a chapter, still —<br/>
 waiting for tomorrow's feet to fill.</p>
 `
 },
+{
+  title: "The Apprentice Who Fixed Broken Spells by Ear",
+  author: "Khyati Srivastava",
+  slug: "the-apprentice-who-fixed-broken-spells-by-ear",
+  category: "Fantasy",
+  emoji: "🎼",
+  excerpt: "Real magic, the old sorcerer insists, has a sound to it — right spells hum true, wrong ones hum flat. His newest apprentice, tone-deaf by every other measure, turns out to have the sharpest ear in the tower.",
+  created_at: "2027-04-11T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Tower Full of Hums</h3>
+<p>Sorcerer Ordell taught that every properly cast spell carried a faint, specific hum, audible only to those who trained themselves to listen — a skill most apprentices spent years failing to develop, Pell included, despite being tone-deaf at every actual song he'd ever tried to sing.</p>
+
+<h3>Chapter 2: An Unexpected Talent</h3>
+<p>It turned out spell-hums had nothing to do with musical pitch at all, and everything to do with a kind of listening Pell had accidentally practiced his whole life simply by paying close attention to the world around him. He caught a flawed protection spell's flat note before any senior apprentice noticed anything wrong.</p>
+
+<h3>Chapter 3: A New Kind of Ear</h3>
+<p>Ordell made him official spell-tester within the month, testing every new casting before it left the tower. Pell still can't carry a tune to save his life. He can, however, hear the exact difference between magic that works and magic that only sounds like it should — which, in that tower, mattered a great deal more.</p>
+`
+},
+{
+  title: "The Tinker Who Repaired Broken Promises",
+  author: "Khyati Srivastava",
+  slug: "the-tinker-who-repaired-broken-promises",
+  category: "Fantasy",
+  emoji: "🔧",
+  excerpt: "Old Bramwell's tinker shop fixes pots, clocks, and — quietly, for the right customer — broken promises too. Not every promise, he warns, can actually be mended.",
+  created_at: "2027-04-11T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unusual Repair</h3>
+<p>Bramwell's shop fixed the ordinary things — leaking pots, stopped clocks, squeaky hinges. For the rare customer who knew to ask quietly, he also fixed something less ordinary: a broken promise, mended carefully like any other tool, though never guaranteed to hold.</p>
+
+<h3>Chapter 2: A Boy's Request</h3>
+<p>Young Dash brought him a promise broken years ago — a vow to visit his grandmother more often before it was too late, now impossible to keep in the way he'd meant it. Bramwell examined it carefully, the way he examined every repair, before shaking his head gently.</p>
+
+<h3>Chapter 3: What Could Be Mended</h3>
+<p>"Some promises," he explained, "aren't broken. They're just finished — you can't fix a door that already closed. But I can help you build a new one." Dash left with a different promise instead, one he could actually keep going forward. Some repairs, Bramwell always said, weren't about fixing the past at all.</p>
+`
+},
+{
+  title: "The Simulation Where Nobody Remembers Losing",
+  author: "Khyati Srivastava",
+  slug: "the-simulation-where-nobody-remembers-losing",
+  category: "Sci-Fi",
+  emoji: "🕹️",
+  excerpt: "The training simulation is designed to wipe failed attempts from memory, letting cadets try again fresh. Cadet Iris starts to wonder what exactly she's forgetting — and how many times she's already tried.",
+  created_at: "2027-04-11T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Merciful Design</h3>
+<p>The academy's flight simulation reset memory after every failed attempt, a deliberate mercy meant to keep cadets from spiraling into discouragement over crashes that, technically, never really happened once forgotten.</p>
+
+<h3>Chapter 2: A Nagging Feeling</h3>
+<p>Iris kept experiencing strange flashes of déjà vu during her attempts — an instinct to bank left before a hazard she had no memory of ever encountering, a hesitation her body seemed to know even when her mind insisted this was try number one.</p>
+
+<h3>Chapter 3: Trusting the Feeling</h3>
+<p>She finally stopped fighting the instinct and simply followed it, banking left exactly when it told her to — and passed the simulation flawlessly for the first time. A technician later confirmed, off the record, it had been her nineteenth attempt. Her mind had forgotten every failure. Something in her, apparently, hadn't.</p>
+`
+},
+{
+  title: "The Planet That Only Exists on Weekends",
+  author: "Khyati Srivastava",
+  slug: "the-planet-that-only-exists-on-weekends",
+  category: "Sci-Fi",
+  emoji: "🪐",
+  excerpt: "Deep-space scanners detect a small planet that vanishes from every instrument every Monday, reappearing precisely each Saturday. The research team has five years of data and zero explanations.",
+  created_at: "2027-04-11T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Vanishing Planet</h3>
+<p>Designated KR-19 by an increasingly baffled research team, the small planet appeared reliably every Saturday on every instrument and vanished completely by Monday, a pattern that had held steady, unexplainably, for five straight years of observation.</p>
+
+<h3>Chapter 2: Five Years of Nothing</h3>
+<p>Every theory the team proposed — gravitational anomaly, sensor glitch, optical illusion — collapsed under further testing, the planet stubbornly, precisely following its own calendar regardless of what instruments or explanations were thrown at it.</p>
+
+<h3>Chapter 3: An Honest Conclusion</h3>
+<p>Young researcher Femi, newest on the team, finally wrote the most accurate line the project's final report had ever contained: <em>We do not know why. We have decided to keep watching anyway.</em> KR-19 still appears every Saturday, right on schedule, a small, patient mystery the team has simply learned to live alongside.</p>
+`
+},
+{
+  title: "The Case of the Missing Middle Chapter",
+  author: "Khyati Srivastava",
+  slug: "the-case-of-the-missing-middle-chapter",
+  category: "Mystery",
+  emoji: "📖",
+  excerpt: "Every copy of the library's most popular mystery novel is missing the exact same chapter — chapter fourteen, torn out cleanly. Someone, somewhere, doesn't want that chapter read.",
+  created_at: "2027-04-11T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Book With a Hole in It</h3>
+<p>Twelve-year-old Beatrix noticed it first: her copy of the library's popular mystery novel was missing chapter fourteen entirely, cleanly torn out. She assumed vandalism, until she checked two other library copies and found the exact same chapter missing from those too.</p>
+
+<h3>Chapter 2: A Pattern, Not an Accident</h3>
+<p>All six library copies, it turned out, were missing precisely the same pages — not random damage, but a deliberate, careful removal repeated across every single copy the library owned.</p>
+
+<h3>Chapter 3: An Unexpected Confession</h3>
+<p>The elderly author, contacted directly out of sheer curiosity, laughed warmly when asked and admitted the truth: chapter fourteen contained a plot twist she'd come to regret writing, and she'd quietly asked the local library, years ago, to remove it from circulation until she finished a proper revision. The revised chapter arrived the following month. Beatrix was the first to read it.</p>
+`
+},
+{
+  title: "Who's Leaving Flowers on the Unmarked Bench?",
+  author: "Khyati Srivastava",
+  slug: "whos-leaving-flowers-on-the-unmarked-bench",
+  category: "Mystery",
+  emoji: "🌼",
+  excerpt: "A plain park bench with no plaque receives fresh flowers every single Sunday morning, without fail, for as long as anyone can remember. Nobody has ever caught who leaves them.",
+  created_at: "2027-04-11T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Mystery Bloom</h3>
+<p>The bench sat unmarked, no plaque, no memorial inscription, and yet every Sunday morning without fail, a fresh bundle of wildflowers appeared on it before the park even properly opened for the day.</p>
+
+<h3>Chapter 2: An Early Stakeout</h3>
+<p>Twelve-year-old Marisol, determined to finally solve it, convinced her dad to help her arrive before sunrise one Sunday, hidden behind a nearby tree, watching the bench with genuine detective focus.</p>
+
+<h3>Chapter 3: An Old Man, Right on Schedule</h3>
+<p>An elderly man arrived exactly at dawn, laid the flowers gently, and sat for a moment in quiet reflection before leaving without a word. Marisol never approached him, deciding some things were better left unquestioned. She still checks the bench most Sundays, just to make sure the flowers are still there. They always are.</p>
+`
+},
+{
+  title: "The Zip Line Rescue Nobody Planned For",
+  author: "Khyati Srivastava",
+  slug: "the-zip-line-rescue-nobody-planned-for",
+  category: "Adventure",
+  emoji: "🪢",
+  excerpt: "Halfway across the summer camp's zip line, a jammed pulley leaves camper Dre stuck fifty feet above the ravine. What happens next tests every counselor's training at once.",
+  created_at: "2027-04-11T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Stuck Midair</h3>
+<p>Dre's pulley jammed exactly halfway across the ravine crossing, leaving him dangling fifty feet up, harness secure but progress completely halted, the ground crew below suddenly facing a situation their training manual covered only in theory.</p>
+
+<h3>Chapter 2: A Careful Response</h3>
+<p>Head counselor Talia radioed for the secondary rescue line while keeping Dre talking calmly, her voice steady even as the ground crew scrambled to rig a proper retrieval system exactly the way their emergency drills had rehearsed, over and over, all summer.</p>
+
+<h3>Chapter 3: Solid Ground</h3>
+<p>It took eighteen tense minutes, but Dre touched solid ground safely, shaken but completely unharmed, thanks entirely to drills that had felt, at the time, like unnecessary repetition. Camp added the exact scenario to next year's official training. Dre, for his part, asked to zip line again the very next day.</p>
+`
+},
+{
+  title: "The Backyard Expedition to Find the Missing Cat",
+  author: "Khyati Srivastava",
+  slug: "the-backyard-expedition-to-find-the-missing-cat",
+  category: "Adventure",
+  emoji: "🐈",
+  excerpt: "When the neighborhood's oldest, grumpiest cat goes missing, three kids organize a full backyard-to-backyard search expedition, complete with hand-drawn maps and walkie-talkies.",
+  created_at: "2027-04-11T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Missing</h3>
+<p>Mr. Whiskers, the neighborhood's oldest and famously grumpy cat, hadn't turned up at his usual porch spot for two full days, prompting his worried owner and three determined kids to organize a proper, thorough search.</p>
+
+<h3>Chapter 2: A Real Expedition</h3>
+<p>They drew a hand-sketched map of every yard on the block, split into search zones, and communicated via a pair of borrowed walkie-talkies with a seriousness that would have impressed any actual search-and-rescue team.</p>
+
+<h3>Chapter 3: Found, Grumpily</h3>
+<p>They found him, eventually, wedged comfortably behind a neighbor's shed, apparently just enjoying a change of scenery and thoroughly unbothered by the two-day search effort mounted on his behalf. The kids celebrated anyway. Mr. Whiskers, predictably, seemed personally offended by all the fuss.</p>
+`
+},
+{
+  title: "Peanut the Parrot Who Learned to Apologize",
+  author: "Khyati Srivastava",
+  slug: "peanut-the-parrot-who-learned-to-apologize",
+  category: "Animals",
+  emoji: "🦜",
+  excerpt: "Peanut the parrot picked up plenty of bad words from the sailors who once owned him. His new family taught him something better instead — a habit that surprises every new visitor.",
+  created_at: "2027-04-11T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Colorful Vocabulary</h3>
+<p>Peanut arrived at the Alvarez household with a vocabulary his previous sailor owners had clearly never bothered to curate, squawking phrases that made Mrs. Alvarez wince every time company visited.</p>
+
+<h3>Chapter 2: A Patient Retraining</h3>
+<p>Rather than punish the outbursts, the family started responding to every inappropriate word with a calm, repeated "sorry, that's not nice" — a habit Peanut, parrot that he was, began imitating faithfully within weeks.</p>
+
+<h3>Chapter 3: An Unexpected Gentleman</h3>
+<p>Peanut still occasionally slips into old sailor habits, but now reliably follows every slip with his own immediate, cheerful "sorry, not nice!" — utterly charming every new visitor who witnesses a parrot apologize more consistently than most humans manage. The Alvarez family considers it a genuine improvement.</p>
+`
+},
+{
+  title: "The Goats Who Unionized Against the New Fence",
+  author: "Khyati Srivastava",
+  slug: "the-goats-who-unionized-against-the-new-fence",
+  category: "Animals",
+  emoji: "🐐",
+  excerpt: "The farm's five goats have staged a coordinated, surprisingly organized protest against their newly reinforced fence — synchronized bleating, strategic gate-leaning, the works.",
+  created_at: "2027-04-11T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A New Fence</h3>
+<p>Farmer Delgado reinforced the goat pen's fence after months of escape attempts, confident the upgraded latch would finally end the problem. The five goats, apparently, had other plans, and coordinated ones at that.</p>
+
+<h3>Chapter 2: An Organized Response</h3>
+<p>Within a day, the goats had developed what could only be described as a strategy — synchronized bleating at feeding time, all five leaning against the weakest fence post simultaneously, taking clear shifts testing different sections for weaknesses.</p>
+
+<h3>Chapter 3: A Grudging Compromise</h3>
+<p>Delgado, more amused than annoyed by the sheer coordination on display, finally added a supervised "free grazing hour" to their daily schedule instead of fighting the escape attempts entirely. The goats, satisfied, largely abandoned their fence-testing campaign. Delgado maintains, only half joking, that he lost a genuine negotiation.</p>
+`
+},
+{
+  title: "The Family Reunion Photo That Took Eleven Attempts",
+  author: "Khyati Srivastava",
+  slug: "the-family-reunion-photo-that-took-eleven-attempts",
+  category: "Comedy",
+  emoji: "📸",
+  excerpt: "Getting forty-two relatives to smile, face forward, and have their eyes open at the exact same moment turns out to be considerably harder than anyone in the family anticipated.",
+  created_at: "2027-04-11T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Simple Request</h3>
+<p>"Just one good photo," Grandma had requested, gathering all forty-two family members into careful rows for what should have been a five-minute task. It was not a five-minute task.</p>
+
+<h3>Chapter 2: Eleven Attempts</h3>
+<p>Attempt one had a sneezing toddler. Attempt four had someone's eyes closed. Attempt seven featured a dog wandering directly into frame. Attempt nine was ruined entirely by Uncle Desmond's ill-timed joke sending half the group into uncontrollable laughter.</p>
+
+<h3>Chapter 3: Success, Finally</h3>
+<p>Attempt eleven, forty-five minutes later, finally captured everyone reasonably presentable at once. The family printed it proudly for the mantel. They also, by unanimous vote, printed attempt nine — mid-laugh, chaos, wandering dog and all — as their actual favorite.</p>
+`
+},
+{
+  title: "The Substitute Gym Teacher's Extremely Serious Dodgeball Rules",
+  author: "Khyati Srivastava",
+  slug: "the-substitute-gym-teachers-extremely-serious-dodgeball-rules",
+  category: "Comedy",
+  emoji: "🏐",
+  excerpt: "A substitute gym teacher, apparently a former competitive dodgeball referee, introduces a rulebook of shocking complexity to what was supposed to be a casual Friday game.",
+  created_at: "2027-04-11T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Surprising Level of Preparation</h3>
+<p>Mr. Castellan, subbing for the usual gym teacher, pulled out an actual laminated rulebook for what the class had assumed would be a casual Friday dodgeball game, introducing terms like "boundary infractions" and "eliminated pending video review."</p>
+
+<h3>Chapter 2: Total Chaos, Very Officially</h3>
+<p>Play stopped repeatedly for "official reviews," Mr. Castellan gesturing dramatically at imaginary replay screens, while sixth graders who'd just wanted to throw foam balls at each other slowly, reluctantly, got invested in the sheer theater of it all.</p>
+
+<h3>Chapter 3: An Unexpectedly Great Class</h3>
+<p>By the end of the period, the class had voted, unanimously, to request Mr. Castellan specifically for every future substitute day. He never explained where the rulebook came from. Nobody, honestly, wanted him to — the mystery was half the fun.</p>
+`
+},
+{
+  title: "The Scarecrow Who Wanted to Scare Something for Once",
+  author: "Khyati Srivastava",
+  slug: "the-scarecrow-who-wanted-to-scare-something-for-once",
+  category: "Fairytale",
+  emoji: "🎃",
+  excerpt: "Every crow in the county ignores the Hendersons' scarecrow completely. Tired of being useless, he finally sets out to learn what actually makes something scary.",
+  created_at: "2027-04-11T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Failed Scarecrow</h3>
+<p>Every crow in the county treated the Hendersons' scarecrow as an excellent perching post rather than any kind of threat, an embarrassment he felt keenly despite having no mouth to actually complain about it.</p>
+
+<h3>Chapter 2: Studying the Competition</h3>
+<p>He spent one long night watching the neighboring farm's genuinely effective scarecrow, noting every difference — the flapping ribbons, the reflective bottle caps, the way it moved slightly in the wind instead of standing perfectly, boringly still.</p>
+
+<h3>Chapter 3: A New Design</h3>
+<p>The Henderson kids, noticing his failures, rebuilt him with loose ribbons and shiny buttons the very next weekend, entirely unaware of his nighttime research. The crows scattered the following morning, genuinely startled for the first time in his existence. He'd finally learned: being scary wasn't about standing still and hoping. It took a little movement, and the right shiny buttons.</p>
+`
+},
+{
+  title: "The Dressmaker Who Sewed Confidence Into Seams",
+  author: "Khyati Srivastava",
+  slug: "the-dressmaker-who-sewed-confidence-into-seams",
+  category: "Fairytale",
+  emoji: "🧵",
+  excerpt: "Every dress from Madame Auclair's shop makes the wearer feel a little braver — not through magic thread, but through a fitting process that teaches them to stand up straight and mean it.",
+  created_at: "2027-04-11T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Reputation for Confidence</h3>
+<p>Every dress from Madame Auclair's little shop was rumored to make its wearer feel braver, bolder, more entirely themselves — though nobody could ever say exactly what magic thread or hidden charm made it so.</p>
+
+<h3>Chapter 2: A Nervous Customer</h3>
+<p>Young Odalys arrived for her first formal dress fitting utterly convinced she'd look wrong in whatever Auclair made, shoulders hunched, avoiding every mirror in the shop with practiced skill.</p>
+
+<h3>Chapter 3: The Real Secret</h3>
+<p>Auclair simply refused to finish the fitting until Odalys stood up straight and looked directly at herself, patiently repeating the request through every pin and adjustment until it finally, quietly, stuck. There was no magic thread at all — just a dressmaker who understood that confidence, sewn in slowly through practice, held just as well as any enchantment.</p>
+`
+},
+{
+  title: "The Kid Who Turned Stage Fright Into a Superpower",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-turned-stage-fright-into-a-superpower",
+  category: "Inspirational",
+  emoji: "🎭",
+  excerpt: "Paralyzed by stage fright before every single performance, Nadia finally learns a trick from an old actor: don't fight the fear, use its energy for something else entirely.",
+  created_at: "2027-04-11T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Frozen Before Every Show</h3>
+<p>Nadia's stage fright hit hardest exactly one minute before curtain, every single time, no matter how well she'd rehearsed — hands shaking, breath short, convinced she'd forget every line the second the lights hit her.</p>
+
+<h3>Chapter 2: Old Advice</h3>
+<p>A retired actor volunteering with the drama club gave her advice that sounded backward at first: stop trying to calm down entirely. The shaking, the racing heart — that was just energy, and energy could be redirected into the performance instead of fought against.</p>
+
+<h3>Chapter 3: A Different Kind of Nervous</h3>
+<p>Her next performance still came with the same shaking hands, the same racing heart — but instead of fighting it, she let it sharpen every gesture, every line delivery. It was, several people told her afterward, her most electric performance yet. Nadia never got rid of stage fright. She just finally learned what to do with it.</p>
+`
+},
+{
+  title: "The Kid Who Turned a Bad Grade Into a Study Group Empire",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-turned-a-bad-grade-into-a-study-group-empire",
+  category: "Inspirational",
+  emoji: "📊",
+  excerpt: "After bombing a chemistry test, Farrah builds herself a rigorous study system out of pure necessity. By semester's end, half her grade wants in on it too.",
+  created_at: "2027-04-11T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Rough Wake-Up Call</h3>
+<p>Farrah's failed chemistry test wasn't just disappointing — it was the wake-up call she needed to admit her studying method, mostly cramming the night before, simply wasn't working anymore as material got harder.</p>
+
+<h3>Chapter 2: Building a Real System</h3>
+<p>She researched actual study techniques, built herself a color-coded weekly schedule, and started meeting a single friend twice a week to quiz each other properly — a small, disciplined system built entirely out of necessity rather than natural talent.</p>
+
+<h3>Chapter 3: An Accidental Following</h3>
+<p>Her grades climbed steadily, noticeably enough that classmates started asking how, and within a month her "study group of two" had grown into a genuine weekly gathering of eight kids following her system. Farrah never expected to become the person other people asked for study advice. She's still getting used to it.</p>
+`
+},
+{
+  title: "The Uniform That Didn't Fit Right Until It Did",
+  author: "Khyati Srivastava",
+  slug: "the-uniform-that-didnt-fit-right-until-it-did",
+  category: "Drama",
+  emoji: "🎽",
+  excerpt: "Making varsity a year early means Priya's uniform is two sizes too big and her confidence doesn't fit any better. This is the story of the season that changed both.",
+  created_at: "2027-04-11T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Too Big, Everywhere</h3>
+<p>Priya's varsity jersey hung loose on her freshman frame, a physical reminder every game that she'd made the team a year earlier than expected — talented enough to play up, but constantly aware she looked, and often felt, like she didn't quite belong yet.</p>
+
+<h3>Chapter 2: Growing Into It</h3>
+<p>The season tested her in ways her middle school team never had — faster plays, sharper competition, the persistent worry that every mistake confirmed she'd been promoted too soon. Slowly, though, her play started catching up to her position.</p>
+
+<h3>Chapter 3: A Proper Fit</h3>
+<p>By playoffs, that same oversized jersey somehow fit differently — not because it had shrunk, but because she'd genuinely grown into the player it represented. She still has that first jersey, folded in a drawer, a reminder of exactly how big the gap once felt, and how completely she eventually closed it.</p>
+`
+},
+{
+  title: "The Last Family Dinner Before Everything Changed",
+  author: "Khyati Srivastava",
+  slug: "the-last-family-dinner-before-everything-changed",
+  category: "Drama",
+  emoji: "🍽️",
+  excerpt: "Nobody announces it's the last ordinary dinner before the diagnosis changes everything. Looking back, Marisol wishes she'd known to pay closer attention.",
+  created_at: "2027-04-11T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Ordinary Tuesday</h3>
+<p>It was, by every measure, a completely unremarkable dinner — spaghetti, mild arguing about whose turn it was to do dishes, Dad's usual bad jokes landing exactly as poorly as always. Nobody had any reason to remember it specifically. Marisol remembers every detail now.</p>
+
+<h3>Chapter 2: What Came Next</h3>
+<p>The diagnosis came two days later, and the family Marisol had known — loud, bickering, comfortably ordinary — shifted permanently into something more careful, more fragile, more aware of time in a way it hadn't been before.</p>
+
+<h3>Chapter 3: What She Learned From It</h3>
+<p>She's started paying closer attention to ordinary dinners since, not out of fear exactly, just a quiet understanding that she can't always know which ones matter most until later. Dad's jokes still land badly. Marisol laughs at every single one now, on purpose, just in case.</p>
+`
+},
+{
+  title: "The Group Project Where Nobody Wanted to Be Leader",
+  author: "Khyati Srivastava",
+  slug: "the-group-project-where-nobody-wanted-to-be-leader",
+  category: "Romance",
+  emoji: "📊",
+  excerpt: "Neither Dev nor Priya wants to take charge of the science project, both too polite to push, both quietly noticing the other one is easy to be quiet around.",
+  created_at: "2027-04-12T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Too Polite to Lead</h3>
+<p>Neither Dev nor Priya wanted to take charge of their assigned volcano project, both far too polite to push their own ideas over the other's, resulting in the world's most agreeable, mildly unproductive first meeting.</p>
+
+<h3>Chapter 2: Finding a Rhythm</h3>
+<p>They eventually settled into an easy back-and-forth neither had expected, trading small tasks without needing to negotiate loudly, comfortable in a way that felt less like project management and more like genuinely enjoying each other's company.</p>
+
+<h3>Chapter 3: More Than a Project</h3>
+<p>Their volcano earned a solid B-plus. Neither particularly cared about the grade by the time it was handed back — they'd already started finding excuses to work on unrelated homework together after school, no assignment requiring it at all.</p>
+`
+},
+{
+  title: "The Last Slow Dance of Summer Camp",
+  author: "Khyati Srivastava",
+  slug: "the-last-slow-dance-of-summer-camp",
+  category: "Romance",
+  emoji: "💃",
+  excerpt: "With one dance left before everyone goes home for the year, Tomas finally works up the nerve to ask the girl he's spent all summer being too shy to talk to properly.",
+  created_at: "2027-04-12T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Summer of Almosts</h3>
+<p>Tomas had spent six weeks of summer camp finding excuses to be near Elin — same canoe group, same campfire circle, same table at meals — without ever quite managing an actual real conversation, too nervous every single time.</p>
+
+<h3>Chapter 2: One Dance Left</h3>
+<p>The farewell dance, the very last event before buses came the next morning, felt like his last real chance, and Tomas spent the first hour of it exactly the way he'd spent the whole summer — close by, saying nothing at all.</p>
+
+<h3>Chapter 3: Finally Asking</h3>
+<p>He asked her for the last slow song with roughly thirty seconds left before it ended, voice cracking, immediately certain he'd blown his only chance. Elin just laughed, took his hand, and said, "I was wondering when you'd finally ask." Thirty seconds was, somehow, exactly enough.</p>
+`
+},
+{
+  title: "The Kid Who Ran a Complaint-Free Zone",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-ran-a-complaint-free-zone",
+  category: "Kids",
+  emoji: "😊",
+  excerpt: "Tired of everyone complaining at the dinner table, seven-year-old Mira declares her side of the room an official 'complaint-free zone,' with a hand-drawn sign and surprisingly strict enforcement.",
+  created_at: "2027-04-12T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A New Rule</h3>
+<p>Tired of listening to her older siblings complain nonstop about homework, chores, and each other, seven-year-old Mira taped a hand-drawn sign to her chair: "Complaint-Free Zone. No Grumbling Allowed Here."</p>
+
+<h3>Chapter 2: Strict Enforcement</h3>
+<p>She enforced it with total seriousness, gently but firmly redirecting anyone who grumbled within a three-foot radius of her chair toward saying something they were grateful for instead, much to her siblings' initial eye-rolling annoyance.</p>
+
+<h3>Chapter 3: A Habit That Spread</h3>
+<p>Within a month, even her most skeptical older brother had started catching himself mid-complaint and rephrasing, half-joking, half-genuine. The whole family's dinner table conversations noticeably brightened. Mira, satisfied with her results, has since expanded her complaint-free zone to cover the entire kitchen.</p>
+`
+},
+{
+  title: "The World's Most Elaborate Rock, Paper, Scissors Tournament",
+  author: "Khyati Srivastava",
+  slug: "the-worlds-most-elaborate-rock-paper-scissors-tournament",
+  category: "Kids",
+  emoji: "✂️",
+  excerpt: "What starts as a simple tiebreaker for who gets the last cookie escalates into a full sixteen-player bracket tournament, complete with commentary, rankings, and one deeply controversial ruling.",
+  created_at: "2027-04-12T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Simple Tiebreaker</h3>
+<p>It began as a quick rock-paper-scissors match to settle who got the last cookie at the birthday party. It did not stay simple — within ten minutes, sixteen kids had organized themselves into a full elimination bracket, drawn on a napkin.</p>
+
+<h3>Chapter 2: Rising Drama</h3>
+<p>The tournament produced genuine controversy by round three, including one deeply disputed "simultaneous throw" that required an adult ruling, and a running color commentary from two kids who'd appointed themselves official announcers.</p>
+
+<h3>Chapter 3: A Champion Crowned</h3>
+<p>The final match, best of five, came down to a dramatic reversal in the last round. The winner — six-year-old Theo — accepted his cookie with the gravity of an Olympic medal ceremony. The tournament bracket, hand-drawn napkin and all, has been framed and hung in the birthday party host's kitchen ever since.</p>
+`
+},
+{
+  title: "The Elevator That Skips the Thirteenth Floor Twice",
+  author: "Khyati Srivastava",
+  slug: "the-elevator-that-skips-the-thirteenth-floor-twice",
+  category: "Horror",
+  emoji: "🛗",
+  excerpt: "The building's elevator panel already skips floor thirteen, as most buildings do. Lately, though, it's started skipping it a second time too — pausing on twelve, then fourteen, twice each ride.",
+  created_at: "2027-04-12T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: One Skip, As Expected</h3>
+<p>The Hollis Building's elevator panel had always skipped from twelve straight to fourteen, an ordinary superstition baked into the architecture like a thousand other old buildings. Lately, though, tenants started noticing something new.</p>
+
+<h3>Chapter 2: A Second Skip</h3>
+<p>The elevator now paused, briefly, at both twelve and fourteen on every single ride — a short, unexplained hesitation exactly where the missing thirteenth floor should have been, doors staying shut, numbers unchanged, before continuing normally.</p>
+
+<h3>Chapter 3: An Unofficial Explanation</h3>
+<p>Maintenance found no mechanical cause after multiple inspections. The building's oldest tenant, asked about it, simply shrugged and said the pause "felt about right, actually — that floor's earned a moment either way." Nobody's pushed further to understand it. The elevator still pauses, twice, every single ride.</p>
+`
+},
+{
+  title: "The Backyard Well That Was Filled In Years Ago",
+  author: "Khyati Srivastava",
+  slug: "the-backyard-well-that-was-filled-in-years-ago",
+  category: "Horror",
+  emoji: "🪣",
+  excerpt: "The old well in the backyard was filled with concrete and sealed decades before the Marsh family moved in. On quiet nights, they can still hear something echo up from directly beneath the patio.",
+  created_at: "2027-04-12T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Sealed History</h3>
+<p>Property records confirmed it clearly: the old backyard well had been filled solid with concrete and sealed over decades before the Marsh family ever moved in, now nothing but a slightly uneven patch beneath their patio pavers.</p>
+
+<h3>Chapter 2: An Echo With No Source</h3>
+<p>On especially quiet nights, faint and easy to dismiss as imagination, a soft echo seemed to rise from directly beneath the patio — not knocking exactly, more like the memory of water moving somewhere that no longer had water in it at all.</p>
+
+<h3>Chapter 3: Living Above It</h3>
+<p>The Marsh family had the concrete inspected twice, both times confirmed completely solid, no gaps, no explanation for the sound. They've simply stopped hosting patio dinners after dark. During the day, the sound never comes at all — which somehow makes it stranger, not less so.</p>
+`
+},
+{
+  title: "The Umbrella Stand by the Door, Waiting for Rain",
+  author: "Khyati Srivastava",
+  slug: "the-umbrella-stand-by-the-door-waiting-for-rain",
+  category: "Poetry",
+  emoji: "☔",
+  excerpt: "A quiet poem about the humble umbrella stand by the front door, patiently holding onto readiness for weather that hasn't come yet.",
+  created_at: "2027-04-12T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Umbrella Stand by the Door, Waiting for Rain</h3>
+<p>I hold three umbrellas, one a little torn,<br/>
+one bright yellow, barely worn,<br/>
+one folded small, forgotten, blue —<br/>
+all of them waiting on cue.</p>
+
+<p>Weeks go by with skies of clear,<br/>
+sunshine stretching, no clouds near,<br/>
+and still I stand here, by the door,<br/>
+ready for weather that isn't here yet, and more.</p>
+
+<p>That's the whole job, if you think it through —<br/>
+not to be needed, but ready to,<br/>
+standing patient through the dry,<br/>
+just in case the very next sky<br/></p>
+
+<p>decides to open, sudden, gray,<br/>
+and someone reaches, on their way,<br/>
+grateful that I stood here, still,<br/>
+patient, waiting, ready, until.</p>
+`
+},
+{
+  title: "The Bicycle Bell That Rings for Every Small Victory",
+  author: "Khyati Srivastava",
+  slug: "the-bicycle-bell-that-rings-for-every-small-victory",
+  category: "Poetry",
+  emoji: "🔔",
+  excerpt: "A joyful little poem celebrating the small, everyday triumphs worth ringing a bicycle bell over — the wobbly first ride, the puddle cleared, the hill finally conquered.",
+  created_at: "2027-04-12T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Bicycle Bell That Rings for Every Small Victory</h3>
+<p>Ring it loud for the wobbly first try,<br/>
+ring it again when you don't ask why,<br/>
+ring it for the puddle you didn't fall in,<br/>
+ring it twice for the hill you finally win.</p>
+
+<p>Nobody needs a reason that's big,<br/>
+a bell doesn't care if the moment's a twig<br/>
+or a mighty branch of some grand old tree —<br/>
+ring it for whatever feels like victory.</p>
+
+<p>Ring it for making it home before dark,<br/>
+ring it for spotting a hidden park,<br/>
+ring it because the wind feels nice,<br/>
+you don't need a reason to ring it twice.</p>
+
+<p>So pedal on, and don't think too long<br/>
+about whether your win deserves a song —<br/>
+every small triumph earns a chime,<br/>
+ring your bell, every single time.</p>
+`
+},
 ];
