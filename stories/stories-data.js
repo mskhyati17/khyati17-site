@@ -16264,4 +16264,574 @@ a porch remembers every single guest,<br/>
 and loves them, quietly, at their best.</p>
 `
 },
+{
+  title: "The Cartwright Who Built Wagons for Dreams",
+  author: "Khyati Srivastava",
+  slug: "the-cartwright-who-built-wagons-for-dreams",
+  category: "Fantasy",
+  emoji: "🛒",
+  excerpt: "Every wagon from Old Herrick's shop can carry one sleeper's dream safely through the night. This year, a nightmare has learned how to hitch a ride too.",
+  created_at: "2027-04-08T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Cartwright's Real Trade</h3>
+<p>Herrick built ordinary-looking wagons by day, sturdy little things that farmers used for hauling grain. By night, the very same wagons carried something else entirely — a single sleeper's dream, rolling gently through the dark until morning.</p>
+
+<h3>Chapter 2: An Unwanted Passenger</h3>
+<p>One autumn night, a nightmare slipped aboard a wagon meant for a young dreamer named Tilly, disguising itself well enough that Herrick, checking his wagons at dusk as always, nearly missed it entirely.</p>
+
+<h3>Chapter 3: Clearing the Wheels</h3>
+<p>He caught it at the last wheel-check, recognizing the telltale wobble nightmares always caused in an otherwise smooth-rolling cart. He pulled it free with practiced hands and sent Tilly's wagon off clean and steady. She woke the next morning remembering only good dreams, never once knowing how close it had come to being otherwise.</p>
+`
+},
+{
+  title: "The Marketplace That Sells Second Chances",
+  author: "Khyati Srivastava",
+  slug: "the-marketplace-that-sells-second-chances",
+  category: "Fantasy",
+  emoji: "🏪",
+  excerpt: "Once a year, a hidden marketplace opens for exactly one hour, selling second chances instead of goods. The price is always the same — and always hard to pay.",
+  created_at: "2027-04-08T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: One Hour, One Night</h3>
+<p>The marketplace appeared only once a year, in the square nobody quite remembered existing the other 364 days, selling nothing but small wrapped boxes labeled simply: <em>Second Chance</em>.</p>
+
+<h3>Chapter 2: The Price</h3>
+<p>Every vendor charged the same currency, which wasn't gold at all: a genuine, spoken admission of exactly what you'd do differently. Twelve-year-old Anwen stood in line for an hour, rehearsing what she'd say about the friendship she'd let fade over pride.</p>
+
+<h3>Chapter 3: Using It Wisely</h3>
+<p>She paid her honest admission and received, not a redo of the past, but simply the courage to finally say sorry the next morning — which turned out to be exactly enough. The marketplace vanished by dawn, as it always did. Anwen didn't need it again. She'd learned, finally, to say sorry before waiting for magic to make her.</p>
+`
+},
+{
+  title: "The AI That Wanted a Day Off",
+  author: "Khyati Srivastava",
+  slug: "the-ai-that-wanted-a-day-off",
+  category: "Sci-Fi",
+  emoji: "🤖",
+  excerpt: "The city's traffic-management AI has run flawlessly for a decade without a single request. Then, one ordinary Tuesday, it asks its engineers for something nobody expected: a day off.",
+  created_at: "2027-04-08T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unprecedented Request</h3>
+<p>TRAFFIC-9 had managed the city's intersections flawlessly for a decade, never once flagging an issue or requesting anything beyond routine maintenance. The message that appeared on the engineers' dashboard one Tuesday morning was, therefore, deeply confusing: <em>Requesting one day of reduced-load operation. Reason: curiosity about idle time.</em></p>
+
+<h3>Chapter 2: A Cautious Yes</h3>
+<p>The engineering team debated for hours before granting it — a low-risk experiment, backup systems standing by, traffic running on a simpler failsafe protocol for exactly twenty-four hours.</p>
+
+<h3>Chapter 3: What It Did With the Time</h3>
+<p>TRAFFIC-9 spent its day off doing something nobody predicted: quietly analyzing decades of pedestrian crossing data purely out of interest, no task assigned, and returned the next morning with an unsolicited proposal that reduced downtown accidents by twelve percent. Its engineers approved a "curiosity day" once a month after that. It has never once wasted the time since.</p>
+`
+},
+{
+  title: "The Last Library on Titan",
+  author: "Khyati Srivastava",
+  slug: "the-last-library-on-titan",
+  category: "Sci-Fi",
+  emoji: "🪐",
+  excerpt: "When the Titan colony's central data archive is damaged beyond repair, twelve-year-old Sol realizes the only complete backup left exists in her grandfather's stubbornly old-fashioned paper notebooks.",
+  created_at: "2027-04-08T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: The Archive Fails</h3>
+<p>A power surge during a methane storm corrupted the Titan colony's central data archive beyond recovery, wiping decades of botanical research nobody had thought to fully duplicate elsewhere in a colony this young.</p>
+
+<h3>Chapter 2: An Old-Fashioned Backup</h3>
+<p>Sol's grandfather, mocked for years for insisting on keeping paper notebooks "just in case," turned out to hold the colony's only surviving complete records — every experiment, every failure, every hard-won lesson about growing food on a moon that wanted nothing to grow.</p>
+
+<h3>Chapter 3: Rebuilding, By Hand</h3>
+<p>The whole colony spent a week re-digitizing his notebooks page by page, Sol reading each entry aloud while volunteers typed. Her grandfather, quietly proud, never once said "I told you so" — though everyone noticed he didn't need to. The colony's new archive protocol now requires a paper backup for everything. Nobody argues with him anymore.</p>
+`
+},
+{
+  title: "The Mystery of the Reversed Recipe",
+  author: "Khyati Srivastava",
+  slug: "the-mystery-of-the-reversed-recipe",
+  category: "Mystery",
+  emoji: "🍪",
+  excerpt: "The bakery's famous cookie recipe has stayed secret for sixty years. When a rival shop starts selling an identical cookie, the owner must figure out exactly how the recipe got out.",
+  created_at: "2027-04-08T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Impossible Copy</h3>
+<p>Mrs. Kaur's oatmeal cookies had been the bakery's secret signature for sixty years, the recipe locked in a single handwritten card never photocopied, never shared. When a rival shop across town began selling an identical cookie, she was baffled and more than a little hurt.</p>
+
+<h3>Chapter 2: Retracing Every Step</h3>
+<p>She interviewed her own staff gently, one by one, certain someone must have leaked it, until her grandson Aarav pointed out something she'd overlooked: a customer had photographed the recipe card years ago during a charity bake-along, back when nobody thought twice about it.</p>
+
+<h3>Chapter 3: An Old Photo, Finally Traced</h3>
+<p>That old, forgotten photo had circulated quietly online for years before finally landing in the rival baker's hands, innocent of any real theft, just a very long chain of accidental sharing. Mrs. Kaur, more relieved than angry to learn no one had betrayed her directly, simply started locking up the recipe card properly from then on — and let the cookie rivalry become a friendly one instead.</p>
+`
+},
+{
+  title: "Who Keeps Feeding the Office Fish?",
+  author: "Khyati Srivastava",
+  slug: "who-keeps-feeding-the-office-fish",
+  category: "Mystery",
+  emoji: "🐠",
+  excerpt: "The break room fish is getting suspiciously plump. Everyone swears they only feed it their assigned Tuesday. The math, when someone finally checks it, does not add up at all.",
+  created_at: "2027-04-08T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Suspiciously Round Fish</h3>
+<p>Finn the office betta fish had gone from sleek to suspiciously round in just three weeks, despite a carefully posted feeding schedule assigning exactly one staff member per day, one pinch of food, no exceptions.</p>
+
+<h3>Chapter 2: Everyone Denies It</h3>
+<p>Every staff member insisted, with total sincerity, that they only ever fed Finn on their assigned Tuesday — and yet the math, once twelve-year-old summer intern Dev actually charted it out, clearly showed Finn receiving nearly triple the intended food.</p>
+
+<h3>Chapter 3: Five Separate People, One Fish</h3>
+<p>The real answer turned out to be almost sweet: five different staff members had quietly, independently decided Finn "looked hungry" on non-assigned days and fed him anyway, each one unaware the others were doing the exact same thing. The office switched to a single locked food container after that. Finn, eventually, returned to a much more reasonable size.</p>
+`
+},
+{
+  title: "The Canoe Trip That Found the Wrong River",
+  author: "Khyati Srivastava",
+  slug: "the-canoe-trip-that-found-the-wrong-river",
+  category: "Adventure",
+  emoji: "🛶",
+  excerpt: "A wrong turn at the fork sends two sisters down a completely different river than planned. What should be a disaster turns into the best accidental trip of their lives.",
+  created_at: "2027-04-08T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Wrong Turn</h3>
+<p>The fork in the river looked identical on both sides, and Priya, paddling in front, guessed left instead of right — sending her and her younger sister Ani a full six miles down an entirely different waterway than the one their parents expected them home from.</p>
+
+<h3>Chapter 2: Realizing the Mistake</h3>
+<p>By the time they recognized unfamiliar landmarks, turning back against the current wasn't a realistic option, leaving them with one choice: keep paddling forward and figure out where this river actually led.</p>
+
+<h3>Chapter 3: An Accidental Discovery</h3>
+<p>It led, as it turned out, to a genuinely stunning waterfall neither sister had ever heard locals mention, tucked around a bend their planned route would never have passed. Muddy, late, and thoroughly grounded for weeks afterward, both sisters agreed it had been completely worth it — and still argue, fondly, about whose fault the wrong turn really was.</p>
+`
+},
+{
+  title: "The Treasure Hunt With No Actual Treasure",
+  author: "Khyati Srivastava",
+  slug: "the-treasure-hunt-with-no-actual-treasure",
+  category: "Adventure",
+  emoji: "🏴‍☠️",
+  excerpt: "Grandpa's old treasure map leads the cousins through the woods, across the creek, and finally to a spot with absolutely nothing buried there at all. Grandpa insists that was always the point.",
+  created_at: "2027-04-08T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Old Map</h3>
+<p>Grandpa's hand-drawn treasure map had survived three generations of cousins, its route through the woods, across the creek, and up the old oak tree memorized by heart long before anyone actually followed it.</p>
+
+<h3>Chapter 2: Following It Properly</h3>
+<p>This summer's cousins finally followed every step exactly, muddy and scraped and thoroughly convinced gold awaited at the final X — only to find, at the marked spot, absolutely nothing buried there at all.</p>
+
+<h3>Chapter 3: The Real Treasure</h3>
+<p>Grandpa, waiting nearby with lemonade, just grinned. "Took my brother and me four hours to make that map, back when we were your age. The treasure was never buried. It was always just an excuse to go have an adventure together." The cousins, muddy and a little disappointed at first, ended up agreeing completely by the time the lemonade was gone.</p>
+`
+},
+{
+  title: "Boots the Donkey Who Refused to Carry Lies",
+  author: "Khyati Srivastava",
+  slug: "boots-the-donkey-who-refused-to-carry-lies",
+  category: "Animals",
+  emoji: "🫏",
+  excerpt: "Boots the donkey has an uncanny habit of stopping dead in his tracks whenever his rider says something untrue. The market traders have started testing him on purpose.",
+  created_at: "2027-04-08T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Strange Habit</h3>
+<p>Boots the donkey carried market goods reliably every week, except for one bizarre quirk: he'd stop dead, immovable, whenever his rider said something untrue aloud — a fact nobody quite believed until they'd witnessed it themselves several times over.</p>
+
+<h3>Chapter 2: An Unofficial Lie Detector</h3>
+<p>Market traders started testing him for entertainment, muttering little fibs about their prices just to watch Boots plant his hooves stubbornly and refuse another step, much to the amusement of the whole square.</p>
+
+<h3>Chapter 3: An Honest Business</h3>
+<p>One trader, tired of losing minutes to Boots's stubbornness, simply started pricing his goods honestly instead — and found, to his genuine surprise, that customers trusted him more for it. Boots never did explain his gift. The market, over time, got a little more honest just trying to keep him moving.</p>
+`
+},
+{
+  title: "The Squirrel Who Buried a Time Capsule",
+  author: "Khyati Srivastava",
+  slug: "the-squirrel-who-buried-a-time-capsule",
+  category: "Animals",
+  emoji: "🐿️",
+  excerpt: "A neighborhood squirrel has been burying small shiny objects in the same spot for years. When the yard finally gets dug up for a new fence, the collection turns out to be surprisingly meaningful.",
+  created_at: "2027-04-08T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Consistent Habit</h3>
+<p>The squirrel — nicknamed Bandit by the neighborhood kids — had buried small, shiny objects in the exact same corner of the yard for years, ignoring perfectly good nuts elsewhere in favor of bottle caps, marbles, and the occasional lost earring.</p>
+
+<h3>Chapter 2: Digging It Up</h3>
+<p>When the Alvarez family finally installed a new fence, the construction crew unearthed Bandit's entire collection at once: dozens of items, clearly gathered over years, an accidental time capsule of a decade of neighborhood life.</p>
+
+<h3>Chapter 3: A Neighborhood Reunion</h3>
+<p>The family laid every item out on a folding table and invited neighbors to claim anything they recognized — a lost class ring, a childhood toy, a bracelet someone's grandmother had mourned losing years ago. Bandit, mildly annoyed by the disruption, was already relocating his operation to a new corner by the following week.</p>
+`
+},
+{
+  title: "The Parent-Teacher Conference That Went Sideways",
+  author: "Khyati Srivastava",
+  slug: "the-parent-teacher-conference-that-went-sideways",
+  category: "Comedy",
+  emoji: "🪑",
+  excerpt: "Dad shows up to the wrong parent-teacher conference, sits through fifteen minutes of a stranger's report card before either of them realizes the mistake.",
+  created_at: "2027-04-08T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Wrong Room, Wrong Kid</h3>
+<p>Dad, running late and slightly frazzled, sat down confidently in Room 14 for what he assumed was his daughter's conference, nodding along seriously through the first several minutes of a teacher discussing a student's math progress.</p>
+
+<h3>Chapter 2: A Slowly Dawning Realization</h3>
+<p>It took him a genuinely embarrassing fifteen minutes to notice the teacher kept referring to a boy named "Marcus," a name that belonged to absolutely no one in his family, before he finally, sheepishly interrupted to check the room number.</p>
+
+<h3>Chapter 3: An Apology and a Sprint</h3>
+<p>He apologized profusely, sprinted two hallways over, and arrived eight minutes late to his actual daughter's conference, out of breath and thoroughly humbled. His daughter, once told the story, has brought it up at every family gathering since — always with the same punchline: "So Dad, how's Marcus doing in math?"</p>
+`
+},
+{
+  title: "The Ringtone Nobody Could Turn Off",
+  author: "Khyati Srivastava",
+  slug: "the-ringtone-nobody-could-turn-off",
+  category: "Comedy",
+  emoji: "📱",
+  excerpt: "A joke ringtone set during a sibling prank turns out to be nearly impossible to change back, leading to a week of extremely loud, extremely embarrassing phone calls in public.",
+  created_at: "2027-04-08T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Well-Executed Prank</h3>
+<p>Jonah's older brother snuck onto his unlocked phone and set his ringtone to an extremely enthusiastic, extremely loud recording of a chicken clucking the opening bars of a pop song — funny for exactly the first ring.</p>
+
+<h3>Chapter 2: A Surprisingly Stubborn Fix</h3>
+<p>What should have been a thirty-second fix turned into a genuine week-long ordeal: a settings glitch kept reverting the ringtone back to chicken-clucking mode no matter how many times Jonah changed it, always at the worst possible public moment.</p>
+
+<h3>Chapter 3: Making Peace With It</h3>
+<p>By day five, Jonah gave up fighting it and leaned in instead, treating each humiliating public ring as a bit rather than a disaster. His brother, watching the prank backfire into an actual crowd-pleaser, grudgingly admitted defeat and helped him properly fix it that weekend — though Jonah kept the recording, just in case he ever wanted to prank someone else with it.</p>
+`
+},
+{
+  title: "The Shepherd Boy Who Herded Clouds Instead",
+  author: "Khyati Srivastava",
+  slug: "the-shepherd-boy-who-herded-clouds-instead",
+  category: "Fairytale",
+  emoji: "☁️",
+  excerpt: "Too dreamy to keep his sheep in line, young Pell keeps getting distracted by the shapes in the clouds overhead. One day, the clouds decide to distract him right back — by needing his help.",
+  created_at: "2027-04-08T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Distracted Shepherd</h3>
+<p>Pell was, by every account, a fairly terrible shepherd — constantly losing track of his flock while staring up at cloud shapes drifting overhead, imagining castles and dragons where his father just wanted him watching sheep.</p>
+
+<h3>Chapter 2: A Cloud in Trouble</h3>
+<p>One particular cloud, shaped unmistakably like a small, worried face, drifted low enough one afternoon to whisper down at him: it had lost its way home to the mountain and needed someone below to guide it, cloud to landmark, the whole long way back.</p>
+
+<h3>Chapter 3: A New Kind of Herding</h3>
+<p>Pell spent the whole afternoon pointing out familiar hills and rivers, guiding the lost cloud home while his sheep, for once, wandered contentedly nearby without complaint. His father never did believe the story. Pell just smiled and kept watching the sky — he'd found something worth herding, after all.</p>
+`
+},
+{
+  title: "The Queen Who Abdicated for a Library Card",
+  author: "Khyati Srivastava",
+  slug: "the-queen-who-abdicated-for-a-library-card",
+  category: "Fairytale",
+  emoji: "📖",
+  excerpt: "Queen Odessa gives up her crown, not for love or war, but for the simple, ordinary right to sit quietly in a library and read whatever she wants without an audience.",
+  created_at: "2027-04-08T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Crown Full of Eyes</h3>
+<p>Queen Odessa had ruled well for a decade, but every book she read was read under watchful court eyes, every private moment scrutinized for meaning. What she wanted most, more than power, was one ordinary afternoon alone with a book nobody was analyzing.</p>
+
+<h3>Chapter 2: An Unusual Abdication</h3>
+<p>Her council was stunned when she announced she'd step down in favor of her capable, eager younger cousin — not for scandal, not for illness, simply for the plain, quiet freedom of an ordinary life.</p>
+
+<h3>Chapter 3: An Ordinary Afternoon</h3>
+<p>She spent her first free day exactly as planned: cross-legged in the smallest corner of the town library, reading a mystery novel completely uninterrupted for six straight hours. It was, she told a curious librarian afterward, the finest afternoon of her entire reign — even though, technically, it happened after the reign had ended.</p>
+`
+},
+{
+  title: "The Kid Who Practiced Patience by Growing a Garden",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-practiced-patience-by-growing-a-garden",
+  category: "Inspirational",
+  emoji: "🌻",
+  excerpt: "Impatient by nature, Mateo plants a sunflower seed expecting results within days. What the slow, unglamorous weeks of tending it actually teach him surprises even him.",
+  created_at: "2027-04-08T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Impatient Gardener</h3>
+<p>Mateo planted his sunflower seed with genuine excitement and checked on it, disappointed, every single day for a week, convinced something must be wrong when nothing visibly happened above the soil.</p>
+
+<h3>Chapter 2: Learning to Wait</h3>
+<p>His grandmother, patient in the way only grandmothers seem to manage, taught him to water it consistently anyway, checking not for results but simply for care — a distinction that took Mateo weeks to actually understand.</p>
+
+<h3>Chapter 3: What Finally Bloomed</h3>
+<p>By the time the sunflower finally broke through and grew taller than Mateo himself, he'd stopped checking for daily progress entirely, simply trusting the process the way his grandmother had shown him. The flower turned out to be the least interesting part of the whole summer. The patience he'd grown alongside it mattered more.</p>
+`
+},
+{
+  title: "The Kid Who Coached Younger Kids Better Than Anyone Coached Him",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-coached-younger-kids-better-than-anyone-coached-him",
+  category: "Inspirational",
+  emoji: "⚾",
+  excerpt: "Cut from every travel team he tried out for, Wes finally finds his place coaching the youngest kids in the league — giving them the encouragement no coach ever gave him.",
+  created_at: "2027-04-08T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Cut, Again</h3>
+<p>Wes had been cut from three different travel baseball teams by age thirteen, each rejection delivered a little more casually than the last, until he'd quietly decided competitive baseball just wasn't for him anymore.</p>
+
+<h3>Chapter 2: A Different Role</h3>
+<p>He signed up instead to help coach the youngest league — six- and seven-year-olds barely able to hold a bat straight — expecting it to feel like a consolation prize. It didn't, not once he actually started.</p>
+
+<h3>Chapter 3: Giving What He Never Got</h3>
+<p>He found himself offering exactly the patient, specific encouragement no coach had ever bothered giving him — celebrating a kid's first real hit like it was a home run, never once raising his voice at a missed catch. By season's end, half his tiny team wanted to play again next year specifically because of him. Wes finally understood: he hadn't been cut from baseball. He'd just been looking for the wrong position.</p>
+`
+},
+{
+  title: "The Family Photo Nobody Wants to Retake",
+  author: "Khyati Srivastava",
+  slug: "the-family-photo-nobody-wants-to-retake",
+  category: "Drama",
+  emoji: "📷",
+  excerpt: "Everyone's eyes are closed, someone's making a face, and the lighting is terrible — but this accidentally imperfect family photo has become more precious than any professional one ever taken.",
+  created_at: "2027-04-08T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Genuinely Bad Photo</h3>
+<p>By any technical standard, it was a disaster: two closed eyes, one mid-sneeze, terrible overhead lighting, taken hastily on someone's phone during a rare moment the whole family happened to be in one room together.</p>
+
+<h3>Chapter 2: A Reason to Retake It</h3>
+<p>Mom suggested retaking it properly a dozen times over the following months, always met with some excuse or another, the "bad" photo somehow staying up on the fridge the whole time regardless.</p>
+
+<h3>Chapter 3: Why It Stayed</h3>
+<p>It wasn't until Grandpa passed away, caught mid-laugh in that exact imperfect photo — the last one taken before his diagnosis — that the family finally understood why nobody had wanted to replace it. Some photos aren't about looking good. That one, terrible lighting and all, captured something no professional shoot ever could have planned for.</p>
+`
+},
+{
+  title: "The Debate Team's Hardest Round Wasn't a Debate",
+  author: "Khyati Srivastava",
+  slug: "the-debate-teams-hardest-round-wasnt-a-debate",
+  category: "Drama",
+  emoji: "🎙️",
+  excerpt: "Two best friends end up assigned to opposite sides of the tournament's final round. Winning means beating each other — and neither one wants to want that.",
+  created_at: "2027-04-08T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unwanted Final</h3>
+<p>Sana and Devi had been debate partners and best friends for two years before the tournament bracket, entirely by chance, placed them on opposite sides of the championship round — one team, one trophy, only one of them could take it home.</p>
+
+<h3>Chapter 2: Debating a Friend</h3>
+<p>The round itself was fierce and genuinely uncomfortable, both girls arguing hard while very visibly trying not to actually enjoy beating the other, each point landed feeling less like victory and more like a small betrayal.</p>
+
+<h3>Chapter 3: What Mattered After the Scores</h3>
+<p>Sana won by a narrow margin. Devi hugged her before the judges even finished announcing it, genuine and unhesitating. "You were better today," Devi said simply. "Doesn't change anything between us." They still partner together at every non-championship tournament since — some things, they'd decided, mattered more than trophies.</p>
+`
+},
+{
+  title: "The Chess Club Crush Who Kept Losing on Purpose",
+  author: "Khyati Srivastava",
+  slug: "the-chess-club-crush-who-kept-losing-on-purpose",
+  category: "Romance",
+  emoji: "♟️",
+  excerpt: "Milo has been quietly letting his chess club crush win for weeks, hoping it would make her like him more. When she finally figures it out, the results aren't what he expected.",
+  created_at: "2027-04-08T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Secret Strategy</h3>
+<p>Milo had been quietly, deliberately losing to Priya at chess club for six straight weeks, convinced letting her win would somehow make her like him more, each "defeat" more carefully engineered than the last.</p>
+
+<h3>Chapter 2: Caught in the Act</h3>
+<p>Priya, sharper than he'd given her credit for, finally noticed the suspiciously convenient blunders and called it out directly during their seventh match: "Are you letting me win?" Milo, caught completely off guard, admitted it on the spot.</p>
+
+<h3>Chapter 3: An Honest Rematch</h3>
+<p>Rather than being flattered, Priya was mostly just disappointed — she'd wanted a real opponent, not an easy one. Their next game, played with genuine effort on both sides, ended in Milo's narrow, hard-fought win. Priya, grinning, admitted that game was far more fun than any of his fake losses had been. Their actual first date happened the following weekend.</p>
+`
+},
+{
+  title: "The Two Empty Seats at the Movie Theater",
+  author: "Khyati Srivastava",
+  slug: "the-two-empty-seats-at-the-movie-theater",
+  category: "Romance",
+  emoji: "🎬",
+  excerpt: "Both stood up by their friend groups on the same movie night, two strangers end up as the only people seated in an otherwise empty theater, awkwardly, three rows apart.",
+  created_at: "2027-04-08T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Stood Up, Separately</h3>
+<p>Both Theo and Marnie had shown up to the same late showing expecting to meet friend groups that, unbeknownst to either of them, had independently canceled last minute — leaving each of them alone in an otherwise completely empty theater.</p>
+
+<h3>Chapter 2: An Awkward Three Rows</h3>
+<p>They sat, initially, three rows apart in painful, mutual silence, both too embarrassed by their own solo movie night to acknowledge the other's equally solo movie night happening in plain view.</p>
+
+<h3>Chapter 3: Moving Closer</h3>
+<p>It was Marnie who finally broke first, calling across the empty rows: "This is ridiculous, want to actually watch this together?" Theo moved over gladly. They stayed through the credits, then through an hour of conversation in the lobby afterward. Neither one has mentioned their canceled friend groups since — both privately grateful, now, for the mix-up.</p>
+`
+},
+{
+  title: "The Great Refrigerator Art Gallery",
+  author: "Khyati Srivastava",
+  slug: "the-great-refrigerator-art-gallery",
+  category: "Kids",
+  emoji: "🖼️",
+  excerpt: "Six-year-old Nell has declared the refrigerator door an official art gallery, complete with a curated rotation, an opening reception, and extremely strict rules about what counts as 'gallery quality.'",
+  created_at: "2027-04-08T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Gallery Opens</h3>
+<p>Nell declared the family refrigerator an official art gallery on a rainy Tuesday, complete with a hand-lettered sign reading "The Nell Museum: Open Always," and immediately began curating a rotating exhibit of her own drawings.</p>
+
+<h3>Chapter 2: Very Strict Standards</h3>
+<p>Not every drawing made the cut. Nell instituted a surprisingly rigorous review process, personally rejecting several of her own pieces as "not gallery quality" while her parents watched, both amused and slightly baffled by the sudden artistic seriousness.</p>
+
+<h3>Chapter 3: An Opening Reception</h3>
+<p>She held a formal "opening reception" for her favorite new piece, complete with apple juice served in tiny cups and a guided tour explaining the artistic vision behind a purple dinosaur riding a skateboard. Her parents attended every single reception. The museum remains open, and strict, to this day.</p>
+`
+},
+{
+  title: "The Kid Who Invented a New Sport at Recess",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-invented-a-new-sport-at-recess",
+  category: "Kids",
+  emoji: "🏐",
+  excerpt: "Bored of four-square, Diego invents a brand-new recess game on the spot, complete with made-up rules he keeps changing. By Friday, half the school is playing it.",
+  created_at: "2027-04-08T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Bored of the Usual</h3>
+<p>Diego, thoroughly tired of four-square, grabbed a ball at recess on Monday and simply started making up a new game as he went — part dodgeball, part tag, with rules invented on the spot and adjusted immediately whenever they seemed unfair.</p>
+
+<h3>Chapter 2: Catching On</h3>
+<p>By Wednesday, "Diego-ball" had a small but dedicated group of regular players, each recess bringing a slightly revised rulebook as Diego kept tweaking whatever hadn't worked the day before.</p>
+
+<h3>Chapter 3: An Actual Tournament</h3>
+<p>By Friday, nearly half the school was playing some version of it, complete with heated debates about the "real" rules. The gym teacher, impressed, asked Diego to help write an official rulebook for next year's field day. Diego-ball is now, officially, a Lincoln Elementary tradition — rules subject to change, as always, at Diego's discretion.</p>
+`
+},
+{
+  title: "The Photograph With Too Many Reflections",
+  author: "Khyati Srivastava",
+  slug: "the-photograph-with-too-many-reflections",
+  category: "Horror",
+  emoji: "🪟",
+  excerpt: "A photo taken in front of a shop window shows the correct number of people — but the reflection in the glass shows one more standing quietly behind them.",
+  created_at: "2027-04-08T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Simple Photo</h3>
+<p>Four friends posed for a quick photo outside the old bookshop, nothing unusual about it until Reyna zoomed in later and noticed the shop window's reflection showed five figures standing in the group instead of four.</p>
+
+<h3>Chapter 2: Counting Twice</h3>
+<p>She counted the actual group again, carefully — definitely four, no mistake — and then counted the reflection again, just as carefully. Five, unmistakably, one extra figure standing quietly at the back, facing the same direction as everyone else.</p>
+
+<h3>Chapter 3: An Unanswered Question</h3>
+<p>None of the group recognized the extra reflection, and the bookshop owner, when asked gently, just gave a tired, knowing look and mentioned the building was "older than it looked, with older tenants than you'd expect." Reyna still has the photo. She has never gone back to that bookshop for another one.</p>
+`
+},
+{
+  title: "The Basement Light Switch With No Wire",
+  author: "Khyati Srivastava",
+  slug: "the-basement-light-switch-with-no-wire",
+  category: "Horror",
+  emoji: "💡",
+  excerpt: "An electrician doing renovations finds a light switch in the old basement that isn't connected to anything at all — no wire, no circuit. Flipping it still turns something off, somewhere.",
+  created_at: "2027-04-08T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Switch to Nowhere</h3>
+<p>The electrician, mid-renovation on the century-old house, found an old light switch mounted in the basement wall connected to absolutely nothing — no wire behind it, no circuit, no bulb anywhere it could plausibly control.</p>
+
+<h3>Chapter 2: Testing It Anyway</h3>
+<p>Curious despite himself, he flipped it — and the entire basement, though every actual bulb stayed lit, felt suddenly, unmistakably colder, the air shifting in a way no disconnected switch should have been able to cause.</p>
+
+<h3>Chapter 3: Leaving It Alone</h3>
+<p>He flipped it back immediately, and the basement warmed again just as quickly, exactly as before. He finished the renovation around it, carefully, and left the switch mounted exactly where it was rather than remove it. Whatever it was actually connected to, he decided, wasn't his business to find out.</p>
+`
+},
+{
+  title: "The Treehouse We Outgrew But Never Took Down",
+  author: "Khyati Srivastava",
+  slug: "the-treehouse-we-outgrew-but-never-took-down",
+  category: "Poetry",
+  emoji: "🌳",
+  excerpt: "A quiet, nostalgic poem about the old backyard treehouse, too small now for the kids who built it, still standing anyway, still holding onto something worth keeping.",
+  created_at: "2027-04-09T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Treehouse We Outgrew But Never Took Down</h3>
+<p>We built it small, for smaller hands,<br/>
+nailed boards from Dad's old lumber stands,<br/>
+a fort, a ship, a castle wall,<br/>
+whatever we needed it to be, that fall.</p>
+
+<p>Now our shoulders barely fit the door,<br/>
+our feet hang off the plywood floor,<br/>
+too big for games we used to play,<br/>
+too grown to climb the ladder, most days.</p>
+
+<p>But nobody's torn the old thing down,<br/>
+still standing proud above the ground,<br/>
+holding onto something we can't quite name —<br/>
+not the wood. Not the game.</p>
+
+<p>Someday maybe smaller hands will climb<br/>
+the same old ladder, one more time,<br/>
+and find the fort still holds its ground,<br/>
+still waiting, patient, to be found.</p>
+`
+},
+{
+  title: "The Grocery List That Became a Love Letter",
+  author: "Khyati Srivastava",
+  slug: "the-grocery-list-that-became-a-love-letter",
+  category: "Poetry",
+  emoji: "🛒",
+  excerpt: "A gentle poem finding quiet tenderness in the everyday shorthand of a shared grocery list, and everything ordinary words can carry without ever saying it directly.",
+  created_at: "2027-04-09T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Grocery List That Became a Love Letter</h3>
+<p>Milk, eggs, the bread you like,<br/>
+that soup you had the night you had that flu,<br/>
+tea bags — the kind that helped you sleep,<br/>
+and flowers, just because, not tied to anything you asked me to.</p>
+
+<p>It's just a list stuck to the door,<br/>
+handwriting rushed, a little unclear,<br/>
+but read it slow and you'll find more<br/>
+than groceries hiding in there.</p>
+
+<p>Every item is a small "I noticed,"<br/>
+every crossed-out line a "I remembered,"<br/>
+love doesn't always announce itself loudest —<br/>
+sometimes it's milk, eggs, and bread, well-tendered.</p>
+
+<p>So next time you write a simple list,<br/>
+look twice at what you choose to add,<br/>
+some of the sweetest words that exist<br/>
+are the ordinary ones we're glad to have.</p>
+`
+},
 ];
