@@ -18544,4 +18544,574 @@ every small triumph earns a chime,<br/>
 ring your bell, every single time.</p>
 `
 },
+{
+  title: "The Attic Door That Only Opens for the Youngest",
+  author: "Khyati Srivastava",
+  slug: "the-attic-door-that-only-opens-for-the-youngest",
+  category: "Fantasy",
+  emoji: "🚪",
+  excerpt: "The attic door in the old farmhouse has never once opened for an adult. It waits, patiently, generation after generation, for whichever child happens to be youngest in the house.",
+  created_at: "2027-04-12T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Door With Preferences</h3>
+<p>The attic door in the old Whitfield farmhouse had a peculiar habit passed down through four generations: it simply wouldn't open for adults, no matter the key or the force applied, opening easily only for whichever child in the house happened to be youngest at the time.</p>
+
+<h3>Chapter 2: A New Youngest</h3>
+<p>Six-year-old Opal, newest youngest in the family after her older cousins had all grown past the door's mysterious threshold, finally got her turn, the door swinging open at her touch as easily as any ordinary door.</p>
+
+<h3>Chapter 3: What Waited Inside</h3>
+<p>Inside sat a small chest of toys, untouched since the house was built, added to quietly by every youngest child before her — Opal's great-grandmother's doll, an uncle's tin soldiers, each generation leaving something small behind for whoever came next. Opal added her own toy before leaving. The door, satisfied, waits patiently now for whoever's youngest after her.</p>
+`
+},
+{
+  title: "The Potter Who Shaped Second Opinions",
+  author: "Khyati Srivastava",
+  slug: "the-potter-who-shaped-second-opinions",
+  category: "Fantasy",
+  emoji: "🏺",
+  excerpt: "Every clay bowl from Old Ansel's wheel gently reshapes itself to reflect whatever the owner truly needs to hear — not always what they want. His own bowl has sat unfinished for years.",
+  created_at: "2027-04-12T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Bowls With Opinions</h3>
+<p>Ansel's pottery had a strange, gentle habit: each bowl, over weeks of ownership, would subtly reshape itself — a slight tilt here, a new curve there — always toward whatever honest perspective its owner most needed and least expected.</p>
+
+<h3>Chapter 2: An Unfinished Bowl</h3>
+<p>His own bowl, sitting half-formed on a back shelf for three years, had never once been finished, a fact his apprentice Wren finally worked up the nerve to ask about directly.</p>
+
+<h3>Chapter 3: Facing His Own Clay</h3>
+<p>Ansel admitted, quietly, he was afraid of what shape his own bowl might settle into — afraid of what honest perspective he himself might need to hear. Wren simply finished the wheel spin herself, letting it settle naturally without his interference. It reshaped, weeks later, into something surprisingly simple: a reminder to finally retire and rest. Ansel, after considerable grumbling, eventually listened.</p>
+`
+},
+{
+  title: "The Last Delivery Route on Earth",
+  author: "Khyati Srivastava",
+  slug: "the-last-delivery-route-on-earth",
+  category: "Sci-Fi",
+  emoji: "📦",
+  excerpt: "Automated drones handle every delivery on the planet now, except one small mountain village too remote for their range. Twelve-year-old Kavi's grandmother has run that final route by mule for thirty years.",
+  created_at: "2027-04-12T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: The Last Holdout</h3>
+<p>Delivery drones handled nearly every package on the planet by then, quiet and efficient, except for one small mountain village whose altitude and weather kept it stubbornly beyond drone range — served, as it had been for thirty years, by Kavi's grandmother and her sure-footed mule.</p>
+
+<h3>Chapter 2: A Proposed Upgrade</h3>
+<p>The delivery company finally developed a mountain-capable drone model, technically capable of replacing the route entirely, and offered Grandmother Iyer a generous retirement package to finally hang up her delivery satchel.</p>
+
+<h3>Chapter 3: Choosing to Keep Going</h3>
+<p>She declined, gently but firmly, explaining what the drones would never quite manage: knowing which elderly villager needed an extra minute of conversation, which family's mail meant more than just paper. Kavi started learning the route alongside her that season. Some deliveries, they both agreed, weren't really about the package at all.</p>
+`
+},
+{
+  title: "The Backup Copy of Herself",
+  author: "Khyati Srivastava",
+  slug: "the-backup-copy-of-herself",
+  category: "Sci-Fi",
+  emoji: "🧬",
+  excerpt: "Before her risky mission to Europa, astronaut Dr. Reyes leaves behind a full neural backup — just in case. When she returns safely, she has to decide what to do with a copy of herself that was never activated.",
+  created_at: "2027-04-12T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Precaution</h3>
+<p>Before departing for the genuinely dangerous Europa mission, Dr. Reyes had, as protocol required, recorded a full neural backup — a dormant, unconscious copy of her memories and personality, meant only for activation if she didn't return.</p>
+
+<h3>Chapter 2: A Safe Return</h3>
+<p>She came home safely, mission successful, and found herself facing an unexpected question the protocol hadn't fully addressed: what do you do with a backup of yourself that was never needed, sitting dormant, technically still you, in a secure storage server?</p>
+
+<h3>Chapter 3: A Decision</h3>
+<p>She chose, after months of consideration, not to delete it — instead donating the anonymized backup to a research project studying memory and identity, letting some good come from a copy of herself that would otherwise simply sit unused. She still thinks about it sometimes: a version of her, unconscious, unaware, that never had to live through anything at all.</p>
+`
+},
+{
+  title: "The Mystery Guest at Every Wedding in Town",
+  author: "Khyati Srivastava",
+  slug: "the-mystery-guest-at-every-wedding-in-town",
+  category: "Mystery",
+  emoji: "💒",
+  excerpt: "An elderly woman nobody recognizes has attended every single wedding at the town chapel for fifteen years, always sitting in the back, always leaving before the reception. A curious bride finally asks why.",
+  created_at: "2027-04-12T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Familiar Stranger</h3>
+<p>Every couple who married at the old chapel over fifteen years shared one strange detail in their wedding photos: an elderly woman, always unrecognized, always seated in the very back pew, always gone before the reception began.</p>
+
+<h3>Chapter 2: An Overdue Question</h3>
+<p>Bride-to-be Sana, curious after noticing the woman at three separate friends' weddings, finally approached her directly during her own ceremony's photos, gently asking who she was and why she came.</p>
+
+<h3>Chapter 3: A Quiet Answer</h3>
+<p>The woman explained simply: her own wedding, decades ago, had been canceled the morning of, and she'd never once gotten to walk that aisle herself. Attending others' ceremonies, quietly, from the back, had become her own small way of sharing in a joy she'd once missed. Sana invited her to the reception properly that day. She stayed the whole time, for the first time in fifteen years.</p>
+`
+},
+{
+  title: "The Case of the Piano That Tunes Itself",
+  author: "Khyati Srivastava",
+  slug: "the-case-of-the-piano-that-tunes-itself",
+  category: "Mystery",
+  emoji: "🎹",
+  excerpt: "The community center's old piano has stayed perfectly in tune for six years without a single professional tuning. The new music teacher is determined to figure out how.",
+  created_at: "2027-04-12T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Impossible Streak</h3>
+<p>New music teacher Mr. Aoki checked the maintenance records his first week and found something baffling: the community center's well-used piano hadn't been professionally tuned in six full years, yet played, by every measure, in flawless tune.</p>
+
+<h3>Chapter 2: A Careful Search</h3>
+<p>He inspected the piano's internals thoroughly, consulted the previous teacher's old notes, and finally interviewed the building's longtime caretaker, Mr. Petrossian, who'd been quietly overseeing the center since before Aoki was born.</p>
+
+<h3>Chapter 3: A Retired Tuner's Secret</h3>
+<p>Petrossian, it turned out, had spent thirty years as a professional piano tuner before retiring into caretaking work — and had simply kept the piano tuned himself, quietly, every month, never once mentioning it or asking for credit. Aoki added his name to the maintenance log properly from then on. Petrossian seemed almost embarrassed by the recognition.</p>
+`
+},
+{
+  title: "The Bike Race Down Dead Man's Hill (Renamed Very Recently)",
+  author: "Khyati Srivastava",
+  slug: "the-bike-race-down-dead-mans-hill-renamed-very-recently",
+  category: "Adventure",
+  emoji: "🚲",
+  excerpt: "The neighborhood's steepest hill has a dramatic old nickname nobody remembers the origin of. This summer, four kids finally attempt the legendary ride down it — and quietly rename it something less alarming.",
+  created_at: "2027-04-12T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Dramatic Legend</h3>
+<p>Every kid on the block knew Dead Man's Hill by reputation only — steep, fast, and supposedly the site of some long-forgotten disaster nobody could actually explain when pressed for real details.</p>
+
+<h3>Chapter 2: The Attempt</h3>
+<p>Four friends finally worked up the nerve together, helmets strapped tight, taking the descent one at a time while the others watched nervously from the bottom, fully expecting some kind of dramatic mishap to justify the hill's fearsome name.</p>
+
+<h3>Chapter 3: An Anticlimactic, Wonderful Ride</h3>
+<p>All four made it down safely, exhilarated but completely unharmed, the legendary hill turning out to be, in reality, just a genuinely fun and fast ride with zero actual danger involved. They renamed it Thunder Hill on the spot, feeling their new name was considerably more accurate — and a lot more fun to brag about.</p>
+`
+},
+{
+  title: "The Kids Who Mapped Every Storm Drain in the Neighborhood",
+  author: "Khyati Srivastava",
+  slug: "the-kids-who-mapped-every-storm-drain-in-the-neighborhood",
+  category: "Adventure",
+  emoji: "🗺️",
+  excerpt: "A summer boredom project turns into a genuinely useful neighborhood resource when three kids spend weeks mapping every storm drain, discovering one dangerously clogged before it causes real flooding.",
+  created_at: "2027-04-12T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Boredom Project</h3>
+<p>With nothing else to do one particularly slow summer, Priya, Dev, and Marisol decided to map every storm drain in their neighborhood, marking each on a hand-drawn map purely for the satisfaction of a completed project.</p>
+
+<h3>Chapter 2: An Unexpected Discovery</h3>
+<p>Drain number fourteen, tucked behind an overgrown hedge most people walked right past, turned out to be almost completely blocked by years of accumulated leaves and debris — a genuine flood risk nobody in the city's maintenance department had flagged.</p>
+
+<h3>Chapter 3: A Real Contribution</h3>
+<p>The kids reported it directly to city services, complete with their careful map and photos, and crews cleared it within the week — well before the fall's first major storm arrived. The city sent the trio an official thank-you letter. Their hand-drawn map now hangs, laminated, in the public works office.</p>
+`
+},
+{
+  title: "Waffles the Corgi Who Herds the Wrong Things",
+  author: "Khyati Srivastava",
+  slug: "waffles-the-corgi-who-herds-the-wrong-things",
+  category: "Animals",
+  emoji: "🐕",
+  excerpt: "Bred to herd sheep, Waffles the corgi has never once seen a sheep in his suburban life. He's redirected all that instinct toward herding the family's Roombas instead.",
+  created_at: "2027-04-12T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Herding Instinct With No Sheep</h3>
+<p>Waffles the corgi carried centuries of sheep-herding instinct in his short, sturdy legs and had, in his entire suburban life, never once encountered an actual sheep — leaving all that inherited purpose with absolutely nowhere useful to go.</p>
+
+<h3>Chapter 2: A New Flock</h3>
+<p>He found his outlet, eventually, in the family's two robot vacuums, nipping gently at their sides and circling them determinedly whenever they wandered too close to the edges of a room, corralling them back toward the center with genuine herding precision.</p>
+
+<h3>Chapter 3: A Job Well Done</h3>
+<p>The family started calling the vacuums "the flock" as a running joke, and Waffles takes his self-appointed duty with total seriousness every single cleaning cycle. He has never once let a Roomba wander into a doorway on his watch. His ancestors, presumably, would be proud, if a little confused.</p>
+`
+},
+{
+  title: "The Hedgehog Who Reviewed Every Garden on the Street",
+  author: "Khyati Srivastava",
+  slug: "the-hedgehog-who-reviewed-every-garden-on-the-street",
+  category: "Animals",
+  emoji: "🦔",
+  excerpt: "A wandering hedgehog visits every garden on Maple Street in a strict, predictable rotation. The neighbors have started, only half-jokingly, treating his visits as unofficial garden reviews.",
+  created_at: "2027-04-12T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Predictable Visitor</h3>
+<p>The hedgehog, nicknamed Sir Pokes by the street's kids, visited every garden on Maple Street in the same careful rotation, spending noticeably longer in some yards than others for reasons nobody could quite determine.</p>
+
+<h3>Chapter 2: Unofficial Ratings</h3>
+<p>Neighbors started jokingly tracking his visit lengths as an informal garden review, the Hendersons' well-mulched flower beds reliably earning his longest stays, while newer, sparser gardens got only the briefest courtesy pass-through.</p>
+
+<h3>Chapter 3: A Friendly Competition</h3>
+<p>By midsummer, half the street had started gardening a little more ambitiously, genuinely competing for Sir Pokes's approval in a rivalry nobody quite admitted to taking seriously. Sir Pokes, entirely unaware of his new role as neighborhood garden critic, continued his rounds with total indifference to the drama he'd inspired.</p>
+`
+},
+{
+  title: "The Extremely Formal Treehouse Board Meeting",
+  author: "Khyati Srivastava",
+  slug: "the-extremely-formal-treehouse-board-meeting",
+  category: "Comedy",
+  emoji: "📋",
+  excerpt: "Four kids co-own a backyard treehouse and have, somehow, developed an entire bureaucratic system of formal meetings, motions, and votes to manage its use — much to their parents' bewildered amusement.",
+  created_at: "2027-04-12T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unlikely Bureaucracy</h3>
+<p>What started as four kids sharing one treehouse evolved, somehow, into a formal governance structure complete with a "Board of Treehouse Directors," monthly meetings, and an official notepad for recording motions and votes.</p>
+
+<h3>Chapter 2: Serious Business</h3>
+<p>Agenda items included genuinely contested motions like "Proposal: Snacks Allowed Above the Second Rung" and "Motion to Reconsider Visitor Policy for Younger Siblings," debated with a seriousness wildly disproportionate to the stakes involved.</p>
+
+<h3>Chapter 3: An Efficient System, Somehow</h3>
+<p>Parents, initially baffled, eventually admitted the system worked remarkably well — fewer treehouse disputes than any neighborhood group of kids they'd ever witnessed. The Board is currently in its third term, agenda items typed neatly by the group's self-appointed secretary, age nine.</p>
+`
+},
+{
+  title: "The Wedding Speech That Went Sideways in the Best Way",
+  author: "Khyati Srivastava",
+  slug: "the-wedding-speech-that-went-sideways-in-the-best-way",
+  category: "Comedy",
+  emoji: "🥂",
+  excerpt: "The best man's carefully planned wedding speech gets derailed almost immediately by a malfunctioning microphone, a spilled drink, and an increasingly chaotic chain of small disasters.",
+  created_at: "2027-04-12T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Carefully Written Speech</h3>
+<p>Desmond had rehearsed his best man speech for weeks, index cards perfectly ordered, timing rehearsed to the second. The microphone had other plans, cutting out entirely during his opening line and forcing him to shout the next three sentences.</p>
+
+<h3>Chapter 2: A Chain of Small Disasters</h3>
+<p>A waiter's spilled drink soaked his index cards mid-speech, smearing his careful notes into unreadable ink blots, forcing him to improvise the rest entirely from memory while the room watched in growing, delighted suspense.</p>
+
+<h3>Chapter 3: The Best Speech Nobody Planned</h3>
+<p>Freed from his notes, Desmond's improvised, genuinely heartfelt ending brought the whole room to tears — and laughter — in a way his rehearsed version never could have managed. The couple later admitted it was, hands down, the best wedding speech they'd ever heard, soaked index cards and all.</p>
+`
+},
+{
+  title: "The Tailor's Son Who Sewed Himself a Backbone",
+  author: "Khyati Srivastava",
+  slug: "the-tailors-son-who-sewed-himself-a-backbone",
+  category: "Fairytale",
+  emoji: "🧵",
+  excerpt: "Too timid to speak up for himself, the tailor's son stitches a small charm into his own coat — not magic exactly, just a daily reminder that courage, like any garment, has to be worn on purpose.",
+  created_at: "2027-04-12T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Quiet Boy</h3>
+<p>Nils, the tailor's son, had learned every stitch his father knew but never once learned to speak up for himself, letting other apprentices take credit for his careful work without a word of protest.</p>
+
+<h3>Chapter 2: A Small, Deliberate Charm</h3>
+<p>He sewed a tiny brass button into the inside pocket of his own coat, not enchanted, just a private reminder — every morning, buttoning it, he'd repeat one thing he intended to say aloud that day, however small.</p>
+
+<h3>Chapter 3: Wearing Courage on Purpose</h3>
+<p>It took months of small buttoned reminders before Nils finally spoke up properly, correcting a customer who'd tried claiming his careful work as their own design. The button held no real magic. The daily habit it represented, worn deliberately every morning, turned out to be enough on its own.</p>
+`
+},
+{
+  title: "The Fisherman Who Caught a Wish by Accident",
+  author: "Khyati Srivastava",
+  slug: "the-fisherman-who-caught-a-wish-by-accident",
+  category: "Fairytale",
+  emoji: "🎣",
+  excerpt: "Old Bo has fished the same lake for fifty years without ever catching anything magical. This morning, tangled in his net alongside three ordinary trout, is a single, very confused wish.",
+  created_at: "2027-04-12T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Ordinary Catch</h3>
+<p>Bo had fished the same lake for fifty uneventful years, and his net that morning held nothing more remarkable than three decent trout — until he noticed something small and shimmering tangled alongside them, unmistakably not a fish.</p>
+
+<h3>Chapter 2: A Confused Wish</h3>
+<p>It turned out to be a genuine wish, dislodged somehow from wherever wishes normally lived, disoriented and unsure how it had ended up caught in an old fisherman's net instead of granted to whoever it was meant for.</p>
+
+<h3>Chapter 3: Giving It Away</h3>
+<p>Bo, fifty years wise and past wanting much for himself, gave the wish away to the first person he passed — a struggling young mother at the market, worried aloud about her sick child. The wish, grateful for a proper purpose at last, granted her worry away by morning. Bo went home with three trout and a story nobody quite believed, which suited him just fine.</p>
+`
+},
+{
+  title: "The Kid Who Turned Awkward Silences Into an Art Form",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-turned-awkward-silences-into-an-art-form",
+  category: "Inspirational",
+  emoji: "🎨",
+  excerpt: "Terrified of small talk, Priya used to fill every silence with nervous rambling. Learning to simply let a quiet moment sit, unafraid, turned out to change more than just her conversations.",
+  created_at: "2027-04-12T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Filling Every Gap</h3>
+<p>Priya had spent years terrified of silence in conversations, filling every natural pause with nervous rambling, convinced any quiet moment meant she was somehow failing at talking to people properly.</p>
+
+<h3>Chapter 2: A Different Approach</h3>
+<p>Her school counselor suggested something that felt impossible at first: let a silence sit for three full seconds before speaking, no rambling, no filling, just breathing through the discomfort deliberately.</p>
+
+<h3>Chapter 3: What the Quiet Taught Her</h3>
+<p>It felt agonizing the first dozen times. By the fiftieth, she noticed something unexpected: people relaxed more around her, conversations felt less exhausting, and she genuinely listened better with room to actually think. Priya still isn't naturally chatty. She's stopped being afraid of the quiet parts — which, it turns out, mattered more than being talkative ever did.</p>
+`
+},
+{
+  title: "The Kid Who Practiced Being Happy for Other People",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-practiced-being-happy-for-other-people",
+  category: "Inspirational",
+  emoji: "🎉",
+  excerpt: "Every time a friend succeeded at something, Dev felt a small, guilty pang of envy he couldn't shake. Learning to actually celebrate other people, genuinely, turned out to be its own kind of skill.",
+  created_at: "2027-04-12T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Guilty Feeling</h3>
+<p>Dev genuinely liked his friends, and yet every time one of them won an award, landed a lead role, or scored the winning goal, a small, uncomfortable pang of envy crept in that he felt ashamed of and never mentioned to anyone.</p>
+
+<h3>Chapter 2: Naming It</h3>
+<p>He finally admitted the feeling to his older sister, half-expecting judgment. She just nodded, unsurprised. "Everyone feels that sometimes. The trick isn't making it disappear. It's practicing celebrating anyway, on purpose, even while you feel it."</p>
+
+<h3>Chapter 3: Practicing the Skill</h3>
+<p>He started small — a genuine, deliberate "that's awesome!" even when the pang showed up, forcing the celebration until, slowly, it stopped feeling forced at all. By year's end, cheering for his friends' wins felt as natural as his own. The envy still visits occasionally. It just doesn't run the show anymore.</p>
+`
+},
+{
+  title: "The Season Everyone Thought the Team Would Lose",
+  author: "Khyati Srivastava",
+  slug: "the-season-everyone-thought-the-team-would-lose",
+  category: "Drama",
+  emoji: "🏆",
+  excerpt: "Picked to finish dead last by every preseason ranking, the Lincoln Middle School soccer team has one thing going for it nobody accounted for: they genuinely like playing together.",
+  created_at: "2027-04-13T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Low Expectations</h3>
+<p>Every preseason prediction had Lincoln Middle finishing dead last, a reasonable guess given their thin roster and a string of rough seasons before this one. The team itself, somehow, hadn't gotten the memo about being written off.</p>
+
+<h3>Chapter 2: An Unexpected Chemistry</h3>
+<p>What the rankings couldn't measure was how genuinely well this particular group of kids played together — covering each other's weaknesses instinctively, celebrating each other's small wins with real enthusiasm rather than quiet competitive resentment.</p>
+
+<h3>Chapter 3: Defying the Prediction</h3>
+<p>They didn't win the championship. They finished solidly mid-table, a modest result that felt, to every kid on that roster, like a genuine triumph against expectations nobody outside the team had believed in. Coach Alvarez called it the proudest coaching season of her career — rankings, she reminded them, never account for a team that actually likes each other.</p>
+`
+},
+{
+  title: "The Chair They Kept Setting for Marco",
+  author: "Khyati Srivastava",
+  slug: "the-chair-they-kept-setting-for-marco",
+  category: "Drama",
+  emoji: "🪑",
+  excerpt: "A year after her brother left for military service, Reyna's family still sets his place at Sunday dinner. This is the week his letter finally announces he's coming home.",
+  created_at: "2027-04-13T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Yearlong Habit</h3>
+<p>Every Sunday for a full year, Reyna's family had set an extra place at dinner for her brother Marco, deployed overseas — not out of superstition exactly, just a small, steady way of keeping his seat, and his presence, part of the family's rhythm.</p>
+
+<h3>Chapter 2: A Letter Arrives</h3>
+<p>His letter that week carried news the whole family had been waiting a year to hear: his deployment was ending, home in three weeks, an ordinary Tuesday circled on the calendar that suddenly felt like the most important date of the year.</p>
+
+<h3>Chapter 3: Filling the Chair</h3>
+<p>They kept setting his place every Sunday until he actually walked through the door, three weeks later, dropping his bag and sliding into the chair that had waited faithfully for him the entire year. Nobody said much. Nobody needed to. The chair, finally, wasn't empty anymore.</p>
+`
+},
+{
+  title: "The Note Passed Through Seventeen Different Hands",
+  author: "Khyati Srivastava",
+  slug: "the-note-passed-through-seventeen-different-hands",
+  category: "Romance",
+  emoji: "✉️",
+  excerpt: "A folded note meant for one specific person gets passed through the wrong hands seventeen times across a crowded classroom before finally, somehow, reaching exactly where it needed to go.",
+  created_at: "2027-04-13T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Note Sent Wrong</h3>
+<p>Finn folded the note carefully, meant for Layla two rows over, and passed it to his neighbor with whispered instructions that got garbled somewhere in transit — the note beginning an increasingly chaotic journey through sixteen sets of unintended hands.</p>
+
+<h3>Chapter 2: A Long, Winding Route</h3>
+<p>It traveled diagonally, backward, once dramatically dropped and retrieved from under a desk, each new carrier adding their own small commentary in the margins before passing it further along the increasingly confused chain.</p>
+
+<h3>Chapter 3: Arriving, Eventually</h3>
+<p>It reached Layla seventeen hands and one entire class period later, covered in unrelated doodles and at least four strangers' opinions on Finn's handwriting. She read the original message, buried under the chaos, and laughed so hard she had to leave the room. Their first real conversation happened at lunch that day, note and all its detours included.</p>
+`
+},
+{
+  title: "The Two Left Gloves",
+  author: "Khyati Srivastava",
+  slug: "the-two-left-gloves",
+  category: "Romance",
+  emoji: "🧤",
+  excerpt: "Both accidentally grabbing the wrong glove from a shared lost-and-found bin, two strangers end up matched, unwittingly, in a single left-handed pair that neither can properly wear alone.",
+  created_at: "2027-04-13T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Mismatched Grab</h3>
+<p>Winter's lost-and-found bin had produced, entirely by accident, a matching problem: both Reya and Tobias had grabbed identical left-handed gloves in the rush to leave, each now holding a pair that fit only one hand each.</p>
+
+<h3>Chapter 2: A Trade Negotiation</h3>
+<p>It took a full week of noticing each other's mismatched, cold right hands before either worked up the courage to suggest an obvious trade — meeting at the same bus stop where the mix-up first happened, gloves in hand, mildly embarrassed.</p>
+
+<h3>Chapter 3: Keeping the Mismatch</h3>
+<p>The trade never quite happened. Somewhere in the conversation, they decided — half joking, half not — to just keep meeting at that bus stop each morning instead, gloves mismatched and all. Reya still has his left glove. He still has hers. Neither seems in any hurry to fix it.</p>
+`
+},
+{
+  title: "The Kid Who Ran a One-Person Weather Balloon Program",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-ran-a-one-person-weather-balloon-program",
+  category: "Kids",
+  emoji: "🎈",
+  excerpt: "Ten-year-old Oscar has launched, tracked, and recovered eleven homemade weather balloons this year, complete with a disposable camera and increasingly ambitious altitude goals.",
+  created_at: "2027-04-13T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Big Ambition</h3>
+<p>Oscar's first weather balloon launch, using a party balloon and a disposable camera, barely cleared the neighbor's roofline before drifting into a tree. He considered it, entirely undeterred, a successful proof of concept.</p>
+
+<h3>Chapter 2: Getting Better</h3>
+<p>Ten more launches followed over the year, each slightly more ambitious than the last — better balloons, better cameras, a genuinely impressive tracking system built from an old phone and a lot of trial and error.</p>
+
+<h3>Chapter 3: A Real Result</h3>
+<p>Launch eleven finally reached genuine altitude, capturing a photo of curved horizon that made the local newspaper's community section. Oscar has already started planning launch twelve, this time with an actual weather sensor his uncle helped him source. His parents have stopped being surprised by packages arriving addressed to "Oscar's Weather Program."</p>
+`
+},
+{
+  title: "The Kid Who Started a Free Little Toy Library",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-started-a-free-little-toy-library",
+  category: "Kids",
+  emoji: "🧸",
+  excerpt: "Inspired by the neighborhood's little free book library, seven-year-old Nia builds her own version for outgrown toys — take one, leave one, no questions asked.",
+  created_at: "2027-04-13T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Idea Borrowed</h3>
+<p>Nia had always loved the little free library box down the street, and one day, staring at her own overflowing toy bin, had an idea: why not the same thing, but for toys she'd outgrown and toys other kids might have outgrown too?</p>
+
+<h3>Chapter 2: Building It</h3>
+<p>Her dad helped her convert an old cabinet into a weatherproof little toy box, and Nia stocked it herself with a careful selection of outgrown treasures — a slightly worn stuffed rabbit, extra building blocks, a puzzle missing exactly one piece.</p>
+
+<h3>Chapter 3: A Neighborhood Habit</h3>
+<p>Within a month, the box had developed its own steady rhythm — toys taken, new ones left, a quiet, ongoing exchange nobody managed but everyone respected. Nia checks it every few days, restocking when it runs low. She considers herself, with total seriousness, the neighborhood's official toy librarian.</p>
+`
+},
+{
+  title: "The Porch Light That Turns On By Itself at 3 AM",
+  author: "Khyati Srivastava",
+  slug: "the-porch-light-that-turns-on-by-itself-at-3-am",
+  category: "Horror",
+  emoji: "💡",
+  excerpt: "Every night at exactly 3:00 AM, the Kowalski family's porch light switches on by itself for precisely four minutes, then switches off again. It has never once been caught on camera doing it.",
+  created_at: "2027-04-13T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Precise Pattern</h3>
+<p>The porch light switched on at exactly 3:00 AM every single night, stayed lit for precisely four minutes, then switched off again — a pattern so consistent the Kowalski family had started setting clocks by it, half-joking, before it stopped being funny.</p>
+
+<h3>Chapter 2: A Camera That Sees Nothing</h3>
+<p>They installed a security camera specifically to catch the switch flipping, expecting a simple wiring fault to reveal itself on footage. The camera recorded the light turning on and off exactly on schedule. It never once captured anything, or anyone, touching the switch.</p>
+
+<h3>Chapter 3: Leaving It Alone</h3>
+<p>An electrician found no fault in the wiring after two separate inspections. The family stopped investigating after that, simply accepting the four minutes each night as an unexplained fact of the house. Nobody in the family has ever been awake at 3:04 to see it turn off. They've decided, collectively, they'd rather not be.</p>
+`
+},
+{
+  title: "The Answering Machine With One Message Left",
+  author: "Khyati Srivastava",
+  slug: "the-answering-machine-with-one-message-left",
+  category: "Horror",
+  emoji: "📼",
+  excerpt: "The old answering machine in the basement holds exactly one saved message, worn thin from decades of replaying. Nobody in the family can explain who it's from — or why it always sounds like it's speaking to whoever's listening right now.",
+  created_at: "2027-04-13T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Forgotten Machine</h3>
+<p>The old answering machine had sat unplugged in the basement for years before Priya, cleaning out storage, plugged it in on a whim and found exactly one saved message, worn thin and slightly warped from what must have been decades of replaying.</p>
+
+<h3>Chapter 2: A Strange Message</h3>
+<p>The voice, unfamiliar and calm, said only a handful of sentences — vague, warm, oddly current-sounding despite the machine's obvious age, ending each time with the same unsettling line: "I'm glad you're the one listening today."</p>
+
+<h3>Chapter 3: Playing It Again</h3>
+<p>She played it for her parents, who swore they'd never recorded or heard it before despite owning the machine for fifteen years. Priya has played it several more times since. The voice always sounds calm. It always ends the exact same way. She still isn't sure if that line comforts her or not.</p>
+`
+},
+{
+  title: "The Grandfather Clock That Runs on Old Stories",
+  author: "Khyati Srivastava",
+  slug: "the-grandfather-clock-that-runs-on-old-stories",
+  category: "Poetry",
+  emoji: "🕰️",
+  excerpt: "A gentle poem imagining the family's old grandfather clock as something wound not by weights and gears, but by every story ever told beneath it.",
+  created_at: "2027-04-13T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Grandfather Clock That Runs on Old Stories</h3>
+<p>They say it runs on weights and gears,<br/>
+ticking steady through the years,<br/>
+but I think it's something else instead —<br/>
+every story that's ever been said</p>
+
+<p>beneath its watchful wooden face,<br/>
+in this same living room, this same old place,<br/>
+winds it forward, hour by hour,<br/>
+a quiet, ticking kind of power.</p>
+
+<p>Grandpa's war stories, Grandma's too,<br/>
+the ones about when the family was new,<br/>
+every bedtime tale, every family joke,<br/>
+wound into gears with every word spoke.</p>
+
+<p>So tell it something, next time you're near,<br/>
+a story worth keeping, worth holding dear,<br/>
+and it'll keep ticking, steady and true,<br/>
+powered by every story that's ever been through.</p>
+`
+},
+{
+  title: "The Junk Drawer That Holds a Whole Family",
+  author: "Khyati Srivastava",
+  slug: "the-junk-drawer-that-holds-a-whole-family",
+  category: "Poetry",
+  emoji: "🗄️",
+  excerpt: "A warm, funny poem finding an entire family's story hidden in the chaotic, overstuffed junk drawer every household seems to have.",
+  created_at: "2027-04-13T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Junk Drawer That Holds a Whole Family</h3>
+<p>A rubber band, a broken pen,<br/>
+a key that doesn't fit again,<br/>
+a birthday candle, half burned down,<br/>
+a movie ticket from across town.</p>
+
+<p>Nobody planned this drawer, and yet<br/>
+it holds more than we could ever forget —<br/>
+each little scrap a tiny clue<br/>
+to something we once said or knew.</p>
+
+<p>That coupon's from the store that closed,<br/>
+that photo strip, four faces posed,<br/>
+that single glove without a mate,<br/>
+still waiting for a winter date.</p>
+
+<p>We'll clean it out again someday,<br/>
+promise ourselves, then let it stay —<br/>
+because somehow, in all that mess,<br/>
+is a family, more or less.</p>
+`
+},
 ];
