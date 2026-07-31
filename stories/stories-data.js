@@ -20254,4 +20254,574 @@ that's the recipe, simple and true,<br/>
 for a good Saturday, just for you.</p>
 `
 },
+{
+  title: "The Cooper Who Barreled Up Bad Luck",
+  author: "Khyati Srivastava",
+  slug: "the-cooper-who-barreled-up-bad-luck",
+  category: "Fantasy",
+  emoji: "🛢️",
+  excerpt: "Every barrel from Old Wexley's shop can hold one bad streak of luck sealed inside, safely out of the way. He's never once made a barrel small enough for his own.",
+  created_at: "2027-04-15T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Cooper's Real Trade</h3>
+<p>Wexley built ordinary barrels for wine and grain by trade, but the ones villagers really came for were smaller, sealed with a particular knot only he knew — barrels built to hold a bad luck streak safely inside, out of the way of daily life.</p>
+
+<h3>Chapter 2: A Persistent Customer</h3>
+<p>A young farmer named Iva, plagued by a run of failed harvests, begged him for the biggest barrel he'd ever made, certain her bad luck was too large for anything smaller.</p>
+
+<h3>Chapter 3: What Actually Fit</h3>
+<p>Wexley built her a barrel no bigger than usual, explaining gently that bad luck always felt larger than it truly was — the trick wasn't size, it was sealing it properly. Iva's harvest turned around within the season. Wexley, meanwhile, still hadn't built himself a barrel for his own string of lonely winters, a fact his apprentice finally called him out on that same year.</p>
+`
+},
+{
+  title: "The Chandler Who Sold Light by the Memory",
+  author: "Khyati Srivastava",
+  slug: "the-chandler-who-sold-light-by-the-memory",
+  category: "Fantasy",
+  emoji: "🕯️",
+  excerpt: "Every candle from the chandler's shop burns with light borrowed from a specific happy memory. The brighter the memory, the longer the candle lasts — which is a problem for customers running low on happy ones.",
+  created_at: "2027-04-15T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Candles of Borrowed Light</h3>
+<p>The chandler's candles burned differently depending on what memory fueled them — a wedding day candle might last a week, while a candle lit from a forgettable Tuesday afternoon barely lasted the evening.</p>
+
+<h3>Chapter 2: A Customer Running Low</h3>
+<p>An elderly widower named Corin came in asking for his usual, only to watch the chandler frown at how dim and short-lived his latest memory-candle had burned — grief, it seemed, had been crowding out his happier recollections lately.</p>
+
+<h3>Chapter 3: Making New Ones</h3>
+<p>Rather than sell him another quick-burning candle, the chandler sent him home with an assignment instead: go make one new happy memory this week, however small, and come back. Corin returned with a story about his granddaughter's garden visit. That candle burned for eleven days straight — proof, the chandler said, that the well was never really empty, just needed refilling.</p>
+`
+},
+{
+  title: "The Last Mechanic Who Still Works With Her Hands",
+  author: "Khyati Srivastava",
+  slug: "the-last-mechanic-who-still-works-with-her-hands",
+  category: "Sci-Fi",
+  emoji: "🔩",
+  excerpt: "Automated repair bays handle nearly every vehicle now, but old Ms. Alvarez still fixes engines by hand, by choice. Her granddaughter finally asks why, expecting a simple answer.",
+  created_at: "2027-04-15T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Old-Fashioned Choice</h3>
+<p>Automated repair bays could fix nearly any vehicle faster and more precisely than human hands ever could, and yet Ms. Alvarez kept her small manual garage running anyway, one of the last of its kind in the whole district.</p>
+
+<h3>Chapter 2: A Granddaughter's Question</h3>
+<p>Twelve-year-old Reya, visiting for the summer, finally asked the obvious question: why work harder and slower for the same result the machines produced instantly? Ms. Alvarez didn't answer right away — she just handed Reya a wrench.</p>
+
+<h3>Chapter 3: Understanding by Doing</h3>
+<p>Reya spent the afternoon helping replace a fuel line, hands greasy, genuinely learning how the engine actually worked instead of just trusting a machine's readout. "The bots fix cars," Ms. Alvarez finally said. "I teach people how cars work. Different job, even if the result looks the same." Reya kept coming back to the garage every summer after that.</p>
+`
+},
+{
+  title: "The Message That Took a Century to Arrive",
+  author: "Khyati Srivastava",
+  slug: "the-message-that-took-a-century-to-arrive",
+  category: "Sci-Fi",
+  emoji: "📡",
+  excerpt: "A time-delayed message capsule launched a hundred years ago finally reaches its destination: a small town that, thanks to changing borders and renamed streets, no longer technically exists.",
+  created_at: "2027-04-15T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Old Promise</h3>
+<p>The message capsule, launched into a slow orbital delay a century earlier as part of a forgotten civic time-capsule project, finally triggered its return signal — addressed to a town whose name, borders, and even street layout had all changed considerably since.</p>
+
+<h3>Chapter 2: A Puzzle for Historians</h3>
+<p>Local archivist Femi spent weeks tracing exactly where the original town had stood, cross-referencing century-old maps against the modern city that had grown up and around it entirely differently.</p>
+
+<h3>Chapter 3: Delivering It Anyway</h3>
+<p>She finally identified the right modern neighborhood and organized a small public reading of the message — well-wishes and hopeful predictions from citizens long since passed, delivered a hundred years late to their actual intended descendants. Nobody in the room had been alive to send it. Everyone there, somehow, felt like they'd received it exactly on time.</p>
+`
+},
+{
+  title: "The Mystery of the Twice-Painted Fence",
+  author: "Khyati Srivastava",
+  slug: "the-mystery-of-the-twice-painted-fence",
+  category: "Mystery",
+  emoji: "🎨",
+  excerpt: "The Andersons' fence gets painted the exact same shade of white every single spring, whether it needs it or not — by someone who isn't the Andersons and has never once been caught in the act.",
+  created_at: "2027-04-15T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Suspiciously Fresh Fence</h3>
+<p>Every spring, without fail, the Andersons' front fence appeared freshly painted the exact same shade of white — despite the family never once hiring anyone or doing it themselves, a fact they'd simply accepted for years without much curiosity.</p>
+
+<h3>Chapter 2: A New Neighbor Investigates</h3>
+<p>Twelve-year-old Priya, new to the street and thoroughly puzzled by the arrangement, set up an early morning stakeout one weekend specifically to catch the mystery painter in the act.</p>
+
+<h3>Chapter 3: An Old Debt, Quietly Repaid</h3>
+<p>She caught elderly Mr. Ferro next door, brush in hand, and learned the real story: the Andersons had covered his hospital bill anonymously years earlier during a hard winter, and he'd repaid the kindness the only way he could without embarrassing anyone — one quiet coat of paint every spring since. Priya kept his secret. The fence still gets painted every year.</p>
+`
+},
+{
+  title: "Who's Leaving Perfectly Solved Crosswords on the Bus?",
+  author: "Khyati Srivastava",
+  slug: "whos-leaving-perfectly-solved-crosswords-on-the-bus",
+  category: "Mystery",
+  emoji: "📰",
+  excerpt: "Every Wednesday, a completed newspaper crossword — every single answer correct — turns up folded neatly on the same bus seat. Nobody has ever seen who leaves it.",
+  created_at: "2027-04-15T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Weekly Puzzle</h3>
+<p>Regular bus rider Dev noticed it first: every Wednesday morning, seat 14 held a neatly folded newspaper crossword, every single clue answered correctly in the same careful handwriting, left behind by someone who was never still there when he boarded.</p>
+
+<h3>Chapter 2: Asking Around</h3>
+<p>He asked the driver, who'd noticed the pattern too but had no idea who was responsible, and the other regular riders, none of whom claimed it either — a genuinely baffling weekly mystery nobody could crack.</p>
+
+<h3>Chapter 3: A Patient Solution</h3>
+<p>Dev finally solved it by riding one stop earlier than usual and catching an elderly rider, Mrs. Okonkwo, filling out the puzzle before her stop, leaving it behind out of quiet habit rather than any grand mystery. She'd been doing it for years, she explained, just liking the idea of someone finding a small, completed thing on an otherwise ordinary commute. Dev has never told anyone else. Some mysteries, he decided, deserved to stay exactly that simple.</p>
+`
+},
+{
+  title: "The Snowshoe Trek That Found an Abandoned Cabin",
+  author: "Khyati Srivastava",
+  slug: "the-snowshoe-trek-that-found-an-abandoned-cabin",
+  category: "Adventure",
+  emoji: "🏔️",
+  excerpt: "A planned two-hour snowshoe loop turns into a genuine discovery when three friends stumble across a small, clearly abandoned cabin nowhere on any trail map.",
+  created_at: "2027-04-15T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Simple Loop</h3>
+<p>The planned two-hour snowshoe loop through Aldermont Forest had been mapped and hiked dozens of times by the trio's families before, familiar and unremarkable, right up until fresh snow drifts pushed them slightly off the marked trail.</p>
+
+<h3>Chapter 2: An Unexpected Find</h3>
+<p>Through a gap in the pines, half-buried in snow, sat a small wooden cabin, weathered but structurally sound, appearing on absolutely none of the trail maps any of the three had ever consulted.</p>
+
+<h3>Chapter 3: Reporting It Properly</h3>
+<p>Rather than force their way in, the friends carefully marked the location and reported it to the ranger station, who confirmed it as an old trapper's cabin abandoned decades earlier, now quietly added to the historical registry thanks to three curious kids' detour. They got a private tour once it was officially cleared. It remains, they all agree, the best accidental find of their lives.</p>
+`
+},
+{
+  title: "The River Cleanup That Turned Into a Real Excavation",
+  author: "Khyati Srivastava",
+  slug: "the-river-cleanup-that-turned-into-a-real-excavation",
+  category: "Adventure",
+  emoji: "🏺",
+  excerpt: "A routine volunteer river cleanup takes an unexpected turn when one group's trash bag fills up with something considerably older and more interesting than litter.",
+  created_at: "2027-04-15T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Ordinary Volunteer Day</h3>
+<p>The annual river cleanup drew its usual crowd of volunteers armed with trash bags and gloves, twelve-year-old Sana's group assigned to the muddiest, least glamorous stretch near the old mill ruins.</p>
+
+<h3>Chapter 2: Something Unusual</h3>
+<p>Sana's shovel struck something distinctly not modern trash — a corroded metal object that, once carefully cleaned, turned out to be a century-old tool clearly connected to the mill's original operation.</p>
+
+<h3>Chapter 3: A Historical Contribution</h3>
+<p>The local historical society, contacted immediately, confirmed it as a genuinely significant find, dating precisely to the mill's earliest operational years. Sana's find now sits in a small display case at the county museum, credited by name. The cleanup day, she likes to point out, technically counted as an actual archaeological expedition too.</p>
+`
+},
+{
+  title: "Ziggy the Ferret's Unofficial Mail Sorting Job",
+  author: "Khyati Srivastava",
+  slug: "ziggys-the-ferrets-unofficial-mail-sorting-job",
+  category: "Animals",
+  emoji: "🦡",
+  excerpt: "Ziggy the ferret has developed a habit of sorting the family's mail by size the moment it drops through the slot — small envelopes in one pile, larger ones in another, with impressive consistency.",
+  created_at: "2027-04-15T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Strange New Habit</h3>
+<p>The Alvarez family first noticed it by accident: mail arriving through their front door slot kept turning up sorted into two distinct piles by the time anyone got to it, small envelopes separate from larger packages, with no human involvement whatsoever.</p>
+
+<h3>Chapter 2: Catching the Culprit</h3>
+<p>A hidden camera revealed Ziggy the ferret, apparently fascinated by the mail's varying sizes and textures, meticulously dragging each piece into one of two self-designated piles the moment it landed on the floor.</p>
+
+<h3>Chapter 3: An Employee of the Month</h3>
+<p>The family, delighted rather than concerned, started calling Ziggy their "unofficial mail clerk," rewarding his diligent sorting with extra treats. He has never once opened an envelope, only sorted them — a professionalism the family finds genuinely impressive for an animal with no actual training in postal services.</p>
+`
+},
+{
+  title: "The Tortoise Who Times His Naps to the Minute",
+  author: "Khyati Srivastava",
+  slug: "the-tortoise-who-times-his-naps-to-the-minute",
+  category: "Animals",
+  emoji: "🐢",
+  excerpt: "Gustav the tortoise begins his afternoon nap at exactly 2:15 PM every single day, rain or shine, weekday or weekend — a precision his owners have never been able to explain.",
+  created_at: "2027-04-15T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Precise Schedule</h3>
+<p>Gustav the tortoise retreated to his favorite sunny corner at exactly 2:15 PM without fail, a routine so consistent his owner Marisol had started jokingly setting her watch by him rather than the other way around.</p>
+
+<h3>Chapter 2: Testing the Theory</h3>
+<p>She tracked it deliberately across several weeks — cloudy days, weekends, even a day she deliberately fed him early — and Gustav's nap time never once shifted, holding steady at 2:15 regardless of any variable she could think to change.</p>
+
+<h3>Chapter 3: An Unsolved, Beloved Mystery</h3>
+<p>A reptile specialist consulted for fun offered only a shrug and a guess about internal circadian precision unique to the individual animal. Marisol has given up trying to explain it and started, instead, simply looking forward to 2:15 every day — Gustav's small, reliable punctuality has become her own favorite part of the afternoon.</p>
+`
+},
+{
+  title: "The Group Chat That Planned a Surprise Party for the Wrong Weekend",
+  author: "Khyati Srivastava",
+  slug: "the-group-chat-that-planned-a-surprise-party-for-the-wrong-weekend",
+  category: "Comedy",
+  emoji: "🎊",
+  excerpt: "A single miscalculated date in the family group chat sends half the relatives to a surprise party one full week early, walking in on an entirely ordinary, unprepared Tuesday evening instead.",
+  created_at: "2027-04-16T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Simple Math Error</h3>
+<p>Someone in the family group chat miscounted the weeks while planning Grandma's surprise seventieth birthday party, sending out a date exactly seven days too early — a mistake nobody caught until it was already far too late.</p>
+
+<h3>Chapter 2: An Awkward Arrival</h3>
+<p>Fourteen relatives showed up bearing balloons and casseroles to Grandma's completely ordinary Tuesday evening, catching her mid-crossword puzzle in her bathrobe, thoroughly confused by the sudden crowd.</p>
+
+<h3>Chapter 3: Making the Best of It</h3>
+<p>Rather than reschedule entirely, the family simply declared it "Surprise Party Round One" and threw an impromptu casserole dinner anyway, promising a proper Round Two the following week as planned. Grandma, delighted by the chaos either way, insists both parties count as her actual birthday celebration now, permanently.</p>
+`
+},
+{
+  title: "The Substitute Who Confused the School Mascot Costume for a Real Bear",
+  author: "Khyati Srivastava",
+  slug: "the-substitute-who-confused-the-school-mascot-costume-for-a-real-bear",
+  category: "Comedy",
+  emoji: "🐻",
+  excerpt: "A new substitute teacher, unfamiliar with school traditions, has a genuinely alarming reaction to the mascot costume wandering the halls during spirit week — much to the entire student body's delight.",
+  created_at: "2027-04-16T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unfamiliar Tradition</h3>
+<p>Substitute teacher Mr. Bellweather had no idea spirit week involved the school's bear mascot wandering the hallways between classes, and his first encounter with it — turning a corner to find a seven-foot bear waving enthusiastically — produced a reaction the whole hallway witnessed and immediately began recounting.</p>
+
+<h3>Chapter 2: A Genuine Scramble</h3>
+<p>His brief, very sincere retreat into a nearby supply closet became instant legend, retold with increasing embellishment by every student who'd witnessed it firsthand or heard about it secondhand within the hour.</p>
+
+<h3>Chapter 3: A Good Sport About It</h3>
+<p>Once properly informed, Mr. Bellweather took the ribbing with genuine good humor, even posing for a photo with the mascot before the day ended. The story remains, months later, one of spirit week's most fondly retold legends — Mr. Bellweather included, whenever he tells it himself.</p>
+`
+},
+{
+  title: "The Locksmith's Apprentice Who Learned to Pick Her Own Fears",
+  author: "Khyati Srivastava",
+  slug: "the-locksmiths-apprentice-who-learned-to-pick-her-own-fears",
+  category: "Fairytale",
+  emoji: "🔑",
+  excerpt: "Every lock the old locksmith teaches his apprentice to open represents a different fear — some easy, some stubborn. The hardest lock in the shop, it turns out, is her own.",
+  created_at: "2027-04-16T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Shop Full of Locks</h3>
+<p>Master Ferro's shop held dozens of locks along one wall, each one, he explained to his new apprentice Wren, representing a different fear he'd helped a customer work through over the years — some simple, some genuinely stubborn.</p>
+
+<h3>Chapter 2: A Locked Box of Her Own</h3>
+<p>Wren noticed one small box sitting apart from the rest, locked tight, and asked whose fear it represented. Ferro admitted, quietly, it was hers — the fear she'd never told him about, sealed the day she'd started her apprenticeship.</p>
+
+<h3>Chapter 3: Picking Her Own Lock</h3>
+<p>He handed her the tools and stepped back, letting her work it out herself rather than opening it for her. It took her three full hours, hands shaking, before the lock finally gave — not because the mechanism was complex, but because admitting the fear out loud, to herself, had been the actual hard part all along.</p>
+`
+},
+{
+  title: "The Miller's Youngest Son Who Ground Flour Into Second Chances",
+  author: "Khyati Srivastava",
+  slug: "the-millers-youngest-son-who-ground-flour-into-second-chances",
+  category: "Fairytale",
+  emoji: "🌾",
+  excerpt: "The village mill grinds ordinary flour by day. Its youngest miller has learned it can also grind something else entirely — a fresh start, for whoever's willing to bring their old mistakes to be reground.",
+  created_at: "2027-04-16T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unusual Inheritance</h3>
+<p>Young Otto inherited the family mill's ordinary business along with a stranger, secret one his father had never fully explained: bring the mill a mistake, ground into a small clay token, and it would come out the other side reshaped into a genuine second chance.</p>
+
+<h3>Chapter 2: A Village of Regrets</h3>
+<p>Word spread quietly, and villagers began arriving discreetly with small clay tokens representing their own private failures — a broken promise, a missed apology, a chance not taken — trusting Otto's mill with what they couldn't fix themselves.</p>
+
+<h3>Chapter 3: What the Mill Actually Did</h3>
+<p>The tokens came out reshaped, always, into something smaller and more manageable — not erasing the mistake, but grinding away its sharpest edges enough to finally move forward. Otto never fully understood how the mill worked. He understood, watching relieved villagers leave his shop lighter than they'd arrived, that it didn't much matter.</p>
+`
+},
+{
+  title: "The Kid Who Turned a Broken Ankle Into a New Passion",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-turned-a-broken-ankle-into-a-new-passion",
+  category: "Inspirational",
+  emoji: "🎨",
+  excerpt: "Sidelined from soccer for the whole season with a broken ankle, Priya expected months of boredom. What she found instead, propped on the couch with a sketchbook, surprised even her.",
+  created_at: "2027-04-16T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Season Lost</h3>
+<p>Priya's broken ankle ended her soccer season before it properly started, leaving her propped on the couch for weeks, genuinely mourning the loss of the one activity that had defined most of her free time for years.</p>
+
+<h3>Chapter 2: Filling the Empty Hours</h3>
+<p>Bored and restless, she picked up an old sketchbook her aunt had given her for a birthday two years earlier, never once opened, and started drawing simply to pass the time between physical therapy appointments.</p>
+
+<h3>Chapter 3: A New Passion, Unplanned</h3>
+<p>By the time her ankle healed, Priya found she genuinely missed drawing more than she'd expected, splitting her time between soccer and art in a way that felt, surprisingly, more balanced than soccer alone ever had. The broken ankle had been genuinely painful. It had also, unexpectedly, opened a door she'd never have knocked on otherwise.</p>
+`
+},
+{
+  title: "The Swimmer Who Stopped Racing Everyone but Himself",
+  author: "Khyati Srivastava",
+  slug: "the-swimmer-who-stopped-racing-everyone-but-himself",
+  category: "Inspirational",
+  emoji: "🐌",
+  excerpt: "Every other kid in swim class seems to be improving faster than Dev. His coach's advice — stop comparing lap times to anyone but his own from last month — changes how he sees the whole sport.",
+  created_at: "2027-04-16T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Always Behind</h3>
+<p>Dev spent every swim practice quietly comparing his lap times to the faster kids in his lane, convinced his slower progress meant something was fundamentally wrong with his effort or ability, no matter how hard he actually trained.</p>
+
+<h3>Chapter 2: A Reframed Measurement</h3>
+<p>His coach, noticing the discouragement, handed him a simple new rule: stop checking anyone else's times entirely, and only compare his own splits to his own times from exactly one month earlier.</p>
+
+<h3>Chapter 3: A Different Kind of Progress</h3>
+<p>Measured against himself instead of his faster teammates, Dev's improvement suddenly became obvious — steady, real, entirely his own. He never became the fastest swimmer on the team. He became, for the first time, genuinely proud of his own progress instead of quietly ashamed of everyone else's.</p>
+`
+},
+{
+  title: "The Summer the Whole Family Learned to Say Sorry Properly",
+  author: "Khyati Srivastava",
+  slug: "the-summer-the-whole-family-learned-to-say-sorry-properly",
+  category: "Drama",
+  emoji: "🤝",
+  excerpt: "After a blowup argument neither parent nor kid fully recovers from quickly, the Alvarez family spends one uncomfortable summer actually learning how to apologize — not just say the word.",
+  created_at: "2027-04-16T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Fight That Lingered</h3>
+<p>The argument itself faded within a day, but its aftermath lingered for weeks — quick, hollow "sorry"s exchanged out of habit rather than genuine repair, leaving something unresolved simmering under the family's usual routine.</p>
+
+<h3>Chapter 2: A Family Therapist's Suggestion</h3>
+<p>A counselor, brought in at Mom's insistence, taught the family something none of them had actually practiced before: a real apology named the specific hurt, took real responsibility, and asked what would actually help — not just the word "sorry" said quickly to move past discomfort.</p>
+
+<h3>Chapter 3: A Slow, Real Change</h3>
+<p>It felt stiff and awkward at first, everyone stumbling through the new format self-consciously. By summer's end, though, apologies in the Alvarez house had genuinely changed — slower, more specific, more likely to actually resolve something instead of just papering over it. Nobody in that family says a quick "sorry" anymore without meaning it.</p>
+`
+},
+{
+  title: "The Scholarship Letter That Arrived on the Worst Possible Day",
+  author: "Khyati Srivastava",
+  slug: "the-scholarship-letter-that-arrived-on-the-worst-possible-day",
+  category: "Drama",
+  emoji: "✉️",
+  excerpt: "Priya's acceptance letter for the scholarship she'd worked years toward arrives the same day her family learns they might have to move across the country for her dad's job. Good news, terrible timing.",
+  created_at: "2027-04-16T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Two Envelopes, One Day</h3>
+<p>Priya's scholarship acceptance arrived the same afternoon her dad sat the family down about a possible job transfer three states away — two life-changing pieces of news landing on the exact same ordinary Thursday, in direct conflict with each other.</p>
+
+<h3>Chapter 2: A Difficult Conversation</h3>
+<p>The scholarship required local enrollment at a specific school; the move would make that impossible. The family spent that entire evening working through the tangled, genuinely difficult question of whose plans should bend for whose.</p>
+
+<h3>Chapter 3: A Compromise, Not a Perfect Answer</h3>
+<p>Dad ultimately negotiated a delayed transfer date, giving Priya one more year to complete the scholarship program before the family moved. It wasn't a clean solution — someone's timeline still had to give somewhat. It was, everyone agreed, the best imperfect answer a genuinely hard day could produce.</p>
+`
+},
+{
+  title: "The Same Song Played on Two Different Radios",
+  author: "Khyati Srivastava",
+  slug: "the-same-song-played-on-two-different-radios",
+  category: "Romance",
+  emoji: "📻",
+  excerpt: "Waiting at adjacent red lights, two strangers notice they're both quietly singing along to the exact same obscure song on two entirely different radio stations. The light changes before either says anything — until it happens again the next week.",
+  created_at: "2027-04-16T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Odd Coincidence</h3>
+<p>Reya noticed the driver in the next lane mouthing along to the exact same obscure indie song currently playing on her own radio, an unusual song rarely played on any station — a moment of pure coincidence that ended the instant the light turned green.</p>
+
+<h3>Chapter 2: It Happens Again</h3>
+<p>The next week, at the same intersection, the same driver pulled up beside her again — and the same rare song happened to be playing on both their radios once more, a coincidence too specific now to fully dismiss.</p>
+
+<h3>Chapter 3: Finally Saying Something</h3>
+<p>The third week, Reya rolled her window down before the light changed, laughing, and asked if he was somehow following her music taste on purpose. He wasn't — it turned out to be a genuinely rare, wonderful coincidence, twice over. They exchanged numbers before the light turned green that time. The song, they later learned, became "their song" almost by mathematical inevitability.</p>
+`
+},
+{
+  title: "The Study Session That Turned Into a Museum Trip",
+  author: "Khyati Srivastava",
+  slug: "the-study-session-that-turned-into-a-museum-trip",
+  category: "Romance",
+  emoji: "🏛️",
+  excerpt: "Meant to review for a history exam, Dev and Farrah get so absorbed discussing one exhibit's backstory that they abandon their flashcards entirely for an impromptu museum wander instead.",
+  created_at: "2027-04-16T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Study Date, Officially</h3>
+<p>Dev and Farrah had planned a strict two-hour study session at the local history museum, flashcards ready, exam material carefully outlined — a plan that lasted exactly until they reached the first genuinely fascinating exhibit.</p>
+
+<h3>Chapter 2: Getting Distracted, Happily</h3>
+<p>One exhibit's backstory led to an hour-long tangent about an entirely unrelated historical mystery neither had planned to discuss, flashcards forgotten in a bag, both far more interested in each other's theories than in test preparation.</p>
+
+<h3>Chapter 3: An Honest Admission</h3>
+<p>They barely covered a third of the planned material by closing time, and neither seemed particularly bothered by it. "Worth it," Farrah admitted on the walk out. Dev agreed completely. They studied properly the next night instead — and made the museum wander an unofficial monthly tradition regardless.</p>
+`
+},
+{
+  title: "The Kid Who Ran a Neighborhood Weather Balloon Recovery Service",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-ran-a-neighborhood-weather-balloon-recovery-service",
+  category: "Kids",
+  emoji: "🎈",
+  excerpt: "After successfully retrieving three separate lost balloons for younger neighborhood kids, eight-year-old Wren declares himself the official Balloon Recovery Specialist, complete with a small fee paid in stickers.",
+  created_at: "2027-04-16T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Accidental Reputation</h3>
+<p>Wren's knack for climbing exactly the right trees and fences to retrieve stuck balloons had, after three successful rescues in one summer, earned him an unofficial but growing reputation among the younger kids on the block.</p>
+
+<h3>Chapter 2: Making It Official</h3>
+<p>He formalized the arrangement with a hand-lettered sign: "Balloon Recovery Service — Fee: 1 Cool Sticker," posted proudly on his own front lawn, taking the business with total seriousness despite the modest payment structure.</p>
+
+<h3>Chapter 3: A Thriving Operation</h3>
+<p>By summer's end, Wren had recovered eleven balloons and amassed an impressively organized sticker collection to show for it. His parents consider it, genuinely, one of his better summer projects — equal parts community service and small business venture, run entirely on his own initiative.</p>
+`
+},
+{
+  title: "The Kid Who Kept a Jar of Compliments for Bad Days",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-kept-a-jar-of-compliments-for-bad-days",
+  category: "Kids",
+  emoji: "🫙",
+  excerpt: "Nine-year-old Amara keeps a jar of small handwritten compliments from friends and family, saved specifically for the bad days when she needs a reminder — and now her friends want jars too.",
+  created_at: "2027-04-16T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Jar for Hard Days</h3>
+<p>Amara started her compliment jar after a particularly rough week, asking friends and family to write down one nice thing about her on small slips of paper, saved specifically for future days that needed a little extra reminder.</p>
+
+<h3>Chapter 2: A Growing Collection</h3>
+<p>The jar filled steadily over months — notes from her teacher, her grandma, even a slightly misspelled one from her little brother — each one pulled out and reread only on the days she genuinely needed it most.</p>
+
+<h3>Chapter 3: Spreading the Idea</h3>
+<p>Her best friend, noticing how much it helped, started her own jar soon after, and the idea has now spread to nearly half of Amara's class. Amara considers it her proudest invention — not because it was complicated, but because it kept working every single time she actually needed it to.</p>
+`
+},
+{
+  title: "The Cassette Tape That Plays a Voice No One Recorded",
+  author: "Khyati Srivastava",
+  slug: "the-cassette-tape-that-plays-a-voice-no-one-recorded",
+  category: "Horror",
+  emoji: "📻",
+  excerpt: "An old blank cassette tape found in a thrift store box turns out not to be blank at all — it plays a calm, unfamiliar voice reading a grocery list nobody in the family recognizes.",
+  created_at: "2027-04-16T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Blank Tape, Supposedly</h3>
+<p>The cassette had come in a thrift store box labeled "blank tapes," no case, no label, nothing to suggest it was anything but an empty reel — until Priya's old tape player revealed a calm, unfamiliar voice quietly reading what sounded like an ordinary grocery list.</p>
+
+<h3>Chapter 2: A Strangely Specific Recording</h3>
+<p>The voice read the same list — milk, eggs, a specific brand of bread, a reminder to "call about the porch light" — on a loop for the full ninety-minute runtime, no music, no other content, nothing identifying who was speaking or when it was recorded.</p>
+
+<h3>Chapter 3: An Unplaceable Familiarity</h3>
+<p>Priya's grandmother, hearing a recording of it played over the phone, went quiet for a long moment before saying only that the voice "sounded like someone she used to know, a long time ago" — and declined to say anything further. Priya still has the tape. She has never played it again.</p>
+`
+},
+{
+  title: "The Swing Set That Faces a Different Direction Each Morning",
+  author: "Khyati Srivastava",
+  slug: "the-swing-set-that-faces-a-different-direction-each-morning",
+  category: "Horror",
+  emoji: "🎠",
+  excerpt: "The backyard swing set is bolted firmly into concrete, immovable by any reasonable force. And yet, every morning, its two swings hang facing a slightly different direction than they did the evening before.",
+  created_at: "2027-04-16T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Solid Structure</h3>
+<p>The swing set had been bolted into a concrete foundation years earlier, sturdy and immovable by any wind or ordinary force — which made it genuinely strange when Priya noticed, one ordinary morning, that both swings hung facing a slightly different direction than they had the evening before.</p>
+
+<h3>Chapter 2: Tracking the Shift</h3>
+<p>She started photographing it each evening and each morning, documenting a slow, consistent rotational drift that no amount of wind or mechanical explanation seemed to properly account for.</p>
+
+<h3>Chapter 3: A Direction, Eventually</h3>
+<p>Over several months, she realized the swings had rotated, cumulatively, to face directly toward the old oak tree at the yard's edge — a slow, patient turn toward one specific point nobody in the family could explain. The swing set has stayed facing the tree since, unmoving, for the first time in months. Priya has stopped photographing it. She's not sure she wants to know what happens if it starts turning again.</p>
+`
+},
+{
+  title: "The Chalkboard Menu That Changes Its Prices for Kindness",
+  author: "Khyati Srivastava",
+  slug: "the-chalkboard-menu-that-changes-its-prices-for-kindness",
+  category: "Poetry",
+  emoji: "☕",
+  excerpt: "A warm poem about the little corner café whose chalkboard prices seem to quietly drop for anyone who's clearly had a hard day — no discount code required, just noticing.",
+  created_at: "2027-04-16T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Chalkboard Menu That Changes Its Prices for Kindness</h3>
+<p>The board says coffee's two-fifty flat,<br/>
+but the owner glances, quick like that,<br/>
+sees the tired eyes, the slumped-in coat,<br/>
+and somehow the total comes up short.</p>
+
+<p>"Special today," she always says,<br/>
+whatever special the moment weighs,<br/>
+never asking, never a fuss,<br/>
+just quietly deciding what's enough.</p>
+
+<p>The prices on the board don't really change,<br/>
+her math's the same, nothing rearranged —<br/>
+it's just a little kindness, tucked in cash,<br/>
+a discount nobody has to ask.</p>
+
+<p>So if your coffee comes in cheap one day,<br/>
+don't ask her why, just let it stay,<br/>
+some prices aren't really about the cost,<br/>
+they're about a kindness never lost.</p>
+`
+},
+{
+  title: "The Backyard Constellation Made of Christmas Lights",
+  author: "Khyati Srivastava",
+  slug: "the-backyard-constellation-made-of-christmas-lights",
+  category: "Poetry",
+  emoji: "✨",
+  excerpt: "A playful poem about a family's leftover Christmas lights strung up year-round in the backyard, forming their own unofficial, entirely made-up constellation.",
+  created_at: "2027-04-16T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Backyard Constellation Made of Christmas Lights</h3>
+<p>We never took the lights back down,<br/>
+strung them up past the edge of town,<br/>
+December came and December went,<br/>
+but the string stayed lit, however bent.</p>
+
+<p>Now in July, they still shine bright,<br/>
+our own small stars against the night,<br/>
+not Orion, not the Big Dipper's spoon,<br/>
+just our backyard's homemade, tangled moon.</p>
+
+<p>We named the shapes ourselves, for fun —<br/>
+"The Lopsided Dog," "The Setting Sun,"<br/>
+no astronomer would call it real,<br/>
+but it's ours, and that's the appeal.</p>
+
+<p>So let the real stars have their names,<br/>
+we've got our own backyard's tangled claims,<br/>
+a constellation strung in colored light,<br/>
+ours alone, every single night.</p>
+`
+},
 ];
