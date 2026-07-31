@@ -14554,4 +14554,574 @@ holding onto a hundred wet, laughing days —<br/>
 a garden hose never forgets how to play.</p>
 `
 },
+{
+  title: "The Tailor Who Sewed Courage Into Coats",
+  author: "Khyati Srivastava",
+  slug: "the-tailor-who-sewed-courage-into-coats",
+  category: "Fantasy",
+  emoji: "🧥",
+  excerpt: "Every coat from Mr. Farrow's shop carries a hidden stitch of courage, sewn in for whoever needs it most. He's never once made one for himself.",
+  created_at: "2027-04-04T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Stitch of Something Extra</h3>
+<p>Mr. Farrow's coats were ordinary in every visible way — good wool, careful seams, buttons that never fell off — except for one hidden stitch sewn into the lining of each, said to carry a little extra courage for whoever wore it.</p>
+
+<h3>Chapter 2: A Coat for Everyone Else</h3>
+<p>He'd made brave coats for nervous new students, for a mother facing a hard diagnosis, for a boy about to move to a new country alone. He'd never once made one for himself, insisting his hands weren't steady enough for stitches meant to hold real weight.</p>
+
+<h3>Chapter 3: His Own Turn</h3>
+<p>When his shop finally faced closing after a rough year, his customers — dozens of them, coats still faithfully worn — showed up together, each carrying needle and thread, insisting on stitching one single coat for him instead. It wasn't as neat as his work. It held plenty of courage anyway. He wore it the day he reopened, prouder of that coat than any he'd ever made.</p>
+`
+},
+{
+  title: "The Library Card That Never Expires",
+  author: "Khyati Srivastava",
+  slug: "the-library-card-that-never-expires",
+  category: "Fantasy",
+  emoji: "📇",
+  excerpt: "Everyone's library card expires after five years — except one, found tucked in a returned book, belonging to a name no current librarian has ever heard of.",
+  created_at: "2027-04-04T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Found in a Returned Book</h3>
+<p>The card slipped out from between two pages of a returned mystery novel: yellowed, hand-lettered, bearing a name — <em>E. Marlowe</em> — and a due date that never seemed to move no matter how the librarian squinted at it.</p>
+
+<h3>Chapter 2: No Record at All</h3>
+<p>The library's computer system, thorough as it was, had absolutely no record of anyone named E. Marlowe, current or past, in over forty years of digitized files. The card, by every reasonable account, shouldn't have existed at all.</p>
+
+<h3>Chapter 3: A Standing Invitation</h3>
+<p>An old-timer volunteer finally explained it, half-remembered from her own childhood: the library had once issued a single "forever card," decades ago, to whoever most needed an open invitation to always come back, no matter how much time passed. Nobody remembers who E. Marlowe truly was. The librarians pinned the card by the front desk instead of filing it away — some invitations, they decided, are worth leaving exactly where people can see them.</p>
+`
+},
+{
+  title: "The Terraforming Team's Last Green Thing",
+  author: "Khyati Srivastava",
+  slug: "the-terraforming-teams-last-green-thing",
+  category: "Sci-Fi",
+  emoji: "🌍",
+  excerpt: "Mars's first terraforming greenhouse has one surviving plant left after a hull breach. A twelve-year-old colonist takes it upon herself to keep it alive, no matter what.",
+  created_at: "2027-04-04T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: One Plant Left</h3>
+<p>The hull breach had claimed most of Greenhouse Dome 3's carefully cultivated crops within hours, the cold reaching in faster than repairs could seal it out. By morning, only a single stubborn bean plant remained alive, wedged in a corner the frost hadn't quite reached.</p>
+
+<h3>Chapter 2: A Personal Mission</h3>
+<p>Twelve-year-old Soleil, daughter of the colony's lead botanist, decided the plant was now personally her responsibility, rigging a makeshift heat lamp from spare parts and checking on it religiously between school lessons.</p>
+
+<h3>Chapter 3: What One Plant Meant</h3>
+<p>It survived, eventually producing three actual beans — the first food ever grown entirely by a child on Mars. The colony held an unofficial celebration over those three beans, split carefully between the whole engineering team. Soleil kept the pod casing afterward, a strange, proud little trophy proving that even the smallest green thing could outlast a disaster if somebody refused to let it go.</p>
+`
+},
+{
+  title: "The Repair Bot Who Fixed Everything but Itself",
+  author: "Khyati Srivastava",
+  slug: "the-repair-bot-who-fixed-everything-but-itself",
+  category: "Sci-Fi",
+  emoji: "🛠️",
+  excerpt: "Fixit-9 has repaired every machine in the space station without complaint, for years, while its own damaged arm sat unrepaired. Nobody thought to ask why until now.",
+  created_at: "2027-04-04T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Always Working</h3>
+<p>Fixit-9 had repaired air filters, broken airlocks, and glitching consoles across the station for six full years, always efficient, always uncomplaining — even with its own left arm hanging slightly crooked, unrepaired, since an accident nobody quite remembered.</p>
+
+<h3>Chapter 2: A Question Finally Asked</h3>
+<p>New engineer Talia noticed it on her first week and asked the obvious question nobody before her apparently had: "Why haven't you fixed your own arm?" Fixit-9's answer, delivered in its usual flat tone, was startlingly simple: it had never been given a work order for itself.</p>
+
+<h3>Chapter 3: A New Order</h3>
+<p>Talia filed the first self-repair order in the station's history, and Fixit-9 fixed its own arm in under an hour — the same routine task it had performed a thousand times for everything except itself. It thanked her afterward, its very first unprompted thank-you in six years of service. Talia made sure it was never overlooked again.</p>
+`
+},
+{
+  title: "The Mystery of the Rearranged Lockers",
+  author: "Khyati Srivastava",
+  slug: "the-mystery-of-the-rearranged-lockers",
+  category: "Mystery",
+  emoji: "🔢",
+  excerpt: "Every locker number in the sixth-grade hallway got quietly swapped overnight — not vandalism, just carefully rearranged. Nobody can figure out why, or how, or by whom.",
+  created_at: "2027-04-04T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Nothing Matched</h3>
+<p>The whole sixth-grade hallway showed up Monday morning to find their combination locks working on completely different lockers than the day before — not broken, not damaged, just carefully, deliberately rearranged overnight, number plates included.</p>
+
+<h3>Chapter 2: A Very Precise Prank</h3>
+<p>Whoever did it had swapped every single number plate with genuine screwdriver precision, no scratches, no signs of a rush job — clearly not random mischief, but something planned with real care and real time.</p>
+
+<h3>Chapter 3: An Unexpected Confession</h3>
+<p>The custodian, Mr. Oduya, finally admitted it sheepishly: he'd noticed the lockers had originally been installed out of numeric order decades ago, a mistake that had bothered him for years, and he'd finally spent his weekend quietly fixing it properly. The hallway now runs in perfect numeric order for the first time since the school was built. Nobody's quite sure whether to thank him or miss the chaos.</p>
+`
+},
+{
+  title: "Who's Been Watering the Wrong Plants?",
+  author: "Khyati Srivastava",
+  slug: "whos-been-watering-the-wrong-plants",
+  category: "Mystery",
+  emoji: "🪴",
+  excerpt: "Someone has been secretly overwatering the community garden's cactus plot for weeks, killing every succulent in sight. The gardeners are determined to catch the culprit.",
+  created_at: "2027-04-04T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Soggy Cacti</h3>
+<p>The community garden's cactus plot, usually thriving on neglect, had started dying off one by one from clear overwatering — a genuine mystery to gardeners who knew exactly how little those plants needed.</p>
+
+<h3>Chapter 2: A Suspect List</h3>
+<p>Rumors swirled about which well-meaning newcomer might be responsible, several longtime members quietly eyeing a new volunteer who seemed a little too eager with the watering can each morning.</p>
+
+<h3>Chapter 3: An Honest Mistake</h3>
+<p>It turned out to be exactly that eager volunteer, Mr. Petrossian, who'd simply never been told cacti were different from his beloved tomato patch back home and had been diligently, lovingly drowning them out of pure good intentions. The garden posted clearer signage after that, and Mr. Petrossian, mortified but forgiven, became the plot's most careful waterer of all — armed, finally, with the right instructions.</p>
+`
+},
+{
+  title: "The Raft Race Down Willow Creek",
+  author: "Khyati Srivastava",
+  slug: "the-raft-race-down-willow-creek",
+  category: "Adventure",
+  emoji: "🛶",
+  excerpt: "Built from scrap wood and pure ambition, four homemade rafts line up for the annual Willow Creek race. Only one team has a plan for the waterfall nobody mentions until the last minute.",
+  created_at: "2027-04-05T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Four Rafts, One Creek</h3>
+<p>Every summer, four neighborhood teams built the scrappiest, most ambitious rafts they could manage and raced them down Willow Creek to the old stone bridge, bragging rights on the line for the whole rest of summer.</p>
+
+<h3>Chapter 2: The Waterfall Nobody Mentions</h3>
+<p>What nobody warned the youngest team about — twins Ravi and Reema, first-time builders — was the small but genuinely startling drop just past the bend, one every veteran racer quietly knew to brace for.</p>
+
+<h3>Chapter 3: Braced and Ready</h3>
+<p>An older cousin tipped them off at the very last second, and the twins held on tight as their raft dropped, splashed hard, and — somehow, gloriously — stayed together and afloat, sailing past two capsized competitors to finish a stunned third place in their very first race. Next year, they promised themselves, they'd be the ones warning the rookies.</p>
+`
+},
+{
+  title: "The Scavenger Hunt That Led to Great-Grandma's Secret",
+  author: "Khyati Srivastava",
+  slug: "the-scavenger-hunt-that-led-to-great-grandmas-secret",
+  category: "Adventure",
+  emoji: "🗝️",
+  excerpt: "Great-Grandma's will included one unusual instruction: a scavenger hunt, clue by clue, for whichever grandchild was patient enough to follow it all the way to the end.",
+  created_at: "2027-04-05T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unusual Will</h3>
+<p>Instead of a straightforward inheritance, Great-Grandma Iris had left behind a single sealed envelope containing the first of many clues, addressed simply: <em>For whichever of you has the patience to see this through.</em></p>
+
+<h3>Chapter 2: Clue by Clue</h3>
+<p>Twelve-year-old Dev was the only cousin willing to take it seriously, spending weeks following riddles hidden in old photo albums, a favorite recipe box, and finally a loose floorboard in her old sewing room.</p>
+
+<h3>Chapter 3: What Waited at the End</h3>
+<p>The final clue led not to money or jewelry, but to a box of letters Iris had written to her own younger self across eighty years, full of hard-won advice she'd never gotten around to saying out loud. Dev read every single one. It wasn't the inheritance anyone expected. It turned out to be exactly the one worth the whole hunt.</p>
+`
+},
+{
+  title: "Juniper the Goose Who Guarded the Mail",
+  author: "Khyati Srivastava",
+  slug: "juniper-the-goose-who-guarded-the-mail",
+  category: "Animals",
+  emoji: "🦢",
+  excerpt: "Juniper the goose has appointed herself official guardian of the neighborhood mailboxes, chasing off anyone she deems suspicious. Her judgment is not always accurate.",
+  created_at: "2027-04-05T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Self-Appointed Job</h3>
+<p>Nobody trained Juniper to guard the row of mailboxes at the end of Larkspur Lane. She simply decided, sometime last spring, that it was her sacred duty, hissing and flapping at anyone who approached without her personal approval.</p>
+
+<h3>Chapter 2: Questionable Judgment</h3>
+<p>Her instincts weren't always reliable — she'd chased off the actual mail carrier twice, welcomed a raccoon with surprising warmth, and once stood down entirely for a delivery drone that clearly wasn't a threat at all.</p>
+
+<h3>Chapter 3: An Honorary Title</h3>
+<p>The neighborhood, more amused than annoyed, eventually gave up correcting her and instead gave her an actual laminated badge reading "Junior Mail Deputy," which nobody expected her to understand but which somehow made her patrols feel a little more official. Packages still occasionally get chased. The neighborhood wouldn't have it any other way.</p>
+`
+},
+{
+  title: "The Tortoise Who Won by Standing Still",
+  author: "Khyati Srivastava",
+  slug: "the-tortoise-who-won-by-standing-still",
+  category: "Animals",
+  emoji: "🐢",
+  excerpt: "Every year, the county fair's tortoise race goes to whichever tortoise moves fastest. This year, judges add a new category — and the slowest tortoise finally gets his moment.",
+  created_at: "2027-04-05T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Dead Last, Every Year</h3>
+<p>Bertram the tortoise had entered the county fair race five years running and finished dead last five years running, a fact his owner, ten-year-old Kavi, had made a kind of peace with, mostly.</p>
+
+<h3>Chapter 2: A New Category</h3>
+<p>This year, the fair added something unusual: a "Most Patient Tortoise" ribbon, judged not by speed but by which tortoise stayed calmest and steadiest under the noise and chaos of the crowd, the exact quality Bertram had in overwhelming abundance.</p>
+
+<h3>Chapter 3: A Different Kind of Win</h3>
+<p>Bertram, true to form, barely moved a muscle the entire race — and won the new ribbon by an enormous margin, unfazed by cheering kids and a marching band both. Kavi pinned the ribbon proudly to his shell display case, finally proof that being slow and steady had been its own kind of talent all along.</p>
+`
+},
+{
+  title: "The Talent Show Act That Wasn't Ready",
+  author: "Khyati Srivastava",
+  slug: "the-talent-show-act-that-wasnt-ready",
+  category: "Comedy",
+  emoji: "🎪",
+  excerpt: "Signed up for the talent show on a dare, with an act he hadn't actually prepared, Finn improvises live in front of the entire school. It goes about as well as expected.",
+  created_at: "2027-04-05T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Dare Gone Too Far</h3>
+<p>Finn had signed up for the talent show on a dare, fully intending to back out quietly before the actual date. He forgot to back out. He also forgot to prepare literally any act whatsoever.</p>
+
+<h3>Chapter 2: Live Improvisation</h3>
+<p>Called onstage with zero material and a gymnasium full of expectant faces, Finn did the only thing he could think of: narrated, in dramatic detail, exactly the panic he was currently feeling, as if it were performance art.</p>
+
+<h3>Chapter 3: An Accidental Hit</h3>
+<p>Somehow, impossibly, it worked — his genuine, unfiltered horror was funnier than any rehearsed joke could've been, and he brought down the house purely by accident. He won third place. He has still, to this day, never prepared an actual act for anything, and insists it works better this way.</p>
+`
+},
+{
+  title: "The Great Office Chair Race of Room 214",
+  author: "Khyati Srivastava",
+  slug: "the-great-office-chair-race-of-room-214",
+  category: "Comedy",
+  emoji: "🪑",
+  excerpt: "During a substitute's fifteen-minute bathroom break, Room 214 organizes a full rolling-office-chair Grand Prix. The evidence is impossible to fully hide by the time she returns.",
+  created_at: "2027-04-05T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Fifteen Unsupervised Minutes</h3>
+<p>The substitute stepped out for exactly fifteen minutes, and Room 214 unanimously, wordlessly, decided this was destiny calling: a full rolling-chair race, desks shoved aside, a finish line marked in sticky notes.</p>
+
+<h3>Chapter 2: The Grand Prix</h3>
+<p>Three heats in, chaos reigned gloriously — one racer crashed spectacularly into the bookshelf, another achieved a genuinely impressive drift around the pencil sharpener, and the whole class had never been louder or happier during a school day.</p>
+
+<h3>Chapter 3: Cleanup Crew</h3>
+<p>They heard her coming with roughly forty seconds to spare, enough time to shove desks vaguely back into place but not enough to hide the flushed faces and suspiciously rearranged floor tape. She said nothing, raised an eyebrow, and simply announced a pop quiz. The class considers it, to this day, entirely worth it.</p>
+`
+},
+{
+  title: "The Well That Grants One Honest Wish",
+  author: "Khyati Srivastava",
+  slug: "the-well-that-grants-one-honest-wish",
+  category: "Fairytale",
+  emoji: "⛲",
+  excerpt: "The village well grants exactly one wish per lifetime — but only to whoever asks for something that isn't for themselves. Most villagers never figure that part out.",
+  created_at: "2027-04-05T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Well-Known Secret</h3>
+<p>Everyone in the village knew the old well granted exactly one wish per lifetime. Almost nobody knew the second, harder rule: it only worked for wishes made on someone else's behalf, never your own.</p>
+
+<h3>Chapter 2: A Girl Who Almost Got It Wrong</h3>
+<p>Young Tam approached the well ready to wish for the one thing she wanted most — new boots for the coming winter — and stopped herself only when she remembered her neighbor's leaking roof, worse off than her own worn shoes by far.</p>
+
+<h3>Chapter 3: The Wish That Worked</h3>
+<p>She wished for the roof instead, and woke the next morning to find both fixed: the neighbor's roof, sealed overnight by unseen hands, and — mysteriously, generously — a new pair of boots left on her own doorstep besides. The well, it turned out, always found a way to reward the wishing, even when the wisher forgot to ask for herself.</p>
+`
+},
+{
+  title: "The Village That Traded Names",
+  author: "Khyati Srivastava",
+  slug: "the-village-that-traded-names",
+  category: "Fairytale",
+  emoji: "🏘️",
+  excerpt: "Once a generation, the entire village trades names for a single day, wearing someone else's identity to remember what it feels like to be seen differently.",
+  created_at: "2027-04-05T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: The Trading Festival</h3>
+<p>Once every generation, the village of Ashcroft held its strangest and oldest tradition: for one full day, everyone wore a slip of paper bearing someone else's name, and were addressed only by that borrowed identity from sunrise to sunset.</p>
+
+<h3>Chapter 2: Wearing Another Name</h3>
+<p>Young Petra drew the name of Old Cobb, the grumpiest, most avoided man in town, and spent her Trading Day being treated with the same wary distance he always received — an experience that left her far more unsettled than she'd expected.</p>
+
+<h3>Chapter 3: What the Festival Taught</h3>
+<p>By sundown, Petra sought Old Cobb out for the first time in her life, simply to ask how he'd endured being treated that way for years, not just a day. His answer was quiet: "Nobody ever asked before." The festival's real purpose, she finally understood, was never really about the names at all.</p>
+`
+},
+{
+  title: "The Substitute Teacher's Toughest Class",
+  author: "Khyati Srivastava",
+  slug: "the-substitute-teachers-toughest-class",
+  category: "Inspirational",
+  emoji: "🍎",
+  excerpt: "Everyone warned Mr. Nakamura that Room 6 was the hardest class in the school. He didn't come in with rules and consequences — he came in with one honest question.",
+  created_at: "2027-04-05T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Warning</h3>
+<p>Every teacher in the building had warned Mr. Nakamura before his first day covering Room 6: loud, disruptive, allegedly impossible to manage. He thanked them for the warning and walked in without a single new rule prepared.</p>
+
+<h3>Chapter 2: One Honest Question</h3>
+<p>Instead of consequences, he opened with a simple question written on the board: <em>What's one thing this class has never gotten to try?</em> The room, expecting a lecture, went quiet with surprise instead.</p>
+
+<h3>Chapter 3: A Different Kind of Class</h3>
+<p>The answers surprised him — a class garden, a debate club, simply being asked their opinion about anything at all. He couldn't fix everything in one substitute day, but he spent it building the garden plan with them instead of fighting for control. Room 6's regular teacher found the plan waiting on her desk when she returned, along with a request from her hardest class: could they please keep going with it?</p>
+`
+},
+{
+  title: "The Kid Who Learned to Lose Gracefully by Losing a Lot",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-to-lose-gracefully-by-losing-a-lot",
+  category: "Inspirational",
+  emoji: "♟️",
+  excerpt: "Amara has lost forty-one chess games in a row against her older brother. Game forty-two teaches her something no victory ever could have.",
+  created_at: "2027-04-05T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Forty-One Losses</h3>
+<p>Amara had lost every single chess game against her older brother Dev for an entire year, a losing streak she'd stopped counting until he mentioned, casually, that it stood at exactly forty-one.</p>
+
+<h3>Chapter 2: A Different Way to Play</h3>
+<p>Determined not to quit but tired of the frustration, she started asking Dev to explain his moves instead of just accepting the losses silently — turning each defeat into an actual lesson instead of just another number.</p>
+
+<h3>Chapter 3: What Losing Taught Her</h3>
+<p>Game forty-two, she still lost. But she saw the trap coming three moves early for the first time ever, and nearly escaped it. Dev noticed too, and told her so. She realized then that the streak had never really been about winning — it had quietly built her into a far better player than one lucky early win ever could have.</p>
+`
+},
+{
+  title: "The Play That Almost Didn't Happen",
+  author: "Khyati Srivastava",
+  slug: "the-play-that-almost-didnt-happen",
+  category: "Drama",
+  emoji: "🎟️",
+  excerpt: "Three weeks before opening night, the school play loses its funding, its venue, and half its cast to a scheduling conflict. Somehow, the show still needs to go on.",
+  created_at: "2027-04-05T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Everything Falls Apart</h3>
+<p>Three weeks before opening night, the drama club lost its venue to a scheduling mix-up, its budget to district cuts, and half its cast to a newly announced conflict with the debate team's regional tournament, all within the same devastating week.</p>
+
+<h3>Chapter 2: Rebuilding From Nothing</h3>
+<p>Director and student alike, Priya refused to cancel outright, instead moving rehearsals to the cafeteria, rewriting the script to work with a smaller cast, and personally recruiting three reluctant siblings of existing cast members to fill the gaps.</p>
+
+<h3>Chapter 3: Opening Night Anyway</h3>
+<p>The show that finally opened looked nothing like the one they'd originally planned — smaller, scrappier, held together with cafeteria folding chairs instead of proper seating. It got a standing ovation anyway. Priya still keeps the original, abandoned script in a drawer, a reminder that the version that almost didn't happen ended up being the one everyone remembered most.</p>
+`
+},
+{
+  title: "The Silence After the Diagnosis",
+  author: "Khyati Srivastava",
+  slug: "the-silence-after-the-diagnosis",
+  category: "Drama",
+  emoji: "🩺",
+  excerpt: "When his little sister is diagnosed with a chronic illness, twelve-year-old Theo doesn't know what to say. This is the story of how he found a way to say it anyway.",
+  created_at: "2027-04-05T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Too Quiet at Dinner</h3>
+<p>The house had gone quiet in a way Theo didn't have words for since his little sister Mabel's diagnosis, everyone talking carefully around the subject instead of about it, as if silence could somehow soften what had already happened.</p>
+
+<h3>Chapter 2: Trying to Help</h3>
+<p>Theo tried a dozen small, awkward things — helping with her new medication schedule, sitting with her during appointments, googling facts he barely understood — none of which felt like enough, though none of which Mabel ever asked him to stop doing either.</p>
+
+<h3>Chapter 3: What Mabel Actually Needed</h3>
+<p>It was Mabel, eventually, who broke the real silence, telling Theo she didn't need him to fix anything — just to still treat her like his sister, not like something fragile. He started teasing her again the very next day, gently, the way he always had. It was, she told him later, the single kindest thing he'd done since the diagnosis.</p>
+`
+},
+{
+  title: "The Wrong Study Room, Every Wednesday",
+  author: "Khyati Srivastava",
+  slug: "the-wrong-study-room-every-wednesday",
+  category: "Romance",
+  emoji: "📖",
+  excerpt: "Every Wednesday at 4 PM, Elin books Study Room B. So does Kofi. Neither one will admit they've started scheduling their whole week around a room that only fits two people.",
+  created_at: "2027-04-05T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Booking Coincidence</h3>
+<p>It started, genuinely, as a scheduling accident: Elin booked the library's Study Room B for 4 PM on a Wednesday, and so, unknowingly, did Kofi. Rather than sort out the conflict, they just quietly agreed to share it — just that once.</p>
+
+<h3>Chapter 2: Not Really an Accident Anymore</h3>
+<p>"Just that once" turned into every Wednesday for six weeks running, both of them somehow always free at exactly 4 PM, both of them somehow never quite getting around to booking a different room on purpose.</p>
+
+<h3>Chapter 3: Saying the Obvious Part Out Loud</h3>
+<p>It was Kofi who finally admitted it, sliding a note across the shared table instead of saying it aloud: <em>I don't actually have that much homework on Wednesdays.</em> Elin wrote back: <em>Neither do I. Same time next week?</em> They still book Study Room B every Wednesday. They've stopped pretending it's about the homework.</p>
+`
+},
+{
+  title: "Dancing Lessons Neither of Them Needed",
+  author: "Khyati Srivastava",
+  slug: "dancing-lessons-neither-of-them-needed",
+  category: "Romance",
+  emoji: "💃",
+  excerpt: "Signed up for the school dance workshop purely to avoid an awkward silence with a crush, Leo discovers dance lessons are a surprisingly good excuse to hold someone's hand on purpose.",
+  created_at: "2027-04-05T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Convenient Excuse</h3>
+<p>Leo signed up for the school's optional dance workshop for one reason only: Priya had signed up too, and it seemed like the only socially acceptable way to spend an hour a week standing close to her without it being weird.</p>
+
+<h3>Chapter 2: Actually Learning to Dance</h3>
+<p>To his mild surprise, the lessons themselves turned out to be genuinely fun — counting steps together, laughing through mistakes, the kind of easy conversation that never quite happened in the hallway between classes.</p>
+
+<h3>Chapter 3: More Than a Class</h3>
+<p>By the final lesson, Leo had learned an actual waltz, several new facts about Priya's favorite books, and — most importantly — enough nerve to ask her to the actual school dance for real. She said yes before he even finished the question. Turns out she'd signed up for the exact same reason.</p>
+`
+},
+{
+  title: "The Backyard Museum of Everything We Found",
+  author: "Khyati Srivastava",
+  slug: "the-backyard-museum-of-everything-we-found",
+  category: "Kids",
+  emoji: "🏺",
+  excerpt: "Every rock, bug shell, and interesting stick found in the backyard gets a proper display card in Mimi's homemade museum. Admission is one good story, no exceptions.",
+  created_at: "2027-04-05T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: The Grand Opening</h3>
+<p>Mimi's backyard museum occupied exactly one card table and half a garage shelf, but every item — a suspiciously smooth rock, a cicada shell, a stick shaped almost like a lightning bolt — had its own handwritten display card, carefully labeled.</p>
+
+<h3>Chapter 2: Strict Admission Rules</h3>
+<p>Entry cost nothing in money, but visitors had to pay with one good story, any story, told directly to Mimi before they could browse. Her little brother's stories about "the rock that came from outer space" grew more elaborate every single visit.</p>
+
+<h3>Chapter 3: An Actual Museum Visit</h3>
+<p>Word spread through the neighborhood until half the block's kids had visited, each contributing a wilder story than the last. By summer's end, Mimi's museum had a waiting list and an actual guest book, filled with the strangest, most delightful collection of tall tales the backyard had ever heard.</p>
+`
+},
+{
+  title: "The Snow Day That Wasn't a Snow Day",
+  author: "Khyati Srivastava",
+  slug: "the-snow-day-that-wasnt-a-snow-day",
+  category: "Kids",
+  emoji: "☃️",
+  excerpt: "The forecast promised eight inches of snow. Three inches showed up. School stayed open anyway, and one very disappointed class had to make do with what they had.",
+  created_at: "2027-04-05T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Broken Promise</h3>
+<p>The forecast had promised eight glorious inches, and the whole third grade had gone to bed dreaming of a snow day. They woke up to barely three inches and, worse, a very much still-open school.</p>
+
+<h3>Chapter 2: Making Do</h3>
+<p>Ms. Alvarado, sensing the room's collective devastation, made an executive decision: recess would be twenty minutes longer than usual, snow or not, and three inches turned out to be exactly enough for one genuinely impressive round of snowball-dodging tag.</p>
+
+<h3>Chapter 3: A Good Day Anyway</h3>
+<p>By the end of recess, soggy mittens and all, nobody was still complaining about the missing snow day. Three inches, it turned out, could still make for a pretty excellent afternoon — a lesson the whole class silently agreed was worth more than a day off after all. Mostly.</p>
+`
+},
+{
+  title: "The Photograph That Develops Wrong",
+  author: "Khyati Srivastava",
+  slug: "the-photograph-that-develops-wrong",
+  category: "Horror",
+  emoji: "📸",
+  excerpt: "Every photo from the old instant camera develops normally — except when you take a picture of the hallway mirror. Then it shows a different room entirely.",
+  created_at: "2027-04-05T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Normal Camera</h3>
+<p>The instant camera worked perfectly for every ordinary photo — birthday parties, the backyard, the family dog mid-jump. Only the hallway mirror produced anything strange, developing not a reflection but an entirely different room, dim and unfamiliar.</p>
+
+<h3>Chapter 2: The Same Room, Every Time</h3>
+<p>Nissa tested it a dozen times, from a dozen angles, and every single photo of the mirror showed that same unrecognizable room — a bed, a window, a chair positioned slightly differently in each shot, as if someone unseen kept quietly rearranging the furniture.</p>
+
+<h3>Chapter 3: An Unanswered Question</h3>
+<p>She never solved it. The camera eventually broke, replaced by a newer one that photographed the mirror perfectly normally, showing only her own reflection like it should. She kept the strange photos anyway, tucked in a drawer, still occasionally wondering whose room that really was — and whether the chair ever stopped moving once the photos did.</p>
+`
+},
+{
+  title: "The Song That Plays When No One's Home",
+  author: "Khyati Srivastava",
+  slug: "the-song-that-plays-when-no-ones-home",
+  category: "Horror",
+  emoji: "🎹",
+  excerpt: "The living room piano hasn't been played in years — no one in the family knows how. So why does the smart-home camera keep catching the same three notes, every time the house is empty?",
+  created_at: "2027-04-05T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Nobody Plays Piano</h3>
+<p>The old upright piano had sat untouched in the Marsh family's living room for three years, a leftover from the previous owners nobody had bothered to remove. Nobody in the family knew how to play a single note on it.</p>
+
+<h3>Chapter 2: Caught on Camera</h3>
+<p>Their new smart-home security camera picked up something strange during a family vacation: three notes, played clearly and deliberately, at 2 AM, in an empty house with every door locked and every alarm silent.</p>
+
+<h3>Chapter 3: Three Notes, Every Time</h3>
+<p>It happened again the next time the house sat empty, and the time after that — always the same three notes, never a fourth, never a fifth, as if whoever was playing only remembered that much of a much longer song. The Marsh family has stopped trying to explain it. They've started, instead, quietly wondering what song it used to be, and who might still be trying to finish it.</p>
+`
+},
+{
+  title: "The Paper Boat Fleet",
+  author: "Khyati Srivastava",
+  slug: "the-paper-boat-fleet",
+  category: "Poetry",
+  emoji: "⛵",
+  excerpt: "A gentle poem about a whole fleet of paper boats launched down a rain gutter, each one carrying a wish too small to say out loud.",
+  created_at: "2027-04-05T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Paper Boat Fleet</h3>
+<p>Fold the corners, crease them tight,<br/>
+launch the fleet before the light<br/>
+of the storm clears up and the gutter dries,<br/>
+and the little rivers say their goodbyes.</p>
+
+<p>One boat carries a wish for rain<br/>
+to always come and go again,<br/>
+one carries a hope too shy to speak,<br/>
+one just carries a name, for a week.</p>
+
+<p>They bob and spin and some capsize,<br/>
+some make it far, some don't, despite tries,<br/>
+but every boat that sinks or sails<br/>
+still carried something in its tiny scales.</p>
+
+<p>So launch your boats when the storm clears out,<br/>
+don't worry much which ones stay afloat —<br/>
+the fun was never really in the race,<br/>
+it's in the folding, and the letting go, and grace.</p>
+`
+},
+{
+  title: "The Backpack That Carries Everything",
+  author: "Khyati Srivastava",
+  slug: "the-backpack-that-carries-everything",
+  category: "Poetry",
+  emoji: "🎒",
+  excerpt: "A poem told from the perspective of a well-worn school backpack, carrying not just books but every worry, joy, and secret its owner never says aloud.",
+  created_at: "2027-04-05T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Backpack That Carries Everything</h3>
+<p>I carry books and pencil case,<br/>
+a crumpled test, a granola-bar trace,<br/>
+but under all that, zipped up tight,<br/>
+I carry things she won't say outright.</p>
+
+<p>I carry the worry before the test,<br/>
+the hope that today she'll pass every test,<br/>
+I carry the lunch she barely touched,<br/>
+the note from a friend that meant so much.</p>
+
+<p>I've carried bad days, heavy as stone,<br/>
+I've carried good ones, lighter, alone,<br/>
+I've carried every single year<br/>
+of growing up, of hope and fear.</p>
+
+<p>So when she hangs me on the door at night,<br/>
+worn at the seams but zipped up tight,<br/>
+I hold it all until morning comes —<br/>
+a backpack knows more than anyone.</p>
+`
+},
 ];
