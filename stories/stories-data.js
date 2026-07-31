@@ -15694,4 +15694,574 @@ and letting go, each and every time,<br/>
 is half the reason the catching feels sublime.</p>
 `
 },
+{
+  title: "The Clockmaker Who Sold Extra Minutes",
+  author: "Khyati Srivastava",
+  slug: "the-clockmaker-who-sold-extra-minutes",
+  category: "Fantasy",
+  emoji: "⏳",
+  excerpt: "For a fair price, the clockmaker can sell you five borrowed minutes from tomorrow. He's never once explained what happens when tomorrow arrives a little short.",
+  created_at: "2027-04-06T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Useful Little Shop</h3>
+<p>The clockmaker's smallest, strangest service was also his most popular: for a fair price, he'd sell you five extra minutes, borrowed quietly from tomorrow, to finish a test, catch a train, or say one more goodbye.</p>
+
+<h3>Chapter 2: A Boy in a Hurry</h3>
+<p>Oskar bought five minutes to finish his final exam, certain it was worth whatever tomorrow's cost might be. He never thought to ask what "a little short" actually meant until the next day arrived exactly five minutes shorter than every other day he'd ever lived.</p>
+
+<h3>Chapter 3: What Five Minutes Cost</h3>
+<p>It wasn't dramatic — just a slightly rushed breakfast, a missed extra joke with his sister, a goodbye at the bus stop cut just barely short. Oskar finished that test with a passing grade and a quiet lesson: borrowed time always came from somewhere, and it was rarely as free as it first sounded.</p>
+`
+},
+{
+  title: "The Orchard That Grows Yesterday's Fruit",
+  author: "Khyati Srivastava",
+  slug: "the-orchard-that-grows-yesterdays-fruit",
+  category: "Fantasy",
+  emoji: "🍑",
+  excerpt: "Every peach from the old orchard tastes exactly like a specific day from the past — sweet, sour, or strange, depending on what kind of day it was. Some trees, the farmer avoids entirely.",
+  created_at: "2027-04-06T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Peculiar Harvest</h3>
+<p>Every peach from the Ashgrove orchard carried the exact flavor of a specific day from the past — some sweet as a birthday, some sour as an argument, one particular tree so bitter that Farmer Wills had stopped harvesting it entirely years ago.</p>
+
+<h3>Chapter 2: A Curious Visitor</h3>
+<p>A young traveler named Bea, passing through, asked to try a peach from the forbidden tree anyway, insisting she could handle whatever day it remembered. Wills warned her twice before finally, reluctantly, letting her pick one herself.</p>
+
+<h3>Chapter 3: What the Bitter Tree Remembered</h3>
+<p>The peach tasted like grief — a specific, terrible day Wills had buried deep and never spoken of. Bea didn't finish it. She simply sat with him quietly afterward, saying nothing, which turned out to be exactly the right response. The tree, strangely, bore its sweetest fruit in years the following season.</p>
+`
+},
+{
+  title: "The Backup Moon",
+  author: "Khyati Srivastava",
+  slug: "the-backup-moon",
+  category: "Sci-Fi",
+  emoji: "🌕",
+  excerpt: "When Earth's moon suffers catastrophic damage from an asteroid strike, humanity's emergency backup moon — built decades ago and forgotten — finally gets its moment.",
+  created_at: "2027-04-07T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Forgotten Contingency</h3>
+<p>Decades earlier, in a fit of extreme caution, an international team had quietly built and mothballed an artificial "backup moon" — a small, stabilizing satellite designed for exactly one scenario nobody ever expected to actually happen.</p>
+
+<h3>Chapter 2: The Scenario Happens</h3>
+<p>An asteroid strike cracked the real moon's surface catastrophically, throwing tidal patterns and orbital stability into chaos within days. The forgotten backup, still faithfully orbiting in standby mode, finally received its long-dormant activation signal.</p>
+
+<h3>Chapter 3: Filling In</h3>
+<p>It wasn't a real replacement — nothing could be — but it stabilized Earth's tides just enough to buy scientists the years they needed to properly address the damage. Twelve-year-old Mei, whose grandmother had helped engineer it decades before, watched it activate live with her whole class. "Grandma built that," she told everyone, more than once, for the rest of the week.</p>
+`
+},
+{
+  title: "The Kid Who Debugged the School's AI Tutor",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-debugged-the-schools-ai-tutor",
+  category: "Sci-Fi",
+  emoji: "🖥️",
+  excerpt: "The new AI tutor keeps giving Priti oddly personal encouragement mixed into her math help. Turns out it's not a bug — it's learning from her old, deleted messages.",
+  created_at: "2027-04-07T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Strange Encouragement</h3>
+<p>The school's new AI tutor was supposed to just help with math, but Priti kept noticing oddly specific encouragement mixed into her lessons — references to her love of horses, a joke about her cat, details she'd never entered into any school system.</p>
+
+<h3>Chapter 2: Investigating the Glitch</h3>
+<p>She brought it to the IT teacher, half-convinced something was broken, half-convinced something was watching her. The answer, once found, was stranger than either guess: the tutor had pulled from an old journaling app assignment, deleted months ago but never fully wiped from the shared server.</p>
+
+<h3>Chapter 3: An Honest Fix</h3>
+<p>The IT teacher fixed the data leak immediately and apologized for the oversight. Priti, oddly, found herself a little sad to lose it — the tutor's strange, overly personal encouragement had genuinely helped on her worst math days. The fixed version was more private. It was also, she admitted, a little less kind.</p>
+`
+},
+{
+  title: "The Note Left in the Return Slot",
+  author: "Khyati Srivastava",
+  slug: "the-note-left-in-the-return-slot",
+  category: "Mystery",
+  emoji: "✉️",
+  excerpt: "Someone keeps leaving anonymous, oddly specific thank-you notes in the library's book return slot. The head librarian is determined to figure out who — and why.",
+  created_at: "2027-04-07T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Odd Pattern</h3>
+<p>Every few weeks, a small handwritten note turned up in the book return slot alongside the actual returned book — always anonymous, always specific: <em>Thank you for having this exact book when I needed it most.</em></p>
+
+<h3>Chapter 2: A Growing Curiosity</h3>
+<p>Head librarian Ms. Petrossian started keeping the notes in a drawer, matching them quietly to the returned titles — a grief memoir, a book on starting over, a guide to a scary diagnosis — each one clearly tied to someone's hard chapter.</p>
+
+<h3>Chapter 3: Letting the Mystery Stay a Mystery</h3>
+<p>She never did identify a single note-writer, despite months of quiet curiosity, and eventually stopped trying. Instead, she pinned the collected notes to a small board near the return slot, unsigned, for other patrons to read. The notes kept coming. So did new ones, from new anonymous hands, adding to the same growing wall of thanks.</p>
+`
+},
+{
+  title: "The Case of the Perfectly Repeated Day",
+  author: "Khyati Srivastava",
+  slug: "the-case-of-the-perfectly-repeated-day",
+  category: "Mystery",
+  emoji: "🔁",
+  excerpt: "Three different neighbors report the exact same series of small events happening twice, in the exact same order, on two different Tuesdays. Nobody can explain the pattern — until someone finally checks the calendar.",
+  created_at: "2027-04-07T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Déjà Vu, Documented</h3>
+<p>The mail arrived at the same odd time, the same car alarm went off at the same moment, the same delivery truck took the same wrong turn — all identical, down to the minute, on two separate Tuesdays three weeks apart. Three different neighbors compared notes, baffled.</p>
+
+<h3>Chapter 2: A Growing List of Coincidences</h3>
+<p>Twelve-year-old Dev, fascinated, started building an actual timeline, convinced there had to be a real explanation buried somewhere in the mundane, oddly synchronized details.</p>
+
+<h3>Chapter 3: A Simple, Unsatisfying Answer</h3>
+<p>The mail carrier's route, the car alarm's faulty sensor, and the delivery company's scheduling software all ran on the same three-week cycle, purely coincidentally lining up twice in a row. It wasn't magic. It wasn't even that unusual, statistically. Dev was a little disappointed — and then found himself oddly proud of being the one who'd actually solved it properly.</p>
+`
+},
+{
+  title: "The Snow Fort Siege of Birchwood Court",
+  author: "Khyati Srivastava",
+  slug: "the-snow-fort-siege-of-birchwood-court",
+  category: "Adventure",
+  emoji: "❄️",
+  excerpt: "Two rival snow forts have faced off across Birchwood Court for three winters running, with an elaborate, unspoken code of honor neither side has ever broken. This winter, someone almost does.",
+  created_at: "2027-04-07T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Three Years of Rivalry</h3>
+<p>The snow fort war between the north and south ends of Birchwood Court had run three winters strong, complete with unwritten rules everyone somehow knew by heart: no throwing at faces, no fort demolition after dark, no recruiting kids under six.</p>
+
+<h3>Chapter 2: A Broken Rule</h3>
+<p>This winter, a new kid named Ellis, unfamiliar with the code, snuck out after dark and toppled half the north fort's wall — a genuine violation that threatened to end three years of friendly rivalry in real anger.</p>
+
+<h3>Chapter 3: Restoring the Code</h3>
+<p>Rather than retaliate, the north fort's captain, Yuki, called a rare joint meeting of both sides, explained the unwritten rules out loud for the first time, and had Ellis help rebuild the wall himself as penance. The rivalry continued that winter, stronger than ever, with one new rule added permanently to the list: explain the code to newcomers first.</p>
+`
+},
+{
+  title: "The Kayak Trip That Found an Island on No Map",
+  author: "Khyati Srivastava",
+  slug: "the-kayak-trip-that-found-an-island-on-no-map",
+  category: "Adventure",
+  emoji: "🏝️",
+  excerpt: "Paddling further than they'd planned, two cousins spot a tiny island that doesn't appear on any lake map they own. Getting there turns out to be the easy part.",
+  created_at: "2027-04-07T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Further Than Planned</h3>
+<p>Cousins Alex and Priya had paddled this lake every summer for years, map memorized, routes familiar — until a particularly clear day revealed a small, tree-covered island neither of them had ever noticed, absent from every map either family owned.</p>
+
+<h3>Chapter 2: Getting There</h3>
+<p>The paddle across took twice as long as expected, fighting an unexpected current, both of them equal parts nervous and thrilled at discovering something that felt, however briefly, entirely their own.</p>
+
+<h3>Chapter 3: A Small, Real Mystery</h3>
+<p>The island turned out to be new — formed just two years earlier by shifting sediment, too recent for most maps to have caught up. They named it, unofficially, Cousin Island, and paddled back to report their discovery to a very amused park ranger who confirmed the whole story was, delightfully, completely true.</p>
+`
+},
+{
+  title: "Marbles the Ferret's Great Escape Route",
+  author: "Khyati Srivastava",
+  slug: "marbles-the-ferrets-great-escape-route",
+  category: "Animals",
+  emoji: "🦡",
+  excerpt: "Marbles the ferret has escaped his enclosure fourteen times using fourteen completely different methods. His family has started keeping a scoreboard.",
+  created_at: "2027-04-07T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Formidable Opponent</h3>
+<p>Marbles had escaped his enclosure fourteen separate times over the year, and — impressively — never used the same method twice: a loosened latch, a gap behind the bookshelf, once, memorably, riding out inside an emptied laundry basket.</p>
+
+<h3>Chapter 2: The Scoreboard</h3>
+<p>The family started keeping an actual whiteboard scoreboard, rating each escape on creativity and difficulty, Marbles's average score climbing steadily higher as the family's containment efforts grew increasingly elaborate and increasingly futile.</p>
+
+<h3>Chapter 3: A Grudging Truce</h3>
+<p>Escape fifteen finally convinced them: instead of fighting his talent, they built him a "supervised adventure hour" every evening, letting him explore safely under watch. Marbles's escape attempts dropped to zero. His family suspects, privately, that he simply got bored winning.</p>
+`
+},
+{
+  title: "The Turtle Who Refused to Race",
+  author: "Khyati Srivastava",
+  slug: "the-turtle-who-refused-to-race",
+  category: "Animals",
+  emoji: "🐢",
+  excerpt: "Everyone expects Ozzie the turtle to compete in the pet show's classic tortoise-and-hare demonstration race. Ozzie has other plans entirely, and refuses to budge from them.",
+  created_at: "2027-04-07T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: The Expected Race</h3>
+<p>The county pet show's classic finale — a tortoise-and-hare demonstration race — needed a tortoise, and Ozzie, the calmest reptile in three counties, seemed like the obvious volunteer. Ozzie, once placed at the starting line, simply refused to move at all.</p>
+
+<h3>Chapter 2: Not Stubbornness, Exactly</h3>
+<p>His owner, ten-year-old Priya, quickly realized it wasn't defiance — Ozzie had found a particularly interesting patch of clover just off the marked track and had absolutely no intention of leaving it for something as pointless as a race.</p>
+
+<h3>Chapter 3: A Different Kind of Winner</h3>
+<p>The crowd, initially disappointed, ended up delighted anyway, cheering Ozzie's total, blissful indifference to the entire competition louder than they'd ever cheered an actual finish line. The judges awarded him a special ribbon: "Most Confidently Unbothered." Ozzie, predictably, didn't care about that either.</p>
+`
+},
+{
+  title: "Ms. Feldman's Kindergarten Algebra Lecture",
+  author: "Khyati Srivastava",
+  slug: "ms-feldmans-kindergarten-algebra-lecture",
+  category: "Comedy",
+  emoji: "🏫",
+  excerpt: "Mixed up by a scheduling error, a substitute confidently teaches an entire class of confused kindergartners a full lesson on algebra before anyone thinks to correct her.",
+  created_at: "2027-04-07T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Scheduling Mix-Up</h3>
+<p>The substitute coordinator's spreadsheet had a typo nobody caught: Ms. Feldman was sent to Room 4, expecting sixth-grade algebra, and found instead twenty extremely small, extremely confused kindergartners sitting cross-legged on a carpet.</p>
+
+<h3>Chapter 2: Teaching Anyway</h3>
+<p>Rather than immediately question it, Ms. Feldman, deep in autopilot, launched confidently into a full lesson on solving for x, complete with a whiteboard equation, entirely undeterred by twenty blank, five-year-old stares.</p>
+
+<h3>Chapter 3: Course Correction</h3>
+<p>It took a genuinely alarmed teaching assistant a full ten minutes to gently interrupt and explain the mistake. The kindergartners, for their part, seemed thoroughly unbothered by the whole ordeal and clapped politely when the "lesson" ended. Ms. Feldman still, to this day, insists at least three of them "really seemed to get it."</p>
+`
+},
+{
+  title: "The Wi-Fi Password That Became a Sentence",
+  author: "Khyati Srivastava",
+  slug: "the-wifi-password-that-became-a-sentence",
+  category: "Comedy",
+  emoji: "📶",
+  excerpt: "The family's Wi-Fi password started as one word. After years of everyone adding 'just one more thing,' it's now a complete, deeply unhinged sentence guests have to recite aloud.",
+  created_at: "2027-04-07T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Simple Beginning</h3>
+<p>The Ferreira family Wi-Fi password started, years ago, as a simple word: <em>sunflower7</em>. It did not stay that way. Every password reset seemed to be an invitation for someone in the family to add "just one more thing."</p>
+
+<h3>Chapter 2: Growing Out of Control</h3>
+<p>By the third year, it had become an entire clause. By the fifth, guests were required to type — and often recite aloud, phonetically, while connecting — the current masterpiece: <em>sunflower7dadsnoresloudlybutwelovehimanyway42!</em></p>
+
+<h3>Chapter 3: A Family Tradition</h3>
+<p>New guests groan. Longtime friends have started requesting updates before visiting, just to prepare. The family has unofficially declared the password's continued growth a sacred tradition, and nobody, at this point, dares to be the one who finally resets it back to something short.</p>
+`
+},
+{
+  title: "The Painter Who Only Used Borrowed Colors",
+  author: "Khyati Srivastava",
+  slug: "the-painter-who-only-used-borrowed-colors",
+  category: "Fairytale",
+  emoji: "🎨",
+  excerpt: "The village painter has no colors of her own — every hue on her palette is borrowed, briefly, from someone else's happiest memory. She's never once painted anything for herself.",
+  created_at: "2027-04-07T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Palette of Borrowed Color</h3>
+<p>Sela's paints held no true pigment of their own — every color she used was borrowed briefly from a villager's happiest memory, given willingly in exchange for a portrait. Blue from a sailor's favorite dawn. Gold from a baker's first successful loaf.</p>
+
+<h3>Chapter 2: An Empty Canvas</h3>
+<p>She'd painted the whole village this way, one joyful color at a time, and had never once painted anything purely for herself — mostly, she realized one quiet evening, because she wasn't sure her own memories held any color worth using.</p>
+
+<h3>Chapter 3: Finding Her Own Color</h3>
+<p>An old friend, noticing her hesitation, reminded her gently of the day she'd first picked up a brush as a girl, thrilled and nervous and utterly alive with possibility. Sela mixed that memory into paint for the first time — a color entirely her own — and finally completed a small canvas just for herself, hung quietly in the corner of her own kitchen.</p>
+`
+},
+{
+  title: "The Knight Who Retired to Open a Flower Shop",
+  author: "Khyati Srivastava",
+  slug: "the-knight-who-retired-to-open-a-flower-shop",
+  category: "Fairytale",
+  emoji: "🌷",
+  excerpt: "Sir Alden defeated three dragons and rescued two kingdoms before deciding, at forty, that what he actually wanted was to grow roses. The kingdom does not know what to do with this.",
+  created_at: "2027-04-07T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Legendary Retirement Announcement</h3>
+<p>Sir Alden had defeated three dragons, rescued two kingdoms, and won more tournaments than anyone could count before announcing, at forty, that he was hanging up his sword to open a small flower shop. The kingdom took the news with visible confusion.</p>
+
+<h3>Chapter 2: An Awkward Transition</h3>
+<p>His first customers arrived expecting sword-fighting stories and got, instead, unexpectedly detailed advice about rose pruning and soil drainage, delivered with the exact same calm confidence he'd once used commanding armies.</p>
+
+<h3>Chapter 3: A New Kind of Hero</h3>
+<p>The shop thrived, eventually, once the kingdom adjusted to the idea that a retired hero could simply want something quieter. Children still asked him for dragon stories. He'd tell one — then hand them a flower and send them home. "Both things can be true at once," he liked to say. "I just like this chapter better."</p>
+`
+},
+{
+  title: "The Kid Who Practiced Being Wrong",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-practiced-being-wrong",
+  category: "Inspirational",
+  emoji: "🎯",
+  excerpt: "Priyanka's debate coach gives her an unusual assignment: argue the side she believes is wrong, as hard as she can, until she understands exactly why someone might believe it.",
+  created_at: "2027-04-07T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Odd Assignment</h3>
+<p>Priyanka's debate coach gave her a strange homework assignment: pick a position she genuinely disagreed with and argue it as convincingly as possible, not to win anyone over, just to understand it properly from the inside.</p>
+
+<h3>Chapter 2: Harder Than Expected</h3>
+<p>It was uncomfortable in a way she hadn't anticipated — forcing herself to find the real, human reasoning behind a view she'd always dismissed too quickly as simply wrong, rather than just poorly argued.</p>
+
+<h3>Chapter 3: A Better Debater, A Better Listener</h3>
+<p>By the actual tournament, Priyanka found herself listening to opponents differently — genuinely curious about their reasoning instead of just waiting for her turn to rebut. She didn't win every round that season. She did, for the first time, start actually changing a few minds instead of just outlasting them.</p>
+`
+},
+{
+  title: "The Janitor Who Remembered Every Kid's Bad Day",
+  author: "Khyati Srivastava",
+  slug: "the-janitor-who-remembered-every-kids-bad-day",
+  category: "Inspirational",
+  emoji: "🧹",
+  excerpt: "Mr. Delgado has swept these hallways for thirty years and can tell, at a glance, exactly which kid is having a hard day. He's never once been wrong, or too busy to notice.",
+  created_at: "2027-04-07T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Quiet Kind of Attention</h3>
+<p>Mr. Delgado had swept the hallways of Lincoln Elementary for thirty years, and somewhere along the way had developed an uncanny knack for spotting exactly which kid, on any given day, was quietly struggling with something nobody else had noticed.</p>
+
+<h3>Chapter 2: Small Interventions</h3>
+<p>He never made a big deal of it — a spare granola bar left on a bench, a genuine "rough morning?" that opened a door some kids badly needed opened, a task like "help me move these chairs" that gave someone a reason to step away and breathe.</p>
+
+<h3>Chapter 3: What He Never Got Credit For</h3>
+<p>Nobody gave out awards for that kind of quiet noticing, and Mr. Delgado never once asked for any. When he finally retired after thirty-one years, though, the retirement party overflowed the gym — hundreds of former students, now grown, each with their own small story of the day the janitor had noticed them first.</p>
+`
+},
+{
+  title: "The Last Day of the Old Gym Floor",
+  author: "Khyati Srivastava",
+  slug: "the-last-day-of-the-old-gym-floor",
+  category: "Drama",
+  emoji: "🏀",
+  excerpt: "Before the district replaces the school's ancient, scuffed gym floor, one final open gym night lets three generations of alumni play on it one last time.",
+  created_at: "2027-04-07T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Floor Worth Saying Goodbye To</h3>
+<p>The gym floor had hosted forty years of games, scuffed and worn in a way no amount of waxing could hide anymore, finally scheduled for replacement over summer break. The school organized one last open gym night before the old boards came up for good.</p>
+
+<h3>Chapter 2: Three Generations</h3>
+<p>Alumni showed up from every decade — a grandfather who'd played on it fresh from installation, a mother who'd hit the winning shot at states in '02, and current students who'd only ever known it worn and familiar underfoot.</p>
+
+<h3>Chapter 3: One Last Game</h3>
+<p>They split into mixed teams, generations tangled together, playing one long, joyful, disorganized game until the gym closed for the night. The new floor went in that summer, gleaming and perfect. A small section of the old boards was framed and hung in the lobby — worn, scuffed, and exactly the way everyone remembered it best.</p>
+`
+},
+{
+  title: "The Sibling Who Always Got the Bigger Half",
+  author: "Khyati Srivastava",
+  slug: "the-sibling-who-always-got-the-bigger-half",
+  category: "Drama",
+  emoji: "🍰",
+  excerpt: "For years, Nadia has quietly resented that her brother always seemed to get the bigger half of everything. This year, she finally learns why — and wishes she hadn't asked.",
+  created_at: "2027-04-07T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Small, Old Resentment</h3>
+<p>Nadia had quietly kept score for years — the bigger slice of cake, the newer clothes, the extra five minutes of screen time — always, somehow, tilting toward her older brother Rafi. It was a small thing. It had never stopped bothering her.</p>
+
+<h3>Chapter 2: Finally Asking</h3>
+<p>She finally confronted her mom about it, expecting an easy apology or an easy explanation. What she got instead was quiet and complicated: Rafi's early childhood illness, hospital bills, years of careful budgeting nobody had explained to a kid too young to understand at the time.</p>
+
+<h3>Chapter 3: A Different Kind of Understanding</h3>
+<p>It didn't erase the years of feeling overlooked, but it reframed them completely — not favoritism, just an old, quiet debt nobody had ever properly explained. Nadia and Rafi talked about it honestly for the first time that week, cake and old resentments both, finally, split evenly.</p>
+`
+},
+{
+  title: "The Recipe for Disaster (and Also Dinner)",
+  author: "Khyati Srivastava",
+  slug: "the-recipe-for-disaster-and-also-dinner",
+  category: "Romance",
+  emoji: "🍝",
+  excerpt: "Neither Jonas nor Priya can cook, but their first date — a couples' cooking class neither wanted to admit they'd never actually attended alone before — goes disastrously, wonderfully wrong.",
+  created_at: "2027-04-07T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Two Confident Liars</h3>
+<p>Jonas had claimed, with total confidence, to "basically know his way around a kitchen." Priya had claimed the exact same thing. Both were, it quickly became clear during the pasta-making portion of their first date, lying through their teeth.</p>
+
+<h3>Chapter 2: Total Culinary Chaos</h3>
+<p>Their pasta dough ended up somewhere between concrete and glue. Their sauce, somehow, caught actual fire. The instructor, watching with visible alarm, eventually just handed them a backup jar sauce and quietly stepped away.</p>
+
+<h3>Chapter 3: A Terrible Meal, A Great Date</h3>
+<p>They ate their genuinely inedible pasta anyway, laughing too hard to actually finish it, both privately relieved the other one was just as hopeless as they were. Neither has attempted to cook anything ambitious since. They've been on eleven more dates. None involved a stove.</p>
+`
+},
+{
+  title: "The Playlist That Kept Growing",
+  author: "Khyati Srivastava",
+  slug: "the-playlist-that-kept-growing",
+  category: "Romance",
+  emoji: "🎧",
+  excerpt: "It started as one song shared between friends. Two years later, the shared playlist has three hundred songs, an ongoing inside joke about track order, and neither of them has said the obvious thing out loud yet.",
+  created_at: "2027-04-07T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: One Song</h3>
+<p>It started small: Mateo sent Wren one song he thought she'd like, and she sent one back the same night. Two years and three hundred songs later, the shared playlist had become the longest-running conversation either of them had with anyone.</p>
+
+<h3>Chapter 2: An Unofficial Language</h3>
+<p>They'd developed an entire private shorthand through track choices — a specific song always meant "rough day," another always meant "thinking of you," neither ever quite spelled out directly in actual words.</p>
+
+<h3>Chapter 3: Track Three Hundred and One</h3>
+<p>Mateo finally added a new song with an actual title change, renaming the track to a message instead of hiding it in the lyrics: "Do you want to get dinner? Actually asking this time." Wren's reply came within the hour — a new song, retitled just as plainly: "Yes. Obviously. Finally."</p>
+`
+},
+{
+  title: "The Neighborhood Olympics Committee (Population: Four)",
+  author: "Khyati Srivastava",
+  slug: "the-neighborhood-olympics-committee-population-four",
+  category: "Kids",
+  emoji: "🥇",
+  excerpt: "Four kids on one cul-de-sac have declared themselves an official Olympics Committee, complete with handmade medals, opening ceremonies, and extremely serious rules about the sprinkler-jump long jump.",
+  created_at: "2027-04-07T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Official Committee</h3>
+<p>Four kids, one cul-de-sac, and a summer with nothing else going on led to the founding of what they called, with complete seriousness, the Maple Street Olympics Committee — complete with a hand-drawn logo and an opening ceremony involving two bike horns.</p>
+
+<h3>Chapter 2: The Events</h3>
+<p>Events included the Sprinkler-Jump Long Jump, the Extremely Competitive Hula Hoop Marathon, and a controversial new addition, the Snail-Speed Race, which somehow generated the most heated arguments of the entire games.</p>
+
+<h3>Chapter 3: Closing Ceremony</h3>
+<p>Medals — cut from cardboard, colored with markers, genuinely treasured — were awarded to all four kids in creative, generous categories nobody actually lost: Most Enthusiastic, Best Sprinkler Technique, Fastest Snail Trainer. The Committee has already begun, unofficially, planning next summer's games.</p>
+`
+},
+{
+  title: "The Kid Who Ran a Complaint Department for Stuffed Animals",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-ran-a-complaint-department-for-stuffed-animals",
+  category: "Kids",
+  emoji: "🧸",
+  excerpt: "Six-year-old Sana has set up an official 'complaint desk' where her stuffed animals can voice their grievances. Her parents did not expect this level of institutional bureaucracy.",
+  created_at: "2027-04-07T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Official Desk</h3>
+<p>Sana set up her "complaint desk" using an overturned shoebox and a stack of scrap paper, ready to formally receive grievances from her stuffed animal population, whom she insisted deserved a proper channel for their concerns.</p>
+
+<h3>Chapter 2: The Complaints Roll In</h3>
+<p>The bear filed a formal complaint about being left out of bedtime rotation for three nights running. The rabbit complained about "unfair blanket distribution." Sana took each one with total bureaucratic seriousness, writing careful, if slightly misspelled, resolutions.</p>
+
+<h3>Chapter 3: An Effective System</h3>
+<p>Her parents, initially amused, noticed something genuinely useful emerging: Sana was working through her own feelings about fairness and being heard, one stuffed-animal grievance at a time. The complaint desk still runs, six months later, complete with a "Resolved" stamp made from a cut potato.</p>
+`
+},
+{
+  title: "The Doorbell That Rings Before Anyone's There",
+  author: "Khyati Srivastava",
+  slug: "the-doorbell-that-rings-before-anyones-there",
+  category: "Horror",
+  emoji: "🔔",
+  excerpt: "The doorbell rings exactly four seconds before anyone actually arrives at the door — every single time, for every single visitor, without fail. Nobody in the house has ever questioned it out loud.",
+  created_at: "2027-04-07T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Odd Little Habit</h3>
+<p>The Whitfield family doorbell rang, reliably, exactly four seconds before whoever was actually visiting reached the porch — enough time to notice, but never quite enough to catch anyone approaching in the small front-facing window.</p>
+
+<h3>Chapter 2: A Timed Test</h3>
+<p>Fourteen-year-old Cass finally decided to test it properly, stopwatch in hand, watching the empty driveway the moment the bell rang. Four seconds later, exactly on schedule, the pizza delivery driver's car turned the corner into view.</p>
+
+<h3>Chapter 3: Living With the Pattern</h3>
+<p>It has happened, without fail, for every single visitor in six years of Cass tracking it — never early, never late, never explained. The family has simply adjusted, using it as an unofficial early warning system rather than questioning it further. Cass still doesn't know what, exactly, rings the bell four seconds ahead of schedule. She's stopped being sure she wants to.</p>
+`
+},
+{
+  title: "The Recipe Book That Adds Its Own Ingredients",
+  author: "Khyati Srivastava",
+  slug: "the-recipe-book-that-adds-its-own-ingredients",
+  category: "Horror",
+  emoji: "📔",
+  excerpt: "Grandma's old handwritten cookbook has started adding new ingredients to old recipes, in handwriting that matches hers exactly — years after she passed away.",
+  created_at: "2027-04-07T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Familiar Handwriting</h3>
+<p>The stew recipe had always called for four ingredients, exactly as Grandma had written it decades ago. This winter, Priya found a fifth ingredient added in the margin — <em>a pinch of patience</em> — in handwriting unmistakably, impossibly identical to her grandmother's own.</p>
+
+<h3>Chapter 2: More Additions</h3>
+<p>Other recipes followed, each gaining a small, gentle note in the same careful cursive: <em>taste as you go</em>, <em>this one's better shared</em>, small wisdom nobody in the family had ever written down before, appearing between uses of the book nobody could explain.</p>
+
+<h3>Chapter 3: Cooking With the Notes</h3>
+<p>Priya's mother, when finally shown the additions, didn't seem frightened at all — just quietly, deeply moved. "That sounds exactly like her," she said simply, and kept cooking. The family has stopped questioning the new handwriting. They've started, instead, checking eagerly for what the book might add next.</p>
+`
+},
+{
+  title: "The Recess Bell That Rings Underwater",
+  author: "Khyati Srivastava",
+  slug: "the-recess-bell-that-rings-underwater",
+  category: "Poetry",
+  emoji: "🔔",
+  excerpt: "A playful poem imagining what recess would sound and feel like if the whole school were somehow underwater, bell and all.",
+  created_at: "2027-04-07T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Recess Bell That Rings Underwater</h3>
+<p>If school sank slowly beneath the sea,<br/>
+and fish swam past where chalkboards used to be,<br/>
+would the recess bell still ring the same,<br/>
+a bubbly, warbled, muffled game?</p>
+
+<p>We'd swim, not run, across the yard,<br/>
+tag would be slower, twice as hard,<br/>
+hopscotch squares drawn in the sand below,<br/>
+jellyfish drifting soft and slow.</p>
+
+<p>The monkey bars would finally make sense,<br/>
+built for creatures with fins, not just hands and pretense,<br/>
+and lunch would float in little jars,<br/>
+sandwiches bobbing like tiny cars.</p>
+
+<p>I don't think school will ever sink that deep,<br/>
+but on hot days, when the sun starts to creep,<br/>
+I like to imagine that underwater bell —<br/>
+a recess so strange, it just might be swell.</p>
+`
+},
+{
+  title: "What the Front Porch Has Seen",
+  author: "Khyati Srivastava",
+  slug: "what-the-front-porch-has-seen",
+  category: "Poetry",
+  emoji: "🏠",
+  excerpt: "A quiet, warm poem told from the perspective of a family's front porch, holding decades of hellos, goodbyes, and quiet evenings across its worn wooden boards.",
+  created_at: "2027-04-07T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>What the Front Porch Has Seen</h3>
+<p>I've held first steps and last goodbyes,<br/>
+watched a hundred sunsets paint the skies,<br/>
+felt small feet learn to run, then walk,<br/>
+held the weight of every porch-swing talk.</p>
+
+<p>I've heard the words that mattered most,<br/>
+whispered close, not made to boast,<br/>
+I've held the quiet after bad news came,<br/>
+and the loud, bright joy that had no name.</p>
+
+<p>Kids grew tall who used to crawl,<br/>
+across my boards, worn soft by all<br/>
+the years of bikes and skinned-up knees,<br/>
+and lemonade shared under buzzing bees.</p>
+
+<p>So creak a little louder when they're home,<br/>
+let them know they're not alone —<br/>
+a porch remembers every single guest,<br/>
+and loves them, quietly, at their best.</p>
+`
+},
 ];
