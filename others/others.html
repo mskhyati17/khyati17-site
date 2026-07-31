@@ -25,6 +25,14 @@
     .ka-head h2{ font-size:clamp(1.6rem,4vw,2.3rem); color:var(--pp); margin:0; }
     .ka-head p{ color:#6b5b7e; margin:8px 0 0; }
 
+    /* Section tabs */
+    .ka-tabs{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:0 0 30px; position:sticky; top:0; z-index:5; background:#fff; padding:10px 0; }
+    .ka-tab{ cursor:pointer; border:2px solid var(--acc); background:#fff; color:var(--pp); font-weight:700; font-size:.85rem; padding:9px 16px; border-radius:999px; transition:background .15s,color .15s,transform .1s; white-space:nowrap; }
+    .ka-tab:hover{ background:var(--acc); }
+    .ka-tab.active{ background:var(--pp); border-color:var(--pp); color:#fff; }
+    .ka-tab.active:hover{ background:var(--pp2); }
+    .ka-panel[hidden]{ display:none; }
+
     /* Tip of the day */
     .ka-tip{
       background:linear-gradient(135deg,var(--pp),var(--pp2)); color:#fff;
@@ -197,6 +205,15 @@
       <p>Simple, friendly tips to help you learn, grow and be your best self.</p>
     </div>
 
+    <div class="ka-tabs" role="tablist">
+      <button class="ka-tab active" data-tab="advice">💡 Advice &amp; Tips</button>
+      <button class="ka-tab" data-tab="combo">🎲 Combo Machine</button>
+      <button class="ka-tab" data-tab="things">💯 1,000 Things</button>
+      <button class="ka-tab" data-tab="mochi">🐾 Mochi &amp; Checklist</button>
+      <button class="ka-tab" data-tab="wheels">🎡 Spin Wheels</button>
+    </div>
+
+    <section class="ka-panel" data-panel="advice">
     <div class="ka-tip">
       <div class="lbl">💡 Tip of the Day</div>
       <div class="txt" id="tipText">—</div>
@@ -250,8 +267,10 @@
         <button class="mini-btn" id="affirmBtn">🔄 Another one</button>
       </div>
     </div>
+    </section>
 
-    <div class="ka-head" style="margin-top:44px">
+    <section class="ka-panel" data-panel="combo" hidden>
+    <div class="ka-head">
       <h2>🎲 The 25-Million-Combo Machine</h2>
       <p>7,169 wild abilities, mixed and matched into over 25,600,000 "would you rather" combos.</p>
     </div>
@@ -262,15 +281,19 @@
       <div class="combo-count" id="comboCount">—</div>
       <button id="comboBtn">🔄 Mix a new combo</button>
     </div>
+    </section>
 
-    <div class="ka-head" style="margin-top:44px">
+    <section class="ka-panel" data-panel="things" hidden>
+    <div class="ka-head">
       <h2>💯 1,000 Amazing Things</h2>
       <p>1,000 separate facts, ideas, and tiny challenges to know, try, or wonder about — every single one different.</p>
     </div>
 
     <div class="ka-100-grid" id="hundredGrid"></div>
+    </section>
 
-    <div class="ka-head" style="margin-top:44px">
+    <section class="ka-panel" data-panel="mochi" hidden>
+    <div class="ka-head">
       <h2>🐾 Mochi's Daily Streak</h2>
       <p>Check off your daily list to earn coins and keep Mochi's streak alive.</p>
     </div>
@@ -298,8 +321,10 @@
       <div class="checklist-items" id="checklistItems"></div>
       <div class="checklist-note">Each new item checked today earns you 5 🪙. Come back tomorrow for a fresh list!</div>
     </div>
+    </section>
 
-    <div class="ka-head" style="margin-top:36px">
+    <section class="ka-panel" data-panel="wheels" hidden>
+    <div class="ka-head">
       <h2>🎡 Spin Wheels</h2>
       <p>A daily coin spin, plus wheels for Would You Rather, Truth or Dare, your own custom list, emojis and colors.</p>
     </div>
@@ -372,6 +397,7 @@
         <div class="wheel-result" id="colorWheelResult">—</div>
       </div>
     </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -381,6 +407,23 @@
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   <script>
   (function(){
+    /* Tab switching */
+    (function(){
+      const tabBtns = document.querySelectorAll('.ka-tab');
+      const panels = document.querySelectorAll('.ka-panel');
+      const TAB_KEY = 'k17_others_tab';
+      function activateTab(name){
+        tabBtns.forEach(b=> b.classList.toggle('active', b.dataset.tab === name));
+        panels.forEach(p=> { p.hidden = p.dataset.panel !== name; });
+        try { localStorage.setItem(TAB_KEY, name); } catch(e){}
+      }
+      tabBtns.forEach(b=> b.addEventListener('click', ()=> activateTab(b.dataset.tab)));
+      let saved = null;
+      try { saved = localStorage.getItem(TAB_KEY); } catch(e){}
+      const valid = saved && document.querySelector(`.ka-panel[data-panel="${saved}"]`);
+      activateTab(valid ? saved : 'advice');
+    })();
+
     const ADVICE = [
       { ico:"📚", title:"Study Smart", tips:[
         "Break big tasks into small steps — one at a time feels easy.",
