@@ -17404,4 +17404,574 @@ you'll bring your friends, and I'll be there —<br/>
 some small lights are always worth the wait, somewhere.</p>
 `
 },
+{
+  title: "The Cartographer of Places That Almost Exist",
+  author: "Khyati Srivastava",
+  slug: "the-cartographer-of-places-that-almost-exist",
+  category: "Fantasy",
+  emoji: "🗺️",
+  excerpt: "Old Master Venn maps places that are almost real — towns that were nearly built, rivers that nearly flowed a different way. His newest apprentice wants to know what good an almost-map is.",
+  created_at: "2027-04-10T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Strange Specialty</h3>
+<p>Master Venn's maps didn't chart real places at all — they charted places that had almost happened: a town nearly founded before the founders changed their minds, a bridge nearly built where the river took a different turn instead.</p>
+
+<h3>Chapter 2: A Skeptical Apprentice</h3>
+<p>His new apprentice, Coen, found the whole practice baffling. "What good is a map of somewhere that never existed?" he asked, more than once, genuinely unable to see the point of cartography built on things that hadn't happened.</p>
+
+<h3>Chapter 3: What the Maps Were For</h3>
+<p>Venn finally showed him the real use: town councils facing hard decisions studied the almost-maps to understand what they'd be choosing against, what nearly-was helping clarify what still could be. Coen mapped his first almost-place that week — a school nearly closed, saved instead — and finally understood the value of remembering paths not taken.</p>
+`
+},
+{
+  title: "The Spinning Wheel That Weaves Second Thoughts",
+  author: "Khyati Srivastava",
+  slug: "the-spinning-wheel-that-weaves-second-thoughts",
+  category: "Fantasy",
+  emoji: "🧵",
+  excerpt: "Grandmother's spinning wheel doesn't make thread — it turns hasty decisions into second thoughts, giving whoever sits at it one more chance to reconsider before it's too late.",
+  created_at: "2027-04-10T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Not an Ordinary Wheel</h3>
+<p>Grandmother Ilsa's spinning wheel produced no thread at all, not once in living memory — instead, sitting at it and turning the pedal slowly seemed to turn hasty decisions into careful second thoughts, a strange, quiet gift she'd never fully explained.</p>
+
+<h3>Chapter 2: A Hasty Decision</h3>
+<p>Her granddaughter Wren, furious after a fight with her best friend, had already sent an unkind message before remembering the wheel sitting in the corner. She sat, turned the pedal three times, and felt her anger slowly unspool into something calmer, clearer.</p>
+
+<h3>Chapter 3: A Second Message</h3>
+<p>She caught her friend before the message did lasting damage, sending a better, gentler one instead. "The wheel doesn't undo anything," Grandmother Ilsa told her later. "It just buys you the time most people never give themselves." Wren has sat at that wheel many times since, always grateful for the extra thread of patience it seemed to spin.</p>
+`
+},
+{
+  title: "The Gallery of Almost-Working Machines",
+  author: "Khyati Srivastava",
+  slug: "the-gallery-of-almost-working-machines",
+  category: "Sci-Fi",
+  emoji: "🔧",
+  excerpt: "The city's newest museum displays only failed, abandoned inventions — the ones that almost worked. A young visitor discovers one exhibit that might actually still be fixable.",
+  created_at: "2027-04-10T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Museum of Failures</h3>
+<p>The Museum of Unfinished Inventions housed nothing but abandoned prototypes — a flying bicycle that never quite lifted off, a translator device that only ever spoke gibberish, dozens of near-misses collected as a monument to trying.</p>
+
+<h3>Chapter 2: A Curious Visitor</h3>
+<p>Twelve-year-old Ravi lingered longest at a small water-purification device, reading its failure notes with genuine fascination — the design had worked perfectly except for one flaw the original inventor never solved before giving up.</p>
+
+<h3>Chapter 3: Finishing Someone Else's Work</h3>
+<p>He wrote to the museum curator, asking permission to study the schematics properly, and spent his next school science fair solving the exact flaw that had stumped the original inventor decades earlier. The museum added a small new plaque beside the exhibit: <em>Fixed, finally, by a twelve-year-old who thought it deserved a second chance.</em></p>
+`
+},
+{
+  title: "The Last Human Job on the Moon Colony",
+  author: "Khyati Srivastava",
+  slug: "the-last-human-job-on-the-moon-colony",
+  category: "Sci-Fi",
+  emoji: "🌕",
+  excerpt: "Robots handle nearly every task on the lunar colony now — except one. Twelve-year-old Amara's mother holds the colony's very last job that still requires a human touch.",
+  created_at: "2027-04-10T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Fully Automated Colony</h3>
+<p>Robots ran nearly everything on the lunar colony now — construction, farming, even most medical care — leaving just one job still officially designated "human required": colony greeter, welcoming every new arrival personally by name.</p>
+
+<h3>Chapter 2: Why It Mattered</h3>
+<p>Amara's mother held that job, and Amara had always assumed it was mostly ceremonial, until she watched a nervous, homesick new colonist visibly relax the moment her mother greeted him warmly by name instead of by an automated system's polite but hollow welcome message.</p>
+
+<h3>Chapter 3: An Understood Value</h3>
+<p>The colony council had debated automating the role for years, always ultimately deciding against it. Watching her mother work, Amara finally understood why: some things, even in a fully automated world, still needed a genuinely human welcome. She's already decided she wants the job herself, someday.</p>
+`
+},
+{
+  title: "The Mystery of the Backward Birthday Cards",
+  author: "Khyati Srivastava",
+  slug: "the-mystery-of-the-backward-birthday-cards",
+  category: "Mystery",
+  emoji: "🎂",
+  excerpt: "Every birthday card in the Ferro family mailbox this year has arrived exactly one week early, addressed correctly but postmarked from a town nobody in the family has ever visited.",
+  created_at: "2027-04-10T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Suspiciously Early</h3>
+<p>Every birthday card the Ferro family received that year arrived exactly seven days early, correctly addressed, correctly signed by known relatives — but each one postmarked from a small town nobody could place on any map they owned.</p>
+
+<h3>Chapter 2: Asking Around</h3>
+<p>Twelve-year-old Marisol called around to relatives listed as senders, each one confused, insisting they'd mailed the cards normally, from their own town, with no early planning involved at all.</p>
+
+<h3>Chapter 3: A Postal Explanation</h3>
+<p>A patient postal worker finally solved it: a regional sorting facility, recently relocated, was processing mail unusually fast due to a temporary staffing surge, arriving genuinely early for the first time in the office's history. The mystery town, it turned out, was simply where that new facility happened to be located. Marisol was almost disappointed by how simple the answer was.</p>
+`
+},
+{
+  title: "The Case of the Identical Snowflakes",
+  author: "Khyati Srivastava",
+  slug: "the-case-of-the-identical-snowflakes",
+  category: "Mystery",
+  emoji: "❄️",
+  excerpt: "Everyone knows no two snowflakes are exactly alike. So when young scientist Priti photographs two that appear absolutely identical, she's determined to find out how.",
+  created_at: "2027-04-10T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unbelievable Photo</h3>
+<p>Priti had been photographing snowflakes under her new microscope kit for a science project when two images, taken minutes apart, appeared to show identical crystal patterns — a result she knew was supposed to be essentially impossible.</p>
+
+<h3>Chapter 2: Checking Her Work</h3>
+<p>She retraced every step carefully, certain she'd made some kind of measurement error, comparing the photos pixel by pixel with her older brother's help before finally noticing the actual explanation hiding in plain sight.</p>
+
+<h3>Chapter 3: An Honest Mistake</h3>
+<p>She'd accidentally photographed the same snowflake twice, her memory card briefly glitching and duplicating the file rather than capturing two genuinely different flakes. Slightly deflated but honestly relieved the laws of physics remained intact, Priti rewrote her science project around the real phenomenon instead — and got an even better grade for showing her work so thoroughly.</p>
+`
+},
+{
+  title: "The Blue Marker at the Ridge Loop Fork",
+  author: "Khyati Srivastava",
+  slug: "the-blue-marker-at-the-ridge-loop-fork",
+  category: "Adventure",
+  emoji: "🥾",
+  excerpt: "One trail marker on the ridge loop has been painted the wrong color for years — blue instead of red. Nobody's fixed it, and one hiking club has quietly decided that's exactly right.",
+  created_at: "2027-04-10T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Noticeable Mistake</h3>
+<p>The ridge loop trail was marked consistently in red, every post, every tree blaze — except one, painted a stubborn, mismatched blue, standing out at a fork that would otherwise send hikers the wrong direction entirely.</p>
+
+<h3>Chapter 2: A Youth Hiking Club Investigates</h3>
+<p>The junior trail club, out on their monthly maintenance hike, debated repainting it properly to match — until their leader pointed out something worth considering: the blue marker, mistake or not, had probably kept hikers from getting lost at that exact confusing fork for years.</p>
+
+<h3>Chapter 3: Leaving It Alone, On Purpose</h3>
+<p>They repainted every other faded marker on the trail that day, deliberately leaving the "wrong" blue one exactly as it was, adding a small new sign underneath instead: <em>Blue marker intentional — helps at this fork. Don't fix what isn't broken.</em> The mistake, it turned out, had quietly become the solution.</p>
+`
+},
+{
+  title: "The Junior Lifeguard Who Wasn't Ready, Until She Was",
+  author: "Khyati Srivastava",
+  slug: "the-junior-lifeguard-who-wasnt-ready-until-she-was",
+  category: "Adventure",
+  emoji: "🏊",
+  excerpt: "Certified but never truly tested, junior lifeguard Ines has spent all summer secretly doubting she'd actually know what to do in a real emergency. Then a real emergency happens.",
+  created_at: "2027-04-10T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Certified, But Untested</h3>
+<p>Ines had passed her junior lifeguard certification with strong marks, but a whole summer of quiet, uneventful shifts had left her secretly convinced the real test — an actual emergency — would reveal she wasn't nearly as ready as her certificate claimed.</p>
+
+<h3>Chapter 2: The Real Thing</h3>
+<p>It happened fast, the way every training video had warned it would: a younger swimmer caught in a sudden cramp near the drop-off, panic setting in visibly, no time to second-guess anything.</p>
+
+<h3>Chapter 3: Trusting the Training</h3>
+<p>Ines didn't remember deciding to move — her body simply executed the drill she'd practiced dozens of times, reaching the swimmer, calming him, guiding him safely back to shallow water within the exact timeframe her training had promised. Afterward, hands still shaking, she finally understood: readiness wasn't a feeling you had beforehand. It was something the training had already built into her, whether she trusted it or not.</p>
+`
+},
+{
+  title: "Nutmeg the Rabbit Who Ran a Vegetable Protection Racket",
+  author: "Khyati Srivastava",
+  slug: "nutmeg-the-rabbit-who-ran-a-vegetable-protection-racket",
+  category: "Animals",
+  emoji: "🐰",
+  excerpt: "Nutmeg the rabbit has, against all odds, become the unofficial guardian of the community garden — chasing off other pests in exchange for exactly one carrot top a day.",
+  created_at: "2027-04-10T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unlikely Guardian</h3>
+<p>Nobody expected a rabbit to protect a vegetable garden from anything, least of all the gardeners who first spotted Nutmeg fiercely chasing off a much larger groundhog with startling determination one spring morning.</p>
+
+<h3>Chapter 2: A Working Arrangement</h3>
+<p>The gardeners, curious and a little amused, started leaving a single carrot top out each evening — payment, unofficially, for Nutmeg's increasingly reliable patrol duty, which kept the plot remarkably free of larger, hungrier pests.</p>
+
+<h3>Chapter 3: A Fair Trade</h3>
+<p>Nutmeg has held the position for two full seasons now, one carrot top a day, an entire garden of vegetables otherwise left thoroughly alone. The gardeners consider it, without irony, the best security contract they've ever negotiated. Nutmeg has never once missed a shift.</p>
+`
+},
+{
+  title: "The Owl Who Delivered Overdue Library Books",
+  author: "Khyati Srivastava",
+  slug: "the-owl-who-delivered-overdue-library-books",
+  category: "Animals",
+  emoji: "🦉",
+  excerpt: "A barn owl nesting near the library has taken to carrying small overdue notices — literally — from the return slot to nearby porches. Nobody quite believes it until they see it themselves.",
+  created_at: "2027-04-10T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Nesting Neighbor</h3>
+<p>The barn owl had nested in the library's old bell tower for two seasons, largely unnoticed, until small printed overdue notices started mysteriously appearing on nearby porches, clearly plucked directly from the library's outgoing mail bin.</p>
+
+<h3>Chapter 2: Catching It in the Act</h3>
+<p>Librarian Ms. Odom finally witnessed it herself: the owl, apparently fascinated by the fluttering paper, swooping down and carrying a notice in its talons before dropping it, seemingly at random, on the nearest available porch.</p>
+
+<h3>Chapter 3: An Unofficial Delivery Service</h3>
+<p>Rather than fight it, the library leaned in, jokingly crediting "our new delivery owl" in the community newsletter. Patrons started leaving little owl-shaped thank-you notes in return. The owl, of course, remained entirely uninterested in the gratitude — it just liked fluttering paper.</p>
+`
+},
+{
+  title: "The Homework Machine That Did Everything Except the Homework",
+  author: "Khyati Srivastava",
+  slug: "the-homework-machine-that-did-everything-except-the-homework",
+  category: "Comedy",
+  emoji: "⚙️",
+  excerpt: "Built from spare parts and pure ambition, Dev's homework-automation machine successfully sorts pencils, sharpens erasers, and organizes his desk perfectly. It has never once done actual homework.",
+  created_at: "2027-04-10T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Ambitious Build</h3>
+<p>Dev spent three weekends building his "Homework-Bot 3000" from cardboard, an old fan motor, and a genuinely impressive amount of hot glue, fully expecting it to somehow, someway, do his math worksheet for him.</p>
+
+<h3>Chapter 2: Impressive, Just Not Useful</h3>
+<p>It didn't do a single math problem. It did, however, sort his pencils by color with startling efficiency, sharpen three erasers into oddly satisfying points, and reorganize his entire desk drawer twice, unprompted.</p>
+
+<h3>Chapter 3: A Different Kind of Success</h3>
+<p>His teacher, unimpressed by the missing homework but genuinely impressed by the machine itself, let him present it for the science fair instead — where it won second place for "most creatively pointless invention," a title Dev has proudly claimed ever since. He still does his own math homework. The machine still sorts pencils beautifully.</p>
+`
+},
+{
+  title: "The Costume Contest Judged by an Extremely Confused Baby",
+  author: "Khyati Srivastava",
+  slug: "the-costume-contest-judged-by-an-extremely-confused-baby",
+  category: "Comedy",
+  emoji: "🎃",
+  excerpt: "With the usual judge unavailable, the neighborhood costume contest gets handed to the only impartial party available: baby cousin Theo, who reacts to every costume with total, hilarious unpredictability.",
+  created_at: "2027-04-10T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Emergency Substitution</h3>
+<p>When the regular costume contest judge canceled last minute, someone jokingly suggested baby cousin Theo, ten months old and entirely unbiased, take his place. Nobody expected the suggestion to actually be adopted seriously.</p>
+
+<h3>Chapter 2: Unpredictable Judging</h3>
+<p>Theo's reactions proved gloriously random — bursting into delighted giggles at a simple cardboard robot costume, staring blankly at the elaborate dragon costume that had taken weeks to build, and reaching desperately for the plainest witch hat in the lineup.</p>
+
+<h3>Chapter 3: A Winner, Sort Of</h3>
+<p>The cardboard robot won by unanimous baby-giggle acclaim, its very proud seven-year-old creator accepting the trophy with genuine delight. The neighborhood has declared Theo the permanent judge for next year's contest too, on the condition he's old enough by then to at least try to look impartial.</p>
+`
+},
+{
+  title: "The Farmer's Daughter Who Bartered With the Wind",
+  author: "Khyati Srivastava",
+  slug: "the-farmers-daughter-who-bartered-with-the-wind",
+  category: "Fairytale",
+  emoji: "🌾",
+  excerpt: "When the wind refuses to turn the failing windmill, young Sable does the only thing she can think of: she sits down and negotiates with it directly, one honest complaint at a time.",
+  created_at: "2027-04-10T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Stubborn Stillness</h3>
+<p>The village windmill had gone still for three days straight, an unheard-of calm settling over a valley that relied on steady wind for both grain-grinding and irrigation. Sable, tired of waiting, climbed the hill and simply started talking to the empty air.</p>
+
+<h3>Chapter 2: A Surprising Reply</h3>
+<p>To her genuine shock, the wind answered — not in words exactly, but in shifting gusts that somehow carried meaning: it had grown tired, it said, of being taken for granted, blowing endlessly while nobody ever simply thanked it for the work.</p>
+
+<h3>Chapter 3: An Honest Trade</h3>
+<p>Sable promised, on behalf of the whole village, a proper thank-you ceremony each harvest from then on — genuine gratitude, spoken aloud, not just assumed. The wind picked up again within the hour. The village still holds its harvest thank-you every year, and the windmill, so far, has never gone still again.</p>
+`
+},
+{
+  title: "Old Maren's Empty Ending",
+  author: "Khyati Srivastava",
+  slug: "old-marens-empty-ending",
+  category: "Fairytale",
+  emoji: "📜",
+  excerpt: "The village storyteller has told every tale she knows so many times that her endings have started running dry mid-story. The children decide to help her find new ones together.",
+  created_at: "2027-04-10T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Story Left Hanging</h3>
+<p>Old Maren had told her tales so many times over the decades that, one evening, mid-story, she simply stopped — genuinely, honestly out of ending, the well of familiar conclusions run completely dry for the very first time.</p>
+
+<h3>Chapter 2: An Unusual Solution</h3>
+<p>Rather than send the disappointed children home, she asked them instead to finish it themselves, each child offering a piece of ending until the story concluded as a patchwork of a dozen young imaginations stitched together.</p>
+
+<h3>Chapter 3: A New Way of Telling</h3>
+<p>It became her new tradition after that — starting every tale herself, then handing the ending over to whoever was listening that night. Her stories never ran dry again. They simply became something bigger than one storyteller alone had ever managed on her own.</p>
+`
+},
+{
+  title: "The Kid Who Learned Confidence From a Karaoke Machine",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-confidence-from-a-karaoke-machine",
+  category: "Inspirational",
+  emoji: "🎤",
+  excerpt: "Too shy to speak up in class, Dev discovers an unlikely confidence builder in his cousin's karaoke machine — and slowly, one silly song at a time, brings that confidence back to real life.",
+  created_at: "2027-04-10T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Quiet Everywhere Else</h3>
+<p>Dev barely spoke above a whisper in class, terrified of being wrong in front of anyone. At his cousin's house, though, alone with a karaoke machine and no audience, he sang loud, off-key, and utterly unafraid.</p>
+
+<h3>Chapter 2: A Small Bridge</h3>
+<p>His cousin suggested, gently, singing in front of just her — one small, safe audience — as practice for something bigger. It took weeks before Dev could finish a song without his voice cracking from nerves in front of even one person.</p>
+
+<h3>Chapter 3: Speaking Up, For Real</h3>
+<p>By spring, Dev raised his hand in class for the first time all year, voice shaking but audible, answering a question he actually knew the answer to. It wasn't karaoke. It used exactly the same muscle he'd spent months quietly building, one silly song at a time.</p>
+`
+},
+{
+  title: "The Kid Who Turned Being Held Back a Grade Into Fuel",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-turned-being-held-back-a-grade-into-fuel",
+  category: "Inspirational",
+  emoji: "📚",
+  excerpt: "Held back a grade after a rough year, Marcus spends the summer convinced his life is basically over. What actually happens next surprises even him.",
+  created_at: "2027-04-10T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: The Worst News</h3>
+<p>Marcus heard the words "we think it's best you repeat the grade" and felt, for the rest of that summer, like his whole future had quietly ended before it even properly started, humiliated at the thought of watching his old classmates move ahead without him.</p>
+
+<h3>Chapter 2: A Fresh Start, Reluctantly</h3>
+<p>The new school year began with genuine dread, right up until Marcus realized something unexpected: this time, the material actually made sense, the confusion of last year's rushed foundation finally settling into real understanding.</p>
+
+<h3>Chapter 3: What He Built From It</h3>
+<p>By winter, Marcus was genuinely excelling for the first time in his academic life, helping classmates who were struggling the way he once had. He still remembers that terrible summer clearly. He's stopped calling it the worst thing that happened to him — these days, he calls it the year everything finally clicked.</p>
+`
+},
+{
+  title: "The Sibling Rivalry That Ended at the Hospital Waiting Room",
+  author: "Khyati Srivastava",
+  slug: "the-sibling-rivalry-that-ended-at-the-hospital-waiting-room",
+  category: "Drama",
+  emoji: "🏥",
+  excerpt: "Years of quiet sibling competition dissolve completely the night their younger brother is rushed to the hospital, leaving Priya and Dev with nothing left to compete over except who loves him more.",
+  created_at: "2027-04-10T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Old, Quiet Competition</h3>
+<p>Priya and Dev had spent years in a low-grade sibling rivalry neither ever fully admitted to — best grades, most attention, who Mom seemed to favor that particular week. It had simmered, mostly harmless, for their entire childhood.</p>
+
+<h3>Chapter 2: A Terrifying Night</h3>
+<p>Their younger brother's sudden appendicitis scare, and the anxious hospital waiting room hours that followed, made every old grievance between them feel instantly, completely irrelevant, both of them gripping the same nervous hands in the same uncomfortable chairs.</p>
+
+<h3>Chapter 3: What Actually Mattered</h3>
+<p>Their brother recovered fully within days, but something between Priya and Dev had shifted permanently in that waiting room — the old rivalry simply never fully returned. They still argue about small things. They've never once competed over who loves their brother more since. That question, they'd learned, never needed asking.</p>
+`
+},
+{
+  title: "The Understudy Costume That Never Quite Fit",
+  author: "Khyati Srivastava",
+  slug: "the-understudy-costume-that-never-quite-fit",
+  category: "Drama",
+  emoji: "👗",
+  excerpt: "Wearing a costume tailored for someone else's body, on a role she never expected to actually perform, Lena has to find her own version of a character she's only ever watched from the wings.",
+  created_at: "2027-04-10T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Costume Made for Someone Else</h3>
+<p>The dress had been tailored precisely for the lead actress, hemmed to her exact height, fitted to her exact frame — and now, with the lead sidelined by injury two days before opening, Lena had to wear it anyway, pinned and re-pinned to something close enough to fitting.</p>
+
+<h3>Chapter 2: Playing Someone Else's Role</h3>
+<p>She'd watched the lead rehearse this part for months from the wings, memorizing every gesture, every inflection — and found, once onstage herself, that copying it exactly felt hollow, like wearing a performance as ill-fitting as the dress.</p>
+
+<h3>Chapter 3: Making It Her Own</h3>
+<p>Somewhere in the second act, Lena stopped imitating and simply started performing the role her own way, gestures shifting to fit her, not the costume's original owner. The dress still didn't quite fit right by curtain call. Her performance, by then, fit perfectly.</p>
+`
+},
+{
+  title: "The Unsent Letters in the Shoebox",
+  author: "Khyati Srivastava",
+  slug: "the-unsent-letters-in-the-shoebox",
+  category: "Romance",
+  emoji: "💌",
+  excerpt: "Cleaning out her grandmother's attic, Priya finds a shoebox of unsent love letters addressed to a name she doesn't recognize — and decides, against everyone's advice, to try to deliver them anyway.",
+  created_at: "2027-04-10T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Shoebox of Secrets</h3>
+<p>Priya found it tucked behind old winter coats: two dozen letters, all addressed to a name she didn't recognize, all in her grandmother's careful handwriting, all — the postmarks made clear — never actually mailed.</p>
+
+<h3>Chapter 2: A Careful Investigation</h3>
+<p>Her family gently discouraged digging further, but Priya's curiosity won out, tracking the addressee through decades-old records to a retirement home three towns over, a man named Elias, still alive, still — impossibly — unaware these letters had ever been written.</p>
+
+<h3>Chapter 3: A Very Late Delivery</h3>
+<p>She delivered them in person, nervous and unsure if it was even her place to. Elias read the first one with trembling hands and quiet tears — a love, he admitted, he'd never known was returned, decades too late to change anything, but not too late, it turned out, to finally know.</p>
+`
+},
+{
+  title: "The Rival Bakers Who Fell for Each Other's Recipes",
+  author: "Khyati Srivastava",
+  slug: "the-rival-bakers-who-fell-for-each-others-recipes",
+  category: "Romance",
+  emoji: "🧁",
+  excerpt: "Two teen bakers, entered against each other in the county fair's junior division, keep sneaking tastes of each other's entries instead of guarding their own recipes properly.",
+  created_at: "2027-04-10T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Competing Entries</h3>
+<p>Farrah and Deshawn had both entered the county fair's junior baking division, technically rivals, though neither seemed particularly committed to acting like it — both spending more time admiring the other's cupcake technique than guarding their own.</p>
+
+<h3>Chapter 2: A Little Too Friendly</h3>
+<p>By the second day of prep, they'd traded frosting tips, swapped a secret ingredient or two, and generally behaved far less like competitors and far more like two people who'd rather be baking together than against each other.</p>
+
+<h3>Chapter 3: An Unusual Result</h3>
+<p>Neither won first place — a stricter competitor took the ribbon, technique flawless. Farrah and Deshawn, tied for a distant second, didn't seem to mind much at all. They'd already started planning their next baking project together, no competition attached this time.</p>
+`
+},
+{
+  title: "The Backyard Carnival That Charged in Bottle Caps",
+  author: "Khyati Srivastava",
+  slug: "the-backyard-carnival-that-charged-in-bottle-caps",
+  category: "Kids",
+  emoji: "🎡",
+  excerpt: "Four kids spend a whole summer building an elaborate backyard carnival, complete with games, prizes, and an economy that runs entirely on carefully hoarded bottle caps.",
+  created_at: "2027-04-11T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Ambitious Summer Project</h3>
+<p>What started as one kid's lemonade stand grew, over a long summer, into a full backyard carnival — a ring toss, a homemade beanbag game, and a "fortune teller" booth run by the neighborhood's most dramatic ten-year-old.</p>
+
+<h3>Chapter 2: An Entire Economy</h3>
+<p>Admission and prizes ran entirely on bottle caps, painstakingly collected over months, with an exchange rate the kids debated endlessly and adjusted almost weekly based on complicated, ever-shifting logic only they fully understood.</p>
+
+<h3>Chapter 3: Closing Weekend</h3>
+<p>The carnival ran for three full weekends before school started again, drawing nearly the whole neighborhood at its peak. The final bottle-cap tally was ceremonially "cashed in" for a group pizza night, funded generously by understanding parents. Planning for next summer's carnival has, reportedly, already begun.</p>
+`
+},
+{
+  title: "The Kid Who Ran a Weather Forecast for Recess",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-ran-a-weather-forecast-for-recess",
+  category: "Kids",
+  emoji: "🌦️",
+  excerpt: "Convinced the school's official forecast was unreliable, nine-year-old Theo starts his own daily recess weather report, complete with a hand-drawn chart and surprisingly solid accuracy.",
+  created_at: "2027-04-11T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unreliable Forecast</h3>
+<p>Theo had been burned too many times by "sunny" forecasts that turned into rained-out recesses, and finally decided he'd trust his own careful cloud-watching more than the weather app his teacher checked each morning.</p>
+
+<h3>Chapter 2: Building a System</h3>
+<p>He started a hand-drawn daily chart taped to the classroom door, predicting recess conditions based on cloud shapes, wind direction, and — his personal favorite indicator — how his knee "felt" that morning, a system he took with total seriousness.</p>
+
+<h3>Chapter 3: Surprisingly Reliable</h3>
+<p>By spring, Theo's forecasts had genuinely outperformed the app more often than not, earning him a small, devoted following of classmates who checked his chart before deciding whether to bring a jacket outside. His teacher, impressed despite herself, gave him official "Recess Weather Officer" status. Theo takes the job very seriously.</p>
+`
+},
+{
+  title: "The Radio Station That Plays Only One Song",
+  author: "Khyati Srivastava",
+  slug: "the-radio-station-that-plays-only-one-song",
+  category: "Horror",
+  emoji: "📻",
+  excerpt: "A forgotten frequency at the very end of the dial plays the same unfamiliar song on a loop, day and night, for as long as anyone's checked. Nobody has ever heard it announced or explained.",
+  created_at: "2027-04-11T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Strange Discovery</h3>
+<p>Nico found it scanning through static on an old car radio, right at the very end of the dial where no station should have existed: a quiet, unfamiliar song, looping seamlessly, no DJ, no ads, no station identification of any kind.</p>
+
+<h3>Chapter 2: Checking Back</h3>
+<p>He tuned back in over the following weeks — same time, different days, even years apart when he found the old radio again in his parents' garage — and the same song played every single time, never once interrupted, never once explained.</p>
+
+<h3>Chapter 3: A Song With No Origin</h3>
+<p>He's never been able to identify it online, hum it accurately enough for a search engine, or find anyone else who's heard it. The frequency still plays, faithfully, whenever he checks. Nico has mostly stopped trying to solve it. He just tunes in sometimes, quietly, and lets it play.</p>
+`
+},
+{
+  title: "The Shortcut Through the Woods That Takes Longer Now",
+  author: "Khyati Srivastava",
+  slug: "the-shortcut-through-the-woods-that-takes-longer-now",
+  category: "Horror",
+  emoji: "🌲",
+  excerpt: "The old shortcut through Miller's Woods used to save ten minutes off the walk home. Lately, no matter how fast you walk, it somehow takes exactly twenty minutes longer than the long way instead.",
+  created_at: "2027-04-11T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Reliable Shortcut, Once</h3>
+<p>The path through Miller's Woods had reliably saved Cass ten minutes off her walk home for years, a familiar, unremarkable route she'd taken without a second thought — until, one ordinary Thursday, it started taking noticeably longer instead.</p>
+
+<h3>Chapter 2: Testing It, Carefully</h3>
+<p>She timed it deliberately after that, walking at her normal pace with a stopwatch running, and got the same baffling result three separate times: twenty minutes longer than the main road, despite covering what should have been a shorter distance.</p>
+
+<h3>Chapter 3: Taking the Long Way</h3>
+<p>She hasn't used the shortcut since, choosing the longer, well-lit main road even though it makes her later getting home. She's never found a rational explanation, and has decided, firmly, that she doesn't especially want to look for one. Some shortcuts, she figures, stop being worth the time they claim to save.</p>
+`
+},
+{
+  title: "The Library Whisper Where Nobody's Supposed to Talk",
+  author: "Khyati Srivastava",
+  slug: "the-library-whisper-where-nobodys-supposed-to-talk",
+  category: "Poetry",
+  emoji: "🤫",
+  excerpt: "A quiet poem about the hush of a library, and all the loud, unspoken things that get said anyway in the space between whispers and turning pages.",
+  created_at: "2027-04-11T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Library Whisper Where Nobody's Supposed to Talk</h3>
+<p>Shh, the sign says, quiet please,<br/>
+but listen closer, past the hush and ease —<br/>
+a page turns loud as any shout,<br/>
+a pencil scratches thoughts throughout.</p>
+
+<p>Someone laughs behind a hand,<br/>
+someone sighs, not quite as planned,<br/>
+a chair scrapes back, a whisper spreads,<br/>
+words too big for library heads.</p>
+
+<p>The quiet here is never truly still,<br/>
+it hums with everything we spill<br/>
+between the shelves, between the lines,<br/>
+in all the ways that hush confines.</p>
+
+<p>So hush, and listen — even quiet talks,<br/>
+even silence sometimes walks<br/>
+right up and whispers in your ear<br/>
+everything too loud to say out here.</p>
+`
+},
+{
+  title: "The Shoes by the Door, Waiting to Be Filled",
+  author: "Khyati Srivastava",
+  slug: "the-shoes-by-the-door-waiting-to-be-filled",
+  category: "Poetry",
+  emoji: "👟",
+  excerpt: "A tender poem about the row of shoes by the front door, each pair a small, quiet map of a family's whole busy, growing life.",
+  created_at: "2027-04-11T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Shoes by the Door, Waiting to Be Filled</h3>
+<p>Little sneakers, scuffed and small,<br/>
+worn from every backyard fall,<br/>
+big boots muddy from the rain,<br/>
+slippers waiting, not quite plain.</p>
+
+<p>Each pair tells a piece of the day,<br/>
+where we ran, where we chose to stay,<br/>
+a whole family's story, side by side,<br/>
+lined up quiet by the door outside.</p>
+
+<p>Someday these small shoes won't fit anymore,<br/>
+new ones will wait beside the door,<br/>
+but I'll remember this exact size,<br/>
+this exact mess of muddy goodbyes.</p>
+
+<p>So kick them off, leave them where they land,<br/>
+a whole small life, close at hand,<br/>
+each pair of shoes a chapter, still —<br/>
+waiting for tomorrow's feet to fill.</p>
+`
+},
 ];
