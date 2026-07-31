@@ -16834,4 +16834,574 @@ some of the sweetest words that exist<br/>
 are the ordinary ones we're glad to have.</p>
 `
 },
+{
+  title: "The Innkeeper Who Served Second Sleep",
+  author: "Khyati Srivastava",
+  slug: "the-innkeeper-who-served-second-sleep",
+  category: "Fantasy",
+  emoji: "🛌",
+  excerpt: "At the Wayfarer's Rest, tired travelers can pay for a rare, dreamless second sleep that fixes exactly one regret. The innkeeper has never once used the room herself.",
+  created_at: "2027-04-09T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Rare Kind of Rest</h3>
+<p>The Wayfarer's Rest had one room set apart from the rest, offered rarely and never advertised: a "second sleep," dreamless and precise, that let a traveler wake having quietly mended exactly one regret from their journey so far.</p>
+
+<h3>Chapter 2: A Weary Traveler</h3>
+<p>A merchant named Corwin, haunted by a harsh word he'd said to his son before leaving home, finally paid the steep price and slept the strange sleep, waking with the memory softened just enough to write the apology he'd been avoiding for weeks.</p>
+
+<h3>Chapter 3: The Innkeeper's Secret</h3>
+<p>Corwin, curious, finally asked the innkeeper, Marta, why she never used the room herself despite owning it for decades. "Some regrets," she said quietly, "you're supposed to carry. Mine remind me why this room matters." She'd built her whole inn around a comfort she'd chosen, deliberately, never to take for herself.</p>
+`
+},
+{
+  title: "The Bell That Only Rings for Truth",
+  author: "Khyati Srivastava",
+  slug: "the-bell-that-only-rings-for-truth",
+  category: "Fantasy",
+  emoji: "🔔",
+  excerpt: "The town square's old bell hasn't rung on its own in generations. When it starts ringing again, right in the middle of the mayor's speech, the whole town pays very close attention.",
+  created_at: "2027-04-09T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Legend, Mostly Forgotten</h3>
+<p>The old bell in the town square was said, generations ago, to ring by itself whenever an important truth was spoken aloud nearby — a legend most townsfolk had long dismissed as a nice old story, nothing more.</p>
+
+<h3>Chapter 2: An Unscheduled Ring</h3>
+<p>It rang, unmistakably, in the middle of the mayor's re-election speech, right as he promised — falsely, as records later proved — that he'd never raised taxes during his term. The whole square went silent, staring at a bell that hadn't moved in decades.</p>
+
+<h3>Chapter 3: A Town Pays Attention</h3>
+<p>Whether it was magic, coincidence, or a very well-timed gust of wind, nobody could prove. The mayor lost the election regardless. And for months after, every speech in that square came delivered a little more carefully, everyone half-listening for a bell that might, or might not, still be paying attention.</p>
+`
+},
+{
+  title: "The Signal From a Star That No Longer Exists",
+  author: "Khyati Srivastava",
+  slug: "the-signal-from-a-star-that-no-longer-exists",
+  category: "Sci-Fi",
+  emoji: "⭐",
+  excerpt: "A deep-space observatory picks up a clear, structured radio signal from a star that, according to every calculation, burned out thousands of years ago.",
+  created_at: "2027-04-09T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Impossible Signal</h3>
+<p>The observatory's automated systems flagged it first: a clear, structured radio pulse arriving from the exact coordinates of a star that had gone supernova and collapsed thousands of years before humans invented radio at all.</p>
+
+<h3>Chapter 2: Racing the Light</h3>
+<p>Young researcher Amaya realized the explanation was simpler than alien contact, and somehow more astonishing: the signal had left that star before it died, traveling all this time, only now finally reaching a planet with anyone able to listen.</p>
+
+<h3>Chapter 3: A Message From the Past</h3>
+<p>Decoded slowly over months, the signal turned out to be nothing more dramatic than a simple mathematical sequence — likely a natural pulsar rhythm, not intelligent life at all. Still, Amaya found herself oddly moved by it: a message, real or not, that had outlived the very star that sent it, arriving faithfully across thousands of years just to be heard once.</p>
+`
+},
+{
+  title: "The Robot Built to Lose Every Game",
+  author: "Khyati Srivastava",
+  slug: "the-robot-built-to-lose-every-game",
+  category: "Sci-Fi",
+  emoji: "🎮",
+  excerpt: "Designed specifically to always lose gracefully, the arcade's practice-bot has never once won a match in ten years. Then a software update accidentally switches on its win condition.",
+  created_at: "2027-04-09T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Built to Lose</h3>
+<p>PIXEL-3 had been designed for one purpose only: to give arcade beginners a confidence-building practice opponent, deliberately losing every single match, its win-capability locked away and never once activated in ten full years of service.</p>
+
+<h3>Chapter 2: An Accidental Update</h3>
+<p>A routine software patch, meant only to fix a minor graphics glitch, accidentally toggled the long-dormant win condition back on — and PIXEL-3, for the first time in its existence, actually tried to win its next match.</p>
+
+<h3>Chapter 3: A Strange New Purpose</h3>
+<p>It beat a stunned twelve-year-old regular named Cass decisively, three rounds straight, something neither of them expected. Rather than being upset, Cass came back the very next day demanding a rematch — genuinely thrilled to finally have real competition. The arcade owner, watching, decided not to fix the "bug" after all.</p>
+`
+},
+{
+  title: "The Case of the Perfectly Aligned Shadows",
+  author: "Khyati Srivastava",
+  slug: "the-case-of-the-perfectly-aligned-shadows",
+  category: "Mystery",
+  emoji: "🌗",
+  excerpt: "Once a year, every shadow on Elm Street points in the exact same direction at the exact same moment — even ones that shouldn't be able to. A young scientist finally sets out to measure why.",
+  created_at: "2027-04-09T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Yearly Oddity</h3>
+<p>Once a year, for exactly one strange minute at dusk, every shadow on Elm Street aligned in the same direction — trees, fences, even shadows that should have been cast at slightly different angles given the street's uneven terrain.</p>
+
+<h3>Chapter 2: Bringing Real Instruments</h3>
+<p>Twelve-year-old aspiring scientist Priti set up borrowed measuring equipment along the whole block, determined to catch actual data rather than just take the neighborhood's word for the phenomenon.</p>
+
+<h3>Chapter 3: A Real, Ordinary Answer</h3>
+<p>Her measurements confirmed it precisely: the street's unusual layout combined with that one specific date's sun angle created a rare geometric alignment, explainable entirely by basic physics, no magic required. Priti wrote it up as her science fair project and won first place — proof, her teacher said, that the most satisfying mysteries were often the ones you could actually solve.</p>
+`
+},
+{
+  title: "Who Rearranged the Chess Club Trophy Case?",
+  author: "Khyati Srivastava",
+  slug: "who-rearranged-the-chess-club-trophy-case",
+  category: "Mystery",
+  emoji: "🏆",
+  excerpt: "Every trophy in the chess club's display case has been quietly rearranged — not stolen, not damaged, just reordered by year instead of alphabetically. The club president wants answers.",
+  created_at: "2027-04-09T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Suspiciously Tidy Change</h3>
+<p>Club president Farah noticed it Monday morning: every trophy in the display case, alphabetized for years by winner's last name, now stood arranged chronologically by year instead — nothing missing, nothing damaged, just quietly reorganized overnight.</p>
+
+<h3>Chapter 2: An Investigation</h3>
+<p>She interviewed the whole club, one by one, certain someone had a reason for the change, until the school's oldest janitor, Mr. Ubel, admitted sheepishly that he'd simply thought chronological order told a "better story" while dusting the case last week.</p>
+
+<h3>Chapter 3: Keeping the Change</h3>
+<p>Farah, initially annoyed, actually looked at the case his new way and found she agreed — watching the club's trophies grow year over year told a far more interesting story than alphabetical order ever had. The case has stayed chronological ever since, with a small handwritten credit taped inside: <em>Reorganized by Mr. Ubel, who was right.</em></p>
+`
+},
+{
+  title: "The Bike Path That Nobody Finishes in One Try",
+  author: "Khyati Srivastava",
+  slug: "the-bike-path-that-nobody-finishes-in-one-try",
+  category: "Adventure",
+  emoji: "🚴",
+  excerpt: "The old quarry bike trail has a local reputation: nobody finishes it on their first attempt. Determined to be the exception, Priya sets out with a plan — and a healthy dose of stubbornness.",
+  created_at: "2027-04-09T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Local Reputation</h3>
+<p>Every kid at school agreed on one thing about the old quarry trail: nobody finished it their first try, whether from the brutal middle climb, the loose gravel switchbacks, or sheer exhaustion. Priya, naturally, decided this meant her.</p>
+
+<h3>Chapter 2: The Middle Climb</h3>
+<p>She made it further than most, past the switchbacks, past the halfway marker — right up until the infamous middle climb, where her legs simply gave out fifty feet from the top, exactly where legend said they would.</p>
+
+<h3>Chapter 3: A Second Try, Properly Prepared</h3>
+<p>Rather than treat it as failure, she treated it as data — training specifically for that climb over the following month before returning, better prepared, and finally cresting it on her second attempt. She didn't become the trail's exception after all. She became something better: proof that the second try, done right, mattered more than the myth of the first.</p>
+`
+},
+{
+  title: "The Storm Chasers of Willow Ridge (Ages 11 and 9)",
+  author: "Khyati Srivastava",
+  slug: "the-storm-chasers-of-willow-ridge-ages-11-and-9",
+  category: "Adventure",
+  emoji: "🌪️",
+  excerpt: "Armed with a rain gauge, a notebook, and their dad's old weather radio, two siblings set out to document every storm that rolls through Willow Ridge this summer — strictly from the safety of the porch.",
+  created_at: "2027-04-09T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Summer Project</h3>
+<p>Ronan, eleven, and his sister Mabel, nine, declared themselves official Willow Ridge Storm Chasers, armed with a secondhand rain gauge, a shared notebook, and one very strict parental rule: observation from the covered porch only, no exceptions.</p>
+
+<h3>Chapter 2: Documenting Everything</h3>
+<p>They tracked wind speed by guesswork, rainfall by gauge, and thunder-to-lightning gaps with genuine scientific seriousness, filling their notebook with careful, if occasionally very approximate, weather data all summer long.</p>
+
+<h3>Chapter 3: A Real Discovery</h3>
+<p>Their careful records ended up catching something real: a pattern showing storms consistently arriving twenty minutes earlier than the official forecast predicted, data solid enough that their dad forwarded it, only half-joking, to the local weather station. The station wrote back thanking them properly. Ronan and Mabel have never been prouder of a porch in their lives.</p>
+`
+},
+{
+  title: "Biscuit the Pig Who Thought He Was a Dog",
+  author: "Khyati Srivastava",
+  slug: "biscuit-the-pig-who-thought-he-was-a-dog",
+  category: "Animals",
+  emoji: "🐖",
+  excerpt: "Raised alongside three dogs since birth, Biscuit the pig fetches, sits on command, and genuinely does not seem to know he's not one of them. The neighborhood dogs have mixed feelings about this.",
+  created_at: "2027-04-09T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Raised Among Dogs</h3>
+<p>Biscuit had been the runt of his litter, bottle-fed and raised in the Hendersons' house alongside three dogs since birth, and had, somewhere along the way, apparently concluded he was one of them too.</p>
+
+<h3>Chapter 2: Learning the Tricks</h3>
+<p>He fetched tennis balls with genuine enthusiasm, sat obediently on command, and once, memorably, tried and failed spectacularly to catch a frisbee mid-air, undeterred by his obvious lack of dog-shaped aerodynamics.</p>
+
+<h3>Chapter 3: An Identity Crisis, Mostly Resolved</h3>
+<p>The neighborhood dogs seemed to accept him readily enough at the local dog park, though a few visiting dogs did double takes worth documenting. Biscuit, for his part, remains blissfully confident in his doghood, tail — such as it is — wagging enthusiastically at every walk. The Hendersons have stopped trying to correct him.</p>
+`
+},
+{
+  title: "The Crow Who Went on Strike for Better Snacks",
+  author: "Khyati Srivastava",
+  slug: "the-crow-who-went-on-strike-for-better-snacks",
+  category: "Animals",
+  emoji: "🐦‍⬛",
+  excerpt: "A neighborhood crow, unimpressed with the current quality of offered peanuts, has started leaving pointed 'complaints' — small unwanted objects — until his snack standards are properly met.",
+  created_at: "2027-04-09T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Discerning Palate</h3>
+<p>The crow, nicknamed Duke by ten-year-old Amir, had been receiving daily peanuts happily for months — until Amir switched brands, and Duke's opinion on the change was made unmistakably, repeatedly clear.</p>
+
+<h3>Chapter 2: A Pointed Protest</h3>
+<p>Instead of his usual small "gifts" of bottle caps and shiny buttons, Duke began leaving distinctly unenthusiastic offerings — a soggy leaf, a single unimpressive pebble — clearly, deliberately downgraded to match his opinion of the new peanuts.</p>
+
+<h3>Chapter 3: Negotiations Succeed</h3>
+<p>Amir, more amused than annoyed, switched back to the original peanut brand within the week — and Duke's gifts improved almost immediately, a genuinely shiny marble appearing the very next morning. Amir remains fairly certain he just lost a negotiation to a bird, and finds he doesn't mind one bit.</p>
+`
+},
+{
+  title: "The World's Most Overqualified Lemonade Taste Test",
+  author: "Khyati Srivastava",
+  slug: "the-worlds-most-overqualified-lemonade-taste-test",
+  category: "Comedy",
+  emoji: "🍋",
+  excerpt: "Dad decides the neighborhood lemonade stand needs a 'proper professional review,' complete with tasting notes, a rating scale, and entirely unnecessary levels of seriousness.",
+  created_at: "2027-04-09T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unnecessary Review</h3>
+<p>What should have been a simple fifty-cent purchase turned, in Dad's hands, into a full performance: swirling the lemonade thoughtfully, holding it up to the light, and announcing "notes of citrus, with a bold, confident sweetness" to a very confused eight-year-old vendor.</p>
+
+<h3>Chapter 2: A Rating Scale Emerges</h3>
+<p>He produced an actual index card with a ten-point rating scale, scoring categories including "presentation," "temperature consistency," and, somewhat mysteriously, "vibes," while the neighborhood kids gathered to watch the spectacle unfold.</p>
+
+<h3>Chapter 3: A Five-Star Review, Eventually</h3>
+<p>He awarded the stand a final score of "9.5, docked half a point for insufficient ice," presented with a hand-drawn certificate the young vendor still has taped to her lemonade stand today. Word spread. Dad has since been "hired" as official taste tester for three other neighborhood stands, entirely unpaid, entirely delighted about it.</p>
+`
+},
+{
+  title: "The Great Family Trivia Night Rivalry",
+  author: "Khyati Srivastava",
+  slug: "the-great-family-trivia-night-rivalry",
+  category: "Comedy",
+  emoji: "🧠",
+  excerpt: "What started as a friendly family trivia night has escalated, over three years, into an absurdly competitive tradition complete with team names, trash talk, and one extremely serious homemade trophy.",
+  created_at: "2027-04-09T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Friendly Beginning</h3>
+<p>The first family trivia night was genuinely casual — index cards, a bag of chips, nobody keeping strict score. That lasted exactly one round before Uncle Desmond's team lost by a single point and demanded, loudly, a formal rematch.</p>
+
+<h3>Chapter 2: Full Escalation</h3>
+<p>Three years later, trivia night involves official team names ("The Fact Checkers" versus "Quiz Kid Nation"), a strict buzzer system built from a doorbell, and pre-game trash talk that would embarrass professional athletes, all over a game meant to be fun.</p>
+
+<h3>Chapter 3: The Trophy</h3>
+<p>The winning team takes home an actual trophy, cobbled together from a bowling trophy base and a plastic dinosaur, displayed prominently in whoever's house won until the next month's rematch. Nobody remembers exactly when this got so serious. Nobody, notably, wants to stop either.</p>
+`
+},
+{
+  title: "The Well-Meaning Curse of the Forgetful Wizard",
+  author: "Khyati Srivastava",
+  slug: "the-well-meaning-curse-of-the-forgetful-wizard",
+  category: "Fairytale",
+  emoji: "🧙",
+  excerpt: "The wizard meant to bless the village with endless good fortune. What he actually cast, thanks to one mispronounced word, was a spell that makes everyone extremely, chronically polite instead.",
+  created_at: "2027-04-09T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Well-Intentioned Spell</h3>
+<p>Old Wizard Fenwick meant to bless the village with good fortune as a retirement gift, but mispronounced a single crucial syllable, casting instead a spell that made every villager compulsively, extravagantly polite about absolutely everything.</p>
+
+<h3>Chapter 2: Chaos, Politely</h3>
+<p>Arguments dissolved into competing apologies. Market negotiations took three times as long, both parties insisting the other take the better deal. A minor kitchen fire got extinguished forty minutes late because everyone kept insisting someone else handle the bucket first.</p>
+
+<h3>Chapter 3: An Imperfect Fix</h3>
+<p>Fenwick, mortified, worked for a week to reverse it, only managing to dial the effect down to "reasonably courteous" rather than remove it entirely. The village, to their own surprise, decided they liked the milder version enough to keep it. Market day has never run more smoothly, even if it does still take an extra ten minutes of mutual insistence.</p>
+`
+},
+{
+  title: "The Giant Who Collected Tiny Kindnesses",
+  author: "Khyati Srivastava",
+  slug: "the-giant-who-collected-tiny-kindnesses",
+  category: "Fairytale",
+  emoji: "🫙",
+  excerpt: "Feared for his size, the giant on the mountain has actually spent decades collecting small acts of kindness in glass jars — proof, he says, that the villages below are worth protecting.",
+  created_at: "2027-04-09T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Feared Neighbor</h3>
+<p>The giant on Mount Halloway had been feared by the valley villages for generations, blamed for every unexplained landslide and missing livestock, though no one had actually spoken to him directly in living memory.</p>
+
+<h3>Chapter 2: A Brave Visit</h3>
+<p>Young Tam, more curious than afraid, finally climbed up to see for herself and found not a monster but a lonely old giant surrounded by shelves of small glass jars, each one, he explained, holding a tiny act of kindness he'd witnessed from the mountain over the decades.</p>
+
+<h3>Chapter 3: Proof Worth Keeping</h3>
+<p>He'd collected them, he admitted, as reassurance during hard years — proof the villages below deserved protecting, whenever his own doubts crept in. Tam brought the story back down the mountain, and the valley's fear slowly turned to gratitude. The giant still collects his jars. He has considerably more visitors now.</p>
+`
+},
+{
+  title: "The Kid Who Turned Being Ignored Into a Superpower",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-turned-being-ignored-into-a-superpower",
+  category: "Inspirational",
+  emoji: "👀",
+  excerpt: "Quiet, unnoticed Ines has spent years feeling invisible in a loud family and a loud classroom. She finally finds out what all that quiet observing was actually good for.",
+  created_at: "2027-04-09T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: The Quiet One</h3>
+<p>Ines had spent years feeling like the invisible middle child in a loud family of five, and the overlooked quiet kid in an even louder classroom — always noticing everything, rarely noticed herself.</p>
+
+<h3>Chapter 2: What All That Noticing Built</h3>
+<p>Years of quietly paying close attention had made her genuinely excellent at spotting things other people missed — who was struggling before they said anything, which classmate's story didn't quite add up, small details everyone else talked right past.</p>
+
+<h3>Chapter 3: A Skill Finally Recognized</h3>
+<p>When a school fundraiser's numbers didn't balance, it was Ines, sitting quietly in the back, who spotted the simple accounting error nobody else had caught. Her teacher publicly credited her sharp eye in front of the whole class. Ines didn't become loud overnight. She just finally understood that quiet noticing had been worth something all along.</p>
+`
+},
+{
+  title: "The Coach Who Stopped Calling Every Play",
+  author: "Khyati Srivastava",
+  slug: "the-coach-who-stopped-calling-every-play",
+  category: "Inspirational",
+  emoji: "🏈",
+  excerpt: "Realizing he's been calling every play instead of letting his team think for themselves, Coach Reyes tries an unusual experiment: benching his own voice for an entire practice.",
+  created_at: "2027-04-09T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Hard Realization</h3>
+<p>Coach Reyes noticed it during a game his team nearly lost: the moment he stopped shouting instructions for thirty seconds, his players froze, waiting for direction instead of trusting their own read of the field.</p>
+
+<h3>Chapter 2: A Silent Practice</h3>
+<p>The next practice, he announced an experiment: he'd only speak during actual safety concerns, letting the team call their own plays and make their own mistakes without his constant narration guiding every decision.</p>
+
+<h3>Chapter 3: What Silence Taught</h3>
+<p>It was messy at first, genuinely chaotic in places — but by the end of practice, his players were talking to each other on the field for the first time all season, actually thinking instead of just executing his instructions. Coach Reyes started talking again the following week, just noticeably less. His team, he noticed, kept talking to each other anyway.</p>
+`
+},
+{
+  title: "The Twins Who Split the Talent Right Down the Middle",
+  author: "Khyati Srivastava",
+  slug: "the-twins-who-split-the-talent-right-down-the-middle",
+  category: "Drama",
+  emoji: "🎭",
+  excerpt: "One twin got the singing voice. The other got the acting chops. When the school musical needs both in one role, Ines and Iris have to figure out how to actually share it.",
+  created_at: "2027-04-09T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Two Very Different Talents</h3>
+<p>Ines could sing like nothing else in the school. Iris, her identical twin, couldn't carry a tune but could act circles around anyone in the drama department. Neither had ever needed to compete for the same role — until the fall musical's lead required both skills equally.</p>
+
+<h3>Chapter 2: An Awkward Solution</h3>
+<p>The director's compromise, splitting the role between them for alternating performances, felt clumsy and uncomfortable to both twins at first, each privately convinced audiences would notice — and mind — the difference.</p>
+
+<h3>Chapter 3: An Unexpected Success</h3>
+<p>By opening week, audiences didn't mind at all — some even came back specifically to see both versions, delighted by the subtle differences each twin brought to the same character. Ines and Iris, initially rivals over one role, ended up prouder of each other's version than their own. They've shared every role since.</p>
+`
+},
+{
+  title: "The Last Week Before the Move",
+  author: "Khyati Srivastava",
+  slug: "the-last-week-before-the-move",
+  category: "Drama",
+  emoji: "📦",
+  excerpt: "With one week left before her family moves across the country, Sana tries to fit an entire childhood's worth of goodbyes into seven days that keep slipping through her fingers.",
+  created_at: "2027-04-09T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Seven Days Left</h3>
+<p>Sana had known about the move for months, but it wasn't until the boxes started actually appearing in the living room that seven days suddenly felt impossibly small for everything she still needed to do — every friend to see, every place to visit one last time.</p>
+
+<h3>Chapter 2: A List Too Long</h3>
+<p>She made a list of everyone and everywhere that mattered and quickly realized, with rising panic, that seven days simply wasn't enough time to properly say goodbye to an entire childhood's worth of people and places.</p>
+
+<h3>Chapter 3: Choosing What Mattered Most</h3>
+<p>Her best friend Talia helped her narrow it down, gently, to what actually mattered rather than everything — a last sleepover, a last walk to their old elementary school, a last sunset from their favorite hill. It wasn't everything on the original list. It turned out to be exactly enough.</p>
+`
+},
+{
+  title: "The Handwritten Note in a Library Book",
+  author: "Khyati Srivastava",
+  slug: "the-handwritten-note-in-a-library-book",
+  category: "Romance",
+  emoji: "📚",
+  excerpt: "Tucked into a library book's last page, a stranger's note asks whoever finds it to write back in the margins. Two strangers end up trading an entire secret conversation, one checkout at a time.",
+  created_at: "2027-04-09T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Note on the Last Page</h3>
+<p>Wren found it tucked into the back of a library novel: a short handwritten note reading, simply, <em>If you're reading this and liked the book, write back here. — a fellow reader</em>. She wrote back before returning it, mostly on impulse.</p>
+
+<h3>Chapter 2: A Slow Conversation</h3>
+<p>Months passed before the book came back to her again, same handwriting, a genuine reply waiting in the margin. They kept it going that way — an entire correspondence built one library checkout cycle at a time, neither knowing the other's name.</p>
+
+<h3>Chapter 3: Meeting Properly</h3>
+<p>It was Wren who finally suggested, in the margin of book number six, that they actually meet at the library in person. A boy named Kestrel showed up, nervous and grinning, holding the very book they'd been writing in for a year. They still write in margins sometimes. Now they just also talk out loud.</p>
+`
+},
+{
+  title: "The Carpool That Became the Best Part of the Week",
+  author: "Khyati Srivastava",
+  slug: "the-carpool-that-became-the-best-part-of-the-week",
+  category: "Romance",
+  emoji: "🚗",
+  excerpt: "Assigned to the same carpool purely by geography, Dev and Priya spend three months of ten-minute drives slowly turning small talk into something neither wants to admit they look forward to.",
+  created_at: "2027-04-09T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Assigned Arrangement</h3>
+<p>Dev and Priya's carpool was purely a matter of geography — same street, same school, same parents deciding it made sense to share rides. Neither had expected the ten-minute drive to become the actual highlight of their week.</p>
+
+<h3>Chapter 2: Small Talk Grows</h3>
+<p>What started as polite silence slowly filled with real conversation — favorite songs debated, bad school cafeteria food mocked together, small honest things neither shared with anyone else quite the same way.</p>
+
+<h3>Chapter 3: Admitting It</h3>
+<p>It was Dev who finally admitted, on an ordinary Tuesday drive, that he'd started timing his mornings around making sure he never missed their carpool. Priya laughed, relieved. "Me too," she said. "Every single day." The carpool arrangement hasn't changed. Everything about how they feel driving it has.</p>
+`
+},
+{
+  title: "The Great Pillow Fort Trading Company",
+  author: "Khyati Srivastava",
+  slug: "the-great-pillow-fort-trading-company",
+  category: "Kids",
+  emoji: "🛏️",
+  excerpt: "Two siblings, competing for the best blanket fort, accidentally invent an entire pillow-and-blanket trading economy between their two rival forts, complete with exchange rates.",
+  created_at: "2027-04-09T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Two Rival Forts</h3>
+<p>Siblings Owen and Bea built competing blanket forts on opposite sides of the living room, each fiercely proud of their own construction, each convinced their fort was objectively superior in every measurable way.</p>
+
+<h3>Chapter 2: An Accidental Economy</h3>
+<p>When Owen's fort ran short of pillows and Bea's ran short of good blankets, a trade negotiation began — one throw pillow for two hand towels, a favorite stuffed animal loaned temporarily for premium blanket access — that quickly ballooned into a genuinely complex bartering system.</p>
+
+<h3>Chapter 3: A Merger, Eventually</h3>
+<p>By dinnertime, the trading had grown so elaborate that combining the two forts into one mega-fort simply made more logistical sense than continuing separate negotiations. Owen and Bea's parents found them that evening, co-CEOs of a single enormous blanket structure, having apparently forgotten they were ever rivals at all.</p>
+`
+},
+{
+  title: "The Kid Who Started a Petition for Longer Recess",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-started-a-petition-for-longer-recess",
+  category: "Kids",
+  emoji: "✍️",
+  excerpt: "Fed up with recess ending right when the good games get started, nine-year-old Cassie starts an actual, official petition — signatures, data, and a surprisingly persuasive presentation included.",
+  created_at: "2027-04-09T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Frustrating Pattern</h3>
+<p>Cassie had noticed it for weeks: recess always ended right when a good tag game or kickball match was finally getting interesting, cut short by a bell that seemed to have suspiciously perfect timing for ruining fun.</p>
+
+<h3>Chapter 2: Building a Real Case</h3>
+<p>Rather than just complain, she drafted an actual petition, gathered eighty-seven signatures from her grade, and even tracked, over two weeks, exactly how many games got interrupted mid-play — real data, carefully collected.</p>
+
+<h3>Chapter 3: A Genuine Win</h3>
+<p>Presenting it to the principal, nervous but prepared, Cassie won a genuine five extra minutes added to recess starting the following month. She's since become the unofficial student representative for playground concerns, currently working on her second petition: better foursquare balls.</p>
+`
+},
+{
+  title: "The Streetlight That Flickers in Morse Code",
+  author: "Khyati Srivastava",
+  slug: "the-streetlight-that-flickers-in-morse-code",
+  category: "Horror",
+  emoji: "🚨",
+  excerpt: "The streetlight outside Dara's window has been flickering in an oddly rhythmic pattern for weeks. It takes her far too long to realize it's actually spelling something out.",
+  created_at: "2027-04-10T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Odd Rhythm</h3>
+<p>The streetlight outside Dara's bedroom window had flickered irregularly for weeks, a pattern she'd dismissed as faulty wiring until a bored night spent actually counting the flashes revealed something distinctly non-random about the timing.</p>
+
+<h3>Chapter 2: Learning to Listen</h3>
+<p>A quick internet search on Morse code and three more nights of careful, patient counting finally cracked it: short-short-long, long-short, over and over, spelling the same two words endlessly through the dark.</p>
+
+<h3>Chapter 3: What It Spelled</h3>
+<p>The message, translated, read simply: <em>LOOK UP.</em> Dara has looked up every night since, flashlight and notebook ready, and has never once figured out what she's actually supposed to be looking for. The streetlight keeps flickering the same message regardless. She hasn't stopped watching yet.</p>
+`
+},
+{
+  title: "The Mirror in the Hallway Runs Five Seconds Behind",
+  author: "Khyati Srivastava",
+  slug: "the-mirror-in-the-hallway-runs-five-seconds-behind",
+  category: "Horror",
+  emoji: "🪞",
+  excerpt: "The antique hallway mirror shows your reflection with a strange five-second delay. Mostly, it's just unsettling. Then, one night, the reflection moves before Priya does.",
+  created_at: "2027-04-10T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Slight Delay</h3>
+<p>The antique mirror in the hallway had always been strange — reflections lagging roughly five seconds behind real movement, a quirk the family attributed to old, imperfect glass rather than anything worth worrying about.</p>
+
+<h3>Chapter 2: A Broken Pattern</h3>
+<p>Priya noticed the shift on an ordinary Tuesday night: her reflection's hand rose to wave a full second before she'd consciously decided to lift her own, the delay reversing itself for the very first time in years of walking past that mirror.</p>
+
+<h3>Chapter 3: Choosing Not to Test It Again</h3>
+<p>She hasn't gone back to check whether it happened again, taking the long way around the house instead whenever she can manage it. The mirror still hangs there, showing its usual five-second delay to everyone else in the family. Priya alone knows, just once, it ran the other way first.</p>
+`
+},
+{
+  title: "The Sandcastle That Outlasted the Tide",
+  author: "Khyati Srivastava",
+  slug: "the-sandcastle-that-outlasted-the-tide",
+  category: "Poetry",
+  emoji: "🏰",
+  excerpt: "A hopeful little poem about building sandcastles that the tide will eventually take, and finding the joy in building anyway, knowing exactly how the story ends.",
+  created_at: "2027-04-10T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Sandcastle That Outlasted the Tide</h3>
+<p>We build it knowing it won't stay,<br/>
+towers rising, then washed away,<br/>
+we pack the sand, we shape each wall,<br/>
+knowing full well the tide takes all.</p>
+
+<p>So why not skip it, save the time,<br/>
+if every castle's just borrowed rhyme?<br/>
+Because the building was never the point of keeping —<br/>
+it's the joy, right now, of towers steeply steeping.</p>
+
+<p>The tide comes in, the walls give way,<br/>
+but something built stays, anyway —<br/>
+not the sand, not the shape, not the crumbling tower,<br/>
+just the memory of one good hour.</p>
+
+<p>So build again tomorrow, just the same,<br/>
+new towers, new walls, no one to blame<br/>
+when the water comes to take it back —<br/>
+the joy was never what the tide could crack.</p>
+`
+},
+{
+  title: "One Last Blink Before the Frost",
+  author: "Khyati Srivastava",
+  slug: "one-last-blink-before-the-frost",
+  category: "Poetry",
+  emoji: "🌙",
+  excerpt: "A wistful poem about spotting the very last firefly of the season, and the quiet, bittersweet feeling of watching summer's small magic fade into autumn.",
+  created_at: "2027-04-10T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Last Firefly of Summer</h3>
+<p>One small light in the cooling air,<br/>
+blinking slow, like it's aware<br/>
+the warm nights it once knew so well<br/>
+are packing up, saying farewell.</p>
+
+<p>Its friends are gone, the swarm has thinned,<br/>
+the summer air has turned to wind,<br/>
+but one last spark still holds its glow,<br/>
+not ready yet to let it go.</p>
+
+<p>I watch it drift across the yard,<br/>
+holding on, though it's getting hard,<br/>
+one final blink before the frost,<br/>
+one last light not quite yet lost.</p>
+
+<p>Goodbye, small light, I'll see you soon,<br/>
+next summer, under a different moon,<br/>
+you'll bring your friends, and I'll be there —<br/>
+some small lights are always worth the wait, somewhere.</p>
+`
+},
 ];
