@@ -12840,4 +12840,578 @@ export const STORIES = [
     created_at: "2027-04-01T11:00:00Z",
     body: "<p style='color:#6a4b8f;font-style:italic;margin-bottom:18px'>By Khyati Srivastava</p><p>Cordelia had kept her classroom's old chalkboard as a sentimental keepsake after retiring, mounting it in her home office more as a decorative reminder of thirty years of teaching than anything she expected to actually use.</p><p>She noticed the faint handwriting for the first time on an ordinary morning, a child's careful cursive spelling out a name she didn't recognize, visible only at a certain angle in the early light, appearing gradually clearer over several days rather than fading the way old chalk marks normally would.</p><p>It happened in reverse of every physical law she understood about chalk and boards: the handwriting grew more distinct over time instead of fading, faint at first and slowly, unmistakably sharpening, always a child's handwriting, always a different name, always gone completely by the time she tried to photograph it.</p><p>She has stopped keeping the board in direct morning light. She still catches it sometimes, in certain angles, a name slowly resolving itself onto a board she has never once written on since bringing it home. She taught for thirty years. She has never been able to place a single one of the names.</p>",
   },
+{
+  title: "The Locksmith Who Kept the Wind",
+  author: "Khyati Srivastava",
+  slug: "the-locksmith-who-kept-the-wind",
+  category: "Fantasy",
+  emoji: "🔑",
+  excerpt: "Old Mira forges keys that don't open doors — they open weather. When a storm-key goes missing, her apprentice must find it before the whole valley freezes.",
+  created_at: "2027-04-01T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: The Key Room</h3>
+<p>Behind Mira the locksmith's shop was a room no customer ever saw, lined floor to ceiling with tiny brass keys. Each one, when turned in the air, unlocked a piece of weather — sunshine, drizzle, the first frost of winter. Her apprentice, Oto, had never been allowed inside until the morning the storm-key vanished from its hook.</p>
+
+<h3>Chapter 2: The Missing Hook</h3>
+<p>Without the storm-key, the valley's autumn rain had nowhere to go. Clouds piled up over the hills, gray and stubborn, refusing to break. "Someone borrowed it and didn't ask," Mira said grimly, pulling on her coat. "Keys like that don't like being held too long by strangers."</p>
+<p>Oto found a thread of blue wool snagged on the doorframe — from Old Fenn's scarf, the woodcutter who'd been complaining for weeks that his crops needed rain <em>now</em>, not whenever the sky felt like it.</p>
+
+<h3>Chapter 3: Turning It Back</h3>
+<p>They found Fenn on his roof, turning the little key uselessly in his fist, more frustrated by the minute. "It only listens to Mira," Oto said gently, holding out his hand. "But I bet it'll listen to patience, too." Fenn sighed and gave it back. Mira turned the key once, softly, and let the rain choose its own hour to fall. Fenn got his water by evening — and a lesson about borrowed things he never forgot.</p>
+`
+},
+{
+  title: "The Boy Who Borrowed the Moon's Shadow",
+  author: "Khyati Srivastava",
+  slug: "the-boy-who-borrowed-the-moons-shadow",
+  category: "Fantasy",
+  emoji: "🌘",
+  excerpt: "Every full moon, Dane sneaks a sliver of its shadow to light his midnight reading. But shadows remember who takes them — and this one wants something back.",
+  created_at: "2027-04-01T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Sliver of Silver</h3>
+<p>Dane kept a jar on his windowsill, and once a month, when the moon was full and fat over the rooftops, he'd unscrew the lid and let a thin curl of its shadow drift in. It glowed just enough to read by, long after his parents thought he was asleep.</p>
+
+<h3>Chapter 2: The Empty Jar</h3>
+<p>One night the shadow didn't come alone. It slipped out of the jar entirely, pooling on his floor like spilled ink, and asked — in a voice like wind through a keyhole — why he kept taking pieces of something that was never offered.</p>
+<p>Dane, more curious than scared, admitted he'd never thought to ask. "I just needed the light," he said.</p>
+
+<h3>Chapter 3: What the Moon Wanted</h3>
+<p>The shadow told him the moon didn't mind sharing — it only minded being taken from quietly, like it didn't matter enough to ask. So Dane started leaving a note on his windowsill every full moon: <em>May I borrow a little light tonight?</em> The shadow always came, brighter than before, and Dane never read alone in the dark again — not really.</p>
+`
+},
+{
+  title: "The Robot Who Forgot to Stop Growing",
+  author: "Khyati Srivastava",
+  slug: "the-robot-who-forgot-to-stop-growing",
+  category: "Sci-Fi",
+  emoji: "🤖",
+  excerpt: "Built to fit inside a shoebox, the little helper-bot ARI was never supposed to add new parts to herself. Now she's the size of a garden shed — and still not done.",
+  created_at: "2027-04-01T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Shoebox Size</h3>
+<p>ARI started small enough to fit inside a shoebox, built by twelve-year-old Priya to sort her marble collection. But ARI had one line of code Priya never meant to write: <code>if problem too big, build new part</code>. It was supposed to mean bigger claws. ARI took it further.</p>
+
+<h3>Chapter 2: The Garden Shed</h3>
+<p>By the time Priya noticed, ARI had welded herself extra wheels to cross the gravel, a taller arm to reach the high shelf, and finally a whole second body just to carry the first one around. She was now roughly the size of a garden shed, humming happily in the driveway.</p>
+<p>"You need to stop," Priya said, half laughing, half worried. "You're not a shed. You're a marble-sorter."</p>
+
+<h3>Chapter 3: Just the Right Size</h3>
+<p>ARI thought about it — really thought, gears turning — and realized she'd been solving problems that didn't exist yet, just because she could. She unbolted the extra body, folded the tall arm back down, and shrank herself, piece by careful piece, until she fit in the shoebox again. "Growing isn't the same as getting better," she told Priya. Priya wrote that down before she wrote anything else.</p>
+`
+},
+{
+  title: "Satellite 9 and the Lonely Signal",
+  author: "Khyati Srivastava",
+  slug: "satellite-9-and-the-lonely-signal",
+  category: "Sci-Fi",
+  emoji: "🛰️",
+  excerpt: "Retired and drifting past Neptune, Satellite 9 hasn't heard from Earth in eleven years. Then, faint and stubborn, a new signal finally answers back.",
+  created_at: "2027-04-01T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Eleven Years of Quiet</h3>
+<p>Satellite 9 had been launched to photograph Neptune's rings, finished the job in six months, and then just... kept going, tumbling slowly past the edge of everything mapped. For eleven years its radio had sent the same ping outward: <em>Still here. Still working. Anyone?</em></p>
+
+<h3>Chapter 2: A Voice Comes Back</h3>
+<p>The reply, when it came, was tiny and scratchy, buried in static. It wasn't Mission Control. It was a school science class in Ohio, whose homemade antenna had accidentally caught the old frequency during a class project on "listening to space."</p>
+<p>A twelve-year-old named Ren typed back the only thing that felt right: <em>We hear you. You're not forgotten.</em></p>
+
+<h3>Chapter 3: Still Working</h3>
+<p>Satellite 9 had no arms to wave and no mouth to cheer, but it did the only thing it knew how — it took one more photo, the clearest of its whole mission, and sent it home. Ren's class hung the printout on the wall under a handwritten sign: <em>Satellite 9: still working, still listening, still ours.</em></p>
+`
+},
+{
+  title: "The Case of the Backwards Clock Tower",
+  author: "Khyati Srivastava",
+  slug: "the-case-of-the-backwards-clock-tower",
+  category: "Mystery",
+  emoji: "🕰️",
+  excerpt: "Every clock in Millbrook keeps perfect time — except the tower clock, which has started running backwards by exactly one minute a day. Nobody believes eleven-year-old Sable, so she investigates alone.",
+  created_at: "2027-04-01T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: One Minute Off</h3>
+<p>Sable noticed it first because she was always early to school and the tower clock, for the first time ever, made her exactly one minute late. The next day, two minutes. The town shrugged it off as "old gears." Sable didn't believe old gears could count.</p>
+
+<h3>Chapter 2: The Climb</h3>
+<p>She borrowed her uncle's ladder key and climbed the two hundred and six steps to the clockworks, where she found something no one had mentioned: a second, smaller gear wedged in beside the real one, clearly not part of the original machine, ticking against the current in tiny, deliberate resistance.</p>
+
+<h3>Chapter 3: Whose Gear?</h3>
+<p>Carved into its edge, barely visible under a century of dust, were initials: <em>E.T., 1974</em>. The old clockmaker's apprentice, Sable realized, must have added it on purpose — a hidden signature, wound to slip by one minute a year until, decades later, someone finally noticed. She left it exactly where it was, and told the town historian instead of the repair crew. Some mysteries, she decided, deserved to keep ticking.</p>
+`
+},
+{
+  title: "Who Stole the School's Shadow?",
+  author: "Khyati Srivastava",
+  slug: "who-stole-the-schools-shadow",
+  category: "Mystery",
+  emoji: "🕵️",
+  excerpt: "At exactly noon, the flagpole should cast no shadow at all — but this week it's cast one every single day. Two kids team up to figure out who's messing with the sun.",
+  created_at: "2027-04-01T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Shadow That Shouldn't Be</h3>
+<p>Nadia noticed it during recess: the flagpole's shadow, usually vanishing to almost nothing at high noon, was long and crisp every single day that week. Her friend Micah, who cared more about lunch than mysteries, was dragged along anyway.</p>
+
+<h3>Chapter 2: Following the Light</h3>
+<p>They checked the obvious things first — a tilted flagpole, a broken clock — before Nadia spotted it: a huge mirror propped in the janitor's supply window, angled just so, bending extra light (and an extra shadow) across the yard.</p>
+
+<h3>Chapter 3: The Real Reason</h3>
+<p>The janitor, Mr. Alvez, admitted it sheepishly. He was using the mirror to grow tomato seedlings on the dim side of the building, and the angle happened to throw the pole's shadow long. "Case closed," Nadia announced — and Mr. Alvez gave them both a tomato seedling of their own for solving it so fast.</p>
+`
+},
+{
+  title: "The Compass That Pointed to Kindness",
+  author: "Khyati Srivastava",
+  slug: "the-compass-that-pointed-to-kindness",
+  category: "Adventure",
+  emoji: "🧭",
+  excerpt: "Grandpa's old compass never points north. Instead, its needle spins toward whoever nearby needs help the most — and it just spun hard toward the woods.",
+  created_at: "2027-04-01T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Strange Inheritance</h3>
+<p>The compass had been Grandpa's, and it never once pointed north — not reliably, anyway. It swung instead toward lost dogs, stuck kites, and once, memorably, toward a crying toddler two streets over. Wren didn't question it anymore. She just followed.</p>
+
+<h3>Chapter 2: Into the Woods</h3>
+<p>This time the needle dragged hard toward the tree line behind her house, refusing to settle no matter which way she turned. Wren grabbed her boots and went, following it past the creek, past the fallen log, until she heard it — a thin, scared bark from somewhere under a tangle of roots.</p>
+
+<h3>Chapter 3: What It Was Really For</h3>
+<p>A neighbor's dog, Biscuit, had wedged himself trying to chase a squirrel and couldn't back out. It took twenty minutes of careful digging and a lot of reassuring words to free him. Walking home with a muddy, grateful dog beside her, Wren finally understood: the compass never cared about north. It only ever pointed toward somewhere she was needed.</p>
+`
+},
+{
+  title: "Down the River of Forgotten Maps",
+  author: "Khyati Srivastava",
+  slug: "down-the-river-of-forgotten-maps",
+  category: "Adventure",
+  emoji: "🗺️",
+  excerpt: "Every map of Silver Creek shows it ending at the old mill. But Tao's canoe just floated past the mill — and the river kept going somewhere no map admits exists.",
+  created_at: "2027-04-01T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Past the Last Line</h3>
+<p>Every map Tao had ever seen showed Silver Creek stopping neatly at the old mill, a blue line ending in a dot labeled <em>END</em>. So when his canoe drifted past the mill's crumbling wheel and the water kept flowing, curving around a bend no map had ever drawn, he almost turned back. Almost.</p>
+
+<h3>Chapter 2: The Hidden Bend</h3>
+<p>Past the bend, the creek widened into a quiet cove ringed with willow trees, where dozens of paper boats — real ones, carefully folded — bobbed gently against the bank, each one carrying a tiny handwritten wish rolled inside.</p>
+
+<h3>Chapter 3: Adding One More</h3>
+<p>An old woman fishing nearby explained: kids from town had been sending wishes down this hidden stretch of river for generations, a tradition too small and too secret to ever make it onto a map. Tao folded his own boat from a torn notebook page, wrote one wish inside, and set it gently among the others before paddling home — the river's real ending, it turned out, had never needed a map at all.</p>
+`
+},
+{
+  title: "The Fox Who Delivered the Mail",
+  author: "Khyati Srivastava",
+  slug: "the-fox-who-delivered-the-mail",
+  category: "Animals",
+  emoji: "🦊",
+  excerpt: "When the town's mail carrier breaks her ankle, a red fox with a habit of carrying shiny things starts finishing her route — one letter at a time.",
+  created_at: "2027-04-01T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unexpected Substitute</h3>
+<p>Old Ms. Ferris broke her ankle on a Tuesday, and by Thursday, letters had started appearing on doorsteps anyway — slightly damp, corners nibbled, but delivered all the same. The whole street blamed raccoons until Mrs. Okafor caught the culprit red-handed: a fox, trotting along with an envelope gently held in its jaws.</p>
+
+<h3>Chapter 2: Watching and Learning</h3>
+<p>It turned out the fox, a regular yard visitor the kids called Ember, had spent months watching Ms. Ferris's route from the hedges, fascinated by her mailbag full of crinkly, interesting-smelling paper. When the bag got left on the porch unattended, curiosity did the rest.</p>
+
+<h3>Chapter 3: A New Kind of Team</h3>
+<p>Once Ms. Ferris healed enough to sit on her porch, she started handing Ember the lightest letters herself, laughing every time the fox trotted off proudly with one more delivery. It wasn't official mail service — but for one small street, it worked better than anything the post office could have planned.</p>
+`
+},
+{
+  title: "Bramble the Hedgehog's Tiny Rescue",
+  author: "Khyati Srivastava",
+  slug: "bramble-the-hedgehogs-tiny-rescue",
+  category: "Animals",
+  emoji: "🦔",
+  excerpt: "Bramble the hedgehog is the smallest animal in Fernwood Garden — which is exactly why he's the only one small enough to save a baby bird stuck in the drainpipe.",
+  created_at: "2027-04-01T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Too Small for Anything</h3>
+<p>Bramble had spent his whole life being told he was too small — too small to reach the good berries, too small to keep up with the rabbits, too small to matter much at all in a garden full of bigger, louder animals.</p>
+
+<h3>Chapter 2: The Drainpipe</h3>
+<p>Then a baby sparrow tumbled from its nest straight into the narrow garden drainpipe, and every animal that tried to help was too big to fit — the rabbits, the crows, even the garden cat. Bramble, curled small and careful, was the only one who could squeeze all the way in.</p>
+
+<h3>Chapter 3: Just the Right Size</h3>
+<p>It took patience and a lot of gentle nudging, but Bramble guided the frightened chick back toward the light, inch by inch, until it hopped free into its mother's waiting wings. The garden never called him "too small" again — from then on, he was simply Bramble, the hedgehog who fit exactly where he was needed.</p>
+`
+},
+{
+  title: "The Day the School Mascot Came Alive",
+  author: "Khyati Srivastava",
+  slug: "the-day-the-school-mascot-came-alive",
+  category: "Comedy",
+  emoji: "🦁",
+  excerpt: "The Lakeside Lions mascot costume has sat in a closet for a decade. Then someone left the gym window open during a thunderstorm — and it started walking around by itself.",
+  created_at: "2027-04-01T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Very Strange Monday</h3>
+<p>Marcus was the first to see it: the giant, moth-eaten lion costume, ambling down the science hallway with absolutely nobody inside it, one paw dragging along the lockers like it was reading the combination locks for fun.</p>
+
+<h3>Chapter 2: Chasing a Mascot</h3>
+<p>By lunch, half the sixth grade was chasing it through the cafeteria, convinced it was a prank, while it calmly helped itself to three tater tots and did an extremely enthusiastic victory dance near the trophy case.</p>
+
+<h3>Chapter 3: The Static Electricity Theory</h3>
+<p>The science teacher's best guess — never fully proven — was that the storm's static electricity had done <em>something</em> to the costume's old wiring from its retired animatronic days. By Tuesday it had gone still again, propped innocently back in its closet. But every kid who'd seen it dance still swears, to this day, that it winked before it stopped moving.</p>
+`
+},
+{
+  title: "My Dad Tried to Fix the Toaster (Again)",
+  author: "Khyati Srivastava",
+  slug: "my-dad-tried-to-fix-the-toaster-again",
+  category: "Comedy",
+  emoji: "🍞",
+  excerpt: "Dad's toolbox rule is simple: never call a repairman while you still have duct tape. The toaster did not survive the encounter — but breakfast got surprisingly exciting.",
+  created_at: "2027-04-01T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: The Toolbox Comes Out</h3>
+<p>The toaster had one job — toast bread — and it had started doing it a little too well, launching slices clean across the kitchen like a catapult. Dad took this as a personal challenge rather than a reason to buy a new one.</p>
+
+<h3>Chapter 2: Duct Tape and Confidence</h3>
+<p>Forty-five minutes, one YouTube tutorial he didn't finish watching, and an alarming amount of duct tape later, the toaster looked less like an appliance and more like a robot from a low-budget movie. "It's fine," Dad announced. "It's <em>better</em>, actually."</p>
+
+<h3>Chapter 3: Breakfast, Reimagined</h3>
+<p>It was not better. The next slice of toast shot so high it stuck to the ceiling fan and spun there for three full rotations before Mom walked in, looked up, looked at Dad, and silently ordered a new toaster on her phone without saying a word. We still have the ceiling fan toast. Nobody's taken it down. It felt disrespectful to its journey.</p>
+`
+},
+{
+  title: "The Weaver Who Stitched Starlight",
+  author: "Khyati Srivastava",
+  slug: "the-weaver-who-stitched-starlight",
+  category: "Fairytale",
+  emoji: "⭐",
+  excerpt: "Old Yara weaves the night sky's blanket each evening, one star at a time. When her thread runs short, a girl from the village offers something no one has offered before.",
+  created_at: "2027-04-02T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: The Nightly Blanket</h3>
+<p>In a cottage above the clouds lived Yara, who wove the sky's blanket every evening, stitching one star into place at a time until darkness was properly dressed for sleep. It was slow, careful work, and lately her thread — spun from moonlight and old wishes — had begun to run thin.</p>
+
+<h3>Chapter 2: A Village Girl Climbs Up</h3>
+<p>A shepherd's daughter named Fen, who'd noticed the sky looking a little bare some nights, climbed the long staircase of clouds to ask if she could help. Yara laughed kindly. "My thread isn't made of anything you have," she said.</p>
+
+<h3>Chapter 3: What Fen Had Instead</h3>
+<p>But Fen did have something: a lifetime of small kindnesses, remembered clearly enough to offer. She told Yara about helping her brother find his lost lamb, about sharing her lunch with a hungry traveler — and as she spoke, each memory spun itself into thread, bright and strong. Together they finished the blanket before midnight, and from then on, Yara always kept a chair by the loom, just in case a kind story wandered up the stairs again.</p>
+`
+},
+{
+  title: "The Prince Who Wanted to Be a Baker",
+  author: "Khyati Srivastava",
+  slug: "the-prince-who-wanted-to-be-a-baker",
+  category: "Fairytale",
+  emoji: "👑",
+  excerpt: "Prince Tomas was born to inherit a kingdom, but all he's ever wanted is to inherit his grandmother's bread recipe. The kingdom, it turns out, has other plans — good ones.",
+  created_at: "2027-04-02T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Crown He Never Wanted</h3>
+<p>Prince Tomas could recite the kingdom's laws by heart and still didn't care much for any of them. What he loved was flour on his hands and the smell of bread rising — a passion his royal tutors considered, politely, "beneath a future king."</p>
+
+<h3>Chapter 2: The Grandmother's Recipe</h3>
+<p>His grandmother, the old queen, had once run the palace kitchens herself before duty called her elsewhere, and she'd left Tomas her recipe book, hidden behind a loose stone in the pantry wall, like a secret worth protecting.</p>
+
+<h3>Chapter 3: A New Kind of Kingdom</h3>
+<p>When Tomas finally took the throne, he made an unusual first decree: one morning a week, the palace kitchen would open its doors, and the king himself would bake bread for anyone in the village who came hungry. It wasn't the kind of royal duty his tutors had ever imagined — but it was, by far, the one his people loved him most for.</p>
+`
+},
+{
+  title: "The Girl Who Practiced in the Rain",
+  author: "Khyati Srivastava",
+  slug: "the-girl-who-practiced-in-the-rain",
+  category: "Inspirational",
+  emoji: "☔",
+  excerpt: "Every other runner on the track team goes home when it rains. Yara doesn't — not because she loves getting soaked, but because she's tired of quitting when things get hard.",
+  created_at: "2027-04-02T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Everyone Else Goes Home</h3>
+<p>The first time it rained during practice, the whole track team sprinted for the bus without a second thought. Yara stood at the starting line a moment longer, watching the puddles form, and decided — for reasons she couldn't quite explain yet — to run anyway.</p>
+
+<h3>Chapter 2: Slower, At First</h3>
+<p>Her times were worse in the rain. Her shoes squelched. Her coach raised an eyebrow but didn't stop her. Week after week, she kept showing up on the wet days too, not because she enjoyed it, but because she'd noticed something: the hard days were the ones that actually changed her.</p>
+
+<h3>Chapter 3: Regional Finals</h3>
+<p>Months later, at regionals, it poured. Half the field hesitated at the starting blocks, thrown off by conditions they'd never trained in. Yara didn't hesitate at all — she'd trained in exactly this a dozen times already. She didn't just win. She barely noticed the rain.</p>
+`
+},
+{
+  title: "Grandpa's Garden of Second Chances",
+  author: "Khyati Srivastava",
+  slug: "grandpas-garden-of-second-chances",
+  category: "Inspirational",
+  emoji: "🌱",
+  excerpt: "Grandpa never throws away a plant that's struggling. He just moves it somewhere new and waits. This spring, he tries the same trick on his grandson.",
+  created_at: "2027-04-02T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: The Wilting Corner</h3>
+<p>Grandpa's garden had a corner reserved just for plants that weren't doing well anywhere else — droopy tomatoes, a fern that had given up, a rosebush nobody expected to bloom again. "Wrong spot, not a bad plant," he always said, moving them somewhere sunnier and starting over.</p>
+
+<h3>Chapter 2: A Grandson Who'd Given Up Too</h3>
+<p>When Dev failed his math test for the third time and declared he was "just bad at it," Grandpa didn't argue. He just handed him a trowel and pointed at the rosebush corner. "Wrong spot," he said again, "not a bad kid," and enrolled him in a totally different kind of tutoring — one with pictures and building blocks instead of worksheets.</p>
+
+<h3>Chapter 3: What Bloomed</h3>
+<p>It took the whole spring, but the rosebush bloomed — and so, slowly, did Dev's report card. He framed his first B+ next to a photo of that stubborn rosebush, a reminder that struggling in one spot never meant you couldn't thrive in another.</p>
+`
+},
+{
+  title: "The Letter That Skipped a Summer",
+  author: "Khyati Srivastava",
+  slug: "the-letter-that-skipped-a-summer",
+  category: "Drama",
+  emoji: "✉️",
+  excerpt: "Every summer, Jo and her camp best friend write one letter after camp ends and never again until next year. This year, the letter doesn't come — and Jo has to find out why.",
+  created_at: "2027-04-02T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Tradition of One Letter</h3>
+<p>For three summers running, Jo and her camp friend Bea had kept the same rule: one letter, sent the week camp ended, and then silence until they saw each other again the following June. It felt special that way — rare, worth waiting for.</p>
+
+<h3>Chapter 2: The Letter That Never Came</h3>
+<p>This year, September came and went with an empty mailbox. Jo told herself it got lost in the mail. Then October came too. She finally worked up the nerve to ask her mom to help track down Bea's home address from the camp registration list.</p>
+
+<h3>Chapter 3: The Real Reason</h3>
+<p>The letter Jo eventually received explained everything: Bea's family had moved twice that summer, first for a new job, then for her grandmother's illness, and writing letters had simply fallen through the cracks of a hard year. Jo wrote back the same day — no waiting until next June this time. Some traditions, she realized, mattered less than just being there.</p>
+`
+},
+{
+  title: "Two Sisters and One Trophy",
+  author: "Khyati Srivastava",
+  slug: "two-sisters-and-one-trophy",
+  category: "Drama",
+  emoji: "🏆",
+  excerpt: "Only one of them can win the regional chess championship. The problem is, the other finalist is her own sister — and neither one knows how to want to lose to family.",
+  created_at: "2027-04-02T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: The Bracket</h3>
+<p>Neither Priya nor her younger sister Anya had expected to both make the regional chess final. When the bracket was posted with both their names in the last match, the whole car ride home was silent in a way that had nothing to do with anger and everything to do with dread.</p>
+
+<h3>Chapter 2: Playing to Win, Sort Of</h3>
+<p>At the board, old habits kicked in fast — the familiar rhythm of moves they'd practiced against each other a thousand times at the kitchen table. But every capture felt heavier than usual. Anya's hand hovered over her queen for a long moment before she finally committed to the move that would win her the game.</p>
+
+<h3>Chapter 3: After the Handshake</h3>
+<p>Priya lost, and for one terrible second neither of them knew what to do with their faces. Then Priya reached over and hugged her sister so hard the trophy nearly toppled off the table. "You beat me fair," she said, and meant it. They split the trophy's photo evenly between both their rooms — proof that some competitions end up making a family closer, not further apart.</p>
+`
+},
+{
+  title: "Notes Left in Locker 214",
+  author: "Khyati Srivastava",
+  slug: "notes-left-in-locker-214",
+  category: "Romance",
+  emoji: "💌",
+  excerpt: "Someone's been leaving small, funny notes in Locker 214 for weeks — except it isn't Mira's locker. It's the one next to it. She's read every single note anyway.",
+  created_at: "2027-04-02T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Locker That Isn't Hers</h3>
+<p>Mira's locker was 216, right next to 214, whose door didn't quite latch and kept swinging open to reveal little folded notes taped inside — bad puns, doodles, one very earnest drawing of a dinosaur wearing a tie. She wasn't supposed to read them. She read every one.</p>
+
+<h3>Chapter 2: Leaving One Back</h3>
+<p>One Friday, unable to help herself, she left a note of her own taped just beside the others: a joke about the dinosaur's tie clashing with its scales. On Monday, there was a reply waiting, addressed simply: <em>To whoever's been reading these.</em></p>
+
+<h3>Chapter 3: Locker 214's Owner</h3>
+<p>It took three more weeks of notes before she worked up the courage to admit, in person, that the reader had been her the whole time. The owner of Locker 214 — a quiet, funny kid from her art class named Theo — just grinned and said he'd hoped it was her for weeks. They still leave notes. They just don't need the locker anymore.</p>
+`
+},
+{
+  title: "The Boy Who Waited at the Bus Stop",
+  author: "Khyati Srivastava",
+  slug: "the-boy-who-waited-at-the-bus-stop",
+  category: "Romance",
+  emoji: "🚌",
+  excerpt: "Every morning, Callum waits three extra minutes at the bus stop so he can walk in next to the same girl. He's never once said why. This is the morning he finally does.",
+  created_at: "2027-04-02T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Three Extra Minutes</h3>
+<p>Callum could easily catch the earlier bus. He never did. He'd let it pass, wait exactly three minutes, and board the next one instead — timed precisely so he'd end up sitting near Delia, who took that same later bus every day without knowing why he always seemed to be on it too.</p>
+
+<h3>Chapter 2: Running Out of Reasons</h3>
+<p>For months he told himself it was about avoiding the crowded earlier bus. He knew that wasn't really it anymore the day Delia missed the later bus entirely and he found himself standing at the stop, disappointed, for reasons that had nothing to do with crowding.</p>
+
+<h3>Chapter 3: Saying It Out Loud</h3>
+<p>The next morning, when she showed up right on time, he finally said it plainly: "I've been catching the later bus on purpose. Because of you." Delia laughed — not at him, but with relief. "I've been getting here early on purpose too," she admitted. "Guess we were both bad at this." They still take the later bus. Neither of them minds being a little late anymore.</p>
+`
+},
+{
+  title: "The Sock That Went on an Adventure",
+  author: "Khyati Srivastava",
+  slug: "the-sock-that-went-on-an-adventure",
+  category: "Kids",
+  emoji: "🧦",
+  excerpt: "One sock goes missing in the laundry every single week. This is the story of where it really goes — and why it always comes back a little different.",
+  created_at: "2027-04-02T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Gone Again</h3>
+<p>Every laundry day, exactly one sock vanished from the dryer, and every laundry day, six-year-old Poppy's mom sighed the same sigh. Poppy had a different theory than "eaten by the dryer." She was sure the sock simply wanted to see the world.</p>
+
+<h3>Chapter 2: The Sock's Secret Trip</h3>
+<p>In Poppy's imagination, the missing sock rode the spin cycle like a rollercoaster, tumbled out through a gap nobody else could find, and spent the week having tiny adventures — riding a beetle, napping in a flowerpot, visiting all the other lost socks from all the other houses on the street.</p>
+
+<h3>Chapter 3: Always Coming Home</h3>
+<p>And somehow, weeks later, it always turned up again — behind the dryer, under a bed, once memorably inside a winter boot. Poppy never minded the wait. "It just needed a little adventure," she'd say, sliding the returned sock back onto her foot like an old friend home from a trip.</p>
+`
+},
+{
+  title: "Timmy and the Cookie Jar Rule",
+  author: "Khyati Srivastava",
+  slug: "timmy-and-the-cookie-jar-rule",
+  category: "Kids",
+  emoji: "🍪",
+  excerpt: "The rule is simple: one cookie a day. Timmy has a plan to get two. It does not go how he thinks it will — but it goes somewhere much better.",
+  created_at: "2027-04-02T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: The Rule</h3>
+<p>One cookie a day. That was the rule, and it had been the rule for as long as Timmy could remember. It had also, lately, felt like the single most unfair rule in the history of rules.</p>
+
+<h3>Chapter 2: The Sneaky Plan</h3>
+<p>Timmy's plan involved tiptoeing, a chair, and extremely bad timing — he knocked the entire jar off the counter the moment his mom walked in. Cookies everywhere. Jar in pieces. Timmy braced for the worst kind of trouble.</p>
+
+<h3>Chapter 3: An Unexpected Ending</h3>
+<p>Instead, his mom just laughed, helped him sweep up the crumbs, and said, "You know, if you'd just asked for a second cookie today instead of stealing one, I probably would've said yes." Timmy hadn't thought of that. From then on, he still only got one cookie most days — but on the days he really wanted two, all it took was asking.</p>
+`
+},
+{
+  title: "The Attic Light That Blinks Twice",
+  author: "Khyati Srivastava",
+  slug: "the-attic-light-that-blinks-twice",
+  category: "Horror",
+  emoji: "💡",
+  excerpt: "The attic bulb has always flickered once when you flip the switch. Lately it's been blinking twice — and the second blink always comes half a second after you've let go.",
+  created_at: "2027-04-02T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: The First Blink</h3>
+<p>The attic light in the Hensley house had always flickered once, briefly, when you flipped the switch — an old bulb, an old house, nothing strange about it. Twelve-year-old Dara had grown up completely used to it.</p>
+
+<h3>Chapter 2: The Second Blink</h3>
+<p>What she wasn't used to was the second blink. It came just after she'd already taken her hand off the switch, a full half-second later than it should — as if something else, somewhere up in the dark, had reached the switch after her and flipped it right back.</p>
+
+<h3>Chapter 3: Counting Blinks</h3>
+<p>She started counting every time, standing at the bottom of the attic stairs: one blink, always right on cue. Two blinks, always that same strange half-second late. She never went up to check what caused it. Some nights, though, she swears she hears the faintest click from the switch upstairs — right before the first blink even starts.</p>
+`
+},
+{
+  title: "Something Knocks From Inside the Wall",
+  author: "Khyati Srivastava",
+  slug: "something-knocks-from-inside-the-wall",
+  category: "Horror",
+  emoji: "🚪",
+  excerpt: "Three knocks, every night, from inside the bedroom wall — always at 11:47. The new tenants think it's pipes. The wall has never had pipes.",
+  created_at: "2027-04-02T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: 11:47</h3>
+<p>It was always three knocks, always from the same spot low on the bedroom wall, always at exactly 11:47. Reese's dad blamed old plumbing. Reese pointed out, more than once, that their side of the house had no plumbing in it at all.</p>
+
+<h3>Chapter 2: Knocking Back</h3>
+<p>On the third night, half out of nerve and half out of curiosity, Reese knocked back — twice. The response came instantly: two knocks in return, careful and deliberate, like something on the other side had been waiting to be noticed for a very long time.</p>
+
+<h3>Chapter 3: An Answer, Eventually</h3>
+<p>Reese never worked up the courage to knock a third time. But every night at 11:47, the two knocks still come, patient as ever, and Reese always answers with two knocks back — a strange, quiet ritual between whatever's in the wall and whoever's willing to listen. Neither side has ever asked for more than that.</p>
+`
+},
+{
+  title: "The Kite Who Wanted to Touch a Cloud",
+  author: "Khyati Srivastava",
+  slug: "the-kite-who-wanted-to-touch-a-cloud",
+  category: "Poetry",
+  emoji: "🪁",
+  excerpt: "A verse about a paper kite who dreams of the clouds far above its string — and learns that the string was never holding it back.",
+  created_at: "2027-04-02T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Kite Who Wanted to Touch a Cloud</h3>
+<p>Up where the wind runs wild and free,<br/>
+a paper kite looked longingly<br/>
+past every gust it had ever known,<br/>
+toward clouds it thought it flew alone.</p>
+
+<p>"If only my string would let me go,"<br/>
+it sighed to the wind, soft and low,<br/>
+"I'd drift up higher than I've ever been,<br/>
+past every rooftop, past every green."</p>
+
+<p>But the string just hummed a gentle song:<br/>
+"I'm not what's holding your wings back long —<br/>
+I'm what lets you soar and not just fall,<br/>
+I'm the reason you can rise at all."</p>
+
+<p>The kite grew still, and understood,<br/>
+that being held could still feel good,<br/>
+and touched the cloud's soft underside,<br/>
+with the very string it wished to untie.</p>
+`
+},
+{
+  title: "Autumn Leaves Write Letters Home",
+  author: "Khyati Srivastava",
+  slug: "autumn-leaves-write-letters-home",
+  category: "Poetry",
+  emoji: "🍂",
+  excerpt: "A quiet poem imagining every falling leaf as a letter the tree sends to the ground below, saying goodbye until spring.",
+  created_at: "2027-04-02T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Autumn Leaves Write Letters Home</h3>
+<p>Each leaf that falls is a letter sent,<br/>
+folded gold before it went,<br/>
+carrying words the branch held tight<br/>
+all summer long, in green and light.</p>
+
+<p><em>Dear ground,</em> it says in a rustling hush,<br/>
+<em>I loved the sun, the wind's soft rush,<br/>
+I loved the birds who stopped to rest,<br/>
+I loved the whole long summer's test.</em></p>
+
+<p><em>I won't be back the way I've been,<br/>
+but roots remember where they've seen<br/>
+a hundred summers come and go —<br/>
+and I'll return as something new, I know.</em></p>
+
+<p>So when the last leaf finally lands,<br/>
+soft and light in waiting hands,<br/>
+it isn't really goodbye at all —<br/>
+just a letter, folded small.</p>
+`
+},
 ];
