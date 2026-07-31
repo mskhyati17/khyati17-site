@@ -9061,6 +9061,17 @@
     }
     const mstate = loadState();
     function saveState(){ localStorage.setItem(STATE_KEY, JSON.stringify(mstate)); }
+    function resyncFromDisk(){
+      let s;
+      try { s = JSON.parse(localStorage.getItem(STATE_KEY)); } catch(e){ s = null; }
+      if (!s || typeof s !== 'object') return;
+      if (typeof s.coins === 'number') mstate.coins = s.coins;
+      if (typeof s.streak === 'number') mstate.streak = s.streak;
+      if (typeof s.mochiAlive === 'boolean') mstate.mochiAlive = s.mochiAlive;
+      if (typeof s.lastActiveDate !== 'undefined') mstate.lastActiveDate = s.lastActiveDate;
+      if (typeof s.lastCoinSpinDate !== 'undefined') mstate.lastCoinSpinDate = s.lastCoinSpinDate;
+      if (Array.isArray(s.checklist)) mstate.checklist = s.checklist;
+    }
 
     if (mstate.checklistDate !== today) {
       mstate.checklist.forEach(it => { it.done = false; });
@@ -9108,6 +9119,7 @@
       }
     }
     document.getElementById('reviveBtn').addEventListener('click', ()=>{
+      resyncFromDisk();
       if (mstate.mochiAlive || mstate.coins < 10) return;
       mstate.coins -= 10;
       mstate.mochiAlive = true;
@@ -9143,6 +9155,7 @@
       });
     }
     function toggleChecklistItem(id, done){
+      resyncFromDisk();
       const item = mstate.checklist.find(i=>i.id===id);
       if (!item) return;
       const wasDone = item.done;
@@ -9167,6 +9180,7 @@
       const input = document.getElementById('checklistInput');
       const text = input.value.trim();
       if (!text) return;
+      resyncFromDisk();
       mstate.checklist.push({ id: 'c'+Date.now()+Math.random().toString(36).slice(2,7), text, done:false });
       input.value = '';
       saveState();
@@ -9174,6 +9188,14 @@
     }
     document.getElementById('checklistAddBtn').addEventListener('click', addChecklistItem);
     document.getElementById('checklistInput').addEventListener('keydown', e=>{ if (e.key === 'Enter') addChecklistItem(); });
+
+    window.addEventListener('storage', (e)=>{
+      if (e.key !== STATE_KEY) return;
+      resyncFromDisk();
+      renderMochi();
+      renderChecklist();
+      updateCoinBtn();
+    });
 
     renderMochi();
     renderChecklist();
@@ -9228,6 +9250,7 @@
       const idx = Math.floor(Math.random()*COIN_LABELS.length);
       coinResult.textContent = 'Spinning...';
       spinTo(coinDisc, idx, ()=>{
+        resyncFromDisk();
         const reward = +COIN_LABELS[idx];
         mstate.coins += reward;
         mstate.lastCoinSpinDate = today;
