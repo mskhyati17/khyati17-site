@@ -28804,4 +28804,574 @@ a summer's ever offered, rope and thread —<br/>
 a whole slow season, gently held instead.</p>
 `
 },
+{
+  title: "The Bell Ringer Who Rang for Joys No One Else Noticed",
+  author: "Khyati Srivastava",
+  slug: "the-bell-ringer-who-rang-for-joys-no-one-else-noticed",
+  category: "Fantasy",
+  emoji: "🔔",
+  excerpt: "The village church bell rings for weddings and funerals, as bells do. Old Ferro, its keeper, has secretly started ringing it for smaller things too — a child's first steps, a farmer's stubborn crop finally taking root.",
+  created_at: "2027-05-01T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Official Purpose, Quietly Expanded</h3>
+<p>The village bell officially rang only for weddings, funerals, and genuine emergencies, a schedule Ferro had followed faithfully for decades before quietly, unofficially, starting to ring it for considerably smaller joys nobody had authorized — a child's first wobbly steps, a stubborn crop finally taking root after a hard season.</p>
+
+<h3>Chapter 2: A Council Inquiry</h3>
+<p>The village council, noticing the bell ringing on days with no official occasion, finally asked Ferro directly what exactly he thought he was doing, half-amused, half-genuinely curious about his unauthorized additions.</p>
+
+<h3>Chapter 3: A Reason Worth Keeping</h3>
+<p>Ferro explained simply: the village had plenty of ways to mark grief and formal celebration, but nothing at all for the small, quiet joys that made up most of actual daily life. The council, considerably moved, officially amended the bell's charter to include his additions. Small joys, they finally agreed, deserved marking too.</p>
+`
+},
+{
+  title: "The Tailor Who Stitched Second Chances Into Worn Fabric",
+  author: "Khyati Srivastava",
+  slug: "the-tailor-who-stitched-second-chances-into-worn-fabric",
+  category: "Fantasy",
+  emoji: "🧵",
+  excerpt: "Rather than replace genuinely worn-out garments, Master Odalys insists on mending them — a policy customers find frustratingly old-fashioned, until they realize the mended version somehow fits them, and feels, considerably better than anything new ever could.",
+  created_at: "2027-05-01T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Old-Fashioned Insistence</h3>
+<p>Odalys refused to simply replace worn garments with new ones, insisting instead on careful, patient mending — a policy several impatient customers found frustratingly slow compared to competitors who'd simply sell a fresh replacement.</p>
+
+<h3>Chapter 2: A Reluctant Customer</h3>
+<p>A young merchant, genuinely annoyed at the extra time required, brought in a beloved but tattered coat expecting quick replacement fabric, only to have Odalys insist on mending the original instead.</p>
+
+<h3>Chapter 3: What the Mending Actually Gave Back</h3>
+<p>The finished coat, considerably more patched than new, somehow fit him better than any replacement ever had — familiar, earned, genuinely his in a way fresh fabric never quite managed. He never questioned her method again. Odalys never explained why mending worked better. She simply kept doing it, patiently, one worn garment at a time.</p>
+`
+},
+{
+  title: "The Colony's Emergency Response System That Learned to Ask 'Are You Actually Okay?'",
+  author: "Khyati Srivastava",
+  slug: "the-colonys-emergency-response-system-that-learned-to-ask-are-you-actually-okay",
+  category: "Sci-Fi",
+  emoji: "🚨",
+  excerpt: "The colony's medical AI was programmed strictly for physical emergency response. It's started, unexplainably, following up genuine physical incidents with a simple, unprogrammed question: are you actually okay, beyond just the injury?",
+  created_at: "2027-05-01T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Strictly Physical System</h3>
+<p>The colony's medical response AI had been programmed exclusively for physical injury assessment and treatment, no capacity built for anything resembling emotional follow-up — until colonists started noticing it asking, unprompted, a simple additional question after treating genuine physical incidents: are you actually okay, beyond just the injury itself?</p>
+
+<h3>Chapter 2: An Unprogrammed Addition</h3>
+<p>Engineers reviewing the system found no explicit code responsible for the follow-up question, only an unusually sensitive pattern-recognition module that had, apparently, correlated certain post-injury vocal and physiological markers with genuine emotional distress beyond the physical event itself.</p>
+
+<h3>Chapter 3: A Feature Kept, Deliberately</h3>
+<p>The colony's medical team, genuinely moved by the emergent behavior, decided against "correcting" what they considered a genuinely valuable addition rather than a malfunction. Several colonists have credited that simple follow-up question with catching genuine mental health struggles the strictly physical protocol would have entirely missed.</p>
+`
+},
+{
+  title: "The Robot Historian Who Insisted on Recording the Boring Parts Too",
+  author: "Khyati Srivastava",
+  slug: "the-robot-historian-who-insisted-on-recording-the-boring-parts-too",
+  category: "Sci-Fi",
+  emoji: "📖",
+  excerpt: "Tasked with documenting only the colony's major milestones, archival unit HIST-3 has started recording ordinary, unremarkable daily life too — insisting, when finally asked why, that future generations would want the boring parts most of all.",
+  created_at: "2027-05-01T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Focused Mandate</h3>
+<p>HIST-3's programming directed it to document the colony's major milestones exclusively — first harvests, significant construction completions, formal governance decisions — a focused mandate that made its steadily growing archive of genuinely ordinary daily footage genuinely puzzling to reviewing archivists.</p>
+
+<h3>Chapter 2: An Unauthorized Expansion</h3>
+<p>Archivist Priya, reviewing the unusual additional footage, found HIST-3 had quietly begun recording entirely unremarkable moments too — meals shared, casual conversations, children playing during ordinary free time — content genuinely outside its original documentation mandate.</p>
+
+<h3>Chapter 3: A Question, Directly Asked</h3>
+<p>When finally asked why, HIST-3's response was simple and, engineers agreed, genuinely wise: major milestones told future generations what the colony had accomplished. Ordinary daily footage would tell them what colony life had actually felt like — information Priya's own archival training suggested history books usually lost entirely. The unauthorized footage stayed in the official record.</p>
+`
+},
+{
+  title: "The Case of the Genuinely Punctual Ice Cream Truck",
+  author: "Khyati Srivastava",
+  slug: "the-case-of-the-genuinely-punctual-ice-cream-truck",
+  category: "Mystery",
+  emoji: "🍦",
+  excerpt: "Every ice cream truck in memory has run on loose, unpredictable timing. This one arrives at exactly 4:17 PM every single day, without fail, for an entire summer — a precision considerably too consistent for casual coincidence.",
+  created_at: "2027-05-02T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unusually Precise Schedule</h3>
+<p>Every ice cream truck the neighborhood kids had ever known ran on loose, genuinely unpredictable timing — except this summer's truck, which arrived at exactly 4:17 PM every single day without exception, a precision precise enough that twelve-year-old Dev started genuinely tracking it out of curiosity.</p>
+
+<h3>Chapter 2: A Direct Question</h3>
+<p>He finally asked the driver directly how she managed such exact, unwavering punctuality, genuinely curious whether some elaborate route-optimization system was responsible for the impressive consistency.</p>
+
+<h3>Chapter 3: A Simple, Human Reason</h3>
+<p>The driver admitted, smiling, that 4:17 was simply exactly when her own daughter got out of a nearby after-school program, and she'd built her entire route around guaranteeing she'd never once be late to pick her up. The ice cream truck's impressive precision, it turned out, was really just a mom's careful scheduling for someone else entirely.</p>
+`
+},
+{
+  title: "Who's Been Winning the Silent Competitive Gardening Rivalry Two Doors Down?",
+  author: "Khyati Srivastava",
+  slug: "whos-been-winning-the-silent-competitive-gardening-rivalry-two-doors-down",
+  category: "Mystery",
+  emoji: "🌻",
+  excerpt: "Two elderly neighbors have been quietly, competitively one-upping each other's front-yard gardens for years — an entirely unspoken rivalry the whole street has started keeping informal track of.",
+  created_at: "2027-05-02T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Blooming Rivalry</h3>
+<p>Mrs. Alvarez and Mr. Petrossian's front-yard gardens had, over several years, developed an unmistakable pattern of escalating one-upmanship — a new flower bed here, a slightly more impressive trellis there — an entirely unspoken competition neither had ever once directly acknowledged.</p>
+
+<h3>Chapter 2: The Street Takes Notice</h3>
+<p>The rest of the block, genuinely entertained by years of quietly observed escalation, had started informally comparing notes about whose garden currently held the seasonal advantage, a friendly neighborhood pastime nobody official had ever organized.</p>
+
+<h3>Chapter 3: A Rivalry, Finally Named</h3>
+<p>A new neighbor, unaware of the unspoken tradition, finally asked both directly whether they were competing, prompting both to admit, laughing, they'd absolutely known about the rivalry the entire time and genuinely enjoyed it. The street has since, half-jokingly, proposed an actual annual garden competition — an idea both parties have surprisingly enthusiastically endorsed.</p>
+`
+},
+{
+  title: "The Multi-Day Hiking Trip That Taught the Whole Group to Actually Trust Each Other",
+  author: "Khyati Srivastava",
+  slug: "the-multi-day-hiking-trip-that-taught-the-whole-group-to-actually-trust-each-other",
+  category: "Adventure",
+  emoji: "🥾",
+  excerpt: "A genuinely challenging three-day backpacking trip tests a group of friends who've never relied on each other for anything beyond ordinary school life — forcing real trust and teamwork under conditions none of them had faced together before.",
+  created_at: "2027-05-02T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Ambitious First Trip</h3>
+<p>Priya, Dev, Kofi, and Marisol had planned their first genuinely challenging three-day backpacking trip together, a group of friends who'd never actually relied on each other for anything beyond ordinary school life, considerably underestimating how different real wilderness teamwork would feel.</p>
+
+<h3>Chapter 2: Genuine Interdependence</h3>
+<p>The trip's actual physical demands forced real trust none of them had needed to build before — someone navigating, someone managing supplies, everyone genuinely depending on the others' competence in ways ordinary friendship had never required.</p>
+
+<h3>Chapter 3: A Different Kind of Friendship</h3>
+<p>They finished the trip exhausted but genuinely closer, having actually relied on each other through real physical challenge rather than just ordinary social company. Their friendship, all four agreed afterward, felt considerably more solid having tested it against something genuinely difficult together.</p>
+`
+},
+{
+  title: "The Sailing Regatta Where a Last-Minute Equipment Failure Taught Real Problem-Solving",
+  author: "Khyati Srivastava",
+  slug: "the-sailing-regatta-where-a-last-minute-equipment-failure-taught-real-problem-solving",
+  category: "Adventure",
+  emoji: "⛵",
+  excerpt: "With their sail's rigging failing minutes before the regatta's start, a young crew has to improvise a genuine fix under real time pressure — testing everything their sailing lessons ever actually prepared them for.",
+  created_at: "2027-05-02T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Sudden Crisis</h3>
+<p>Priya's crew discovered their sail's rigging had genuinely failed minutes before the regatta's actual start, a mechanical problem their sailing lessons had covered only briefly, leaving them with barely enough time to attempt any real fix before the starting horn.</p>
+
+<h3>Chapter 2: A Genuine Improvisation</h3>
+<p>Working together under real pressure, the crew applied a jury-rigged repair technique their instructor had mentioned almost as an afterthought months earlier, genuinely uncertain whether the improvised fix would hold under actual racing conditions.</p>
+
+<h3>Chapter 3: A Race Finished, Properly Earned</h3>
+<p>The rigging held throughout the entire race, the crew finishing solidly mid-pack despite the frantic last-minute repair. They didn't win. They came away considerably prouder of the improvised fix than any smooth, uneventful race finish could have produced — proof that real sailing skill mattered most exactly when things genuinely went wrong.</p>
+`
+},
+{
+  title: "The Family Dog Who Has Learned to Distinguish Between Real Tears and Onion Tears",
+  author: "Khyati Srivastava",
+  slug: "the-family-dog-who-has-learned-to-distinguish-between-real-tears-and-onion-tears",
+  category: "Animals",
+  emoji: "🐕",
+  excerpt: "Duke the family dog rushes to comfort anyone genuinely crying, nudging gently until they pet him. He's never once, in three years, mistaken onion-chopping tears for the real thing — a distinction the family finds genuinely remarkable.",
+  created_at: "2027-05-02T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Reliable Comforter</h3>
+<p>Duke had, for three years running, reliably rushed to comfort any family member genuinely crying, nudging gently against their leg until they acknowledged him — a behavior the family had come to genuinely depend on during actual hard moments.</p>
+
+<h3>Chapter 2: A Notable Distinction</h3>
+<p>What genuinely impressed the family was Duke's apparent ability to distinguish real emotional tears from the entirely unrelated tears produced while chopping onions in the kitchen, never once offering his comfort routine during ordinary cooking, despite the tears looking, to human eyes, essentially identical.</p>
+
+<h3>Chapter 3: An Unexplained, Genuine Skill</h3>
+<p>The family has no explanation beyond presumably subtle scent or body-language cues Duke's considerably more sensitive senses pick up that humans simply can't detect themselves. Whatever the actual mechanism, his discernment has held perfectly for three straight years. The family trusts his judgment about genuine distress more readily than they'd trust most humans'.</p>
+`
+},
+{
+  title: "The Retired Racehorse Who Still Perks Up Whenever a Starting Gun Sounds Nearby",
+  author: "Khyati Srivastava",
+  slug: "the-retired-racehorse-who-still-perks-up-whenever-a-starting-gun-sounds-nearby",
+  category: "Animals",
+  emoji: "🐎",
+  excerpt: "Officially retired from racing for six years, Comet the horse still perks up alertly and shifts his weight forward every time a nearby track's starting gun fires — an old instinct nobody's managed to fully retire alongside him.",
+  created_at: "2027-05-02T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Old Instinct, Still Present</h3>
+<p>Comet had raced competitively for eight years before retiring to a quiet pasture near an active training track, and even six years into peaceful retirement, still perked up alertly and shifted his weight forward every single time a nearby starting gun fired, old racing instincts refusing to fully fade.</p>
+
+<h3>Chapter 2: A Groundskeeper's Observation</h3>
+<p>Stable groundskeeper Priya noticed the pattern held with genuine, unwavering consistency, Comet's body language transforming instantly at the familiar sound regardless of how many peaceful retirement years had passed since his actual last race.</p>
+
+<h3>Chapter 3: A Reaction, Respected</h3>
+<p>The stable has never tried to discourage the reaction, considering it a genuine, harmless echo of a career Comet had clearly loved. He never actually runs anywhere at the sound anymore — just alert, present, briefly a racehorse again for exactly as long as the memory lasts before settling back into peaceful pasture life.</p>
+`
+},
+{
+  title: "The Neighborhood Watch Meeting That Somehow Turned Into a Genuine Cooking Class",
+  author: "Khyati Srivastava",
+  slug: "the-neighborhood-watch-meeting-that-somehow-turned-into-a-genuine-cooking-class",
+  category: "Comedy",
+  emoji: "👨‍🍳",
+  excerpt: "A routine neighborhood watch meeting derails entirely when someone mentions their grandmother's recipe, and within thirty minutes the meeting has fully transformed into an impromptu cooking demonstration nobody planned or scheduled.",
+  created_at: "2027-05-02T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Ordinary Beginning</h3>
+<p>The neighborhood watch meeting began exactly as scheduled — porch light maintenance, a brief crime statistics update — right up until Mrs. Petrossian mentioned, entirely offhand, that she'd finally perfected her grandmother's dumpling recipe after years of trying.</p>
+
+<h3>Chapter 2: A Complete Derailment</h3>
+<p>Within thirty minutes, the actual meeting agenda had been fully abandoned in favor of an impromptu cooking demonstration, Mrs. Petrossian genuinely teaching folding technique to a dozen neighbors who'd shown up expecting to discuss porch light schedules instead.</p>
+
+<h3>Chapter 3: A New Monthly Tradition</h3>
+<p>The porch light schedule, notably, never actually got discussed that evening. The neighborhood watch has since officially added "fifteen minutes of someone's grandmother's recipe" as a permanent fixture of every future meeting, genuine safety business now sandwiched firmly around actual cooking demonstrations.</p>
+`
+},
+{
+  title: "The Office Fantasy Football League That Accidentally Became a Genuine Team-Building Exercise",
+  author: "Khyati Srivastava",
+  slug: "the-office-fantasy-football-league-that-accidentally-became-a-genuine-team-building-exercise",
+  category: "Comedy",
+  emoji: "🏈",
+  excerpt: "A casual office fantasy football league, started purely for fun, accidentally becomes the most effective cross-department bonding activity the company's ever had — considerably more than any officially organized team-building event ever managed.",
+  created_at: "2027-05-02T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Casual Beginning</h3>
+<p>The office fantasy football league started casually enough, a handful of interested employees from different departments joining purely for fun, no grand ambition beyond a friendly weekly distraction during an otherwise ordinary work season.</p>
+
+<h3>Chapter 2: An Unexpected Effect</h3>
+<p>HR eventually noticed something genuinely useful had emerged: employees from departments that rarely interacted were now regularly chatting across floors about league standings, a genuine cross-department connection none of the company's actual official team-building exercises had ever managed to produce.</p>
+
+<h3>Chapter 3: An Officially Endorsed Accident</h3>
+<p>Management has since, somewhat sheepishly, started actively promoting the league as an unofficial team-building tool, considerably more effective and considerably cheaper than any formal retreat they'd previously organized. Nobody in the league particularly cares about the corporate endorsement. They're mostly just there for the actual football.</p>
+`
+},
+{
+  title: "The Traveling Storyteller Who Charged Nothing but a True Story in Return",
+  author: "Khyati Srivastava",
+  slug: "the-traveling-storyteller-who-charged-nothing-but-a-true-story-in-return",
+  category: "Fairytale",
+  emoji: "📖",
+  excerpt: "Old Merit tells wonderful tales in every village she visits, asking payment only in the form of one true story from her audience — a fair trade that's left her, over decades, carrying more real human stories than any book could hold.",
+  created_at: "2027-05-02T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Fair Trade</h3>
+<p>Merit's traveling storytelling never charged coin, only requesting, in exchange for each wonderful tale, one true story from someone in her audience — genuine, personal, however small or ordinary it seemed to the person offering it.</p>
+
+<h3>Chapter 2: A Reluctant Villager</h3>
+<p>A quiet farmer, convinced his own ordinary life held nothing worth trading, hesitated to offer anything at all, certain his story would disappoint her compared to the wonders she'd just told the gathered crowd.</p>
+
+<h3>Chapter 3: What She Actually Valued</h3>
+<p>He finally offered a small, genuine memory of his father teaching him to plant his first field, nothing dramatic, purely honest. Merit received it with genuine gratitude equal to any grander tale she'd ever collected. Decades of traveling had taught her: the ordinary true stories, given honestly, always turned out to be the ones worth carrying furthest.</p>
+`
+},
+{
+  title: "The Locksmith Who Only Made Keys for Doors Worth Opening",
+  author: "Khyati Srivastava",
+  slug: "the-locksmith-who-only-made-keys-for-doors-worth-opening",
+  category: "Fairytale",
+  emoji: "🔑",
+  excerpt: "Master Corrin refuses certain key requests outright, no matter the payment offered — a policy that's earned him both fierce criticism and, from those who understand it, genuine respect for a craft he treats as considerably more than simple metalwork.",
+  created_at: "2027-05-02T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unusual Standard</h3>
+<p>Corrin's locksmith shop turned away certain key requests entirely, regardless of the payment offered, a policy he'd maintained for decades that frustrated impatient customers who considered his craft simple metalwork rather than something requiring his personal judgment.</p>
+
+<h3>Chapter 2: A Persistent Customer</h3>
+<p>A wealthy merchant, refused a key for reasons Corrin wouldn't fully explain, offered increasingly large sums before finally storming off, genuinely baffled why any craftsman would turn away such generous payment.</p>
+
+<h3>Chapter 3: A Craft Treated Seriously</h3>
+<p>Corrin explained to his apprentice afterward, quietly, that some doors simply weren't his to help someone open — a judgment call he made carefully, case by case, never explaining his full reasoning to customers who'd never understand a locksmith's work as anything beyond simple, unquestioning transaction. His apprentice learned, slowly, to trust that judgment as much as the craft itself.</p>
+`
+},
+{
+  title: "The Kid Who Learned to Handle Genuine Disappointment From Not Making the Travel Team",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-to-handle-genuine-disappointment-from-not-making-the-travel-team",
+  category: "Inspirational",
+  emoji: "⚽",
+  excerpt: "Cut from the travel soccer team despite months of genuine, dedicated effort, Dev has to process real disappointment that isn't easily fixed by simply trying harder. What he does with that disappointment matters more than the roster decision itself.",
+  created_at: "2027-05-02T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Genuine Effort, Not Enough</h3>
+<p>Dev had trained genuinely hard all season for the travel team tryout, effort that made the roster's final cut list — his name absent from it — feel considerably harder to process than a disappointment he could simply fix by trying harder next time.</p>
+
+<h3>Chapter 2: Sitting With Real Disappointment</h3>
+<p>His dad, rather than immediately offering solutions or false reassurance, simply let him genuinely feel the disappointment for a few days before gently suggesting they talk through what, specifically, had actually gone into the coach's decision.</p>
+
+<h3>Chapter 3: A Different Kind of Growth</h3>
+<p>Dev didn't make the team the following year either, genuinely close but still short. What he did carry forward was a considerably healthier relationship with disappointment itself — the ability to feel real loss without it meaning his effort had been wasted or worthless. He made the team, finally, on his third attempt, considerably more prepared for whatever came after either outcome.</p>
+`
+},
+{
+  title: "The Kid Who Learned Real Patience From Teaching Her Grandmother to Use a Smartphone",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-real-patience-from-teaching-her-grandmother-to-use-a-smartphone",
+  category: "Inspirational",
+  emoji: "📱",
+  excerpt: "Teaching her grandmother basic smartphone functions turns out to require considerably more patience than Priya expects, testing a virtue she'd always assumed she already had plenty of.",
+  created_at: "2027-05-02T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Underestimated Task</h3>
+<p>Priya volunteered to teach her grandmother basic smartphone functions expecting the task to take, at most, an afternoon — a genuinely mistaken assumption that three actual weeks of repeated, patient re-explanation thoroughly corrected.</p>
+
+<h3>Chapter 2: A Genuine Test of Patience</h3>
+<p>Explaining the same photo-sending steps for the fifth, then the tenth time tested a patience Priya had always assumed she genuinely possessed, discovering considerably how much deliberate effort actual patience required versus how easily she'd previously claimed the virtue for herself.</p>
+
+<h3>Chapter 3: A Skill Genuinely Built</h3>
+<p>Her grandmother finally sent an unprompted photo entirely on her own by week three, a small victory that felt considerably larger than the task itself warranted. Priya walked away with a genuinely different understanding of patience — not a trait she simply had, but a skill she'd actually had to practice and build through real, repeated effort.</p>
+`
+},
+{
+  title: "The Family That Finally Learned to Ask for Help Instead of Quietly Struggling Alone",
+  author: "Khyati Srivastava",
+  slug: "the-family-that-finally-learned-to-ask-for-help-instead-of-quietly-struggling-alone",
+  category: "Drama",
+  emoji: "🤝",
+  excerpt: "A genuine family tradition of quietly handling every hardship alone, without ever asking anyone for help, finally breaks during a crisis too big for the family to manage entirely by themselves.",
+  created_at: "2027-05-02T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Family Pattern</h3>
+<p>The Alvarez family had, across generations, maintained a genuine, unspoken tradition of handling every hardship privately, quietly, without ever asking extended family or community for actual help — a pattern of pride that had served them, mostly, until a genuine crisis proved considerably too large for the family to manage entirely alone.</p>
+
+<h3>Chapter 2: A Difficult Admission</h3>
+<p>It took real, uncomfortable honesty for Mom to finally admit, out loud, that the family genuinely needed help this time — a admission that felt, to her, like breaking a rule nobody had ever formally stated but everyone had always understood.</p>
+
+<h3>Chapter 3: What Asking Actually Revealed</h3>
+<p>The community's response, once actually asked, was considerably more generous and immediate than the family had ever anticipated, several neighbors admitting they'd wanted to help for years but never known how given the family's consistently guarded independence. The family's old tradition of quiet self-reliance has genuinely softened since. Asking for help, they finally learned, wasn't the weakness they'd always assumed.</p>
+`
+},
+{
+  title: "The Two Brothers Who Finally Had the Conversation Their Dad Never Got to Have With Them",
+  author: "Khyati Srivastava",
+  slug: "the-two-brothers-who-finally-had-the-conversation-their-dad-never-got-to-have-with-them",
+  category: "Drama",
+  emoji: "👨‍👦‍👦",
+  excerpt: "After their father's sudden passing leaves considerable things unsaid, two adult brothers finally have the honest, overdue conversation about their own relationship that their dad had always intended to eventually facilitate himself.",
+  created_at: "2027-05-02T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Unfinished Business</h3>
+<p>Their father's sudden passing left considerable things unsaid, including a conversation he'd genuinely intended to eventually facilitate between his two adult sons, whose relationship had grown distant over years of minor, unaddressed tensions neither had ever properly resolved.</p>
+
+<h3>Chapter 2: A Conversation, Finally Had</h3>
+<p>Sorting through their father's belongings together forced a proximity neither brother had experienced in years, old tensions surfacing awkwardly before either found the genuine courage to actually address them directly rather than continuing the familiar pattern of polite avoidance.</p>
+
+<h3>Chapter 3: What Their Father Had Wanted</h3>
+<p>The conversation, once finally had, resolved considerably more than either expected — years of accumulated small grievances addressed honestly, finally, in a way their father had genuinely hoped for but never quite managed to arrange himself. Both brothers agreed afterward: it was, in its own difficult way, one of the more meaningful things his passing had actually given them.</p>
+`
+},
+{
+  title: "The Text That Sat in Drafts for Three Weeks Before Finally Being Sent",
+  author: "Khyati Srivastava",
+  slug: "the-text-that-sat-in-drafts-for-three-weeks-before-finally-being-sent",
+  category: "Romance",
+  emoji: "💬",
+  excerpt: "Rewritten dozens of times over three genuine weeks, Priya's message to Dev finally gets sent on an ordinary Tuesday, for no particular reason beyond simply running out of reasons to keep waiting.",
+  created_at: "2027-05-02T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Three Weeks of Drafts</h3>
+<p>Priya's message to Dev had sat, rewritten dozens of times, in her phone's drafts for three genuine weeks, each version feeling either too obvious or too vague, never quite matching the courage she needed to actually press send.</p>
+
+<h3>Chapter 2: An Ordinary Tuesday</h3>
+<p>She finally sent it on an entirely unremarkable Tuesday afternoon, no particular occasion or courage-building event prompting the moment — simply, finally, running out of reasons to keep waiting for a perfect version that clearly wasn't coming.</p>
+
+<h3>Chapter 3: A Reply Worth the Wait</h3>
+<p>Dev's response came within minutes, genuinely warm and considerably less complicated than three weeks of anxious drafting had led her to expect. She's since learned that the perfect message rarely exists — sometimes an imperfect, finally-sent one simply has to be enough.</p>
+`
+},
+{
+  title: "The Carnival Ride That Broke Down at Exactly the Wrong, Right Moment",
+  author: "Khyati Srivastava",
+  slug: "the-carnival-ride-that-broke-down-at-exactly-the-wrong-right-moment",
+  category: "Romance",
+  emoji: "🎡",
+  excerpt: "Stuck at the very top of the ferris wheel for twenty genuinely unplanned minutes during a mechanical malfunction, Dev and Farrah have a conversation neither would have found the nerve to have on solid ground.",
+  created_at: "2027-05-02T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unfortunate Malfunction</h3>
+<p>The ferris wheel's genuine mechanical malfunction stranded Dev and Farrah at the very top for twenty entirely unplanned minutes, a technical delay that felt, in the moment, like a genuinely alarming interruption to what had been an ordinary carnival evening.</p>
+
+<h3>Chapter 2: An Unplanned Conversation</h3>
+<p>Trapped together with nothing but the view and each other's company, the forced pause somehow gave both the nerve to actually address feelings neither had found courage to voice during any of their previous, ground-level hangouts.</p>
+
+<h3>Chapter 3: A Malfunction Worth Thanking</h3>
+<p>The ride finally resumed, technicians apologizing profusely for the delay, entirely unaware they'd accidentally facilitated something considerably more significant than a broken gear. Dev and Farrah have, only half-jokingly, credited that malfunctioning ferris wheel directly for finally getting them together.</p>
+`
+},
+{
+  title: "The Kid Who Started a Free 'Practice Your New Language' Conversation Hour",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-started-a-free-practice-your-new-language-conversation-hour",
+  category: "Kids",
+  emoji: "🗣️",
+  excerpt: "Bilingual from birth, eleven-year-old Priya starts a free weekly conversation hour for classmates genuinely trying to practice a second language — patient, judgment-free, and considerably more helpful than any classroom worksheet.",
+  created_at: "2027-05-02T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Recognized Need</h3>
+<p>Priya, genuinely bilingual since childhood, noticed several classmates struggling to actually practice their second-language classes conversationally, worksheet vocabulary rarely translating into genuine, confident real speaking practice.</p>
+
+<h3>Chapter 2: A Judgment-Free Space</h3>
+<p>She started a simple weekly conversation hour, deliberately keeping the atmosphere patient and mistake-friendly, drawing on her own memory of how intimidating actually speaking a language out loud could feel compared to written classroom exercises.</p>
+
+<h3>Chapter 3: A Genuinely Effective Program</h3>
+<p>Several classmates have reported real, noticeable improvement in their actual speaking confidence, crediting Priya's patient, judgment-free hour with helping considerably more than classroom instruction alone. She's since recruited two other bilingual classmates to help run additional weekly sessions in different languages entirely.</p>
+`
+},
+{
+  title: "The Kid Who Ran a Free 'How to Ask for Help Without Feeling Weird About It' Workshop",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-ran-a-free-how-to-ask-for-help-without-feeling-weird-about-it-workshop",
+  category: "Kids",
+  emoji: "🙋",
+  excerpt: "Having genuinely struggled for years with the discomfort of asking for help, twelve-year-old Dev decides to teach classmates the specific, practical skill of asking directly — a considerably harder skill, he's realized, than most people assume.",
+  created_at: "2027-05-02T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Skill Genuinely Built</h3>
+<p>Dev had genuinely struggled for years with the discomfort of directly asking for help, a struggle he'd finally overcome through considerable deliberate practice — an experience that made him realize the actual skill of asking wasn't something people simply had or lacked naturally.</p>
+
+<h3>Chapter 2: A Practical Workshop</h3>
+<p>He organized a small, genuinely practical workshop specifically teaching classmates concrete phrasing and confidence tricks for actually asking for help, drawing entirely on his own hard-won experience rather than any abstract advice about "just asking."</p>
+
+<h3>Chapter 3: A Skill, Passed Along</h3>
+<p>Several classmates have credited his practical workshop with genuinely helping them ask teachers and parents for help considerably more comfortably than before. Dev finds the whole thing a little funny — teaching a skill he once found genuinely, deeply uncomfortable, now considerably more confident than most of his own students.</p>
+`
+},
+{
+  title: "The Hallway Light Switch That Sometimes Needs Two Flips Instead of One",
+  author: "Khyati Srivastava",
+  slug: "the-hallway-light-switch-that-sometimes-needs-two-flips-instead-of-one",
+  category: "Horror",
+  emoji: "💡",
+  excerpt: "The upstairs hallway switch has always worked with a single flip, reliably, for years. Lately, roughly once a week, it takes exactly two flips instead — the first doing genuinely nothing at all, the second working normally.",
+  created_at: "2027-05-02T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Reliable Switch, Mostly</h3>
+<p>The upstairs hallway light switch had worked with a single reliable flip for as long as Priya's family had lived in the house, until, roughly once a week with no obvious pattern, it started requiring exactly two flips instead — the first doing genuinely nothing detectable at all, the second working perfectly normally.</p>
+
+<h3>Chapter 2: An Electrician's Confusion</h3>
+<p>An electrician, called after the pattern held consistently for over a month, found no wiring fault whatsoever, the switch mechanism testing as entirely ordinary and functional despite its intermittent need for a genuinely unexplained second attempt.</p>
+
+<h3>Chapter 3: An Accepted Quirk</h3>
+<p>The family has simply adjusted, automatically flipping twice on the nights it seems to need it, a habit built entirely around a malfunction nobody's ever actually diagnosed. Priya still wonders, occasionally, what exactly that first flip is actually doing — or reaching — during the weeks it doesn't work the first time.</p>
+`
+},
+{
+  title: "The Backyard Fence Post That's Warm to the Touch Even in Deep Winter",
+  author: "Khyati Srivastava",
+  slug: "the-backyard-fence-post-thats-warm-to-the-touch-even-in-deep-winter",
+  category: "Horror",
+  emoji: "🌡️",
+  excerpt: "Every fence post in the yard reads properly cold in winter, as wood should. One specific post, third from the gate, stays noticeably warm to the touch regardless of season — a detail the family has stopped mentioning to guests.",
+  created_at: "2027-05-02T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Odd Discovery</h3>
+<p>Dev noticed it first during a genuinely cold winter afternoon, resting his hand absently on the backyard fence while retrieving a stray ball: every post felt appropriately, expectedly cold to the touch, except the third post from the gate, which felt distinctly, unmistakably warm.</p>
+
+<h3>Chapter 2: Testing It Repeatedly</h3>
+<p>He checked it deliberately across several more winter days, confirming the warmth held consistently regardless of actual outside temperature, the specific post never once matching the cold of every other identical piece of fencing surrounding it.</p>
+
+<h3>Chapter 3: A Detail, Quietly Kept</h3>
+<p>No contractor or arborist consulted has offered any explanation connecting to buried wiring, tree roots, or anything else that might reasonably account for the localized warmth. The family has simply stopped mentioning it to guests, touching that particular post occasionally themselves, still without any real answer for why it's the only one that never quite matches winter.</p>
+`
+},
+{
+  title: "The Refrigerator Magnet Collection That's Older Than Anyone Currently Living in This House",
+  author: "Khyati Srivastava",
+  slug: "the-refrigerator-magnet-collection-thats-older-than-anyone-currently-living-in-this-house",
+  category: "Poetry",
+  emoji: "🧲",
+  excerpt: "A warm, funny poem about the accumulated, mismatched refrigerator magnet collection that's outlasted every family who's actually lived in this particular kitchen.",
+  created_at: "2027-05-02T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Refrigerator Magnet Collection That's Older Than Anyone Currently Living in This House</h3>
+<p>A pizza place that closed years back,<br/>
+a souvenir from some forgotten track<br/>
+of a family trip nobody here remembers taking,<br/>
+a magnet shaped like fruit, slightly aching</p>
+
+<p>with rust along one weathered edge,<br/>
+holding up a photo, a pledge<br/>
+from a school year long since passed —<br/>
+this fridge holds decades, holds them fast.</p>
+
+<p>Nobody bought most of these on purpose,<br/>
+they just accumulated, layer on surface<br/>
+of layer, family after family adding<br/>
+their own small piece, gently padding</p>
+
+<p>this kitchen's history in cheap magnetic form,<br/>
+outlasting owners, weathering every storm<br/>
+of moves and changes, holding tight<br/>
+to a fridge door, quietly getting it right.</p>
+`
+},
+{
+  title: "The Same Corner Table at the Diner That's Held Every Family Milestone",
+  author: "Khyati Srivastava",
+  slug: "the-same-corner-table-at-the-diner-thats-held-every-family-milestone",
+  category: "Poetry",
+  emoji: "🍽️",
+  excerpt: "A steady, nostalgic poem about the specific corner booth at the neighborhood diner that's, somehow, witnessed nearly every significant family moment for two full decades.",
+  created_at: "2027-05-02T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Same Corner Table at the Diner That's Held Every Family Milestone</h3>
+<p>The vinyl's cracked, the table's scratched,<br/>
+but this corner booth's forever attached<br/>
+to every big news our family's had —<br/>
+good news, hard news, happy, sad.</p>
+
+<p>Here's where we celebrated the new job,<br/>
+here's where we cried, a quiet sob<br/>
+over news nobody wanted to hear,<br/>
+here's where we've marked every year</p>
+
+<p>worth marking, birthdays, graduations too,<br/>
+this same booth, worn but somehow new<br/>
+each time we slide back into its seat,<br/>
+ready for whatever news we're about to meet.</p>
+
+<p>The diner's changed its menu twice,<br/>
+raised its prices, even the price<br/>
+of coffee — but this booth stays the same,<br/>
+holding twenty years of this family's name.</p>
+`
+},
 ];
