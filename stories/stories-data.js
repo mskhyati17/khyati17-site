@@ -26524,4 +26524,574 @@ in a drawer of tape and dead batteries —<br/>
 not useful, but somehow, still, necessary.</p>
 `
 },
+{
+  title: "The Chandler Who Sold Patience by the Wick Length",
+  author: "Khyati Srivastava",
+  slug: "the-chandler-who-sold-patience-by-the-wick-length",
+  category: "Fantasy",
+  emoji: "🕯️",
+  excerpt: "Every candle Old Merrit sells burns exactly as long as its wick promises — nothing magical there. What's unusual is how customers always seem to finish exactly what they needed to finish right as the flame goes out.",
+  created_at: "2027-04-27T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Ordinary Product, An Odd Timing</h3>
+<p>Merrit's candles burned exactly as long as any properly measured wick should, nothing supernatural in the wax or flame itself — yet customers consistently reported finishing whatever difficult task they'd lit the candle for right as it guttered out, timing that felt considerably too precise to be coincidence.</p>
+
+<h3>Chapter 2: A Skeptical Scholar</h3>
+<p>A visiting scholar, working through a genuinely difficult translation, bought one specifically to test the claim, watching the flame carefully as he worked, certain he'd catch the trick eventually.</p>
+
+<h3>Chapter 3: The Actual Explanation</h3>
+<p>He finished his translation exactly as the wick burned down, and finally understood Merrit's quiet secret: the candles weren't magic. Knowing a flame burned finite gave people permission to work with real focus instead of endless procrastination. The deadline, not the wax, had done the actual work.</p>
+`
+},
+{
+  title: "The Ferryman's Apprentice Who Learned to Read the River's Moods",
+  author: "Khyati Srivastava",
+  slug: "the-ferrymans-apprentice-who-learned-to-read-the-rivers-moods",
+  category: "Fantasy",
+  emoji: "🚤",
+  excerpt: "The old ferryman insists the river has moods — calm, restless, generous, stubborn — and refuses to cross when it's in the wrong one. His new apprentice thinks it's superstitious nonsense, until ignoring it nearly costs him everything.",
+  created_at: "2027-04-27T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Old Superstition, Apparently</h3>
+<p>Old Corrin refused to cross the river whenever he judged its "mood" wrong, a habit his new apprentice Otho considered genuinely superstitious nonsense dressed up as wisdom, dismissing it as an old man's excuse for laziness.</p>
+
+<h3>Chapter 2: A Costly Mistake</h3>
+<p>Otho attempted a crossing alone one afternoon Corrin had specifically refused, certain the calm-looking water posed no real danger, only to find the current considerably stronger beneath the surface than its placid appearance suggested.</p>
+
+<h3>Chapter 3: What "Mood" Actually Meant</h3>
+<p>He barely made it back safely, shaken and humbled, finally understanding that Corrin's "mood-reading" was really decades of accumulated observation about subtle current patterns dressed in folksy language. Otho spent the next three years genuinely learning to read those same patterns properly. He never again dismissed the old ferryman's judgment as mere superstition.</p>
+`
+},
+{
+  title: "The Colony That Named Its Emergency Protocol After a Kid",
+  author: "Khyati Srivastava",
+  slug: "the-colony-that-named-its-emergency-protocol-after-a-kid",
+  category: "Sci-Fi",
+  emoji: "🚨",
+  excerpt: "During a genuine oxygen crisis, it's twelve-year-old Reya's calm, correctly-remembered emergency steps that save her section of the colony. The updated protocol now officially bears her name — a fact she finds both proud and mildly embarrassing.",
+  created_at: "2027-04-27T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Genuine Crisis</h3>
+<p>The oxygen system malfunction hit Reya's colony section without warning, adult supervisors briefly overwhelmed by the sudden emergency while Reya, twelve years old and genuinely calm under pressure, correctly remembered and executed every step of the drilled evacuation protocol.</p>
+
+<h3>Chapter 2: A Twelve-Year-Old's Composure</h3>
+<p>Her calm, precise execution — sealing the correct bulkheads, guiding younger kids to the proper safe zone — bought the adult engineers exactly the time they needed to resolve the actual malfunction before it became genuinely dangerous.</p>
+
+<h3>Chapter 3: An Official Honor, Mildly Embarrassing</h3>
+<p>The colony council formally updated the section's emergency protocol to include her specific sequence of actions, officially naming it "Reya's Protocol" in colony records. Reya finds the honor genuinely touching and more than a little embarrassing every time a younger kid asks her, with total sincerity, what it felt like to have a protocol named after her.</p>
+`
+},
+{
+  title: "The Deep Space Probe That Kept Sending Home Bad Jokes",
+  author: "Khyati Srivastava",
+  slug: "the-deep-space-probe-that-kept-sending-home-bad-jokes",
+  category: "Sci-Fi",
+  emoji: "🛰️",
+  excerpt: "Alongside its scientific data, the aging deep-space probe has started transmitting genuinely terrible puns back to Earth — nobody programmed this feature, and mission control has, against all professional instinct, grown fond of it.",
+  created_at: "2027-04-27T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unexpected Addition</h3>
+<p>Alongside its usual careful scientific telemetry, the aging Voyager-class probe had, sometime in its second decade of operation, started appending genuinely terrible puns to its regular data transmissions — nobody on the current mission control team had programmed the feature or could locate its origin in the original code.</p>
+
+<h3>Chapter 2: An Unofficial Tradition</h3>
+<p>The mission control team, initially baffled, gradually grew genuinely fond of the daily punchline waiting alongside actual scientific data, several younger engineers admitting the terrible jokes had become the highlight of otherwise routine data-review mornings.</p>
+
+<h3>Chapter 3: An Unsolved, Beloved Mystery</h3>
+<p>The best working theory, never fully confirmed, traced back to a long-retired programmer who'd apparently embedded the joke generator decades earlier as a private easter egg nobody had discovered until the probe reached deep enough space to actually start including them. The current team has left the feature entirely intact, terrible puns and all.</p>
+`
+},
+{
+  title: "The Case of the Impeccably Timed Sneeze",
+  author: "Khyati Srivastava",
+  slug: "the-case-of-the-impeccably-timed-sneeze",
+  category: "Mystery",
+  emoji: "🤧",
+  excerpt: "Every single class photo taken over three years shows the exact same student mid-sneeze — never blinking, never looking away, always specifically caught sneezing at the precise moment the shutter clicks.",
+  created_at: "2027-04-27T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Suspicious Pattern</h3>
+<p>Yearbook editor Priya noticed it reviewing three years of archived class photos: student Dev appeared mid-sneeze in every single one, an eyes-shut, genuinely unflattering expression too consistent across three separate years to reasonably be coincidence.</p>
+
+<h3>Chapter 2: A Direct Question</h3>
+<p>She finally asked Dev directly whether he had some kind of seasonal allergy that reliably flared up during exactly three separate annual photo sessions, genuinely curious about the improbable timing.</p>
+
+<h3>Chapter 3: A Perfectly Ordinary Explanation</h3>
+<p>Dev admitted, laughing, that the school photographer used a specific bright flash that reliably triggered his mild photic sneeze reflex — a genuine, documented condition affecting a small percentage of people exposed to sudden bright light. Three years of "mysterious" sneeze photos turned out to be entirely explainable science. Dev has requested sunglasses for next year's photo, just in case.</p>
+`
+},
+{
+  title: "Who's Been Perfectly Repairing the Community Garden's Broken Tools Overnight?",
+  author: "Khyati Srivastava",
+  slug: "whos-been-perfectly-repairing-the-community-gardens-broken-tools-overnight",
+  category: "Mystery",
+  emoji: "🔧",
+  excerpt: "Broken garden tools left in the community shed keep turning up expertly repaired the next morning — new handles, sharpened blades, work considerably more skilled than any of the garden's regular volunteers can actually manage.",
+  created_at: "2027-04-27T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Expertly Repaired</h3>
+<p>Community garden coordinator Priya kept finding broken tools — a cracked shovel handle, a dull pruning shear — mysteriously repaired to genuinely professional standard by the following morning, considerably beyond the repair skill of any regular volunteer she knew.</p>
+
+<h3>Chapter 2: A Quiet Investigation</h3>
+<p>She started leaving a note in the shed asking whoever was responsible to introduce themselves, curious more than suspicious, genuinely wanting to thank the mystery repairer for their considerable, unrequested skill.</p>
+
+<h3>Chapter 3: A Retired Craftsman's Quiet Habit</h3>
+<p>An elderly man named Mr. Aldous finally left a shy reply, admitting he was a retired tool-and-die maker who'd simply started fixing things during his evening walks past the garden, finding the small repairs genuinely satisfying in retirement. The garden officially welcomed him as their "unofficial tool specialist" — a title he accepted with visible, quiet pride.</p>
+`
+},
+{
+  title: "The Backyard Zipline Project That Taught Everyone Proper Engineering",
+  author: "Khyati Srivastava",
+  slug: "the-backyard-zipline-project-that-taught-everyone-proper-engineering",
+  category: "Adventure",
+  emoji: "🪢",
+  excerpt: "Determined to build a real backyard zipline, three friends' first attempt fails spectacularly due to poor tension calculations. Their second, considerably more researched attempt teaches them genuine engineering principles no textbook ever quite made stick.",
+  created_at: "2027-04-27T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Ambitious First Attempt</h3>
+<p>Dev, Priya, and Kofi's first backyard zipline attempt, built with genuine enthusiasm but minimal actual research, sagged dramatically the moment weight hit the cable, ending in an anticlimactic slow slide rather than the thrilling ride they'd envisioned.</p>
+
+<h3>Chapter 2: Real Research This Time</h3>
+<p>Rather than give up, they actually researched proper cable tension and anchor point physics, genuinely applying concepts from their science class that had felt abstract right up until they needed them for something they actually cared about building.</p>
+
+<h3>Chapter 3: A Working Zipline, Properly Understood</h3>
+<p>Their second attempt worked exactly as intended, considerably more satisfying for the real understanding behind it than the first attempt's disappointing failure had been. Their science teacher, hearing about the project, asked them to present the actual physics involved to the class — abstract concepts made genuinely concrete through backyard trial and error.</p>
+`
+},
+{
+  title: "The Trail Run That Turned Into an Unexpected Wildlife Encounter",
+  author: "Khyati Srivastava",
+  slug: "the-trail-run-that-turned-into-an-unexpected-wildlife-encounter",
+  category: "Adventure",
+  emoji: "🦌",
+  excerpt: "A routine training run for the cross-country team takes an unexpected turn when Priya rounds a bend directly into a small herd of deer — testing everything her coach ever taught her about staying calm under sudden surprise.",
+  created_at: "2027-04-27T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Routine Run, Interrupted</h3>
+<p>Priya's regular cross-country training run through the wooded trail had followed the exact same route for months, uneventful and familiar, right up until she rounded a bend directly into a small herd of deer grazing calmly in her path.</p>
+
+<h3>Chapter 2: Staying Calm</h3>
+<p>Her first instinct was pure startled panic, quickly overridden by her coach's repeated wildlife safety training — stop moving suddenly, back away slowly, give the animals space rather than triggering a fear response in either direction.</p>
+
+<h3>Chapter 3: A Peaceful Resolution</h3>
+<p>The deer, unbothered once she'd stopped her sudden approach, simply continued grazing while Priya backed away carefully and found an alternate path around them. She finished her run considerably slower than planned but genuinely proud of staying calm through a situation her training had prepared her for better than she'd realized until she actually needed it.</p>
+`
+},
+{
+  title: "The Parrot Who Learned to Recite the Family's Grocery List From Memory",
+  author: "Khyati Srivastava",
+  slug: "the-parrot-who-learned-to-recite-the-familys-grocery-list-from-memory",
+  category: "Animals",
+  emoji: "🦜",
+  excerpt: "After hearing it read aloud enough times, the family's African grey parrot has memorized the standard weekly grocery list completely — and now recites it, unprompted, whenever anyone mentions going to the store.",
+  created_at: "2027-04-27T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unusual Memorization</h3>
+<p>Kiwi the African grey parrot had, apparently through pure repeated exposure, memorized the family's standard weekly grocery list completely — milk, eggs, bread, and a dozen other regular items — reciting it with startling accuracy whenever anyone mentioned an upcoming store trip.</p>
+
+<h3>Chapter 2: A Genuinely Useful Skill</h3>
+<p>The family started genuinely relying on Kiwi's recitation as a backup memory check before shopping trips, several times catching a forgotten item purely because the parrot's insistent squawking reminded them at exactly the right moment.</p>
+
+<h3>Chapter 3: An Official Household Role</h3>
+<p>Kiwi has, in the family's own words, become "the world's least conventional grocery list app," a role he seems to take with genuine enthusiasm every single time a shopping trip gets mentioned. The family has never once needed a written list since.</p>
+`
+},
+{
+  title: "The Hedgehog Who Refuses to Hibernate Without His Specific Blanket",
+  author: "Khyati Srivastava",
+  slug: "the-hedgehog-who-refuses-to-hibernate-without-his-specific-blanket",
+  category: "Animals",
+  emoji: "🦔",
+  excerpt: "Pip the hedgehog will not settle into his winter hibernation nest without one specific worn scrap of fleece blanket — any substitute, however similar, gets firmly rejected until the original is located.",
+  created_at: "2027-04-27T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Specific Requirement</h3>
+<p>Pip the pet hedgehog had, over several winters, developed a strict, non-negotiable requirement for hibernation: one particular scrap of worn fleece blanket, any substitute — even identical fabric from the same original piece — firmly rejected in favor of the original.</p>
+
+<h3>Chapter 2: A Genuine Crisis</h3>
+<p>The family faced real panic one winter when the specific fleece scrap went missing during laundry, Pip refusing to settle properly without it, restlessly rearranging his nest night after night in obvious dissatisfaction.</p>
+
+<h3>Chapter 3: A Relieved Reunion</h3>
+<p>The scrap finally turned up, slightly shrunk, tangled in a fitted sheet from an unrelated load. Pip accepted it back immediately and settled into proper hibernation within the hour. The family now keeps it in a labeled, carefully guarded bag specifically to prevent any future laundry-related hibernation crises.</p>
+`
+},
+{
+  title: "The School Fundraiser Bake Sale That Accidentally Started a Baking Rivalry Across Three Schools",
+  author: "Khyati Srivastava",
+  slug: "the-school-fundraiser-bake-sale-that-accidentally-started-a-baking-rivalry-across-three-schools",
+  category: "Comedy",
+  emoji: "🧁",
+  excerpt: "A friendly comment about whose school had the better bake sale escalates, through social media and genuine competitive pride, into an actual three-school baking rivalry nobody official ever intended to sanction.",
+  created_at: "2027-04-27T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Innocent Comment</h3>
+<p>A parent's offhand social media comment claiming their school's fundraiser bake sale was "obviously the best in the district" set off a chain reaction nobody anticipated, two neighboring schools' parent groups responding with genuinely competitive counter-claims within the hour.</p>
+
+<h3>Chapter 2: An Unofficial Escalation</h3>
+<p>What followed was three schools' worth of increasingly elaborate baked goods, parent volunteers pulling out genuinely impressive recipes purely to defend their school's honor in a rivalry no official administrator had ever sanctioned or requested.</p>
+
+<h3>Chapter 3: A Tradition, Now Official</h3>
+<p>The district finally formalized it the following year as an actual sanctioned inter-school bake-off, complete with judges and a traveling trophy. Nobody quite remembers which parent's original comment started it all. Everyone agrees the resulting baked goods have genuinely improved considerably since the rivalry began.</p>
+`
+},
+{
+  title: "The Family Camping Trip Where Everyone Forgot a Different Essential Item",
+  author: "Khyati Srivastava",
+  slug: "the-family-camping-trip-where-everyone-forgot-a-different-essential-item",
+  category: "Comedy",
+  emoji: "⛺",
+  excerpt: "Between them, the family manages to forget the tent poles, the cooler, the actual food, and — most confusingly — the map, resulting in a genuinely improvised camping trip that somehow, gloriously, still worked out.",
+  created_at: "2027-04-27T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Comedy of Forgotten Items</h3>
+<p>The family arrived at their campsite to a genuinely impressive collective failure: Dad had forgotten the tent poles, Mom had forgotten the cooler, and somehow, between four people, nobody had actually packed the food they'd planned to cook that weekend.</p>
+
+<h3>Chapter 2: Full Improvisation</h3>
+<p>What followed was a genuinely creative scramble — a tent rigged from sticks and rope, a nearby camp store's overpriced but adequate supplies, and dinner that consisted entirely of whatever the small store happened to still have in stock.</p>
+
+<h3>Chapter 3: The Best Trip Anyway</h3>
+<p>Despite — or perhaps because of — the total logistical disaster, the family genuinely agreed it was one of their best camping trips ever, the improvised chaos producing considerably better stories than any properly planned trip ever had. They've since started, half-jokingly, drawing straws each year for who gets to "forget" something on purpose.</p>
+`
+},
+{
+  title: "The Cobbler's Daughter Who Fixed Shoes That Carried Real Weight",
+  author: "Khyati Srivastava",
+  slug: "the-cobblers-daughter-who-fixed-shoes-that-carried-real-weight",
+  category: "Fairytale",
+  emoji: "👞",
+  excerpt: "Priya's father teaches her the shoe-repair trade properly, but it's her own quiet observation that reveals the real secret: some worn-down shoes aren't broken from wear, but from carrying burdens their owner never mentions aloud.",
+  created_at: "2027-04-28T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Apprenticeship</h3>
+<p>Priya learned the cobbler's trade from her father properly, stitch by careful stitch, considering it purely mechanical work until she noticed a pattern he'd apparently understood for years without ever mentioning it: some shoes wore down in ways ordinary walking simply didn't explain.</p>
+
+<h3>Chapter 2: A Closer Look</h3>
+<p>She started paying closer attention to which customers' shoes showed that particular unexplained wear, noticing it always coincided with visible exhaustion or worry in the person themselves — not just physical distance walked, but emotional weight carried.</p>
+
+<h3>Chapter 3: What Her Father Actually Knew</h3>
+<p>She finally asked him directly, and he admitted, quietly, that he'd always repaired those shoes a little more carefully, a little more generously priced, without ever explaining why to the customer. "Some burdens," he said simply, "deserve a shoe that holds up under them, whether or not anyone ever says so out loud."</p>
+`
+},
+{
+  title: "The Wandering Healer Who Only Treated What People Admitted to Feeling",
+  author: "Khyati Srivastava",
+  slug: "the-wandering-healer-who-only-treated-what-people-admitted-to-feeling",
+  category: "Fairytale",
+  emoji: "🌿",
+  excerpt: "Healer Onyeka's medicine works flawlessly — but only after the patient honestly names what's actually wrong, not the polite excuse they usually offer instead. Half her practice, she admits, is just waiting for people to finally say the true thing.",
+  created_at: "2027-04-28T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Frustrating Practice</h3>
+<p>Onyeka's medicine, villagers had learned, worked flawlessly once properly applied — the frustrating part was that it required patients to first honestly name what was actually troubling them, not the polite, minimized version most people offered initially.</p>
+
+<h3>Chapter 2: A Stubborn Patient</h3>
+<p>A proud merchant, complaining vaguely of "just being tired lately," received no relief from Onyeka's treatment for three separate visits, growing increasingly frustrated until she finally, gently pressed him to name what was genuinely wearing him down.</p>
+
+<h3>Chapter 3: What Honesty Actually Fixed</h3>
+<p>He finally admitted, quietly, real fear about his failing business — and the very same treatment that had done nothing for "just tired" worked immediately once applied to the honest truth. Onyeka never explained why honesty mattered to her remedies. She simply kept waiting, patiently, for patients to finally say the true thing.</p>
+`
+},
+{
+  title: "The Kid Who Learned to Handle Criticism From Coaching a Team of Six-Year-Olds",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-to-handle-criticism-from-coaching-a-team-of-six-year-olds",
+  category: "Inspirational",
+  emoji: "⚽",
+  excerpt: "Volunteering to help coach the youngest soccer league, thirteen-year-old Dev gets genuinely blunt, unfiltered feedback from six-year-olds who have absolutely no filter about what they think of his coaching. It teaches him more than any adult critique ever has.",
+  created_at: "2027-04-28T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unfiltered Audience</h3>
+<p>Dev volunteered to help coach the youngest soccer league expecting an easy, low-pressure commitment, not fully anticipating that six-year-olds offered genuinely blunt, entirely unfiltered feedback about every drill he attempted to run.</p>
+
+<h3>Chapter 2: Real, Immediate Critique</h3>
+<p>"This is boring" and "I don't get it" came considerably more directly from his tiny team than any adult critique ever had, forcing Dev to actually adjust his approach in real time rather than defensively dismissing the feedback.</p>
+
+<h3>Chapter 3: A Genuinely Useful Skill</h3>
+<p>He got noticeably better at both coaching and, considerably more broadly, hearing blunt criticism without it wounding his ego — six-year-olds, it turned out, had absolutely no interest in softening feedback for his feelings. Dev credits that volunteer season with teaching him to hear criticism as useful information rather than personal attack, a skill that's mattered well beyond soccer practice.</p>
+`
+},
+{
+  title: "The Kid Who Learned to Handle Pressure From Working the School Store Register",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-to-handle-pressure-from-working-the-school-store-register",
+  category: "Inspirational",
+  emoji: "🏪",
+  excerpt: "Volunteering to run the school store's register during the busy morning rush teaches Priya to handle genuine pressure and impatient customers with a calm she didn't know she had — a skill that turns out to matter well beyond selling pencils.",
+  created_at: "2027-04-28T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Underestimated Commitment</h3>
+<p>Priya volunteered for the school store's morning register shift expecting something genuinely low-key, not fully anticipating the actual crush of impatient kids trying to grab supplies before the first bell rang, several visibly annoyed by any slight delay in her transaction speed.</p>
+
+<h3>Chapter 2: Learning Under Real Pressure</h3>
+<p>Her first few shifts left her genuinely rattled, fumbling change and apologizing repeatedly to increasingly impatient customers, until she deliberately started slowing her own breathing and pace rather than matching the crowd's rushed energy.</p>
+
+<h3>Chapter 3: A Calm She Didn't Know She Had</h3>
+<p>By her tenth shift, Priya handled the morning rush with a genuine, practiced calm that surprised even herself, unbothered by lines or impatience in a way her earlier anxious self would never have believed possible. She's since noticed that same calm showing up in test-taking and other genuinely stressful situations — a skill built entirely from selling pencils under pressure.</p>
+`
+},
+{
+  title: "The Family That Learned to Celebrate Small Wins After a Hard Diagnosis",
+  author: "Khyati Srivastava",
+  slug: "the-family-that-learned-to-celebrate-small-wins-after-a-hard-diagnosis",
+  category: "Drama",
+  emoji: "🎗️",
+  excerpt: "After a difficult family health diagnosis reshapes what an ordinary good day looks like, the family learns, slowly, to genuinely celebrate small victories they'd have never noticed before — a good appetite, an easy morning, a decent night's sleep.",
+  created_at: "2027-04-28T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A New Reality</h3>
+<p>The family's understanding of what constituted a genuinely good day shifted entirely after Mom's diagnosis, big milestones replaced by considerably smaller, more immediate victories nobody had ever thought to celebrate before — a decent appetite, an easy morning, a full night's sleep.</p>
+
+<h3>Chapter 2: Learning to Notice</h3>
+<p>It took real, deliberate effort to actually notice and celebrate those small wins rather than mourning the bigger, easier life they'd had before, a genuine shift in perspective the whole family had to practice together, awkwardly at first.</p>
+
+<h3>Chapter 3: A Different Kind of Gratitude</h3>
+<p>Months into treatment, the family found themselves genuinely, unironically celebrating things they'd have never noticed in their old life — an ordinary Tuesday with no complications felt, by then, worth marking properly. The diagnosis reshaped their whole sense of what mattered. Considerably more of it, they found, than they'd ever expected.</p>
+`
+},
+{
+  title: "The Coach Who Had to Bench His Own Kid for the Championship",
+  author: "Khyati Srivastava",
+  slug: "the-coach-who-had-to-bench-his-own-kid-for-the-championship",
+  category: "Drama",
+  emoji: "🏆",
+  excerpt: "Coaching fairly means benching his own son for the championship game in favor of a genuinely better-performing teammate. The decision tests both the coach-parent relationship and the actual father-son one waiting at home.",
+  created_at: "2027-04-28T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Hard, Fair Decision</h3>
+<p>Coach Reyes had promised himself total fairness regardless of family connection, a principle tested directly when the championship game's starting lineup genuinely called for benching his own son Dev in favor of a teammate who'd simply performed better all season.</p>
+
+<h3>Chapter 2: A Difficult Drive Home</h3>
+<p>Dev took the decision hard, the ride home from the championship — lost, though not because of the lineup change — genuinely tense between father and son in a way their usual easy relationship rarely was.</p>
+
+<h3>Chapter 3: An Honest Conversation, Eventually</h3>
+<p>It took several days before either brought it up directly, Dev finally admitting the benching had stung considerably more because it came from his own dad, Reyes admitting the decision had cost him something too. Neither pretended it had been painless. Both agreed, eventually, it had genuinely been the right call — a fairness that mattered more than either's comfort in the moment.</p>
+`
+},
+{
+  title: "The Escape Room Date That Revealed Way More Than Puzzle-Solving Skills",
+  author: "Khyati Srivastava",
+  slug: "the-escape-room-date-that-revealed-way-more-than-puzzle-solving-skills",
+  category: "Romance",
+  emoji: "🔐",
+  excerpt: "An escape room first date reveals, considerably more than either expected, exactly how Dev and Farrah handle pressure, disagreement, and genuine teamwork — turns out to be a considerably better first-date test than dinner ever would have been.",
+  created_at: "2027-04-28T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unconventional First Date</h3>
+<p>Dev suggested the escape room half as a joke, half genuinely curious how a first date under actual time pressure might reveal more than a standard dinner conversation ever could — Farrah, intrigued by the unusual pitch, agreed readily.</p>
+
+<h3>Chapter 2: Genuine Teamwork Under Pressure</h3>
+<p>The room's puzzles required real collaboration, both of them discovering, considerably faster than small talk would have revealed, how the other actually handled disagreement, frustration, and genuine problem-solving pressure in real time.</p>
+
+<h3>Chapter 3: A Test Passed, Unexpectedly Well</h3>
+<p>They escaped with four minutes to spare, both genuinely impressed by how well they'd worked together under real pressure. Their second date was considerably more conventional — dinner, actual conversation — but both privately agreed the escape room had told them more about real compatibility than any restaurant ever could have.</p>
+`
+},
+{
+  title: "The Prom Proposal That Went Completely Off Script",
+  author: "Khyati Srivastava",
+  slug: "the-prom-proposal-that-went-completely-off-script",
+  category: "Romance",
+  emoji: "💐",
+  excerpt: "Dev's elaborately planned prom-ask, involving a poster and a rehearsed speech, gets derailed entirely by a sudden rainstorm — forcing a genuinely improvised backup that turns out considerably better than the original plan.",
+  created_at: "2027-04-28T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Carefully Planned Ask</h3>
+<p>Dev had planned his prom-ask for weeks — a hand-painted poster, a rehearsed speech, the perfect quiet spot by the school fountain — a plan a sudden, entirely unforecasted downpour destroyed within minutes of him actually setting up.</p>
+
+<h3>Chapter 2: A Soaked, Improvised Backup</h3>
+<p>Soaked and genuinely panicking, he abandoned the ruined poster and simply ran to find Priya directly, asking her plainly and honestly, without any of his rehearsed speech, right there in the rain outside her classroom.</p>
+
+<h3>Chapter 3: A Better Story Than Planned</h3>
+<p>She said yes immediately, both of them laughing about the soaked, entirely unplanned moment more than any polished poster proposal could have produced. The ruined poster still hangs in Dev's room, a slightly water-damaged reminder that the actual moment mattered considerably more than the plan he'd abandoned to get there.</p>
+`
+},
+{
+  title: "The Kid Who Started a Free Bike Repair Co-Op With Actual Younger Apprentices",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-started-a-free-bike-repair-co-op-with-actual-younger-apprentices",
+  category: "Kids",
+  emoji: "🚲",
+  excerpt: "Having grown his solo bike repair stand into a genuine neighborhood fixture, twelve-year-old Dev starts formally training two younger kids as apprentices — passing along a skill considerably bigger than himself.",
+  created_at: "2027-04-28T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Outgrowing a Solo Operation</h3>
+<p>Dev's original solo bike repair stand had grown genuinely too popular for one twelve-year-old to manage alone, prompting him to consider, for the first time, formally training a couple of younger neighborhood kids to actually help with the growing demand.</p>
+
+<h3>Chapter 2: Real Teaching, Real Responsibility</h3>
+<p>Training his two younger apprentices properly took considerably more patience than doing the repairs himself, Dev discovering genuine satisfaction in watching them actually master skills he'd once taught himself entirely through trial and error.</p>
+
+<h3>Chapter 3: A Skill Passed Forward</h3>
+<p>The co-op now runs regularly with three kids instead of one, Dev's original operation genuinely multiplied rather than replaced. He's already planning to teach his young apprentices to eventually train their own successors — a skill, he's decided, that only really matters if it keeps getting passed along.</p>
+`
+},
+{
+  title: "The Kid Who Ran a Free Plant Adoption Program for Classmates",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-ran-a-free-plant-adoption-program-for-classmates",
+  category: "Kids",
+  emoji: "🌱",
+  excerpt: "After successfully propagating dozens of new plants from her own thriving collection, ten-year-old Reya starts giving away free baby plants to classmates — complete with hand-written care instructions and genuine follow-up check-ins.",
+  created_at: "2027-04-28T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Thriving Hobby</h3>
+<p>Reya's houseplant collection had grown considerably over a year of careful attention, producing far more successfully propagated baby plants than her own windowsill could reasonably hold, prompting an idea about what to do with the surplus.</p>
+
+<h3>Chapter 2: A Genuine Program</h3>
+<p>She started offering free baby plants to interested classmates, each one accompanied by hand-written care instructions specific to that plant type, taking genuine care to match easier plants with beginners rather than setting anyone up for disappointing failure.</p>
+
+<h3>Chapter 3: A Growing Community</h3>
+<p>Over two dozen classmates now have plants that started in Reya's care, several checking in with her regularly for advice, a small but genuine plant-loving community that grew entirely from her own overflowing windowsill. She considers every successfully thriving classmate plant a small personal victory.</p>
+`
+},
+{
+  title: "The Streetlamp Outside That Only Flickers When Someone's About to Call",
+  author: "Khyati Srivastava",
+  slug: "the-streetlamp-outside-that-only-flickers-when-someones-about-to-call",
+  category: "Horror",
+  emoji: "💡",
+  excerpt: "The streetlamp outside Priya's bedroom window flickers erratically most nights, unremarkable — except she's noticed, uneasily, that it always flickers exactly a few seconds before her phone actually rings.",
+  created_at: "2027-04-28T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Ordinary Flicker, At First</h3>
+<p>The streetlamp outside Priya's window had flickered unremarkably for years, old wiring the likely culprit according to the city's maintenance records — until she started noticing, gradually and uneasily, that its flickers seemed to precede her phone actually ringing by a few consistent seconds.</p>
+
+<h3>Chapter 2: Testing the Pattern</h3>
+<p>She began tracking it deliberately, noting every flicker against every subsequent call over several weeks, and found the pattern held with unsettling consistency — flicker first, ring seconds later, nearly every single time regardless of who was calling or why.</p>
+
+<h3>Chapter 3: An Early Warning, Unexplained</h3>
+<p>She's never found a rational explanation connecting old streetlamp wiring to her phone's incoming calls. She has, however, started glancing at the window whenever it flickers now, genuinely curious — and a little unsettled — about who's about to call before her phone even makes a sound.</p>
+`
+},
+{
+  title: "The Backyard Shed That's Always Ten Degrees Colder Than It Should Be",
+  author: "Khyati Srivastava",
+  slug: "the-backyard-shed-thats-always-ten-degrees-colder-than-it-should-be",
+  category: "Horror",
+  emoji: "🌡️",
+  excerpt: "No matter the season, the family's backyard storage shed reads a consistent ten degrees colder than the outside temperature — properly insulated, properly checked by an electrician, and stubbornly, unexplainably cold regardless.",
+  created_at: "2027-04-28T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Odd Temperature Gap</h3>
+<p>Priya noticed it first storing summer gear during a genuinely hot afternoon: the backyard shed felt distinctly, noticeably colder than the outside air, a discrepancy she confirmed with an actual thermometer showing a consistent ten-degree gap.</p>
+
+<h3>Chapter 2: Ruling Out Explanations</h3>
+<p>An electrician checked for any hidden cooling system or insulation quirk that might explain it, finding nothing beyond ordinary, uninsulated wooden construction that should have, by any reasonable physics, matched the outside temperature closely.</p>
+
+<h3>Chapter 3: An Accepted Oddity</h3>
+<p>The family has simply adjusted, keeping a light jacket by the shed door for quick trips inside regardless of season. Nobody has ever found a satisfying explanation for the consistent ten-degree gap. They've mostly stopped actively wondering about it — the shed, whatever its reason, has simply always run cold.</p>
+`
+},
+{
+  title: "The Screen Door That Everyone in the Family Knows to Lift While Closing",
+  author: "Khyati Srivastava",
+  slug: "the-screen-door-that-everyone-in-the-family-knows-to-lift-while-closing",
+  category: "Poetry",
+  emoji: "🚪",
+  excerpt: "A warm, funny poem about the small, unspoken household knowledge — like exactly how to lift the screen door while closing it — that quietly marks who truly belongs in a home.",
+  created_at: "2027-04-28T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Screen Door That Everyone in the Family Knows to Lift While Closing</h3>
+<p>Nobody wrote it down, nobody explained,<br/>
+but everyone who's lived here has retained<br/>
+the small, specific lift-and-push trick<br/>
+that stops the screen door's stubborn click.</p>
+
+<p>Guests always struggle, every time,<br/>
+fighting the frame, missing the rhyme<br/>
+of exactly how much lift it needs —<br/>
+family just knows, like reading a creed.</p>
+
+<p>It's such a small, unspoken thing,<br/>
+but it's how you know who truly belongs to this ring<br/>
+of people who've learned this door by heart,<br/>
+without a lesson, without a chart.</p>
+
+<p>Someday we'll fix the hinge, we always say,<br/>
+but somehow it stays broken anyway —<br/>
+maybe because the trick itself became<br/>
+its own small, quiet claim to this home's name.</p>
+`
+},
+{
+  title: "The Extra Chair That Gets Pulled Up Without Anyone Asking",
+  author: "Khyati Srivastava",
+  slug: "the-extra-chair-that-gets-pulled-up-without-anyone-asking",
+  category: "Poetry",
+  emoji: "🪑",
+  excerpt: "A gentle poem celebrating the reflexive, unquestioning hospitality of always making room for one more at the table — no headcount needed, no awkward math, just an extra chair pulled up automatically.",
+  created_at: "2027-04-28T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Extra Chair That Gets Pulled Up Without Anyone Asking</h3>
+<p>Someone new walks in the door,<br/>
+and before a word's said, before<br/>
+anyone even asks if there's room,<br/>
+a chair appears, pulled from some corner or broom</p>
+
+<p>closet, somewhere, always somehow found,<br/>
+scraped across the kitchen ground,<br/>
+squeezed in tight beside the rest —<br/>
+no headcount needed, no formal request.</p>
+
+<p>It's not a big thing, not a grand gesture,<br/>
+just an extra chair, a quiet texture<br/>
+of a house that's never once turned away<br/>
+whoever showed up, whatever the day.</p>
+
+<p>So if you're ever standing at that door,<br/>
+unsure if there's really room for one more —<br/>
+there is. There always somehow is.<br/>
+That's just how this table does its business.</p>
+`
+},
 ];
