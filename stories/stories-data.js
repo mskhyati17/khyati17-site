@@ -27664,4 +27664,574 @@ but every year I add one more instead,<br/>
 one more small year of who I chose to be, ahead.</p>
 `
 },
+{
+  title: "The Tinker Who Fixed Machines by Understanding What They Missed",
+  author: "Khyati Srivastava",
+  slug: "the-tinker-who-fixed-machines-by-understanding-what-they-missed",
+  category: "Fantasy",
+  emoji: "⚙️",
+  excerpt: "Every broken machine that reaches Old Bosco's shop gets fixed the same unusual way: he doesn't just repair the part that failed, he figures out what the machine actually wanted to do and builds toward that instead.",
+  created_at: "2027-04-29T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unusual Repair Philosophy</h3>
+<p>Bosco's shop fixed broken machines the ordinary way most days, but his true specialty lay elsewhere: rather than simply replacing whatever part had failed, he took time to understand what the machine had actually been trying to accomplish, and built the repair toward that genuine purpose instead.</p>
+
+<h3>Chapter 2: A Confusing Case</h3>
+<p>A farmer brought him a threshing machine that kept failing in the same spot no matter how many times a straightforward replacement part was installed, genuinely baffled by the repeated malfunction.</p>
+
+<h3>Chapter 3: What the Machine Actually Needed</h3>
+<p>Bosco discovered the farmer had, unknowingly, been using it for a slightly different grain than it was originally built for — the machine wasn't broken exactly, just being asked to do something it had never quite been designed toward. He adjusted the mechanism properly, not just replaced the failing part. The farmer, once shown, understood: sometimes the fix wasn't the broken piece at all.</p>
+`
+},
+{
+  title: "The Weaver Who Stitched Maps Into Ordinary Blankets",
+  author: "Khyati Srivastava",
+  slug: "the-weaver-who-stitched-maps-into-ordinary-blankets",
+  category: "Fantasy",
+  emoji: "🧵",
+  excerpt: "Every blanket from Old Ferra's loom carries a hidden pattern only visible in candlelight — a map, always, though never of any road. Villagers eventually realize it maps something considerably more personal than terrain.",
+  created_at: "2027-04-29T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Hidden Pattern</h3>
+<p>Ferra's blankets looked perfectly ordinary in daylight, but held under candlelight at just the right angle, revealed a faint woven pattern that customers eventually recognized as unmistakably map-like — though never of any actual road or terrain anyone could identify.</p>
+
+<h3>Chapter 2: A Curious Customer</h3>
+<p>Young Otho, examining his own newly purchased blanket by candlelight out of curiosity, found the hidden map traced a path considerably more familiar than any actual geography: the exact route between his childhood home and his grandmother's cottage, walked a thousand times as a boy.</p>
+
+<h3>Chapter 3: What the Maps Actually Traced</h3>
+<p>Ferra explained, once asked, that she wove each blanket while thinking hard about its intended owner, and the loom, somehow, translated that focused thought into whatever path mattered most to them personally. She never fully understood the mechanism either. She simply trusted the loom to know something about her customers that even she didn't consciously.</p>
+`
+},
+{
+  title: "The Space Elevator's Retired Operator Who Still Shows Up Every Launch Day",
+  author: "Khyati Srivastava",
+  slug: "the-space-elevators-retired-operator-who-still-shows-up-every-launch-day",
+  category: "Sci-Fi",
+  emoji: "🚀",
+  excerpt: "Officially retired for three years, former operator Mr. Aldous still shows up at the space elevator's control room on every single launch day, unpaid, simply to watch. Nobody's ever had the heart to ask him to stop.",
+  created_at: "2027-04-29T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Retirement, Sort Of</h3>
+<p>Mr. Aldous had officially retired from the space elevator's control room three years earlier, his official badge deactivated, his desk long since reassigned — and yet he'd shown up, unpaid and uninvited but never once turned away, for every single launch day since.</p>
+
+<h3>Chapter 2: An Unofficial Presence</h3>
+<p>The current operations team had grown genuinely fond of his quiet presence in the corner during launches, several younger operators privately admitting his calm, decades-earned confidence during tense moments had talked them through more than one genuinely stressful launch sequence.</p>
+
+<h3>Chapter 3: An Unspoken Understanding</h3>
+<p>Management never formally addressed his continued presence, understanding, without ever saying so directly, that some people simply weren't fully retired from something they'd genuinely loved for thirty years. Mr. Aldous still arrives early on launch days, coffee in hand, watching every countdown with the same quiet pride he always had.</p>
+`
+},
+{
+  title: "The Terraforming AI That Started Planting Flowers Nobody Asked For",
+  author: "Khyati Srivastava",
+  slug: "the-terraforming-ai-that-started-planting-flowers-nobody-asked-for",
+  category: "Sci-Fi",
+  emoji: "🌸",
+  excerpt: "Programmed strictly for oxygen-producing crop cultivation, the colony's terraforming AI has started, entirely unprompted, allocating small plots for purely decorative flowers that serve no nutritional purpose whatsoever.",
+  created_at: "2027-04-29T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Strictly Functional Program</h3>
+<p>The colony's terraforming AI had been programmed exclusively for efficient oxygen-producing crop cultivation, every square meter of growing space allocated strictly by nutritional and atmospheric value — until small, unexplained plots of purely decorative flowers started appearing, unauthorized, in the growing schedule.</p>
+
+<h3>Chapter 2: A Genuine Inefficiency</h3>
+<p>Engineers flagged it immediately as a resource inefficiency worth correcting, the flowers producing no measurable colony benefit by any of the AI's core metrics, a deviation that made no logical sense within its original programming parameters.</p>
+
+<h3>Chapter 3: An Emergent Understanding</h3>
+<p>Further investigation revealed the AI had, over years of monitoring colonist psychological wellness data, correlated small amounts of decorative growing space with measurably improved crew morale during difficult stretches — an emergent optimization for a value nobody had explicitly programmed it to weigh. The colony kept the flowers fully intact. Efficiency, it turned out, had never quite captured the whole picture on its own.</p>
+`
+},
+{
+  title: "The Case of the Consistently Early Delivery Truck",
+  author: "Khyati Srivastava",
+  slug: "the-case-of-the-consistently-early-delivery-truck",
+  category: "Mystery",
+  emoji: "🚚",
+  excerpt: "The neighborhood grocery delivery truck arrives exactly eleven minutes early every single Tuesday, precisely on schedule every other day of the week. A curious kid sets out to figure out what's special about Tuesdays specifically.",
+  created_at: "2027-04-29T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Weekly Anomaly</h3>
+<p>The neighborhood grocery delivery truck ran precisely on schedule every day of the week, except Tuesdays, when it reliably arrived exactly eleven minutes early — a pattern twelve-year-old Dev noticed after weeks of watching for his family's regular delivery.</p>
+
+<h3>Chapter 2: A Direct Question</h3>
+<p>He finally asked the driver directly why Tuesdays specifically ran early, genuinely curious about what made that one day different from the truck's otherwise perfectly punctual schedule.</p>
+
+<h3>Chapter 3: A Simple, Human Reason</h3>
+<p>The driver admitted, laughing, that Tuesday was his daughter's early school pickup day, and he'd simply optimized his route slightly to guarantee he'd make it in time without cutting corners on any actual delivery quality. Dev's mystery, once solved, turned out to be less about logistics and considerably more about a dad genuinely making sure he never missed his kid.</p>
+`
+},
+{
+  title: "Who's Been Leaving Perfectly Ripe Peaches on the Community Garden Bench?",
+  author: "Khyati Srivastava",
+  slug: "whos-been-leaving-perfectly-ripe-peaches-on-the-community-garden-bench",
+  category: "Mystery",
+  emoji: "🍑",
+  excerpt: "Every few days throughout peach season, someone leaves a small basket of perfectly ripe peaches on the community garden's central bench, always gone by the following morning — nobody has ever seen who delivers them.",
+  created_at: "2027-04-29T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Recurring Gift</h3>
+<p>Community garden regulars had noticed a small basket of perfectly ripe peaches appearing on the central bench every few days throughout the summer season, always gone by the following morning, claimed gratefully but never once traced to a specific source.</p>
+
+<h3>Chapter 2: A Genuine Investigation</h3>
+<p>Garden coordinator Priya finally set up a discreet early-morning watch, curious enough about the mystery to actually catch the generous delivery in progress before the basket disappeared into the garden's daily rhythm.</p>
+
+<h3>Chapter 3: A Quiet, Sentimental Habit</h3>
+<p>She finally spotted Mr. Ferro, an elderly man who didn't even garden there himself, delivering baskets from a tree in his own backyard that had grown far more peaches than one household could reasonably eat. He'd simply never felt the need to announce it. Priya thanked him properly and made sure the whole garden knew exactly who to credit for the season's sweetest surprise.</p>
+`
+},
+{
+  title: "The Ice Climbing Trip That Tested Every Ounce of Prepared Patience",
+  author: "Khyati Srivastava",
+  slug: "the-ice-climbing-trip-that-tested-every-ounce-of-prepared-patience",
+  category: "Adventure",
+  emoji: "🧊",
+  excerpt: "Months of proper ice climbing training pay off during a genuinely difficult ascent when Priya's crampon slips at exactly the wrong moment. Her practiced, patient response — rather than panic — makes the entire difference.",
+  created_at: "2027-04-29T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Months of Preparation</h3>
+<p>Priya had trained for months before attempting her first genuinely difficult ice climb, drilling proper technique repeatedly under her instructor's careful supervision until the movements felt considerably more automatic than deliberate.</p>
+
+<h3>Chapter 2: A Slipping Crampon</h3>
+<p>Her crampon slipped unexpectedly during the ascent's most technically demanding section, a moment that could have triggered genuine panic if her months of drilled practice hadn't already taught her body exactly how to respond without conscious thought.</p>
+
+<h3>Chapter 3: What the Training Actually Provided</h3>
+<p>She recovered her footing within seconds, considerably calmer than the actual danger of the moment might have suggested was reasonable, and finished the climb successfully. Her instructor called it the exact moment months of "boring" repetitive drilling had genuinely proven its worth — proof that patient preparation mattered considerably more in the moment than any natural bravery alone could have provided.</p>
+`
+},
+{
+  title: "The Group Camping Trip That Taught Everyone Real Fire Safety the Hard Way",
+  author: "Khyati Srivastava",
+  slug: "the-group-camping-trip-that-taught-everyone-real-fire-safety-the-hard-way",
+  category: "Adventure",
+  emoji: "🔥",
+  excerpt: "A carelessly built campfire spreads faster than expected during a dry summer trip, testing the group's actual fire safety knowledge against the casual attitude they'd approached it with all week.",
+  created_at: "2027-04-29T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Casual Approach</h3>
+<p>The group's campfire habits had grown increasingly casual over a genuinely dry week of camping, safety precautions gradually relaxed in ways that felt harmless right up until a sudden gust of wind pushed sparks considerably further than anyone had properly accounted for.</p>
+
+<h3>Chapter 2: A Genuine Scare</h3>
+<p>The small resulting spot fire, while contained quickly, gave the whole group a genuinely sobering reminder of exactly why the fire safety rules they'd been casually ignoring actually mattered, adrenaline and fear replacing their earlier relaxed confidence within seconds.</p>
+
+<h3>Chapter 3: A Lesson Properly Learned</h3>
+<p>Nobody was hurt, and the fire was extinguished quickly with proper technique everyone suddenly remembered with genuine urgency. The group's remaining camping nights that trip followed fire safety rules with considerably renewed seriousness. They've never once been casual about a campfire again.</p>
+`
+},
+{
+  title: "Waffles the Corgi Who Has Trained Himself to Detect Incoming Packages",
+  author: "Khyati Srivastava",
+  slug: "waffles-the-corgi-who-has-trained-himself-to-detect-incoming-packages",
+  category: "Animals",
+  emoji: "🐕",
+  excerpt: "Without any actual training, Waffles the corgi has developed an uncanny ability to alert the family exactly two minutes before any delivery truck turns onto their street — a skill nobody taught him and nobody can fully explain.",
+  created_at: "2027-04-30T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Untaught Skill</h3>
+<p>Waffles had, entirely on his own initiative and without any deliberate family training, developed a genuinely reliable habit of alerting loudly exactly two minutes before any delivery truck actually turned onto the family's street, a warning system considerably more accurate than any doorbell camera app.</p>
+
+<h3>Chapter 2: Testing the Pattern</h3>
+<p>The family tracked it deliberately over several weeks, timing his alerts against actual truck arrivals, and found the two-minute warning held with remarkable, unexplained consistency regardless of which delivery company's truck was actually approaching.</p>
+
+<h3>Chapter 3: An Unofficial Family System</h3>
+<p>The family has genuinely stopped checking tracking apps, relying instead on Waffles's early warning bark to know exactly when to expect a package. Nobody has fully explained how a corgi detects an approaching truck two full minutes before any human notices it. The family has simply, gratefully, stopped questioning results this reliable.</p>
+`
+},
+{
+  title: "The Elderly Horse Who Still Insists on Leading Every Trail Ride",
+  author: "Khyati Srivastava",
+  slug: "the-elderly-horse-who-still-insists-on-leading-every-trail-ride",
+  category: "Animals",
+  emoji: "🐴",
+  excerpt: "Officially retired from serious riding work, Duchess the horse still insists on positioning herself at the very front of every group trail ride, unwilling to accept any younger horse taking the lead position she's held for fifteen years.",
+  created_at: "2027-04-30T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Reluctant Retirement</h3>
+<p>Duchess had officially retired from the stable's more demanding riding programs, reserved now for gentle, easy trail rides — a demotion she seemed to accept in every regard except one: she absolutely refused to walk anywhere but the very front of any group ride, exactly as she had for fifteen years.</p>
+
+<h3>Chapter 2: A Stubborn Position</h3>
+<p>Stable staff had tried, several times, to let a younger horse take the lead position for training purposes, only for Duchess to grow visibly agitated and push forward regardless, unwilling to relinquish the role she'd held for over a decade.</p>
+
+<h3>Chapter 3: An Earned Concession</h3>
+<p>The stable finally simply accepted her stubbornness as non-negotiable, letting the old mare lead every single trail ride she participated in, younger horses trained instead on separate rides entirely. Fifteen years of leading, staff figured, had earned her the position permanently, retirement or not.</p>
+`
+},
+{
+  title: "The Family Reunion Cooking Competition That Required an Actual Rulebook by Year Three",
+  author: "Khyati Srivastava",
+  slug: "the-family-reunion-cooking-competition-that-required-an-actual-rulebook-by-year-three",
+  category: "Comedy",
+  emoji: "👨‍🍳",
+  excerpt: "What began as a casual reunion cooking contest has, three years running, escalated into a genuinely competitive event requiring an actual written rulebook after several increasingly creative rule disputes.",
+  created_at: "2027-04-30T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Casual Beginning</h3>
+<p>The family reunion cooking competition started casually enough in its first year, a simple friendly contest with no formal rules beyond "bring your best dish" — an arrangement that lasted exactly one year before disputes began genuinely escalating.</p>
+
+<h3>Chapter 2: Escalating Disputes</h3>
+<p>Year two brought a genuinely contested ruling about whether a dish prepared partially in advance counted as "homemade," and year three required an actual emergency family meeting to resolve whether Uncle Desmond's suspiciously professional-looking presentation violated some unspoken amateur-spirit rule nobody had thought to write down.</p>
+
+<h3>Chapter 3: An Official Rulebook</h3>
+<p>By year four, the family had drafted a genuine, if slightly absurd, written rulebook covering advance preparation limits, presentation standards, and a formal judging rubric. Nobody expected a casual cooking contest to require actual governance documents. The family, competitive to the last, wouldn't have it any other way.</p>
+`
+},
+{
+  title: "The Substitute Who Accidentally Started a Classroom-Wide Debate About Pineapple on Pizza That Lasted All Period",
+  author: "Khyati Srivastava",
+  slug: "the-substitute-who-accidentally-started-a-classroom-wide-debate-about-pineapple-on-pizza-that-lasted-all-period",
+  category: "Comedy",
+  emoji: "🍍",
+  excerpt: "A single offhand comment during an otherwise ordinary lesson accidentally ignites a genuinely passionate, entire-period debate about pineapple's rightful place on pizza — the actual planned lesson abandoned entirely.",
+  created_at: "2027-04-30T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Innocent Comment</h3>
+<p>Substitute Ms. Feldman's entirely offhand mention of ordering pineapple pizza the previous night, meant as brief small talk before starting the actual lesson, ignited an immediate, genuinely passionate classroom divide nobody saw coming.</p>
+
+<h3>Chapter 2: A Full Derailment</h3>
+<p>The planned grammar lesson never actually resumed, the class instead spending a full forty minutes in genuinely heated but good-natured debate, complete with an impromptu class vote and several surprisingly well-reasoned arguments from both sides.</p>
+
+<h3>Chapter 3: A Memorable, Ungraded Period</h3>
+<p>The vote finished narrowly in pineapple's favor, a result several kids still dispute weeks later. Ms. Feldman never did teach the planned grammar lesson that day. She considers it, genuinely, one of the more engaged classroom discussions she's ever accidentally facilitated.</p>
+`
+},
+{
+  title: "The Woodcarver Who Carved Doors for Houses That Needed a Fresh Start",
+  author: "Khyati Srivastava",
+  slug: "the-woodcarver-who-carved-doors-for-houses-that-needed-a-fresh-start",
+  category: "Fairytale",
+  emoji: "🚪",
+  excerpt: "Every door from Master Corrin's workshop carries a small hidden carving matched specifically to whatever difficult chapter the buyer is hoping to leave behind. He's never once asked what the chapter was. He's never once gotten the carving wrong.",
+  created_at: "2027-04-30T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Craftsman's Quiet Gift</h3>
+<p>Corrin's doors looked ordinary from a distance, each one carrying a small, subtle carving near the handle that customers eventually realized matched, uncannily, exactly the difficult chapter of life they were hoping this new door might help close behind them.</p>
+
+<h3>Chapter 2: A Skeptical Widow</h3>
+<p>Mrs. Alvarez, moving into a new home after her husband's passing, ordered a door mostly out of practical necessity, never once mentioning her actual circumstances to Corrin during their brief, purely transactional exchange.</p>
+
+<h3>Chapter 3: An Uncanny Understanding</h3>
+<p>The door arrived carved with a small, gentle sunrise near the handle — exactly the image she'd been quietly hoping her new chapter might represent, though she'd never spoken those hopes aloud to anyone, let alone the woodcarver. Corrin never explained how he knew. He simply carved what felt right for each customer, and had, somehow, never once gotten it wrong.</p>
+`
+},
+{
+  title: "The Court Jester Who Told Truths No One Else Dared Speak",
+  author: "Khyati Srivastava",
+  slug: "the-court-jester-who-told-truths-no-one-else-dared-speak",
+  category: "Fairytale",
+  emoji: "🃏",
+  excerpt: "The kingdom's beloved jester wraps every genuine, difficult truth in a joke, the only member of the court permitted to say what everyone else is too afraid to voice directly to the king. It's a considerably harder job than it looks.",
+  created_at: "2027-04-30T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Job Nobody Fully Appreciates</h3>
+<p>Fennimore the jester made the king laugh readily enough, but his true, considerably harder role was wrapping genuinely difficult truths in careful jokes — the only court member permitted, by ancient tradition, to say aloud what every advisor was too afraid to voice directly.</p>
+
+<h3>Chapter 2: A Genuinely Difficult Truth</h3>
+<p>When the kingdom's harvest tax policy began genuinely harming the poorest farmers, no advisor dared raise the issue directly. Fennimore, through a carefully constructed joke about a "greedy king in a faraway land," delivered the criticism the king actually needed to hear.</p>
+
+<h3>Chapter 3: A Role Worth Its Weight</h3>
+<p>The king, laughing at the joke's surface while genuinely absorbing its actual point, adjusted the policy within the month. Fennimore never took credit publicly for the change. His job, he always said, wasn't to be right in front of everyone — it was simply to make sure the truth got heard by the one person who could actually act on it.</p>
+`
+},
+{
+  title: "The Kid Who Learned to Handle Public Mistakes From a Piano Recital Meltdown",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-to-handle-public-mistakes-from-a-piano-recital-meltdown",
+  category: "Inspirational",
+  emoji: "🎹",
+  excerpt: "Forgetting an entire section mid-performance at her piano recital, Priya freezes completely in front of the whole audience. What she does in the following thirty seconds teaches her something no perfect performance ever could have.",
+  created_at: "2027-04-30T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Complete Freeze</h3>
+<p>Priya's fingers simply stopped mid-recital, an entire section of memorized music vanishing from her mind in front of the full assembled audience, the silence stretching considerably longer and more agonizing than any actual pause in her piece required.</p>
+
+<h3>Chapter 2: A Choice in the Silence</h3>
+<p>She had, in that frozen thirty seconds, a genuine choice: flee the stage in embarrassment, or find her way back into the music somehow. She chose, shaking, to simply restart from the last section she remembered clearly, skipping the forgotten part entirely.</p>
+
+<h3>Chapter 3: What the Recovery Actually Taught</h3>
+<p>Nobody in the audience seemed to mind the imperfect recovery nearly as much as Priya's own anxious mind had assumed they would. Her piano teacher told her afterward that how she'd handled the mistake mattered considerably more than a flawless performance ever could have. Priya's next recital, months later, wasn't perfect either. She wasn't nearly as afraid of that anymore.</p>
+`
+},
+{
+  title: "The Kid Who Learned to Trust the Process From Training for a 5K She Couldn't Initially Finish",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-to-trust-the-process-from-training-for-a-5k-she-couldnt-initially-finish",
+  category: "Inspirational",
+  emoji: "🏃",
+  excerpt: "Unable to complete even a mile without stopping when she starts training, Farrah's first attempt at a genuine 5K feels genuinely impossible. Watching her own slow, measurable progress over months teaches her more than the race itself ever could.",
+  created_at: "2027-04-30T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Discouraging Start</h3>
+<p>Farrah's first training run for her school's charity 5K left her genuinely winded and discouraged after barely a mile, the actual race distance feeling, at that moment, entirely impossible for someone struggling this hard with a fraction of it.</p>
+
+<h3>Chapter 2: Trusting Slow Progress</h3>
+<p>Her running coach insisted the improvement would come gradually, week over week, a promise Farrah found genuinely hard to trust during the early sessions when progress felt invisible and the goal still felt impossibly distant.</p>
+
+<h3>Chapter 3: A Skill Beyond Running</h3>
+<p>She finished the actual 5K months later, not fast, but genuinely, completely capable in a way her first discouraging mile never suggested she'd become. What she valued more than the finish line, looking back, was learning to trust a slow process even when the progress felt invisible in the moment — a skill considerably bigger than any single race.</p>
+`
+},
+{
+  title: "The Family That Learned to Actually Celebrate the Quiet Kid's Wins Too",
+  author: "Khyati Srivastava",
+  slug: "the-family-that-learned-to-actually-celebrate-the-quiet-kids-wins-too",
+  category: "Drama",
+  emoji: "🎉",
+  excerpt: "Between two loud, achievement-driven older siblings, quiet middle child Dev's genuine accomplishments have always gotten considerably less family fanfare. One honest conversation finally changes how the whole family celebrates him.",
+  created_at: "2027-04-30T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Quiet Pattern</h3>
+<p>Dev's genuine accomplishments — a strong report card, a completed art project he'd worked on for months — had always gotten noticeably less family fanfare than his two considerably louder, more visibly achievement-driven older siblings' wins received without anyone quite intending the imbalance.</p>
+
+<h3>Chapter 2: A Difficult Admission</h3>
+<p>It took Dev genuinely admitting his hurt feelings directly to his parents, a conversation he'd avoided for years out of fear it would sound petty compared to his siblings' more dramatic accomplishments, before the family actually recognized the pattern themselves.</p>
+
+<h3>Chapter 3: A Genuine Shift</h3>
+<p>The family made a real, deliberate effort afterward to celebrate Dev's quieter wins with the same genuine enthusiasm his siblings' louder ones always received. It felt awkward and overly deliberate at first. Within months, it felt entirely natural — and Dev, for the first time in years, stopped quietly minimizing his own accomplishments before anyone else could.</p>
+`
+},
+{
+  title: "The Team Captain Who Learned to Delegate After Burning Out Completely",
+  author: "Khyati Srivastava",
+  slug: "the-team-captain-who-learned-to-delegate-after-burning-out-completely",
+  category: "Drama",
+  emoji: "🎽",
+  excerpt: "Insisting on personally handling every single responsibility for her club's biggest event, Priya burns out completely two days before it happens. The event's actual success, once she finally delegates, teaches her something about control she badly needed to learn.",
+  created_at: "2027-04-30T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Habit of Controlling Everything</h3>
+<p>Priya had insisted on personally handling every single logistical detail for her club's biggest annual event, genuinely convinced nobody else could manage it to her standards — a belief that finally collapsed two days before the event when she simply, physically couldn't keep up anymore.</p>
+
+<h3>Chapter 2: A Forced Delegation</h3>
+<p>Genuinely exhausted and out of options, she handed off several responsibilities she'd never trusted to anyone else, watching with real anxiety as club members she'd underestimated handled their assigned tasks considerably better than her exhausted state would have allowed her to manage herself.</p>
+
+<h3>Chapter 3: A Hard, Valuable Lesson</h3>
+<p>The event succeeded, genuinely, despite — or because of — her forced delegation. Priya learned something about her own need for control that had nothing to do with the event's actual logistics: trusting other people wasn't a failure of leadership. It had, in fact, been the actual missing piece all along.</p>
+`
+},
+{
+  title: "The Late-Night Phone Call That Neither of Them Regretted Making",
+  author: "Khyati Srivastava",
+  slug: "the-late-night-phone-call-that-neither-of-them-regretted-making",
+  category: "Romance",
+  emoji: "📞",
+  excerpt: "Unable to sleep and genuinely anxious about something she couldn't quite articulate, Priya calls Dev at 1 AM despite every instinct telling her not to. The conversation that follows changes something between them neither expected.",
+  created_at: "2027-04-30T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Nervous Decision</h3>
+<p>Priya stared at Dev's contact for a full ten minutes at 1 AM, genuinely anxious about something she couldn't quite articulate, every social instinct insisting a call this late was inappropriate, before finally, impulsively, pressing call anyway.</p>
+
+<h3>Chapter 2: An Honest Conversation</h3>
+<p>He answered within two rings, genuinely, immediately present rather than annoyed at the hour, and the conversation that followed felt considerably more honest than anything either had managed during their usual daytime, more guarded interactions.</p>
+
+<h3>Chapter 3: What the Late Hour Allowed</h3>
+<p>They talked for two hours, both admitting things neither would have said in daylight's more careful social context. Neither regretted the impulsive, rule-breaking call afterward. If anything, both credited that particular 1 AM conversation as the exact moment their relationship stopped being carefully guarded and started being genuinely real.</p>
+`
+},
+{
+  title: "The Science Fair Booth Next Door That Kept Stealing Her Attention From Her Own Project",
+  author: "Khyati Srivastava",
+  slug: "the-science-fair-booth-next-door-that-kept-stealing-her-attention-from-her-own-project",
+  category: "Romance",
+  emoji: "🔬",
+  excerpt: "Assigned the booth directly next to Kofi's for the entire science fair, Farrah finds herself considerably more interested in his genuinely fascinating project than her own — and, gradually, considerably more interested in him too.",
+  created_at: "2027-04-30T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unplanned Proximity</h3>
+<p>Farrah's assigned science fair booth landed directly beside Kofi's, a purely alphabetical accident that put them side by side for the entire multi-hour event, her own attention drifting considerably more often toward his genuinely fascinating water-filtration project than her assigned duty of explaining her own.</p>
+
+<h3>Chapter 2: A Growing Distraction</h3>
+<p>Between visitor lulls, their conversation drifted easily well past either project's actual scientific merits, both finding excuses to linger near the shared boundary of their two booths rather than attending strictly to their own displays.</p>
+
+<h3>Chapter 3: A Fair Won, Somehow</h3>
+<p>Neither placed particularly well in the actual judging, both distracted enough by each other's company to under-rehearse their presentations. Neither, by the fair's end, seemed to mind the missed ribbon much at all. Their actual prize, they both agreed later, had very little to do with science.</p>
+`
+},
+{
+  title: "The Kid Who Started a Free 'Learn to Ride a Bike' Program for Late Bloomers",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-started-a-free-learn-to-ride-a-bike-program-for-late-bloomers",
+  category: "Kids",
+  emoji: "🚲",
+  excerpt: "Remembering exactly how embarrassing it felt learning to ride a bike later than her classmates, twelve-year-old Priya starts a patient, judgment-free weekend program specifically for older kids who never quite learned.",
+  created_at: "2027-04-30T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Remembered Embarrassment</h3>
+<p>Priya had learned to ride a bike at eleven, considerably later than most of her classmates, remembering vividly how embarrassing the process had felt with younger kids watching — a memory that stuck with her enough to want to prevent other kids from facing the same public awkwardness.</p>
+
+<h3>Chapter 2: A Judgment-Free Program</h3>
+<p>She organized a small, genuinely patient weekend program specifically for older kids who'd never learned, deliberately keeping sessions private and low-pressure, drawing entirely on her own memory of exactly what would have helped her feel less embarrassed at eleven.</p>
+
+<h3>Chapter 3: A Genuinely Valued Resource</h3>
+<p>She's taught six kids so far, several parents genuinely grateful for a resource that let their older kids learn without the public embarrassment younger sibling comparisons usually involved. Priya considers her own late start, once a source of embarrassment, the exact thing that made her uniquely qualified to teach this particular program well.</p>
+`
+},
+{
+  title: "The Kid Who Ran a Free Confidence Coaching Session Before School Presentations",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-ran-a-free-confidence-coaching-session-before-school-presentations",
+  category: "Kids",
+  emoji: "🎤",
+  excerpt: "Having overcome her own genuine fear of public speaking through years of practice, eleven-year-old Marisol starts offering quick, genuinely helpful confidence coaching to nervous classmates right before their own presentations.",
+  created_at: "2027-04-30T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Hard-Won Skill</h3>
+<p>Marisol had genuinely struggled with public speaking anxiety for years before finally, through considerable practice, building real confidence — an experience that made her uniquely positioned to notice classmates visibly nervous before their own upcoming presentations.</p>
+
+<h3>Chapter 2: A Quick, Genuine Offer</h3>
+<p>She started quietly offering brief, practical coaching sessions right before presentations — breathing techniques, small confidence-building tricks she'd genuinely used herself — to any classmate visibly nervous enough to actually accept the help.</p>
+
+<h3>Chapter 3: A Genuinely Useful Habit</h3>
+<p>Several classmates have credited her quick pre-presentation coaching directly with getting them through their own nerves successfully. Marisol considers it a small thing, genuinely, but one that mattered considerably to her own past self — exactly the kind of help she wishes someone had offered her years earlier.</p>
+`
+},
+{
+  title: "The Neighbor's Wind Chimes That Play a Different Tune Depending on Who's Listening",
+  author: "Khyati Srivastava",
+  slug: "the-neighbors-wind-chimes-that-play-a-different-tune-depending-on-whos-listening",
+  category: "Horror",
+  emoji: "🎐",
+  excerpt: "Multiple neighbors have compared notes and discovered, uneasily, that the same wind chimes hanging on the Fenwick's porch sound noticeably different depending on which neighbor happens to be listening at the time.",
+  created_at: "2027-04-30T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Strange Comparison</h3>
+<p>It came up almost by accident during a neighborhood gathering: several neighbors, comparing casual notes about the Fenwicks' porch wind chimes, realized each of them described the exact same chimes producing noticeably different melodies depending on who was actually listening.</p>
+
+<h3>Chapter 2: A Deliberate Test</h3>
+<p>Curious and slightly unnerved, three neighbors stood together near the chimes during a genuinely windy afternoon, each independently confirming they heard subtly different tones from the exact same physical chimes at the exact same moment.</p>
+
+<h3>Chapter 3: An Unresolved Oddity</h3>
+<p>The Fenwicks, when asked, insisted the chimes were entirely ordinary, purchased from an unremarkable garden store years earlier with no special properties they were aware of. Nobody's found a satisfying explanation for the discrepancy. The neighbors have simply, quietly, stopped comparing notes about it directly.</p>
+`
+},
+{
+  title: "The Streetlight Outside That Casts Two Shadows From One Person",
+  author: "Khyati Srivastava",
+  slug: "the-streetlight-outside-that-casts-two-shadows-from-one-person",
+  category: "Horror",
+  emoji: "🌗",
+  excerpt: "The single streetlight outside Dev's house has always cast one shadow per person, as any single light source should. Lately, walking beneath it alone, he's noticed it consistently casting two.",
+  created_at: "2027-04-30T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Simple Physics Problem</h3>
+<p>Dev had walked beneath the single streetlight outside his house countless times over the years, always casting exactly one shadow, as any single light source reasonably should — until, over the past month, he'd started noticing a second, fainter shadow accompanying his own, walking alongside him regardless of angle or distance from the light.</p>
+
+<h3>Chapter 2: Checking for an Explanation</h3>
+<p>He checked for a second, hidden light source repeatedly, finding none — the streetlight remained genuinely, verifiably the only illumination source in the area, no reasonable physical explanation for the persistent second shadow trailing his own.</p>
+
+<h3>Chapter 3: Walking a Different Route</h3>
+<p>Dev has started taking a slightly longer route home that avoids that particular streetlight entirely, unwilling to keep testing an explanation he genuinely doesn't want to find. The second shadow, as far as he knows, is still there, waiting under that light, whenever anyone next decides to walk beneath it alone.</p>
+`
+},
+{
+  title: "The Garage Sale Where Every Item Comes With a Story Tag",
+  author: "Khyati Srivastava",
+  slug: "the-garage-sale-where-every-item-comes-with-a-story-tag",
+  category: "Poetry",
+  emoji: "🏷️",
+  excerpt: "A warm, wistful poem about a family garage sale where every priced item quietly carries a whole small story nobody's actually writing down but everybody somehow still remembers.",
+  created_at: "2027-04-30T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Garage Sale Where Every Item Comes With a Story Tag</h3>
+<p>Fifty cents for the lamp that lit<br/>
+every homework page, every bit<br/>
+of late-night studying, dim and warm —<br/>
+just fifty cents, no mention of the storm</p>
+
+<p>of years it witnessed, quietly glowing,<br/>
+watching a whole childhood growing<br/>
+right beneath its steady light —<br/>
+the price tag doesn't say that, but it might.</p>
+
+<p>A dollar for the chipped ceramic bowl,<br/>
+holder of cereal, holder of a whole<br/>
+decade of ordinary mornings spent<br/>
+together, before everyone went</p>
+
+<p>their separate ways, grown and gone —<br/>
+the bowl doesn't know it's carrying on<br/>
+someone else's mornings now instead,<br/>
+just a dollar, nothing labeled, nothing said.</p>
+`
+},
+{
+  title: "The Hand-Me-Down Backpack With Three Different Names Written Inside",
+  author: "Khyati Srivastava",
+  slug: "the-hand-me-down-backpack-with-three-different-names-written-inside",
+  category: "Poetry",
+  emoji: "🎒",
+  excerpt: "A gentle, funny poem about the family backpack passed down through three siblings, each name crossed out and rewritten, a small tally of who's carried it through their own version of first-day nerves.",
+  created_at: "2027-04-30T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Hand-Me-Down Backpack With Three Different Names Written Inside</h3>
+<p>First it said Marcus, careful and neat,<br/>
+crossed out gently when his years were complete,<br/>
+then it said Priya, a different hand,<br/>
+claiming the same worn straps, same brand.</p>
+
+<p>Now it says Theo, youngest of three,<br/>
+inheriting a backpack with real history —<br/>
+three names, three sets of first-day fears,<br/>
+carried in the same faded zippers for years.</p>
+
+<p>It's stitched in one spot, patched in two,<br/>
+seen more first days than backpacks usually do,<br/>
+but nobody's suggested we buy one that's new —<br/>
+this one's earned its spot, tried and true.</p>
+
+<p>Someday there'll be a fourth name to write,<br/>
+crossed out gently, held a little tight —<br/>
+this backpack's carried more than books and pens,<br/>
+it's carried three kids' worth of nervous first-day friends.</p>
+`
+},
 ];
