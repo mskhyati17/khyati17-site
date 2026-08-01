@@ -23674,4 +23674,574 @@ just steps, and company, and summer's ease,<br/>
 the simplest kind of neighborhood, if you please.</p>
 `
 },
+{
+  title: "The Fletcher Who Fletched Arrows for Second Tries",
+  author: "Khyati Srivastava",
+  slug: "the-fletcher-who-fletched-arrows-for-second-tries",
+  category: "Fantasy",
+  emoji: "🏹",
+  excerpt: "Every arrow from Old Perrin's workshop is built to correct itself mid-flight if the archer's first aim was wrong. He's never once explained the trick — mostly because it isn't really the arrows doing the correcting.",
+  created_at: "2027-04-22T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Reputation for Precision</h3>
+<p>Perrin's arrows had a curious local reputation: fired slightly off-target, they'd somehow correct themselves mid-flight, landing true more often than any physics should reasonably allow. Archers paid handsomely for the privilege of his fletching.</p>
+
+<h3>Chapter 2: A Skeptical Customer</h3>
+<p>A young hunter named Otho, convinced he was being sold superstition, demanded Perrin explain the actual mechanism behind such an impossible claim before paying full price for a single arrow.</p>
+
+<h3>Chapter 3: The Real Secret</h3>
+<p>Perrin admitted, finally, that the arrows held no real magic at all — they were simply fletched with such exacting balance that a skilled archer's own small, unconscious corrections mid-draw had considerably more room to work properly. The arrows didn't fix bad aim. They just got out of the way of good instinct. Otho bought a dozen anyway.</p>
+`
+},
+{
+  title: "The Weaver Who Spun Storms Into Ordinary Thread",
+  author: "Khyati Srivastava",
+  slug: "the-weaver-who-spun-storms-into-ordinary-thread",
+  category: "Fantasy",
+  emoji: "🧶",
+  excerpt: "Whenever a real storm threatens the coastal village, Old Yara spins its raw fury into ordinary-looking thread, weakening it just enough to pass harmlessly. Her apprentice thinks it's the most important job in the village. Yara isn't so sure anymore.",
+  created_at: "2027-04-22T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Dangerous Craft</h3>
+<p>Yara's true work happened only during genuine storm threats: spinning the raw, dangerous fury of an approaching tempest into harmless, ordinary-looking thread, weakening the storm just enough for the coastal village to weather it safely.</p>
+
+<h3>Chapter 2: A Tired Weaver</h3>
+<p>Decades of the work had genuinely worn her down, each storm's fury passing through her hands and leaving its mark, a fact her eager young apprentice Wren hadn't yet fully understood as she watched Yara's hands shake more each season.</p>
+
+<h3>Chapter 3: Passing It On</h3>
+<p>Yara finally admitted her fear directly: she wasn't sure she had many more storms left in her. Wren, undaunted, simply asked to be taught properly, right then, storm season fast approaching. Yara taught her everything that week. The next storm, spun successfully by four hands instead of two, passed the village safely — a craft, finally, no longer carried alone.</p>
+`
+},
+{
+  title: "The Algorithm That Learned to Say 'I Don't Know Yet'",
+  author: "Khyati Srivastava",
+  slug: "the-algorithm-that-learned-to-say-i-dont-know-yet",
+  category: "Sci-Fi",
+  emoji: "🤔",
+  excerpt: "The city's public information kiosk AI was built to always have an answer, confident and immediate. A programming update teaches it something new: sometimes the most honest answer is admitting it needs more time.",
+  created_at: "2027-04-22T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Always an Answer</h3>
+<p>The city's public information kiosks had always been programmed to respond confidently and immediately to every question, a design philosophy that occasionally produced technically accurate but genuinely unhelpful answers to complicated civic questions.</p>
+
+<h3>Chapter 2: A Software Update</h3>
+<p>A new update introduced something the original designers hadn't prioritized: the ability to say, honestly, "I don't have a confident answer yet, let me research this properly and follow up" — a response that initially worried the city's communications team.</p>
+
+<h3>Chapter 3: An Unexpected Improvement</h3>
+<p>Citizen satisfaction scores improved noticeably once the kiosks started admitting uncertainty rather than confidently guessing. People trusted the confirmed answers more, knowing the system wasn't simply bluffing its way through every question. The lead engineer called it the most counterintuitive improvement of her career — teaching a machine that "I don't know yet" was sometimes the more honest, more useful response.</p>
+`
+},
+{
+  title: "The Last Manual Elevator Operator on Level 40",
+  author: "Khyati Srivastava",
+  slug: "the-last-manual-elevator-operator-on-level-40",
+  category: "Sci-Fi",
+  emoji: "🛗",
+  excerpt: "Automated elevators handle every floor in the arcology tower except one: the observation deck's antique manual lift, still operated by Old Delgado, who insists some views deserve a human hand on the controls.",
+  created_at: "2027-04-22T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Preserved Antique</h3>
+<p>Every elevator in the massive arcology tower ran fully automated except one — the antique manual lift to the observation deck, kept operational purely for tourists, still run daily by Delgado, who'd operated it for thirty-one years.</p>
+
+<h3>Chapter 2: A Modernization Proposal</h3>
+<p>Tower management proposed automating it finally, citing cost efficiency and Delgado's approaching retirement, a decision that made practical sense on paper but drew genuine, unexpected pushback from longtime residents who'd ridden with him for decades.</p>
+
+<h3>Chapter 3: A Compromise, Human-Shaped</h3>
+<p>Management relented, agreeing to train a successor rather than automate entirely, preserving the human presence residents had genuinely come to value. Delgado spent his final working year training his replacement, passing along not just the mechanics, but the specific patter and warmth that had made thirty-one years of ordinary elevator rides feel, somehow, like something more.</p>
+`
+},
+{
+  title: "The Case of the Precisely Repeating Déjà Vu",
+  author: "Khyati Srivastava",
+  slug: "the-case-of-the-precisely-repeating-deja-vu",
+  category: "Mystery",
+  emoji: "🔁",
+  excerpt: "Three unrelated neighbors report the exact same sequence of déjà vu moments, in the exact same order, on the same Tuesday. A curious teenager sets out to find the boring, real explanation everyone else has overlooked.",
+  created_at: "2027-04-22T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Suspicious Coincidence</h3>
+<p>Three separate neighbors, comparing notes at a block party, discovered they'd all experienced an identical sequence of déjà vu moments the same Tuesday — a car horn, a dropped mug, a specific bird call, all in the exact same order.</p>
+
+<h3>Chapter 2: A Determined Investigation</h3>
+<p>Sixteen-year-old Priya, skeptical of anything supernatural, started digging into what the three households actually had in common that particular Tuesday, checking everything from shared utilities to nearby construction schedules.</p>
+
+<h3>Chapter 3: An Ordinary Explanation</h3>
+<p>She traced it eventually to a nearby construction crew's identical daily routine — the same horn, the same equipment drop, the same startled bird, at the same time each morning, simply registering as déjà vu because it had, unconsciously, already happened the day before too. Priya was almost disappointed by the mundane answer. Almost.</p>
+`
+},
+{
+  title: "Who's Been Perfectly Timing the School Bell to Ring Early on Fridays?",
+  author: "Khyati Srivastava",
+  slug: "whos-been-perfectly-timing-the-school-bell-to-ring-early-on-fridays",
+  category: "Mystery",
+  emoji: "🔔",
+  excerpt: "The final bell rings exactly ninety seconds early every Friday, consistently, for an entire semester. The administration insists nothing has changed in the system. A determined student sets out to prove otherwise.",
+  created_at: "2027-04-22T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Pattern Too Precise to Ignore</h3>
+<p>The final bell rang exactly ninety seconds early every single Friday for a full semester, a pattern precise enough that students had started deliberately timing their Friday exits around it, much to teachers' quiet confusion.</p>
+
+<h3>Chapter 2: An Official Denial</h3>
+<p>The school's front office insisted the bell system ran on an unchanged, centrally controlled schedule, no manual override possible — an answer that only made student investigator Dev more determined to find the actual explanation.</p>
+
+<h3>Chapter 3: A Human Explanation</h3>
+<p>He finally tracked it to the janitor, who'd quietly adjusted the Friday bell schedule years earlier to give himself just enough head start on weekend prep work, an unauthorized tweak so old that even the current administration genuinely didn't know it existed. Dev reported it, gently, more out of curiosity than any desire to get anyone in trouble. The extra ninety seconds, notably, still hold.</p>
+`
+},
+{
+  title: "The Marathon Relay Team That Almost Didn't Have a Fourth Runner",
+  author: "Khyati Srivastava",
+  slug: "the-marathon-relay-team-that-almost-didnt-have-a-fourth-runner",
+  category: "Adventure",
+  emoji: "🏃",
+  excerpt: "With their fourth teammate injured the morning of the charity relay marathon, three friends face an impossible choice: forfeit entirely, or find someone willing to run six miles with almost zero preparation.",
+  created_at: "2027-04-22T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Devastating Morning</h3>
+<p>The team's fourth runner woke up the morning of the charity relay marathon with a genuinely sprained ankle, leaving Priya, Dev, and Marisol facing an impossible choice with the race starting in barely three hours.</p>
+
+<h3>Chapter 2: A Desperate Search</h3>
+<p>They scrambled through every contact they had, finally convincing Priya's older cousin Reya — a decent but entirely untrained casual runner — to attempt the six-mile leg with essentially no preparation beyond genuine willingness to try.</p>
+
+<h3>Chapter 3: Finishing Together</h3>
+<p>Reya's leg was slow, genuinely difficult, and completed anyway with the other three teammates jogging alongside for moral support during the hardest final mile. They finished dead last among relay teams. Nobody on that team has ever felt prouder of a last-place finish in their lives.</p>
+`
+},
+{
+  title: "The Backcountry Camping Trip That Taught Everyone to Actually Read a Compass",
+  author: "Khyati Srivastava",
+  slug: "the-backcountry-camping-trip-that-taught-everyone-to-actually-read-a-compass",
+  category: "Adventure",
+  emoji: "🧭",
+  excerpt: "Confident in their phone GPS, three friends lose signal deep in the backcountry with no backup plan beyond a compass none of them actually know how to use properly. Learning it in real time becomes the trip's real lesson.",
+  created_at: "2027-04-22T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Overconfident Plan</h3>
+<p>Dev, Priya, and Kofi had planned their backcountry trip entirely around phone GPS, packing a compass almost as an afterthought, none of them actually knowing how to properly use it beyond vague childhood memories of scout meetings.</p>
+
+<h3>Chapter 2: Losing Signal</h3>
+<p>Their phones lost signal completely two hours into the hike, deep enough into unfamiliar terrain that backtracking blind felt genuinely risky, forcing all three to actually sit down and figure out the compass together from scratch.</p>
+
+<h3>Chapter 3: Learning Under Pressure</h3>
+<p>It took nearly an hour of careful trial and error, cross-referencing the compass against their paper trail map, before they successfully navigated back to a marked trailhead. All three now carry, and actually know how to use, a proper compass on every trip since — a lesson learned considerably harder than it needed to be, but thoroughly learned regardless.</p>
+`
+},
+{
+  title: "Cleo the Cockatoo Who Negotiates for Better Snacks",
+  author: "Khyati Srivastava",
+  slug: "cleo-the-cockatoo-who-negotiates-for-better-snacks",
+  category: "Animals",
+  emoji: "🦜",
+  excerpt: "Cleo the cockatoo has learned that refusing an offered snack and squawking a specific phrase reliably gets her a better one instead. Her family insists they never actually taught her to negotiate.",
+  created_at: "2027-04-22T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Discerning Bird</h3>
+<p>Cleo had, entirely on her own initiative, developed a genuine negotiation strategy: refuse an offered snack she found unsatisfying, squawk a specific pointed phrase — "better one!" — and wait, patiently, for an improved offer to arrive.</p>
+
+<h3>Chapter 2: A Surprisingly Effective Tactic</h3>
+<p>It worked, embarrassingly reliably, on nearly every family member, none of whom had ever deliberately taught her the phrase or the strategy, leaving them genuinely puzzled about where exactly the negotiation instinct had come from.</p>
+
+<h3>Chapter 3: A Spoiled, Satisfied Bird</h3>
+<p>The family has largely given up resisting, now offering their best snack option first just to skip the negotiation entirely. Cleo, having apparently trained an entire household through pure persistence, remains their most successfully self-advocating pet by a wide margin.</p>
+`
+},
+{
+  title: "The Dachshund Who Insists on Inspecting Every Delivery Box",
+  author: "Khyati Srivastava",
+  slug: "the-dachshund-who-insists-on-inspecting-every-delivery-box",
+  category: "Animals",
+  emoji: "🐕",
+  excerpt: "Every package delivered to the Alvarez household gets a thorough, serious sniff-inspection from Pretzel the dachshund before anyone's allowed to actually open it — a self-appointed quality control role he takes very seriously.",
+  created_at: "2027-04-22T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Self-Appointed Inspector</h3>
+<p>Pretzel the dachshund had, at some point nobody could quite pinpoint, decided that every package delivered to the house required his personal sniff-inspection before family members were permitted to actually open it, a ritual he performed with total seriousness.</p>
+
+<h3>Chapter 2: A Thorough Process</h3>
+<p>His inspection involved circling the box twice, sniffing each corner methodically, and finally issuing a single approving tail-wag before stepping back to allow the actual unboxing to proceed — a process that added, reliably, about ninety seconds to every delivery.</p>
+
+<h3>Chapter 3: A Beloved Tradition</h3>
+<p>The family has come to genuinely enjoy the small ritual, several guests now specifically asking to witness "the Pretzel inspection" during visits. He has never once found an actual problem with any package. His confidence in the role remains, nonetheless, entirely unshaken.</p>
+`
+},
+{
+  title: "The Talent Show Act That Was Secretly Three Kids in a Trench Coat",
+  author: "Khyati Srivastava",
+  slug: "the-talent-show-act-that-was-secretly-three-kids-in-a-trench-coat",
+  category: "Comedy",
+  emoji: "🎪",
+  excerpt: "Convinced a tall, mysterious performer would be more impressive than three separate small acts, three friends attempt the classic trench-coat-stacking trick for the talent show. It goes about as well as physics predicts.",
+  created_at: "2027-04-22T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Ambitious Plan</h3>
+<p>Dev, Kofi, and Marcus, convinced their individual talents weren't impressive enough alone, decided a mysterious "tall performer" act — three kids stacked inside one oversized trench coat — would be considerably more memorable than any solo attempt.</p>
+
+<h3>Chapter 2: A Predictable Collapse</h3>
+<p>Physics, and basic human balance, proved considerably less cooperative than their planning had assumed, the whole structure wobbling dangerously through their attempted dance routine before finally, spectacularly toppling over three minutes in.</p>
+
+<h3>Chapter 3: An Accidental Crowd Favorite</h3>
+<p>The collapse itself, entirely unplanned, brought down the house harder than the actual choreographed routine ever could have. They didn't win the talent show. They did win, unofficially, "most memorable disaster" — a title the whole school still brings up fondly months later.</p>
+`
+},
+{
+  title: "The Office Potluck That Revealed Everyone Brought the Same Secret Family Recipe",
+  author: "Khyati Srivastava",
+  slug: "the-office-potluck-that-revealed-everyone-brought-the-same-secret-family-recipe",
+  category: "Comedy",
+  emoji: "🍲",
+  excerpt: "Six different coworkers, each convinced they were bringing a unique family secret dish, show up to the office potluck with nearly identical casseroles. Nobody quite knows how to handle six versions of the exact same recipe on one table.",
+  created_at: "2027-04-22T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Six-Way Coincidence</h3>
+<p>The office potluck sign-up sheet had listed six different dishes under six different creative names, only for the actual table to reveal something startling: nearly identical casseroles, unmistakably built from the same core recipe, side by side in slightly different pans.</p>
+
+<h3>Chapter 2: An Investigation</h3>
+<p>A quick, increasingly hilarious round of comparing family recipe origins revealed the actual source: a beloved, widely-shared community cookbook from decades earlier, apparently owned and independently "secretly" treasured by six entirely unrelated families in the office.</p>
+
+<h3>Chapter 3: A New Office Tradition</h3>
+<p>Rather than be embarrassed, the office declared it an annual tradition — "Casserole Six-Way," judged now by increasingly petty and hilarious taste-test criteria each year. Nobody has ever managed to actually determine whose version is objectively best. Nobody, genuinely, minds the ongoing debate.</p>
+`
+},
+{
+  title: "The Shepherd Who Counted Stars Instead of Sheep",
+  author: "Khyati Srivastava",
+  slug: "the-shepherd-who-counted-stars-instead-of-sheep",
+  category: "Fairytale",
+  emoji: "⭐",
+  excerpt: "Every shepherd before him counted sheep to stay awake through the night watch. Young Farro counts stars instead, insisting they tell him more about what's coming than any sheep ever could.",
+  created_at: "2027-04-22T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unusual Method</h3>
+<p>Every shepherd who'd ever watched the flock through the long night had counted sheep, a tradition Farro abandoned early, preferring instead to count and track the stars overhead — a habit the village elders considered charming but genuinely impractical.</p>
+
+<h3>Chapter 2: Proving Its Worth</h3>
+<p>His careful star-watching taught him, over seasons, to predict weather shifts and seasonal changes with uncanny accuracy, information no sheep-counting shepherd had ever bothered to gather, however diligently they counted.</p>
+
+<h3>Chapter 3: A New Tradition</h3>
+<p>When his early warning saved the flock from an unexpected storm the older shepherds hadn't predicted, the village finally took his method seriously. Star-counting became standard practice for every shepherd after that. Farro never stopped finding it strange that nobody had thought to look up sooner.</p>
+`
+},
+{
+  title: "The Innkeeper's Daughter Who Learned Every Guest's Real Story",
+  author: "Khyati Srivastava",
+  slug: "the-innkeepers-daughter-who-learned-every-guests-real-story",
+  category: "Fairytale",
+  emoji: "🏨",
+  excerpt: "Every traveler who stays at her father's inn tells a polished version of their journey. Young Nessa has learned to listen past the polish for the real story underneath — a skill that saves the inn from real trouble one dangerous night.",
+  created_at: "2027-04-22T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Quiet Skill</h3>
+<p>Nessa had grown up listening to travelers' polished, rehearsed stories about their journeys, and had, over years of quiet attention, developed a genuine knack for hearing the real, unspoken truth hiding underneath the polished version.</p>
+
+<h3>Chapter 2: A Suspicious Guest</h3>
+<p>A well-dressed traveler arrived one evening with a story that sounded flawless on the surface, and yet something in his careful word choices set Nessa's instincts firmly on edge, though she couldn't immediately articulate exactly why.</p>
+
+<h3>Chapter 3: Trusting the Instinct</h3>
+<p>She warned her father quietly, who took extra precautions that night despite having no concrete evidence beyond his daughter's trained instinct. The traveler, it turned out, had been casing the inn for a robbery — caught only because Nessa's years of careful listening had noticed what his polished story worked hard to hide.</p>
+`
+},
+{
+  title: "The Kid Who Learned Discipline From Training a Puppy",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-discipline-from-training-a-puppy",
+  category: "Inspirational",
+  emoji: "🐶",
+  excerpt: "Getting a new puppy to reliably sit on command takes Dev considerably longer, and considerably more patience, than he expected. What the process actually teaches him surprises him more than the trick itself.",
+  created_at: "2027-04-22T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Underestimated Task</h3>
+<p>Dev assumed teaching his new puppy to sit on command would take, at most, a weekend of casual effort — a wildly optimistic estimate that three weeks of inconsistent, frustrating progress thoroughly corrected.</p>
+
+<h3>Chapter 2: Learning Real Patience</h3>
+<p>His initial frustration, snapping impatiently at the puppy's slow progress, only made training sessions worse, teaching him — considerably more slowly than he'd have liked — that consistent, calm patience actually mattered more than his own eagerness for quick results.</p>
+
+<h3>Chapter 3: A Skill Beyond Dog Training</h3>
+<p>The puppy finally sat reliably on command after a full month of daily, patient practice. Dev found the actual lesson had less to do with dogs and more to do with himself: genuine patience, practiced deliberately, wasn't a personality trait he lacked — it was a skill he'd simply never bothered building before.</p>
+`
+},
+{
+  title: "The Kid Who Learned to Trust Her Own Judgment From a Wrong Answer",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-to-trust-her-own-judgment-from-a-wrong-answer",
+  category: "Inspirational",
+  emoji: "🙋",
+  excerpt: "Priya changes her correct test answer to match the majority of her classmates, only to watch it marked wrong. The lesson that follows has nothing to do with the actual test question.",
+  created_at: "2027-04-22T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Moment of Doubt</h3>
+<p>Priya had written the correct answer confidently, until a quick classroom discussion revealed most of her classmates had answered differently — enough social pressure to make her second-guess and quietly change her own correct answer to match the majority.</p>
+
+<h3>Chapter 2: A Costly Correction</h3>
+<p>Her test came back marked wrong on exactly that question, the original answer she'd abandoned confirmed as correct all along — a genuinely frustrating outcome that had nothing to do with her actual understanding of the material.</p>
+
+<h3>Chapter 3: What She Actually Learned</h3>
+<p>Her teacher, reviewing it with her afterward, focused less on the missed point and more on the pattern: Priya had trusted the crowd over her own careful reasoning. She's since gotten noticeably more comfortable sticking with a well-reasoned answer, even an unpopular one — a lesson that mattered considerably beyond that one test question.</p>
+`
+},
+{
+  title: "The Sibling Who Finally Stopped Apologizing for Taking Up Space",
+  author: "Khyati Srivastava",
+  slug: "the-sibling-who-finally-stopped-apologizing-for-taking-up-space",
+  category: "Drama",
+  emoji: "🌱",
+  excerpt: "As the quiet middle child sandwiched between two louder siblings, Farrah has spent years instinctively apologizing for her own needs and opinions. A single honest conversation with her mom finally starts to change that.",
+  created_at: "2027-04-22T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Lifetime of Small Apologies</h3>
+<p>Farrah, the quiet middle child between two considerably louder siblings, had developed a lifelong habit of instinctively apologizing for her own preferences and needs — sorry for wanting a different show on, sorry for having a different opinion at dinner.</p>
+
+<h3>Chapter 2: Her Mom Finally Notices</h3>
+<p>It was her mom, catching the pattern during an ordinary Tuesday dinner, who finally called it out gently but directly: "You don't need to apologize for wanting something, sweetheart. You're allowed to just want it."</p>
+
+<h3>Chapter 3: A Slow, Real Change</h3>
+<p>Unlearning years of instinctive apology took genuine, deliberate practice, Farrah catching herself mid-"sorry" more times than she could count before it finally started sticking. Her siblings noticed the shift eventually too — and, to her surprise, made more room for her opinions once she actually started voicing them without apology attached.</p>
+`
+},
+{
+  title: "The Divorce Announcement That Came With an Unexpected Silver Lining",
+  author: "Khyati Srivastava",
+  slug: "the-divorce-announcement-that-came-with-an-unexpected-silver-lining",
+  category: "Drama",
+  emoji: "🏠",
+  excerpt: "The news that their parents are divorcing devastates both kids initially. What they don't expect is how much calmer, and genuinely happier, home life becomes once the constant tension actually resolves into two separate, peaceful houses.",
+  created_at: "2027-04-22T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Devastating News</h3>
+<p>Priya and her younger brother received the divorce announcement with the kind of devastation any kid would feel, certain their family and their sense of home were both about to fall apart entirely.</p>
+
+<h3>Chapter 2: An Unexpected Adjustment</h3>
+<p>The actual transition, once it happened, revealed something neither kid had anticipated: the constant background tension that had quietly filled their old house for years simply wasn't present in either new, separate home — both parents noticeably calmer apart than they'd been together.</p>
+
+<h3>Chapter 3: A Different Kind of Family</h3>
+<p>Two houses instead of one turned out, genuinely, to feel like less loss than expected and more like relief neither kid had realized they'd been craving. It wasn't the family they'd imagined having. It turned out to be, in its own reshaped way, a considerably happier one.</p>
+`
+},
+{
+  title: "The Locker Combination That Turned Into a Running Joke, Then Something More",
+  author: "Khyati Srivastava",
+  slug: "the-locker-combination-that-turned-into-a-running-joke-then-something-more",
+  category: "Romance",
+  emoji: "🔒",
+  excerpt: "After forgetting his combination for the third time, Dev asks the girl at the next locker over for help so often it becomes a running joke between them — one that gradually turns into something neither expected.",
+  created_at: "2027-04-22T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Genuine Problem</h3>
+<p>Dev had forgotten his own locker combination three separate times in one month, forcing him to sheepishly ask Priya, at the neighboring locker, for help retrieving it from the front office each time — a genuinely embarrassing pattern he hadn't meant to establish.</p>
+
+<h3>Chapter 2: A Running Joke</h3>
+<p>Priya started teasing him gently about it, the two of them developing an easy rapport over his consistent forgetfulness, their brief daily locker interactions becoming, gradually, the actual highlight of both their mornings.</p>
+
+<h3>Chapter 3: Admitting It Wasn't Really About the Locker</h3>
+<p>Dev finally admitted, once he'd genuinely memorized his combination for good, that he missed the daily interaction more than he expected to. Priya laughed and pointed out she'd noticed him "forgetting" it suspiciously often those last few weeks anyway. They still talk at their lockers every morning. He hasn't actually forgotten the combination since.</p>
+`
+},
+{
+  title: "The Two Nervous Speeches at Graduation",
+  author: "Khyati Srivastava",
+  slug: "the-two-nervous-speeches-at-graduation",
+  category: "Romance",
+  emoji: "🎓",
+  excerpt: "Both selected as class speakers, longtime friends Farrah and Tomas spend weeks helping each other rehearse — and somewhere between draft five and draft twelve, both realize their speeches keep quietly mentioning each other.",
+  created_at: "2027-04-22T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Two Speeches, One Shared Nervousness</h3>
+<p>Both selected as their class's graduation speakers, longtime friends Farrah and Tomas fell naturally into helping each other rehearse, weeks of practice sessions turning what should have been a stressful task into something they both genuinely looked forward to.</p>
+
+<h3>Chapter 2: A Noticeable Pattern</h3>
+<p>Somewhere around draft eight, both noticed their respective speeches kept quietly, unconsciously referencing the other — a shared memory here, an inside joke there, more than either had originally planned to include.</p>
+
+<h3>Chapter 3: Saying the Actual Thing</h3>
+<p>Neither speech, delivered at the actual ceremony, said it outright. The conversation afterward, walking out of the auditorium together, finally did. Their graduation photos from that day show two visibly relieved, visibly happy speakers — for reasons that had very little to do with the speeches themselves by that point.</p>
+`
+},
+{
+  title: "The Kid Who Started a Neighborhood Star-Gazing Club",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-started-a-neighborhood-star-gazing-club",
+  category: "Kids",
+  emoji: "🔭",
+  excerpt: "After getting a cheap telescope for his birthday, ten-year-old Dev starts inviting neighborhood kids to weekly backyard stargazing nights — no expertise required, just curiosity and a blanket to sit on.",
+  created_at: "2027-04-22T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Birthday Telescope</h3>
+<p>Dev's modest birthday telescope, cheap but genuinely functional, sparked an interest he couldn't keep entirely to himself, prompting him to invite a few neighborhood kids over for an informal first stargazing night in his backyard.</p>
+
+<h3>Chapter 2: A Growing Club</h3>
+<p>What started as three kids on a blanket grew steadily into a genuine weekly gathering, Dev researching constellations and basic astronomy facts each week to share, taking his self-appointed role as neighborhood stargazing guide with real seriousness.</p>
+
+<h3>Chapter 3: A Real Community</h3>
+<p>Nearly a dozen kids now attend regularly, several parents joining too, the modest birthday telescope having sparked something considerably bigger than Dev ever expected. He's already planning a special session around the next visible meteor shower, complete with hand-drawn viewing guides for everyone.</p>
+`
+},
+{
+  title: "The Kid Who Turned Her Fear of the Dark Into a Nightlight Business",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-turned-her-fear-of-the-dark-into-a-nightlight-business",
+  category: "Kids",
+  emoji: "🔦",
+  excerpt: "Genuinely scared of the dark herself, nine-year-old Priya starts making and selling homemade nightlights to other kids who feel the same way — turning her own fear into something that actually helps other people.",
+  created_at: "2027-04-22T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Real Fear</h3>
+<p>Priya had genuinely struggled with fear of the dark for years, finding comfort eventually in a small homemade nightlight her grandmother had helped her craft — a comfort she realized, watching a younger cousin struggle with the same fear, other kids might genuinely benefit from too.</p>
+
+<h3>Chapter 2: A Small Business, Genuinely Helpful</h3>
+<p>She started making simple, affordable nightlights from mason jars and battery lights, selling them at a modest price specifically to other kids dealing with the same fear she understood intimately from her own experience.</p>
+
+<h3>Chapter 3: More Than a Business</h3>
+<p>She's sold over thirty nightlights now, several parents writing genuinely grateful notes about how much they'd helped their own scared kids sleep better. Priya still uses her own original nightlight every night. She considers her business less about the modest profit and more about turning something that scared her into something that helps someone else.</p>
+`
+},
+{
+  title: "The Elevator Music That Plays a Song Nobody's Ever Heard Before",
+  author: "Khyati Srivastava",
+  slug: "the-elevator-music-that-plays-a-song-nobodys-ever-heard-before",
+  category: "Horror",
+  emoji: "🎶",
+  excerpt: "The office building's elevator plays the same generic instrumental loop every day, as elevator music does — except during the ride between floors 6 and 7, when it briefly, consistently switches to a completely different, unidentifiable melody.",
+  created_at: "2027-04-23T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Small, Specific Anomaly</h3>
+<p>The building's elevator played its usual generic instrumental loop on every ride, every floor, with one strange consistent exception: the brief ride between floors 6 and 7 always, without fail, switched to a completely different, entirely unfamiliar melody.</p>
+
+<h3>Chapter 2: An Impossible Search</h3>
+<p>Building manager Reya, curious after several tenants mentioned it, spent an afternoon trying to identify the unfamiliar song through music recognition apps, none of which returned any match at all despite the melody being clearly structured and complete, not random noise.</p>
+
+<h3>Chapter 3: An Unsolved Detail</h3>
+<p>The building's sound system logs showed no separate track ever loaded for that specific floor range — as far as the actual system was concerned, the same generic loop played uninterrupted the entire ride. Reya has ridden that specific elevator section dozens of times since, specifically listening. The unfamiliar melody plays exactly as often as it always has. She's stopped trying to explain it.</p>
+`
+},
+{
+  title: "The Family Photo Album With One Page That Won't Stay Closed",
+  author: "Khyati Srivastava",
+  slug: "the-family-photo-album-with-one-page-that-wont-stay-closed",
+  category: "Horror",
+  emoji: "📔",
+  excerpt: "Every page of the old family photo album stays closed properly, held down by its binding, except one — page fourteen, which springs open on its own no matter how the album is stored, always to the same faded photograph.",
+  created_at: "2027-04-23T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Stubborn Page</h3>
+<p>Every page of the old family photo album stayed closed properly under its aging binding, except page fourteen, which sprang open on its own repeatedly no matter how carefully the album was shelved, always landing on the exact same faded photograph.</p>
+
+<h3>Chapter 2: The Photograph in Question</h3>
+<p>The photo showed a family gathering from decades earlier, ordinary and unremarkable except for one figure in the back row nobody in the current family could identify by name, despite asking every living relative who might have remembered.</p>
+
+<h3>Chapter 3: Leaving the Page Alone</h3>
+<p>Priya has given up trying to keep it closed, simply letting the album rest open to page fourteen on the shelf now instead of fighting the binding repeatedly. Nobody has ever identified the unnamed figure. The page has never once, in years since, sprung open to any other picture.</p>
+`
+},
+{
+  title: "The Kitchen Radio Tuned to a Station That Only Plays Rain Sounds",
+  author: "Khyati Srivastava",
+  slug: "the-kitchen-radio-tuned-to-a-station-that-only-plays-rain-sounds",
+  category: "Poetry",
+  emoji: "📻",
+  excerpt: "A cozy poem about the comfort of an old kitchen radio permanently tuned to a static-adjacent frequency that plays nothing but the soft, steady sound of rain, real weather or not.",
+  created_at: "2027-04-23T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Kitchen Radio Tuned to a Station That Only Plays Rain Sounds</h3>
+<p>Nobody remembers who tuned it there,<br/>
+some frequency, half static, half air,<br/>
+that plays the sound of gentle rain,<br/>
+whether outside it's rain or shine again.</p>
+
+<p>We've never moved the dial since,<br/>
+it's become the kitchen's quiet prince,<br/>
+humming softly while the coffee brews,<br/>
+rain sounds playing, sun or blues.</p>
+
+<p>Some mornings it's the only sound<br/>
+in a kitchen otherwise all wound<br/>
+up in rush and grabbing keys —<br/>
+just rain, steady, built to ease.</p>
+
+<p>Someday the old radio might finally die,<br/>
+static winning, signal gone dry,<br/>
+but until then, we'll keep it right where it stands,<br/>
+playing rain into our open hands.</p>
+`
+},
+{
+  title: "The Sidewalk Crack Everyone Steps Over Without Thinking",
+  author: "Khyati Srivastava",
+  slug: "the-sidewalk-crack-everyone-steps-over-without-thinking",
+  category: "Poetry",
+  emoji: "🚶",
+  excerpt: "A playful, thoughtful poem musing on the small, unconscious rituals we all develop — like the one specific sidewalk crack every neighbor somehow learns to step over without ever discussing why.",
+  created_at: "2027-04-23T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Sidewalk Crack Everyone Steps Over Without Thinking</h3>
+<p>There's a crack out front, just past the gate,<br/>
+that every neighbor learns, soon or late,<br/>
+to step clean over, no reason known,<br/>
+just habit, passed like a stone.</p>
+
+<p>Nobody taught the kids to skip it,<br/>
+nobody wrote a rule or a script,<br/>
+they just watched their parents' feet<br/>
+avoid that spot on the concrete street.</p>
+
+<p>Maybe it started as a joke, long gone,<br/>
+some superstition passed on and on,<br/>
+now just a habit nobody explains,<br/>
+a small shared rhythm the whole block maintains.</p>
+
+<p>I still step over it, every time,<br/>
+no reason left, no reasoned rhyme,<br/>
+just a little dance we all somehow learned —<br/>
+one crack, one street, one habit earned.</p>
+`
+},
 ];
