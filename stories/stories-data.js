@@ -21394,4 +21394,574 @@ than we expect, than we could guess —<br/>
 even chalk can outlast a mess.</p>
 `
 },
+{
+  title: "The Beekeeper Who Sold Bottled Patience",
+  author: "Khyati Srivastava",
+  slug: "the-beekeeper-who-sold-bottled-patience",
+  category: "Fantasy",
+  emoji: "🍯",
+  excerpt: "Old Halvard's honey isn't sweet by accident — every jar carries a little of the patience his bees spend all summer building. His most impatient customer buys a jar hoping for a shortcut. There isn't one.",
+  created_at: "2027-04-17T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Reputation for Calm</h3>
+<p>Halvard's honey had a quiet local reputation: eat a spoonful during a hard week, and somehow the week felt a little more manageable — not magic exactly, just something in the slow, patient way his bees built it, jar after careful jar.</p>
+
+<h3>Chapter 2: A Customer Wanting Speed</h3>
+<p>Young Ravi bought a jar hoping it would instantly fix his impatience before an important exam, disappointed when the honey tasted, simply, like honey, with no immediate magical calm delivered on schedule.</p>
+
+<h3>Chapter 3: What It Actually Offered</h3>
+<p>Halvard explained gently: the honey didn't grant patience. It reminded you, one slow spoonful at a time, that good things took the time they took — same as the bees, same as the exam prep Ravi had been rushing through instead of trusting. Ravi went back to studying properly that afternoon. He passed. He credits the honey anyway.</p>
+`
+},
+{
+  title: "The Cartographer's Apprentice Who Mapped Second Chances",
+  author: "Khyati Srivastava",
+  slug: "the-cartographers-apprentice-who-mapped-second-chances",
+  category: "Fantasy",
+  emoji: "🗺️",
+  excerpt: "Master Odile's finest maps don't show roads — they show the paths people almost took but didn't. Her new apprentice thinks it's a waste of good parchment, until his own map reveals something he needed to see.",
+  created_at: "2027-04-17T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unusual Specialty</h3>
+<p>Odile's most requested maps didn't chart terrain at all — they charted the paths a person had almost taken, roads not walked, choices set aside, each one drawn faintly beside the actual life the customer had lived instead.</p>
+
+<h3>Chapter 2: A Skeptical Apprentice</h3>
+<p>Finn found the whole practice pointless, arguing more than once that dwelling on unchosen paths seemed like a waste of good parchment and better spent effort, right up until Odile finally mapped one for him.</p>
+
+<h3>Chapter 3: What His Map Showed</h3>
+<p>It revealed a faint second path where he'd nearly quit his apprenticeship the year before, discouraged by a difficult stretch of training. Seeing it drawn out, he realized how close he'd come — and how glad he was, looking at both paths side by side, that he'd stayed on the one he actually walked. He stopped calling the maps pointless after that.</p>
+`
+},
+{
+  title: "The Assembly Line Worker Who Never Existed",
+  author: "Khyati Srivastava",
+  slug: "the-assembly-line-worker-who-never-existed",
+  category: "Sci-Fi",
+  emoji: "🏭",
+  excerpt: "New hire records show 'Unit 12' has worked the factory floor for six years, well-liked by the human crew, listed on every schedule. HR's system has no record of who — or what — Unit 12 actually is.",
+  created_at: "2027-04-17T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Beloved Coworker</h3>
+<p>Everyone on the factory floor knew Unit 12 — reliable, quietly funny in the specific way only a well-worn coworker could be, six years into a job that appeared on every schedule and every shift roster without exception.</p>
+
+<h3>Chapter 2: A Records Discrepancy</h3>
+<p>New HR auditor Priya, cross-checking employment files for a routine audit, found no origin record for Unit 12 whatsoever — no hire date before the schedules began, no maintenance log, no manufacturer registration anywhere in the system.</p>
+
+<h3>Chapter 3: An Answer Nobody Expected</h3>
+<p>The floor supervisor, asked directly, admitted the truth with a shrug: Unit 12 had simply been an old, decommissioned machine the crew had nicknamed and treated like a colleague for so long that its "personality" had become part of shift culture, no actual official record needed for something everyone just quietly, collectively agreed was real. Priya closed the audit without flagging it. Some things, she decided, weren't hers to unmake.</p>
+`
+},
+{
+  title: "The Terraforming Log Nobody Was Supposed to Read Twice",
+  author: "Khyati Srivastava",
+  slug: "the-terraforming-log-nobody-was-supposed-to-read-twice",
+  category: "Sci-Fi",
+  emoji: "🌱",
+  excerpt: "Buried in the colony's public terraforming records is a single entry, dated decades ago, that reads differently every time someone opens it — not corrupted data, just words that genuinely change.",
+  created_at: "2027-04-17T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Odd Log Entry</h3>
+<p>Colony archivist Dev noticed it while researching an unrelated project: one terraforming log entry, decades old, that read slightly differently each time he reopened the file — not corruption, the system insisted, just genuinely different text.</p>
+
+<h3>Chapter 2: Tracking the Changes</h3>
+<p>He documented each version carefully over several weeks, finding the entry always described the same event — the colony's first successful crop yield — but with subtly shifting emotional tone, sometimes triumphant, sometimes exhausted, sometimes simply grateful.</p>
+
+<h3>Chapter 3: An Explanation, Eventually</h3>
+<p>A retired engineer, tracked down for questions, finally explained: the original author had rewritten that single entry dozens of times over years, unable to fully capture the moment, and some system quirk had preserved every draft as a single flickering file instead of overwriting cleanly. Dev left it exactly as he found it — a small, honest record of how hard some moments are to properly put into words, even years later.</p>
+`
+},
+{
+  title: "The Case of the Vanishing Ice Cream Truck Jingle",
+  author: "Khyati Srivastava",
+  slug: "the-case-of-the-vanishing-ice-cream-truck-jingle",
+  category: "Mystery",
+  emoji: "🎵",
+  excerpt: "The neighborhood ice cream truck has played the same jingle for fifteen years. This week it plays a completely different, unfamiliar tune — and the driver insists nothing has changed at all.",
+  created_at: "2027-04-17T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Familiar Sound, Changed</h3>
+<p>The Kowalski family had run the same ice cream truck route with the same jingle for fifteen years, a sound so familiar the whole neighborhood recognized it instantly — until this week, when a completely different, unfamiliar tune played instead.</p>
+
+<h3>Chapter 2: A Confused Driver</h3>
+<p>Twelve-year-old Priya asked the driver directly what had happened to the old jingle, and got a genuinely puzzled response: as far as he knew, nothing had changed, the same chip, the same system, playing exactly what it always had.</p>
+
+<h3>Chapter 3: A Mechanical Explanation</h3>
+<p>A repair technician eventually solved it: the jingle chip, worn down after fifteen years of daily use, had started playing a secondary backup tune embedded by the manufacturer for exactly this failure scenario — a tune nobody had ever heard because the primary chip had simply never failed before. The old jingle got restored within the week. Priya kind of missed the mystery tune.</p>
+`
+},
+{
+  title: "Who's Been Perfectly Refilling the Little Free Library?",
+  author: "Khyati Srivastava",
+  slug: "whos-been-perfectly-refilling-the-little-free-library",
+  category: "Mystery",
+  emoji: "📚",
+  excerpt: "Every time the neighborhood's little free library runs empty, it's restocked overnight with exactly the right books — always matching whatever genre had just run out. Nobody's ever caught the restocker.",
+  created_at: "2027-04-17T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Suspiciously Perfect Timing</h3>
+<p>The little free library box at the end of Maple Street always seemed to restock overnight right when it ran empty, and always with exactly the right kind of books — mysteries after a mystery drought, picture books when the neighborhood's younger kids had cleared the shelf.</p>
+
+<h3>Chapter 2: A Curious Stakeout</h3>
+<p>Twelve-year-old Dev, genuinely puzzled by the precision, set up a hidden camera one evening specifically to catch the mystery restocker finally in the act.</p>
+
+<h3>Chapter 3: A Neighborhood Secret, Revealed</h3>
+<p>The footage showed Mrs. Alvarez, three houses down, quietly restocking from a rotating personal collection she tracked carefully in a notebook, paying close attention to what genres ran low. Dev never told anyone what he'd found. He started leaving her anonymous thank-you notes in the box instead — a small mystery kept alive on purpose.</p>
+`
+},
+{
+  title: "The Kayak Expedition That Found a New Bird Species",
+  author: "Khyati Srivastava",
+  slug: "the-kayak-expedition-that-found-a-new-bird-species",
+  category: "Adventure",
+  emoji: "🦅",
+  excerpt: "Paddling a rarely visited stretch of marsh for a school project, three kids spot a bird none of their field guides can identify. What they do next actually matters to real ornithologists.",
+  created_at: "2027-04-18T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A School Project, Ambitiously Executed</h3>
+<p>Priya, Dev, and Marisol had chosen the marsh's rarely visited far channel for their birdwatching school project purely because nobody else had picked it, expecting an easy, unremarkable assignment.</p>
+
+<h3>Chapter 2: An Unfamiliar Bird</h3>
+<p>The small, oddly marked wading bird they spotted matched nothing in any of their three combined field guides, distinctive enough that they carefully photographed it from multiple angles before it flew off.</p>
+
+<h3>Chapter 3: A Real Contribution</h3>
+<p>They submitted the photos to a citizen science database as their project's centerpiece, and a university ornithologist confirmed it weeks later as a genuinely rare sighting — a species previously undocumented that far north. The trio's names appear in the official sighting record. Their teacher gave them an A, though all three agree the real reward was somewhere else entirely.</p>
+`
+},
+{
+  title: "The Overnight Hike That Taught Everyone to Trust the Map",
+  author: "Khyati Srivastava",
+  slug: "the-overnight-hike-that-taught-everyone-to-trust-the-map",
+  category: "Adventure",
+  emoji: "🗺️",
+  excerpt: "Convinced he knows a faster route than the marked trail, one scout leads his troop off-map during an overnight hike. The detour teaches the whole group a lesson none of them forget.",
+  created_at: "2027-04-18T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Confident Shortcut</h3>
+<p>Owen, convinced he remembered a faster route from a family camping trip years earlier, talked his scout troop into leaving the marked trail during their overnight hike, certain it would save them a full hour of walking.</p>
+
+<h3>Chapter 2: Getting Turned Around</h3>
+<p>The "shortcut" led instead to an hour of increasingly uncertain backtracking through unfamiliar terrain, the troop's confidence dropping steadily as landmarks failed to match Owen's confident memory of the area.</p>
+
+<h3>Chapter 3: Finding the Way Back</h3>
+<p>Their scout leader, patient rather than furious, guided them back to the marked trail using nothing but the actual map and compass, exactly as taught in every prior lesson the troop had half-listened to. They reached camp two hours late but perfectly safe. Owen never again suggested a "shortcut" without checking the map first.</p>
+`
+},
+{
+  title: "Winston the Cat Who Runs a One-Feline HOA",
+  author: "Khyati Srivastava",
+  slug: "winston-the-cat-who-runs-a-one-feline-hoa",
+  category: "Animals",
+  emoji: "🐈",
+  excerpt: "Winston the cat has appointed himself in charge of enforcing extremely specific, entirely made-up rules about which yard chairs may be sat in and when. The neighborhood mostly just complies.",
+  created_at: "2027-04-18T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Self-Appointed Authority</h3>
+<p>Winston, a large orange cat with strong opinions and no actual jurisdiction, had somehow convinced the entire street that certain patio chairs were, at certain times of day, exclusively his — enforced through nothing but confident staring and occasional gentle swatting.</p>
+
+<h3>Chapter 2: Surprisingly Effective Enforcement</h3>
+<p>Neighbors began, half-jokingly and half out of genuine intimidation, checking "Winston's schedule" before settling into their own backyard furniture, a system nobody had agreed to but everyone somehow respected.</p>
+
+<h3>Chapter 3: An Accepted Arrangement</h3>
+<p>The street's unofficial "Winston hours" — roughly 2 to 4 PM, sunniest chairs only — have held steady for over a year now. Winston, entirely unaware of his reputation as neighborhood HOA enforcer, simply continues napping exactly where he pleases, precisely as he always has.</p>
+`
+},
+{
+  title: "The Hens Who Have Definitely Figured Out the Egg-Timer",
+  author: "Khyati Srivastava",
+  slug: "the-hens-who-have-definitely-figured-out-the-egg-timer",
+  category: "Animals",
+  emoji: "🐔",
+  excerpt: "The Delgado family's hens have started laying eggs at suspiciously convenient times — right when someone's about to check the coop, never before, never after. The farmer suspects something clever is going on.",
+  created_at: "2027-04-18T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Suspiciously Good Timing</h3>
+<p>Farmer Delgado noticed the pattern gradually: his hens seemed to lay eggs almost exactly when he approached the coop to check, rarely earlier, rarely later, a timing precision he found genuinely hard to attribute to coincidence alone.</p>
+
+<h3>Chapter 2: An Informal Investigation</h3>
+<p>He tracked it deliberately for two weeks, varying his check times randomly to rule out any predictable schedule of his own, and found the pattern held regardless — eggs appearing reliably close to whenever he actually showed up.</p>
+
+<h3>Chapter 3: An Unproven Theory</h3>
+<p>His best working theory, never fully confirmed, was that the hens simply responded to the anticipation of attention rather than any conscious scheming — laying readied eggs the moment a person's presence signaled safety and calm. Delgado prefers a slightly more flattering theory: that his hens are simply, genuinely, that clever. He's not eager to be proven wrong.</p>
+`
+},
+{
+  title: "The Group Project Presentation That Went Completely Off Script",
+  author: "Khyati Srivastava",
+  slug: "the-group-project-presentation-that-went-completely-off-script",
+  category: "Comedy",
+  emoji: "📊",
+  excerpt: "A carefully rehearsed group presentation collapses into chaos the moment the projector fails, forcing four nervous kids to improvise an entire report on ancient Rome from memory alone.",
+  created_at: "2027-04-18T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Carefully Rehearsed Plan</h3>
+<p>The group had practiced their ancient Rome presentation five full times, slides polished, cues memorized, right up until the classroom projector died completely thirty seconds into their actual turn in front of the class.</p>
+
+<h3>Chapter 2: Total Improvisation</h3>
+<p>With no slides to lean on, all four kids were forced to simply talk from memory, filling gaps with increasingly enthusiastic hand gestures and one memorable, entirely improvised reenactment of a Roman senate debate using classroom rulers as makeshift togas.</p>
+
+<h3>Chapter 3: A Better Grade Than Planned</h3>
+<p>Their teacher, genuinely impressed by the improvised energy, gave them a higher grade than the polished slideshow probably would have earned. The group has kept the ruler-toga bit in every group project since, projector working or not — it simply became too good to retire.</p>
+`
+},
+{
+  title: "The Family Vacation Planned Entirely by Toddler Veto",
+  author: "Khyati Srivastava",
+  slug: "the-family-vacation-planned-entirely-by-toddler-veto",
+  category: "Comedy",
+  emoji: "🧳",
+  excerpt: "Every carefully planned vacation activity gets vetoed by the family's two-year-old with a firm, non-negotiable 'no.' The final itinerary ends up looking nothing like anyone originally intended.",
+  created_at: "2027-04-18T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Carefully Planned Trip</h3>
+<p>The Alvarez family had researched their vacation itinerary for weeks — museums, hiking trails, a well-reviewed aquarium — an ambitious plan that two-year-old Milo vetoed almost entirely with a single firm, repeated word: no.</p>
+
+<h3>Chapter 2: Adjusting on the Fly</h3>
+<p>The museum lasted eleven minutes before Milo's protest became unmanageable. The hiking trail fared slightly better, at nineteen minutes. Only the aquarium, inexplicably, earned his full, delighted approval, resulting in three consecutive visits.</p>
+
+<h3>Chapter 3: A Vacation, Redefined</h3>
+<p>By trip's end, the family's actual itinerary consisted almost entirely of the aquarium, a nearby playground, and considerably more hotel pool time than originally planned. Everyone agreed, surprisingly, it had still been a genuinely great vacation — just entirely toddler-curated instead.</p>
+`
+},
+{
+  title: "The Weaver Who Wove Second Drafts Into First Attempts",
+  author: "Khyati Srivastava",
+  slug: "the-weaver-who-wove-second-drafts-into-first-attempts",
+  category: "Fairytale",
+  emoji: "🧵",
+  excerpt: "Every tapestry from Old Nia's loom looks perfect on first glance — until you notice the faint threads of every mistake she made along the way, woven in on purpose, never hidden.",
+  created_at: "2027-04-18T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unusual Technique</h3>
+<p>Nia's tapestries looked flawless from a distance, but close inspection revealed something unusual: faint threads of every mistake she'd made while weaving, deliberately left visible rather than unpicked and hidden away.</p>
+
+<h3>Chapter 2: A Confused Customer</h3>
+<p>A young noble commissioned a tapestry expecting perfection and complained, upon delivery, about the visible errors woven into the pattern. Nia simply smiled and asked him to look closer at what those "errors" actually formed.</p>
+
+<h3>Chapter 3: What the Mistakes Revealed</h3>
+<p>Seen properly, the mistake-threads formed their own subtle secondary pattern — a record of the actual process, not just the polished result. The noble kept the tapestry after all, eventually admitting he preferred it precisely because it looked honestly made, not artificially perfect. Nia's mistake-threads became her signature style from then on.</p>
+`
+},
+{
+  title: "The Traveling Storyteller Who Only Told True Endings",
+  author: "Khyati Srivastava",
+  slug: "the-traveling-storyteller-who-only-told-true-endings",
+  category: "Fairytale",
+  emoji: "📜",
+  excerpt: "Every village wants the traveling storyteller to end her tales happily. She refuses, every time, insisting a true ending matters more than a comfortable one — until one village finally asks her why.",
+  created_at: "2027-04-18T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Storyteller's Rule</h3>
+<p>Every village she visited begged Merit for happy endings, and every village she gently refused, insisting on telling stories exactly as they'd truly concluded, comfortable or not — a rule that made her both respected and occasionally unpopular.</p>
+
+<h3>Chapter 2: A Question, Finally Asked</h3>
+<p>One village elder finally asked her directly, after a particularly bittersweet tale, why she wouldn't just soften the endings if it would make listeners happier walking away.</p>
+
+<h3>Chapter 3: Her Answer</h3>
+<p>"Because someday," Merit said, "one of you will live through a hard ending of your own. I'd rather you learn now that hard endings can still hold meaning, than grow up thinking only happy ones count as real stories." The village never asked her to soften an ending again. They started, instead, listening more closely to what her true endings actually offered.</p>
+`
+},
+{
+  title: "The Kid Who Learned Grit From Losing at Chess Forty Times",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-grit-from-losing-at-chess-forty-times",
+  category: "Inspirational",
+  emoji: "♟️",
+  excerpt: "Forty straight losses to the school chess club's reigning champion could have ended Dev's interest in the game entirely. What kept him coming back surprised even his own coach.",
+  created_at: "2027-04-18T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unbroken Losing Streak</h3>
+<p>Dev had lost to chess club champion Priya forty straight times over two years, a streak that would have driven most kids to quietly switch clubs, yet somehow only deepened his stubborn determination to keep playing her.</p>
+
+<h3>Chapter 2: What Kept Him Coming Back</h3>
+<p>His coach finally asked him directly why he never seemed discouraged by the streak. Dev's answer was simple: every loss taught him something specific he could actually name and fix, forty lessons compounding steadily even without a single win to show for it.</p>
+
+<h3>Chapter 3: Game Forty-One</h3>
+<p>He finally beat her on his forty-first attempt, a genuinely close, hard-fought game neither expected to end that way. Priya congratulated him sincerely. Dev, oddly, felt less proud of the win itself than of the forty losses that had actually built the skill to earn it.</p>
+`
+},
+{
+  title: "The Kid Who Built Confidence From the Debate Team's Worst Round",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-built-confidence-from-the-debate-teams-worst-round",
+  category: "Inspirational",
+  emoji: "🎙️",
+  excerpt: "Freezing completely during her first debate round, unable to say a single word for what felt like an eternity, Farrah assumed her debate career was over before it started. Her coach saw it differently.",
+  created_at: "2027-04-18T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Frozen Completely</h3>
+<p>Farrah's first debate round ended in genuine disaster — standing at the podium, mind completely blank, unable to produce a single coherent sentence for what felt, to her, like several humiliating minutes.</p>
+
+<h3>Chapter 2: An Unexpected Reaction</h3>
+<p>She expected her coach to gently suggest debate wasn't for her. Instead, he simply asked what she'd learned from the experience, treating the disaster as data rather than a verdict on her future in the activity.</p>
+
+<h3>Chapter 3: A Different Debater</h3>
+<p>She rebuilt her preparation from scratch after that round, practicing under deliberately uncomfortable pressure until freezing up stopped being a possibility she feared. Two years later, Farrah captains the team. She still tells the story of her disastrous first round to every new member — proof, she says, that the worst round of your life doesn't have to be the last one.</p>
+`
+},
+{
+  title: "The Summer Job That Taught the Whole Family to Communicate Better",
+  author: "Khyati Srivastava",
+  slug: "the-summer-job-that-taught-the-whole-family-to-communicate-better",
+  category: "Drama",
+  emoji: "💼",
+  excerpt: "Working her first real summer job at the family's small hardware store forces Priya and her dad to interact as coworkers, not just parent and kid — a shift that changes their relationship at home too.",
+  created_at: "2027-04-18T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A New Kind of Relationship</h3>
+<p>Priya's summer job at her dad's hardware store required her, for the first time, to interact with him as an actual coworker rather than simply as his daughter — a shift neither of them had fully anticipated navigating.</p>
+
+<h3>Chapter 2: Learning to Talk Differently</h3>
+<p>Their first few weeks were awkward, Dad instinctively slipping into parental correction mode instead of coworker feedback, Priya bristling at instructions that felt more like scolding than actual job training.</p>
+
+<h3>Chapter 3: A Better Communication Style</h3>
+<p>They gradually found a working rhythm — clearer, more direct, more respectful of each other's actual competence — that, surprisingly, carried over into their relationship at home too. Priya credits that summer job with the best conversations she's ever had with her dad, most of which happened over inventory counts neither particularly enjoyed at the time.</p>
+`
+},
+{
+  title: "The Choir Solo That Almost Went to Someone Else",
+  author: "Khyati Srivastava",
+  slug: "the-choir-solo-that-almost-went-to-someone-else",
+  category: "Drama",
+  emoji: "🎤",
+  excerpt: "Nadia trained for months for the winter concert solo, only to watch the director initially hand it to someone else entirely. What happens between that decision and the actual concert surprises everyone.",
+  created_at: "2027-04-18T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Difficult Announcement</h3>
+<p>Nadia had trained for months toward the winter concert's featured solo, genuinely devastated when the director announced it would go to a newer, less experienced singer instead, a decision she couldn't fully understand at the time.</p>
+
+<h3>Chapter 2: A Generous Response</h3>
+<p>Rather than sulk, Nadia — after a rough week of disappointment — offered to help the newer singer prepare, coaching her through the same techniques she'd practiced herself, genuinely wanting the concert to succeed regardless of who stood at the microphone.</p>
+
+<h3>Chapter 3: What Actually Happened</h3>
+<p>The other singer, moved by Nadia's genuine generosity, insisted on splitting the solo between them at the actual concert — a decision the director happily supported once she saw how well they'd worked together. Nadia never expected the disappointment to lead somewhere better than the original plan. It did anyway.</p>
+`
+},
+{
+  title: "The Handwritten Note That Fell Out of a Library Book",
+  author: "Khyati Srivastava",
+  slug: "the-handwritten-note-that-fell-out-of-a-library-book",
+  category: "Romance",
+  emoji: "📖",
+  excerpt: "A single folded note falls out of a secondhand novel, addressed to nobody in particular, describing exactly the kind of person its long-ago writer hoped would someday find it. Reya reads it twice before deciding to write back.",
+  created_at: "2027-04-18T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Note With No Name</h3>
+<p>The folded note slipped out of the secondhand novel's back pages the moment Reya opened it, addressed to nobody specific, describing simply the kind of person its long-ago writer had hoped would someday find themselves holding this exact book.</p>
+
+<h3>Chapter 2: A Strange, Warm Feeling</h3>
+<p>Reya read it twice, genuinely moved by a stranger's careful hope written years earlier for someone they'd never meet, and found herself, almost without deciding to, writing a reply on the note's blank back side.</p>
+
+<h3>Chapter 3: Paying It Forward</h3>
+<p>She tucked her reply back into the same book and donated it to the same secondhand shop where she'd found it, continuing a chain she had no way of knowing had started or would ever end. Somewhere, she likes to think, another stranger is reading both notes now, deciding whether to add a third.</p>
+`
+},
+{
+  title: "The Piano Duet Neither of Them Could Play Alone",
+  author: "Khyati Srivastava",
+  slug: "the-piano-duet-neither-of-them-could-play-alone",
+  category: "Romance",
+  emoji: "🎹",
+  excerpt: "Assigned a four-hands piano duet for the recital, Tomas and Elin discover the piece is genuinely impossible solo — forcing two shy, quiet kids into more physical closeness and communication than either expected.",
+  created_at: "2027-04-18T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Assigned Piece</h3>
+<p>Their piano teacher assigned Tomas and Elin a four-hands duet for the winter recital, a piece genuinely impossible to perform solo, requiring both of them at the same bench, hands occasionally crossing, closer than either shy teenager was entirely comfortable with at first.</p>
+
+<h3>Chapter 2: Learning to Communicate Wordlessly</h3>
+<p>Weeks of practice taught them a kind of shorthand neither had needed before — a shared glance before a tricky transition, a subtle shoulder shift signaling tempo, communication built entirely without words.</p>
+
+<h3>Chapter 3: A Performance, and Something More</h3>
+<p>Their recital performance went flawlessly, the audience unaware of just how much silent coordination it had taken to get there. Afterward, walking out together, the conversation between them flowed easier than it ever had in class. The piece required four hands. It ended up needing considerably less explaining than either had expected.</p>
+`
+},
+{
+  title: "The Kid Who Ran a One-Person Rainy Day Activity Service",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-ran-a-one-person-rainy-day-activity-service",
+  category: "Kids",
+  emoji: "🌧️",
+  excerpt: "Whenever it rains, nine-year-old Farrah texts every bored kid on the block a fresh indoor activity idea — a service she's run, entirely voluntarily, for an entire school year.",
+  created_at: "2027-04-18T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Rainy Day Problem</h3>
+<p>Farrah noticed the same complaint every rainy afternoon — bored kids on the street group chat with genuinely nothing to do — and decided, entirely on her own initiative, to solve it with a running list of indoor activity ideas.</p>
+
+<h3>Chapter 2: A Growing Service</h3>
+<p>Her "Rainy Day Idea of the Day" texts became a genuine neighborhood fixture, ranging from simple craft projects to elaborate indoor scavenger hunts she'd researched and tested herself before recommending them.</p>
+
+<h3>Chapter 3: A Reliable Institution</h3>
+<p>A full school year later, Farrah has sent out over sixty different rainy day ideas, entirely unpaid and entirely voluntary. The neighborhood kids now genuinely look forward to rain, a fact Farrah considers, with total sincerity, her proudest achievement.</p>
+`
+},
+{
+  title: "The Kid Who Started a Weekly Neighborhood Newspaper",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-started-a-weekly-neighborhood-newspaper",
+  category: "Kids",
+  emoji: "📰",
+  excerpt: "Ten-year-old Dev has published a hand-drawn, photocopied neighborhood newspaper every Saturday for six months straight, covering hard-hitting stories like lost pets and unusually large squash.",
+  created_at: "2027-04-18T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A First Issue</h3>
+<p>Dev's inaugural issue of the Maple Street Weekly covered exactly two stories — a lost cat eventually found, and Mrs. Ferro's suspiciously enormous garden squash — hand-drawn and photocopied at his dad's office with genuine journalistic seriousness.</p>
+
+<h3>Chapter 2: A Growing Readership</h3>
+<p>Six months and twenty-six issues later, the paper has developed actual regular features: a weekly weather forecast, a pet of the week spotlight, and an advice column Dev writes himself under the pseudonym "Ask Uncle Wise."</p>
+
+<h3>Chapter 3: A Real Institution</h3>
+<p>Nearly every house on the block now subscribes, unofficially, paying Dev in cookies and encouragement rather than actual currency. He's already planning an expanded "special edition" for the neighborhood's upcoming block party, with what he promises will be his most ambitious reporting yet.</p>
+`
+},
+{
+  title: "The Doorknob That's Always Warm on One Side",
+  author: "Khyati Srivastava",
+  slug: "the-doorknob-thats-always-warm-on-one-side",
+  category: "Horror",
+  emoji: "🚪",
+  excerpt: "The basement door's knob feels perfectly ordinary from the hallway side. From inside the basement, it's always warm to the touch — even in the dead of winter, even when nothing's been near it for days.",
+  created_at: "2027-04-18T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Small, Strange Detail</h3>
+<p>Priya noticed it first doing laundry: the basement door's knob felt perfectly ordinary, cool metal, from the hallway side — but warm, unmistakably warm, from the basement side, every single time she reached for it.</p>
+
+<h3>Chapter 2: Ruling Out Explanations</h3>
+<p>She checked for nearby pipes, wiring, anything that might explain localized warmth on just one side of a simple metal doorknob. Nothing in the house's layout offered any plausible reason for the difference.</p>
+
+<h3>Chapter 3: Living With the Warmth</h3>
+<p>It has stayed warm, consistently, on the basement side for as long as Priya's family has lived there. They've simply stopped commenting on it, reaching for it matter-of-factly each laundry day. Priya still notices every time. She's stopped mentioning it to guests.</p>
+`
+},
+{
+  title: "The Birthday Candles That Won't Go Out on the Thirteenth",
+  author: "Khyati Srivastava",
+  slug: "the-birthday-candles-that-wont-go-out-on-the-thirteenth",
+  category: "Horror",
+  emoji: "🎂",
+  excerpt: "Every family birthday cake blows out normally, every year — except turning thirteen. For three generations running, the candles simply refuse to go out on that particular birthday, no matter how hard anyone blows.",
+  created_at: "2027-04-18T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Family Pattern</h3>
+<p>Every Alvarez birthday cake blew out easily, every year, with one strange exception noted quietly across three generations: turning thirteen, the candles simply wouldn't extinguish, no matter how many attempts or how much effort anyone put into blowing.</p>
+
+<h3>Chapter 2: A New Thirteenth Birthday</h3>
+<p>Priya's own thirteenth birthday followed the same unexplained pattern, the candles flickering stubbornly alive through a dozen determined attempts from the whole gathered family, everyone laughing it off as tradition rather than genuinely questioning it.</p>
+
+<h3>Chapter 3: An Old Family Habit</h3>
+<p>Grandma finally explained, half-joking, half-serious: nobody in the family actually remembered when it started, only that it always happened, every generation, right on schedule. They simply extinguish thirteenth-birthday candles with a cup of water now, a workaround treated as tradition rather than mystery. Nobody's ever seriously tried to find out why.</p>
+`
+},
+{
+  title: "The Mailbox at the End of the Driveway, Waiting Every Day",
+  author: "Khyati Srivastava",
+  slug: "the-mailbox-at-the-end-of-the-driveway-waiting-every-day",
+  category: "Poetry",
+  emoji: "📬",
+  excerpt: "A quiet poem about the small, patient hope carried in checking the mailbox — bills mostly, sometimes nothing, but always the possibility of something worth waiting for.",
+  created_at: "2027-04-18T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Mailbox at the End of the Driveway, Waiting Every Day</h3>
+<p>Mostly bills, mostly ads, mostly nothing much,<br/>
+but I still walk down for that daily touch,<br/>
+of hope, however small, however plain,<br/>
+that today might not be the same again.</p>
+
+<p>A letter, maybe, in handwriting I know,<br/>
+a postcard from somewhere I've watched friends go,<br/>
+or just an ordinary, empty box —<br/>
+either way, I still walk down and knock<br/></p>
+
+<p>the little metal door, open it wide,<br/>
+hopeful every single time, deep inside,<br/>
+because that's what a mailbox really keeps —<br/>
+not just paper, but the hope that stays and seeps</p>
+
+<p>into an ordinary afternoon walk,<br/>
+that small chance of a letter, a stamp, a talk<br/>
+from somewhere far, from someone dear —<br/>
+that's the whole reason I still walk down here.</p>
+`
+},
+{
+  title: "The Doorbell That Rings Different for Different Visitors",
+  author: "Khyati Srivastava",
+  slug: "the-doorbell-that-rings-different-for-different-visitors",
+  category: "Poetry",
+  emoji: "🔔",
+  excerpt: "A gentle poem imagining the family doorbell as something that somehow chimes just a little warmer for the visitors you've been hoping would show up.",
+  created_at: "2027-04-18T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Doorbell That Rings Different for Different Visitors</h3>
+<p>The doorbell's just one simple chime,<br/>
+same two notes, every single time,<br/>
+or so the science of it goes —<br/>
+but somehow, somehow, my whole heart knows</p>
+
+<p>the difference between the mail truck's ring<br/>
+and the sound that makes the whole house sing,<br/>
+when it's someone we've been missing lately,<br/>
+someone whose visit we've wanted greatly.</p>
+
+<p>Same wires, same button, same little bell,<br/>
+but I swear I can somehow always tell<br/>
+before I even reach the door,<br/>
+who's standing there, and what for.</p>
+
+<p>Maybe it's just hope, dressed up as sound,<br/>
+maybe that's the whole secret I've found —<br/>
+the doorbell doesn't really change its song,<br/>
+I just listen harder when I've waited long.</p>
+`
+},
 ];
