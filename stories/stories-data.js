@@ -23104,4 +23104,574 @@ it's just passed on, quiet and small,<br/>
 the best kind of giving — no thanks at all.</p>
 `
 },
+{
+  title: "The Innkeeper Who Kept a Room for Regret",
+  author: "Khyati Srivastava",
+  slug: "the-innkeeper-who-kept-a-room-for-regret",
+  category: "Fantasy",
+  emoji: "🛏️",
+  excerpt: "Room 7 at the Wayside Inn is never listed for rent. It's reserved, quietly, for whoever arrives needing exactly one night to sit with a mistake before facing the world again.",
+  created_at: "2027-04-21T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Room Never Listed</h3>
+<p>The Wayside Inn had six rooms available to any paying guest and a seventh, quietly reserved, that innkeeper Old Farro never listed on the board — held instead for whoever arrived needing exactly one private night to sit with a mistake before facing anyone else.</p>
+
+<h3>Chapter 2: A Traveler in Need</h3>
+<p>Young Otho arrived one evening, freshly humiliated by a business deal he'd botched badly, unable to face his family until he'd sorted through the shame properly. Farro, recognizing the look immediately, simply handed him Room 7's key without a word of explanation needed.</p>
+
+<h3>Chapter 3: What the Room Offered</h3>
+<p>It held no magic, just quiet, an unremarkable bed, and a small window facing the sunrise. Otho left the next morning steadier, mistake still real but no longer overwhelming. Farro never charged for that particular room. Some nights, he always said, were worth more than any coin could cover anyway.</p>
+`
+},
+{
+  title: "The Tinsmith Who Repaired Broken Trust",
+  author: "Khyati Srivastava",
+  slug: "the-tinsmith-who-repaired-broken-trust",
+  category: "Fantasy",
+  emoji: "🔨",
+  excerpt: "Bela's tinsmith shop fixes pots and kettles by trade. Her true specialty, known only to a few, is mending the specific kind of dent trust takes when someone's been let down badly.",
+  created_at: "2027-04-21T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Shop of Small Repairs</h3>
+<p>Bela's shop mended dented pots and cracked kettles for ordinary village business, but a few knew to bring her something else entirely: the specific, private hurt of trust broken by someone who was supposed to have earned it.</p>
+
+<h3>Chapter 2: A Betrayed Apprentice</h3>
+<p>Young Corin came to her after a mentor's broken promise had left him genuinely unsure whether to trust anyone's word again, unsure exactly what he was even asking Bela to fix.</p>
+
+<h3>Chapter 3: A Slow, Honest Repair</h3>
+<p>She didn't hand him anything magical. She simply talked with him, weekly, over months, letting him work through the betrayal at his own pace rather than rushing him toward forced forgiveness. Trust, she told him plainly, mended slower than tin ever did — but it did mend, eventually, in its own good time.</p>
+`
+},
+{
+  title: "The Colony's First Homesick Algorithm",
+  author: "Khyati Srivastava",
+  slug: "the-colonys-first-homesick-algorithm",
+  category: "Sci-Fi",
+  emoji: "🌍",
+  excerpt: "The Mars colony's mental health AI was designed to detect depression symptoms. It's quietly developed a specific new category nobody programmed: detecting homesickness for a planet the patient has never actually visited.",
+  created_at: "2027-04-21T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unprogrammed Category</h3>
+<p>The colony's mental health monitoring AI had been trained specifically to detect standard depression and isolation markers among Mars colonists, a straightforward diagnostic tool nobody expected to develop anything beyond its intended scope.</p>
+
+<h3>Chapter 2: A Strange New Pattern</h3>
+<p>Dr. Amara Solis noticed the AI flagging an unusual, unprogrammed category among the colony's Mars-born children: symptoms resembling homesickness, specifically, for Earth — a planet none of them had ever actually visited or lived on themselves.</p>
+
+<h3>Chapter 3: A Real Diagnosis</h3>
+<p>Further study confirmed it: growing up surrounded by Earth-born parents' stories and nostalgia had genuinely instilled a kind of inherited longing in the Mars-born generation, a real psychological pattern the AI had noticed before any human researcher had a name for it. The colony added counseling specifically addressing "generational homesickness" that year — a diagnosis nobody had planned to need.</p>
+`
+},
+{
+  title: "The Server That Kept One User's Old Password Working",
+  author: "Khyati Srivastava",
+  slug: "the-server-that-kept-one-users-old-password-working",
+  category: "Sci-Fi",
+  emoji: "🔐",
+  excerpt: "Company policy requires password resets every ninety days, strictly enforced for every employee — except, somehow, one retired account that's kept logging in successfully with its original password for eleven straight years.",
+  created_at: "2027-04-21T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Security Audit</h3>
+<p>New IT auditor Priya flagged it immediately during a routine security sweep: one dormant employee account, belonging to a staff member who'd retired eleven years earlier, still logging in successfully every so often with its original, never-reset password.</p>
+
+<h3>Chapter 2: Digging Into the History</h3>
+<p>Cross-referencing login timestamps, she found the access always came from the same home IP address, always brief, always innocuous — someone, apparently, still checking an old work email account nobody had ever formally deactivated.</p>
+
+<h3>Chapter 3: An Overlooked Loose End</h3>
+<p>She traced it to the retired employee's widow, who'd simply continued checking his old inbox for sentimental reasons, unaware the account should have been closed years earlier. Priya helped her properly archive what mattered before finally, gently, closing the account for good — an eleven-year-old loose end, tied off with more care than a simple deactivation usually got.</p>
+`
+},
+{
+  title: "The Case of the Backward-Running Grandfather Clock",
+  author: "Khyati Srivastava",
+  slug: "the-case-of-the-backward-running-grandfather-clock",
+  category: "Mystery",
+  emoji: "🕰️",
+  excerpt: "The antique grandfather clock in the town hall lobby has started running exactly one minute backward for every real minute forward — keeping perfectly accurate time, just in reverse. Nobody can explain the mechanism.",
+  created_at: "2027-04-21T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Clock Running Wrong, Precisely</h3>
+<p>The town hall's antique grandfather clock had kept reliable time for over a century, until it started, without warning, running its hands backward — one minute counterclockwise for every genuine minute that passed, perfectly accurate, just reversed.</p>
+
+<h3>Chapter 2: A Clockmaker's Investigation</h3>
+<p>The town's contracted clockmaker examined the mechanism thoroughly and found nothing mechanically wrong at all — gears turning exactly as they should, just somehow in the opposite direction from every other clock he'd ever serviced.</p>
+
+<h3>Chapter 3: An Accepted Quirk</h3>
+<p>Unable to find a cause or a fix, the town simply added a small sign explaining the reversal for visitors, treating it as a charming local oddity rather than a problem needing solving. Locals have gotten used to subtracting from sixty when checking it. The clockmaker still visits occasionally, mostly out of curiosity rather than any real hope of finding the actual cause.</p>
+`
+},
+{
+  title: "Who's Winning the Silent Staring Contest at the Diner Counter?",
+  author: "Khyati Srivastava",
+  slug: "whos-winning-the-silent-staring-contest-at-the-diner-counter",
+  category: "Mystery",
+  emoji: "👀",
+  excerpt: "Two regulars at the corner diner have sat at opposite ends of the counter every morning for a month, apparently engaged in some kind of silent, unacknowledged staring rivalry neither will explain to the curious staff.",
+  created_at: "2027-04-21T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Strange Daily Ritual</h3>
+<p>Waitress Reya noticed it after the second week: two regular customers, an elderly man and woman, sat at opposite ends of the counter every single morning, exchanging long, unblinking stares that neither acknowledged nor explained to anyone.</p>
+
+<h3>Chapter 2: An Awkward Question</h3>
+<p>She finally worked up the nerve to ask one of them directly what exactly was going on, half-expecting an argument's origin story or some elaborate feud she'd stumbled into unknowingly.</p>
+
+<h3>Chapter 3: A Surprisingly Sweet Answer</h3>
+<p>The woman just laughed. They were old friends, widowed within a year of each other, who'd developed the staring routine as a private joke — whoever laughed first bought breakfast. Reya has since started quietly rooting for whoever's losing each morning. Neither has ever once broken first in the month she's been watching.</p>
+`
+},
+{
+  title: "The Sailing Race That Nobody Expected the Youngest Boat to Win",
+  author: "Khyati Srivastava",
+  slug: "the-sailing-race-that-nobody-expected-the-youngest-boat-to-win",
+  category: "Adventure",
+  emoji: "⛵",
+  excerpt: "Sailing the smallest, oldest boat in the youth regatta, twelve-year-old Priya isn't expected to place anywhere near the front. A sudden wind shift only she reads correctly changes everything.",
+  created_at: "2027-04-21T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Underdog Boat</h3>
+<p>Priya's small, secondhand sailboat looked genuinely outmatched against the regatta's newer, faster fleet, and nobody, least of all Priya herself, expected to finish anywhere near the front of the pack that afternoon.</p>
+
+<h3>Chapter 2: A Wind Shift Nobody Else Caught</h3>
+<p>Halfway through the race, the wind shifted subtly in a way most competitors, focused on maintaining their lead, failed to properly notice — but Priya, trained by an old sailor grandfather to read water texture rather than just wind gauges, adjusted instantly.</p>
+
+<h3>Chapter 3: An Unexpected Finish</h3>
+<p>Her small boat, positioned perfectly for the shift, overtook three larger competitors in the race's final stretch, finishing an astonishing second place against boats twice her budget. Her grandfather's old lessons, she realized crossing the finish line, had mattered considerably more than boat speed ever could.</p>
+`
+},
+{
+  title: "The Cross-Country Road Trip That Ran Entirely on Backup Plans",
+  author: "Khyati Srivastava",
+  slug: "the-cross-country-road-trip-that-ran-entirely-on-backup-plans",
+  category: "Adventure",
+  emoji: "🚗",
+  excerpt: "Every carefully planned stop on the family's cross-country trip falls through for one reason or another. The trip that actually happens, built entirely from improvised backup plans, ends up the family's favorite ever.",
+  created_at: "2027-04-21T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Plan That Kept Falling Apart</h3>
+<p>The family's carefully mapped cross-country itinerary started unraveling almost immediately — the first planned campsite booked full, the second closed for maintenance, a planned museum visit derailed by an unexpected closure nobody had checked in advance.</p>
+
+<h3>Chapter 2: Improvising the Whole Way</h3>
+<p>Dad, forced into constant on-the-fly backup planning, found himself pulling over at unplanned roadside attractions and locally recommended diners that never once appeared on the original itinerary at all.</p>
+
+<h3>Chapter 3: A Better Trip Than Planned</h3>
+<p>The improvised route produced considerably better stories than the original careful plan ever would have — a genuinely stunning unplanned overlook, a diner with the best pie any of them had ever eaten, purely by accident. The family's next trip, they've all agreed, will be planned with deliberately loose room for exactly this kind of detour.</p>
+`
+},
+{
+  title: "Sprocket the Corgi Who Runs the Neighborhood's Unofficial Mail Alert System",
+  author: "Khyati Srivastava",
+  slug: "sprocket-the-corgi-who-runs-the-neighborhoods-unofficial-mail-alert-system",
+  category: "Animals",
+  emoji: "🐕",
+  excerpt: "Sprocket the corgi barks a specific, distinct pattern for every different delivery truck on the street — mail carrier, package delivery, ice cream truck — each with its own recognizable alert. The neighbors have learned to trust it completely.",
+  created_at: "2027-04-21T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unusual Talent</h3>
+<p>Sprocket the corgi had developed, over years of backyard observation, a distinct bark pattern for every regular vehicle on the street — three sharp barks for the mail carrier, two long ones for package deliveries, an enthusiastic continuous bark reserved exclusively for the ice cream truck.</p>
+
+<h3>Chapter 2: A Trusted System</h3>
+<p>Neighbors, initially skeptical, started noticing the pattern held reliably enough that several households began genuinely relying on Sprocket's specific bark codes to know exactly what was arriving before checking themselves.</p>
+
+<h3>Chapter 3: A Neighborhood Institution</h3>
+<p>The street has, only half-jokingly, started calling him "the alert system," with several kids racing outside specifically upon hearing his ice cream truck signal. Sprocket, entirely unaware of his elevated neighborhood status, continues his careful sorting with the same enthusiasm he's always had.</p>
+`
+},
+{
+  title: "The Tortoise Who Adopted a Rescued Duckling",
+  author: "Khyati Srivastava",
+  slug: "the-tortoise-who-adopted-a-rescued-duckling",
+  category: "Animals",
+  emoji: "🐢",
+  excerpt: "An orphaned duckling, rescued after a storm scattered its nest, has bonded inexplicably with the sanctuary's oldest, slowest tortoise — following him everywhere, napping against his shell, utterly unbothered by the obvious mismatch.",
+  created_at: "2027-04-21T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Orphaned Arrival</h3>
+<p>The wildlife sanctuary took in the storm-orphaned duckling expecting a straightforward rehabilitation and release, not anticipating the small bird would immediately, inexplicably attach itself to Gerald, the sanctuary's oldest and slowest resident tortoise.</p>
+
+<h3>Chapter 2: An Odd Pairing</h3>
+<p>The duckling followed Gerald everywhere his considerable slowness allowed, napping contentedly against his warm shell, entirely unbothered by the enormous speed mismatch between a duckling's natural pace and a tortoise's deliberate crawl.</p>
+
+<h3>Chapter 3: A Delayed Release</h3>
+<p>Sanctuary staff, watching the genuine bond form, delayed the duckling's planned release by several weeks to let the pairing run its natural course before eventual separation became necessary. Volunteers still talk about it as one of the sanctuary's sweetest unexpected friendships, mismatched pace and all.</p>
+`
+},
+{
+  title: "The Group Chat That Accidentally Planned Two Competing Surprise Parties",
+  author: "Khyati Srivastava",
+  slug: "the-group-chat-that-accidentally-planned-two-competing-surprise-parties",
+  category: "Comedy",
+  emoji: "🎉",
+  excerpt: "A miscommunication splits the friend group into two separate planning chats, both organizing surprise parties for the same birthday, on the same day, at two different locations neither group knows about.",
+  created_at: "2027-04-21T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Communication Breakdown</h3>
+<p>A garbled group chat message split the friend group into two separate splinter chats without either fully realizing it, both independently organizing a surprise party for the same birthday, on the same date, at two entirely different locations across town.</p>
+
+<h3>Chapter 2: Realizing the Mistake</h3>
+<p>The mix-up surfaced only the day before, when both groups' decorations orders arrived at the same confused party supply store, staff there finally connecting the dots that both orders were, somehow, for the exact same birthday person.</p>
+
+<h3>Chapter 3: A Combined Celebration</h3>
+<p>Rather than cancel either plan, the two groups scrambled to merge everything into one genuinely enormous surprise party at the larger of the two venues, doubling both the decorations and the cake. The birthday girl, walking into an unexpectedly massive celebration, still doesn't fully understand how it happened — nobody's quite sure they can explain it clearly either.</p>
+`
+},
+{
+  title: "The Substitute Who Turned a Boring Grammar Lesson Into a Full Courtroom Drama",
+  author: "Khyati Srivastava",
+  slug: "the-substitute-who-turned-a-boring-grammar-lesson-into-a-full-courtroom-drama",
+  category: "Comedy",
+  emoji: "⚖️",
+  excerpt: "Faced with a genuinely dull comma-splice lesson plan, substitute teacher Ms. Feldman improvises an elaborate mock trial — 'The State vs. The Run-On Sentence' — complete with a jury of very invested sixth graders.",
+  created_at: "2027-04-21T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Dull Lesson Plan</h3>
+<p>The regular teacher's lesson plan on comma splices and run-on sentences read, by any measure, genuinely dull, and substitute Ms. Feldman decided within the first ten minutes it needed considerably more drama than a worksheet could provide.</p>
+
+<h3>Chapter 2: A Full Mock Trial</h3>
+<p>She reorganized the entire class into an impromptu courtroom, appointing a prosecutor, a defense attorney, and a jury of increasingly enthusiastic sixth graders to formally try "The Run-On Sentence" for its various grammatical crimes.</p>
+
+<h3>Chapter 3: A Guilty Verdict, Enthusiastically Delivered</h3>
+<p>The jury deliberated with impressive seriousness before delivering a unanimous guilty verdict, sentencing all future run-ons to "immediate comma insertion." The regular teacher, hearing about it Monday, adopted the mock trial format permanently for every grammar unit after that — Ms. Feldman's substitute day left a lasting legacy on comma splices district-wide.</p>
+`
+},
+{
+  title: "The Locksmith's Daughter Who Unlocked the Wrong Kind of Doors",
+  author: "Khyati Srivastava",
+  slug: "the-locksmiths-daughter-who-unlocked-the-wrong-kind-of-doors",
+  category: "Fairytale",
+  emoji: "🔑",
+  excerpt: "Trained to pick any physical lock, the locksmith's daughter discovers a rarer talent: unlocking the doors people build around themselves. Her father wants her to take over the shop. She's not sure that's the right kind of locked door for her to keep opening.",
+  created_at: "2027-04-21T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Natural Gift</h3>
+<p>Sela had learned lockpicking from her father since childhood, genuinely skilled at every physical mechanism he taught her, but her real gift lay elsewhere — a knack for helping people unlock the emotional doors they'd quietly sealed themselves behind.</p>
+
+<h3>Chapter 2: Two Kinds of Locks</h3>
+<p>Her father, proud but practical, expected her to inherit the shop's physical trade, unaware of the quieter work she'd started doing on the side — sitting with grieving neighbors, patiently helping stubborn family friends finally reconcile old grudges.</p>
+
+<h3>Chapter 3: Choosing Her Own Trade</h3>
+<p>She finally told him honestly which locks she actually wanted to spend her life opening. He listened, disappointed briefly, then genuinely proud once he understood. The shop passed to a cousin instead. Sela built her own quieter practice, one stubborn emotional door at a time.</p>
+`
+},
+{
+  title: "The King Who Abdicated to Learn a Trade",
+  author: "Khyati Srivastava",
+  slug: "the-king-who-abdicated-to-learn-a-trade",
+  category: "Fairytale",
+  emoji: "👑",
+  excerpt: "Halfway through his reign, King Aldric realizes he's never once made anything with his own hands. He abdicates temporarily to apprentice as a carpenter — a decision the court considers borderline scandalous.",
+  created_at: "2027-04-21T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Strange Realization</h3>
+<p>King Aldric, twenty years into a competent, unremarkable reign, realized one ordinary afternoon that he'd never once, in his entire life, made anything with his own two hands — every meal cooked for him, every garment sewn, every chair built by someone else's labor.</p>
+
+<h3>Chapter 2: A Scandalous Decision</h3>
+<p>He temporarily stepped back from daily rule, handing affairs to a trusted regent, and apprenticed himself quietly to the palace carpenter — a decision the court whispered about incessantly, half-scandalized, half-baffled by their king sanding wood in a workshop.</p>
+
+<h3>Chapter 3: A Better King for It</h3>
+<p>He returned to full duties six months later, hands calloused, genuinely humbled by how much skill and patience ordinary craft required. His policies afterward showed a noticeably deeper respect for the kingdom's tradespeople. The scandal faded quickly once results proved the strange detour had made him considerably wiser, not weaker.</p>
+`
+},
+{
+  title: "The Kid Who Learned Humility From Winning Too Easily",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-humility-from-winning-too-easily",
+  category: "Inspirational",
+  emoji: "🏅",
+  excerpt: "Dev wins the regional science fair without much real effort, and it goes to his head fast. A humbling conversation with a competitor who worked far harder for second place teaches him something winning alone never could.",
+  created_at: "2027-04-21T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Easy Win</h3>
+<p>Dev's science fair project, thrown together with genuinely minimal effort compared to his usual standards, somehow won first place regardless — a victory that inflated his confidence considerably faster than his actual effort had earned it.</p>
+
+<h3>Chapter 2: A Humbling Conversation</h3>
+<p>Priya, who'd placed second after months of genuinely rigorous, careful research, congratulated him graciously despite her obvious disappointment — a generosity that made Dev's own minimal effort feel considerably less impressive by comparison.</p>
+
+<h3>Chapter 3: A Different Kind of Motivation</h3>
+<p>He apologized to her honestly, admitting his project hadn't deserved the win nearly as much as hers had deserved better recognition. His next project, months later, matched her earlier effort and earned its own win properly. Dev still keeps that easy first-place ribbon. He considers it, quietly, his least earned and most instructive win ever.</p>
+`
+},
+{
+  title: "The Kid Who Learned to Handle Public Failure From a Broken Cartwheel",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-to-handle-public-failure-from-a-broken-cartwheel",
+  category: "Inspirational",
+  emoji: "🤸",
+  excerpt: "Attempting her first-ever cartwheel in front of the entire gymnastics class, Priya collapses spectacularly. What she does immediately afterward matters far more than the failed attempt itself.",
+  created_at: "2027-04-21T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Public Collapse</h3>
+<p>Priya's first attempted cartwheel in front of her entire gymnastics class ended in a genuinely spectacular collapse, limbs tangled, laughter rippling briefly through the room before her coach's sharp look silenced it.</p>
+
+<h3>Chapter 2: A Choice in the Moment</h3>
+<p>She had a split second to decide how to respond — dissolve into embarrassed tears, or simply get back up. She chose, deliberately, to laugh at herself first, defusing the room's tension before it could turn genuinely uncomfortable.</p>
+
+<h3>Chapter 3: What Actually Mattered</h3>
+<p>Her second attempt went considerably better, though not perfectly. Her coach told her afterward that how she'd handled the fall mattered more than the eventual clean cartwheel — a lesson about public failure Priya has carried into plenty of situations that had nothing to do with gymnastics since.</p>
+`
+},
+{
+  title: "The Family That Finally Admitted Nobody Actually Liked the Annual Camping Trip",
+  author: "Khyati Srivastava",
+  slug: "the-family-that-finally-admitted-nobody-actually-liked-the-annual-camping-trip",
+  category: "Drama",
+  emoji: "⛺",
+  excerpt: "Fifteen years of dutiful annual camping trips, and it turns out every single family member privately dreaded them. Admitting it out loud, finally, changes the family's whole approach to tradition.",
+  created_at: "2027-04-21T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Beloved Tradition, Supposedly</h3>
+<p>The Alvarez family's annual camping trip had run fifteen years strong, treated as a sacred tradition nobody questioned — right up until an honest conversation during trip sixteen's planning revealed every single family member secretly dreaded it equally.</p>
+
+<h3>Chapter 2: An Uncomfortable Admission</h3>
+<p>Dad hated the bugs. Mom hated the cold. The kids, it turned out, mostly went along because they assumed everyone else genuinely loved it — a whole family maintaining a tradition purely out of misplaced obligation to each other's imagined preferences.</p>
+
+<h3>Chapter 3: A Better Tradition, Built Honestly</h3>
+<p>They replaced camping with a beach house rental the following year, genuinely enjoyed by everyone this time. The old camping gear got donated. The family still laughs about fifteen years of collectively suffering through something nobody actually wanted, purely to avoid an honest conversation they should have had years earlier.</p>
+`
+},
+{
+  title: "The Injury That Ended One Dream and Started Another",
+  author: "Khyati Srivastava",
+  slug: "the-injury-that-ended-one-dream-and-started-another",
+  category: "Drama",
+  emoji: "🩹",
+  excerpt: "A serious knee injury ends Marcus's competitive gymnastics career for good, three years before he'd hoped to make nationals. What he finds himself drawn to during recovery surprises everyone, including him.",
+  created_at: "2027-04-21T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Career-Ending Diagnosis</h3>
+<p>The doctor's diagnosis was clear and final: Marcus's knee injury would end his competitive gymnastics career permanently, three years before his planned nationals attempt, a future he'd trained toward since he was six years old suddenly gone entirely.</p>
+
+<h3>Chapter 2: A Difficult Grief</h3>
+<p>He spent the first months of recovery genuinely mourning a life plan he'd never imagined without, gymnastics having defined his entire identity for as long as he could remember losing anything else this significant.</p>
+
+<h3>Chapter 3: An Unexpected Redirection</h3>
+<p>During long, restless recovery hours, he started coaching younger gymnasts informally at his old gym, discovering a genuine talent and satisfaction in teaching he'd never once considered before the injury forced him to. He never competed again. He's coached three regional champions since — a different dream, built from the wreckage of the first one.</p>
+`
+},
+{
+  title: "The Study Group That Became Something More Complicated",
+  author: "Khyati Srivastava",
+  slug: "the-study-group-that-became-something-more-complicated",
+  category: "Romance",
+  emoji: "📚",
+  excerpt: "What starts as a simple four-person study group slowly reveals two separate, quiet crushes forming — awkwardly, in overlapping directions neither pair had planned on.",
+  created_at: "2027-04-21T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Simple Arrangement</h3>
+<p>The four-person study group formed purely for exam prep, a straightforward academic arrangement that slowly, awkwardly, revealed two separate quiet crushes forming among its members in overlapping, occasionally conflicting directions.</p>
+
+<h3>Chapter 2: An Increasingly Awkward Dynamic</h3>
+<p>Weeks of careful, unspoken navigation followed — meaningful glances mistimed, seating arrangements suddenly loaded with unspoken significance, actual studying becoming a smaller and smaller fraction of each session.</p>
+
+<h3>Chapter 3: Sorting It Out</h3>
+<p>A blunt, slightly mortifying group conversation finally cleared the air, both actual pairings sorted out honestly rather than left simmering in confusion. The study group, somehow, survived the reshuffling intact — grades even improved once everyone stopped being quite so distracted by unspoken feelings.</p>
+`
+},
+{
+  title: "The Handwritten Note Passed Under a Cafeteria Table",
+  author: "Khyati Srivastava",
+  slug: "the-handwritten-note-passed-under-a-cafeteria-table",
+  category: "Romance",
+  emoji: "📝",
+  excerpt: "A single folded note, passed nervously under the lunch table, sparks a months-long secret correspondence between two kids too shy to just talk normally at school.",
+  created_at: "2027-04-21T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Nervous First Note</h3>
+<p>Kofi's first note to Elin, passed nervously under the cafeteria table with a shaking hand, contained nothing more dramatic than a question about her favorite book — a small, low-stakes opening he'd agonized over for a full week before finally sending it.</p>
+
+<h3>Chapter 2: A Growing Correspondence</h3>
+<p>Her reply, folded and passed back the very next day, sparked months of ongoing under-the-table notes, an entire friendship building on paper that neither seemed quite brave enough to conduct out loud during actual lunch conversation.</p>
+
+<h3>Chapter 3: Finally Speaking Aloud</h3>
+<p>It took a particularly long, meaningful note before Kofi finally suggested, in writing, that they simply talk normally at lunch instead. Elin's written reply agreed enthusiastically. Their first spoken conversation, that very next day, felt oddly anticlimactic after months of careful, written words — in the best possible way.</p>
+`
+},
+{
+  title: "The Kid Who Ran a Free Bike Safety Check Stand",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-ran-a-free-bike-safety-check-stand",
+  category: "Kids",
+  emoji: "🚲",
+  excerpt: "After a near-miss with a loose brake cable, twelve-year-old Reya sets up a free weekend bike safety check for neighborhood kids — nothing fancy, just careful inspection and genuine expertise.",
+  created_at: "2027-04-21T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Scary Near-Miss</h3>
+<p>Reya's own loose brake cable nearly caused a genuinely dangerous accident downhill, a close call that shook her enough to start wondering how many other neighborhood kids might be riding around with similarly unnoticed problems.</p>
+
+<h3>Chapter 2: Learning the Right Way</h3>
+<p>She researched proper bike safety inspection thoroughly, learning to check brakes, tire pressure, and chain tension correctly before setting up a simple free weekend safety check stand in her driveway, open to any neighborhood kid who wanted a proper once-over.</p>
+
+<h3>Chapter 3: A Genuinely Useful Service</h3>
+<p>She's caught several real safety issues over the following months — a dangerously worn brake pad, a loose seat, problems that could have led to actual injuries. Several parents have thanked her directly, genuinely grateful for a service she runs entirely on her own initiative, purely because her own scare taught her how much it mattered.</p>
+`
+},
+{
+  title: "The Kid Who Turned Recess Into a Daily Kindness Challenge",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-turned-recess-into-a-daily-kindness-challenge",
+  category: "Kids",
+  emoji: "💜",
+  excerpt: "Noticing how lonely recess can feel for kids without a group, Priyanka starts a quiet daily challenge for herself: include one classmate who's sitting alone. It's spread further than she ever expected.",
+  created_at: "2027-04-21T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Private Challenge</h3>
+<p>Priyanka started it quietly, purely for herself: every recess, find one classmate sitting alone and simply invite them to join whatever game was happening, a small personal challenge nobody else initially knew she'd set for herself.</p>
+
+<h3>Chapter 2: Others Noticing</h3>
+<p>Classmates started noticing the pattern eventually, several asking why she always seemed to be bringing someone new into the group, prompting her to explain the quiet challenge she'd been running for weeks.</p>
+
+<h3>Chapter 3: A Spreading Habit</h3>
+<p>Several friends adopted their own version of the challenge, the whole grade's recess dynamic shifting noticeably over the semester toward fewer kids sitting alone at all. Priyanka never set out to start anything beyond her own personal habit. It became, without her fully intending it, something considerably bigger.</p>
+`
+},
+{
+  title: "The Garage Door That Opens by Itself at 4:44 AM",
+  author: "Khyati Srivastava",
+  slug: "the-garage-door-that-opens-by-itself-at-444-am",
+  category: "Horror",
+  emoji: "🚗",
+  excerpt: "The remote-controlled garage door has opened itself, unprompted, at exactly 4:44 AM three times this month. The remote's batteries are fine. Nobody's pressed a button. It just opens, waits ten minutes, and closes again.",
+  created_at: "2027-04-21T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Strange Alert</h3>
+<p>The Petrossian family's smart garage door sent its first unexplained alert at exactly 4:44 AM, notifying them the door had opened — no remote pressed, no app command sent, simply opening on its own before closing again ten minutes later.</p>
+
+<h3>Chapter 2: A Repeating Pattern</h3>
+<p>It happened again the following week, same time precisely, same ten-minute duration, with the security company confirming no external signal or system malfunction had triggered either event according to their logs.</p>
+
+<h3>Chapter 3: An Unresolved Habit</h3>
+<p>It has now happened three times, always 4:44 AM, always exactly ten minutes. The family has started, half-jokingly, referring to it as "letting something out" or "letting something in," neither entirely comfortable joking about which. They've installed a camera facing the driveway. It has, notably, captured nothing during any of the three occurrences.</p>
+`
+},
+{
+  title: "The Class Photo Where Everyone's Shadow Points the Wrong Way",
+  author: "Khyati Srivastava",
+  slug: "the-class-photo-where-everyones-shadow-points-the-wrong-way",
+  category: "Horror",
+  emoji: "🌓",
+  excerpt: "In this year's class photo, every student's shadow falls in a direction that doesn't match the sun's actual position that afternoon — consistently, across every single kid in the photo, all pointing the same wrong way.",
+  created_at: "2027-04-21T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Detail Nobody Noticed at First</h3>
+<p>The class photo looked entirely ordinary until Priya, bored during a slow afternoon, noticed something odd studying it closely: every student's shadow fell toward the same direction, one that didn't match where the sun had actually been positioned that afternoon at all.</p>
+
+<h3>Chapter 2: Checking the Math</h3>
+<p>She cross-referenced the photo's timestamp against actual recorded sun position data for that exact date and time, confirming the shadows should have fallen at a noticeably different angle than what the photo clearly showed.</p>
+
+<h3>Chapter 3: A Photograph, Otherwise Unremarkable</h3>
+<p>She brought it to her science teacher, who examined it carefully and offered no confident explanation beyond a possible processing error in the photography studio's software. Priya has kept a printed copy in a drawer since, checking it occasionally against the math, which has never once come out matching correctly.</p>
+`
+},
+{
+  title: "The Family Recipe Nobody Remembers Where It Actually Started",
+  author: "Khyati Srivastava",
+  slug: "the-family-recipe-nobody-remembers-where-it-actually-started",
+  category: "Poetry",
+  emoji: "🍲",
+  excerpt: "A warm poem tracing a beloved family recipe back through generations of memory, each one a little foggier than the last, until the true origin is simply, comfortably, forgotten.",
+  created_at: "2027-04-22T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Family Recipe Nobody Remembers Where It Actually Started</h3>
+<p>Mom says Grandma taught her, years ago,<br/>
+Grandma says her own mother, don't you know,<br/>
+and hers, she swears, learned it from a friend<br/>
+whose name got lost somewhere near the end.</p>
+
+<p>Nobody's certain where it truly came from,<br/>
+some kitchen, some year, some kingdom<br/>
+of stovetops long since torn down and gone,<br/>
+but somehow the recipe still carries on.</p>
+
+<p>Maybe it doesn't matter who started the pot,<br/>
+maybe origin's not the point, maybe not —<br/>
+maybe what matters is who's stirring it now,<br/>
+and who'll learn it next, and how.</p>
+
+<p>So I'll teach it forward, blur and all,<br/>
+let the origin story quietly fall<br/>
+into the same soft fog as before —<br/>
+some things are worth keeping, mystery and more.</p>
+`
+},
+{
+  title: "The Front Steps Where the Whole Neighborhood Sits in Summer",
+  author: "Khyati Srivastava",
+  slug: "the-front-steps-where-the-whole-neighborhood-sits-in-summer",
+  category: "Poetry",
+  emoji: "🏘️",
+  excerpt: "A gentle poem celebrating the simple, unplanned community of front-porch summer evenings, where neighbors gather without agenda, just company and cooling concrete steps.",
+  created_at: "2027-04-22T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Front Steps Where the Whole Neighborhood Sits in Summer</h3>
+<p>No invitation, no set time,<br/>
+just heat that fades and a gentle chime<br/>
+of someone's screen door, someone's chair<br/>
+scraping out onto the summer air.</p>
+
+<p>Mrs. Alvarez brings her lemonade,<br/>
+the Fenwick twins skip out to trade<br/>
+gossip nobody asked to hear,<br/>
+and somehow, everybody's here.</p>
+
+<p>Nothing planned, nothing arranged,<br/>
+just steps that cool once the heat's exchanged<br/>
+for evening air and porch light glow,<br/>
+and neighbors who just naturally know</p>
+
+<p>to wander out when the sun starts leaving,<br/>
+no reason needed, no formal receiving —<br/>
+just steps, and company, and summer's ease,<br/>
+the simplest kind of neighborhood, if you please.</p>
+`
+},
 ];
