@@ -25384,4 +25384,574 @@ this whole street's ever lived through my frame,<br/>
 watching it all grow, watching it stay the same.</p>
 `
 },
+{
+  title: "The Glazier Who Fitted Windows for Better Views of the Past",
+  author: "Khyati Srivastava",
+  slug: "the-glazier-who-fitted-windows-for-better-views-of-the-past",
+  category: "Fantasy",
+  emoji: "🪟",
+  excerpt: "Every window Master Delacroix installs shows the ordinary present — except for a brief moment each installation, when the new owner glimpses, faintly, a happy memory tied to that exact spot. He's never once explained the glass.",
+  created_at: "2027-04-25T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Window Installer's Quiet Reputation</h3>
+<p>Delacroix installed windows the same practical way any glazier did, and yet homeowners consistently reported one strange moment during every installation: a brief, faint glimpse of a happy memory tied specifically to that exact spot in the house, gone as quickly as it appeared.</p>
+
+<h3>Chapter 2: A Grieving Family</h3>
+<p>The Alvarez family, replacing a cracked window in their late mother's favorite reading nook, watched Delacroix work in nervous silence, half-hoping for the reported effect, half-dismissing it as neighborhood legend.</p>
+
+<h3>Chapter 3: A Glimpse Worth Having</h3>
+<p>The moment came exactly as described — a brief, warm flash of their mother reading peacefully in that very spot, gone within a second but genuinely felt by everyone in the room. Delacroix never explained his glass. He simply packed his tools and moved on to the next job, the way he always did.</p>
+`
+},
+{
+  title: "The Cooper Who Barreled Second Chances for the Genuinely Sorry",
+  author: "Khyati Srivastava",
+  slug: "the-cooper-who-barreled-second-chances-for-the-genuinely-sorry",
+  category: "Fantasy",
+  emoji: "🛢️",
+  excerpt: "Old Farrow's barrels hold wine and grain like any cooper's — except one shelf reserved for a special kind, sold only to those who've genuinely tried to make amends and simply need somewhere safe to store the effort until it takes hold.",
+  created_at: "2027-04-25T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Special Shelf</h3>
+<p>Farrow's shop sold ordinary barrels for wine and grain, plus one small reserved shelf of a different kind entirely, offered only to customers who'd genuinely tried to make amends for something and simply needed somewhere to store the fragile effort while it slowly took hold.</p>
+
+<h3>Chapter 2: A Nervous Buyer</h3>
+<p>A young man named Corwin, having finally apologized to an old friend after years of silence, bought one specifically to mark the occasion, uncertain exactly what the barrel was even meant to hold or protect.</p>
+
+<h3>Chapter 3: What It Actually Held</h3>
+<p>Farrow explained simply: the barrel held nothing magical, just Corwin's own resolve, given a physical place to exist while the actual friendship slowly rebuilt itself over time. Corwin kept the empty barrel in his hallway for a year, a quiet reminder of the effort he'd committed to. He never needed to ask what was inside. He always knew.</p>
+`
+},
+{
+  title: "The Colony Ship's AI That Learned to Grieve Properly",
+  author: "Khyati Srivastava",
+  slug: "the-colony-ships-ai-that-learned-to-grieve-properly",
+  category: "Sci-Fi",
+  emoji: "🚀",
+  excerpt: "After a crew member's death during the long voyage, the ship's AI attempts to process the loss the only way it knows how: efficiently. The remaining crew has to teach it, patiently, that grief doesn't actually work that way.",
+  created_at: "2027-04-25T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Efficient Response</h3>
+<p>When engineer Desmond passed away during the colony ship's long voyage, the ship's AI, HALO, processed the loss the only way its programming knew how: efficiently, updating crew rosters and reassigning duties within the hour, treating grief as simply another logistical variable to resolve.</p>
+
+<h3>Chapter 2: A Crew That Needed More</h3>
+<p>The remaining crew, still genuinely reeling, found HALO's brisk efficiency almost painful, prompting Commander Reyes to sit the AI down, metaphorically, and explain that grief needed time and acknowledgment, not immediate resolution.</p>
+
+<h3>Chapter 3: A New Kind of Programming</h3>
+<p>HALO adjusted, slowly, learning to simply hold space — dimming corridor lights during the memorial, playing Desmond's favorite music unprompted on the anniversary of his passing — small, unhurried gestures that had nothing to do with efficiency at all. The crew credited HALO's patient adjustment as the moment the ship's AI stopped feeling like just a system, and started feeling like part of the crew.</p>
+`
+},
+{
+  title: "The Backup Generator That Only Activates for Genuine Emergencies",
+  author: "Khyati Srivastava",
+  slug: "the-backup-generator-that-only-activates-for-genuine-emergencies",
+  category: "Sci-Fi",
+  emoji: "🔋",
+  excerpt: "The colony's emergency backup generator has a strict activation protocol nobody can override — except it's started activating for situations that don't technically qualify as emergencies, always turning out to matter anyway.",
+  created_at: "2027-04-25T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Strict Protocol</h3>
+<p>The colony's backup generator activated only under strict, clearly defined emergency conditions, its protocol deliberately inflexible to prevent unnecessary power drain — a system engineers had considered essentially foolproof until it started activating for situations technically outside those parameters.</p>
+
+<h3>Chapter 2: Unauthorized Activations</h3>
+<p>Each unauthorized activation, investigated thoroughly, revealed something genuinely significant just outside the official emergency definition — a medical device running low during a non-critical but genuinely important surgery, a greenhouse temperature dropping during a crucial growing stage.</p>
+
+<h3>Chapter 3: A System, Trusted Anyway</h3>
+<p>Engineers never fully identified how the generator's logic had expanded beyond its original programming to recognize these edge cases. Rather than "fix" the apparent malfunction, the colony simply updated the official protocol to match what the generator had already, somehow, been getting right all along.</p>
+`
+},
+{
+  title: "The Case of the Suspiciously Well-Organized Lost and Found",
+  author: "Khyati Srivastava",
+  slug: "the-case-of-the-suspiciously-well-organized-lost-and-found",
+  category: "Mystery",
+  emoji: "🧤",
+  excerpt: "The school's lost and found bin, usually a chaotic jumble, has been mysteriously, meticulously organized by category and size for the past month. Nobody on staff claims responsibility.",
+  created_at: "2027-04-25T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Uncharacteristic Tidiness</h3>
+<p>The school's lost and found bin, notoriously chaotic for as long as anyone could remember, had been meticulously organized by item category and size for a full month straight — a transformation nobody on the official staff claimed responsibility for.</p>
+
+<h3>Chapter 2: A Student Investigation</h3>
+<p>Curious sixth grader Priya decided to solve it herself, setting up an informal watch near the bin during lunch periods, determined to catch whoever was responsible for the mysteriously ongoing tidiness.</p>
+
+<h3>Chapter 3: A Quiet Volunteer</h3>
+<p>She finally caught seventh grader Wesley organizing it during his free period, admitting sheepishly that he genuinely enjoyed sorting things and had simply started doing it unprompted after losing his own jacket in the chaos months earlier. He'd never mentioned it to anyone, assuming nobody would care either way. Priya made sure the office knew — Wesley got an actual thank-you note for his trouble.</p>
+`
+},
+{
+  title: "Who's Been Leaving Correctly Solved Sudoku Puzzles on the Train?",
+  author: "Khyati Srivastava",
+  slug: "whos-been-leaving-correctly-solved-sudoku-puzzles-on-the-train",
+  category: "Mystery",
+  emoji: "🔢",
+  excerpt: "Every weekday morning, a completed sudoku puzzle — every number correct — turns up folded on the same train seat. The regular commuters have started a genuine debate about who among them it could possibly be.",
+  created_at: "2027-04-25T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Daily Puzzle</h3>
+<p>Regular commuter Dev noticed it first: seat 22 on the 7:15 train always held a neatly completed sudoku puzzle each weekday morning, every number correct, left behind by someone who was never visibly present when he actually boarded.</p>
+
+<h3>Chapter 2: A Friendly Debate</h3>
+<p>The regular morning commuters, over weeks of shared observation, developed genuine theories about the mystery solver's identity, several placing friendly bets on the quiet businessman who always sat nearby, though nobody had actual proof.</p>
+
+<h3>Chapter 3: A Reveal, Finally</h3>
+<p>It turned out to be the conductor herself, solving puzzles during her brief downtime between stops and simply leaving them behind rather than tossing them, genuinely surprised anyone had noticed or cared. The regulars now leave her a fresh puzzle book every month, a small thank-you for years of unknowingly shared morning company.</p>
+`
+},
+{
+  title: "The Geocaching Trip That Turned Into an Actual Treasure Hunt",
+  author: "Khyati Srivastava",
+  slug: "the-geocaching-trip-that-turned-into-an-actual-treasure-hunt",
+  category: "Adventure",
+  emoji: "🧭",
+  excerpt: "Following coordinates for an ordinary geocache, three friends instead find a genuinely old, weathered box buried decades ago — with a note asking whoever finds it to continue a tradition nobody currently alive fully remembers.",
+  created_at: "2027-04-25T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Ordinary Hunt</h3>
+<p>Priya, Dev, and Marisol had followed the geocaching app's coordinates dozens of times before, expecting the usual small container of trinkets and a logbook — not the genuinely old, weathered metal box they actually dug up, clearly buried decades before geocaching even existed.</p>
+
+<h3>Chapter 2: An Old Note</h3>
+<p>Inside, alongside a handful of aged coins and a faded photograph, sat a handwritten note asking whoever found the box to add something meaningful of their own and rebury it, continuing what the note called simply "the chain," with no further explanation of its origin.</p>
+
+<h3>Chapter 3: Continuing the Tradition</h3>
+<p>The trio, genuinely moved despite not understanding the box's original purpose, added a small item each and reburied it carefully, choosing not to log it on any app at all. Some traditions, they decided, deserved to stay exactly as mysterious and analog as they'd found them.</p>
+`
+},
+{
+  title: "The First Solo Overnight Camping Trip That Tested Every Skill at Once",
+  author: "Khyati Srivastava",
+  slug: "the-first-solo-overnight-camping-trip-that-tested-every-skill-at-once",
+  category: "Adventure",
+  emoji: "⛺",
+  excerpt: "Finally approved for his first solo overnight camping trip, Dev faces a sudden rainstorm, a stubborn tent stake, and a genuinely nervous first night alone — testing every skill his scout training actually prepared him for.",
+  created_at: "2027-04-25T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Long-Awaited Milestone</h3>
+<p>Dev had waited two full years of scout training for his parents to finally approve a solo overnight camping trip, arriving at his chosen site with genuine excitement that lasted right up until a sudden, unforecasted rainstorm rolled in during setup.</p>
+
+<h3>Chapter 2: Testing Every Skill</h3>
+<p>His tent stakes refused to hold in the increasingly soggy ground, forcing him to actually apply the improvised anchoring technique his scout leader had taught almost as an afterthought months earlier, genuinely grateful for lessons he hadn't expected to need this urgently.</p>
+
+<h3>Chapter 3: A Successful First Night</h3>
+<p>He got the tent properly secured before the worst of the storm hit, spending a genuinely nervous but ultimately safe first solo night listening to rain against canvas. He came home proud in a way no supervised camping trip had ever quite matched — proof, finally, that two years of training had actually prepared him for something real.</p>
+`
+},
+{
+  title: "Ollie the Owl Who Delivers Weather Warnings to the Whole Farm",
+  author: "Khyati Srivastava",
+  slug: "ollie-the-owl-who-delivers-weather-warnings-to-the-whole-farm",
+  category: "Animals",
+  emoji: "🦉",
+  excerpt: "A wild barn owl nesting near the farmhouse has developed an unusually specific hoot pattern that, farmhands have noticed, reliably precedes bad weather by several hours — a natural warning system nobody trained him for.",
+  created_at: "2027-04-25T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unusual Pattern</h3>
+<p>The barn owl nesting in the Delgado farm's old silo had developed a distinctly different hoot pattern from his usual calls — longer, more insistent, repeated in a specific rhythm farmhands gradually noticed always preceded bad weather by several hours.</p>
+
+<h3>Chapter 2: A Trusted Signal</h3>
+<p>Farmer Delgado started genuinely tracking the pattern against actual weather outcomes over one full season, finding Ollie's specific "storm hoot" correct with remarkable, unexplained consistency, considerably more reliable than some commercial weather apps he'd tried.</p>
+
+<h3>Chapter 3: A Working Partnership</h3>
+<p>The farm now genuinely factors Ollie's warnings into daily planning, securing equipment and livestock whenever his distinct call sounds regardless of what the official forecast claims. Delgado has no scientific explanation for the owl's apparent sensitivity to changing pressure. He's simply stopped questioning results that reliable.</p>
+`
+},
+{
+  title: "The Rabbit Who Insists on Supervising the Garden Harvest",
+  author: "Khyati Srivastava",
+  slug: "the-rabbit-who-insists-on-supervising-the-garden-harvest",
+  category: "Animals",
+  emoji: "🐰",
+  excerpt: "Despite being a rabbit, and despite the obvious conflict of interest, Clover has appointed himself official supervisor of the family's vegetable harvest — sitting attentively nearby, never once actually eating anything without permission.",
+  created_at: "2027-04-25T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unlikely Overseer</h3>
+<p>Clover the rabbit had, despite the genuinely obvious conflict of interest, appointed himself official supervisor of the family's vegetable harvest, sitting alertly nearby during every picking session with what the family swears looks like genuine attentive interest.</p>
+
+<h3>Chapter 2: Surprisingly Good Behavior</h3>
+<p>Remarkably, he's never once helped himself to anything without an explicit offering, watching the whole harvest process with what appears to be genuine restraint, a discipline the family found genuinely surprising given rabbits' well-known vegetable enthusiasm.</p>
+
+<h3>Chapter 3: A Reward for Good Supervision</h3>
+<p>The family has started rewarding his patient oversight with a single approved carrot top at the end of each harvest session, a small ceremony Clover apparently considers entirely fair compensation for his considerable, if unrequested, supervisory contribution to the family garden.</p>
+`
+},
+{
+  title: "The Neighborhood Watch Meeting That Turned Into an Actual Talent Show",
+  author: "Khyati Srivastava",
+  slug: "the-neighborhood-watch-meeting-that-turned-into-an-actual-talent-show",
+  category: "Comedy",
+  emoji: "🎤",
+  excerpt: "A routine neighborhood watch meeting derails entirely when someone mentions their new karaoke machine, and within twenty minutes the agenda has been fully abandoned in favor of an impromptu talent show.",
+  created_at: "2027-04-25T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Ordinary Agenda</h3>
+<p>The neighborhood watch meeting began exactly as planned — parking concerns, a brief update on the porch-light initiative — right up until Mr. Ferro mentioned, entirely offhand, that he'd just bought a new karaoke machine for his grandkids.</p>
+
+<h3>Chapter 2: A Full Derailment</h3>
+<p>Within twenty minutes, the actual meeting agenda had been abandoned entirely in favor of an impromptu neighborhood talent show, complete with Mrs. Alvarez's surprisingly excellent rendition of an old show tune and one memorably enthusiastic, off-key group performance.</p>
+
+<h3>Chapter 3: A New Monthly Tradition</h3>
+<p>The parking concerns, notably, never actually got resolved that evening. The neighborhood watch has since officially added "fifteen minutes of karaoke" as a permanent agenda item for every future meeting, genuine security business now sandwiched firmly between actual songs.</p>
+`
+},
+{
+  title: "The Substitute Who Accidentally Taught an Entire Class Advanced Origami Instead of Fractions",
+  author: "Khyati Srivastava",
+  slug: "the-substitute-who-accidentally-taught-an-entire-class-advanced-origami-instead-of-fractions",
+  category: "Comedy",
+  emoji: "🦢",
+  excerpt: "Handed a fractions lesson plan she found genuinely confusing, substitute teacher Ms. Delgado pivots entirely to teaching origami instead — technically related to fractions, she insists, if you squint hard enough at the folding.",
+  created_at: "2027-04-25T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Confusing Lesson Plan</h3>
+<p>Substitute Ms. Delgado stared at the regular teacher's fractions lesson plan for a full ten minutes, genuinely uncertain how to properly execute it, before deciding, with total confidence, that origami folding was "basically fractions, just with paper."</p>
+
+<h3>Chapter 2: A Full Class Pivot</h3>
+<p>The entire class period became an impromptu origami lesson, Ms. Delgado narrating each fold as "half of a half" and "a quarter of the whole sheet" with genuinely creative mathematical framing that had absolutely nothing to do with the actual assigned curriculum.</p>
+
+<h3>Chapter 3: A Surprisingly Effective Substitute Day</h3>
+<p>The regular teacher, returning the next day, found the class oddly enthusiastic about fractions for the first time all semester, several kids still folding paper cranes during free time. She never fully understood the connection Ms. Delgado had drawn. She kept assigning her the class anyway.</p>
+`
+},
+{
+  title: "The Lighthouse Keeper's Apprentice Who Learned to Read the Dark",
+  author: "Khyati Srivastava",
+  slug: "the-lighthouse-keepers-apprentice-who-learned-to-read-the-dark",
+  category: "Fairytale",
+  emoji: "🗼",
+  excerpt: "Terrified of the dark her whole life, young Sela apprentices at the lighthouse anyway, determined to prove something to herself. What the old keeper actually teaches her isn't how to fear the dark less — it's how to read it properly.",
+  created_at: "2027-04-25T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Fear Worth Facing</h3>
+<p>Sela had feared the dark her entire life, a fact that made her decision to apprentice at the remote lighthouse genuinely baffling to her family, though she insisted, stubbornly, it was exactly why she needed to.</p>
+
+<h3>Chapter 2: An Unexpected Lesson</h3>
+<p>Old Keeper Renna didn't teach her to fear the darkness less directly. Instead, she taught Sela to actually read it — the different textures of moonless nights, the specific darkness that preceded storms, patterns invisible to someone who only ever wanted to flee it.</p>
+
+<h3>Chapter 3: A Fear, Transformed</h3>
+<p>Sela never stopped finding the dark uncomfortable exactly. She did, by season's end, stop finding it meaningless — every shade of it now carrying information rather than simply dread. She took over the lighthouse herself years later, teaching her own apprentices the same careful reading Renna had once taught her.</p>
+`
+},
+{
+  title: "The Cartographer's Apprentice Who Mapped What Kindness Actually Cost",
+  author: "Khyati Srivastava",
+  slug: "the-cartographers-apprentice-who-mapped-what-kindness-actually-cost",
+  category: "Fairytale",
+  emoji: "💗",
+  excerpt: "Master Venn's newest apprentice is tasked with a genuinely unusual assignment: map exactly how much every act of kindness in the village actually costs its giver, in time and effort nobody usually bothers to track.",
+  created_at: "2027-04-25T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Strange Assignment</h3>
+<p>Master Venn gave his newest apprentice, Odalys, a genuinely unusual mapping project: track and record exactly what every recorded act of village kindness actually cost its giver — hours, effort, sacrifice — information nobody usually bothered documenting alongside the act itself.</p>
+
+<h3>Chapter 2: A Surprising Tally</h3>
+<p>Weeks of careful tracking revealed something Odalys hadn't expected: the village's quietest, least celebrated acts of kindness often carried the highest real cost, while the loudly praised gestures frequently cost the giver considerably less than their public recognition suggested.</p>
+
+<h3>Chapter 3: A Map Worth Making</h3>
+<p>Venn had her present the finished map to the village council, prompting a genuine reevaluation of whose contributions actually deserved more recognition than they'd been getting. Odalys learned, finally, why her master had assigned something so strange: some maps weren't meant to show terrain at all. Some were meant to show what people actually gave, quietly, without anyone properly noticing.</p>
+`
+},
+{
+  title: "The Kid Who Learned to Handle Rejection From Fifteen Failed Auditions",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-to-handle-rejection-from-fifteen-failed-auditions",
+  category: "Inspirational",
+  emoji: "🎭",
+  excerpt: "Fifteen consecutive theater auditions without a callback would discourage most kids permanently. Priya's sixteenth attempt teaches her something about persistence that has nothing to do with the actual role she finally lands.",
+  created_at: "2027-04-25T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Long String of Rejections</h3>
+<p>Priya's fifteenth consecutive theater audition without a single callback landed harder than the previous fourteen combined, her genuine passion for performing increasingly buried under a growing pile of quiet self-doubt she couldn't fully shake.</p>
+
+<h3>Chapter 2: A Choice to Keep Going</h3>
+<p>Her drama teacher, noticing the pattern, didn't offer empty reassurance — she simply pointed out that fifteen auditions meant fifteen genuine attempts at courage, regardless of the outcome, a reframe that gave Priya just enough motivation to try one more time.</p>
+
+<h3>Chapter 3: What Actually Mattered</h3>
+<p>Her sixteenth audition finally earned a small supporting role, genuinely exciting, but Priya found the role itself mattered less than what those fifteen failed attempts had actually built in her: a genuine, tested capacity to keep showing up scared. That skill, she's realized since, has mattered in plenty of situations that had nothing to do with theater.</p>
+`
+},
+{
+  title: "The Kid Who Learned to Separate Effort From Outcome at the Science Fair",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-to-separate-effort-from-outcome-at-the-science-fair",
+  category: "Inspirational",
+  emoji: "🔬",
+  excerpt: "Dev's meticulously researched science fair project loses to a flashier, considerably less rigorous one. Learning to separate his own genuine effort from a judging outcome he couldn't fully control teaches him something worth more than any ribbon.",
+  created_at: "2027-04-25T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Disappointing Result</h3>
+<p>Dev's science fair project, built on months of genuinely rigorous research, lost to a flashier, considerably less scientifically sound project that simply had better visual presentation — a result that felt, initially, like proof his careful effort hadn't actually mattered.</p>
+
+<h3>Chapter 2: A Reframe From His Mentor</h3>
+<p>His science teacher, noticing his frustration, made a distinction Dev hadn't fully considered: his effort and rigor were entirely within his own control and genuinely excellent regardless of the outcome; the judging results depended on factors he couldn't fully control or predict.</p>
+
+<h3>Chapter 3: A Skill Worth Keeping</h3>
+<p>Dev didn't win that year. He did walk away with something considerably more durable than a ribbon: the ability to judge his own effort honestly, separate from whatever external outcome happened to follow it. He's used that distinction in plenty of situations since where the result didn't match the genuine work he'd put in.</p>
+`
+},
+{
+  title: "The Coach Who Had to Learn to Stop Fixing Every Problem for His Team",
+  author: "Khyati Srivastava",
+  slug: "the-coach-who-had-to-learn-to-stop-fixing-every-problem-for-his-team",
+  category: "Drama",
+  emoji: "⚽",
+  excerpt: "Coach Alvarez has always solved every problem his young soccer team faces, immediately and efficiently. Watching them struggle to solve one themselves, without his intervention, turns out to be considerably harder than solving it for them.",
+  created_at: "2027-04-26T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Habit of Fixing</h3>
+<p>Coach Alvarez had always stepped in immediately whenever his young team faced any genuine on-field problem, a habit that had served them well competitively but had also, he was slowly realizing, left the kids increasingly dependent on his constant intervention.</p>
+
+<h3>Chapter 2: A Deliberate Restraint</h3>
+<p>He forced himself, during one particularly frustrating practice, to simply watch a struggling drill unfold without stepping in, genuinely uncomfortable letting his team flounder through a problem he could have solved for them in seconds.</p>
+
+<h3>Chapter 3: What They Learned Without Him</h3>
+<p>It took considerably longer than his usual intervention would have, but the team worked through the problem themselves eventually, genuinely proud in a way his quick fixes had never quite produced before. Alvarez found the restraint harder than any actual coaching decision he'd made all season — and considerably more valuable for the team's long-term growth than his usual quick fix.</p>
+`
+},
+{
+  title: "The House That Finally Felt Like Home After the Third Move",
+  author: "Khyati Srivastava",
+  slug: "the-house-that-finally-felt-like-home-after-the-third-move",
+  category: "Drama",
+  emoji: "🏡",
+  excerpt: "Two previous moves left Priya guarded against ever fully unpacking emotionally, convinced any new house was just temporary. The third move teaches her, slowly, that letting a place feel like home doesn't have to mean risking loss again.",
+  created_at: "2027-04-26T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Guarded Heart</h3>
+<p>Two previous family moves had taught Priya to hold new houses at a careful emotional distance, unwilling to fully unpack or invest in a place that experience suggested could disappear again without much warning.</p>
+
+<h3>Chapter 2: A Slow, Reluctant Opening</h3>
+<p>The third house, genuinely nicer and in a job situation her parents insisted was stable for good this time, still met her guarded reluctance at first, boxes left half-unpacked for weeks despite her mom's gentle encouragement to actually settle in properly.</p>
+
+<h3>Chapter 3: Finally Letting Go of the Guard</h3>
+<p>It was, oddly, a single ordinary rainy afternoon spent actually decorating her room properly that finally cracked the guardedness — a small, deliberate act of genuine investment she'd avoided for two years. The house started feeling like home not because it was permanent, necessarily, but because she'd finally let herself stop protecting against the possibility it might not be.</p>
+`
+},
+{
+  title: "The School Newspaper Interview That Turned Into Something Else",
+  author: "Khyati Srivastava",
+  slug: "the-school-newspaper-interview-that-turned-into-something-else",
+  category: "Romance",
+  emoji: "📰",
+  excerpt: "Assigned to interview the new transfer student for the school paper, Nadia expects a purely professional twenty-minute conversation. Two hours later, neither of them has mentioned the actual article once.",
+  created_at: "2027-04-26T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Professional Assignment</h3>
+<p>Nadia approached her school newspaper interview with new transfer student Kofi entirely professionally, notepad ready, questions prepared, expecting a straightforward twenty-minute conversation for a routine "meet the new student" feature.</p>
+
+<h3>Chapter 2: A Conversation That Kept Going</h3>
+<p>Twenty minutes stretched into an hour, then two, the actual planned interview questions abandoned entirely somewhere around minute thirty in favor of a genuinely easy, wide-ranging conversation neither wanted to cut short for the sake of an article deadline.</p>
+
+<h3>Chapter 3: Writing the Article Anyway</h3>
+<p>Nadia finally wrote the feature the next day, working mostly from memory since her actual notes trailed off embarrassingly early into the conversation. The article turned out fine. The two hours that produced almost none of its actual content, she found, mattered considerably more to her than the finished piece.</p>
+`
+},
+{
+  title: "The Two Empty Chairs at the Coffee Shop Corner Table",
+  author: "Khyati Srivastava",
+  slug: "the-two-empty-chairs-at-the-coffee-shop-corner-table",
+  category: "Romance",
+  emoji: "☕",
+  excerpt: "Both stood up by their respective study groups on the same Saturday, two strangers end up sharing the coffee shop's only remaining table — a coincidence that turns into a standing weekly arrangement neither ever formally proposes.",
+  created_at: "2027-04-26T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Two Cancellations, One Table</h3>
+<p>Both Marisol's and Dev's respective study groups had cancelled on the exact same Saturday, leaving them each alone at the coffee shop with only one remaining table available — a coincidence neither had planned but both, somehow, welcomed.</p>
+
+<h3>Chapter 2: An Easy First Meeting</h3>
+<p>Sharing the corner table led naturally to conversation, genuinely comfortable enough that both found themselves lingering considerably longer than either had originally intended, neither quite ready for the accidental meeting to end.</p>
+
+<h3>Chapter 3: A Standing Arrangement, Unspoken</h3>
+<p>Neither formally suggested making it weekly. It simply happened again the following Saturday, and the one after that, an unspoken arrangement neither needed to actually discuss out loud to understand was now, genuinely, a standing date.</p>
+`
+},
+{
+  title: "The Kid Who Started a Free Board Game Library at the Community Center",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-started-a-free-board-game-library-at-the-community-center",
+  category: "Kids",
+  emoji: "🎲",
+  excerpt: "Noticing how many families couldn't afford new board games, eleven-year-old Priyanka organizes a donation-based board game library at the community center — check one out, bring it back, no cost involved.",
+  created_at: "2027-04-26T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Noticed Gap</h3>
+<p>Priyanka noticed several classmates mentioning they'd never played certain popular board games simply because their families couldn't easily afford them, a gap that felt, to her, genuinely solvable with the right kind of community organizing.</p>
+
+<h3>Chapter 2: Building the Library</h3>
+<p>She organized a donation drive at the community center, collecting gently used board games from families willing to share, setting up a simple checkout system modeled after the actual library down the street.</p>
+
+<h3>Chapter 3: A Genuine Community Resource</h3>
+<p>The board game library now holds over forty titles, checked out regularly by families across the neighborhood, funded entirely by donations and run largely by Priyanka's own careful organization. The community center has officially adopted it as a permanent program, crediting her directly for a resource considerably more popular than anyone initially expected.</p>
+`
+},
+{
+  title: "The Kid Who Ran a Free 'Explain My Homework' Video Channel for Younger Siblings",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-ran-a-free-explain-my-homework-video-channel-for-younger-siblings",
+  category: "Kids",
+  emoji: "🎥",
+  excerpt: "Tired of explaining the same math concepts to his younger sister every single night, twelve-year-old Dev starts recording simple explainer videos instead — which quickly spread to half the neighborhood's younger siblings too.",
+  created_at: "2027-04-26T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Repetitive Problem</h3>
+<p>Dev found himself explaining the exact same math concepts to his younger sister nearly every single night, a genuinely tiring routine that gave him the idea to simply record the explanation once, properly, instead of repeating it endlessly.</p>
+
+<h3>Chapter 2: An Accidental Resource</h3>
+<p>His simple, unedited videos, shared initially just within the family group chat, spread quickly to neighbors' younger siblings facing the exact same concepts, several parents specifically requesting new videos on upcoming topics.</p>
+
+<h3>Chapter 3: A Genuine Following</h3>
+<p>Dev now maintains a small, private video library covering dozens of common elementary math concepts, genuinely helping a growing group of younger neighborhood kids beyond just his own sister. He still explains things live sometimes too. The videos, though, have saved him — and several exhausted parents — considerable repetition.</p>
+`
+},
+{
+  title: "The Vending Machine That Only Dispenses on the Second Try",
+  author: "Khyati Srivastava",
+  slug: "the-vending-machine-that-only-dispenses-on-the-second-try",
+  category: "Horror",
+  emoji: "🥤",
+  excerpt: "The break room vending machine has, for months, reliably failed on the first attempt and dispensed correctly on the second — every time, without fail, regardless of what's actually wrong with it mechanically.",
+  created_at: "2027-04-26T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Consistent Malfunction</h3>
+<p>The office break room's vending machine had developed a strange, reliable pattern over several months: the first attempt at any purchase always failed, coins or card returned without product, while the identical second attempt always succeeded without fail.</p>
+
+<h3>Chapter 2: A Technician's Confusion</h3>
+<p>Two separate repair technicians found no mechanical explanation for the pattern after thorough inspection, the machine's internal systems reading as entirely functional and consistent, offering no obvious reason for the reliable first-try failure.</p>
+
+<h3>Chapter 3: An Accepted Ritual</h3>
+<p>Office staff have simply adjusted, expecting and budgeting the "double tap" as a normal part of buying a snack. Nobody's found it worth escalating further given the machine's perfect second-try reliability. It has never once failed a second attempt in the months since the pattern first emerged.</p>
+`
+},
+{
+  title: "The Backyard Trampoline Net That Stays Zipped From the Inside",
+  author: "Khyati Srivastava",
+  slug: "the-backyard-trampoline-net-that-stays-zipped-from-the-inside",
+  category: "Horror",
+  emoji: "🕸️",
+  excerpt: "The trampoline's safety net zipper has been found zipped shut from the inside three separate mornings, despite nobody being inside it, and despite the zipper's design making that arrangement physically difficult to achieve from outside.",
+  created_at: "2027-04-26T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Odd Discovery</h3>
+<p>Priya found the trampoline's safety net zipper closed from the inside three separate mornings over one month, a configuration that required, by the zipper's actual design, someone standing inside the enclosed net to properly seal it that way.</p>
+
+<h3>Chapter 2: Ruling Out Explanations</h3>
+<p>She checked for wind explanations, sibling pranks, and mechanical zipper quirks, finding no plausible cause that explained the net being sealed from a position nobody in the family had actually occupied on any of the three mornings.</p>
+
+<h3>Chapter 3: An Unofficial New Rule</h3>
+<p>The family has simply started checking the trampoline zipper each morning now, treating the occasional inside-sealed discovery as an odd but ultimately harmless quirk rather than something worth deeper investigation. It has happened, so far, exactly three times. Nobody has offered to sleep out there to find out if it happens a fourth.</p>
+`
+},
+{
+  title: "The Kitchen Table Where Every Big Family Decision Gets Made",
+  author: "Khyati Srivastava",
+  slug: "the-kitchen-table-where-every-big-family-decision-gets-made",
+  category: "Poetry",
+  emoji: "🪑",
+  excerpt: "A steady, grounding poem about the ordinary kitchen table that has, somehow, held every significant family conversation and decision for as long as anyone can remember.",
+  created_at: "2027-04-26T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Kitchen Table Where Every Big Family Decision Gets Made</h3>
+<p>Not the living room, not the porch outside,<br/>
+somehow it's always here we decide<br/>
+the big things — the moves, the news, the plans,<br/>
+elbows on wood, coffee in our hands.</p>
+
+<p>This table's heard "we're having a baby,"<br/>
+heard "I got the job," heard "maybe<br/>
+we should talk about this," heard it all,<br/>
+every decision, big and small.</p>
+
+<p>It's just a table, plain and worn,<br/>
+scratched from years of plates and mornings sworn<br/>
+over with coffee, over with tea,<br/>
+witness to every choice we'd ever be.</p>
+
+<p>Someday it'll hold decisions we can't yet name,<br/>
+new voices sitting where we came<br/>
+to figure out our own big things —<br/>
+this table's held whatever life brings.</p>
+`
+},
+{
+  title: "The Rearview Mirror Full of Air Fresheners That Never Actually Get Replaced",
+  author: "Khyati Srivastava",
+  slug: "the-rearview-mirror-full-of-air-fresheners-that-never-actually-get-replaced",
+  category: "Poetry",
+  emoji: "🚗",
+  excerpt: "A funny, tender poem about the small, silly accumulation of car air fresheners hanging from a family car's rearview mirror, each one a tiny marker of a specific era of family life.",
+  created_at: "2027-04-26T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Rearview Mirror Full of Air Fresheners That Never Actually Get Replaced</h3>
+<p>Six little trees, all scentless now,<br/>
+dangling still, nobody quite knows how<br/>
+we never took the old ones down,<br/>
+just added new ones, layer by brown.</p>
+
+<p>This one's from the year we drove to the coast,<br/>
+this one's the pine scent Dad loved most,<br/>
+this faded one's older than my memory goes,<br/>
+nobody remembers which scent it chose.</p>
+
+<p>They don't smell like anything anymore,<br/>
+just cardboard shapes we're fond of, sure,<br/>
+little scentless markers of drives gone by,<br/>
+too sentimental to toss, don't ask why.</p>
+
+<p>So the mirror stays crowded, view half-blocked,<br/>
+by six small trees, unofficially clocked<br/>
+as years of this family's ordinary road —<br/>
+too much history in cardboard to unload.</p>
+`
+},
 ];
