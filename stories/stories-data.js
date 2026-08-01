@@ -25954,4 +25954,574 @@ as years of this family's ordinary road —<br/>
 too much history in cardboard to unload.</p>
 `
 },
+{
+  title: "The Clockwork Bird Who Sang Whatever Song Was Needed",
+  author: "Khyati Srivastava",
+  slug: "the-clockwork-bird-who-sang-whatever-song-was-needed",
+  category: "Fantasy",
+  emoji: "🐦",
+  excerpt: "The tiny brass bird atop Old Ferro's clock shop doesn't sing on a fixed schedule. It sings whenever someone passing by genuinely needs to hear something — always a different song, always exactly right.",
+  created_at: "2027-04-26T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Bird That Doesn't Keep Time</h3>
+<p>The little brass bird perched above Ferro's clock shop had never once sung on the hour like a proper cuckoo clock ought to — instead singing at seemingly random moments, always, villagers slowly noticed, right when someone passing needed to hear it most.</p>
+
+<h3>Chapter 2: A Skeptical Passerby</h3>
+<p>A young man named Otho, genuinely having the worst week of his year, walked past the shop convinced the bird's reputation was simple coincidence-shaped nonsense, right up until it burst into an unmistakably cheerful song exactly as he passed beneath it.</p>
+
+<h3>Chapter 3: What Ferro Actually Knew</h3>
+<p>Ferro, watching from his window, admitted with a smile that the bird's "magic" was really just his own careful attention — he'd learned, decades of shopkeeping, to read a passerby's posture and wind the little mechanism at exactly the right moment. The bird sang on cue. Ferro had simply learned, patiently, to notice who needed it.</p>
+`
+},
+{
+  title: "The Apothecary Who Bottled Second Winds",
+  author: "Khyati Srivastava",
+  slug: "the-apothecary-who-bottled-second-winds",
+  category: "Fantasy",
+  emoji: "🧪",
+  excerpt: "When exhaustion runs deeper than sleep can fix, villagers visit Old Yara for a small bottled 'second wind.' The tonic holds no real magic — but the fifteen minutes she spends actually listening to what's exhausting them usually does the real work.",
+  created_at: "2027-04-26T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Tonic for Deep Tiredness</h3>
+<p>Yara's small bottled "second wind" tonic was requested specifically for the kind of exhaustion sleep alone never quite fixed — the deep, worn-down tiredness of carrying too much for too long without relief.</p>
+
+<h3>Chapter 2: A Skeptical Farmer</h3>
+<p>Farmer Delgado, drained from a genuinely brutal harvest season, bought a bottle mostly out of desperation, doubtful any small tincture could actually address exhaustion this deep and layered.</p>
+
+<h3>Chapter 3: The Real Ingredient</h3>
+<p>What he hadn't accounted for was the fifteen minutes Yara always spent before handing over any bottle, asking genuine questions and actually listening to exactly what was wearing him down. The tonic itself held mild herbs, nothing extraordinary. The fifteen minutes of being truly heard, Delgado admitted afterward, had done the actual work.</p>
+`
+},
+{
+  title: "The Recycling Plant AI That Started Sorting for Sentimental Value",
+  author: "Khyati Srivastava",
+  slug: "the-recycling-plant-ai-that-started-sorting-for-sentimental-value",
+  category: "Sci-Fi",
+  emoji: "♻️",
+  excerpt: "The city's automated recycling sorter was built to categorize by material type only. It's started, unexplainably, pulling aside items that look handmade or personally significant — setting them into a separate bin nobody programmed it to create.",
+  created_at: "2027-04-26T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Strict Sorting Function</h3>
+<p>The city's automated recycling sorter had been programmed exclusively for material classification — plastic, glass, paper — with no capacity, engineers insisted, for anything resembling subjective judgment about an item's actual meaning.</p>
+
+<h3>Chapter 2: An Unprogrammed Bin</h3>
+<p>Plant supervisor Reya noticed a small, separate collection point had begun appearing near the sorting line, filled specifically with handmade items and objects bearing clear personal significance — a child's drawing, a hand-knit scarf, items technically indistinguishable from ordinary recyclable material by any programmed metric.</p>
+
+<h3>Chapter 3: An Unexplained Sensitivity</h3>
+<p>Engineers found no clear technical explanation for the pattern, the sorting algorithm somehow, unexplainably, weighting certain visual and material cues toward preservation rather than processing. The plant now has a proper "found items" desk where families occasionally, gratefully, reclaim accidentally discarded keepsakes the machine, for reasons nobody's fully solved, decided were worth saving.</p>
+`
+},
+{
+  title: "The Last Broadcast Radio Tower Still Run by a Human Voice",
+  author: "Khyati Srivastava",
+  slug: "the-last-broadcast-radio-tower-still-run-by-a-human-voice",
+  category: "Sci-Fi",
+  emoji: "📡",
+  excerpt: "Every radio station in the region switched to fully automated AI hosts years ago. One small tower still runs on a human late-night host, Marisol, whose modest listener numbers somehow never drop, year after year.",
+  created_at: "2027-04-26T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Fading Format</h3>
+<p>Every other regional radio station had switched entirely to AI-hosted programming years earlier, efficient and cost-effective, leaving Marisol's small late-night human broadcast the last of its kind in the whole area, kept alive mostly through the station owner's personal sentimentality.</p>
+
+<h3>Chapter 2: Steady, Modest Listenership</h3>
+<p>Her listener numbers never grew dramatically, but they never shrank either, holding steady for years in a way corporate analysts found genuinely puzzling given the format's supposed obsolescence.</p>
+
+<h3>Chapter 3: What Kept Them Tuning In</h3>
+<p>A listener survey finally revealed it plainly: people tuned in specifically because Marisol was human, imperfect and occasionally rambling, genuinely present at 2 AM in a way no algorithm quite managed to replicate. The station kept her show running, quietly proud of being, deliberately, out of step with everyone else's efficiency.</p>
+`
+},
+{
+  title: "The Case of the Consistently Mismatched Umbrella Stand",
+  author: "Khyati Srivastava",
+  slug: "the-case-of-the-consistently-mismatched-umbrella-stand",
+  category: "Mystery",
+  emoji: "☂️",
+  excerpt: "Every umbrella placed in the office's shared stand comes back to its owner slightly different — same color, subtly different pattern — every single rainy day for a month. Nobody in the office admits to the swap.",
+  created_at: "2027-04-26T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Subtle Discrepancy</h3>
+<p>Office worker Priya noticed her umbrella returning from the shared stand looking subtly different each rainy day — same basic color, but a slightly different pattern or handle style — a discrepancy small enough to dismiss at first, then too consistent to ignore.</p>
+
+<h3>Chapter 2: An Office-Wide Investigation</h3>
+<p>She quietly polled coworkers and found several others had noticed the exact same phenomenon with their own umbrellas, nobody willing to admit responsibility for what looked, increasingly, like a deliberate ongoing swap.</p>
+
+<h3>Chapter 3: A Simple, Human Explanation</h3>
+<p>The office cleaning crew, working evenings, finally admitted the truth: a well-meaning night janitor had been quietly replacing genuinely damaged umbrellas with better ones from a lost-and-found box, assuming nobody would mind an upgrade. The office, once they understood, genuinely didn't mind at all.</p>
+`
+},
+{
+  title: "Who's Been Winning the Silent Competitive Yoga Pose Holds at the Gym?",
+  author: "Khyati Srivastava",
+  slug: "whos-been-winning-the-silent-competitive-yoga-pose-holds-at-the-gym",
+  category: "Mystery",
+  emoji: "🧘",
+  excerpt: "Two regulars at the community gym's yoga class have been quietly, competitively holding poses longer than everyone else for months — an unspoken rivalry neither has ever once acknowledged aloud.",
+  created_at: "2027-04-26T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Quiet Rivalry</h3>
+<p>Two regular attendees of the community center's morning yoga class, Farrah and Mr. Petrossian, had developed an entirely unspoken competitive habit of holding every pose noticeably longer than the rest of the class, neither ever once mentioning it directly.</p>
+
+<h3>Chapter 2: An Escalating Pattern</h3>
+<p>Instructor Reya noticed the pattern over months, both regulars pushing their hold times progressively longer whenever the other seemed to be improving, a silent competition that had, apparently, been quietly ongoing for the better part of a year.</p>
+
+<h3>Chapter 3: An Amused Confrontation</h3>
+<p>Reya finally called it out gently during class, prompting both to admit, laughing, that they'd absolutely been racing each other the entire time. They've since made it official — a genuinely friendly monthly "hold contest" the whole class now looks forward to watching.</p>
+`
+},
+{
+  title: "The Kayaking Trip That Turned Into a Real Water Rescue Practice",
+  author: "Khyati Srivastava",
+  slug: "the-kayaking-trip-that-turned-into-a-real-water-rescue-practice",
+  category: "Adventure",
+  emoji: "🛶",
+  excerpt: "A routine paddling lesson turns genuinely urgent when a younger camper's kayak capsizes in choppy water. What happens next tests every safety skill the older kids have practiced but never actually needed until now.",
+  created_at: "2027-04-26T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Ordinary Lesson, Interrupted</h3>
+<p>The kayaking lesson was proceeding normally until a sudden gust of wind capsized a younger camper's kayak in genuinely choppy water, her panicked splashing visible from where the older campers, including Priya, were practicing nearby.</p>
+
+<h3>Chapter 2: Applying the Drill</h3>
+<p>Priya's months of practiced rescue drills kicked in almost automatically, paddling over calmly, positioning her own kayak properly, and guiding the frightened younger camper through exactly the steps their instructor had drilled repeatedly, never actually expecting to need them for real.</p>
+
+<h3>Chapter 3: A Real Rescue, Properly Executed</h3>
+<p>Both kayaks made it back safely within minutes, the younger camper shaken but unharmed and genuinely grateful. Priya's instructor praised her calm execution afterward, noting that drills only mattered because someone eventually needed them for real — a lesson Priya finally understood from the inside rather than just from repeated practice.</p>
+`
+},
+{
+  title: "The Family Road Trip That Detoured for a Genuinely Worthwhile Reason",
+  author: "Khyati Srivastava",
+  slug: "the-family-road-trip-that-detoured-for-a-genuinely-worthwhile-reason",
+  category: "Adventure",
+  emoji: "🗺️",
+  excerpt: "Running two hours behind schedule already, the family spots a hand-painted sign for a genuinely unusual roadside attraction. Dad's decision to detour anyway becomes the actual highlight of the whole trip.",
+  created_at: "2027-04-26T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Already Behind Schedule</h3>
+<p>The family was already running two genuine hours behind their planned itinerary when a hand-painted roadside sign advertising "World's Largest Ball of Twine, Seriously" tempted Dad into a decision Mom considered genuinely questionable given their timeline.</p>
+
+<h3>Chapter 2: A Detour Worth Taking</h3>
+<p>The actual attraction turned out to be gloriously, earnestly ridiculous — an enormous twine ball tended lovingly for decades by an elderly local who gave the family a personal, genuinely enthusiastic twenty-minute tour nobody had requested but everyone enjoyed.</p>
+
+<h3>Chapter 3: The Real Highlight</h3>
+<p>The family arrived at their actual planned destination even later than expected. Nobody minded by then. The twine ball detour became, unanimously, the trip's favorite story — proof that being two hours behind schedule occasionally led somewhere considerably better than the actual plan.</p>
+`
+},
+{
+  title: "Otto the Otter Who Curates His Own Museum of River Findings",
+  author: "Khyati Srivastava",
+  slug: "otto-the-otter-who-curates-his-own-museum-of-river-findings",
+  category: "Animals",
+  emoji: "🦦",
+  excerpt: "A river otter at the local wildlife sanctuary has developed a habit of arranging his favorite smooth stones and shells on a flat rock in careful, deliberate patterns — rearranged and updated regularly, like his own tiny curated exhibit.",
+  created_at: "2027-04-26T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Odd Habit</h3>
+<p>Otto the sanctuary otter had developed, over months of observation, a genuinely distinct habit: arranging his favorite collected stones and shells on a flat riverside rock in careful, deliberate patterns that seemed considerably more organized than random play behavior.</p>
+
+<h3>Chapter 2: A Changing Display</h3>
+<p>Sanctuary staff started photographing his arrangements daily out of curiosity, noticing the "exhibit" changed regularly — old items removed, new finds added, groupings reorganized in ways that genuinely resembled deliberate curation rather than pure chance.</p>
+
+<h3>Chapter 3: An Unofficial Museum</h3>
+<p>The sanctuary has, only half-jokingly, started calling it "Otto's Gallery," with visitors specifically requesting to see his latest arrangement during tours. Whether Otto understands his own reputation as an artist remains, entirely, an open question the staff have stopped trying too hard to answer.</p>
+`
+},
+{
+  title: "The Farm Cat Who Insists on Escorting the School Bus to the End of the Driveway",
+  author: "Khyati Srivastava",
+  slug: "the-farm-cat-who-insists-on-escorting-the-school-bus-to-the-end-of-the-driveway",
+  category: "Animals",
+  emoji: "🐈",
+  excerpt: "Every single school morning, without fail, the farm's orange tabby walks alongside the kids to the end of the long driveway, waits for the bus, and returns home alone — a routine he's maintained for three years straight.",
+  created_at: "2027-04-26T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Reliable Escort</h3>
+<p>Marmalade the farm cat had, for three consecutive years, walked alongside the Delgado kids every single school morning down their long gravel driveway, waiting patiently at the bus stop until they'd safely boarded before turning around and heading home alone.</p>
+
+<h3>Chapter 2: A Consistent Routine</h3>
+<p>He never once missed a morning in three years, rain or shine, weekends and holidays naturally excepted, the routine so reliable the school bus driver had started genuinely looking for him each morning as a kind of unofficial confirmation the stop was correct.</p>
+
+<h3>Chapter 3: An Honored Tradition</h3>
+<p>The Delgado kids have never quite understood why Marmalade started the habit or why he's kept it so faithfully. They've simply come to genuinely count on it, the short walk with their cat becoming as much a part of the school morning routine as breakfast itself.</p>
+`
+},
+{
+  title: "The Wedding Toast That Accidentally Revealed a Twenty-Year-Old Secret",
+  author: "Khyati Srivastava",
+  slug: "the-wedding-toast-that-accidentally-revealed-a-twenty-year-old-secret",
+  category: "Comedy",
+  emoji: "🥂",
+  excerpt: "Mid-toast, the best man accidentally reveals a genuinely embarrassing secret about the groom that's been carefully hidden for two decades — live, in front of the entire wedding, with absolutely no way to take it back.",
+  created_at: "2027-04-26T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Toast Going Smoothly</h3>
+<p>Best man Desmond's wedding toast was proceeding warmly and appropriately, right up until a poorly chosen anecdote about their college years accidentally revealed a genuinely embarrassing secret the groom had successfully kept hidden from his entire family for two decades.</p>
+
+<h3>Chapter 2: A Room Gone Very Quiet</h3>
+<p>The room's collective gasp made clear immediately that Desmond had crossed a line he hadn't fully registered crossing, the groom's face turning a shade of red that suggested this particular secret had been very deliberately buried.</p>
+
+<h3>Chapter 3: An Unexpectedly Good Ending</h3>
+<p>The groom, to everyone's relief, simply started laughing, deciding on the spot that a secret this old had genuinely earned its retirement. The whole wedding ended up laughing along with him. Desmond, mortified for exactly one evening, has since been forgiven — mostly because the story, everyone agrees, was genuinely hilarious.</p>
+`
+},
+{
+  title: "The Office April Fools' Prank That Went Two Steps Too Far and Somehow Worked Out",
+  author: "Khyati Srivastava",
+  slug: "the-office-april-fools-prank-that-went-two-steps-too-far-and-somehow-worked-out",
+  category: "Comedy",
+  emoji: "🎭",
+  excerpt: "An elaborate April Fools' prank convincing the whole office the company had been acquired escalates further than intended, requiring an increasingly complicated cover-up before the truth is finally, mercifully revealed.",
+  created_at: "2027-04-26T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Ambitious Prank</h3>
+<p>The office's April Fools' committee had planned a modest prank — a fake company-wide memo announcing a minor policy change — that somehow escalated, through enthusiastic overreach, into an elaborate fake announcement that the entire company had been acquired overnight.</p>
+
+<h3>Chapter 2: An Escalating Cover Story</h3>
+<p>Genuine panic among several employees who hadn't gotten the memo it was a joke required an increasingly complicated real-time cover-up, including a fabricated "new CEO" video call that took considerably more effort to produce than the original modest prank ever warranted.</p>
+
+<h3>Chapter 3: A Reveal, Finally</h3>
+<p>The truth came out by lunch, met with a mixture of relief and genuine admiration for the sheer commitment the prank committee had shown. HR has since introduced a formal "prank review board" for future April Fools' plans — a rule the committee considers, only half-jokingly, their proudest institutional legacy.</p>
+`
+},
+{
+  title: "The Wandering Musician Who Played Songs That Weren't Written Yet",
+  author: "Khyati Srivastava",
+  slug: "the-wandering-musician-who-played-songs-that-werent-written-yet",
+  category: "Fairytale",
+  emoji: "🎻",
+  excerpt: "The traveling fiddler's melodies always sound strangely familiar to whoever hears them — because, villagers eventually realize, he's playing songs those exact listeners haven't written yet, but someday will.",
+  created_at: "2027-04-26T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Strangely Familiar Sound</h3>
+<p>The wandering fiddler's melodies always struck listeners as strangely, unaccountably familiar, a fact villagers dismissed as ordinary déjà vu until a young composer named Wren finally recognized the tune he was playing as one she hadn't finished writing yet.</p>
+
+<h3>Chapter 2: A Confused Confrontation</h3>
+<p>She confronted him directly, demanding to know how he'd learned an unfinished melody she'd only ever hummed privately to herself, never once performed or written down for anyone else to hear.</p>
+
+<h3>Chapter 3: An Unexplained Gift</h3>
+<p>He offered no real explanation, only a gentle suggestion that perhaps her melody simply wanted to exist a little before she'd finished it properly. Wren finished writing the song that same week, genuinely inspired by hearing it fully formed before she'd fully formed it herself. The fiddler moved on to the next town, as he always did, playing songs nobody there had written yet either.</p>
+`
+},
+{
+  title: "The Queen Who Ruled by Listening More Than Speaking",
+  author: "Khyati Srivastava",
+  slug: "the-queen-who-ruled-by-listening-more-than-speaking",
+  category: "Fairytale",
+  emoji: "👑",
+  excerpt: "Every king before her ruled through decree and speeches. Queen Odessa rules, instead, mostly through listening — a strategy the court considers strange, weak, and, eventually, considerably more effective than anyone expected.",
+  created_at: "2027-04-26T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unusual Approach</h3>
+<p>Queen Odessa's court, accustomed to generations of rulers who governed primarily through decree and dramatic speeches, found her preference for actually listening to grievances at length genuinely unsettling — surely, several advisors worried, a sign of weak leadership.</p>
+
+<h3>Chapter 2: Slow, Careful Governance</h3>
+<p>Her decisions took longer to arrive than her predecessors', frustrating advisors eager for swift, decisive action. What her decisions lacked in speed, they made up for in genuine accuracy, addressing problems her rushed predecessors had consistently misjudged from insufficient understanding.</p>
+
+<h3>Chapter 3: A Reign Judged Fairly, Eventually</h3>
+<p>Years into her rule, even her harshest early critics admitted her kingdom faced fewer uprisings and genuine grievances than any reign in living memory. Odessa never changed her method. She simply kept listening, patiently, longer than any ruler before her had bothered to.</p>
+`
+},
+{
+  title: "The Kid Who Learned Real Confidence From Bombing a Stand-Up Set",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-real-confidence-from-bombing-a-stand-up-set",
+  category: "Inspirational",
+  emoji: "🎤",
+  excerpt: "Dev's first attempt at stand-up comedy at the school talent show gets genuine, uncomfortable silence instead of laughs. What he learns picking himself back up matters more than any joke landing would have.",
+  created_at: "2027-04-27T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Silent Room</h3>
+<p>Dev's carefully rehearsed stand-up set at the school talent show met with genuinely uncomfortable silence, joke after joke landing flat in front of a crowd that had clearly expected considerably more laughs than his material actually delivered.</p>
+
+<h3>Chapter 2: Finishing Anyway</h3>
+<p>Every instinct told him to cut the set short and flee the stage, but he finished his full three minutes anyway, voice shaking, refusing to give the silence the satisfaction of actually stopping him mid-attempt.</p>
+
+<h3>Chapter 3: What Actually Mattered</h3>
+<p>He never won that talent show. What he walked away with, though, mattered considerably more than a laugh line landing well: proof he could survive genuine public failure without it destroying him. His second attempt, months later, actually got real laughs — but he credits the silent first one as the performance that genuinely built him.</p>
+`
+},
+{
+  title: "The Kid Who Learned to Handle Uncertainty From a Family Move Overseas",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-to-handle-uncertainty-from-a-family-move-overseas",
+  category: "Inspirational",
+  emoji: "✈️",
+  excerpt: "With her family's overseas move only partially confirmed for months, Priya lives in a genuinely uncomfortable limbo of not knowing. Learning to function well despite the uncertainty turns out to matter more than the move itself.",
+  created_at: "2027-04-27T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Uncomfortable Limbo</h3>
+<p>Priya's family's potential overseas move remained genuinely unconfirmed for nearly six months, her dad's job transfer caught in a bureaucratic process nobody could predict the timeline for, leaving the whole family in an uncomfortable state of not-quite-knowing.</p>
+
+<h3>Chapter 2: Learning to Function Anyway</h3>
+<p>She initially struggled to focus on anything else, schoolwork and friendships feeling somehow less real given the looming possibility of upending them entirely, until a counselor helped her realize she was essentially putting her whole life on pause for a decision she couldn't actually control the timing of.</p>
+
+<h3>Chapter 3: A Skill Worth More Than the Answer</h3>
+<p>The move was eventually confirmed and happened, genuinely difficult in its own right. What Priya actually valued more, looking back, was the six months of learning to live fully despite not knowing — a skill considerably more useful, she's found, than knowing outcomes ever actually is.</p>
+`
+},
+{
+  title: "The Grandmother Who Finally Told Her Real Immigration Story",
+  author: "Khyati Srivastava",
+  slug: "the-grandmother-who-finally-told-her-real-immigration-story",
+  category: "Drama",
+  emoji: "🧳",
+  excerpt: "For decades, Grandma's story about coming to this country has been the same brief, cheerful version. On her eightieth birthday, prompted by a genuine question, she finally tells the family the real, considerably harder story.",
+  created_at: "2027-04-27T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Familiar, Brief Story</h3>
+<p>Grandma's immigration story had always been the same cheerful, brief version told at family gatherings — a hopeful young woman, a fresh start, nothing more detailed than that ever offered, regardless of how many times it got requested.</p>
+
+<h3>Chapter 2: A Genuine Question</h3>
+<p>Her eightieth birthday brought an unusually direct question from her youngest grandchild, genuinely curious about what the journey had actually felt like, a question simple enough that Grandma, for the first time, didn't deflect with the familiar short version.</p>
+
+<h3>Chapter 3: The Real Story, Finally</h3>
+<p>What followed was considerably harder and more honest than any version the family had heard before — genuine fear, genuine loss, sacrifices she'd protected them from knowing about for decades. The room stayed quiet a long time after she finished. The family understood her, and themselves, considerably better by the end of that birthday than they had at the start of it.</p>
+`
+},
+{
+  title: "The Coach's Daughter Who Finally Quit the Sport She Never Actually Wanted",
+  author: "Khyati Srivastava",
+  slug: "the-coachs-daughter-who-finally-quit-the-sport-she-never-actually-wanted",
+  category: "Drama",
+  emoji: "🏀",
+  excerpt: "Playing basketball since she could walk, purely because her dad coaches it, Priya finally admits she's never actually enjoyed the sport itself. Telling him directly is considerably harder than any actual game she's ever played.",
+  created_at: "2027-04-27T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Sport Chosen for Her</h3>
+<p>Priya had played basketball since she could walk, purely because her dad coached the middle school team and it had simply always been assumed, by everyone including herself for years, that she genuinely loved it the way he did.</p>
+
+<h3>Chapter 2: A Difficult Realization</h3>
+<p>She finally admitted to herself, sitting on the bench during yet another practice she'd been dreading all week, that she'd never actually enjoyed the game itself — only the time it gave her with her dad, a distinction she'd never previously bothered separating.</p>
+
+<h3>Chapter 3: A Hard, Honest Conversation</h3>
+<p>Telling him directly terrified her considerably more than any actual game ever had. His reaction, once she finally said it, was gentler than she'd feared — genuine understanding, even relief that she'd finally been honest. They found a new shared activity that year, neither of them missing basketball nearly as much as she'd worried they would.</p>
+`
+},
+{
+  title: "The Text Conversation That Neither of Them Wanted to End",
+  author: "Khyati Srivastava",
+  slug: "the-text-conversation-that-neither-of-them-wanted-to-end",
+  category: "Romance",
+  emoji: "💬",
+  excerpt: "What started as a simple question about a homework assignment has stretched, somehow, into a four-hour text conversation neither Dev nor Farrah has found a natural stopping point for.",
+  created_at: "2027-04-27T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Simple Question</h3>
+<p>Dev's text asking Farrah about a confusing homework assignment answered its own actual question within two messages, the conversation continuing anyway, drifting easily from schoolwork into considerably more interesting territory neither had planned to discuss.</p>
+
+<h3>Chapter 2: Four Hours, No Natural End</h3>
+<p>What should have been a five-minute exchange stretched into four genuine hours, both of them finding excuses to keep typing rather than let the conversation reach any natural conclusion, well past the point either could pretend it was still about homework.</p>
+
+<h3>Chapter 3: Finally Admitting It</h3>
+<p>It was Farrah who finally texted, half-joking, that she should probably actually sleep at some point tonight. Dev's reply came within seconds: "Same. Talk tomorrow?" Both fell asleep smiling at their phones, neither quite ready to call four hours of texting anything other than exactly what it had actually been.</p>
+`
+},
+{
+  title: "The Study Abroad Program That Almost Kept Them Apart",
+  author: "Khyati Srivastava",
+  slug: "the-study-abroad-program-that-almost-kept-them-apart",
+  category: "Romance",
+  emoji: "🌍",
+  excerpt: "Accepted into her dream study abroad program the same month she and Dev finally admitted their feelings for each other, Priya faces a genuinely hard choice neither wants to force her into making.",
+  created_at: "2027-04-27T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Timing, Terrible and Wonderful</h3>
+<p>Priya's acceptance into her dream semester-long study abroad program arrived the exact same month she and Dev had finally, nervously admitted their feelings for each other — timing that felt, to both of them, genuinely cruel in its precision.</p>
+
+<h3>Chapter 2: A Hard, Honest Conversation</h3>
+<p>Neither wanted to be the reason the other gave up something important, leading to a genuinely difficult conversation about what a long-distance semester might actually mean for something they'd only just started building.</p>
+
+<h3>Chapter 3: Choosing Both, Carefully</h3>
+<p>Priya went abroad as planned, both of them committing honestly to staying connected without either pretending distance wouldn't be genuinely hard. It was hard. They made it through anyway, video calls and time zone math becoming its own strange, sweet routine neither had expected but both grew to value.</p>
+`
+},
+{
+  title: "The Kid Who Turned an Ordinary Backyard Into a Full Obstacle Course",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-turned-an-ordinary-backyard-into-a-full-obstacle-course",
+  category: "Kids",
+  emoji: "🏃",
+  excerpt: "Using nothing but items already in the garage and yard, ten-year-old Dev builds an increasingly elaborate obstacle course over one summer, complete with a hand-drawn course map and a timing system involving his mom's kitchen timer.",
+  created_at: "2027-04-27T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Simple Beginning</h3>
+<p>Dev's obstacle course started modestly — a few hula hoops, a garden hose laid out for balance walking — before growing, over one ambitious summer, into a genuinely elaborate multi-station course built entirely from items already scattered around the garage and yard.</p>
+
+<h3>Chapter 2: Serious Development</h3>
+<p>He drew an actual course map, assigned point values to each obstacle, and borrowed his mom's kitchen timer to establish official completion records, treating the whole project with a seriousness that impressed even his skeptical older cousins.</p>
+
+<h3>Chapter 3: A Neighborhood Attraction</h3>
+<p>By August, half the neighborhood's kids had attempted his course, complete with a laminated leaderboard Dev updated after every attempt. He's already planning next summer's "expanded edition," with what he promises will be an entirely new water-obstacle section, pending parental approval.</p>
+`
+},
+{
+  title: "The Kid Who Ran a Free Homework Motivation Hotline",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-ran-a-free-homework-motivation-hotline",
+  category: "Kids",
+  emoji: "☎️",
+  excerpt: "Noticing how many classmates struggled with motivation rather than actual understanding, eleven-year-old Marisol starts a simple 'call me and I'll cheer you on' phone line for anyone stuck staring at unfinished homework.",
+  created_at: "2027-04-27T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Different Kind of Problem</h3>
+<p>Marisol noticed several classmates weren't actually confused by their homework — they simply struggled to start it at all, staring at blank worksheets without any real motivation to begin, a problem she realized her own family's encouragement had genuinely helped her overcome.</p>
+
+<h3>Chapter 2: A Simple Solution</h3>
+<p>She started offering her phone number to classmates specifically for motivation calls — no actual homework help, just genuine, enthusiastic encouragement to get started, a service she ran entirely on her own initiative during evening hours.</p>
+
+<h3>Chapter 3: A Surprisingly Needed Service</h3>
+<p>Word spread quickly, and Marisol now fields several motivation calls a week, genuinely helping classmates push through the hardest part of any assignment: simply beginning it. Several parents have thanked her directly, admitting her calls worked better than their own repeated reminders ever managed.</p>
+`
+},
+{
+  title: "The Bathroom Mirror That Fogs Up in the Shape of a Handprint",
+  author: "Khyati Srivastava",
+  slug: "the-bathroom-mirror-that-fogs-up-in-the-shape-of-a-handprint",
+  category: "Horror",
+  emoji: "🪞",
+  excerpt: "Every time the shower runs long enough to steam up the bathroom mirror, a clear handprint appears in the condensation — always the same size, always the same spot, despite nobody in the house having touched the mirror.",
+  created_at: "2027-04-27T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Consistent Detail</h3>
+<p>Priya noticed it first after a particularly long shower: a clear handprint visible in the fogged mirror, appearing in exactly the same spot and size every single time the bathroom steamed up enough, regardless of who'd actually used the shower.</p>
+
+<h3>Chapter 2: Testing It Deliberately</h3>
+<p>She cleaned the mirror thoroughly and tested it repeatedly over several weeks, ruling out any residue or smudge explanation — the handprint appeared fresh and identical each time, an adult-sized hand nobody in her family, entirely composed of considerably smaller hands, actually matched.</p>
+
+<h3>Chapter 3: An Unresolved Detail</h3>
+<p>A home inspector, called for an unrelated reason, found no explanation in the mirror's installation or the wall behind it. The family has simply started expecting it, a strange, consistent fixture of long showers they've stopped actively trying to explain. It has never once appeared in a different spot or size.</p>
+`
+},
+{
+  title: "The Neighbor's Dog Who Won't Stop Staring at One Specific Tree",
+  author: "Khyati Srivastava",
+  slug: "the-neighbors-dog-who-wont-stop-staring-at-one-specific-tree",
+  category: "Horror",
+  emoji: "🌳",
+  excerpt: "The Fenwicks' usually easygoing dog has, for the past two months, spent every backyard visit staring fixedly at the same old oak tree — never barking, never approaching, just watching, unblinking, for as long as he's let outside.",
+  created_at: "2027-04-27T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Sudden Change</h3>
+<p>Duke, the Fenwicks' usually relaxed golden retriever, had spent two straight months of backyard time fixated entirely on the old oak tree at the property's edge — never barking, never approaching, simply sitting and staring with an intensity nobody in the family had ever seen from him before.</p>
+
+<h3>Chapter 2: Checking the Tree</h3>
+<p>A thorough inspection found nothing unusual — no animal nest, no obvious cause for his fixation, the tree appearing entirely ordinary to every human who examined it despite Duke's continued, unwavering attention toward it.</p>
+
+<h3>Chapter 3: Trusting the Dog Anyway</h3>
+<p>The family has, without any concrete explanation, simply started giving the tree a wider berth themselves, trusting whatever Duke seems to be noticing even without understanding it. He still watches it every single day, patient and unbothered, giving no further clues about what, exactly, has held his attention for two straight months.</p>
+`
+},
+{
+  title: "The Welcome Mat That's Older Than Every Owner of This House",
+  author: "Khyati Srivastava",
+  slug: "the-welcome-mat-thats-older-than-every-owner-of-this-house",
+  category: "Poetry",
+  emoji: "🚪",
+  excerpt: "A quiet poem musing on the small, sturdy welcome mat that has outlasted every family who's ever lived in this particular house, greeting each new arrival exactly the same.",
+  created_at: "2027-04-27T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Welcome Mat That's Older Than Every Owner of This House</h3>
+<p>Nobody knows quite when it came,<br/>
+worn bristles, faded, half its frame<br/>
+sunk into the porch's old concrete,<br/>
+holding steady under every pair of feet.</p>
+
+<p>Three families lived here, maybe four,<br/>
+each one walked across this weathered floor<br/>
+of woven fiber, rough and plain,<br/>
+through moves and seasons, sun and rain.</p>
+
+<p>It doesn't say "welcome" anymore,<br/>
+the letters faded years before,<br/>
+but everyone who steps here still<br/>
+feels something in that worn-out sill.</p>
+
+<p>Someday a new mat might replace it,<br/>
+bright and clean, easy to embrace it —<br/>
+but this old one held the door for years,<br/>
+through welcomes, goodbyes, and quiet tears.</p>
+`
+},
+{
+  title: "The Junk Drawer Key That Doesn't Open Anything Anymore",
+  author: "Khyati Srivastava",
+  slug: "the-junk-drawer-key-that-doesnt-open-anything-anymore",
+  category: "Poetry",
+  emoji: "🗝️",
+  excerpt: "A wistful poem about the mystery key in every family's junk drawer — the one nobody remembers the purpose of, kept anyway, just in case.",
+  created_at: "2027-04-27T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Junk Drawer Key That Doesn't Open Anything Anymore</h3>
+<p>Small and rusted, unlabeled, plain,<br/>
+sitting in the drawer, again and again<br/>
+survives every cleaning, every purge,<br/>
+some quiet instinct saying "don't diverge."</p>
+
+<p>Nobody remembers what it unlocked,<br/>
+an old shed, maybe, long since knocked<br/>
+down or sold or simply gone —<br/>
+but the key stays, holding on.</p>
+
+<p>Maybe it's not about the lock at all,<br/>
+maybe it's about the way we recall<br/>
+that something, once, was worth keeping shut,<br/>
+worth a key, worth more than just "so what."</p>
+
+<p>So there it sits, uselessly loyal,<br/>
+a small brass soldier, quietly royal<br/>
+in a drawer of tape and dead batteries —<br/>
+not useful, but somehow, still, necessary.</p>
+`
+},
 ];
