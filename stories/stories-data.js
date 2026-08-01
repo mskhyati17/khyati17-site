@@ -28234,4 +28234,574 @@ this backpack's carried more than books and pens,<br/>
 it's carried three kids' worth of nervous first-day friends.</p>
 `
 },
+{
+  title: "The Lamplighter Who Kept One Extra Lamp Lit for Latecomers",
+  author: "Khyati Srivastava",
+  slug: "the-lamplighter-who-kept-one-extra-lamp-lit-for-latecomers",
+  category: "Fantasy",
+  emoji: "🏮",
+  excerpt: "Every night, Old Farro lights the town's lamps in careful order, then one final extra lamp nobody officially requested — kept burning specifically for whoever might still be finding their way home after dark.",
+  created_at: "2027-04-30T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Extra Lamp</h3>
+<p>Farro lit the town's official lamps in careful, practiced order each evening, then, without fail, lit one additional lamp at the town's edge that appeared on no official map or budget — simply his own quiet addition, kept burning for anyone still finding their way home.</p>
+
+<h3>Chapter 2: A Question Finally Asked</h3>
+<p>A young council member, reviewing lamp-oil expenses, finally asked Farro directly why one lamp always burned considerably longer than its official schedule required.</p>
+
+<h3>Chapter 3: A Simple, Honest Answer</h3>
+<p>Farro explained plainly: years ago, lost and frightened as a boy, he'd found his way home following a stranger's porch light left on past a reasonable hour. He'd kept one extra lamp burning ever since, hoping it might do the same for someone else someday. The council quietly approved the extra oil expense without further question.</p>
+`
+},
+{
+  title: "The Glassblower Who Shaped Vessels for Held-Back Tears",
+  author: "Khyati Srivastava",
+  slug: "the-glassblower-who-shaped-vessels-for-held-back-tears",
+  category: "Fantasy",
+  emoji: "🫙",
+  excerpt: "Old Yara's small glass vials serve one specific, unusual purpose: holding tears someone hasn't allowed themselves to cry yet. Customers report the same odd result every time — once the vial's filled, crying, finally, comes considerably easier.",
+  created_at: "2027-04-30T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unusual Vessel</h3>
+<p>Yara's small glass vials were requested specifically by customers who'd been holding back genuine grief or emotion for too long, purchasing them with a strange, unspoken understanding of exactly what the vial was meant to eventually hold.</p>
+
+<h3>Chapter 2: A Stoic Customer</h3>
+<p>A hardened merchant, genuinely unable to cry despite a recent, real loss, bought one purely out of desperation, convinced the whole purchase was foolish nonsense he'd regret spending coin on.</p>
+
+<h3>Chapter 3: What Actually Happened</h3>
+<p>Holding the empty vial that evening, he finally, unexpectedly wept properly for the first time in months — whether the glass itself held any real power, or simply gave him permission to finally allow the tears, he never fully determined. Yara never explained her craft's actual mechanism. She simply kept making the vials, trusting that whatever they offered, it genuinely worked.</p>
+`
+},
+{
+  title: "The Colony Ship's Library That Only Recommends What You Actually Need",
+  author: "Khyati Srivastava",
+  slug: "the-colony-ships-library-that-only-recommends-what-you-actually-need",
+  category: "Sci-Fi",
+  emoji: "📚",
+  excerpt: "The ship's digital library was programmed for standard genre-based recommendations. It's started, unexplainably, suggesting books that seem to address exactly whatever emotional struggle a crew member is currently facing.",
+  created_at: "2027-04-30T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Standard System</h3>
+<p>The colony ship's digital library had been programmed with entirely ordinary genre-based recommendation logic — nothing sophisticated, nothing beyond typical reading preference matching, until crew members started noticing its suggestions felt genuinely, uncannily specific to whatever they were personally struggling with.</p>
+
+<h3>Chapter 2: A Skeptical Engineer</h3>
+<p>Engineer Priya, genuinely stressed about a difficult decision she hadn't discussed with anyone aboard, was surprised when the library recommended a novel dealing with precisely the kind of dilemma she'd been quietly wrestling with alone.</p>
+
+<h3>Chapter 3: An Emergent Pattern, Unexplained</h3>
+<p>Technical review found no explicit emotional-detection programming, only an unusually sensitive correlation algorithm that may have picked up on subtle browsing patterns and communication tone shifts nobody had explicitly trained it to weigh. The crew has stopped questioning the system's uncanny accuracy. Several genuinely credit its recommendations with getting them through difficult stretches of the long voyage.</p>
+`
+},
+{
+  title: "The Retired Satellite That Still Sends One Faithful Signal Home",
+  author: "Khyati Srivastava",
+  slug: "the-retired-satellite-that-still-sends-one-faithful-signal-home",
+  category: "Sci-Fi",
+  emoji: "🛰️",
+  excerpt: "Officially decommissioned and drifting, the old weather satellite still transmits one simple signal back to Earth every single day, decades past its expected shutdown — a quiet, persistent 'still here' nobody's bothered to formally acknowledge in years.",
+  created_at: "2027-04-30T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Forgotten Fixture</h3>
+<p>WX-4 had been officially decommissioned decades earlier, its actual weather-monitoring function long since replaced by newer, more capable satellites — and yet it still transmitted one simple daily signal back to Earth, faithfully, well past any reasonable expectation of continued function.</p>
+
+<h3>Chapter 2: A Curious Student's Discovery</h3>
+<p>A university astronomy student, Reya, stumbled across the old satellite's continued transmissions purely by accident during an unrelated research project, genuinely surprised anyone had left the aging system's power source active this long.</p>
+
+<h3>Chapter 3: A Small, Deliberate Acknowledgment</h3>
+<p>She traced the original engineering team, most retired now, and learned the satellite had simply been left running rather than fully deactivated — no one had ever felt the need to formally shut down something that wasn't hurting anyone by continuing its quiet, faithful signal. Reya's small paper on WX-4's continued operation became, unexpectedly, the closest thing the old satellite ever got to a proper thank-you.</p>
+`
+},
+{
+  title: "The Case of the Suspiciously Reliable Weather Vane",
+  author: "Khyati Srivastava",
+  slug: "the-case-of-the-suspiciously-reliable-weather-vane",
+  category: "Mystery",
+  emoji: "🌬️",
+  excerpt: "The old farmhouse weather vane has predicted every single weather change accurately for three straight years — considerably outperforming the actual weather service's forecasts, according to careful records one curious kid has kept.",
+  created_at: "2027-04-30T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Suspiciously Good Track Record</h3>
+<p>Twelve-year-old Dev had kept careful records of his grandfather's old farmhouse weather vane's predictions against actual outcomes for three straight years, genuinely startled to find it had outperformed the official regional weather service's accuracy by a considerable margin.</p>
+
+<h3>Chapter 2: An Investigation Into an Old Mechanism</h3>
+<p>He examined the weather vane's construction carefully, expecting some unusually sophisticated mechanism to explain the accuracy, finding instead a genuinely simple, decades-old design with no obvious technical advantage over any ordinary weather vane.</p>
+
+<h3>Chapter 3: A Grandfather's Real Secret</h3>
+<p>His grandfather finally explained: the vane itself was ordinary, but its exact placement — angled precisely toward a specific ridge that reliably caught approaching weather patterns hours before they hit the farm — had been carefully chosen decades earlier through his own patient trial and error. The "magic" weather vane, it turned out, was simply excellent old-fashioned placement, tested and perfected over a lifetime.</p>
+`
+},
+{
+  title: "Who's Been Winning the Silent Rivalry Over the Best Parking Spot at the Grocery Store?",
+  author: "Khyati Srivastava",
+  slug: "whos-been-winning-the-silent-rivalry-over-the-best-parking-spot-at-the-grocery-store",
+  category: "Mystery",
+  emoji: "🛒",
+  excerpt: "Two elderly regulars have been quietly, competitively racing for the same convenient grocery store parking spot every single Tuesday morning for years — an entirely unspoken rivalry the store's actual staff have started keeping informal odds on.",
+  created_at: "2027-04-30T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Weekly Race</h3>
+<p>Store manager Priya had noticed it for years without quite putting the pattern together consciously: two elderly regulars, Mr. Ferro and Mrs. Alvarez, always arrived within minutes of each other every Tuesday morning, both racing subtly for the same convenient parking spot near the entrance.</p>
+
+<h3>Chapter 2: An Amused Staff</h3>
+<p>Once noticed, several staff members started genuinely, quietly tracking the weekly winner, keeping informal odds on who'd claim the coveted spot that particular Tuesday, a friendly office pool nobody had officially sanctioned but everyone genuinely enjoyed.</p>
+
+<h3>Chapter 3: A Rivalry, Finally Acknowledged</h3>
+<p>Priya finally mentioned the staff's fond observation to both regulars directly, expecting embarrassment. Instead, both laughed and admitted, delighted, they'd absolutely known about the "competition" the entire time and had genuinely enjoyed the harmless weekly rivalry. The store has since, only half-jokingly, considered installing an actual scoreboard.</p>
+`
+},
+{
+  title: "The Overnight Train Trip That Taught a Group of Teens Real Independence",
+  author: "Khyati Srivastava",
+  slug: "the-overnight-train-trip-that-taught-a-group-of-teens-real-independence",
+  category: "Adventure",
+  emoji: "🚂",
+  excerpt: "Traveling without adult supervision for the first time on an overnight train, four teens face a genuinely confusing transfer station mix-up that tests every ounce of independent problem-solving their parents hoped the trip would teach.",
+  created_at: "2027-05-01T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A First Real Independence</h3>
+<p>Priya, Dev, Kofi, and Marisol had planned their first unsupervised overnight train trip for weeks, parents nervously agreeing after considerable negotiation about check-in schedules and emergency contacts, all four genuinely excited for the independence.</p>
+
+<h3>Chapter 2: A Confusing Transfer</h3>
+<p>Their planned transfer station turned out considerably more confusing than any of them had anticipated, conflicting platform announcements and a genuinely tight connection window testing their actual problem-solving under real pressure for the first time without any adult to simply ask.</p>
+
+<h3>Chapter 3: Figuring It Out Themselves</h3>
+<p>They made the connection with barely two minutes to spare, genuinely proud of navigating real confusion entirely on their own. The trip's actual destination mattered less, by the time they arrived, than the confidence gained from successfully handling a real problem without any adult stepping in to fix it for them.</p>
+`
+},
+{
+  title: "The Rock Climbing Gym Competition That Taught Priya to Compete Against Herself, Not Others",
+  author: "Khyati Srivastava",
+  slug: "the-rock-climbing-gym-competition-that-taught-priya-to-compete-against-herself-not-others",
+  category: "Adventure",
+  emoji: "🧗",
+  excerpt: "Constantly comparing her climbing progress to more experienced competitors leaves Priya discouraged before every competition even starts. A coach's simple reframe about competing against her own past routes changes everything about how she approaches the sport.",
+  created_at: "2027-05-01T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Discouraging Comparison</h3>
+<p>Priya had spent every climbing competition genuinely discouraged before she even attempted her first route, unable to stop comparing her relatively new climbing skill against considerably more experienced competitors who'd been training for years longer than her.</p>
+
+<h3>Chapter 2: A Reframe From Her Coach</h3>
+<p>Her coach, noticing the pattern eating away at her actual enjoyment of the sport, suggested a genuinely different approach: track her own progress against her own past routes exclusively, entirely ignoring how she measured against anyone else's timeline.</p>
+
+<h3>Chapter 3: A Sport, Genuinely Enjoyed Again</h3>
+<p>The shift took real, deliberate practice, but Priya found competitions considerably more enjoyable once her own improvement became the only measurement that actually mattered to her. She still hasn't beaten the most experienced climbers in her gym. She's stopped needing to in order to feel genuinely proud of her own climbing.</p>
+`
+},
+{
+  title: "The Parrot Who Has Learned to Perfectly Imitate the Family's Doorbell, Causing Genuine Chaos",
+  author: "Khyati Srivastava",
+  slug: "the-parrot-who-has-learned-to-perfectly-imitate-the-familys-doorbell-causing-genuine-chaos",
+  category: "Animals",
+  emoji: "🦜",
+  excerpt: "Kiwi the parrot has mastered a flawless imitation of the family's actual doorbell chime, deployed with startling frequency and precision, resulting in a genuinely exhausting number of false alarms nobody's yet found a solution for.",
+  created_at: "2027-05-01T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Flawless Imitation</h3>
+<p>Kiwi the parrot had, through months of casual exposure, mastered a genuinely flawless imitation of the family's actual doorbell chime, indistinguishable enough that the family had, on multiple embarrassing occasions, actually opened the door to nobody at all.</p>
+
+<h3>Chapter 2: An Escalating Problem</h3>
+<p>The imitation seemed to strike, frustratingly, at random and increasingly frequent intervals, the family genuinely unable to determine any pattern that might help them anticipate a real doorbell versus Kiwi's remarkably convincing impression.</p>
+
+<h3>Chapter 3: An Unsolved Household Challenge</h3>
+<p>The family has tried several deterrents with limited success, currently settled on simply checking the security camera before responding to any doorbell sound at all. Kiwi remains, proudly and entirely unrepentant, the household's most disruptive and impressive mimic. Nobody's found the heart to genuinely discourage a skill this impressively executed.</p>
+`
+},
+{
+  title: "The Barn Cat Who Has Appointed Herself Official Greeter for Every Farm Visitor",
+  author: "Khyati Srivastava",
+  slug: "the-barn-cat-who-has-appointed-herself-official-greeter-for-every-farm-visitor",
+  category: "Animals",
+  emoji: "🐈",
+  excerpt: "Marmalade the barn cat meets every single visitor to the Delgado farm at their car door, escorting them personally to whatever destination they're actually there for — a self-appointed hospitality role she's maintained for years.",
+  created_at: "2027-05-01T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Self-Appointed Role</h3>
+<p>Marmalade had, for reasons nobody in the Delgado family fully understood, appointed herself official greeter for every single farm visitor, meeting cars directly at the driveway's edge and personally escorting each guest toward wherever their actual visit business took them.</p>
+
+<h3>Chapter 2: A Reliable Habit</h3>
+<p>The escort service held with remarkable consistency across years of farm visitors — delivery drivers, feed suppliers, occasional agricultural inspectors — all guided personally by a small orange cat who seemed genuinely, quietly proud of her self-imposed hospitality duties.</p>
+
+<h3>Chapter 3: A Beloved Fixture</h3>
+<p>Regular visitors have come to genuinely expect and appreciate Marmalade's escort, several specifically mentioning her friendly greeting as a highlight of their visits. The Delgado family has never once discouraged the habit, considering their cat's self-appointed job one of the farm's more charming, entirely unofficial features.</p>
+`
+},
+{
+  title: "The Office Holiday Party Planning Committee That Somehow Required Three Separate Emergency Meetings",
+  author: "Khyati Srivastava",
+  slug: "the-office-holiday-party-planning-committee-that-somehow-required-three-separate-emergency-meetings",
+  category: "Comedy",
+  emoji: "🎄",
+  excerpt: "What should be a straightforward holiday party planning process escalates into three genuinely unnecessary emergency meetings, primarily over an increasingly contentious debate about the appropriate ratio of savory to sweet catering options.",
+  created_at: "2027-05-01T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Simple Task, Complicated</h3>
+<p>The office holiday party planning committee's straightforward task — book a venue, order catering, plan basic activities — somehow required three separate emergency meetings, primarily due to an increasingly heated, genuinely unnecessary debate about proper savory-to-sweet catering ratios.</p>
+
+<h3>Chapter 2: An Escalating Debate</h3>
+<p>What began as a minor preference disagreement escalated, over two entire meetings, into competing spreadsheets analyzing previous years' actual food consumption data, both sides genuinely convinced their ratio proposal was the objectively correct approach.</p>
+
+<h3>Chapter 3: A Resolution, Eventually</h3>
+<p>The third emergency meeting finally settled it with a compromise ratio nobody was fully satisfied by but everyone could accept. The party itself, when it finally happened, went smoothly and was genuinely enjoyed by all. The committee has requested, unanimously, that next year's catering discussion be assigned to literally anyone else.</p>
+`
+},
+{
+  title: "The Substitute Who Accidentally Convinced an Entire Class They Were Learning a Secret Ancient Language",
+  author: "Khyati Srivastava",
+  slug: "the-substitute-who-accidentally-convinced-an-entire-class-they-were-learning-a-secret-ancient-language",
+  category: "Comedy",
+  emoji: "📜",
+  excerpt: "A substitute's genuinely enthusiastic, slightly mysterious presentation of basic Latin roots accidentally convinces the entire class they're learning a secret, powerful ancient language — a misunderstanding nobody bothers correcting for weeks.",
+  created_at: "2027-05-01T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Enthusiastic Presentation</h3>
+<p>Substitute Mr. Bellamy's genuinely enthusiastic, dramatically delivered lesson on common Latin word roots accidentally, entirely unintentionally, gave the class the distinct impression they were learning some kind of secret, powerful ancient language rather than ordinary vocabulary building.</p>
+
+<h3>Chapter 2: A Misunderstanding, Left Uncorrected</h3>
+<p>Several kids started genuinely, earnestly using their new "secret language" fragments in the hallway with theatrical seriousness, the misunderstanding spreading through the grade for weeks before anyone officially clarified that Latin roots, while genuinely useful, weren't quite the mystical power source several sixth graders had imagined.</p>
+
+<h3>Chapter 3: A Surprisingly Effective Accident</h3>
+<p>The regular teacher, discovering the misunderstanding, found the class's actual retention of Latin roots considerably better than any previous year's group — the accidental mystique had, somehow, made genuinely boring vocabulary memorization feel exciting. She's kept some of Mr. Bellamy's dramatic delivery style ever since, misunderstanding and all.</p>
+`
+},
+{
+  title: "The Traveling Cartographer Who Only Mapped Places Worth Returning To",
+  author: "Khyati Srivastava",
+  slug: "the-traveling-cartographer-who-only-mapped-places-worth-returning-to",
+  category: "Fairytale",
+  emoji: "🗺️",
+  excerpt: "Master Yara refuses to map any place she wouldn't personally want to visit again — a policy that's made her maps considerably shorter than any competitor's, but considerably more trusted by travelers who value her genuine judgment.",
+  created_at: "2027-05-01T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unusual Standard</h3>
+<p>Yara's maps covered considerably less territory than any competitor's, a fact she never apologized for, insisting she'd only ever include locations she'd genuinely want to visit herself a second time — a personal standard that made her maps sparse but considerably more trusted by discerning travelers.</p>
+
+<h3>Chapter 2: A Skeptical Merchant</h3>
+<p>A traveling merchant, frustrated by her map's noticeable gaps, demanded she simply include every known location like any reasonable cartographer, dismissing her personal standard as unprofessional and limiting.</p>
+
+<h3>Chapter 3: A Trust Well Earned</h3>
+<p>He bought a competitor's more comprehensive map instead, only to find several locations genuinely disappointing or outright unsafe. Returning to Yara's shop months later, considerably humbled, he finally understood: her sparse maps weren't a limitation. They were a genuine, hard-earned recommendation, curated by someone who'd actually gone and checked.</p>
+`
+},
+{
+  title: "The Village Healer Who Taught Patients to Heal Themselves Instead",
+  author: "Khyati Srivastava",
+  slug: "the-village-healer-who-taught-patients-to-heal-themselves-instead",
+  category: "Fairytale",
+  emoji: "🌿",
+  excerpt: "Rather than simply curing every ailment brought to her, healer Odalys insists on teaching patients the actual remedy whenever possible — a policy some find frustratingly slow, but that's left the whole village considerably more capable in her long absence.",
+  created_at: "2027-05-01T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Different Kind of Healing</h3>
+<p>Odalys could cure most common village ailments instantly with her considerable skill, but insisted instead, whenever the actual remedy was simple enough, on teaching patients to prepare it themselves rather than simply dispensing a finished cure.</p>
+
+<h3>Chapter 2: An Impatient Patient</h3>
+<p>A young farmer, genuinely frustrated by a headache remedy that took her twenty minutes to teach rather than the two minutes it would have taken her to simply prepare herself, complained openly about the wasted time.</p>
+
+<h3>Chapter 3: A Village, Genuinely Prepared</h3>
+<p>Years later, when Odalys traveled to help a neighboring village through a genuine crisis, her home village managed entirely without her for months — every common ailment handled competently by villagers she'd patiently, deliberately taught. The farmer, now teaching his own children the same remedy, finally understood why the extra twenty minutes had mattered so much.</p>
+`
+},
+{
+  title: "The Kid Who Learned to Handle Being Underestimated From a Chess Tournament",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-to-handle-being-underestimated-from-a-chess-tournament",
+  category: "Inspirational",
+  emoji: "♟️",
+  excerpt: "Consistently dismissed by opponents who judge her chess skill based on her age and quiet demeanor, Priya learns to let being underestimated work in her favor rather than fighting to prove herself upfront.",
+  created_at: "2027-05-01T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Consistently Dismissed</h3>
+<p>Priya's chess opponents, seeing her quiet demeanor and relatively young age, frequently underestimated her genuine skill before games even began, an assumption that used to genuinely frustrate her enough to feel she needed to prove herself immediately.</p>
+
+<h3>Chapter 2: A Strategic Realization</h3>
+<p>Her coach pointed out something she hadn't considered: opponents who underestimated her often played carelessly against what they assumed was an easy match, an advantage she could genuinely use rather than fight against by trying to seem more intimidating.</p>
+
+<h3>Chapter 3: A Different Kind of Confidence</h3>
+<p>She stopped trying to change opponents' initial assumptions and simply let her actual play speak for itself, mid-game, when it mattered considerably more. Her tournament record improved noticeably once she stopped wasting energy on proving herself upfront. Being underestimated, she finally understood, was information she could genuinely use.</p>
+`
+},
+{
+  title: "The Kid Who Learned to Handle Comparison From Having a Genuinely Talented Older Sibling",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-to-handle-comparison-from-having-a-genuinely-talented-older-sibling",
+  category: "Inspirational",
+  emoji: "🌟",
+  excerpt: "Constantly compared to her genuinely gifted older sister, Priya struggles for years to find her own identity outside the shadow. A single honest conversation with her sister, rather than her parents, finally shifts something.",
+  created_at: "2027-05-01T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Constant Comparison</h3>
+<p>Priya's older sister Anjali was, by any objective measure, genuinely talented — top grades, athletic success, the kind of effortless excellence that made every teacher's comparison feel, to Priya, like a quiet, constant reminder of her own relative ordinariness.</p>
+
+<h3>Chapter 2: An Unexpected Conversation</h3>
+<p>It was Anjali herself, not their well-meaning but ultimately less helpful parents, who finally addressed it directly, admitting she'd genuinely struggled watching Priya carry the weight of comparisons neither sister had actually asked for or wanted.</p>
+
+<h3>Chapter 3: Finding Her Own Identity</h3>
+<p>The honest conversation didn't erase years of comparison overnight, but it genuinely shifted something between the sisters, both agreeing to actively push back against the comparisons together rather than letting Priya absorb them alone. Priya found her own considerable strengths considerably faster once she stopped measuring them against her sister's entirely different ones.</p>
+`
+},
+{
+  title: "The Family That Finally Learned to Argue Without It Becoming a Cold War",
+  author: "Khyati Srivastava",
+  slug: "the-family-that-finally-learned-to-argue-without-it-becoming-a-cold-war",
+  category: "Drama",
+  emoji: "🌡️",
+  excerpt: "Every family disagreement used to devolve into days of tense, unspoken silence rather than actual resolution. A family therapist's simple new rule — no leaving the room until both sides feel heard — genuinely changes their whole dynamic.",
+  created_at: "2027-05-01T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Familiar, Unhealthy Pattern</h3>
+<p>Every genuine disagreement in the Alvarez household had, for years, followed the same unhealthy pattern: a brief argument, followed by days of tense, unresolved silence rather than any actual working through of the underlying issue.</p>
+
+<h3>Chapter 2: A New Family Rule</h3>
+<p>A family therapist, brought in after one particularly long cold war following a genuinely minor disagreement, introduced a simple new rule: nobody left the room during a disagreement until both sides felt genuinely, actually heard, silence no longer an acceptable substitute for resolution.</p>
+
+<h3>Chapter 3: A Genuinely Different Family Dynamic</h3>
+<p>It felt stiff and uncomfortable at first, everyone forcing themselves to stay present through disagreements they'd previously have simply avoided through silence. Months of practice later, the family's arguments resolved considerably faster and left considerably less lingering resentment. Nobody misses the old cold wars. Everybody, genuinely, prefers actually working through it.</p>
+`
+},
+{
+  title: "The Sibling Who Finally Stopped Being the Family's Designated Peacekeeper",
+  author: "Khyati Srivastava",
+  slug: "the-sibling-who-finally-stopped-being-the-familys-designated-peacekeeper",
+  category: "Drama",
+  emoji: "🕊️",
+  excerpt: "For years, Priya has automatically stepped in to mediate every family disagreement, exhausting herself in a role nobody ever formally asked her to take on. Learning to step back, even briefly, teaches the whole family something they genuinely needed to learn.",
+  created_at: "2027-05-01T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unofficial, Exhausting Role</h3>
+<p>Priya had, somewhere along the way, become her family's automatic peacekeeper, stepping in reflexively to mediate every disagreement between her parents or siblings — a role nobody had formally asked her to take on, but one she'd genuinely exhausted herself maintaining for years.</p>
+
+<h3>Chapter 2: A Deliberate Step Back</h3>
+<p>Genuinely burned out, she finally, deliberately let one family argument play out without her usual intervention, watching anxiously as her family struggled, awkwardly, to resolve it without her practiced mediation.</p>
+
+<h3>Chapter 3: A Family Learning to Manage Without Her</h3>
+<p>They eventually worked it out themselves, considerably clumsier than her usual smooth mediation would have produced, but genuinely their own resolution. Priya realized, watching them manage without her, that her constant intervention had perhaps been preventing the rest of the family from ever developing their own conflict resolution skills. She still helps sometimes. She's stopped feeling like the family's only option.</p>
+`
+},
+{
+  title: "The Voicemail Priya Almost Deleted Without Listening To",
+  author: "Khyati Srivastava",
+  slug: "the-voicemail-priya-almost-deleted-without-listening-to",
+  category: "Romance",
+  emoji: "📱",
+  excerpt: "Assuming it's just another routine reminder call, Priya nearly deletes Dev's voicemail unheard — until something makes her actually press play, revealing considerably more than the routine message she'd expected.",
+  created_at: "2027-05-01T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Almost-Deleted Message</h3>
+<p>Priya's phone showed Dev's name on a missed call notification, and her thumb hovered over "delete" almost automatically, assuming it was probably just another routine question about shared homework, before something — genuine curiosity, maybe — made her actually press play instead.</p>
+
+<h3>Chapter 2: Something Considerably Different</h3>
+<p>The voicemail wasn't about homework at all. Dev's voice, considerably more nervous than his usual easy tone, admitted he'd been meaning to say something for weeks and had finally worked up the courage during a moment he clearly hadn't planned to leave as a recorded message.</p>
+
+<h3>Chapter 3: A Message Worth Keeping</h3>
+<p>Priya called him back within the minute rather than texting a reply, genuinely grateful she'd pressed play instead of following her automatic instinct to delete. She's kept that original voicemail saved ever since, a small reminder of exactly how close she'd come to missing something that mattered considerably more than she'd assumed.</p>
+`
+},
+{
+  title: "The Two Left Umbrellas That Somehow Kept Ending Up at the Same Coffee Shop",
+  author: "Khyati Srivastava",
+  slug: "the-two-left-umbrellas-that-somehow-kept-ending-up-at-the-same-coffee-shop",
+  category: "Romance",
+  emoji: "☂️",
+  excerpt: "Both Dev and Farrah have accidentally left their umbrella at the same coffee shop three separate times, each visit somehow overlapping with the other's, a coincidence too consistent for either to keep calling it purely accidental.",
+  created_at: "2027-05-01T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Repeated Coincidence</h3>
+<p>Dev had left his umbrella at the same corner coffee shop three separate times over two months, each time finding, upon returning to retrieve it, that Farrah happened to be there as well — a coincidence neither had initially thought much about until the pattern became genuinely too consistent.</p>
+
+<h3>Chapter 2: A Growing Suspicion</h3>
+<p>By the third overlap, both had started, independently, wondering whether the other's presence was actually as accidental as it appeared, neither quite brave enough to ask directly whether the coffee shop timing was genuinely coincidental or something considerably more deliberate.</p>
+
+<h3>Chapter 3: An Honest Admission</h3>
+<p>Farrah finally admitted it outright during their fourth accidental overlap, laughing at her own transparency: she'd started timing her coffee runs around when she knew Dev typically forgot his umbrella. Dev, equally caught, admitted the exact same thing. The umbrella-forgetting, they both realized, had never really been accidental at all.</p>
+`
+},
+{
+  title: "The Kid Who Started a Free Neighborhood 'Practice Presentation' Audience Service",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-started-a-free-neighborhood-practice-presentation-audience-service",
+  category: "Kids",
+  emoji: "🎤",
+  excerpt: "Understanding exactly how much a genuine practice audience helps before a big presentation, eleven-year-old Priya starts offering herself as a free, genuinely attentive practice audience for any neighborhood kid preparing for something nerve-wracking.",
+  created_at: "2027-05-01T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Genuine Understanding</h3>
+<p>Priya knew from her own experience exactly how much a genuine, attentive practice audience helped before any nerve-wracking presentation, a resource she'd been lucky enough to have through her own family but suspected many classmates simply lacked at home.</p>
+
+<h3>Chapter 2: An Offered Service</h3>
+<p>She started offering herself as a free practice audience for any neighborhood kid preparing for a school presentation, science fair pitch, or piano recital, giving genuine, thoughtful feedback rather than just polite applause.</p>
+
+<h3>Chapter 3: A Genuinely Valued Resource</h3>
+<p>She's practiced-audienced for over a dozen kids now, several crediting her genuine, careful attention with helping calm their nerves considerably more than rehearsing alone ever managed. Priya finds the role genuinely rewarding — proof that sometimes the most useful thing you can offer someone is simply your full, attentive presence.</p>
+`
+},
+{
+  title: "The Kid Who Ran a Free Lost-Item Recovery Service Using Nothing but Careful Observation",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-ran-a-free-lost-item-recovery-service-using-nothing-but-careful-observation",
+  category: "Kids",
+  emoji: "🔍",
+  excerpt: "Genuinely skilled at noticing small details other people overlook, ten-year-old Dev has developed a real reputation for helping classmates find lost items — glasses, retainers, once memorably an entire missing backpack — using nothing but careful observation.",
+  created_at: "2027-05-01T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Natural Talent</h3>
+<p>Dev had always noticed small details other people overlooked entirely, a quiet skill that started earning him a genuine reputation after he helped a classmate locate a lost retainer by simply retracing, carefully and methodically, exactly where the classmate had actually been that day.</p>
+
+<h3>Chapter 2: A Growing Reputation</h3>
+<p>Word spread quickly through the grade, several classmates specifically seeking Dev out for help with lost items, his careful, patient questioning about exact movements and locations proving considerably more effective than most people's frantic, disorganized searching.</p>
+
+<h3>Chapter 3: A Genuinely Useful Skill</h3>
+<p>He's successfully helped recover over a dozen lost items now, including one memorable missing backpack found exactly where his careful questioning suggested it would be. Dev considers his observational skill less about detective work and more about simply actually paying attention — a habit he wishes more people bothered practicing.</p>
+`
+},
+{
+  title: "The Bookshelf That Rearranges Itself When No One's Watching",
+  author: "Khyati Srivastava",
+  slug: "the-bookshelf-that-rearranges-itself-when-no-ones-watching",
+  category: "Horror",
+  emoji: "📚",
+  excerpt: "The living room bookshelf, organized carefully by color one evening, is reliably back to a completely different arrangement every single morning — genre-sorted, then alphabetized, then something else entirely, with nobody in the family ever actually touching it.",
+  created_at: "2027-05-01T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Nightly Reorganization</h3>
+<p>Priya had carefully organized the living room bookshelf by color one evening, only to find it completely rearranged by genre the following morning — a shift nobody in the family claimed responsibility for, and one that repeated, differently each time, night after night.</p>
+
+<h3>Chapter 2: Testing It Deliberately</h3>
+<p>She set up a phone camera overnight specifically to catch whoever, or whatever, was responsible for the reorganization, checking the footage eagerly the next morning only to find the shelf had, once again, been rearranged with absolutely no movement visible in the entire overnight recording.</p>
+
+<h3>Chapter 3: A System, Unclaimed</h3>
+<p>The rearranging has continued for months now, always a genuinely coherent organizational system, never simple chaos, always different from the night before. The family has simply stopped trying to maintain any particular arrangement themselves. Whatever's organizing the shelf, they've decided, clearly has stronger opinions about it than they do.</p>
+`
+},
+{
+  title: "The Backyard Sundial That Casts a Shadow Even at Midnight",
+  author: "Khyati Srivastava",
+  slug: "the-backyard-sundial-that-casts-a-shadow-even-at-midnight",
+  category: "Horror",
+  emoji: "🌑",
+  excerpt: "The decorative garden sundial, purely ornamental and genuinely incapable of functioning without sunlight, has been photographed multiple times casting a faint but unmistakable shadow well after midnight, moon or no moon.",
+  created_at: "2027-05-01T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Purely Decorative Object</h3>
+<p>The garden sundial had always been purely ornamental, a decorative gift from a relative with no genuine timekeeping function anyone in the family actually relied upon — which made Priya's late-night photo, capturing an unmistakable shadow cast by the sundial well past midnight, genuinely confusing.</p>
+
+<h3>Chapter 2: Confirming the Pattern</h3>
+<p>She checked repeatedly on subsequent nights, including several with no moon visible at all, and found the faint shadow appeared consistently regardless of any actual light source she could identify nearby capable of producing it.</p>
+
+<h3>Chapter 3: An Object, Left Alone</h3>
+<p>The family has simply stopped photographing the sundial at night, genuinely unnerved enough by the unexplained pattern to prefer not documenting it further. It still sits in the garden, ornamental and harmless by every daytime measure. Nobody has checked, recently, whether the midnight shadow still appears.</p>
+`
+},
+{
+  title: "The Family Recipe Box With a Card for Every Kind of Bad Day",
+  author: "Khyati Srivastava",
+  slug: "the-family-recipe-box-with-a-card-for-every-kind-of-bad-day",
+  category: "Poetry",
+  emoji: "🍲",
+  excerpt: "A comforting poem about the family recipe box that, somehow, has always held exactly the right dish for whatever kind of hard day someone happens to be having.",
+  created_at: "2027-05-01T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Family Recipe Box With a Card for Every Kind of Bad Day</h3>
+<p>There's a card for the day you failed the test,<br/>
+Grandma's soup, the one that's always best<br/>
+at making failure feel a little smaller,<br/>
+a little less like the end of it all.</p>
+
+<p>There's a card for the day you lost a friend,<br/>
+the bread that takes all afternoon to tend,<br/>
+kneading out whatever needs kneading out,<br/>
+patience baked in, no need to shout.</p>
+
+<p>There's even a card for good days too,<br/>
+the cake we make when something's finally through,<br/>
+a project done, a hard year passed —<br/>
+this box knows every mood that's ever cast</p>
+
+<p>its shadow or its light across our table,<br/>
+holding a recipe for whatever we're able<br/>
+to feel that day, sorted not by course,<br/>
+but by whatever heart needs, at its source.</p>
+`
+},
+{
+  title: "The Backyard Hammock That Holds Whole Summers Between Its Ropes",
+  author: "Khyati Srivastava",
+  slug: "the-backyard-hammock-that-holds-whole-summers-between-its-ropes",
+  category: "Poetry",
+  emoji: "🌴",
+  excerpt: "A lazy, warm poem about the old backyard hammock, holding a whole family's worth of summer afternoons, naps, and quiet daydreams between its faded, well-used ropes.",
+  created_at: "2027-05-01T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Backyard Hammock That Holds Whole Summers Between Its Ropes</h3>
+<p>Faded now, the fabric thin and worn,<br/>
+strung between two trees since before I was born,<br/>
+holding up whoever climbs aboard<br/>
+for a slow afternoon nobody can afford</p>
+
+<p>to waste, and yet we always do,<br/>
+swinging gently, sky peeking through<br/>
+the leaves above, no rush, no plan,<br/>
+just summer, held loose in canvas and man.</p>
+
+<p>I've napped here, dreamed here, read whole books,<br/>
+watched clouds shift into different looks,<br/>
+felt the rope creak beneath my weight,<br/>
+learned that some afternoons deserve to wait.</p>
+
+<p>Someday this hammock will finally fray past use,<br/>
+but for now it holds every lazy excuse<br/>
+a summer's ever offered, rope and thread —<br/>
+a whole slow season, gently held instead.</p>
+`
+},
 ];
