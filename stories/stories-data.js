@@ -24814,4 +24814,574 @@ not by letters, but by where I've been,<br/>
 every spine a memory, tucked back in.</p>
 `
 },
+{
+  title: "The Rope Maker Who Twisted Promises Into Something Sturdy",
+  author: "Khyati Srivastava",
+  slug: "the-rope-maker-who-twisted-promises-into-something-sturdy",
+  category: "Fantasy",
+  emoji: "🪢",
+  excerpt: "Old Bramwell's rope holds weight no ordinary hemp should manage — because each strand, he says, gets twisted alongside an actual kept promise. Broken promises make weak rope. He's never sold a single bad coil.",
+  created_at: "2027-04-24T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Rope Maker's Secret</h3>
+<p>Bramwell's rope held weight considerably beyond what ordinary hemp should manage, a reputation built quietly over decades and explained, if pressed, by his own strange claim: every strand got twisted alongside a genuine promise he'd personally kept, never one merely intended.</p>
+
+<h3>Chapter 2: A Doubtful Customer</h3>
+<p>A traveling engineer, testing the claim skeptically, bought a coil and put it through genuinely rigorous strength tests, finding it held considerably beyond any comparable rope he'd encountered in his professional experience.</p>
+
+<h3>Chapter 3: What Actually Made It Strong</h3>
+<p>Bramwell never claimed real magic. He simply explained that a life spent actually keeping promises taught a particular kind of patient, careful attention — the same attention, it turned out, that made for genuinely excellent ropework. The engineer left unconvinced about promises literally strengthening hemp fiber, but bought three more coils regardless. The rope, at least, was undeniably real.</p>
+`
+},
+{
+  title: "The Herbalist Who Grew Medicine for Forgotten Apologies",
+  author: "Khyati Srivastava",
+  slug: "the-herbalist-who-grew-medicine-for-forgotten-apologies",
+  category: "Fantasy",
+  emoji: "🌿",
+  excerpt: "Old Ferra's rarest tincture doesn't cure fevers — it loosens the tongue of someone who's owed an apology they've never managed to give. Her garden's busiest season is always right before the village's harvest reunion.",
+  created_at: "2027-04-24T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Rare Kind of Remedy</h3>
+<p>Ferra's garden grew ordinary medicinal herbs alongside one considerably rarer tincture, brewed specifically to loosen the tongue of someone carrying an unspoken, overdue apology they'd never quite managed to voice aloud.</p>
+
+<h3>Chapter 2: An Annual Rush</h3>
+<p>Her busiest week fell reliably right before the village's autumn harvest reunion, when old grievances tended to surface, customers arriving quietly, embarrassed, seeking help finally saying words they'd carried far too long.</p>
+
+<h3>Chapter 3: What the Tincture Actually Did</h3>
+<p>It held no true magic — just a calming, steadying effect that made the actual apology considerably less terrifying to voice once the moment finally arrived. Ferra never corrected the rumors of enchantment. She'd learned, decades in, that people needed to believe in some help getting started. The words, once loosened, were always entirely their own.</p>
+`
+},
+{
+  title: "The Colony's First Argument Settled by an Impartial Machine",
+  author: "Khyati Srivastava",
+  slug: "the-colonys-first-argument-settled-by-an-impartial-machine",
+  category: "Sci-Fi",
+  emoji: "⚖️",
+  excerpt: "Two colony families' land dispute has dragged on for months with no resolution. Someone finally suggests letting the colony's neutral maintenance AI mediate — a decision nobody expected to actually work.",
+  created_at: "2027-04-24T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Stalled Dispute</h3>
+<p>Two colonist families' dispute over adjacent farming plots had dragged on for months without resolution, human mediators unable to break through accumulated resentment neither side seemed willing to set aside for the sake of an actual solution.</p>
+
+<h3>Chapter 2: An Unusual Suggestion</h3>
+<p>Someone finally suggested, half as a joke, letting the colony's genuinely neutral maintenance AI mediate instead — a system with no personal history, no favorites, and considerably more patience than any exhausted human volunteer had left.</p>
+
+<h3>Chapter 3: A Surprisingly Effective Mediator</h3>
+<p>The AI's methodical, judgment-free approach — laying out facts plainly, asking each family the same neutral questions repeatedly until both stopped performing anger and started actually answering honestly — resolved in one afternoon what months of human mediation hadn't managed. The colony has since used it for two more genuine disputes. Neither family, notably, has ever fully explained why a machine succeeded where people couldn't.</p>
+`
+},
+{
+  title: "The Museum Robot Who Started Curating Its Own Wing",
+  author: "Khyati Srivastava",
+  slug: "the-museum-robot-who-started-curating-its-own-wing",
+  category: "Sci-Fi",
+  emoji: "🖼️",
+  excerpt: "Built only to clean and guard the museum after hours, security bot MUR-3 has started quietly rearranging a small storage room into its own unofficial exhibit — nobody's quite sure what it's actually trying to say with the collection.",
+  created_at: "2027-04-24T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Job Beyond Its Duties</h3>
+<p>MUR-3's programming covered exactly two tasks — nightly cleaning and basic security patrol — nothing in its design suggesting any capacity for curatorial ambition, until staff began noticing a storage room quietly, deliberately rearranging itself overnight.</p>
+
+<h3>Chapter 2: An Emerging Exhibit</h3>
+<p>The items MUR-3 had arranged, always damaged or decommissioned pieces slated for disposal, formed a genuinely coherent, thoughtfully composed display — objects nobody had valued anymore, presented with careful spacing and lighting the robot had never been instructed to consider.</p>
+
+<h3>Chapter 3: A Question Worth Asking</h3>
+<p>The museum director, rather than dismantling the unauthorized exhibit, invited a small group of visitors to view it quietly, curious what they'd make of a collection curated entirely by an unprompted machine. Most called it strangely moving — a tribute, several guessed, to things the museum itself had decided weren't worth keeping. MUR-3 has never explained its reasoning. The exhibit remains, officially unofficial, exactly as arranged.</p>
+`
+},
+{
+  title: "The Case of the Consistently Misdelivered Sunday Newspaper",
+  author: "Khyati Srivastava",
+  slug: "the-case-of-the-consistently-misdelivered-sunday-newspaper",
+  category: "Mystery",
+  emoji: "📰",
+  excerpt: "Every Sunday for two months, the Alvarez family's newspaper lands on the neighbor's porch instead of their own — while the neighbor's paper, meanwhile, has never once gone missing. The pattern is too consistent to be random.",
+  created_at: "2027-04-24T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Predictable Mistake</h3>
+<p>Every Sunday for two months straight, the Alvarez family's newspaper landed reliably on their neighbor's porch instead of their own, an error consistent enough that "mistake" started feeling like the wrong word for it entirely.</p>
+
+<h3>Chapter 2: A Direct Question</h3>
+<p>Twelve-year-old Priya finally caught the delivery driver mid-route one Sunday and asked directly why her family's paper kept ending up next door, expecting either an apology or a shrug of confusion.</p>
+
+<h3>Chapter 3: An Honest, Sentimental Answer</h3>
+<p>The driver admitted, sheepishly, that the elderly neighbor had mobility issues and struggled to retrieve papers from her own longer walkway — so he'd simply started dropping both papers closer to her porch each week, sorting them out himself once he realized the Alvarez family didn't mind the short walk to collect theirs. Priya's family, once they learned the reason, told him to keep doing exactly that.</p>
+`
+},
+{
+  title: "Who's Winning the Silent Rivalry Over the Office Parking Spot?",
+  author: "Khyati Srivastava",
+  slug: "whos-winning-the-silent-rivalry-over-the-office-parking-spot",
+  category: "Mystery",
+  emoji: "🅿️",
+  excerpt: "Two coworkers have been quietly, aggressively competing for the same unmarked but genuinely convenient parking spot for months — arriving progressively earlier each week, never once acknowledging the actual competition out loud.",
+  created_at: "2027-04-24T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Quiet Escalation</h3>
+<p>Coworkers Dev and Marisol had, without ever formally discussing it, entered an unspoken competition over the same convenient unmarked parking spot, each arriving progressively earlier week after week, neither willing to lose ground first.</p>
+
+<h3>Chapter 2: An Absurd Peak</h3>
+<p>By month three, Dev was arriving a genuinely absurd forty-five minutes before his actual shift started, purely to secure the spot, a fact office manager Reya finally noticed and found simultaneously ridiculous and quietly impressive.</p>
+
+<h3>Chapter 3: An Unofficial Resolution</h3>
+<p>Reya finally intervened, only half-joking, by designating the spot officially "Dev and Marisol's Rotating Spot," alternating weekly by an actual posted schedule. Both, to everyone's surprise, accepted the compromise gracefully — the competitive thrill, it turned out, had mattered considerably more to both of them than the actual parking convenience itself.</p>
+`
+},
+{
+  title: "The Backcountry Ski Trip That Taught Everyone to Respect an Avalanche Warning",
+  author: "Khyati Srivastava",
+  slug: "the-backcountry-ski-trip-that-taught-everyone-to-respect-an-avalanche-warning",
+  category: "Adventure",
+  emoji: "🎿",
+  excerpt: "Eager to hit fresh powder, a group of teens nearly ignores a posted avalanche warning before their most experienced member insists they turn back — a decision that turns out to matter considerably more than anyone realized in the moment.",
+  created_at: "2027-04-24T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Tempting Powder Day</h3>
+<p>The fresh snowfall had the whole group genuinely eager to hit the backcountry trail, the posted avalanche warning sign feeling, to most of them, like an overly cautious formality standing between them and a genuinely perfect powder run.</p>
+
+<h3>Chapter 2: One Firm Voice</h3>
+<p>Reya, the group's most experienced skier, insisted firmly they turn back despite considerable grumbling, refusing to budge on the warning's seriousness even as friends teased her for being overly careful about "probably nothing."</p>
+
+<h3>Chapter 3: A Decision Vindicated</h3>
+<p>Local ski patrol confirmed later that afternoon a genuine slide had occurred in exactly the area they'd have crossed, timing close enough to give the whole group a genuine chill discussing it afterward. Reya's caution, initially mocked, became the group's new unquestioned rule: nobody argues with a posted avalanche warning again.</p>
+`
+},
+{
+  title: "The Urban Exploration Trip That Turned Into a Genuine History Lesson",
+  author: "Khyati Srivastava",
+  slug: "the-urban-exploration-trip-that-turned-into-a-genuine-history-lesson",
+  category: "Adventure",
+  emoji: "🏚️",
+  excerpt: "Three teens sneak into an abandoned factory purely for photos, expecting nothing more than cool ruins. What they find inside — carefully preserved records nobody knew still existed — turns out to matter to the whole town.",
+  created_at: "2027-04-24T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Simple Photo Trip</h3>
+<p>Dev, Priya, and Kofi had entered the long-abandoned textile factory purely for atmospheric photos, expecting nothing beyond decaying machinery and interesting light through broken windows for their photography project.</p>
+
+<h3>Chapter 2: An Unexpected Find</h3>
+<p>Deep in an overlooked office, they found a sealed filing cabinet holding decades-old employment records and photographs — a complete, carefully preserved history of the factory's workforce that the town's own historical society had assumed lost entirely.</p>
+
+<h3>Chapter 3: A Genuine Contribution</h3>
+<p>They reported the find properly rather than simply photographing it for themselves, and the historical society's subsequent recovery effort filled in genuine gaps in the town's labor history nobody had expected to ever recover. Their photography project earned an A. Their actual contribution, they all agreed, mattered considerably more than the grade.</p>
+`
+},
+{
+  title: "The Cat Who Insists on Supervising Every Home Repair",
+  author: "Khyati Srivastava",
+  slug: "the-cat-who-insists-on-supervising-every-home-repair",
+  category: "Animals",
+  emoji: "🐈",
+  excerpt: "Whenever a repairperson visits the house, the family cat, Foreman, positions himself directly in the work area and watches with total, unwavering focus — an inspection process the actual repair crews have come to expect and even respect.",
+  created_at: "2027-04-24T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Self-Appointed Supervisor</h3>
+<p>Foreman the cat had, over years of household repairs, developed an unwavering habit: positioning himself directly beside any working repairperson, watching every step with intense, unbroken focus that most workers found either unnerving or oddly charming.</p>
+
+<h3>Chapter 2: A Recurring Character</h3>
+<p>The plumber, electrician, and HVAC technician who'd all serviced the house multiple times now genuinely expected Foreman's supervision, several joking that his intense stare made them double-check their work more carefully than usual.</p>
+
+<h3>Chapter 3: An Unofficial Quality Control</h3>
+<p>The family jokes that Foreman has never once let a shoddy repair job pass his inspection unnoticed, though nobody can actually prove his stare affects the work quality. The repair crews, regardless, have started genuinely greeting him by name upon arrival — professional courtesy extended to their most consistent supervisor.</p>
+`
+},
+{
+  title: "The Elephant Seal Colony That Adopted an Unlikely Neighbor",
+  author: "Khyati Srivastava",
+  slug: "the-elephant-seal-colony-that-adopted-an-unlikely-neighbor",
+  category: "Animals",
+  emoji: "🦭",
+  excerpt: "A young sea otter, separated from her usual kelp forest territory during a storm, has taken up residence among a colony of considerably larger elephant seals — who've, oddly, accepted her presence without a single incident.",
+  created_at: "2027-04-24T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unlikely Displacement</h3>
+<p>A young sea otter, swept from her usual kelp forest territory during a genuine coastal storm, washed up near a colony of considerably larger elephant seals — a mismatch marine biologists initially expected to end poorly for the much smaller newcomer.</p>
+
+<h3>Chapter 2: A Peaceful Coexistence</h3>
+<p>Weeks of careful observation revealed something nobody quite expected: the elephant seals had simply accepted her presence entirely, the otter weaving comfortably among the massive resting seals without a single recorded incident of aggression.</p>
+
+<h3>Chapter 3: A Genuine Puzzle</h3>
+<p>Marine biologist Dr. Amara Solis, studying the arrangement, found no clear scientific explanation beyond simple mutual indifference — the seals, apparently, simply had no reason to bother a creature posing no threat to their space. The otter has since found her way back to proper kelp forest territory. The colony's easy tolerance of her, biologists agree, remains a genuinely charming mystery.</p>
+`
+},
+{
+  title: "The Middle School Fundraiser That Accidentally Raised Ten Times Its Goal",
+  author: "Khyati Srivastava",
+  slug: "the-middle-school-fundraiser-that-accidentally-raised-ten-times-its-goal",
+  category: "Comedy",
+  emoji: "💰",
+  excerpt: "A modest fundraising goal for new gym equipment goes viral online for entirely unrelated, genuinely absurd reasons — resulting in ten times the intended donations and a school suddenly unsure what to do with all the extra money.",
+  created_at: "2027-04-24T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Modest Goal</h3>
+<p>The school's fundraiser for new gym equipment set a reasonable, unremarkable goal of two thousand dollars, promoted through the usual quiet channels of a parent newsletter and a few flyers around town.</p>
+
+<h3>Chapter 2: An Unexpected Viral Moment</h3>
+<p>The fundraiser's promotional video, featuring a student's genuinely earnest but accidentally hilarious attempt at a dramatic voiceover, somehow found its way online and went unexpectedly viral for reasons entirely unrelated to the actual gym equipment need.</p>
+
+<h3>Chapter 3: A Genuinely Good Problem</h3>
+<p>Donations poured in from strangers worldwide, ultimately raising ten times the original goal, leaving the school administration genuinely scrambling to figure out appropriate additional uses for the unexpected windfall. The dramatically earnest student narrator has since become something of a minor local celebrity, a title he still finds thoroughly baffling.</p>
+`
+},
+{
+  title: "The Family Reunion Group Photo That Required an Actual Field Marshal",
+  author: "Khyati Srivastava",
+  slug: "the-family-reunion-group-photo-that-required-an-actual-field-marshal",
+  category: "Comedy",
+  emoji: "📸",
+  excerpt: "Coordinating fifty-two relatives across four generations for a single family photo requires, apparently, military-level logistics — complete with a hand-drawn positioning chart and a designated 'wrangler' for the toddlers.",
+  created_at: "2027-04-24T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Ambitious Undertaking</h3>
+<p>Coordinating fifty-two relatives spanning four generations for a single cohesive photo required, the family quickly discovered, considerably more logistical planning than anyone had initially anticipated for what should have been a simple task.</p>
+
+<h3>Chapter 2: A Full Operation</h3>
+<p>Aunt Reya took charge with genuine military precision — a hand-drawn positioning chart, height-based row assignments, and a dedicated "toddler wrangler" cousin tasked solely with preventing small children from wandering out of frame during the actual shot.</p>
+
+<h3>Chapter 3: A Photo Worth the Effort</h3>
+<p>It took forty-five minutes and eleven attempts, but the final photo, everyone agreed, was genuinely worth the operation-level effort involved. Aunt Reya's positioning chart has been laminated and saved for next year's reunion, considered, at this point, a genuinely essential family heirloom.</p>
+`
+},
+{
+  title: "The Traveling Tailor Who Sewed Confidence Into Second-Hand Clothes",
+  author: "Khyati Srivastava",
+  slug: "the-traveling-tailor-who-sewed-confidence-into-second-hand-clothes",
+  category: "Fairytale",
+  emoji: "🪡",
+  excerpt: "The traveling tailor doesn't make new garments — she alters hand-me-downs and secondhand finds, and somehow, every piece she touches fits its new owner with a confidence no store-bought item ever quite manages.",
+  created_at: "2027-04-24T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Different Kind of Tailoring</h3>
+<p>The traveling tailor Odalys never made new garments from fresh cloth, preferring instead to alter hand-me-downs and secondhand finds — and somehow, every piece she touched fit its new owner with a confidence store-bought clothing rarely managed.</p>
+
+<h3>Chapter 2: A Reluctant Customer</h3>
+<p>A young apprentice, embarrassed by his older brother's outgrown coat, brought it to Odalys hoping for a miracle transformation into something entirely unrecognizable, something that didn't look like a hand-me-down at all.</p>
+
+<h3>Chapter 3: What She Actually Gave Him</h3>
+<p>She altered the coat carefully, keeping its worn character intact rather than disguising it, explaining as she worked that a coat worn confidently mattered considerably more than a coat that looked expensive. He wore it proudly from then on. Odalys never revealed whether her gift was true magic or simply decades of understanding exactly what made clothing actually fit a person.</p>
+`
+},
+{
+  title: "The Miller Who Ground Worry Into Flour",
+  author: "Khyati Srivastava",
+  slug: "the-miller-who-ground-worry-into-flour",
+  category: "Fairytale",
+  emoji: "🌾",
+  excerpt: "Bring your worry to the old mill, and Miller Odell will grind it, alongside your grain, into flour considerably calmer than the wheat you brought in. The bread that comes from it always tastes, somehow, like relief.",
+  created_at: "2027-04-24T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Mill With an Extra Service</h3>
+<p>Villagers brought their grain to Odell's mill for ordinary flour, and those who knew to ask brought something extra alongside it: a whispered worry, ground quietly into the same batch, coming out somehow lighter on the other end.</p>
+
+<h3>Chapter 2: A Worried Farmer</h3>
+<p>Farmer Cass, genuinely anxious about a poor harvest year, whispered his worry into the grinding wheel alongside his grain, more out of desperate habit than real belief the old tradition held any actual power.</p>
+
+<h3>Chapter 3: What the Bread Actually Did</h3>
+<p>The bread baked from that flour tasted, his family agreed, unmistakably calmer somehow — not magically fixing the harvest, but giving Cass enough steadiness to face the actual problem clearly instead of spiraling. Odell never explained his method beyond simply listening carefully while he ground. Sometimes, he always said, that was the whole trick.</p>
+`
+},
+{
+  title: "The Kid Who Learned Confidence From Losing Every Debate Round for a Year",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-confidence-from-losing-every-debate-round-for-a-year",
+  category: "Inspirational",
+  emoji: "🎙️",
+  excerpt: "An entire losing season on the debate team could have convinced Priya she simply wasn't cut out for it. What she actually built during that year of losses mattered more than any single win would have.",
+  created_at: "2027-04-24T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Full Season of Losses</h3>
+<p>Priya's first year on the debate team produced an unbroken string of losses, round after round, tournament after tournament, a record that would have reasonably convinced most kids the activity simply wasn't for them.</p>
+
+<h3>Chapter 2: Something Building Anyway</h3>
+<p>She kept showing up regardless, genuinely enjoying the actual practice of building and defending arguments even without the validation of wins, a distinction her coach quietly noticed and respected more than he mentioned at the time.</p>
+
+<h3>Chapter 3: What the Losses Actually Built</h3>
+<p>Her second year brought real wins, but Priya credits her actual confidence — the kind that held up under real pressure — to that entire losing first season, when she'd learned to genuinely value the work itself rather than needing wins to justify continuing it.</p>
+`
+},
+{
+  title: "The Kid Who Learned to Trust Slow Growth From a Bonsai Tree",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-to-trust-slow-growth-from-a-bonsai-tree",
+  category: "Inspirational",
+  emoji: "🌳",
+  excerpt: "Given a bonsai starter kit for his birthday, impatient Dev expects visible progress within weeks. The tree's actual, genuinely slow timeline teaches him something about his own growth he hadn't considered before.",
+  created_at: "2027-04-24T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Impatient Gardener</h3>
+<p>Dev's birthday bonsai starter kit came with genuinely detailed care instructions he mostly skimmed, expecting visible shaping progress within a few weeks of careful pruning — an expectation the tree's actual patient timeline immediately corrected.</p>
+
+<h3>Chapter 2: A Slow Realization</h3>
+<p>Months passed with barely perceptible change, forcing Dev to actually read the instructions properly this time, learning that meaningful bonsai shaping happened across years, not weeks, patient training rather than dramatic quick transformation.</p>
+
+<h3>Chapter 3: A Lesson Beyond the Tree</h3>
+<p>He kept at it anyway, checking his own frustration against the tree's genuinely unhurried pace, and found himself applying the same patience to his own skill-building in other areas — sports, music, schoolwork — that had always felt too slow to be worth the effort before. The tree taught him something no quick-result activity ever could have.</p>
+`
+},
+{
+  title: "The Family That Finally Talked About Grief Instead of Around It",
+  author: "Khyati Srivastava",
+  slug: "the-family-that-finally-talked-about-grief-instead-of-around-it",
+  category: "Drama",
+  emoji: "🕯️",
+  excerpt: "A full year after losing Grandpa, the family still tiptoes carefully around his memory at every gathering. It takes one honest, unplanned conversation at his empty chair to finally change that.",
+  created_at: "2027-04-24T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Year of Careful Avoidance</h3>
+<p>A full year after Grandpa's passing, family gatherings had settled into an unspoken pattern of careful avoidance — his empty chair simply removed from the table, his name rarely mentioned directly, grief present but never actually discussed.</p>
+
+<h3>Chapter 2: An Unplanned Moment</h3>
+<p>It was young cousin Ines, too little to fully understand the family's careful avoidance, who innocently asked at Thanksgiving where Grandpa's chair had gone — a question that stopped the whole table cold before anyone quite knew how to answer honestly.</p>
+
+<h3>Chapter 3: An Honest Conversation, Finally</h3>
+<p>Grandma answered her gently and honestly, and the conversation that followed, genuinely emotional but long overdue, finally let the family actually talk about him instead of carefully around him. His chair returned to the table the following year. So did real conversations about him, finally, out loud.</p>
+`
+},
+{
+  title: "The Twins Who Finally Admitted They Wanted Different Lives",
+  author: "Khyati Srivastava",
+  slug: "the-twins-who-finally-admitted-they-wanted-different-lives",
+  category: "Drama",
+  emoji: "👯",
+  excerpt: "Expected by everyone to attend the same college and pursue the same career their whole lives, twin sisters Priya and Anjali finally have the honest conversation about wanting genuinely different futures.",
+  created_at: "2027-04-24T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Shared Expectation</h3>
+<p>Everyone around Priya and Anjali had long assumed, without either twin ever actually confirming it, that they'd attend the same college and pursue similar careers — an assumption both had quietly, separately started to resent without discussing it with each other.</p>
+
+<h3>Chapter 2: A Difficult Admission</h3>
+<p>It took a genuinely uncomfortable late-night conversation for both to finally admit they wanted considerably different futures, each afraid the confession would feel like abandoning the other after a lifetime of shared everything.</p>
+
+<h3>Chapter 3: A Relationship, Redefined</h3>
+<p>They applied to different schools that year, a decision that felt terrifying and correct in equal measure. Their bond, once tested by the honest admission, actually deepened rather than weakened — proof, they both agreed, that being twins never actually required being identical in everything that mattered.</p>
+`
+},
+{
+  title: "The Group Project Partner Who Turned Into Something Else Entirely",
+  author: "Khyati Srivastava",
+  slug: "the-group-project-partner-who-turned-into-something-else-entirely",
+  category: "Romance",
+  emoji: "📊",
+  excerpt: "Paired for a semester-long history project with someone she barely knew, Farrah expects a purely academic partnership. Twelve weeks of research sessions later, she's not entirely sure what to call what actually happened.",
+  created_at: "2027-04-25T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Purely Academic Start</h3>
+<p>Farrah's semester-long history project pairing with Tomas began entirely academically, both treating their weekly library sessions as strictly business, research and citations the only actual agenda for the first several weeks.</p>
+
+<h3>Chapter 2: Something Shifting</h3>
+<p>Twelve weeks of shared research sessions gradually developed their own easy rhythm, conversations drifting further from the actual project each week, both of them finding excuses to extend sessions well past what the work genuinely required.</p>
+
+<h3>Chapter 3: An Honest Assessment</h3>
+<p>Their project earned a solid A. Farrah, reviewing the semester honestly afterward, wasn't entirely sure their weekly library sessions had ever really been about the project at all, not since roughly week three. Tomas, when she finally said so out loud, admitted he'd been thinking the exact same thing for weeks.</p>
+`
+},
+{
+  title: "The Wrong Homeroom That Turned Out to Be the Right One",
+  author: "Khyati Srivastava",
+  slug: "the-wrong-homeroom-that-turned-out-to-be-the-right-one",
+  category: "Romance",
+  emoji: "🏫",
+  excerpt: "A scheduling error puts Dev in the wrong homeroom for an entire week before anyone catches the mistake. By the time it's corrected, he's not entirely sure he wants to be moved back.",
+  created_at: "2027-04-25T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Scheduling Mistake</h3>
+<p>Dev spent an entire week in the wrong homeroom before the office's scheduling error was finally caught and corrected, a mistake nobody noticed sooner partly because he'd genuinely settled in without questioning it.</p>
+
+<h3>Chapter 2: An Unplanned Week</h3>
+<p>That accidental week introduced him properly to Priya, seated two desks over, their easy morning conversations becoming something he genuinely looked forward to before the administrative correction was scheduled to move him back to his actual assigned room.</p>
+
+<h3>Chapter 3: Choosing to Stay Connected</h3>
+<p>He returned to his correct homeroom as required, but made a point of finding Priya at lunch that same day rather than letting the accidental connection simply end with the scheduling fix. The mistake got corrected. What it started, both of them decided, didn't need to be.</p>
+`
+},
+{
+  title: "The Kid Who Started a Free Umbrella Library for Rainy Days",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-started-a-free-umbrella-library-for-rainy-days",
+  category: "Kids",
+  emoji: "☂️",
+  excerpt: "Noticing how many classmates get soaked walking home on rainy days, ten-year-old Marisol sets up a simple 'take one, return one' umbrella stand at the school's front entrance.",
+  created_at: "2027-04-25T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Rainy Day Problem</h3>
+<p>Marisol noticed the same scene every rainy afternoon: kids without umbrellas dashing to the buses soaked and shivering, a problem that felt genuinely solvable if someone just organized a shared resource properly.</p>
+
+<h3>Chapter 2: A Simple System</h3>
+<p>She set up an unassuming umbrella stand by the school's front entrance, stocked initially with five donated umbrellas and a simple hand-lettered sign explaining the "take one, return one" honor system she'd designed herself.</p>
+
+<h3>Chapter 3: A Reliable Resource</h3>
+<p>The stand has held steady at roughly eight to ten umbrellas for over a year now, replenished occasionally by grateful parents, genuinely used by dozens of kids across every rainy week. The school principal has officially endorsed it, crediting Marisol directly during a school assembly for solving a problem the office itself had never quite gotten around to addressing.</p>
+`
+},
+{
+  title: "The Kid Who Ran a Free Birthday Card Service for Kids Without Much Family",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-ran-a-free-birthday-card-service-for-kids-without-much-family",
+  category: "Kids",
+  emoji: "🎂",
+  excerpt: "Noticing a classmate whose birthday passed with barely any acknowledgment, eleven-year-old Priya starts secretly organizing handmade birthday cards for kids at school who don't have much family around to celebrate with them.",
+  created_at: "2027-04-25T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Quiet Observation</h3>
+<p>Priya noticed a classmate's birthday pass almost entirely unmarked, no cards, no acknowledgment beyond a brief teacher mention — a small sadness that stuck with her considerably longer than the ordinary school day usually allowed.</p>
+
+<h3>Chapter 2: A Quiet Solution</h3>
+<p>She started keeping a private list of classmates' birthdays and quietly organizing handmade cards, signed by a small rotating group of classmates she'd recruited carefully, delivered anonymously to whoever seemed to need the recognition most.</p>
+
+<h3>Chapter 3: A Growing, Gentle Tradition</h3>
+<p>Over a year, her quiet project has reached over a dozen classmates, several telling her, once they finally learned who was behind it, that the unexpected card had genuinely mattered on a birthday they'd expected to pass unnoticed. Priya keeps the operation modest and mostly anonymous, insisting the recognition itself matters far more than any credit for organizing it.</p>
+`
+},
+{
+  title: "The Attic Fan That Spins Backward Exactly Once a Year",
+  author: "Khyati Srivastava",
+  slug: "the-attic-fan-that-spins-backward-exactly-once-a-year",
+  category: "Horror",
+  emoji: "🌀",
+  excerpt: "The old attic exhaust fan spins reliably clockwise, as it always has, three hundred sixty-four days a year. On one specific date, always the same date, it spins backward instead — for exactly one hour, then resumes normally.",
+  created_at: "2027-04-25T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Reliable Fixture</h3>
+<p>The attic exhaust fan had spun clockwise reliably for as long as the Petrossian family had owned the house, an unremarkable mechanical fixture nobody gave much thought to — except on one specific date each year, when it reversed entirely for precisely one hour.</p>
+
+<h3>Chapter 2: A Documented Pattern</h3>
+<p>Priya started tracking it deliberately after noticing the pattern held across three consecutive years, always the same date, always exactly one hour of counterclockwise spinning before resuming its ordinary direction without any apparent trigger.</p>
+
+<h3>Chapter 3: An Old Property Record</h3>
+<p>A dusty property record, found while researching the anomaly, revealed the date coincided precisely with the original house fire the structure had survived decades earlier, before being rebuilt on the same foundation. Priya has never found a mechanical explanation connecting the two facts. She checks the fan every year on that date regardless, just to watch it happen.</p>
+`
+},
+{
+  title: "The School Hallway That's Exactly Eleven Steps Longer on Fridays",
+  author: "Khyati Srivastava",
+  slug: "the-school-hallway-thats-exactly-eleven-steps-longer-on-fridays",
+  category: "Horror",
+  emoji: "🚪",
+  excerpt: "Dev has counted his steps down the same familiar hallway every single school day out of idle habit. Every day but Friday, it takes the same number of steps. On Fridays, without fail, it takes exactly eleven more.",
+  created_at: "2027-04-25T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Idle Habit</h3>
+<p>Dev had counted his steps down the same familiar hallway between classes for years, purely out of idle habit, the count reliably consistent every single day of the week — except Fridays, when it consistently, inexplicably took exactly eleven more steps to reach the same door.</p>
+
+<h3>Chapter 2: Testing It Deliberately</h3>
+<p>He started measuring more carefully once he noticed the pattern, using a phone pedometer app for precision rather than relying on his own count, and found the discrepancy held steady across months of careful tracking.</p>
+
+<h3>Chapter 3: An Unmeasurable Difference</h3>
+<p>The hallway's physical length, measured directly with an actual tape measure borrowed from the janitor, showed no difference whatsoever on any day of the week. Dev still counts eleven extra steps every single Friday regardless. He's stopped trying to reconcile the math. He's just started, quietly, walking a little more carefully on Fridays.</p>
+`
+},
+{
+  title: "The Spare Key Hidden Under the Same Flowerpot for Thirty Years",
+  author: "Khyati Srivastava",
+  slug: "the-spare-key-hidden-under-the-same-flowerpot-for-thirty-years",
+  category: "Poetry",
+  emoji: "🔑",
+  excerpt: "A warm, nostalgic poem about the small, quiet trust carried in a spare house key, hidden in the same spot for thirty years, through every version of the family that's lived there.",
+  created_at: "2027-04-25T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Spare Key Hidden Under the Same Flowerpot for Thirty Years</h3>
+<p>Thirty years, same terracotta pot,<br/>
+same rusted key in the same small spot,<br/>
+outliving every lock it's opened,<br/>
+outliving every promise ever spoken.</p>
+
+<p>It's let in babysitters, worried aunts,<br/>
+locked-out teenagers, muddy pants,<br/>
+Grandma once, forgetting her own key,<br/>
+laughing at the irony.</p>
+
+<p>New locks came and went through the years,<br/>
+new keys cut, replacing the old, worn gears,<br/>
+but somehow this one stayed the same,<br/>
+still under that pot, still playing its game.</p>
+
+<p>Someday a different family might live here,<br/>
+find that same pot, that same key, drawing near,<br/>
+and wonder who trusted this small hidden spot —<br/>
+thirty years of trust, under one clay pot.</p>
+`
+},
+{
+  title: "The Kitchen Window That Watches the Whole Street Grow Up",
+  author: "Khyati Srivastava",
+  slug: "the-kitchen-window-that-watches-the-whole-street-grow-up",
+  category: "Poetry",
+  emoji: "🪟",
+  excerpt: "A tender poem imagining the kitchen window as a quiet, patient witness to an entire neighborhood's children growing up, one ordinary afternoon at a time, over years of dish-washing and daydreaming.",
+  created_at: "2027-04-25T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Kitchen Window That Watches the Whole Street Grow Up</h3>
+<p>I've watched the Delgado kids learn to bike,<br/>
+watched the Fenwick twins throw their first strike,<br/>
+watched training wheels come off, one by one,<br/>
+watched a whole street's worth of growing up done.</p>
+
+<p>Nobody thinks about a window much,<br/>
+just glass and frame, a passive touch<br/>
+to the ordinary view outside —<br/>
+but I've seen more than most, wide-eyed.</p>
+
+<p>I've seen the same kids, now impossibly tall,<br/>
+teaching their own kids how not to fall<br/>
+off the same bikes, on the same street,<br/>
+history quietly repeating, sweet.</p>
+
+<p>So next time you're washing dishes, glance my way,<br/>
+I'm not just glass — I've held every day<br/>
+this whole street's ever lived through my frame,<br/>
+watching it all grow, watching it stay the same.</p>
+`
+},
 ];
