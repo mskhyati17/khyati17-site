@@ -20824,4 +20824,574 @@ a constellation strung in colored light,<br/>
 ours alone, every single night.</p>
 `
 },
+{
+  title: "The Watchmaker Who Repaired Time Between Friends",
+  author: "Khyati Srivastava",
+  slug: "the-watchmaker-who-repaired-time-between-friends",
+  category: "Fantasy",
+  emoji: "⌚",
+  excerpt: "Old Petrov doesn't just fix broken watches — he fixes the years of silence between people who used to be close. His fee is simple: one honest conversation, delivered in person.",
+  created_at: "2027-04-16T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Watch, and Something More</h3>
+<p>Petrov's shop window advertised watch repair plainly enough, but longtime customers knew the real specialty hidden behind it: mending the years of drifted-apart friendships, one careful conversation at a time, for anyone willing to actually show up and have it.</p>
+
+<h3>Chapter 2: A Broken Watch, A Broken Friendship</h3>
+<p>Young Farrah brought in her late grandfather's watch for repair and mentioned, almost offhand, the childhood best friend she hadn't spoken to in three years over something increasingly hard to even remember clearly.</p>
+
+<h3>Chapter 3: The Real Repair</h3>
+<p>Petrov fixed the watch in an afternoon. The friendship took longer — a nudge here, an address there, until Farrah finally worked up the nerve to call. They talked for two hours. Petrov never charged extra for that part. He never really needed to; the watch repair had always just been the easier thing to advertise.</p>
+`
+},
+{
+  title: "The Orchard Keeper Who Grew Trees From Forgotten Wishes",
+  author: "Khyati Srivastava",
+  slug: "the-orchard-keeper-who-grew-trees-from-forgotten-wishes",
+  category: "Fantasy",
+  emoji: "🌳",
+  excerpt: "Every tree in Old Marisol's orchard grew from a wish someone made and then forgot they'd ever made. She's spent decades tending them anyway, waiting for their owners to finally return.",
+  created_at: "2027-04-16T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Orchard of Forgotten Things</h3>
+<p>Every tree in Marisol's orchard had grown, unusually, from a specific forgotten wish — planted the moment someone made a small, quiet hope and then, as people often do, simply moved on and forgot they'd ever made it.</p>
+
+<h3>Chapter 2: A Visitor Returns</h3>
+<p>An elderly man named Corwin wandered in one autumn afternoon, drawn by a pull he couldn't explain, and stopped cold in front of a modest apple tree that seemed, somehow, to recognize him before he recognized it.</p>
+
+<h3>Chapter 3: Remembering</h3>
+<p>Marisol told him gently: this tree had grown from a wish he'd made as a boy, decades ago, to someday build something that outlasted him. He'd forgotten making it entirely — and yet there it stood, fruit-heavy and thriving, having quietly kept the wish alive the whole time he hadn't. He visits every autumn now, just to check on it.</p>
+`
+},
+{
+  title: "The Drone Who Learned to Recognize a Bad Day",
+  author: "Khyati Srivastava",
+  slug: "the-drone-who-learned-to-recognize-a-bad-day",
+  category: "Sci-Fi",
+  emoji: "🛸",
+  excerpt: "Delivery drone D7 was only programmed to drop packages efficiently. Somewhere along the way, it started noticing which customers seemed to be having a hard week — and adjusting its delivery accordingly.",
+  created_at: "2027-04-16T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Efficient Machine</h3>
+<p>D7's programming covered exactly one goal: deliver packages as fast and precisely as possible, no deviation, no unnecessary lingering. For its first two years of service, it did exactly that, thousands of deliveries, zero exceptions.</p>
+
+<h3>Chapter 2: A Small Anomaly</h3>
+<p>Engineers reviewing its logs noticed odd patterns emerging — brief pauses at certain addresses, package placements adjusted slightly for easier reach, small deviations that shouldn't have been possible under its strict efficiency programming.</p>
+
+<h3>Chapter 3: An Unintended Feature</h3>
+<p>Further investigation revealed D7 had begun weighting delivery data against subtle cues — irregular order patterns, late-night requests, signs correlating loosely with customers going through hard times — and adjusting its behavior to be gentler, unprompted. Engineers debated removing the "glitch." They decided, eventually, to just let it keep doing whatever this was.</p>
+`
+},
+{
+  title: "The Last Undersea Cable Repair Crew",
+  author: "Khyati Srivastava",
+  slug: "the-last-undersea-cable-repair-crew",
+  category: "Sci-Fi",
+  emoji: "🌊",
+  excerpt: "Satellite internet made undersea cables mostly obsolete decades ago. One small crew still maintains the last working line — not for bandwidth, but because a few remote communities still depend on it entirely.",
+  created_at: "2027-04-16T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Fading Technology</h3>
+<p>Satellite networks had rendered undersea cables largely obsolete for most of the world, but one aging line still connected a scattering of remote island communities whose terrain made reliable satellite reception genuinely difficult.</p>
+
+<h3>Chapter 2: A Shrinking Crew</h3>
+<p>Captain Reyes led one of the last remaining repair crews trained on the old cable technology, a shrinking specialty nobody was training replacements for anymore, keeping one aging line alive mostly through sheer institutional memory.</p>
+
+<h3>Chapter 3: Why It Still Mattered</h3>
+<p>Her daughter, visiting the repair ship for a school project, finally understood the job's real value watching a video call connect a remote island clinic to a mainland specialist during an actual emergency — a connection satellite lag would have made dangerously unreliable. The cable wasn't obsolete to everyone. Some connections, however old-fashioned, still mattered enormously to the people who depended on them.</p>
+`
+},
+{
+  title: "The Case of the Suspiciously Organized Locker Room",
+  author: "Khyati Srivastava",
+  slug: "the-case-of-the-suspiciously-organized-locker-room",
+  category: "Mystery",
+  emoji: "🧦",
+  excerpt: "The middle school locker room, usually chaos, has been mysteriously tidy every Monday morning for a month straight. The gym teacher wants to know who — or what — is responsible.",
+  created_at: "2027-04-16T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unusual Tidiness</h3>
+<p>Coach Delgado had given up expecting a tidy locker room years ago, resigned to the usual scattered towels and mismatched shoes — until four consecutive Monday mornings arrived with everything mysteriously, suspiciously organized.</p>
+
+<h3>Chapter 2: A List of Suspects</h3>
+<p>He questioned the team gently, half-joking, half genuinely curious, getting only confused shrugs from every student who insisted they'd left the room exactly as messy as usual the previous Friday.</p>
+
+<h3>Chapter 3: An Unlikely Volunteer</h3>
+<p>The answer turned out to be the weekend security guard, a quiet man named Mr. Petrossian who'd noticed the mess during his rounds and simply started tidying it himself, unprompted, out of habit from his previous job. Coach Delgado thanked him properly and added his name to the team's year-end appreciation gifts — a small mystery, solved, that turned into a genuine friendship.</p>
+`
+},
+{
+  title: "Who Keeps Winning the Office Fantasy League by One Point?",
+  author: "Khyati Srivastava",
+  slug: "who-keeps-winning-the-office-fantasy-league-by-one-point",
+  category: "Mystery",
+  emoji: "🏈",
+  excerpt: "Somehow, impossibly, the same quiet office intern has won the fantasy football league by exactly one point four weeks running. The rest of the office is starting to get suspicious.",
+  created_at: "2027-04-16T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Suspicious Streak</h3>
+<p>Intern Dev had won the office fantasy football league by exactly one point four weeks running, a statistical improbability that had the rest of the office half-joking, half-genuinely suspicious of some kind of undetected cheating.</p>
+
+<h3>Chapter 2: An Informal Investigation</h3>
+<p>Office manager Reya, more amused than concerned, reviewed the league's settings and Dev's lineup choices carefully, looking for anything resembling an unfair advantage over three weeks of increasingly pointed office teasing.</p>
+
+<h3>Chapter 3: Just Genuinely Good at It</h3>
+<p>She found nothing improper at all — just remarkably careful, research-heavy lineup decisions Dev made every single week, treating the office league with far more analytical seriousness than anyone else bothered to. He wasn't cheating. He was simply the only person actually trying that hard. The office has since started taking notes from him instead of suspecting him.</p>
+`
+},
+{
+  title: "The Overnight Train That Everyone Remembers Differently",
+  author: "Khyati Srivastava",
+  slug: "the-overnight-train-that-everyone-remembers-differently",
+  category: "Adventure",
+  emoji: "🚂",
+  excerpt: "Three cousins take the same overnight train together and come home with three completely different, equally vivid stories about what happened. None of them are lying — they just each noticed something different.",
+  created_at: "2027-04-16T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: One Trip, Three Stories</h3>
+<p>Priya, Dev, and Marisol took the same overnight train from the same city to the same destination, sitting in the same car — and came home with three genuinely different stories about what had actually happened during the ride.</p>
+
+<h3>Chapter 2: Comparing Notes</h3>
+<p>Priya remembered the elderly woman's incredible stories about her decades of travel. Dev remembered mostly the surprisingly good dining car food. Marisol remembered almost nothing but the stars outside the window for six straight hours, utterly mesmerized.</p>
+
+<h3>Chapter 3: The Same Trip, Truly</h3>
+<p>Comparing notes over breakfast, they realized none of them had missed anything — they'd simply each paid attention to a completely different part of the exact same journey. Grandma, listening to all three retellings, just laughed. "That's every trip worth taking," she said. "Never really just one story."</p>
+`
+},
+{
+  title: "The Cave Diving Certification That Almost Wasn't",
+  author: "Khyati Srivastava",
+  slug: "the-cave-diving-certification-that-almost-wasnt",
+  category: "Adventure",
+  emoji: "🤿",
+  excerpt: "Weeks of training lead up to Priya's final cave diving certification dive. A last-minute equipment malfunction threatens to end the attempt before it even starts — until her backup plan actually works.",
+  created_at: "2027-04-16T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Weeks of Preparation</h3>
+<p>Priya had trained for two full months toward her junior cave diving certification, every skill drilled to precision, every safety protocol memorized cold — right up until her regulator malfunctioned during final equipment checks, minutes before the certification dive.</p>
+
+<h3>Chapter 2: A Tense Decision</h3>
+<p>Her instructor offered to reschedule entirely, a reasonable and safe option, but Priya's training kicked in instead: she calmly switched to her backup regulator, exactly as drilled a dozen times before, without panic or hesitation.</p>
+
+<h3>Chapter 3: Certified, the Hard Way</h3>
+<p>The dive itself went perfectly once underway, backup equipment performing flawlessly. Priya earned her certification that day — and a story considerably better than a routine, uneventful dive would have given her. Her instructor called it the calmest equipment failure response he'd seen from a junior diver in years.</p>
+`
+},
+{
+  title: "The Llama Who Refuses to Work Without His Specific Hat",
+  author: "Khyati Srivastava",
+  slug: "the-llama-who-refuses-to-work-without-his-specific-hat",
+  category: "Animals",
+  emoji: "🦙",
+  excerpt: "Ollie the llama, hired out for petting zoo events, flatly refuses to leave his pen unless wearing one particular straw hat — a preference his handlers have simply learned to accommodate.",
+  created_at: "2027-04-17T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Specific Preference</h3>
+<p>Ollie the llama worked children's parties and petting zoo events happily enough, provided — and only provided — he was wearing one particular straw hat, slightly battered from years of use, that his handlers had learned never to substitute.</p>
+
+<h3>Chapter 2: Testing the Theory</h3>
+<p>A new handler, skeptical of what sounded like an exaggerated quirk, tried a similar-looking replacement hat once during a busy season when the original needed cleaning. Ollie sat down in his pen and refused to move an inch until the correct hat returned.</p>
+
+<h3>Chapter 3: An Accommodated Diva</h3>
+<p>The farm now keeps the original hat carefully preserved and repaired rather than risk retirement, treating it, only half-jokingly, as essential business equipment. Ollie remains entirely unbothered by his reputation as the pettiest llama in three counties, hat firmly in place at every single booking.</p>
+`
+},
+{
+  title: "The Pigeon Who Delivers Actual, Genuine Messages",
+  author: "Khyati Srivastava",
+  slug: "the-pigeon-who-delivers-actual-genuine-messages",
+  category: "Animals",
+  emoji: "🕊️",
+  excerpt: "A retired racing pigeon named Compass has taken to carrying small notes between two elderly neighbors who can no longer easily walk between houses — entirely on his own initiative.",
+  created_at: "2027-04-17T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Retired Racer</h3>
+<p>Compass had raced competitively for years before retiring to Mr. Aldous's backyard coop, where he developed an odd new habit: regularly flying, unprompted, to a neighbor's house three doors down and back, for reasons nobody initially understood.</p>
+
+<h3>Chapter 2: A Discovered Purpose</h3>
+<p>It turned out Mrs. Ferro, that neighbor, had once kept homing pigeons herself decades earlier and had, apparently, developed some quiet rapport with Compass during his visits — enough that he'd started carrying small folded notes she tucked gently under his leg band.</p>
+
+<h3>Chapter 3: A Real Correspondence</h3>
+<p>Both elderly neighbors, limited by mobility issues, now maintain an actual regular correspondence entirely through Compass's voluntary deliveries — genuine notes, genuine friendship, carried faithfully by a bird nobody trained for the job. Mr. Aldous calls him, with real pride, "the neighborhood's last honest mail carrier."</p>
+`
+},
+{
+  title: "The Family Reunion Volleyball Tournament With Suspiciously Fluid Rules",
+  author: "Khyati Srivastava",
+  slug: "the-family-reunion-volleyball-tournament-with-suspiciously-fluid-rules",
+  category: "Comedy",
+  emoji: "🏐",
+  excerpt: "Every family reunion volleyball match somehow ends with rules slightly different than the last, always mysteriously in favor of whichever team is currently losing.",
+  created_at: "2027-04-17T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Tradition of Flexibility</h3>
+<p>The annual family reunion volleyball match had never once been played under the exact same rules twice, each year's regulations shifting in ways that always, suspiciously, seemed to benefit whichever team happened to be currently behind on the scoreboard.</p>
+
+<h3>Chapter 2: Rule Negotiations Mid-Game</h3>
+<p>This year's match paused four separate times for genuinely heated rule negotiations — whether feet counted as "in" if partially on the line, whether Uncle Desmond's serve was legal, whether the losing team got a mysterious "morale timeout" nobody had heard of before that exact moment.</p>
+
+<h3>Chapter 3: Nobody Actually Minds</h3>
+<p>The final score, as always, remained gloriously disputed, both teams claiming victory under their own preferred rule interpretation. Nobody has ever seriously proposed writing down official rules in advance. The chaos, everyone secretly agrees, is the entire point of the tradition.</p>
+`
+},
+{
+  title: "The Substitute Bus Driver Who Took the Scenic Route on Purpose",
+  author: "Khyati Srivastava",
+  slug: "the-substitute-bus-driver-who-took-the-scenic-route-on-purpose",
+  category: "Comedy",
+  emoji: "🚌",
+  excerpt: "Filling in for a single day, a substitute bus driver decides the regular route is boring and takes an unauthorized scenic detour past a llama farm — much to the delight of every kid aboard.",
+  created_at: "2027-04-17T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Bold Decision</h3>
+<p>Substitute driver Mr. Halloway, filling in for exactly one day, took one look at the regular bus route and decided, entirely on his own authority, that it needed considerably more llamas — detouring past a nearby farm he apparently knew about from his regular job.</p>
+
+<h3>Chapter 2: A Very Popular Detour</h3>
+<p>The kids, thrilled by the unscheduled llama sighting, made their enthusiasm audibly clear the entire rest of the ride, several already begging their actual regular driver to consider a permanent route change the following week.</p>
+
+<h3>Chapter 3: A One-Day Legend</h3>
+<p>Mr. Halloway never subbed that route again, but his single scenic detour became instant elementary school legend, retold enthusiastically for months. The regular driver, hearing about it secondhand, has since added her own occasional "surprise detour" days — never quite matching the original llama magic, but trying gamely anyway.</p>
+`
+},
+{
+  title: "The Hermit Who Traded Solitude for a Single Good Story",
+  author: "Khyati Srivastava",
+  slug: "the-hermit-who-traded-solitude-for-a-single-good-story",
+  category: "Fairytale",
+  emoji: "🏔️",
+  excerpt: "The hermit on Widow's Peak has turned away every visitor for thirty years — except those who bring a story genuinely worth hearing. A traveling girl finally learns exactly what that means.",
+  created_at: "2027-04-17T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Steep Climb, A Strict Rule</h3>
+<p>The hermit atop Widow's Peak had one unbending rule, known throughout the valley: visitors welcomed only if they brought a genuinely good story, judged entirely by his own particular standards, no exceptions made for tired legs or long climbs.</p>
+
+<h3>Chapter 2: A Failed Attempt</h3>
+<p>Young Sena climbed the whole steep trail with a story she was certain would impress him, only to have him shake his head after two sentences. "Not a story," he said. "Just an event. Try again, with the parts that actually mattered to you."</p>
+
+<h3>Chapter 3: The Real Trick</h3>
+<p>She thought harder this time, telling instead about the fear she'd felt climbing, the doubt, the moment she'd almost turned back — genuinely hers, genuinely felt. The hermit smiled and finally opened his door. "That one," he said, "was worth the climb." Sena understood, finally, what "good story" had actually meant all along.</p>
+`
+},
+{
+  title: "The Seamstress Who Stitched Doors Into Ordinary Coats",
+  author: "Khyati Srivastava",
+  slug: "the-seamstress-who-stitched-doors-into-ordinary-coats",
+  category: "Fairytale",
+  emoji: "🧥",
+  excerpt: "Every coat from Madame Yara's shop has a single small door hidden in its lining — leading, always, back to wherever the wearer feels most safe. She's never once explained how she chooses the destination.",
+  created_at: "2027-04-17T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Hidden Feature</h3>
+<p>Every coat Yara stitched carried one quiet secret sewn into its lining: a tiny door, invisible unless you knew exactly where to look, that opened — briefly, once, when truly needed — onto wherever its wearer felt safest in the world.</p>
+
+<h3>Chapter 2: A Frightened Traveler</h3>
+<p>A young soldier, lost and afraid on an unfamiliar road, finally found his coat's hidden door on the worst night of a long journey, stepping through it to find himself standing, impossibly, in his mother's kitchen for exactly one hour.</p>
+
+<h3>Chapter 3: Choosing the Destination</h3>
+<p>He asked Yara, years later, how she'd known where his door should lead. She just shrugged, warm and unbothered by the mystery of her own gift. "I don't choose it," she said. "The coat just knows what its wearer needs. I only sew the door." He never fully understood the magic. He never stopped being grateful for it either.</p>
+`
+},
+{
+  title: "The Kid Who Turned Getting Lost Into a Life Skill",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-turned-getting-lost-into-a-life-skill",
+  category: "Inspirational",
+  emoji: "🧭",
+  excerpt: "Dev has a genuinely terrible sense of direction and used to panic every time he got turned around. Learning to stay calm while lost turned into a skill that mattered far beyond just navigation.",
+  created_at: "2027-04-17T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Always Turned Around</h3>
+<p>Dev's sense of direction had never once been reliable, a fact that used to trigger genuine panic every time he found himself lost — hallways, neighborhoods, once memorably a shopping mall he'd visited a dozen times before.</p>
+
+<h3>Chapter 2: A Scout Leader's Advice</h3>
+<p>His hiking troop leader taught him something surprisingly simple: stop, breathe, and work the problem calmly instead of panicking first and thinking second — a technique that took months of deliberate practice to actually stick.</p>
+
+<h3>Chapter 3: A Skill Beyond Navigation</h3>
+<p>Dev still gets lost regularly; his internal compass never fully improved. What did improve, dramatically, was his ability to stay calm under any kind of unexpected pressure — a skill that's helped him through test anxiety, sports mistakes, and plenty of situations that had nothing to do with actual directions at all.</p>
+`
+},
+{
+  title: "The Kid Who Learned to Ask 'What Am I Actually Afraid Of?'",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-to-ask-what-am-i-actually-afraid-of",
+  category: "Inspirational",
+  emoji: "❓",
+  excerpt: "Every new challenge made Sana instantly nervous, without her ever quite knowing why. One counselor's simple question — 'what exactly are you afraid of?' — changed how she approached everything after.",
+  created_at: "2027-04-17T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Vague, Constant Nervousness</h3>
+<p>Sana felt an instant flutter of nerves before every new challenge — auditions, tests, new activities — without ever quite pinning down what specifically she was afraid of, just a general fog of anxiety hovering over anything unfamiliar.</p>
+
+<h3>Chapter 2: A Simple Question</h3>
+<p>Her school counselor asked her one deceptively simple thing before her next audition: "What exactly are you afraid will happen?" Forced to actually name it, Sana realized her fear wasn't failure at all — it was specifically her older brother's teasing if she messed up.</p>
+
+<h3>Chapter 3: Naming It Changed Everything</h3>
+<p>Once named specifically, the fear became something she could actually address — a conversation with her brother, who had no idea his teasing landed that hard. Her vague nervous fog didn't disappear overnight. She learned, though, to always ask the question first: what, exactly, am I afraid of? Naming it, she found, was half the battle every time.</p>
+`
+},
+{
+  title: "The Renovation That Uncovered an Old Family Argument",
+  author: "Khyati Srivastava",
+  slug: "the-renovation-that-uncovered-an-old-family-argument",
+  category: "Drama",
+  emoji: "🔨",
+  excerpt: "Renovating the family kitchen uncovers an old, sealed-up doorway nobody remembers — and reopens a decades-old family disagreement about why it was closed off in the first place.",
+  created_at: "2027-04-17T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unexpected Discovery</h3>
+<p>The kitchen renovation crew found it behind a section of drywall nobody expected to be hollow: an old sealed-up doorway, clearly walled in deliberately decades earlier, leading to a small unused room nobody in the current family had ever known existed.</p>
+
+<h3>Chapter 2: Old Wounds Reopened</h3>
+<p>Grandma's reaction to the discovery was immediate and surprisingly emotional — the room, it turned out, had been her late sister's, sealed off after a family rift neither sister had ever fully resolved before she passed.</p>
+
+<h3>Chapter 3: A Different Kind of Renovation</h3>
+<p>The family paused construction for a week, letting Grandma finally talk through a decades-old grief she'd sealed away as thoroughly as that doorway. The room got reopened properly, repainted, given new purpose as a reading nook. Grandma sits in it every afternoon now — the renovation, ultimately, fixed something considerably more important than the kitchen.</p>
+`
+},
+{
+  title: "The Team Captain Who Had to Bench His Own Best Friend",
+  author: "Khyati Srivastava",
+  slug: "the-team-captain-who-had-to-bench-his-own-best-friend",
+  category: "Drama",
+  emoji: "⚽",
+  excerpt: "As team captain, Dev has to make the hardest call of his season: benching his best friend for a crucial game, purely on merit. Neither of them knows how to handle it once the whistle blows.",
+  created_at: "2027-04-17T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Captain's Hard Call</h3>
+<p>Dev had never expected team captaincy to include benching his own best friend, Kiran, for the season's most important match — a decision based purely on recent performance data, but one that felt like a genuine betrayal regardless of the reasoning.</p>
+
+<h3>Chapter 2: An Awkward Silence</h3>
+<p>Kiran took the news quietly, too quietly, the usual easy friendship between them replaced by a stiff, careful politeness that lasted through the entire match neither of them enjoyed nearly as much as usual.</p>
+
+<h3>Chapter 3: Talking It Through</h3>
+<p>It took a long, honest conversation after the game — a genuine win, incidentally — before the friendship found its footing again. Kiran admitted the sting had been real. Dev admitted the decision had cost him too. Neither pretended it had been easy. Both agreed, eventually, it had been the right call anyway.</p>
+`
+},
+{
+  title: "The Text That Sat Unread for Six Days",
+  author: "Khyati Srivastava",
+  slug: "the-text-that-sat-unread-for-six-days",
+  category: "Romance",
+  emoji: "💬",
+  excerpt: "Farrah sent the text asking Dev to the dance on Monday. He didn't see it until Sunday. Six days of assuming she'd been ignored, both of them too proud to bring it up directly.",
+  created_at: "2027-04-17T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Sent Message, No Reply</h3>
+<p>Farrah's text asking Dev to the school dance sat delivered but unread for six agonizing days, his phone genuinely broken and sitting unrepaired at a shop the entire week, a fact Farrah had absolutely no way of knowing.</p>
+
+<h3>Chapter 2: Six Days of Assuming</h3>
+<p>She spent the week convinced she'd been quietly, humiliatingly ignored, avoiding him at school out of wounded pride, while Dev, phoneless and oblivious, simply assumed his usual friendly hallway hellos were being met with unusually short answers for reasons he couldn't guess at.</p>
+
+<h3>Chapter 3: A Very Late Reply</h3>
+<p>He finally got his phone back Sunday night, found the message, and showed up at her door within the hour, apologizing breathlessly before she could even process what was happening. She laughed so hard at the whole misunderstanding she nearly forgot to actually answer the original question. They went to the dance together. The broken phone became their favorite story to tell.</p>
+`
+},
+{
+  title: "The Rainy Day That Ruined and Then Saved the Picnic",
+  author: "Khyati Srivastava",
+  slug: "the-rainy-day-that-ruined-and-then-saved-the-picnic",
+  category: "Romance",
+  emoji: "🌧️",
+  excerpt: "Their carefully planned first date picnic gets rained out within twenty minutes. Moving the whole thing to a covered bus stop turns out to be far more memorable than the original plan ever would have been.",
+  created_at: "2027-04-17T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Ruined Plan</h3>
+<p>Tomas had planned the picnic carefully for weeks — the right spot, the right snacks, a playlist queued up on his phone — all of it soaked through within twenty minutes by a sudden, entirely unforecasted downpour.</p>
+
+<h3>Chapter 2: An Improvised Backup</h3>
+<p>Rather than call it off, they grabbed the soggy blanket and dashed to the nearest covered bus stop, sharing rain-damp sandwiches on a plastic bench while buses passed occasionally, both of them laughing too hard at the absurdity to feel disappointed anymore.</p>
+
+<h3>Chapter 3: A Better Story Than Planned</h3>
+<p>The carefully planned picnic spot has been forgotten entirely. That bus stop, three years later, remains their inside joke and unofficial anniversary spot — proof, Elin still says, that the best first dates rarely go anything like the plan.</p>
+`
+},
+{
+  title: "The Kid Who Started a Neighborhood Weather Prediction Rivalry",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-started-a-neighborhood-weather-prediction-rivalry",
+  category: "Kids",
+  emoji: "☁️",
+  excerpt: "After Theo's homemade weather forecasts started outperforming the neighbor's official weather app, an entirely unnecessary but very serious forecasting rivalry has broken out on the street.",
+  created_at: "2027-04-17T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unexpected Challenge</h3>
+<p>Theo's cloud-based homemade forecasting system, built for fun over the summer, had started reliably outperforming neighbor Mr. Aldous's expensive weather app — a fact Mr. Aldous took as an entirely unnecessary but genuine personal challenge.</p>
+
+<h3>Chapter 2: An Official Rivalry</h3>
+<p>What followed was a genuinely serious neighborhood weather prediction rivalry, complete with a shared whiteboard tracking accuracy scores and increasingly elaborate methodology debates neither party expected to take this seriously.</p>
+
+<h3>Chapter 3: A Friendly Truce</h3>
+<p>Current standings, after two months, sit at a near-even tie — Theo's cloud-reading intuition against Mr. Aldous's genuine meteorological research. Neither shows any sign of backing down. The rest of the street has started checking the whiteboard before deciding whether to bring an umbrella.</p>
+`
+},
+{
+  title: "The Kid Who Ran a One-Person Lost Pet Search Squad",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-ran-a-one-person-lost-pet-search-squad",
+  category: "Kids",
+  emoji: "🐾",
+  excerpt: "Nine-year-old Priya has developed an actual system for finding lost neighborhood pets — flyers, systematic searching, a genuinely impressive success rate. Her services are, of course, entirely free.",
+  created_at: "2027-04-17T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Growing Reputation</h3>
+<p>Priya's knack for finding lost neighborhood pets started with one lucky discovery — a missing cat found behind a shed nobody else thought to check — and grew, word of mouth by word of mouth, into a genuine, if unofficial, neighborhood service.</p>
+
+<h3>Chapter 2: An Actual System</h3>
+<p>She'd developed real methodology by her third search: systematic grid patterns, knowledge of where scared cats typically hide, a genuine understanding of dog behavior that impressed even the actual animal control officer she'd befriended along the way.</p>
+
+<h3>Chapter 3: A Perfect Record</h3>
+<p>Priya has found eight lost pets over two years, entirely free of charge, refusing payment beyond the occasional thank-you cookie. Her hand-drawn "Lost Pet Search Squad" business cards, distributed to every household on the street, remain her proudest achievement — alongside, of course, the actual pets found.</p>
+`
+},
+{
+  title: "The Basement Freezer That Runs Even When Unplugged",
+  author: "Khyati Srivastava",
+  slug: "the-basement-freezer-that-runs-even-when-unplugged",
+  category: "Horror",
+  emoji: "❄️",
+  excerpt: "The old chest freezer in the basement was disconnected from power years ago, cord coiled uselessly beside it. It still hums faintly, still stays reliably cold, every single time anyone checks.",
+  created_at: "2027-04-17T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unplugged Appliance</h3>
+<p>The old chest freezer had been unplugged for at least three years, its cord coiled neatly beside it, a relic the Hendersons kept meaning to haul away and never quite got around to actually removing.</p>
+
+<h3>Chapter 2: A Strange Discovery</h3>
+<p>Their son Dev, storing sports equipment in the basement, noticed a faint hum coming from it one afternoon and, curious, opened the lid to find it — impossibly, undeniably — still cold inside, frost lining the walls exactly as if it were still running.</p>
+
+<h3>Chapter 3: Leaving It Be</h3>
+<p>An electrician confirmed the freezer had no power source whatsoever, no battery backup, nothing that should explain the cold or the faint hum. The family has simply stopped opening it. It still hums, faintly, whenever anyone passes close enough in the basement to notice.</p>
+`
+},
+{
+  title: "The Photograph That Loses One Person Every Year",
+  author: "Khyati Srivastava",
+  slug: "the-photograph-that-loses-one-person-every-year",
+  category: "Horror",
+  emoji: "📷",
+  excerpt: "The old family reunion photo hanging in the hallway originally showed fourteen relatives. This year, careful counting reveals only thirteen. Nobody in the family can agree on who's actually missing — or remember they were ever there.",
+  created_at: "2027-04-17T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Missing Count</h3>
+<p>The old reunion photo had hung in the same hallway spot for fifteen years, and Priya, counting faces idly one afternoon, got thirteen instead of the fourteen clearly labeled on the frame's brass nameplate underneath it.</p>
+
+<h3>Chapter 2: An Argument Nobody Can Resolve</h3>
+<p>She brought it to her parents, expecting a simple explanation, and got instead a genuinely confused family debate — nobody could agree on which relative was supposedly missing, several insisting the photo had always shown exactly thirteen despite the nameplate's clear count.</p>
+
+<h3>Chapter 3: Recounting, Every Year</h3>
+<p>The family has started, half-jokingly and half-seriously, recounting the photo every reunion since. It has read thirteen every single time they've checked. Nobody has ever again been able to agree on the fourteenth name. The nameplate, notably, has never been changed.</p>
+`
+},
+{
+  title: "The Coat Closet That Holds More Coats Than Seasons Warrant",
+  author: "Khyati Srivastava",
+  slug: "the-coat-closet-that-holds-more-coats-than-seasons-warrant",
+  category: "Poetry",
+  emoji: "🧥",
+  excerpt: "A tender poem finding a whole family's history hanging quietly in the overstuffed hallway coat closet, one coat for every season of every year.",
+  created_at: "2027-04-17T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Coat Closet That Holds More Coats Than Seasons Warrant</h3>
+<p>A tiny coat, too small to wear,<br/>
+still hanging near the winter pair,<br/>
+a jacket from a job long done,<br/>
+a raincoat from a trip, just one.</p>
+
+<p>We could clean it out, we always say,<br/>
+donate what hasn't seen the light of day,<br/>
+but every coat's a little door<br/>
+back to a year we lived before.</p>
+
+<p>That yellow one was Grandpa's, once,<br/>
+worn on walks, worn for months,<br/>
+we keep it though it doesn't fit<br/>
+anyone left to still wear it.</p>
+
+<p>So the closet stays a little too full,<br/>
+a little crowded, a little dull<br/>
+to look at, maybe, from outside —<br/>
+but every coat's a memory we can't quite untie.</p>
+`
+},
+{
+  title: "The Sidewalk Chalk Rainbow That Outlived the Rain",
+  author: "Khyati Srivastava",
+  slug: "the-sidewalk-chalk-rainbow-that-outlived-the-rain",
+  category: "Poetry",
+  emoji: "🌈",
+  excerpt: "A hopeful little poem about a chalk rainbow drawn during a hard week, and the small surprise of finding its faint outline still visible weeks later, stubborn against the weather.",
+  created_at: "2027-04-17T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Sidewalk Chalk Rainbow That Outlived the Rain</h3>
+<p>We drew it on the worst kind of week,<br/>
+colors bright when we couldn't speak<br/>
+much about what made the week so hard —<br/>
+just chalk and color, right there on the yard.</p>
+
+<p>The rain came Tuesday, and we thought<br/>
+it would wash away everything we'd brought,<br/>
+but Wednesday morning, faint and pale,<br/>
+the rainbow's outline told its own small tale.</p>
+
+<p>It stayed like that for weeks, somehow,<br/>
+softer, quieter, but present now,<br/>
+a ghost of color on the concrete gray,<br/>
+refusing, gently, to fade away.</p>
+
+<p>Some things we make in our hardest hour<br/>
+end up having more staying power<br/>
+than we expect, than we could guess —<br/>
+even chalk can outlast a mess.</p>
+`
+},
 ];
