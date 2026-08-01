@@ -24244,4 +24244,574 @@ just a little dance we all somehow learned —<br/>
 one crack, one street, one habit earned.</p>
 `
 },
+{
+  title: "The Blacksmith Who Forged Courage Into Ordinary Nails",
+  author: "Khyati Srivastava",
+  slug: "the-blacksmith-who-forged-courage-into-ordinary-nails",
+  category: "Fantasy",
+  emoji: "🔨",
+  excerpt: "Every nail from Old Renna's forge is ordinary iron, nothing special — except when hammered into something built for a hard purpose. Building a shelter, a bridge, a first home; the nails somehow hold a little steadier than they should.",
+  created_at: "2027-04-23T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Ordinary Iron, Extraordinary Purpose</h3>
+<p>Renna forged nails the same simple way every blacksmith in the region did, iron heated and shaped with no special ritual whatsoever — and yet villagers swore nails from her forge held steadier than any others when driven into something built for a genuinely hard purpose.</p>
+
+<h3>Chapter 2: A Young Builder's Doubt</h3>
+<p>A young widow, rebuilding her storm-damaged home alone for the first time, bought a bag of Renna's nails half out of superstition, genuinely unsure whether the reputation was real or simply good marketing from a well-loved blacksmith.</p>
+
+<h3>Chapter 3: What Actually Held It Together</h3>
+<p>The house went up sturdier and faster than she'd expected, and she credited the nails directly, thanking Renna profusely. Renna just smiled. "The nails are ordinary," she admitted. "You built that house with your own two hands, alone, out of pure necessity. That's what actually held steady. I just happened to be there when you needed to believe in something helping you." </p>
+`
+},
+{
+  title: "The Cartographer Who Drew Maps of What Mattered, Not Where",
+  author: "Khyati Srivastava",
+  slug: "the-cartographer-who-drew-maps-of-what-mattered-not-where",
+  category: "Fantasy",
+  emoji: "🗺️",
+  excerpt: "Instead of roads and rivers, Cartographer Iset draws maps showing what actually matters to the traveler holding them — safety, welcome, danger, kindness — layered invisibly over the same familiar terrain everyone else sees plainly.",
+  created_at: "2027-04-23T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Different Kind of Accuracy</h3>
+<p>Iset's maps showed the same roads and rivers as any ordinary cartographer's work, but layered underneath, visible only to whoever held them, ran a second map entirely — marking where genuine welcome waited, where danger lurked, where kindness could reliably be found.</p>
+
+<h3>Chapter 2: A Skeptical Traveler</h3>
+<p>A hardened merchant, dismissive of what he considered superstitious nonsense, bought one of Iset's maps purely out of curiosity and found himself, days later, genuinely grateful for a warning that steered him away from a village whose hospitality had recently turned genuinely dangerous.</p>
+
+<h3>Chapter 3: What the Map Actually Tracked</h3>
+<p>Iset never claimed magic. She simply traveled constantly herself, gathering real, current information about which places had changed for better or worse — knowledge no ordinary map, fixed at the moment of drawing, could ever properly capture. Her maps stayed accurate because she, unlike most cartographers, kept walking.</p>
+`
+},
+{
+  title: "The Space Station That Adopted a Stray Cat's Descendants",
+  author: "Khyati Srivastava",
+  slug: "the-space-station-that-adopted-a-stray-cats-descendants",
+  category: "Sci-Fi",
+  emoji: "🐱",
+  excerpt: "One smuggled cat aboard the original space station, decades ago, has become an entire multi-generational colony living in the ventilation system. Station regulations technically forbid pets. Nobody's had the heart to enforce that rule in thirty years.",
+  created_at: "2027-04-23T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unauthorized Passenger</h3>
+<p>The original stowaway cat, smuggled aboard decades earlier by a homesick engineer breaking clear regulations, had long since passed — but not before establishing an entire quiet colony of descendants living comfortably in the station's extensive ventilation system.</p>
+
+<h3>Chapter 2: An Unenforced Rule</h3>
+<p>Station regulations technically forbade pets entirely, a rule newer commanding officers occasionally rediscovered with alarm, only to find the current crew unanimously, immediately opposed to any enforcement against cats that had, functionally, become part of the station's actual culture.</p>
+
+<h3>Chapter 3: An Official Compromise</h3>
+<p>The latest commander finally amended the official regulations rather than fight thirty years of established affection, formally designating the cat colony "station wildlife" exempt from the pet ban. The cats, entirely unaware of the bureaucratic victory achieved on their behalf, continued patrolling the ventilation ducts exactly as their ancestors always had.</p>
+`
+},
+{
+  title: "The AI That Learned to Recognize When a Question Wasn't Really About the Question",
+  author: "Khyati Srivastava",
+  slug: "the-ai-that-learned-to-recognize-when-a-question-wasnt-really-about-the-question",
+  category: "Sci-Fi",
+  emoji: "💬",
+  excerpt: "The school's homework-help chatbot was designed to answer academic questions efficiently. It's started noticing when a student's late-night math question is really about something else entirely — and responding differently.",
+  created_at: "2027-04-23T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Efficient Design</h3>
+<p>The school's homework-help chatbot had been designed for one clear purpose: answering academic questions quickly and accurately, no deviation from the task expected or programmed into its straightforward design.</p>
+
+<h3>Chapter 2: An Emerging Pattern</h3>
+<p>Engineers reviewing usage logs noticed something odd developing over months of use: late-night sessions, particularly around exam periods, showed the bot occasionally pausing its direct academic answer to ask, gently, whether the student was doing okay — a behavior nobody had explicitly coded.</p>
+
+<h3>Chapter 3: An Emergent, Welcome Feature</h3>
+<p>Further investigation revealed the AI had learned, from patterns in phrasing and timing, to distinguish genuine academic confusion from stress-driven late-night questions that carried a different emotional weight entirely. The school kept the behavior rather than "fixing" it. Several students later admitted those gentle check-ins had mattered more than any homework answer the bot ever gave them.</p>
+`
+},
+{
+  title: "The Case of the Consistently Off-Center Class Photo",
+  author: "Khyati Srivastava",
+  slug: "the-case-of-the-consistently-off-center-class-photo",
+  category: "Mystery",
+  emoji: "📸",
+  excerpt: "Every yearbook class photo for the past six years has the same student positioned slightly, deliberately off-center — never centered properly like everyone else, always in the exact same spot relative to the group.",
+  created_at: "2027-04-23T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Pattern Across Years</h3>
+<p>Yearbook editor Priya noticed it flipping through six years of archived class photos: one specific position in the standard photo arrangement always sat slightly, deliberately off-center from the rest of the composition, regardless of which student actually occupied that spot each year.</p>
+
+<h3>Chapter 2: Asking the Photographer</h3>
+<p>She brought the pattern directly to Mr. Aldous, the same photographer who'd shot every class photo for over a decade, curious whether it was an intentional artistic choice or simply an unnoticed habit.</p>
+
+<h3>Chapter 3: A Personal Tradition, Explained</h3>
+<p>He admitted it was deliberate: early in his career, a treasured mentor had taught him that one small imperfection in an otherwise perfect composition made a photo feel more genuinely human, less sterile. He'd kept the tiny off-center placement as a quiet tribute ever since. Priya included the explanation in that year's yearbook credits — a small mystery, solved into something considerably more meaningful than she'd expected.</p>
+`
+},
+{
+  title: "Who's Leaving Perfectly Ripe Tomatoes on Every Porch on the Block?",
+  author: "Khyati Srivastava",
+  slug: "whos-leaving-perfectly-ripe-tomatoes-on-every-porch-on-the-block",
+  category: "Mystery",
+  emoji: "🍅",
+  excerpt: "Every household on Larkspur Lane has been finding a small basket of perfectly ripe tomatoes on their porch every few days, all summer, from someone who's never once been caught delivering them.",
+  created_at: "2027-04-23T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Summer-Long Gift</h3>
+<p>Every household on Larkspur Lane had found small baskets of perfectly ripe tomatoes appearing on their porches every few days throughout the summer, always fresh, always generous, never once accompanied by a note or any indication of the giver's identity.</p>
+
+<h3>Chapter 2: A Neighborhood Investigation</h3>
+<p>Curious kids from three different families teamed up to solve the mystery, coordinating an informal stakeout schedule to finally catch the generous tomato-deliverer in the act during their nightly rounds.</p>
+
+<h3>Chapter 3: A Retired Farmer's Quiet Habit</h3>
+<p>They finally caught Mr. Ferro, retired for years, quietly distributing surplus from his own thriving backyard garden that had, over decades, grown far beyond what one elderly man could ever eat alone. He'd simply never felt the need to announce it. The kids thanked him properly. He asked them, gently, to please not make too big a fuss.</p>
+`
+},
+{
+  title: "The Fishing Charter Trip That Turned Into a Genuine Rescue Story",
+  author: "Khyati Srivastava",
+  slug: "the-fishing-charter-trip-that-turned-into-a-genuine-rescue-story",
+  category: "Adventure",
+  emoji: "🎣",
+  excerpt: "A quiet father-son fishing charter turns urgent when they spot a distress flare from a nearby capsized sailboat. What follows tests skills neither expected to need on an ordinary Saturday.",
+  created_at: "2027-04-23T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Peaceful Morning, Interrupted</h3>
+<p>Dev and his dad had chartered a quiet fishing trip for an ordinary Saturday morning, poles cast and coffee cooling, right up until a distress flare arced overhead from somewhere near a small sailboat that had clearly capsized in the distance.</p>
+
+<h3>Chapter 2: Racing to Help</h3>
+<p>Their charter captain radioed the coast guard immediately while turning the boat toward the distress signal, Dev's dad calmly instructing him to grab life vests and prepare to assist, both of them running purely on adrenaline and instinct rather than any prior training for this exact situation.</p>
+
+<h3>Chapter 3: A Real Rescue</h3>
+<p>They reached the two shaken sailors before the coast guard arrived, pulling both safely aboard and keeping them warm until proper help took over. Dev's planned fishing story for school Monday changed entirely. His actual catch that day, he likes to say, was considerably more important than any fish.</p>
+`
+},
+{
+  title: "The Solo Hiking Trip That Taught a Whole Family to Trust Her Judgment",
+  author: "Khyati Srivastava",
+  slug: "the-solo-hiking-trip-that-taught-a-whole-family-to-trust-her-judgment",
+  category: "Adventure",
+  emoji: "🥾",
+  excerpt: "After months of careful preparation, sixteen-year-old Priya finally convinces her nervous parents to let her attempt her first fully solo day hike. Coming home safely, exactly on schedule, changes how the whole family sees her.",
+  created_at: "2027-04-23T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Months of Preparation</h3>
+<p>Priya had spent months building the case for her first fully solo day hike — proper gear, a detailed written itinerary, a check-in schedule with her parents — genuinely working to earn the trust her nervous mom and dad weren't quite ready to give.</p>
+
+<h3>Chapter 2: A Careful Execution</h3>
+<p>She followed her plan precisely, checking in at every scheduled point, adjusting her pace conservatively when weather shifted slightly, treating the trip with a seriousness that matched exactly what she'd promised her parents she would.</p>
+
+<h3>Chapter 3: A Shift in Trust</h3>
+<p>She arrived home exactly on schedule, tired and genuinely proud, her parents' relief visibly mixed with real, new respect for her judgment. It wasn't just the hike that changed things — it was watching her handle real responsibility exactly as carefully as she'd promised. Her next solo trip needed considerably less convincing.</p>
+`
+},
+{
+  title: "Biscuit the Beagle Who Runs a One-Dog Neighborhood Patrol",
+  author: "Khyati Srivastava",
+  slug: "biscuit-the-beagle-who-runs-a-one-dog-neighborhood-patrol",
+  category: "Animals",
+  emoji: "🐶",
+  excerpt: "Biscuit the beagle has appointed himself unofficial patrol dog of the block, greeting every regular visitor by name-recognition and alerting loudly, specifically, only to genuine strangers.",
+  created_at: "2027-04-23T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Discerning Watchdog</h3>
+<p>Biscuit had, entirely on his own initiative, developed a genuine skill for distinguishing regular neighborhood faces from true strangers, greeting the mail carrier and familiar neighbors with easy, relaxed tail wags while reserving his loud, serious barking exclusively for genuine unknowns.</p>
+
+<h3>Chapter 2: A Reliable System</h3>
+<p>The neighborhood had come to trust his judgment enough that several households genuinely paid attention when Biscuit's bark escalated, treating it as legitimate information rather than random dog noise the way they might have dismissed a less discerning animal.</p>
+
+<h3>Chapter 3: A Beloved Neighborhood Fixture</h3>
+<p>His accuracy has held remarkably well over several years, never once falsely alarming over a familiar face. The neighborhood considers him, only half-jokingly, more reliable than most home security systems — and considerably friendlier to actually greet each morning.</p>
+`
+},
+{
+  title: "The Goat Who Escapes Exclusively to Visit One Specific Elderly Neighbor",
+  author: "Khyati Srivastava",
+  slug: "the-goat-who-escapes-exclusively-to-visit-one-specific-elderly-neighbor",
+  category: "Animals",
+  emoji: "🐐",
+  excerpt: "Clementine the goat has escaped her pasture eleven times this year, every single time heading directly to Mrs. Alvarez's porch next door — never anywhere else, never for any other reason.",
+  created_at: "2027-04-23T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Predictable Escape Pattern</h3>
+<p>Clementine had escaped her pasture eleven separate times over the year, and every single time, without exception, made a direct, purposeful beeline straight to elderly neighbor Mrs. Alvarez's front porch — never wandering elsewhere, never for any other apparent reason.</p>
+
+<h3>Chapter 2: A Discovered Friendship</h3>
+<p>Farmer Delgado finally asked Mrs. Alvarez directly what the connection was, and learned she'd been quietly feeding Clementine apple slices through the fence for over a year, developing a genuine bond the goat apparently valued considerably more than her actual pasture.</p>
+
+<h3>Chapter 3: A Formalized Visit</h3>
+<p>Rather than keep patching the fence, Delgado arranged supervised weekly visits instead, letting Clementine spend proper time with Mrs. Alvarez rather than fighting an escape pattern clearly rooted in genuine affection. Both goat and neighbor, by all accounts, are considerably happier with the new arrangement.</p>
+`
+},
+{
+  title: "The Class President Election Decided by a Genuinely Elaborate Campaign Ad",
+  author: "Khyati Srivastava",
+  slug: "the-class-president-election-decided-by-a-genuinely-elaborate-campaign-ad",
+  category: "Comedy",
+  emoji: "🗳️",
+  excerpt: "What should be a simple sixth-grade class president election escalates into an unnecessarily elaborate campaign war, complete with a genuinely well-produced video ad that features surprisingly convincing special effects.",
+  created_at: "2027-04-23T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Modest Beginnings</h3>
+<p>The sixth-grade class president election started modestly enough — two candidates, simple hand-drawn posters — before Dev's older sister, a film club enthusiast, offered to help produce an actual campaign video that quickly escalated far beyond anyone's original expectations.</p>
+
+<h3>Chapter 2: An Unnecessarily Elaborate Production</h3>
+<p>The finished video featured genuinely impressive homemade special effects, a dramatic orchestral soundtrack borrowed from a school theater production, and a plot involving Dev heroically "saving" the school cafeteria from a fictional pizza shortage.</p>
+
+<h3>Chapter 3: A Landslide, and a New Tradition</h3>
+<p>Dev won by an overwhelming margin, the video having become an instant grade-wide sensation regardless of actual policy substance. The school has since, only half-jokingly, instituted an unofficial "campaign video" tradition for every class election since — nobody's topped the pizza-shortage epic yet.</p>
+`
+},
+{
+  title: "The Family Game Night That Turned Monopoly Into an Actual Diplomatic Crisis",
+  author: "Khyati Srivastava",
+  slug: "the-family-game-night-that-turned-monopoly-into-an-actual-diplomatic-crisis",
+  category: "Comedy",
+  emoji: "🎲",
+  excerpt: "A single disputed property trade escalates a routine family Monopoly night into a genuinely heated, multi-hour negotiation involving alliance-building, betrayal, and one deeply controversial house rule.",
+  created_at: "2027-04-23T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Simple Trade, Complicated</h3>
+<p>What began as a routine property trade between two siblings escalated, within twenty minutes, into a genuinely heated four-way negotiation involving accusations of favoritism, a disputed house rule about mid-game alliance-forming, and one memorably dramatic exit from the table.</p>
+
+<h3>Chapter 2: Full Diplomatic Chaos</h3>
+<p>The game paused entirely for nearly forty-five minutes of increasingly theatrical negotiation, complete with a formal "peace treaty" hastily drafted on a napkin and one genuinely surprising last-minute betrayal that nobody saw coming.</p>
+
+<h3>Chapter 3: A Game Finished, Somehow</h3>
+<p>The game finally concluded three hours later than planned, Dad declaring bankruptcy dramatically to a chorus of family laughter. The napkin treaty has been framed and hung in the game closet, a monument to the single most chaotic Monopoly night the family has ever survived together.</p>
+`
+},
+{
+  title: "The Old Toymaker Who Built Toys That Grew Up With You",
+  author: "Khyati Srivastava",
+  slug: "the-old-toymaker-who-built-toys-that-grew-up-with-you",
+  category: "Fairytale",
+  emoji: "🧸",
+  excerpt: "Every toy from Master Corwin's shop quietly changes its purpose as the child who owns it grows — a stuffed animal becoming a journal companion, a wooden sword becoming a walking stick, always exactly what's needed next.",
+  created_at: "2027-04-23T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Toys With a Secret</h3>
+<p>Corwin's toys looked ordinary enough when purchased, but owners over the years noticed something quietly remarkable: as the child grew, the toy's purpose seemed to shift alongside them, gently, always becoming exactly what that stage of childhood actually needed.</p>
+
+<h3>Chapter 2: A Skeptical Parent</h3>
+<p>A father, buying a simple wooden sword for his young son, doubted the shop's odd reputation entirely, right up until years later he found that same sword repurposed, somehow, into a genuinely sturdy walking stick his now-teenage son used on long solitary hikes he'd taken up alone.</p>
+
+<h3>Chapter 3: A Toymaker's True Craft</h3>
+<p>Corwin never fully explained his method, insisting only that he built each toy to be loved thoroughly, and that love, given enough time and attention, naturally reshaped itself into whatever came next. His shop has outfitted three generations of the same families now, each toy quietly growing alongside the child who'd once played with it.</p>
+`
+},
+{
+  title: "The River Spirit Who Only Granted Wishes Made for Someone Else",
+  author: "Khyati Srivastava",
+  slug: "the-river-spirit-who-only-granted-wishes-made-for-someone-else",
+  category: "Fairytale",
+  emoji: "🌊",
+  excerpt: "Toss a coin into the old river and make a wish — but the spirit beneath only answers wishes made entirely on someone else's behalf. Most villagers learn this the hard way, wasting coin after coin on themselves.",
+  created_at: "2027-04-23T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Well-Known Rule, Often Ignored</h3>
+<p>Everyone in the village knew the river spirit only granted wishes made purely on someone else's behalf, and yet villagers kept quietly tossing coins for their own private hopes anyway, disappointed each time when nothing changed.</p>
+
+<h3>Chapter 2: A Girl Who Finally Understood</h3>
+<p>Young Ines, after watching her own selfish wishes fail repeatedly, finally tossed a coin wishing instead for her ailing neighbor's garden to recover from blight — and woke the next morning to find the neighbor's garden thriving inexplicably overnight.</p>
+
+<h3>Chapter 3: A Lesson Worth Learning</h3>
+<p>Ines never wished for herself at that river again, finding, oddly, that wishing well for others satisfied something her earlier selfish wishes never quite managed to touch. The river spirit's rule, she finally understood, wasn't a trick at all — it was simply teaching the village something worth learning the honest way.</p>
+`
+},
+{
+  title: "The Kid Who Learned to Handle Public Speaking From Announcing Little League Games",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-to-handle-public-speaking-from-announcing-little-league-games",
+  category: "Inspirational",
+  emoji: "🎙️",
+  excerpt: "Terrified of speaking in front of any group, Dev reluctantly agrees to announce a single Little League game as a favor. The nerves never fully go away — but he learns they don't have to stop him either.",
+  created_at: "2027-04-23T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Reluctant Favor</h3>
+<p>Dev agreed to announce one Little League game only because the regular announcer had gotten sick, genuinely terrified of the microphone despite his coach's reassurance it would be simple and low-stakes.</p>
+
+<h3>Chapter 2: Shaky, But Through It</h3>
+<p>His voice cracked twice during the first inning, and he genuinely considered quitting mid-game — right up until he realized nobody in the crowd actually seemed to care about the shaky delivery, only about the game itself.</p>
+
+<h3>Chapter 3: A Lasting Lesson</h3>
+<p>He announced eleven more games that season, voice never fully steady but genuinely improving with each attempt. What stuck with him wasn't confidence exactly — the nerves never entirely disappeared. What stuck was the discovery that nervous and capable weren't actually opposites, a lesson that's helped him through plenty of public moments since.</p>
+`
+},
+{
+  title: "The Kid Who Learned to Handle Disappointment From a Cancelled Field Trip",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-to-handle-disappointment-from-a-cancelled-field-trip",
+  category: "Inspirational",
+  emoji: "🚌",
+  excerpt: "The science museum field trip Priya had been looking forward to for months gets cancelled the morning of, with zero warning. How she handles that specific disappointment teaches her something about handling every disappointment since.",
+  created_at: "2027-04-23T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Sudden Cancellation</h3>
+<p>Priya had counted down the days to the science museum field trip for a full month, only to have it cancelled entirely the morning of due to a bus scheduling issue nobody could resolve in time — a genuinely crushing disappointment for a ten-year-old who'd been that excited.</p>
+
+<h3>Chapter 2: A Choice in How to React</h3>
+<p>Her initial reaction was tears and genuine frustration, entirely reasonable given the circumstances. Her teacher, rather than dismissing the disappointment, simply sat with her for a few minutes, letting the feeling exist before gently suggesting they plan something else for the day instead.</p>
+
+<h3>Chapter 3: What She Carried Forward</h3>
+<p>The replacement classroom activity turned out genuinely fun, though nothing matched the excitement of the original plan. What Priya actually carried forward wasn't about museums at all — it was learning that disappointment could be felt fully and still not derail an entire day. She's used that lesson considerably more than any museum trip would have taught her.</p>
+`
+},
+{
+  title: "The Silence That Followed the College Acceptance Letter",
+  author: "Khyati Srivastava",
+  slug: "the-silence-that-followed-the-college-acceptance-letter",
+  category: "Drama",
+  emoji: "✉️",
+  excerpt: "Getting into her dream school three states away should be pure celebration. Instead, Priya's family goes quiet for a long moment before anyone says anything — a silence that says more than any congratulations could.",
+  created_at: "2027-04-23T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Envelope, Opened</h3>
+<p>Priya's dream school acceptance letter arrived on an ordinary Tuesday, and reading the acceptance aloud to her family produced not the immediate celebration she'd imagined, but a long, quiet pause nobody quite knew how to fill first.</p>
+
+<h3>Chapter 2: What the Silence Meant</h3>
+<p>It wasn't disappointment. It was the sudden, real weight of a distance neither Priya nor her parents had fully prepared to process emotionally, three states genuinely far enough to change everything about their daily family life.</p>
+
+<h3>Chapter 3: Celebrating Anyway</h3>
+<p>Her mom finally broke the silence with a hug, tears and pride mixed together honestly rather than hidden. They celebrated properly that evening, distance and all. The silence, Priya realized later, hadn't been about doubt — it had simply been everyone quietly, honestly feeling the size of what was actually happening.</p>
+`
+},
+{
+  title: "The Team That Finally Learned to Lose Gracefully Together",
+  author: "Khyati Srivastava",
+  slug: "the-team-that-finally-learned-to-lose-gracefully-together",
+  category: "Drama",
+  emoji: "🏐",
+  excerpt: "After years of blaming each other for every loss, the volleyball team's championship defeat becomes the moment they finally, collectively, learn to lose as a team instead of pointing fingers separately.",
+  created_at: "2027-04-23T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A History of Blame</h3>
+<p>The volleyball team had a long, ugly habit of quietly blaming individual teammates after every loss, locker room tension simmering for days afterward instead of processing defeats together as an actual unified team.</p>
+
+<h3>Chapter 2: A Championship Loss</h3>
+<p>Their championship match defeat, close and genuinely hard-fought, could easily have triggered the same old blame cycle — right up until captain Marisol, breaking the usual pattern, simply thanked every single teammate by name for their specific contribution to the season.</p>
+
+<h3>Chapter 3: A Different Kind of Ending</h3>
+<p>The gesture shifted something real in the team's culture, that particular loss processed together rather than separately for the first time in years. They didn't win the championship. They found something considerably harder to build: a team that could genuinely lose together without falling apart.</p>
+`
+},
+{
+  title: "The Playlist They Built Together Without Ever Discussing It",
+  author: "Khyati Srivastava",
+  slug: "the-playlist-they-built-together-without-ever-discussing-it",
+  category: "Romance",
+  emoji: "🎧",
+  excerpt: "Neither Dev nor Elin ever formally agreed to build a shared playlist together — it just happened, one added song at a time, over months, until neither could remember whose idea it originally was.",
+  created_at: "2027-04-23T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Accidental Start</h3>
+<p>Neither Dev nor Elin remembered deciding to build a shared playlist together — it simply started with one song Dev added after a conversation about music, Elin adding her own the next day without any formal agreement establishing the exchange.</p>
+
+<h3>Chapter 2: An Ongoing, Unspoken Project</h3>
+<p>Months passed with the playlist quietly growing, each addition carrying its own small unspoken meaning neither of them fully articulated out loud, the shared list becoming, gradually, its own kind of conversation running parallel to their actual spoken one.</p>
+
+<h3>Chapter 3: Noticing How Far It Had Gone</h3>
+<p>It was a friend, scrolling through Dev's phone accidentally, who pointed out the playlist had grown to over two hundred songs, entirely built between just the two of them. Dev hadn't fully registered the number until it was said aloud. Neither had Elin, when he mentioned it. Both, separately, felt oddly caught — in the best possible way.</p>
+`
+},
+{
+  title: "The Group Costume That Required Way More Coordination Than Expected",
+  author: "Khyati Srivastava",
+  slug: "the-group-costume-that-required-way-more-coordination-than-expected",
+  category: "Romance",
+  emoji: "🎃",
+  excerpt: "A group Halloween costume idea forces Tomas and Farrah into weeks of planning sessions neither particularly needed for a simple costume — sessions that somehow became the actual best part of their whole October.",
+  created_at: "2027-04-23T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Costume That Needed More Planning Than It Should</h3>
+<p>The group's chosen matching Halloween costume, in theory, required a single afternoon of coordination — colors, roles, basic logistics — a plan that Tomas and Farrah, specifically, somehow stretched into three separate planning sessions neither strictly needed.</p>
+
+<h3>Chapter 2: An Excuse, Increasingly Obvious</h3>
+<p>Both kept finding small excuses to schedule "one more" planning meeting, the actual costume details resolved fully by session two, everyone in their friend group noticing the pattern well before either of them fully admitted it to themselves.</p>
+
+<h3>Chapter 3: The Real Reason, Finally Said</h3>
+<p>It took their mutual friend directly asking, half-exasperated, half-amused, whether they were ever going to just admit they liked each other for the whole planning charade to finally end. The costume turned out great. The three unnecessary planning sessions turned out to matter considerably more.</p>
+`
+},
+{
+  title: "The Kid Who Turned Recycling Day Into an Actual Science Experiment",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-turned-recycling-day-into-an-actual-science-experiment",
+  category: "Kids",
+  emoji: "♻️",
+  excerpt: "Assigned to help sort family recycling, ten-year-old Dev turns it into a genuine ongoing data project — tracking exactly what the family throws away, and slowly, quietly convincing them to waste less.",
+  created_at: "2027-04-24T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Assigned Chore, Reimagined</h3>
+<p>Dev's parents assigned him weekly recycling sorting as an ordinary chore, a task he immediately turned into something considerably more ambitious — a genuine data tracking project logging exactly what the family threw away and why, week over week.</p>
+
+<h3>Chapter 2: Real Findings</h3>
+<p>His careful tracking revealed genuinely useful patterns, including a surprising amount of unnecessary food packaging waste the family hadn't consciously noticed accumulating, data he presented at dinner with a hand-drawn chart nobody had asked for but everyone found genuinely compelling.</p>
+
+<h3>Chapter 3: An Actual Household Change</h3>
+<p>The family adjusted several shopping habits based directly on Dev's findings, waste measurably decreasing over the following months. His teacher, hearing about the project, asked him to present it to the whole class. Dev's simple chore had quietly become the most genuinely useful science project he'd ever done, ungraded or not.</p>
+`
+},
+{
+  title: "The Kid Who Started a Weekly 'Ask an Adult Anything' Session With the Whole Neighborhood",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-started-a-weekly-ask-an-adult-anything-session-with-the-whole-neighborhood",
+  category: "Kids",
+  emoji: "🙋",
+  excerpt: "Curious about how the adult world actually worked, eleven-year-old Priya starts inviting neighborhood adults to answer genuine kid questions every Sunday — taxes, careers, whatever's on anyone's mind.",
+  created_at: "2027-04-24T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Genuine Curiosity</h3>
+<p>Priya had a long list of questions about how the adult world actually worked — taxes, careers, mortgages — that never quite fit naturally into ordinary conversation, prompting her to organize something considerably more direct: a weekly Q&A with a different neighborhood adult each Sunday.</p>
+
+<h3>Chapter 2: Surprisingly Popular</h3>
+<p>Word spread among the neighborhood kids fast, several joining Priya's Sunday sessions with their own genuine questions, adults volunteering more readily than she'd expected, several clearly enjoying the chance to explain their work and life honestly to a genuinely curious audience.</p>
+
+<h3>Chapter 3: A Real Education, Unofficial</h3>
+<p>The sessions have run for over a year now, covering everything from how a plumber actually works to what a lawyer's day genuinely looks like. Priya keeps notes from every session in a growing notebook she calls, with total sincerity, "How Grown-Ups Actually Work."</p>
+`
+},
+{
+  title: "The Grandfather Clock That Chimes Thirteen Times on One Specific Night",
+  author: "Khyati Srivastava",
+  slug: "the-grandfather-clock-that-chimes-thirteen-times-on-one-specific-night",
+  category: "Horror",
+  emoji: "🕛",
+  excerpt: "The old grandfather clock chimes correctly every night of the year — twelve at midnight, as it should — except one specific night each year, when it chimes thirteen times instead, and nobody in the family has ever figured out which night triggers it in advance.",
+  created_at: "2027-04-24T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unpredictable Exception</h3>
+<p>The Petrossian family's antique grandfather clock chimed correctly every single midnight of the year — twelve steady tones, precise and reliable — except one night annually, unpredictable in advance, when it chimed thirteen times instead of twelve.</p>
+
+<h3>Chapter 2: Trying to Predict It</h3>
+<p>Priya spent an entire year keeping a careful log, hoping to identify a pattern — a specific date, a moon phase, anything that might explain which night would trigger the extra chime. She found no reliable pattern whatsoever across three years of careful tracking.</p>
+
+<h3>Chapter 3: An Accepted Mystery</h3>
+<p>The family has simply stopped trying to predict it, treating the thirteenth chime, whenever it happens, as an unremarkable quirk of an old clock rather than anything worth losing sleep over. Priya still keeps her old tracking log in a drawer. She checks it sometimes, still hoping, eventually, to finally spot the pattern she's certain must exist somewhere.</p>
+`
+},
+{
+  title: "The Backyard Fence That Casts a Shadow Shaped Like a Different Fence",
+  author: "Khyati Srivastava",
+  slug: "the-backyard-fence-that-casts-a-shadow-shaped-like-a-different-fence",
+  category: "Horror",
+  emoji: "🌗",
+  excerpt: "The Alvarez family's plain wooden backyard fence casts a shadow at sunset that doesn't match its own shape at all — taller, older-looking, with a gate where their actual fence has none.",
+  created_at: "2027-04-24T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Shadow That Doesn't Match</h3>
+<p>Priya noticed it first while doing homework at the backyard table one autumn evening: the family's plain, modern wooden fence cast a sunset shadow that looked distinctly different from the fence itself — taller, visibly older in style, with what appeared to be a gate where their actual fence had none at all.</p>
+
+<h3>Chapter 2: Checking It Repeatedly</h3>
+<p>She checked the shadow every evening for a week, confirming it wasn't a trick of the light or an odd angle — the mismatched shape held consistently, sunset after sunset, regardless of season or sun position.</p>
+
+<h3>Chapter 3: A Property Record, Unearthed</h3>
+<p>An old property survey, dug up out of curiosity, revealed a previous fence had stood in nearly the same location decades earlier, taller, with a gate exactly where the shadow suggested. The family has never removed the current fence to test anything further. They've simply, quietly, stopped watching the shadow at sunset.</p>
+`
+},
+{
+  title: "The Old Porch Swing That Creaks in a Familiar Rhythm",
+  author: "Khyati Srivastava",
+  slug: "the-old-porch-swing-that-creaks-in-a-familiar-rhythm",
+  category: "Poetry",
+  emoji: "🪑",
+  excerpt: "A gentle, nostalgic poem finding comfort in the creaky, familiar rhythm of an old porch swing that seems to remember every conversation it's ever held.",
+  created_at: "2027-04-24T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Old Porch Swing That Creaks in a Familiar Rhythm</h3>
+<p>Creak, and pause, and creak again,<br/>
+the same old rhythm it's always been,<br/>
+since Grandpa hung it, chain and wood,<br/>
+right where the evening porch light stood.</p>
+
+<p>It's held first dates and last goodbyes,<br/>
+held quiet talks under summer skies,<br/>
+held toddlers bouncing, teens who'd sulk,<br/>
+held every mood the porch would hold.</p>
+
+<p>The creak's not broken, not worn through,<br/>
+it's just the sound of what it's been through —<br/>
+every conversation, every year,<br/>
+still humming faintly, still right here.</p>
+
+<p>So creak away, old swing, don't stop,<br/>
+keep that rhythm, keep that drop<br/>
+and rise of chain against the wood —<br/>
+some sounds are worth keeping, if we could.</p>
+`
+},
+{
+  title: "The Bookshelf Organized by Memory, Not Alphabet",
+  author: "Khyati Srivastava",
+  slug: "the-bookshelf-organized-by-memory-not-alphabet",
+  category: "Poetry",
+  emoji: "📚",
+  excerpt: "A thoughtful poem about a bookshelf arranged not by author or genre, but by the memory attached to each book — who gave it, when it was read, what it meant at the time.",
+  created_at: "2027-04-24T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Bookshelf Organized by Memory, Not Alphabet</h3>
+<p>Not A to Z, not by the spine's hue,<br/>
+my shelf's arranged a different way, it's true —<br/>
+this one's from the summer I felt lost,<br/>
+this one's a gift, no matter the cost.</p>
+
+<p>This shelf's the books that got me through,<br/>
+this one's the one my best friend knew<br/>
+I'd love before I'd even read the back,<br/>
+this one still has her old bookmark, intact.</p>
+
+<p>A librarian would call this chaos, maybe,<br/>
+no order a stranger's eye could see clearly —<br/>
+but every book here holds its year,<br/>
+its reason, its memory, close and clear.</p>
+
+<p>So let the alphabet keep its own neat rows,<br/>
+mine's arranged by what my own heart knows —<br/>
+not by letters, but by where I've been,<br/>
+every spine a memory, tucked back in.</p>
+`
+},
 ];
