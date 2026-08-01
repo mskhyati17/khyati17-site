@@ -423,9 +423,9 @@
         '</div>' +
         '<div class="pom-msgs"></div>' +
         '<div class="pom-settings">' +
-          '<label>Name</label><input class="pom-name" type="text" maxlength="14" />' +
+          '<label>Name</label><input class="pom-name" type="text" maxlength="14" aria-label="Mochi\'s name" />' +
           '<label>Accessory</label><div class="pom-grid pom-accs"></div>' +
-          '<label>Voice</label><label class="pom-toggle"><input type="checkbox" class="pom-voice"/> Speak replies out loud 🔊</label>' +
+          '<label>Voice</label><label class="pom-toggle"><input type="checkbox" class="pom-voice" aria-label="Speak replies out loud"/> Speak replies out loud 🔊</label>' +
           '<button class="pom-done">Done ✓</button>' +
         '</div>' +
         '<div class="pom-input"><input type="text" maxlength="140" aria-label="Message Mochi"/><button class="pom-send">Send</button></div>' +

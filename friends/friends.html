@@ -81,7 +81,7 @@
     <div id="stage-hosting" class="fr-card" style="display:none">
       <h2>Room created!</h2>
       <p>1. Send this link to your friend:</p>
-      <div class="fr-code-box"><input id="hostLink" readonly /><button id="copyLinkBtn" class="btn">Copy</button></div>
+      <div class="fr-code-box"><input id="hostLink" readonly aria-label="Room invite link to send your friend" /><button id="copyLinkBtn" class="btn">Copy</button></div>
       <p style="margin-top:14px">2. Once they reply with their code, paste it here:</p>
       <div class="fr-code-box"><input id="answerInput" placeholder="Paste your friend's reply code…" /><button id="connectBtn" class="btn">Connect</button></div>
       <div class="fr-status"><span class="fr-dot" id="hostDot"></span><span id="hostStatus">Waiting for your friend…</span></div>
@@ -90,7 +90,7 @@
     <div id="stage-answering" class="fr-card" style="display:none">
       <h2>Send this back to your friend</h2>
       <p>Copy this reply code and send it to whoever invited you (the same way they sent you the link).</p>
-      <div class="fr-code-box"><input id="answerCode" readonly /><button id="copyAnswerBtn" class="btn">Copy</button></div>
+      <div class="fr-code-box"><input id="answerCode" readonly aria-label="Reply code to send back to whoever invited you" /><button id="copyAnswerBtn" class="btn">Copy</button></div>
       <div class="fr-status"><span class="fr-dot" id="guestDot"></span><span id="guestStatus">Waiting to connect…</span></div>
     </div>
 
