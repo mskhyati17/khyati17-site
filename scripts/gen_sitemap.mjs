@@ -42,6 +42,7 @@ const EXCLUDE = new Set([
   '/ai-tools/tool.html',       // dynamic per-tool template — its ?t=<id> variants are added separately below
   '/fun-games/fun-games.html', // legacy stub → /fun-games/index.html
   '/stories/stories.html',     // dynamic per-story template — its ?story=<slug> variants are added separately below
+  '/videos/videos.html',       // dynamic per-video template — its ?video=<id> variants are added separately below
 ]);
 
 function priorityFor(rel) {
@@ -79,6 +80,10 @@ const dynamicUrls = [];
 {
   const src = readTracked('stories/stories-data.js');
   for (const m of src.matchAll(/slug:\s*"([^"]+)"/g)) dynamicUrls.push(`${ORIGIN}/stories/stories.html?story=${encodeURIComponent(m[1])}`);
+}
+{
+  const src = readTracked('videos/videos-data.js');
+  for (const m of src.matchAll(/id:\s*"([^"]+)"/g)) dynamicUrls.push(`${ORIGIN}/videos/videos.html?video=${encodeURIComponent(m[1])}`);
 }
 
 let out = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
