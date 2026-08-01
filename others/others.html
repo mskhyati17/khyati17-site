@@ -123,6 +123,7 @@
     .mochi-stat .n{ font-size:1.6rem; font-weight:800; }
     .mochi-stat .l{ font-size:.78rem; opacity:.85; text-transform:uppercase; letter-spacing:.06em; }
     .mochi-msg{ font-size:.92rem; opacity:.92; margin:10px 0 4px; min-height:1.4em; }
+    .mochi-note{ font-size:.8rem; opacity:.8; margin-top:12px; }
     .mochi-card button{
       cursor:pointer; border:none; border-radius:999px; background:rgba(255,255,255,.95);
       color:#7a1b9a; font-weight:700; padding:10px 22px; font-size:.92rem; margin-top:10px;
@@ -299,7 +300,7 @@
     <section class="ka-panel" data-panel="mochi" hidden>
     <div class="ka-head">
       <h2>🐾 Mochi's Daily Streak</h2>
-      <p>Check off your daily list to earn coins and keep Mochi's streak alive.</p>
+      <p>This is the same streak, coins and Mochi from everywhere else on the site — checking off your list here adds to it too.</p>
     </div>
 
     <div class="mochi-card">
@@ -309,7 +310,7 @@
         <div class="mochi-stat"><div class="n" id="coinCount">0</div><div class="l">🪙 Coins</div></div>
       </div>
       <div class="mochi-msg" id="mochiMsg">Check off something on your list today to start a streak!</div>
-      <button id="reviveBtn" hidden>💔 Revive Mochi (10 🪙)</button>
+      <div class="mochi-note">Want to feed, bathe, brush or pet her? Tap Mochi in the corner of your screen! 🐾</div>
     </div>
 
     <div class="ka-head" style="margin-top:36px">
@@ -9036,107 +9037,92 @@
       hundredGrid.appendChild(item);
     });
 
-    /* ---- Mochi streak, daily checklist, coins & spin wheels ---- */
+    /* ---- Mochi streak, daily checklist, coins & spin wheels ----
+       Coins/streak here are the SAME shared economy the Mochi buddy widget
+       (assets/js/cute.js, localStorage key "pomRewards") uses everywhere else
+       on the site — checking things off here, or spinning the coin wheel,
+       adds straight into that shared total instead of tracking a separate
+       Others-page-only number. That keeps this page, the /me dashboard and
+       the Mochi widget itself always showing the same real total. */
     function todayStr(){
       const d = new Date();
       return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
     }
-    function daysBetween(a,b){
-      return Math.round((new Date(b+'T00:00:00') - new Date(a+'T00:00:00')) / 86400000);
-    }
     const today = todayStr();
-    const STATE_KEY = 'k17_mochi_v1';
-    function loadState(){
+
+    const REWARDS_KEY = 'pomRewards';
+    function loadRewards(){
+      let r;
+      try { r = JSON.parse(localStorage.getItem(REWARDS_KEY)); } catch(e){ r = null; }
+      if (!r || typeof r.coins !== 'number') r = { streak:0, longest:0, coins:0, days:0, lastDay:-1, badges:[] };
+      if (!Array.isArray(r.badges)) r.badges = [];
+      return r;
+    }
+    function saveRewards(r){ localStorage.setItem(REWARDS_KEY, JSON.stringify(r)); }
+    function addCoins(n){
+      const r = loadRewards(); // resync first so a concurrent tab/widget update never gets clobbered
+      r.coins += n;
+      saveRewards(r);
+      return r;
+    }
+
+    const CHECKLIST_KEY = 'k17_others_checklist_v1';
+    function loadChecklist(){
       let s;
-      try { s = JSON.parse(localStorage.getItem(STATE_KEY)); } catch(e){ s = null; }
+      try { s = JSON.parse(localStorage.getItem(CHECKLIST_KEY)); } catch(e){ s = null; }
       if (!s || typeof s !== 'object') s = {};
-      s.coins = typeof s.coins === 'number' ? s.coins : 0;
-      s.streak = typeof s.streak === 'number' ? s.streak : 0;
-      s.mochiAlive = typeof s.mochiAlive === 'boolean' ? s.mochiAlive : true;
-      s.lastActiveDate = s.lastActiveDate || null;
-      s.lastCoinSpinDate = s.lastCoinSpinDate || null;
       s.checklist = Array.isArray(s.checklist) ? s.checklist : [];
       s.checklistDate = s.checklistDate || null;
       return s;
     }
-    const mstate = loadState();
-    function saveState(){ localStorage.setItem(STATE_KEY, JSON.stringify(mstate)); }
-    function resyncFromDisk(){
+    const cstate = loadChecklist();
+    function saveChecklist(){ localStorage.setItem(CHECKLIST_KEY, JSON.stringify(cstate)); }
+    function resyncChecklistFromDisk(){
       let s;
-      try { s = JSON.parse(localStorage.getItem(STATE_KEY)); } catch(e){ s = null; }
+      try { s = JSON.parse(localStorage.getItem(CHECKLIST_KEY)); } catch(e){ s = null; }
       if (!s || typeof s !== 'object') return;
-      if (typeof s.coins === 'number') mstate.coins = s.coins;
-      if (typeof s.streak === 'number') mstate.streak = s.streak;
-      if (typeof s.mochiAlive === 'boolean') mstate.mochiAlive = s.mochiAlive;
-      if (typeof s.lastActiveDate !== 'undefined') mstate.lastActiveDate = s.lastActiveDate;
-      if (typeof s.lastCoinSpinDate !== 'undefined') mstate.lastCoinSpinDate = s.lastCoinSpinDate;
-      if (Array.isArray(s.checklist)) mstate.checklist = s.checklist;
+      if (Array.isArray(s.checklist)) cstate.checklist = s.checklist;
     }
 
-    if (mstate.checklistDate !== today) {
-      mstate.checklist.forEach(it => { it.done = false; });
-      mstate.checklistDate = today;
+    if (cstate.checklistDate !== today) {
+      cstate.checklist.forEach(it => { it.done = false; });
+      cstate.checklistDate = today;
+      saveChecklist();
     }
-    if (mstate.lastActiveDate && mstate.lastActiveDate !== today) {
-      const gap = daysBetween(mstate.lastActiveDate, today);
-      if (gap >= 2 && mstate.mochiAlive) {
-        mstate.mochiAlive = false;
-        mstate.streak = 0;
-      }
-    }
-    saveState();
 
-    let lastBadgeCoins = mstate.coins;
+    let lastBadgeCoins = loadRewards().coins;
     function renderMochi(){
-      document.getElementById('streakCount').textContent = mstate.streak;
-      document.getElementById('coinCount').textContent = mstate.coins;
+      const rewards = loadRewards();
+      document.getElementById('streakCount').textContent = rewards.streak;
+      document.getElementById('coinCount').textContent = rewards.coins;
       const badge = document.getElementById('globalCoinBadge');
-      document.getElementById('globalCoinCount').textContent = mstate.coins;
-      if (mstate.coins > lastBadgeCoins) {
+      document.getElementById('globalCoinCount').textContent = rewards.coins;
+      if (rewards.coins > lastBadgeCoins) {
         badge.classList.remove('bump');
         void badge.offsetWidth;
         badge.classList.add('bump');
         setTimeout(()=> badge.classList.remove('bump'), 400);
       }
-      lastBadgeCoins = mstate.coins;
+      lastBadgeCoins = rewards.coins;
       const face = document.getElementById('mochiFace');
       const msg = document.getElementById('mochiMsg');
-      const revive = document.getElementById('reviveBtn');
-      if (!mstate.mochiAlive) {
-        face.textContent = '💀';
-        msg.textContent = "Oh no, Mochi's streak broke and she needs your help! Revive her for 10 🪙.";
-        revive.hidden = false;
-        revive.disabled = mstate.coins < 10;
+      if (rewards.streak > 0) {
+        face.textContent = '🥳';
+        msg.textContent = `Mochi's on a ${rewards.streak}-day streak! Visit daily and check things off to keep it going.`;
       } else {
-        revive.hidden = true;
-        if (mstate.lastActiveDate === today) {
-          face.textContent = '🥳';
-          msg.textContent = `Mochi is happy! You're on a ${mstate.streak}-day streak.`;
-        } else {
-          face.textContent = '🐹';
-          msg.textContent = mstate.streak > 0 ? `Check something off today to keep your ${mstate.streak}-day streak going!` : 'Check off something on your list today to start a streak!';
-        }
+        face.textContent = '🐹';
+        msg.textContent = 'Check off something on your list today to start a streak!';
       }
     }
-    document.getElementById('reviveBtn').addEventListener('click', ()=>{
-      resyncFromDisk();
-      if (mstate.mochiAlive || mstate.coins < 10) return;
-      mstate.coins -= 10;
-      mstate.mochiAlive = true;
-      mstate.streak = 0;
-      mstate.lastActiveDate = null;
-      saveState();
-      renderMochi();
-    });
 
     function renderChecklist(){
       const wrap = document.getElementById('checklistItems');
       wrap.innerHTML = '';
-      if (!mstate.checklist.length) {
+      if (!cstate.checklist.length) {
         wrap.innerHTML = '<div class="checklist-empty">No items yet — add your first daily activity above! ✨</div>';
         return;
       }
-      mstate.checklist.forEach(item=>{
+      cstate.checklist.forEach(item=>{
         const row = document.createElement('div');
         row.className = 'checklist-item' + (item.done ? ' done' : '');
         const cb = document.createElement('input');
@@ -9155,46 +9141,38 @@
       });
     }
     function toggleChecklistItem(id, done){
-      resyncFromDisk();
-      const item = mstate.checklist.find(i=>i.id===id);
+      resyncChecklistFromDisk();
+      const item = cstate.checklist.find(i=>i.id===id);
       if (!item) return;
       const wasDone = item.done;
       item.done = done;
-      if (done && !wasDone) {
-        mstate.coins += 5;
-        if (mstate.mochiAlive && mstate.lastActiveDate !== today) {
-          mstate.streak += 1;
-          mstate.lastActiveDate = today;
-        }
-      }
-      saveState();
+      if (done && !wasDone) addCoins(5);
+      saveChecklist();
       renderChecklist();
       renderMochi();
     }
     function deleteChecklistItem(id){
-      mstate.checklist = mstate.checklist.filter(i=>i.id!==id);
-      saveState();
+      resyncChecklistFromDisk();
+      cstate.checklist = cstate.checklist.filter(i=>i.id!==id);
+      saveChecklist();
       renderChecklist();
     }
     function addChecklistItem(){
       const input = document.getElementById('checklistInput');
       const text = input.value.trim();
       if (!text) return;
-      resyncFromDisk();
-      mstate.checklist.push({ id: 'c'+Date.now()+Math.random().toString(36).slice(2,7), text, done:false });
+      resyncChecklistFromDisk();
+      cstate.checklist.push({ id: 'c'+Date.now()+Math.random().toString(36).slice(2,7), text, done:false });
       input.value = '';
-      saveState();
+      saveChecklist();
       renderChecklist();
     }
     document.getElementById('checklistAddBtn').addEventListener('click', addChecklistItem);
     document.getElementById('checklistInput').addEventListener('keydown', e=>{ if (e.key === 'Enter') addChecklistItem(); });
 
     window.addEventListener('storage', (e)=>{
-      if (e.key !== STATE_KEY) return;
-      resyncFromDisk();
-      renderMochi();
-      renderChecklist();
-      updateCoinBtn();
+      if (e.key === REWARDS_KEY) { renderMochi(); updateCoinBtn(); }
+      if (e.key === CHECKLIST_KEY) { resyncChecklistFromDisk(); renderChecklist(); }
     });
 
     renderMochi();
@@ -9233,36 +9211,36 @@
       setTimeout(onDone, 3650);
     }
 
-    /* Daily coin spin */
+    /* Daily coin spin — reward feeds the same shared coin total as everywhere else */
     const COIN_LABELS = ['10','50','100','10','500','50','100','1000'];
     const coinDisc = document.getElementById('coinWheelDisc');
     buildWheel(coinDisc, COIN_LABELS, WHEEL_COLORS);
     const coinBtn = document.getElementById('coinWheelBtn');
     const coinResult = document.getElementById('coinWheelResult');
+    function lastCoinSpinDate(){ return localStorage.getItem('k17_last_coin_spin') || null; }
+    function setLastCoinSpinDate(d){ localStorage.setItem('k17_last_coin_spin', d); }
     function updateCoinBtn(){
-      const spun = mstate.lastCoinSpinDate === today;
+      const spun = lastCoinSpinDate() === today;
       coinBtn.disabled = spun;
       coinBtn.textContent = spun ? 'DONE' : 'SPIN';
     }
     coinBtn.addEventListener('click', ()=>{
-      if (mstate.lastCoinSpinDate === today) return;
+      if (lastCoinSpinDate() === today) return;
       coinBtn.disabled = true;
       const idx = Math.floor(Math.random()*COIN_LABELS.length);
       coinResult.textContent = 'Spinning...';
       spinTo(coinDisc, idx, ()=>{
-        resyncFromDisk();
         const reward = +COIN_LABELS[idx];
-        mstate.coins += reward;
-        mstate.lastCoinSpinDate = today;
-        saveState();
+        const rewards = addCoins(reward);
+        setLastCoinSpinDate(today);
         const prefix = reward >= 1000 ? `🎉 JACKPOT! +${reward} 🪙!` : `You won +${reward} 🪙!`;
-        coinResult.textContent = `${prefix} (total: ${mstate.coins} 🪙)`;
+        coinResult.textContent = `${prefix} (total: ${rewards.coins} 🪙)`;
         renderMochi();
         updateCoinBtn();
       });
     });
     updateCoinBtn();
-    if (mstate.lastCoinSpinDate === today) coinResult.textContent = 'Come back tomorrow for another spin!';
+    if (lastCoinSpinDate() === today) coinResult.textContent = 'Come back tomorrow for another spin!';
 
     /* Would You Rather wheel (reuses the WYR question bank) */
     const wyrDisc = document.getElementById('wyrWheelDisc');
@@ -9377,5 +9355,6 @@
   </script>
   <script type="module" src="../assets/js/auth.js?v=2"></script>
   <script type="module">import('../assets/js/loadHeader.js').then(m=>m.loadSharedHeader());</script>
+  <script src="/assets/js/cute.js?v=5"></script>
 </body>
 </html>
