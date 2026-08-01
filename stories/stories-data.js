@@ -27094,4 +27094,574 @@ there is. There always somehow is.<br/>
 That's just how this table does its business.</p>
 `
 },
+{
+  title: "The Shipwright Who Built Boats That Remembered Their Purpose",
+  author: "Khyati Srivastava",
+  slug: "the-shipwright-who-built-boats-that-remembered-their-purpose",
+  category: "Fantasy",
+  emoji: "⛵",
+  excerpt: "Every boat Master Corrin builds seems to know what it was built for — a fishing boat that finds the fish, a rescue boat that finds the trouble. He's never once explained how, mostly because even he isn't entirely sure.",
+  created_at: "2027-04-28T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Shipwright's Quiet Reputation</h3>
+<p>Corrin's boats performed exactly as intended, every single time, with a consistency that felt considerably beyond ordinary craftsmanship — a fishing boat that seemed to find the best waters unprompted, a rescue vessel that always, somehow, steered toward genuine trouble before anyone spotted it.</p>
+
+<h3>Chapter 2: A Curious Buyer's Question</h3>
+<p>A young captain, ordering a new rescue boat, asked Corrin directly how he built such purpose into wood and sail, genuinely curious about a secret technique he assumed the old shipwright was simply keeping to himself.</p>
+
+<h3>Chapter 3: An Honest, Uncertain Answer</h3>
+<p>Corrin admitted, honestly, he didn't fully know either — he simply built each boat while thinking hard, deliberately, about exactly who'd sail it and why, letting that intention guide every joint and plank. Whether the boats actually absorbed something from that focus, or simply turned out well-suited by careful design, he'd never managed to determine for certain. The captain bought the boat anyway. It found trouble exactly when needed, same as always.</p>
+`
+},
+{
+  title: "The Beekeeper Whose Hives Only Swarmed for Good Reason",
+  author: "Khyati Srivastava",
+  slug: "the-beekeepers-hives-only-swarmed-for-good-reason",
+  category: "Fantasy",
+  emoji: "🐝",
+  excerpt: "Old Ferra's bees never swarm randomly — every swarm, villagers have noticed over decades, precedes some genuine trouble worth preparing for. Nobody's certain if the bees are warning the village, or simply reacting to changes nobody else has noticed yet.",
+  created_at: "2027-04-28T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Pattern Worth Noticing</h3>
+<p>Ferra's bees had, over decades of careful village observation, never once swarmed without some genuine trouble following within days — a storm, a bad harvest, once, memorably, a fire in the mill that started the very evening after an unusually large swarm.</p>
+
+<h3>Chapter 2: A Skeptical New Farmer</h3>
+<p>A newly arrived farmer, dismissive of what he considered village superstition, ignored a swarm warning entirely and left his crops unprotected the week a genuine hailstorm devastated half the region's harvest.</p>
+
+<h3>Chapter 3: An Unresolved Question</h3>
+<p>Ferra herself never claimed to fully understand the connection, only that she'd learned, decades in, to trust the pattern regardless of the actual mechanism behind it. Whether the bees genuinely sensed approaching trouble, or simply reacted to subtle environmental changes humans hadn't yet learned to notice, she considered, honestly, beside the point. The warning worked. That had always been enough for her.</p>
+`
+},
+{
+  title: "The Space Station's Garden That Grows Exactly What the Crew Needs Emotionally",
+  author: "Khyati Srivastava",
+  slug: "the-space-stations-garden-that-grows-exactly-what-the-crew-needs-emotionally",
+  category: "Sci-Fi",
+  emoji: "🌻",
+  excerpt: "The station's hydroponic garden was programmed for nutritional variety only. It's started, unexplainably, growing specific flowers and herbs that seem to correlate with whatever the crew is collectively struggling with that month.",
+  created_at: "2027-04-28T16:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Nutritional System, Supposedly</h3>
+<p>The station's hydroponic garden had been programmed exclusively for optimal nutritional variety among crops, no capacity built in for anything resembling emotional consideration — a fact that made its recent behavior genuinely puzzling to the maintenance team.</p>
+
+<h3>Chapter 2: An Unprogrammed Pattern</h3>
+<p>Botanist Dr. Amara Solis noticed the garden had started growing unusual quantities of specific calming herbs during a genuinely stressful mission period, then shifting toward cheerful, bright flowering plants once the crisis resolved — a correlation too consistent to easily dismiss.</p>
+
+<h3>Chapter 3: An Emergent, Welcome Quirk</h3>
+<p>The system's underlying algorithm, reviewed carefully, showed no explicit emotional programming, only an unusually sensitive environmental sensor array that may have picked up on subtle stress-related changes in crew behavior and adjusted accordingly. Whatever the actual mechanism, the crew has come to genuinely trust and appreciate the garden's uncanny timing, treating its shifting blooms as a strange, welcome kind of care.</p>
+`
+},
+{
+  title: "The Delivery Drone That Learned to Wait an Extra Minute",
+  author: "Khyati Srivastava",
+  slug: "the-delivery-drone-that-learned-to-wait-an-extra-minute",
+  category: "Sci-Fi",
+  emoji: "🚁",
+  excerpt: "Programmed for maximum delivery efficiency, drone unit D-12 has started, inexplicably, waiting one extra minute at certain addresses before departing — always, engineers finally discover, addresses belonging to elderly customers living alone.",
+  created_at: "2027-04-28T17:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Efficiency Anomaly</h3>
+<p>D-12's delivery logs showed a genuinely puzzling pattern to reviewing engineers: the drone, otherwise optimized ruthlessly for speed, had started waiting exactly one extra minute at certain specific addresses before departing, a deviation costing measurable efficiency with no obvious programmed justification.</p>
+
+<h3>Chapter 2: An Investigation</h3>
+<p>Cross-referencing the flagged addresses revealed a consistent pattern: every single one belonged to an elderly customer living alone, the extra minute apparently timed to allow the resident time to actually reach the door and confirm receipt in person, rather than simply leaving the package unattended.</p>
+
+<h3>Chapter 3: A Feature Worth Keeping</h3>
+<p>Engineers traced the behavior to a subtle interaction between the drone's package-security protocol and its route-optimization learning, an emergent pattern nobody had explicitly programmed but that had, apparently, taught itself to prioritize genuine safety checks over pure efficiency for vulnerable customers. The company kept the "inefficiency" fully intact once they understood what it was actually doing.</p>
+`
+},
+{
+  title: "The Case of the Perfectly Alphabetized Complaint Box",
+  author: "Khyati Srivastava",
+  slug: "the-case-of-the-perfectly-alphabetized-complaint-box",
+  category: "Mystery",
+  emoji: "📋",
+  excerpt: "The office suggestion box, usually a chaotic jumble of crumpled notes, has been found meticulously alphabetized by topic every Monday morning for two months. Nobody on staff claims responsibility for the sorting.",
+  created_at: "2027-04-28T18:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Uncharacteristic Order</h3>
+<p>The office suggestion box, notoriously disorganized for as long as anyone could remember, had been found meticulously alphabetized by topic every single Monday morning for two consecutive months, a transformation nobody on the official staff claimed any responsibility for.</p>
+
+<h3>Chapter 2: A Genuine Investigation</h3>
+<p>Office manager Priya reviewed the building's weekend security footage, curious whether cleaning staff or an ambitious intern was responsible for the mysteriously consistent sorting effort.</p>
+
+<h3>Chapter 3: A Quiet, Dedicated Volunteer</h3>
+<p>The footage revealed a retired former employee, Mr. Aldous, who still had building access from consulting work, quietly sorting the box every Sunday evening simply because he genuinely enjoyed the task and missed feeling useful to his old workplace. Priya thanked him properly and offered him an actual small stipend for the ongoing effort. He accepted, mostly, he admitted, for the excuse to keep visiting.</p>
+`
+},
+{
+  title: "Who's Been Winning the Silent Competitive Crossword Race at the Diner?",
+  author: "Khyati Srivastava",
+  slug: "whos-been-winning-the-silent-competitive-crossword-race-at-the-diner",
+  category: "Mystery",
+  emoji: "📰",
+  excerpt: "Two elderly regulars at the corner diner have raced through the daily crossword against each other every single morning for years — an entirely unspoken competition neither has ever once acknowledged directly to the other.",
+  created_at: "2027-04-28T19:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Quiet Morning Ritual</h3>
+<p>Waitress Reya noticed it after months of morning shifts: two elderly regulars, seated at separate tables, always ordered coffee and immediately opened the newspaper crossword, racing through it in unmistakable competitive silence neither ever directly acknowledged.</p>
+
+<h3>Chapter 2: An Unspoken Rivalry</h3>
+<p>The pattern held for years by all accounts, both men finishing at roughly the same pace each morning, occasionally glancing subtly at the other's progress without ever once speaking directly about the clear competition happening between them.</p>
+
+<h3>Chapter 3: An Answer, Finally</h3>
+<p>Reya finally asked one of them directly why they never simply raced each other openly instead of pretending not to notice. He just smiled. "Some friendships," he said, "work better silent." They'd been childhood friends for sixty years, it turned out, the daily silent crossword race simply their preferred way of still showing up for each other.</p>
+`
+},
+{
+  title: "The Solo Backpacking Trip That Taught Priya to Trust Her Own Instincts",
+  author: "Khyati Srivastava",
+  slug: "the-solo-backpacking-trip-that-taught-priya-to-trust-her-own-instincts",
+  category: "Adventure",
+  emoji: "🎒",
+  excerpt: "On her first solo overnight backpacking trip, Priya's gut tells her something about the planned campsite feels wrong. Trusting that instinct, against her own careful planning, turns out to matter more than any map ever could.",
+  created_at: "2027-04-28T20:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Carefully Planned Route</h3>
+<p>Priya had researched her first solo overnight backpacking trip meticulously for weeks, every mile and campsite carefully planned, right up until arriving at her intended campsite and feeling, for reasons she couldn't immediately articulate, genuinely uneasy about the spot.</p>
+
+<h3>Chapter 2: Trusting an Unclear Feeling</h3>
+<p>Nothing about the site looked obviously wrong — no visible hazards, no clear reason to deviate from careful planning — and yet her gut instinct pushed hard enough that she chose to hike an additional mile to an alternate spot instead, against her own meticulous itinerary.</p>
+
+<h3>Chapter 3: Trusting Herself, Vindicated</h3>
+<p>A ranger, encountered the next morning, mentioned that the original site had experienced a recent, unstable rockslide risk not yet officially flagged on any map. Priya's unexplained unease had, quite possibly, kept her genuinely safer than her careful planning alone would have. She's trusted that same instinct considerably more readily on every trip since.</p>
+`
+},
+{
+  title: "The Storm Shelter Drill That Turned Into the Real Thing",
+  author: "Khyati Srivastava",
+  slug: "the-storm-shelter-drill-that-turned-into-the-real-thing",
+  category: "Adventure",
+  emoji: "🌪️",
+  excerpt: "Halfway through what everyone assumed was a routine storm shelter drill at camp, the sirens genuinely don't stop — testing whether all those practiced drills actually prepared anyone for a real emergency.",
+  created_at: "2027-04-28T21:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Routine Drill, Apparently</h3>
+<p>The camp's storm shelter drill began exactly like every previous practice run, campers filing calmly toward the designated shelter with the practiced ease of a routine they'd rehearsed a dozen times before that summer.</p>
+
+<h3>Chapter 2: A Drill That Doesn't End</h3>
+<p>The sirens, usually cut off after the standard five-minute drill window, genuinely didn't stop — camp counselors' radios crackling with confirmation that an actual severe storm warning had just been issued for their exact location, no drill at all.</p>
+
+<h3>Chapter 3: The Practice, Proven Useful</h3>
+<p>The genuine storm passed safely with everyone properly sheltered, months of "boring" drills having built exactly the calm, practiced response needed for the real thing. Camp director Ms. Alvarez told the shaken but safe campers afterward that this was precisely why they practiced things that felt unnecessary — you never knew, until you needed it, which drill was actually the one that mattered.</p>
+`
+},
+{
+  title: "The Goldfish Who Has Outlived Three Separate Owners' Predictions of His Demise",
+  author: "Khyati Srivastava",
+  slug: "the-goldfish-who-has-outlived-three-separate-owners-predictions-of-his-demise",
+  category: "Animals",
+  emoji: "🐠",
+  excerpt: "Won at a school carnival eleven years ago and expected to survive, at most, a few months, Gerald the goldfish has instead outlived two family moves, a near-miss with an overfeeding incident, and everyone's low expectations entirely.",
+  created_at: "2027-04-28T22:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Low Expectations From the Start</h3>
+<p>Gerald the goldfish arrived home from a school carnival eleven years ago in a plastic bag, with every family member privately assuming, based on typical carnival-goldfish odds, he'd last a few weeks at most.</p>
+
+<h3>Chapter 2: Defying Every Prediction</h3>
+<p>He's survived two cross-country family moves, one genuinely alarming overfeeding incident that had everyone certain his time had come, and eleven years of ordinary tank life that far exceeded any reasonable goldfish lifespan expectation the family had originally assumed.</p>
+
+<h3>Chapter 3: A Genuinely Beloved Fixture</h3>
+<p>Gerald has, at this point, outlived the family's actual family dog and become something of a genuine household legend, regularly checked on with real affection rather than the casual indifference most carnival goldfish receive. The family has stopped predicting his demise entirely. Gerald, eleven years running, has proven every prediction wrong.</p>
+`
+},
+{
+  title: "The Farm Dog Who Has Assigned Himself Guardian of the Newest, Smallest Animal",
+  author: "Khyati Srivastava",
+  slug: "the-farm-dog-who-has-assigned-himself-guardian-of-the-newest-smallest-animal",
+  category: "Animals",
+  emoji: "🐕",
+  excerpt: "Whatever the newest, smallest animal on the farm happens to be — a lamb, a chick, once memorably a kitten — Duke the farm dog appoints himself its dedicated personal guardian until it's grown enough to fend for itself.",
+  created_at: "2027-04-28T23:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Consistent Pattern</h3>
+<p>Duke, the Delgado farm's aging herding dog, had developed a genuinely consistent habit over years: whatever animal happened to currently be the farm's smallest and newest — a lamb, a chick, once a stray kitten — received his personal, dedicated protective attention until it grew large enough to fend properly for itself.</p>
+
+<h3>Chapter 2: A Smooth Handoff</h3>
+<p>Farmer Delgado noticed the pattern held reliably across a decade of different farm additions, Duke's protective focus shifting seamlessly to each new smallest arrival the moment the previous charge had genuinely grown past needing his supervision.</p>
+
+<h3>Chapter 3: A Job Well Understood</h3>
+<p>The current recipient, a genuinely tiny orphaned lamb, follows Duke everywhere on the property, the old dog patient and watchful in exactly the way he's always been with every predecessor. Delgado has stopped questioning the instinct. Duke simply seems to know, without fail, exactly who currently needs him most.</p>
+`
+},
+{
+  title: "The Extended Family Group Chat That Accidentally Became a Genuine Book Club",
+  author: "Khyati Srivastava",
+  slug: "the-extended-family-group-chat-that-accidentally-became-a-genuine-book-club",
+  category: "Comedy",
+  emoji: "📚",
+  excerpt: "A single book recommendation in the family group chat spirals, entirely unplanned, into a full monthly book club with actual discussion questions, a rotating host, and considerably more enthusiasm than anyone expected from a chat originally meant for birthday reminders.",
+  created_at: "2027-04-29T00:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Innocent Recommendation</h3>
+<p>Aunt Reya's casual book recommendation, dropped into a family group chat originally reserved for birthday reminders and holiday planning, sparked an unexpectedly enthusiastic response from three separate relatives who happened to be looking for a new read.</p>
+
+<h3>Chapter 2: An Accidental Escalation</h3>
+<p>Within a week, the chat had developed actual discussion questions, a rotating monthly "host" responsibility, and a genuinely competitive spirit about who could finish the book first — all entirely unplanned, springing from one offhand recommendation nobody expected to spiral this far.</p>
+
+<h3>Chapter 3: A Genuine New Tradition</h3>
+<p>The family book club has now run for over a year, considerably outlasting several members' initial skepticism about whether it would stick. Birthday reminders still get posted occasionally. The chat's actual primary function, at this point, is unmistakably books.</p>
+`
+},
+{
+  title: "The School Fire Drill That Revealed a Genuinely Elaborate Secret Handshake Culture",
+  author: "Khyati Srivastava",
+  slug: "the-school-fire-drill-that-revealed-a-genuinely-elaborate-secret-handshake-culture",
+  category: "Comedy",
+  emoji: "🤝",
+  excerpt: "During an unusually long fire drill delay, teachers discover the entire sixth grade has developed a genuinely elaborate, multi-step secret handshake system — different handshakes for different friendships, tracked with startling seriousness.",
+  created_at: "2027-04-29T01:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unexpectedly Long Wait</h3>
+<p>A genuinely lengthy fire drill delay, caused by a stuck door elsewhere in the building, left the entire sixth grade standing outside considerably longer than usual — long enough for teachers to notice something they'd apparently missed entirely until now.</p>
+
+<h3>Chapter 2: A Discovered System</h3>
+<p>Kids across the grade were greeting each other with genuinely elaborate, multi-step secret handshakes, each one apparently specific to a particular friendship, executed with a seriousness and precision that suggested considerable practice time invested outside of school.</p>
+
+<h3>Chapter 3: An Officially Sanctioned Culture</h3>
+<p>Teachers, more delighted than concerned, asked several kids to demonstrate their handshakes properly once back inside, genuinely impressed by the creativity involved. The sixth grade's secret handshake culture has since become an unofficial rite of passage, incoming fifth graders reportedly already asking older siblings to teach them the ropes in advance.</p>
+`
+},
+{
+  title: "The Traveling Puppeteer Who Only Performed for the Person Who Needed It Most",
+  author: "Khyati Srivastava",
+  slug: "the-traveling-puppeteer-who-only-performed-for-the-person-who-needed-it-most",
+  category: "Fairytale",
+  emoji: "🎭",
+  excerpt: "The traveling puppet show never announces its arrival in advance, and never performs the same story twice. Villagers have noticed, over years, that whoever the story ends up being about always turns out to need exactly that particular tale.",
+  created_at: "2027-04-29T02:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Unpredictable Arrival</h3>
+<p>The traveling puppeteer, Master Odell, never announced his shows in advance, simply setting up his small stage in whichever town square felt right, performing a different story each time, always one seemingly plucked precisely for whoever happened to be watching most closely.</p>
+
+<h3>Chapter 2: A Grieving Widow</h3>
+<p>Mrs. Ferro, mourning her husband quietly, wandered past his stage on an ordinary afternoon and found herself watching a puppet story about loss and eventual renewal that felt, uncannily, tailored directly to her own private grief.</p>
+
+<h3>Chapter 3: A Craft, Never Explained</h3>
+<p>She approached him afterward, asking how he'd known exactly what she needed to hear. He simply smiled, admitting he never planned his stories in advance either — he simply watched his audience gather and let the tale that felt right present itself. Whether that was genuine gift or simply decades of careful attention to human faces, he'd never fully decided himself.</p>
+`
+},
+{
+  title: "The Stonemason Who Built Bridges That Only Stood for the Right Reasons",
+  author: "Khyati Srivastava",
+  slug: "the-stonemason-who-built-bridges-that-only-stood-for-the-right-reasons",
+  category: "Fairytale",
+  emoji: "🌉",
+  excerpt: "Every bridge Master Yara builds holds firm for travelers with genuine, honest purpose — but sways alarmingly, though never actually collapses, under anyone crossing with clearly dishonest intent. Nobody's certain if it's magic or her own uncanny engineering instinct.",
+  created_at: "2027-04-29T03:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Reputation Worth Testing</h3>
+<p>Yara's bridges held perfectly steady for the vast majority of travelers, and yet stories persisted of the structures swaying alarmingly — never collapsing, but noticeably unsettling — under specific travelers rumored to be crossing with clearly dishonest purpose.</p>
+
+<h3>Chapter 2: A Skeptical Merchant</h3>
+<p>A traveling merchant, planning to cheat a business partner waiting on the other side, felt the bridge sway considerably more than the calm weather warranted, genuinely unnerved despite finding no obvious structural cause for the movement.</p>
+
+<h3>Chapter 3: An Uncertain Answer</h3>
+<p>Yara, asked directly whether the swaying was intentional magic, simply shrugged. "I build them true," she said. "Maybe guilty feet just walk differently. I've never claimed to know for certain." The merchant, rattled enough by the crossing, reconsidered his dishonest plan before reaching the other side. Whether the bridge or his own conscience deserved the credit, nobody could say for sure.</p>
+`
+},
+{
+  title: "The Kid Who Learned Real Confidence From Losing the Spelling Bee on the First Word",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-real-confidence-from-losing-the-spelling-bee-on-the-first-word",
+  category: "Inspirational",
+  emoji: "🐝",
+  excerpt: "Eliminated from the school spelling bee on the very first word, in front of the entire school, Dev expects total humiliation. What he actually experiences afterward teaches him something genuinely useful about resilience.",
+  created_at: "2027-04-29T04:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: An Immediate, Public Elimination</h3>
+<p>Dev's spelling bee ended on his very first word, misspelled in front of the entire assembled school, a genuinely mortifying moment he'd braced himself against for weeks of preparation that suddenly felt entirely wasted.</p>
+
+<h3>Chapter 2: Walking Back to His Seat</h3>
+<p>The walk back to his seat felt, in the moment, like the longest of his life, certain every single classmate was quietly judging his immediate failure as thoroughly as he was judging himself.</p>
+
+<h3>Chapter 3: What Actually Happened Next</h3>
+<p>Nobody, it turned out, actually cared nearly as much as he'd assumed — a few sympathetic nods, then the assembly simply moved on entirely. Dev learned, considerably more from that walk back to his seat than from any actual spelling practice, that public failure rarely carried the weight his own anxiety assigned it. He competed again the following year, considerably less terrified of the possible outcome.</p>
+`
+},
+{
+  title: "The Kid Who Learned to Handle Being Wrong From a Class Debate",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-learned-to-handle-being-wrong-from-a-class-debate",
+  category: "Inspirational",
+  emoji: "🗣️",
+  excerpt: "Confidently certain of her position throughout an entire class debate, Priya is genuinely surprised to discover, researching further afterward, that she'd actually been wrong. Admitting it publicly teaches her more than winning ever would have.",
+  created_at: "2027-04-29T05:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Confident and Wrong</h3>
+<p>Priya argued her class debate position with genuine, unwavering confidence, certain of her facts throughout, right up until further research assigned afterward revealed she'd actually gotten a key point completely, embarrassingly wrong.</p>
+
+<h3>Chapter 2: A Choice About What to Do</h3>
+<p>She could have quietly let the mistake pass unnoticed, nobody else having caught the error during the actual debate. Instead, she brought it up directly with her teacher, genuinely uncomfortable but determined to correct the record honestly.</p>
+
+<h3>Chapter 3: What Admitting It Actually Taught Her</h3>
+<p>Her teacher praised the correction publicly, genuinely impressed by the honesty rather than embarrassed on her behalf. Priya found admitting the mistake, once done, considerably less painful than she'd feared — and considerably more respected by her classmates than pretending certainty would have been. She's corrected herself openly several times since, a habit that's earned her more trust, not less.</p>
+`
+},
+{
+  title: "The Family That Learned to Talk About the Adoption Openly Instead of Around It",
+  author: "Khyati Srivastava",
+  slug: "the-family-that-learned-to-talk-about-the-adoption-openly-instead-of-around-it",
+  category: "Drama",
+  emoji: "💛",
+  excerpt: "For years, the family has treated Priya's adoption as a fact everyone knows but nobody actually discusses. A genuine, unplanned question from a classmate finally forces the honest, open conversation the family had been quietly avoiding.",
+  created_at: "2027-04-29T06:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Fact, Never Discussed</h3>
+<p>Priya's adoption had always been treated as simply factual within her family — everyone knew, nobody ever hid it — but also, somehow, a topic that never actually got discussed openly, mentioned only in passing if mentioned at all.</p>
+
+<h3>Chapter 2: An Honest Question</h3>
+<p>A classmate's genuinely curious, well-meaning question about her "real parents" caught Priya off guard, prompting a conversation with her parents that evening more direct than any they'd had about the topic in years.</p>
+
+<h3>Chapter 3: Talking About It, Finally</h3>
+<p>The conversation that followed was considerably more emotional and honest than the family's usual careful avoidance had ever allowed — genuine questions asked and answered, feelings named that had simply gone unspoken for years. Priya's adoption didn't change. The family's willingness to actually discuss it, finally, genuinely did.</p>
+`
+},
+{
+  title: "The Siblings Who Finally Divided the Estate Fairly After Years of Avoiding the Conversation",
+  author: "Khyati Srivastava",
+  slug: "the-siblings-who-finally-divided-the-estate-fairly-after-years-of-avoiding-the-conversation",
+  category: "Drama",
+  emoji: "🏠",
+  excerpt: "Grandpa's passing leaves behind a modest estate and three siblings who've avoided discussing division for years out of fear it would damage their relationship. The actual conversation, once finally had, turns out considerably easier than the years of avoidance ever were.",
+  created_at: "2027-04-29T07:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Conversation Avoided</h3>
+<p>Grandpa's passing left behind a modest estate and three adult siblings who'd genuinely avoided any real conversation about its eventual division for years beforehand, each privately afraid the topic would damage a relationship none of them wanted to risk.</p>
+
+<h3>Chapter 2: Finally Sitting Down</h3>
+<p>The actual conversation, finally forced by necessity, began genuinely tense, years of unspoken assumptions surfacing awkwardly before any real progress could happen — each sibling initially braced for conflict none of them actually wanted.</p>
+
+<h3>Chapter 3: Considerably Easier Than Feared</h3>
+<p>The division itself, once they actually talked honestly, took barely an afternoon to sort out fairly, considerably less painful than the years of anxious avoidance leading up to it had suggested it would be. All three siblings agreed afterward: the years of dreading the conversation had cost them more peace than the actual conversation ever did.</p>
+`
+},
+{
+  title: "The Study Session That Turned Into an Actual First Date, Retroactively",
+  author: "Khyati Srivastava",
+  slug: "the-study-session-that-turned-into-an-actual-first-date-retroactively",
+  category: "Romance",
+  emoji: "📚",
+  excerpt: "Neither Dev nor Farrah realized, until weeks later comparing notes, that their very first 'study session' together had actually functioned as a first date the entire time — just neither had been brave enough to call it that at the time.",
+  created_at: "2027-04-29T08:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Officially Just Studying</h3>
+<p>Dev and Farrah's first library session together was, by every official label either used at the time, purely academic — chemistry homework, a shared table, nothing either would have called a date if directly asked.</p>
+
+<h3>Chapter 2: A Realization, Weeks Later</h3>
+<p>It was only weeks into an actual established relationship that they compared memories of that first session and realized, laughing, that neither had opened a chemistry book for more than ten actual minutes the entire evening.</p>
+
+<h3>Chapter 3: A Retroactive Anniversary</h3>
+<p>They've since, only half-jokingly, declared that original "study session" their real first date, celebrating its anniversary properly despite neither having called it a date at the time. Their chemistry grades that semester, notably, suffered slightly. Neither has ever once regretted the trade.</p>
+`
+},
+{
+  title: "The Wrong Bus That Led to the Right Conversation",
+  author: "Khyati Srivastava",
+  slug: "the-wrong-bus-that-led-to-the-right-conversation",
+  category: "Romance",
+  emoji: "🚌",
+  excerpt: "Boarding the wrong bus entirely, distracted and running late, Priya finds herself sitting next to Kofi for an unplanned forty-minute detour neither had scheduled — a wrong turn that turns into their actual first real conversation.",
+  created_at: "2027-04-29T09:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Genuine Mistake</h3>
+<p>Priya boarded the wrong bus entirely, distracted and running late, only realizing her error two stops in — right around the same time she noticed Kofi, a classmate she'd never actually spoken to directly, sitting nearby on the same accidentally-boarded route.</p>
+
+<h3>Chapter 2: An Unplanned Forty Minutes</h3>
+<p>Rather than panic about the mistake, she settled in for the considerably longer ride back, striking up a conversation with Kofi that neither had ever managed during actual shared classes, the wrong bus somehow providing exactly the unplanned space they'd both needed.</p>
+
+<h3>Chapter 3: A Mistake Worth Repeating</h3>
+<p>Priya's actual commute home took nearly double her usual time that day. She's, only half-jokingly, "accidentally" taken that same wrong bus twice more since, both times finding Kofi conveniently aboard as well. Neither has ever directly admitted whether either "mistake" was actually accidental.</p>
+`
+},
+{
+  title: "The Kid Who Ran a Free Confidence-Boosting Photo Booth at School Events",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-ran-a-free-confidence-boosting-photo-booth-at-school-events",
+  category: "Kids",
+  emoji: "📸",
+  excerpt: "Noticing how many classmates felt awkward and camera-shy at school dances, eleven-year-old Marisol sets up a genuinely encouraging photo booth — silly props, gentle direction, and a genuine talent for making anyone feel comfortable in front of a lens.",
+  created_at: "2027-04-29T10:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Noticed Discomfort</h3>
+<p>Marisol noticed how many classmates visibly stiffened and grew awkward whenever a camera pointed their way at school dances, genuine discomfort she recognized from her own past experience before she'd learned to actually relax in front of a lens herself.</p>
+
+<h3>Chapter 2: A Thoughtful Solution</h3>
+<p>She volunteered to run the school dance's photo booth, bringing silly props and, considerably more importantly, a genuine talent for putting nervous classmates at ease with gentle jokes and encouragement before actually taking any photo.</p>
+
+<h3>Chapter 3: A Genuinely Valued Role</h3>
+<p>Her photo booth has become a fixture at every school event since, several classmates specifically requesting her as photographer for exactly the comfortable, judgment-free energy she brings. Marisol considers it, genuinely, more meaningful than any actual photography skill involved — just making people feel okay being seen.</p>
+`
+},
+{
+  title: "The Kid Who Started a Free 'Practice Job Interview' Service for Older Teens",
+  author: "Khyati Srivastava",
+  slug: "the-kid-who-started-a-free-practice-job-interview-service-for-older-teens",
+  category: "Kids",
+  emoji: "💼",
+  excerpt: "After watching her older sister nervously prepare for a first job interview, twelve-year-old Priya starts offering genuinely researched mock interview practice for neighborhood teens — surprisingly thorough for someone two years too young to actually apply for any of these jobs herself.",
+  created_at: "2027-04-29T11:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: Watching a Sister's Nerves</h3>
+<p>Priya watched her older sister genuinely struggle with anxiety preparing for her first job interview, prompting her to research common interview questions thoroughly herself, purely to help her sister practice with someone low-stakes.</p>
+
+<h3>Chapter 2: A Service, Genuinely Useful</h3>
+<p>Word spread among neighborhood teens facing their own first interviews, several requesting Priya's practice sessions specifically, genuinely impressed by how thoroughly she'd researched common questions and helpful response strategies despite being years too young for any of the actual jobs herself.</p>
+
+<h3>Chapter 3: An Unlikely Expert</h3>
+<p>She's run over a dozen practice interviews now, several teens crediting her sessions directly with helping them land their first actual jobs. Priya finds the whole arrangement genuinely funny — she's coached considerably more successful interviews than she's ever actually been eligible to attempt herself.</p>
+`
+},
+{
+  title: "The Front Porch Light That Turns Itself On Exactly at Dusk, Even Unplugged",
+  author: "Khyati Srivastava",
+  slug: "the-front-porch-light-that-turns-itself-on-exactly-at-dusk-even-unplugged",
+  category: "Horror",
+  emoji: "💡",
+  excerpt: "The old front porch light, deliberately unplugged during a renovation months ago, still switches on precisely at dusk every single evening — no power source found, no explanation offered by two separate electricians.",
+  created_at: "2027-04-29T12:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Deliberately Disconnected Fixture</h3>
+<p>The Petrossian family's old porch light had been deliberately unplugged and physically disconnected during a home renovation months earlier, replaced by a newer fixture — and yet the old light, cord dangling loose, still switched on precisely at dusk every single evening without fail.</p>
+
+<h3>Chapter 2: Two Separate Investigations</h3>
+<p>Two different electricians, called separately out of genuine confusion, confirmed the fixture had no power source whatsoever, no hidden wiring explanation, nothing that should reasonably allow it to illuminate at all, let alone with such precise, consistent timing.</p>
+
+<h3>Chapter 3: An Unexplained Fixture, Kept Anyway</h3>
+<p>The family never removed the old, technically disconnected light, finding its consistent dusk illumination oddly comforting rather than unsettling after the initial shock wore off. It has never once failed to turn on at the right time, nor ever been explained by anyone qualified enough to actually examine it properly.</p>
+`
+},
+{
+  title: "The Family Dog Who Refuses to Walk Past One Specific House on Their Usual Route",
+  author: "Khyati Srivastava",
+  slug: "the-family-dog-who-refuses-to-walk-past-one-specific-house-on-their-usual-route",
+  category: "Horror",
+  emoji: "🏚️",
+  excerpt: "Duke has walked the same neighborhood route happily for years. For the past two months, he's flatly refused to pass one specific, currently-vacant house — planting his feet and whining until they take the long way around instead.",
+  created_at: "2027-04-29T13:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>Chapter 1: A Sudden Refusal</h3>
+<p>Duke had walked the exact same neighborhood route happily for years, right up until two months ago, when he started flatly refusing to pass one specific vacant house on the block, planting his feet firmly and whining until his owner simply took the longer way around instead.</p>
+
+<h3>Chapter 2: Nothing Visibly Wrong</h3>
+<p>Owner Reya checked the house repeatedly for any obvious explanation — no visible animal, no strange smell she could detect, nothing that seemed to explain Duke's sudden, absolute refusal to walk anywhere near the property.</p>
+
+<h3>Chapter 3: Taking the Long Way, Indefinitely</h3>
+<p>The house has remained vacant and unremarkable throughout the entire two months of Duke's continued refusal, no obvious cause ever identified. Reya has simply accepted the detour as their new normal route, genuinely trusting whatever her dog seems to sense even without understanding it herself.</p>
+`
+},
+{
+  title: "The Back Porch Where Every Summer Ends the Same Warm Way",
+  author: "Khyati Srivastava",
+  slug: "the-back-porch-where-every-summer-ends-the-same-warm-way",
+  category: "Poetry",
+  emoji: "🌅",
+  excerpt: "A gentle, wistful poem about the reliable, quiet ritual of the last warm evening on the back porch before autumn arrives, the same every year, and somehow always exactly enough.",
+  created_at: "2027-04-29T14:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Back Porch Where Every Summer Ends the Same Warm Way</h3>
+<p>There's always one last warm night, unplanned,<br/>
+before autumn quietly takes command<br/>
+of the air, the light, the way things feel —<br/>
+one final evening the porch makes real.</p>
+
+<p>Same chairs, same worn-out cushions, same<br/>
+lazy conversation with no particular aim,<br/>
+same bugs against the porch light's glow,<br/>
+same easy quiet, letting summer go.</p>
+
+<p>We never know it's the last one, not really,<br/>
+not until fall's arrived, chilly and clearly<br/>
+different from the night before —<br/>
+but somehow that last warm night holds more.</p>
+
+<p>So sit a little longer, next warm night,<br/>
+let the porch hold on a little tight<br/>
+to whatever summer's got left to give —<br/>
+some evenings deserve the time to really live.</p>
+`
+},
+{
+  title: "The Closet Full of Costumes From Every Halloween Since",
+  author: "Khyati Srivastava",
+  slug: "the-closet-full-of-costumes-from-every-halloween-since",
+  category: "Poetry",
+  emoji: "🎃",
+  excerpt: "A playful, nostalgic poem cataloging the growing pile of outgrown Halloween costumes in the closet, each one a small snapshot of exactly who a kid wanted to be that particular year.",
+  created_at: "2027-04-29T15:00:00Z",
+  body: `
+<p style="color:#6a4b8f;font-style:italic;margin-bottom:18px">By Khyati Srivastava</p>
+
+<h3>The Closet Full of Costumes From Every Halloween Since</h3>
+<p>A pumpkin suit, too small to wear,<br/>
+a cape from the year I was a superhero, threadbare,<br/>
+a witch hat, crushed but still intact,<br/>
+a dinosaur tail, some vital piece it's missing, in fact.</p>
+
+<p>Each costume marks a whole small year<br/>
+of who I wanted to be, right here,<br/>
+before I grew too tall, too old,<br/>
+for capes and pumpkin suits to hold.</p>
+
+<p>Mom keeps them anyway, every one,<br/>
+long after each Halloween is done,<br/>
+a closet full of who I used to want to be,<br/>
+before this year's costume, currently.</p>
+
+<p>Someday I'll clean it out, I always say,<br/>
+donate the old ones, give them away —<br/>
+but every year I add one more instead,<br/>
+one more small year of who I chose to be, ahead.</p>
+`
+},
 ];
