@@ -12,10 +12,15 @@ const errors=[]; const pass=m=>console.log('  ✓ '+m); const fail=m=>{console.l
 const b=await chromium.launch({headless:true});
 try{
   const p=await b.newPage(); const js=[]; p.on('pageerror',e=>js.push(e.message.split('\n')[0]));
-  console.log('\n[1] Story Hub lists the new stories');
+  console.log('\n[1] Story Hub search finds the story');
+  // Hub's default grid is paginated (60/page, newest first) now that the
+  // catalogue has grown past 2,000, so an old story won't be in the default
+  // view — searching is the realistic way to find it.
   await p.goto(`${base}/stories/index.html`,{waitUntil:'networkidle',timeout:20000}); await p.waitForTimeout(600);
+  await p.fill('#search','Lighthouse of Lost Things'); await p.waitForTimeout(300);
   const count=await p.evaluate(()=>document.body.innerText);
-  /Lighthouse of Lost Things|Mochi|Owl Learned to Laugh|Robot Who Collected/i.test(count) ? pass('new stories appear on the hub') : fail('new stories not listed');
+  /Lighthouse of Lost Things/i.test(count) ? pass('story found via search') : fail('story not found via search');
+  await p.fill('#search','');
   console.log('\n[2] Reader opens a new story with its body');
   await p.goto(`${base}/stories/stories.html?story=lighthouse-of-lost-things`,{waitUntil:'networkidle',timeout:15000}); await p.waitForTimeout(500);
   /Odette|Lighthouse|Teo/i.test(await p.evaluate(()=>document.body.innerText)) ? pass('reader shows the story text') : fail('story body missing');

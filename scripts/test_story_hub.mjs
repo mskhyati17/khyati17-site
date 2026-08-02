@@ -24,9 +24,13 @@ const MIME = {
 // silently get deduped away or make the "click the card with this title"
 // step below ambiguous. (A real story previously ended up titled "Signal
 // Lost" too, which made both problems happen without any actual site bug.)
+// created_at is pinned far in the future (not "just now") so these fixtures
+// always sort into the hub's paginated newest-first top page no matter how
+// much real content gets added over time — a hardcoded "recent" date broke
+// this exact way once the catalogue grew past the pagination cutoff.
 const SEED = [
-  { title:'QA Fixture: The Glass Forest', slug:'qa-fixture-the-glass-forest', excerpt:'A traveler wanders into a wood of mirrors.', body:'<p>Once upon a time…</p>', category:'Fantasy', created_at:'2026-06-10T00:00:00Z' },
-  { title:'QA Fixture: Signal Lost',      slug:'qa-fixture-signal-lost',      excerpt:'The last message from orbit.',            body:'<p>Static.</p>',          category:'Sci-Fi',  created_at:'2026-06-15T00:00:00Z' },
+  { title:'QA Fixture: The Glass Forest', slug:'qa-fixture-the-glass-forest', excerpt:'A traveler wanders into a wood of mirrors.', body:'<p>Once upon a time…</p>', category:'Fantasy', created_at:'2099-06-10T00:00:00Z' },
+  { title:'QA Fixture: Signal Lost',      slug:'qa-fixture-signal-lost',      excerpt:'The last message from orbit.',            body:'<p>Static.</p>',          category:'Sci-Fi',  created_at:'2099-06-15T00:00:00Z' },
 ];
 
 function startServer(port){
@@ -72,15 +76,28 @@ async function run(){
 
     // Counts derived from the baked data + seeded localStorage (robust to additions)
     const TOTAL = BAKED.length + SEED.length;
+    const GRID_PAGE = 60;                                // grid renders newest-first, paginated
+    const EXPECT_INITIAL = Math.min(GRID_PAGE, TOTAL);
     const LATEST_EXPECT = Math.min(10, TOTAL);          // Latest row is capped at 10
     const CATS = new Set([...BAKED, ...SEED].map(s => s.category || 'General'));
 
     const cards = await page.$$('#grid .card');
-    cards.length === TOTAL ? pass(`${cards.length} story cards (${BAKED.length} baked + ${SEED.length} seeded)`) : fail(`expected ${TOTAL} cards, got ${cards.length}`);
+    cards.length === EXPECT_INITIAL ? pass(`${cards.length} story cards shown initially (of ${TOTAL} total)`) : fail(`expected ${EXPECT_INITIAL} initial cards, got ${cards.length}`);
 
+    // The two future-dated SEED fixtures sort to the very top, so they must be
+    // in the first page. Baked stories can be anywhere in the 2000+ catalogue
+    // depending on their own created_at, so verify those via search instead.
     const labels = await page.$$eval('#grid .card .label', ns => ns.map(n => n.textContent.trim()));
+    SEED.every(s=>labels.includes(s.title)) ? pass('seeded stories show on the hub (first page)') : fail(`seeded story missing from first page; got ${JSON.stringify(labels)}`);
     const sampleBaked = ['The Lesson For The Witch','Gloomy Crown','Comet Mail','The Cloud Collector'];
-    sampleBaked.every(t=>labels.includes(t)) ? pass('baked stories show on the hub') : fail(`baked story missing; got ${JSON.stringify(labels)}`);
+    let bakedFoundViaSearch = true;
+    for(const t of sampleBaked){
+      await page.fill('#search', t); await page.waitForTimeout(150);
+      const found = await page.$$eval('#grid .card .label', ns => ns.map(n=>n.textContent.trim())).then(ls=>ls.includes(t));
+      if(!found) bakedFoundViaSearch = false;
+    }
+    await page.fill('#search', ''); await page.waitForTimeout(150);
+    bakedFoundViaSearch ? pass('baked stories findable via search') : fail('a baked story was not findable via search');
 
     const latest = await page.$$('#popRow .pop-item');
     latest.length === LATEST_EXPECT ? pass(`${latest.length} latest items (capped at 10)`) : fail(`expected ${LATEST_EXPECT} latest items, got ${latest.length}`);

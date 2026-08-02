@@ -21,8 +21,17 @@ try{
   const errs=[]; page.on('pageerror',e=>errs.push(e.message.split('\n')[0]));
   await page.goto(HUB,{waitUntil:'load',timeout:20000});
   await page.waitForSelector('#grid .card',{timeout:12000});
+  // Grid is paginated (60/page) for fast initial render on a 2,000+ story
+  // catalogue — full-collection size is verified via gridCount + Load more.
   const cards=await page.$$eval('#grid .card',e=>e.length);
-  assert(cards>=100, `home grid renders ${cards} story cards (expected >= 100)`);
+  assert(cards===60, `home grid renders capped at 60 story cards (got ${cards})`);
+  const totalLabel=await page.$eval('#gridCount',e=>e.textContent);
+  const totalCount=parseInt(totalLabel,10);
+  assert(totalCount>=1000, `gridCount shows full collection size (${totalLabel})`);
+  await page.click('.load-more-btn');
+  await page.waitForTimeout(300);
+  const cardsAfterLoadMore=await page.$$eval('#grid .card',e=>e.length);
+  assert(cardsAfterLoadMore===120, `Load more reveals the next batch (got ${cardsAfterLoadMore})`);
   assert(errs.length===0, `no JS errors on load${errs.length?': '+errs[0]:''}`);
   const genres=await page.$$eval('#catStrip .chip',e=>e.length);
   assert(genres>1, `genre chips present (${genres})`);

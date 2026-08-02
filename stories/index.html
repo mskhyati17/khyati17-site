@@ -204,6 +204,8 @@
     grid-column:1/-1;text-align:center;color:var(--muted);
     padding:40px 0;font-size:.95rem;
   }
+  .load-more-btn{background:linear-gradient(90deg,var(--purple-700),var(--purple-500));color:#fff;border:none;border-radius:999px;padding:12px 28px;font-weight:800;font-size:.95rem;cursor:pointer;box-shadow:0 8px 22px rgba(117,80,168,.25)}
+  .load-more-btn:hover{transform:translateY(-2px)}
 
   /* ---------- Browse genres ---------- */
   .cat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
@@ -443,14 +445,54 @@ function renderLatest(){
   return new Set(top.map(s=>s.slug));
 }
 
-/* --- Featured / main grid --- */
+/* --- Featured / main grid (paginated for fast initial render — the story
+   catalogue has grown past 2,000 entries and rendering every card up front
+   was the single biggest thing slowing down first paint) --- */
+const GRID_PAGE = 60;
+let _gridList = [], _gridShown = 0, _gridFeatured = null;
+
+function buildStoryCard(s){
+  const card = el("div","card"+(s===_gridFeatured?" big":""));
+  card.style.background = s.color;
+  let visual;
+  if(s.cover){
+    visual = el("img");
+    visual.src = s.cover; visual.alt = s.title; visual.loading = "lazy";
+    visual.style.cssText = "width:60%;height:60%;object-fit:cover;border-radius:12px";
+  } else {
+    visual = el("div","emoji"); visual.textContent = s.emoji;
+  }
+  const label = el("div","label"); label.textContent = s.title;
+  card.appendChild(visual); card.appendChild(label);
+  if(s.excerpt){ const ex=el("div","excerpt"); ex.textContent=s.excerpt; card.appendChild(ex); }
+  const cat = el("div","badge-cat"); cat.textContent = s.category + " · " + s.words + " words";
+  card.appendChild(cat);
+  card.onclick = ()=>open(s);
+  return card;
+}
+function appendGridBatch(){
+  const grid = document.getElementById("grid");
+  const end = Math.min(_gridShown + GRID_PAGE, _gridList.length);
+  for(let i=_gridShown;i<end;i++) grid.appendChild(buildStoryCard(_gridList[i]));
+  _gridShown = end;
+  updateLoadMore();
+}
+function updateLoadMore(){
+  const grid = document.getElementById("grid");
+  let wrap = document.getElementById("loadMoreWrap");
+  if(!wrap){ wrap = el("div"); wrap.id="loadMoreWrap"; wrap.style.cssText="text-align:center;margin:20px 0 8px"; grid.parentNode.insertBefore(wrap, grid.nextSibling); }
+  wrap.innerHTML = "";
+  if(_gridShown < _gridList.length){
+    const btn = el("button","load-more-btn");
+    btn.textContent = "Load more stories ("+(_gridList.length - _gridShown)+" more) ↓";
+    btn.onclick = appendGridBatch;
+    wrap.appendChild(btn);
+  }
+}
 function renderGrid(){
   const grid = document.getElementById("grid");
   grid.innerHTML = "";
 
-  // The grid shows the whole collection (filtered by genre + search). Unlike a
-  // huge game catalog, a stories list is usually small, so we don't hide the
-  // ones already in the Latest strip — that would leave the grid empty.
   let list = STORIES.filter(s=>{
     const matchCat = activeCat==="All" || s.category===activeCat;
     const hay = (s.title + ' ' + (s.excerpt||'')).toLowerCase();
@@ -465,6 +507,9 @@ function renderGrid(){
 
   document.getElementById("gridCount").textContent = list.length + (list.length===1?" story":" stories");
 
+  const oldWrap = document.getElementById("loadMoreWrap");
+  if(oldWrap) oldWrap.innerHTML = "";
+
   if(!list.length){
     const e = el("div","empty");
     e.textContent = STORIES.length ? "No stories match your search 😕" : "No stories yet — check back soon! 📖";
@@ -472,26 +517,10 @@ function renderGrid(){
     return;
   }
 
-  const featured = list[0];               // newest visible story gets the big tile
-  list.forEach(s=>{
-    const card = el("div","card"+(s===featured?" big":""));
-    card.style.background = s.color;
-    let visual;
-    if(s.cover){
-      visual = el("img");
-      visual.src = s.cover; visual.alt = s.title; visual.loading = "lazy";
-      visual.style.cssText = "width:60%;height:60%;object-fit:cover;border-radius:12px";
-    } else {
-      visual = el("div","emoji"); visual.textContent = s.emoji;
-    }
-    const label = el("div","label"); label.textContent = s.title;
-    card.appendChild(visual); card.appendChild(label);
-    if(s.excerpt){ const ex=el("div","excerpt"); ex.textContent=s.excerpt; card.appendChild(ex); }
-    const cat = el("div","badge-cat"); cat.textContent = s.category + " · " + s.words + " words";
-    card.appendChild(cat);
-    card.onclick = ()=>open(s);
-    grid.appendChild(card);
-  });
+  _gridFeatured = list[0];                // newest visible story gets the big tile
+  _gridList = list;
+  _gridShown = 0;
+  appendGridBatch();
 }
 
 /* --- Browse genres grid --- */

@@ -17,12 +17,20 @@ const NEW_SLUGS=['lantern-keeper-of-star-hollow','recipe-for-a-rainy-day','robot
 try{
   const p=await b.newPage(); const js=[]; p.on('pageerror',e=>js.push(e.message.split('\n')[0]));
 
-  console.log('\n[1] Story Hub lists all 5 new stories');
+  console.log('\n[1] Story Hub search finds all 5 stories');
+  // Hub's default grid is paginated (60/page, newest first) now that the
+  // catalogue has grown past 2,000, so an old batch like this one won't be
+  // in the default view — searching is the realistic way to find it.
   await p.goto(`${base}/stories/index.html`,{waitUntil:'networkidle',timeout:20000}); await p.waitForTimeout(600);
-  const text=await p.evaluate(()=>document.body.innerText);
   const titles=['Lantern Keeper of Star Hollow','Recipe for a Rainy Day','Robot Who Planted a Forest','Whisker and the Midnight Library','Boy Who Raced the Wind'];
-  const missing=titles.filter(t=>!text.includes(t));
-  missing.length===0 ? pass('all 5 new titles appear on the hub') : fail('missing: '+missing.join(', '));
+  const missing=[];
+  for(const t of titles){
+    await p.fill('#search', t); await p.waitForTimeout(300);
+    const found = await p.evaluate(()=>document.body.innerText).then(txt=>txt.includes(t));
+    if(!found) missing.push(t);
+  }
+  await p.fill('#search','');
+  missing.length===0 ? pass('all 5 titles found via search') : fail('missing: '+missing.join(', '));
 
   console.log('\n[2] Reader opens each new story with its body text');
   const checks=[
