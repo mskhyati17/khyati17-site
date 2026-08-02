@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script src="/assets/js/theme.js?v=1"></script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>🤖 AI Zone — AI Tools</title>
@@ -72,6 +73,8 @@
   .zone-nav{display:flex;gap:6px;flex-wrap:wrap}
   .zone-nav a{color:#f1e6ff;background:rgba(255,255,255,0.16);border-radius:999px;padding:7px 12px;font-size:.82rem;font-weight:500;white-space:nowrap;transition:background .15s}
   .zone-nav a:hover{background:rgba(255,255,255,0.30)}
+  .zone-nav .theme-toggle{border:none;background:rgba(255,255,255,0.16);border-radius:999px;padding:7px 12px;font-size:.9rem;cursor:pointer;transition:background .15s}
+  .zone-nav .theme-toggle:hover{background:rgba(255,255,255,0.30)}
   @media (max-width:680px){ .zone-nav{order:4;flex-basis:100%;justify-content:center} }
 
   /* ---------- Category strip ---------- */
@@ -279,6 +282,7 @@
       <a href="/fun-games/index.html">🎮 Games</a>
       <a href="/stories/index.html">📖 Stories</a>
       <a href="/videos/index.html">🎬 Videos</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode">🌙</button>
     </nav>
   </nav>
 
@@ -519,5 +523,14 @@ render();
 </script>
 <script src="/assets/js/decor.js"></script>
 <script src="/assets/js/cute.js?v=5"></script>
+<script>
+(function(){
+  var btn = document.querySelector('.theme-toggle');
+  if(btn && window.KhyatiTheme){
+    btn.addEventListener('click', function(e){ e.preventDefault(); window.KhyatiTheme.toggle(); });
+    window.KhyatiTheme.set(window.KhyatiTheme.get());
+  }
+})();
+</script>
 </body>
 </html>

@@ -25,6 +25,10 @@
     '[data-theme="dark"] body::before{background:radial-gradient(circle at 30% 30%,rgba(120,60,180,.42),transparent 70%);opacity:.45}',
     '[data-theme="dark"] body::after{background:radial-gradient(circle at 70% 70%,rgba(180,60,120,.36),transparent 70%);opacity:.45}',
     '[data-theme="dark"] html::before{opacity:.3}',
+    // "Latest" horizontal-row captions on Stories/Games/AI-Tools hub pages sit
+    // directly on the page background (not inside a colored tile), so the
+    // --ink page var (near-black) needs an explicit override or it's unreadable.
+    '[data-theme="dark"] .pop-name{color:#ece7f2}',
     // hero + shell
     '[data-theme="dark"] .hero-rich{background:linear-gradient(135deg,rgba(120,60,180,.24),rgba(60,20,90,.16));color:#f0e8ff}',
     '[data-theme="dark"] .hero-copy h1{color:#f4ecff}',
