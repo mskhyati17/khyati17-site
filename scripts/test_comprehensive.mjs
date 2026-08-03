@@ -180,8 +180,9 @@ async function runTests() {
       console.log(`    Games count: ${gamesResp.count}`);
     }
 
-    // Check tictactoe files exist (Python game, not listed in games.json)
-    const tttDirResp = await page.goto(`http://localhost:${PORT}/fun-games/tictactoe/index.html`, { waitUntil: 'networkidle', timeout: 15000 });
+    // Check tictactoe exists (a flat JS file, not listed in games.json; the
+    // old /fun-games/tictactoe/index.html Python-game path no longer exists)
+    const tttDirResp = await page.goto(`http://localhost:${PORT}/fun-games/tictactoe.html`, { waitUntil: 'networkidle', timeout: 15000 });
     const tttFileOk = tttDirResp ? tttDirResp.status() === 200 : false;
     record('TicTacToe HTML file accessible', tttFileOk, `Status ${tttDirResp?.status()}`);
 
